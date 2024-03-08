@@ -4,7 +4,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import * as API from '../.generated/paycode-proxy/client/API';
-import * as MockAPI from './mock-api';
 
 type ApiResponse = void | AxiosResponse<any>;
 
@@ -22,7 +21,7 @@ const setupApiClient = (
 
   apiClient.interceptors.request.use(
     //@ts-expect-error it's not an error
-    (    config: { method: string; headers: { [x: string]: string; }; }) => {
+    (config: { method: string; headers: { [x: string]: string } }) => {
       console.debug(8880, 'Intercepted request: ', config);
       if (config.method && config.method.toLowerCase() !== 'options') {
         if (headersToInject && typeof headersToInject == 'object') {
@@ -43,70 +42,45 @@ const setupApiClient = (
       console.debug(8883, config.headers);
       return config;
     },
-    (    error: any) => Promise.reject(error),
+    (error: any) => Promise.reject(error),
   );
 };
 
 export const createApiAdapter = (
   apiUrl: string,
   headersToInject: Record<string, string>,
-  isMock = false,
-) => {
+): ApiMethods => {
   setupApiClient(apiUrl, headersToInject);
 
-  return new Proxy<ApiMethods>(API, {
-    get(
-      target: ApiMethods,
-      prop: keyof ApiMethods | string | symbol,
-      _receiver: any,
-    ): (...args: any[]) => Promise<ApiResponse> {
-      const actualTarget: ApiMethods = isMock ? MockAPI : target;
+  const adapter: ApiMethods = {};
 
-      if (typeof prop === 'symbol') {
-        return Reflect.get(actualTarget, prop, _receiver);
-      }
+  Object.keys(API).forEach(methodName => {
+    const method = methodName.match(/^(get|post|put|delete|options)(.+)/i);
+    if (method) {
+      const httpMethod = (method[1] as string).toLowerCase();
+      const path = (method[2] as string).toLowerCase();
 
-      // The property might be a function or something else (like a value)
-      const property = actualTarget[prop];
-      if (typeof property === 'function') {
-        // Ensure function properties are called with the correct context
-        return (...args: any[]) => {
-          const axiosInstance = actualTarget.getAxiosInstance
-            ? actualTarget.getAxiosInstance()
-            : axios;
+      adapter[methodName] = async (...args: any[]): Promise<ApiResponse> => {
+        const [paramsOrData, axiosConfig = {}] = args;
+        const config: AxiosRequestConfig = {
+          method: httpMethod as AxiosRequestConfig['method'],
+          url: `/${path}`,
+          ...(httpMethod === 'get' || httpMethod === 'options'
+            ? { params: paramsOrData }
+            : { data: paramsOrData }),
+          ...axiosConfig,
+        };
 
-          const methodMatch = String(prop).match(
-            /^(get|post|put|delete|options)(.+)/i,
-          );
-          if (!methodMatch) {
-            throw new Error(
-              `The API method ${String(prop)} does not follow the expected naming convention.`,
-            );
-          }
-
-          const method = (methodMatch[1] as string).toLowerCase();
-          const url = `/${(methodMatch[2] as string).toLowerCase()}`;
-          const [paramsOrData, axiosConfig = {}] = args;
-
-          const requestConfig: AxiosRequestConfig = {
-            method: method as AxiosRequestConfig['method'],
-            url: `${apiUrl}${url}`,
-            ...(method === 'get' || method === 'options'
-              ? { params: paramsOrData }
-              : { data: paramsOrData }),
-            ...axiosConfig,
-          };
-
-          console.debug(
-            `Making real API call: ${method.toUpperCase()} to ${url} with config:`,
-            requestConfig,
-          );
-          return axiosInstance.request(requestConfig);
-        }; // No need for bind here due to closure scope
-      } else {
-        // If the property is not a function, return it directly
-        return property;
-      }
-    },
+        return API.getAxiosInstance
+          ? API.getAxiosInstance().request(config)
+          : axios.request(config);
+      };
+    }
   });
+
+  if (API.getAxiosInstance) {
+    adapter.getAxiosInstance = API.getAxiosInstance;
+  }
+
+  return adapter;
 };

@@ -21,7 +21,6 @@ import {
   aws_user_pools_web_client_id,
 } from './amplify-be.config.json';
 
-const IS_MOCK = import.meta.env.VITE_PAYCODE_PROXY_IS_MOCK === 'true';
 const API_URL = import.meta.env.VITE_PAYCODE_PROXY_API_URL;
 console.log({ apiGw });
 
@@ -87,14 +86,12 @@ export async function getProxyApiAdapter() {
   const proxyApi = apiGw.paycodeProxyApiAdapter.createApiAdapter(
     API_URL,
     headerToInject,
-    IS_MOCK,
   );
   const testBalance = await proxyApi.getBalance({ username: 'test' });
   console.debug({
     tag: 28343,
     headerToInject: headerToInject,
     API_URL: API_URL,
-    IS_MOCK: IS_MOCK,
     balance: testBalance,
     proxyApi,
   });
