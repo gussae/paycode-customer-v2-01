@@ -1,0 +1,48 @@
+{
+  "name": "@paycode-customer-v2/ui-web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "prebuild": "node scripts/prebuild.js",
+    "deploy": "node scripts/deploy.js ",
+    "postdeploy": "node scripts/postdeploy.js",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@aws-amplify/api": "^6.x",
+    "@aws-amplify/datastore": "^5.x",
+    "@aws-amplify/ui-react": "^6.x",
+    "@paycode-customer-v2/graphql": "*",
+    "@paycode-customer-v2/apigw": "*",
+    "@paycode-customer-v2/ui-components": "*",
+    "amazon-cognito-identity-js": "^6.x",
+    "aws-amplify": "^6.x",
+    "react": "^18.x",
+    "react-dom": "^18.x"
+  },
+  "devDependencies": {
+    "@paycode-customer-v2/config": "*",
+    "@paycode-customer-v2/lib": "*",
+    "@paycode-customer-v2/utils": "*",
+    "@types/react": "^18.x",
+    "@types/react-dom": "^18.x",
+    "@typescript-eslint/eslint-plugin": "^6.x",
+    "@typescript-eslint/parser": "^6.x",
+    "@types/jest": "^27.x",
+    "@types/node": "^20.x",
+    "@vitejs/plugin-react": "^4.x",
+    "eslint": "^8.x",
+    "eslint-plugin-react-hooks": "^4.x",
+    "eslint-plugin-react-refresh": "^0.x",
+    "eslint-config-prettier": "^9.x",
+    "eslint-plugin-prettier": "^5.x",
+    "jest": "^29.x",
+    "ts-jest": "^29.x",
+    "typescript": "^5.x",
+    "vite": "^5.x"
+  }
+}

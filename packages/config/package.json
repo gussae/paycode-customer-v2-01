@@ -1,0 +1,20 @@
+{
+  "name": "@paycode-customer-v2/config",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A package for synchronously loading configuration from .monorepo.config.json at the root of the monorepo and .workspace.config.js at the root of the project.",
+  "main": "index.js",
+  "dependencies": {
+    "@aws-sdk/client-ssm": "^3.x",
+    "@aws-sdk/credential-provider-node": "^3.x",
+    "change-case-all": "^2.x"
+  },
+  "devDependencies": {
+    "eslint": "^8.x",
+    "eslint-config-prettier": "^9.x",
+    "eslint-plugin-prettier": "^5.x",
+    "jest": "^29.x",
+    "ts-jest": "^29.x"
+  },
+  "license": "ISC"
+}

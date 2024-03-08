@@ -1,0 +1,171 @@
+/* Basic structure for demoContainer in Demo.module.css */
+.demoContainer {
+    background-color: #333;
+    display: flex;
+    margin:0;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  }
+
+  .boxTextSize {
+    font-size: 22px;
+  }
+  .transferContainer {
+    background-color: rgba(240, 248, 255, 0.082);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    gap: 10px;
+  }
+  .transactionContainer {
+    background-color: rgba(240, 248, 255, 0.082);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    gap: 10px;
+  }
+
+  .profileContainer {
+    background-color: rgba(240, 248, 255, 0.082);
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+
+  .notificationContainer {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+
+  }
+
+  .bellIcon {
+    font-size: 24px;
+  }
+
+  .notificationModal {
+    background-color: rgb(255, 255, 255);
+    width: auto;
+    max-width: 400px;
+    margin: 50px auto;
+  }
+
+  .notificationInput {
+    width: 100%;
+  }
+
+  .updateProfileButton {
+
+    margin-left: 10px;
+  }
+
+  .notificationsList {
+    width: 100%;
+  }
+
+  .notificationItem {
+    background-color: #f0f0f0;
+    padding: 5px;
+    margin: 5px;
+    border-radius:8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333;
+  }
+
+  .notificationTester {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  .paymentContainer {
+    background-color: rgba(240, 248, 255, 0.082);
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .balanceContainer {
+    background-color: rgba(240, 248, 255, 0.082);
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .qrCodeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 300px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+.documentsContainer {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.transactionContainer {
+  background-color: rgba(240, 248, 255, 0.082);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  gap: 10px;
+}
+
+.transactionTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  color: #ccc; /* Light text for dark mode */
+}
+
+.transactionTable th,
+.transactionTable td {
+  border: 1px solid #555; /* Darker borders for contrast */
+  padding: 8px;
+  text-align: left;
+}
+
+.transactionTable th {
+  background-color: #222; /* Dark header background */
+  color: #ddd; /* Light header text */
+}
+
+.transactionTable tr:nth-child(even) {background-color: #444;} /* Darker row for striping */
+
+.transactionTable tr:hover {background-color: #555;} /* Slightly lighter on hover */

@@ -1,0 +1,50 @@
+{
+  "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"],
+  "configurations": [
+    {
+      "name": "Next.js: debug server-side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev"
+    },
+    {
+      "name": "Next.js: debug client-side",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Next.js: debug full stack",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev",
+      "serverReadyAction": {
+        "pattern": "started server on .+, url: (https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithChrome"
+      }
+    },
+    {
+      "type": "node-terminal",
+      "name": "Current-TS-File",
+      "request": "launch",
+      "command": "node -r ts-node/register ${file}",
+      "sourceMaps": true,
+      "outFiles": ["*.js"]
+    },
+    {
+      "type": "node-terminal",
+      "name": "Multirepo-cdk-current-ts",
+      "request": "launch",
+      "command": "tsc -b . & ts-node-dev ${file}",
+      "outFiles": ["*.js"]
+    },
+    {
+      "type": "node-terminal",
+      "name": "Current-JS-File",
+      "request": "launch",
+      "command": "node ${file}"
+    }
+  ]
+}

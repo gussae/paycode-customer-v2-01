@@ -1,0 +1,123 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: S3 Bucket with CloudFront Distribution for a Static Website
+
+Parameters:
+  UiWebHostS3BucketParameterStoreHandle:
+    Type: String
+    Description: SSM Parameter Store Handle for Web UI Host S3 Bucket Name
+    AllowedPattern: '^\/[a-zA-Z0-9\-\/]+$'
+
+  UiWebCloudFrontDistributionIdParameterStoreHandle:
+    Type: String
+    Description: SSM Parameter Store Handle for CloudFront Distribution ID
+    AllowedPattern: '^\/[a-zA-Z0-9\-\/]+$'
+
+  UiWebCloudFrontDistributionDomainNameParameterStoreHandle:
+    Type: String
+    Description: SSM Parameter Store Handle for CloudFront Distribution Domain Name
+    AllowedPattern: '^\/[a-zA-Z0-9\-\/]+$'
+
+Resources:
+  SiteBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      WebsiteConfiguration:
+        IndexDocument: index.html
+      AccessControl: Private
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        IgnorePublicAcls: true
+        BlockPublicPolicy: true
+        RestrictPublicBuckets: true
+
+  SiteBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref SiteBucket
+      PolicyDocument:
+        Statement:
+          - Sid: AllowCloudFrontAccess
+            Effect: Allow
+            Principal:
+              CanonicalUser: !GetAtt CloudFrontOAI.S3CanonicalUserId
+            Action: s3:GetObject
+            Resource: !Sub 'arn:aws:s3:::${SiteBucket}/*'
+
+  CloudFrontOAI:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: OAI for accessing S3 bucket
+
+  SiteDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Origins:
+          - Id: S3-Origin
+            DomainName: !GetAtt SiteBucket.DomainName
+            S3OriginConfig:
+              OriginAccessIdentity: !Sub 'origin-access-identity/cloudfront/${CloudFrontOAI}'
+        Enabled: true
+        DefaultRootObject: index.html
+        DefaultCacheBehavior:
+          TargetOriginId: S3-Origin
+          ViewerProtocolPolicy: redirect-to-https
+          ForwardedValues:
+            QueryString: false
+            Cookies:
+              Forward: none
+          Compress: true
+          AllowedMethods:
+            - GET
+            - HEAD
+          CachedMethods:
+            - GET
+            - HEAD
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: true
+        # Uncomment and configure with your domain name
+        # Aliases:
+        #   - example.com
+        PriceClass: PriceClass_100
+
+  ############ Outputs ############
+  UiWebHostS3BucketParameterStore:
+    Type: 'AWS::SSM::Parameter'
+    Properties:
+      Name: !Ref UiWebHostS3BucketParameterStoreHandle
+      Type: 'String'
+      Value: !Ref SiteBucket
+
+  CloudFrontDistributionIdParameterStore:
+    Type: 'AWS::SSM::Parameter'
+    Properties:
+      Name: !Ref UiWebCloudFrontDistributionIdParameterStoreHandle
+      Type: 'String'
+      Value: !Ref SiteDistribution
+
+  CloudFrontDistributionDomainNameParameterStore:
+    Type: 'AWS::SSM::Parameter'
+    Properties:
+      Name: !Ref UiWebCloudFrontDistributionDomainNameParameterStoreHandle
+      Type: 'String'
+      Value: !GetAtt SiteDistribution.DomainName
+
+Outputs:
+  BucketName:
+    Description: "Name of S3 bucket for the static site"
+    Value: !Ref SiteBucket
+    Export:
+      Name: !Sub "${AWS::StackName}-BucketName"
+
+  CloudFrontDistributionId:
+    Description: "CloudFront Distribution ID"
+    Value: !Ref SiteDistribution
+    Export:
+      Name: !Sub "${AWS::StackName}-CloudFrontDistributionId"
+
+  CloudFrontDistributionDomainName:
+    Description: "CloudFront Distribution Domain Name (URL)"
+    Value: !GetAtt SiteDistribution.DomainName
+    Export:
+      Name: !Sub "${AWS::StackName}-CloudFrontDistributionDomainName"

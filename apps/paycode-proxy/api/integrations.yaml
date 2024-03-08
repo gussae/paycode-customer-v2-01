@@ -1,0 +1,26 @@
+Balance:
+  type: aws_proxy
+  credentials:
+    Fn::GetAtt: ["ApiInvokeLambdaRole", "Arn"]
+  httpMethod: POST
+  uri:
+    Fn::Sub: 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${BalanceFunction.Arn}/invocations'
+  passthroughBehavior: 'when_no_match'
+
+Transaction:
+  type: aws_proxy
+  credentials:
+    Fn::GetAtt: ["ApiInvokeLambdaRole", "Arn"]
+  httpMethod: POST
+  uri:
+    Fn::Sub: 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${TransactionFunction.Arn}/invocations'
+  passthroughBehavior: 'when_no_match'
+
+Payment:
+  type: aws_proxy
+  credentials:
+    Fn::GetAtt: ["ApiInvokeLambdaRole", "Arn"]
+  httpMethod: POST
+  uri:
+    Fn::Sub: 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PaymentFunction.Arn}/invocations'
+  passthroughBehavior: 'when_no_match'

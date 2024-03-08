@@ -1,0 +1,113 @@
+Paths:
+  /balance:
+    get:
+      summary: Get balance for a user
+      operationId: getBalance
+      parameters:
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: './models.yaml#/GetBalanceResponse'
+      security:
+        - CognitoAuthorizer: []
+        - api_key: []
+        - sigv4: []
+      x-amazon-apigateway-request-validators: "validateParameters"
+      x-amazon-apigateway-integration:
+        $ref: './integrations.yaml#/Balance'
+    options:
+      $ref: './cors.yaml#/Options'
+
+  /transactions:
+    get:
+      summary: Get transactions for a user
+      operationId: getTransactions
+      parameters:
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: './models.yaml#/GetTransactionsResponse'
+      security:
+        - CognitoAuthorizer: []
+        - api_key: []
+        - sigv4: []
+      x-amazon-apigateway-request-validators: "validateParameters"
+      x-amazon-apigateway-integration:
+        $ref: './integrations.yaml#/Transaction'
+    options:
+      $ref: './cors.yaml#/Options'
+
+  /transaction:
+    get:
+      summary: Get transaction by ID and username
+      operationId: getTransactionById
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: './models.yaml#/GetTransactionResponse'
+      security:
+        - CognitoAuthorizer: []
+        - api_key: []
+        - sigv4: []
+      x-amazon-apigateway-request-validators: "validateParameters"
+      x-amazon-apigateway-integration:
+        $ref: './integrations.yaml#/Transaction'
+    options:
+      $ref: './cors.yaml#/Options'
+
+  /payment:
+    post:
+      summary: Post a payment
+      operationId: postPayment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './models.yaml#/PostPaymentRequest'
+      responses:
+        '202':
+          description: Successful payment
+          content:
+            application/json:
+              schema:
+                $ref: './models.yaml#/PostPaymentResponse'
+      security:
+        - CognitoAuthorizer: []
+        - api_key: []
+        - sigv4: []
+      x-amazon-apigateway-request-validators: "validateBody"
+      x-amazon-apigateway-integration:
+        $ref: './integrations.yaml#/Payment'
+    options:
+      $ref: './cors.yaml#/Options'

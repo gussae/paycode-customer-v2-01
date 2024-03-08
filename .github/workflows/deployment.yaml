@@ -1,0 +1,444 @@
+name: Deployment Workflow
+#! TODO, not sure if you can have dynamic role resolution in composite actions: you can try that out and see if you don't DRY up the code
+
+env:
+  CI_GIT_BRANCH: ${{ github.ref_name }}
+  CI_REPO_URL: https://github.com/${{ github.repository }}.git
+
+on:
+  push:
+    branches:
+      - dev
+      - main  #? you can move this to main.yaml if the production conditions become too complex
+    paths-ignore:
+      - '**/.cache/**'
+      - '**/.vscode/**'
+      - '**/.github/**'
+      - '**/build/**'
+      - '**/coverage/**'
+      - '**/docs/**'
+      - '**/dist/**'
+      - '**/scripts/**'
+      - '**/temp/**'
+      - '**/tests/**'
+      - '**/tools/**'
+      - '**/*.gif'
+      - '**/*.jpg'
+      - '**/*.jpeg'
+      - '**/*.log'
+      - '**/*.png'
+      - '**/*.svg'
+      - '**/*.test.js'
+      - '**/*.test.ts'
+      - '**/*.txt'
+      - '**/*.md'
+      - '**/.env'
+      - '**/Dockerfile'
+      - '**/.gitignore'
+      - '**/package-lock.json'
+      - '**/tsconfig.json'
+      - '**/tsconfig.base.json'
+jobs:
+  setup-environment:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    outputs:
+      #from the github-aws-oidc.js
+      aws_role_arn: ${{ steps.extract_oidc_info.outputs.aws_role_arn }}
+      aws_region: ${{ steps.extract_oidc_info.outputs.aws_region }}
+      role_available: ${{ steps.extract_oidc_info.outputs.role_available }}
+
+      # from get-deployment-state.js
+      isAmplifyExists: ${{ steps.get_deployment_state.outputs.isAmplifyExists }}
+      isPaycodeProxyExists: ${{ steps.get_deployment_state.outputs.isPaycodeProxyExists }}
+
+      # from deployment_trigger_logic
+      isDeployment: ${{ steps.deployment_trigger_logic.outputs.isDeployment }}
+      fullDeployment: ${{ steps.deployment_trigger_logic.outputs.fullDeployment }}
+      filterPath: ${{ steps.deployment_trigger_logic.outputs.filterPath }}
+
+      # from filter_paths
+      paycodeProxyUpdate: ${{ steps.filter_paths.outputs.paycodeProxy }}
+      uiWebUpdate: ${{ steps.filter_paths.outputs.uiWeb }}
+
+      #from modify_deployment_trigger_logic
+      orchestrateDeployment: ${{ steps.modify_deployment_trigger_logic.outputs.orchestrateDeployment }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            packages/
+            scripts/
+            apps/amplify-be/package.json
+            apps/amplify-be/.workspace.config.json
+            apps/amplify-be/src/graphql/
+            apps/paycode-proxy/package.json
+            apps/paycode-proxy/.workspace.config.json
+            .monorepo.config.json
+            package.json
+            package-lock.json
+            tsconfig.base.json
+            tsconfig.json
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.7'
+          cache: 'npm'
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            **/node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Add node_modules/.bin to PATH
+        run: echo "${{ github.workspace }}/node_modules/.bin" >> $GITHUB_PATH
+
+      - name: Run github-aws-oidc.js and extract outputs
+        id: extract_oidc_info
+        run: |
+          OUTPUT="$(node scripts/github-aws-oidc.js)"
+          echo "Output: $OUTPUT"
+
+          ROLE_ARN=$(echo "$OUTPUT" | awk -F'=' '/roleArn/{print $2}')
+          REGION=$(echo "$OUTPUT" | awk -F'=' '/region/{print $2}')
+          ROLE_AVAILABLE=$(echo "$OUTPUT" | awk -F'=' '/roleAvailable/{print $2}')
+
+          CLEAN_ROLE_ARN=$(echo "$ROLE_ARN" | tr -d '\r' | tr -d '\n')
+          CLEAN_REGION=$(echo "$REGION" | tr -d '\r' | tr -d '\n')
+          CLEAN_ROLE_AVAILABLE=$(echo "$ROLE_AVAILABLE" | tr -d '\r' | tr -d '\n')
+
+          echo "aws_role_arn=$CLEAN_ROLE_ARN" >> $GITHUB_OUTPUT
+          echo "aws_region=$CLEAN_REGION" >> $GITHUB_OUTPUT
+          echo "role_available=$CLEAN_ROLE_AVAILABLE" >> $GITHUB_OUTPUT
+        shell: bash
+
+      - name: Configure AWS Credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ steps.extract_oidc_info.outputs.aws_role_arn }}
+          aws-region: ${{ steps.extract_oidc_info.outputs.aws_region }}
+
+      - name: Check Deployment State
+        id: get_deployment_state
+        run: |
+          OUTPUT="$(node scripts/get-deployment-state.js)"
+          IS_AMPLIFY_EXISTS=$(echo "$OUTPUT" | awk -F'=' '/isAmplifyExists/{print $2}')
+          IS_PAYCODE_PROXY_EXISTS=$(echo "$OUTPUT" | awk -F'=' '/isPaycodeProxyExists/{print $2}')
+
+          CLEAN_IS_AMPLIFY_EXISTS=$(echo "$IS_AMPLIFY_EXISTS" | tr -d '\r' | tr -d '\n')
+          CLEAN_IS_PAYCODE_PROXY_EXISTS=$(echo "$IS_PAYCODE_PROXY_EXISTS" | tr -d '\r' | tr -d '\n')
+
+          echo "isAmplifyExists=$CLEAN_IS_AMPLIFY_EXISTS" >> $GITHUB_OUTPUT
+          echo "isPaycodeProxyExists=$CLEAN_IS_PAYCODE_PROXY_EXISTS" >> $GITHUB_OUTPUT
+        shell: bash
+
+      - name: Deployment Trigger Logic
+        id: deployment_trigger_logic
+        run: |
+          if [ "${{ steps.get_deployment_state.outputs.isAmplifyExists }}" == "false" ]; then
+            echo "Amplfiy Be needs to be setup manually. Exiting job."
+            echo "isDeployment=false" >> $GITHUB_OUTPUT
+            echo "fullDeployment=false" >> $GITHUB_OUTPUT
+            echo "filterPath=false" >> $GITHUB_OUTPUT
+          elif [ "${{ steps.get_deployment_state.outputs.isAmplifyExists }}" == "true" ] && [ "${{ steps.get_deployment_state.outputs.isPaycodeProxyExists }}" == "false" ]; then
+            echo "Triggering full deployment sequence."
+            echo "isDeployment=true" >> $GITHUB_OUTPUT
+            echo "fullDeployment=true" >> $GITHUB_OUTPUT
+            echo "filterPath=false" >> $GITHUB_OUTPUT
+          elif [ "${{ steps.get_deployment_state.outputs.isAmplifyExists }}" == "true" ] && [ "${{ steps.get_deployment_state.outputs.isPaycodeProxyExists }}" == "true" ]; then
+            echo "Proceeding to path filter for updates."
+            echo "isDeployment=true" >> $GITHUB_OUTPUT
+            echo "fullDeployment=false" >> $GITHUB_OUTPUT
+            echo "filterPath=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Filter Paths
+        id: filter_paths
+        if: steps.deployment_trigger_logic.outputs.filterPath == 'true'
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            paycodeProxy:
+              - 'apps/paycode-proxy/**/*.ts'
+              - 'apps/paycode-proxy/**/*.js'
+              - 'apps/paycode-proxy/**/*.yaml'
+              - 'apps/paycode-proxy/**/*.yml'
+              - 'apps/paycode-proxy/**/*.json'
+            uiWeb:
+              - 'apps/ui-web/**/*.css'
+              - 'apps/ui-web/**/*.html'
+              - 'apps/ui-web/**/*.jsx'
+              - 'apps/ui-web/**/*.js'
+              - 'apps/ui-web/**/*.tsx'
+              - 'apps/ui-web/**/*.json'
+              - 'apps/ui-web/**/*.ts'
+
+      - name: Modify Deployment Trigger Logic
+        id: modify_deployment_trigger_logic
+        run: |
+          if [ "${{ steps.filter_paths.outputs.paycodeProxy }}" == "true" ] && [ "${{ steps.filter_paths.outputs.uiWeb }}" == "true" ]; then
+              echo "orchestrateDeployment=true" >> $GITHUB_OUTPUT
+          else
+              echo "orchestrateDeployment=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build Packages
+        if: steps.deployment_trigger_logic.outputs.isDeployment == 'true'
+        run: node scripts/build-packages.js --node
+        shell: bash
+
+      - name: List directory contents
+        run: |
+          ls -la apps/amplify-be/src/
+          ls -la apps/amplify-be/src/graphql/
+
+      - name: Upload Packages Artifacts
+        if: steps.deployment_trigger_logic.outputs.isDeployment == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: packages-artifacts
+          #*NOTE: not worth filtering here since the node modules are mostly hoisted
+          path: packages/
+
+      - name: Build Graphql Artifacts
+        if: steps.deployment_trigger_logic.outputs.fullDeployment == 'true' || steps.modify_deployment_trigger_logic.outputs.orchestrateDeployment == 'true' || steps.filter_paths.outputs.uiWeb == 'true'
+        run: npm run build
+        working-directory: apps/amplify-be/src/graphql
+
+      - name:  Upload GraphQL Artificats
+        if: steps.deployment_trigger_logic.outputs.fullDeployment == 'true' || steps.modify_deployment_trigger_logic.outputs.orchestrateDeployment == 'true' || steps.filter_paths.outputs.uiWeb == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: graphql-artifacts
+          path: apps/amplify-be/src/graphql/
+
+  print-deployments-state:
+    runs-on: ubuntu-latest
+    needs: setup-environment
+    steps:
+      - name: Print states #for debug purposes
+        run: |
+          echo "Role Available: ${{ needs.setup-environment.outputs.role_available }}"
+          echo "Role Arn" ${{ needs.setup-environment.outputs.aws_role_arn }}
+          echo "Region" ${{ needs.setup-environment.outputs.aws_region }}
+          echo "Amplify Exists: ${{needs.setup-environment.outputs.isAmplifyExists }}"
+          echo "Paycode Proxy Exists: ${{needs.setup-environment.outputs.isPaycodeProxyExists }}"
+          echo "Is Deployment: ${{needs.setup-environment.outputs.isDeployment }}"
+          echo "Trigger Full Deployment: ${{needs.setup-environment.outputs.fullDeployment }}"
+          echo "Filter Path: ${{needs.setup-environment.outputs.filterPath }}"
+          echo "Paycode Proxy Update: ${{needs.setup-environment.outputs.paycodeProxyUpdate }}"
+          echo "Web UI Update: ${{needs.setup-environment.outputs.uiWebUpdate }}"
+          echo "Orchestrate Deployment: ${{needs.setup-environment.outputs.orchestrateDeployment }}"
+
+  full-deployment:
+    name: Full Deployment
+    runs-on: ubuntu-latest
+    needs: setup-environment
+    if: needs.setup-environment.outputs.fullDeployment == 'true' || needs.setup-environment.outputs.orchestrateDeployment == 'true'
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            apps/amplify-be/
+            apps/paycode-proxy/
+            apps/ui-web/
+            scripts/
+            .monorepo.config.json
+            package.json
+            package-lock.json
+            tsconfig.base.json
+            tsconfig.json
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.7'
+
+      - name: Configure AWS Credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ needs.setup-environment.outputs.aws_role_arn }}
+          aws-region: ${{ needs.setup-environment.outputs.aws_region }}
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: packages-artifacts
+          path: packages
+
+      - name: Install Dependencies at Monorepo Root
+        run: npm ci
+
+      - name: Add node_modules/.bin to PATH
+        run: echo "${{ github.workspace }}/node_modules/.bin" >> $GITHUB_PATH
+
+      - uses: aws-actions/setup-sam@v2
+        with:
+          use-installer: true
+      # the ff ensure paycode proxy backend is available for the ui-web with a full build process (including deployment + code generation)
+      - name: Build and Deploy Paycode Proxy from the Root of paycode-proxy WS
+        run: npm run build
+        working-directory: apps/paycode-proxy
+
+      # #! TODO: the above step generates the .generated folder into the apigw package which is used by the ui-web -> a more appropriate approach is to import it as published package
+      # - name: generate .generated folder for use by ui-web
+      #   run: npm run generate
+      #   working-directory: apps/paycode-proxy
+
+      # - name: build apigw to pick up the .generated folder
+      #   run:  node scripts/build-packages.js --browser
+
+      # - name: Download Graphql Clients
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: graphql-artifacts
+      #     path: apps/amplify-be/src/graphql
+
+      # - name: List required files
+      #   run:  |
+      #     ls -lah packages/apigw/dist/.generated/paycode-proxy/client
+      #     ls -lah apps/amplify-be/src/graphql
+      #   shell: bash
+
+      # - name: Build and Deploy Web UI from the Root of ui-web WS
+      #   run: npm run build
+      #   working-directory: apps/ui-web
+
+  #once the paycode proxy is available: either can be updated independently of the other using the path filter logic
+  deploy-paycode-proxy:
+    name: Deploy Paycode Proxy
+    runs-on: ubuntu-latest
+    needs: setup-environment
+    if: needs.setup-environment.outputs.paycodeProxyUpdate == 'true' && needs.setup-environment.outputs.orchestrateDeployment == 'false'
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Fetch all necessary for a full deployment, but optimized via sparse checkout (packages are already built and cached)
+          sparse-checkout: |
+            apps/paycode-proxy/
+            .monorepo.config.json
+            package.json
+            package-lock.json
+            tsconfig.base.json
+            tsconfig.json
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.7'
+
+      - name: Configure AWS Credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ needs.setup-environment.outputs.aws_role_arn }}
+          aws-region: ${{ needs.setup-environment.outputs.aws_region }}
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: packages-artifacts
+          path: packages
+
+      - name: Install Dependencies at Monorepo Root
+        run: npm ci
+
+      - name: Add node_modules/.bin to PATH
+        run: echo "${{ github.workspace }}/node_modules/.bin" >> $GITHUB_PATH
+
+      - uses: aws-actions/setup-sam@v2
+        with:
+          use-installer: true
+
+      - name: Build and Deploy Paycode Proxy from the Root of paycode-proxy WS
+        run: npm run build-core && npm run deploy
+        working-directory: apps/paycode-proxy
+
+  # deploy-ui-web:
+  #   name: Deploy Web UI
+  #   runs-on: ubuntu-latest
+  #   needs: setup-environment
+  #   if: needs.setup-environment.outputs.uiWebUpdate == 'true' && needs.setup-environment.outputs.orchestrateDeployment == 'false'
+  #   permissions:
+  #     id-token: write
+  #     contents: read
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #       with:
+  #         sparse-checkout: |
+  #           apps/amplify-be/
+  #           apps/ui-web/
+  #           apps/paycode-proxy/
+  #           scripts/
+  #           .monorepo.config.json
+  #           package.json
+  #           package-lock.json
+  #           tsconfig.base.json
+  #           tsconfig.json
+
+  #     - name: Setup Node.js
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: '20.7'
+
+  #     - name: Configure AWS Credentials via OIDC
+  #       uses: aws-actions/configure-aws-credentials@v4
+  #       with:
+  #         role-to-assume: ${{ needs.setup-environment.outputs.aws_role_arn }}
+  #         aws-region: ${{ needs.setup-environment.outputs.aws_region }}
+
+  #     - name: Download Build Artifacts
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: packages-artifacts
+  #         path: packages
+
+  #     - name: Install Dependencies at Monorepo Root
+  #       run: npm ci
+
+  #     - name: Add node_modules/.bin to PATH
+  #       run: echo "${{ github.workspace }}/node_modules/.bin" >> $GITHUB_PATH
+
+  #       #! TODO temp fix: should not tap into the paycode-proxy workspace to generate the .generated folder -> should instead import it from published repository
+  #     - name: generate .generated folder for use by ui-web
+  #       run: npm run bundle-api && npm run generate
+  #       working-directory: apps/paycode-proxy
+
+  #     - name: build apigw to pick up the .generated folder
+  #       run:  node scripts/build-packages.js --browser
+
+  #     - name: Download Graphql Clients
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: graphql-artifacts
+  #         path: apps/amplify-be/src/graphql
+
+  #     - name: List required files
+  #       run:  |
+  #         ls -lah packages/apigw/dist/.generated/paycode-proxy/client
+  #         ls -lah apps/amplify-be/src/graphql
+  #       shell: bash
+
+  #     - name: Build and Deploy Web UI from the Root of ui-web WS
+  #       run: |
+  #         rm -rf node_modules/.vite
+  #         npm cache clean --force
+  #         npm run build
+  #         npm run deploy
+  #       working-directory: apps/ui-web

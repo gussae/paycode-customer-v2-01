@@ -1,0 +1,43 @@
+openapi: 3.0.2
+info:
+  title: PayCodeProxy API
+  version: 1.0.0
+  license:
+    name: XXX
+    url: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+paths:
+  $ref: './method-defs.yaml#/Paths'
+# Request validators
+x-amazon-apigateway-request-validators:
+  validateBody:
+    validateRequestParameters: false
+    validateRequestBody: true
+  validateParameters:
+    validateRequestParameters: true
+    validateRequestBody: false
+  validateBodyAndParameters:
+    validateRequestParameters: true
+    validateRequestBody: true
+
+components:
+  securitySchemes:
+    CognitoAuthorizer:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-amazon-apigateway-authtype: cognito_user_pools
+      x-amazon-apigateway-authorizer:
+        providerARNs:
+          - arn:aws:cognito-idp:{region}:{account}:userpool/${AwsUserPoolsId}
+    #! the API key and sigv4 are SHOULD NOT  be used in PRODUCTION
+    #! you can write a script to remove the this scheme during production or simply don't use it
+    sigv4:
+      type: 'apiKey'
+      name: 'Authorization'
+      in: 'header'
+      x-amazon-apigateway-authtype: 'awsSigv4'
+    api_key:
+      type: 'apiKey'
+      name: 'x-api-key'
+      in: 'header'

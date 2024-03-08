@@ -1,0 +1,6 @@
+ignore_checks:
+  - E0001
+  - E3030
+templates:
+  - template.yaml
+  - template.build.yaml

@@ -1,0 +1,38 @@
+Options:
+  summary: CORS support
+  description: Enable CORS by returning the correct headers
+  responses:
+    '200':
+      description: CORS response
+      headers:
+        Access-Control-Allow-Origin:
+          schema:
+            type: string
+            default: "*"
+        Access-Control-Allow-Methods:
+          schema:
+            type: string
+            default: "GET, POST, OPTIONS"
+        Access-Control-Allow-Headers:
+          schema:
+            type: string
+            default: "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token"
+        Access-Control-Max-Age:
+          schema:
+            type: string
+            default: "3600"
+  x-amazon-apigateway-integration:
+    type: mock
+    requestTemplates:
+      application/json: "{\"statusCode\": 200}"
+    responses:
+      default:
+        statusCode: "200"
+        responseParameters:
+          method.response.header.Access-Control-Allow-Origin: "'*'"
+          method.response.header.Access-Control-Allow-Methods: "'*'"
+          method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+        responseTemplates:
+          application/json: '{}'
+  security: []
+

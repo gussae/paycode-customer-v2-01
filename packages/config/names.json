@@ -1,0 +1,4 @@
+{
+  "monorepoConfigFilename": ".monorepo.config.json",
+  "workspaceConfigFilename": ".workspace.config.json"
+}

@@ -1,0 +1,10 @@
+{
+  "accepterProfile": "awsist-prod",
+  "accepterVpcId": "vpc-f3ddda8b",
+  "accepterSubnets": ["subnet-cab424b2", "subnet-cbff4281"],
+  "pcxId": "pcx-05ea47ae8cda0392d",
+  "region": "us-west-2",
+  "requesterAccount": "653991346912",
+  "requesterCidrBlock": "10.0.1.0/16",
+  "requesterProfile": "awsist-dev"
+}

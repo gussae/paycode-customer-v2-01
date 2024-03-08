@@ -1,0 +1,10 @@
+{
+  "customSettings": {
+    "__git_actions_trigger": 81,
+    "staticFilesDir": "./dist"
+  },
+  "envVars": {
+    "IS_DOCUMENT_API_MOCK": "true",
+    "IS_PAYCODE_PROXY_URL_MOCK": "false"
+  }
+}

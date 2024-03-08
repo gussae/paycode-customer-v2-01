@@ -1,0 +1,201 @@
+{
+  "appConfig": {
+    "global": {
+      "domain": "http://paycode-customer.com/v2"
+    },
+    "envConfig": [
+      {
+        "branch": "dev",
+        "runtimeEnv": "dev",
+        "loggingLevel": "debug"
+      },
+      {
+        "branch": "main",
+        "runtimeEnv": "prod",
+        "loggingLevel": "error"
+      }
+    ]
+  },
+  "infraConfig": {
+    "__external": {
+      "amplifyAppNames": ["amplifybe", "paycodeamplifybe"],
+      "githubAwsOidcRolePrefix": "GitHubAwsOidc"
+    },
+    "deploymentConfig": [
+      {
+        "account": "653991346912",
+        "branch": "dev",
+        "deploymentEnv": "dev",
+        "profile": "awsist-dev",
+        "region": "us-west-2",
+        "repo": "https://github.com/gussae/paycode-customer-v2.git"
+      },
+      {
+        "account": "653991346912",
+        "branch": "dev",
+        "deploymentEnv": "dev",
+        "profile": "awsist-dev",
+        "region": "us-west-2",
+        "repo": "https://github.com/gussae/paycode-customer-v2-1.git"
+      },
+      {
+        "account": "891377053191",
+        "branch": "dev",
+        "deploymentEnv": "dev",
+        "profile": "met-dev",
+        "region": "us-west-2",
+        "repo": "https://github.com/kulikowska/paycode-customer-v2.git"
+      },
+      {
+        "account": "760554368476",
+        "branch": "main",
+        "deploymentEnv": "prod",
+        "profile": "awsist-prod",
+        "region": "us-west-2",
+        "repo": "https://github.com/gussae/paycode-customer-v2.git"
+      }
+    ],
+    "infraApp": [
+      {
+        "name": "amplify-be",
+        "exports": [
+          "awsAppsyncGraphqlEndpoint",
+          "awsUserPoolsId",
+          "awsUserPoolsWebClientId",
+          "awsProjectRegion",
+          "awsCognitoIdentityPoolId",
+          "awsCognitoRegion",
+          "oauth",
+          "awsCognitoUsernameAttributes",
+          "awsCognitoSocialProviders",
+          "awsAppsyncRegion",
+          "awsAppsyncAuthenticationType"
+        ],
+        "imports": [
+          "paycode-proxy/V1/outputs/paycodeProxyApiUrl",
+          "document-api/V1/outputs/documentApiUrl"
+        ],
+        "versions": ["V1"]
+      },
+      {
+        "name": "paycode-proxy",
+        "exports": ["paycodeProxyApiUrl", "paycodeProxyApiId"],
+        "imports": [
+          "paycode-api/outputs/V2/awsUserPoolsId",
+          "paycode-api/outputs/V2/paycodeVpcId",
+          "paycode-api/outputs/V2/paycodeAccountId",
+          "paycode-api/outputs/V2/paycodePcxRoleArn",
+          "paycode-api/outputs/V2/paycodeVpcCidr"
+        ],
+        "versions": ["V1"]
+      },
+      {
+        "name": "ui-web",
+        "exports": [
+          "UiWebHostS3Bucket",
+          "UiWebCloudFrontDistributionId",
+          "UiWebCloudFrontDistributionDomainName"
+        ],
+        "imports": [
+          "amplify-be/V1/outputs/awsAppsyncGraphqlEndpoint",
+          "amplify-be/V1/outputs/awsUserPoolsId",
+          "amplify-be/V1/outputs/awsUserPoolsWebClientId",
+          "amplify-be/V1/outputs/awsProjectRegion",
+          "amplify-be/V1/outputs/awsCognitoIdentityPoolId",
+          "amplify-be/V1/outputs/awsCognitoRegion",
+          "amplify-be/V1/outputs/oauth",
+          "amplify-be/V1/outputs/awsCognitoUsernameAttributes",
+          "amplify-be/V1/outputs/awsCognitoSocialProviders",
+          "amplify-be/V1/outputs/awsAppsyncRegion",
+          "amplify-be/V1/outputs/awsAppsyncAuthenticationType",
+          "paycode-proxy/V1/outputs/paycodeProxyApiUrl",
+          "document-api/V1/outputs/documentApiUrl"
+        ],
+        "versions": ["V1"]
+      },
+      {
+        "name": "web-ui",
+        "exports": [
+          "WebUiHostS3Bucket",
+          "WebUiCloudFrontDistributionId",
+          "WebUiCloudFrontDistributionDomainName"
+        ],
+        "imports": [
+          "amplify-be/V1/outputs/awsAppsyncGraphqlEndpoint",
+          "amplify-be/V1/outputs/awsUserPoolsId",
+          "amplify-be/V1/outputs/awsUserPoolsWebClientId",
+          "amplify-be/V1/outputs/awsProjectRegion",
+          "amplify-be/V1/outputs/awsCognitoIdentityPoolId",
+          "amplify-be/V1/outputs/awsCognitoRegion",
+          "amplify-be/V1/outputs/oauth",
+          "amplify-be/V1/outputs/awsCognitoUsernameAttributes",
+          "amplify-be/V1/outputs/awsCognitoSocialProviders",
+          "amplify-be/V1/outputs/awsAppsyncRegion",
+          "amplify-be/V1/outputs/awsAppsyncAuthenticationType",
+          "paycode-proxy/V1/outputs/paycodeProxyApiUrl",
+          "document-api/V1/outputs/documentApiUrl"
+        ],
+        "versions": ["V1"]
+      },
+      {
+        "name": "document-api",
+        "exports": ["documentApiUrl", "documentApiId"],
+        "imports": ["amplify-be/V1/outputs/awsUserPoolsId"],
+        "versions": ["V1"]
+      },
+      {
+        "name": "paycode-api",
+        "exports": [
+          "paycodeVpcId",
+          "paycodeAccountId",
+          "paycodePcxRoleArn",
+          "paycodeVpcCidr"
+        ],
+        "imports": [],
+        "versions": ["V2"]
+      }
+    ]
+  },
+  "packagesConfig": [
+    {
+      "name": "apigw",
+      "env": {
+        "node": true,
+        "browser": true
+      },
+      "platform": "ts"
+    },
+    {
+      "name": "config",
+      "env": {
+        "node": true,
+        "browser": false
+      },
+      "platform": "js"
+    },
+    {
+      "name": "lib",
+      "env": {
+        "node": true,
+        "browser": false
+      },
+      "platform": "ts"
+    },
+    {
+      "name": "ui-components",
+      "env": {
+        "node": false,
+        "browser": true
+      },
+      "platform": "ts"
+    },
+    {
+      "name": "utils",
+      "env": {
+        "node": true,
+        "browser": false
+      },
+      "platform": "ts"
+    }
+  ]
+}

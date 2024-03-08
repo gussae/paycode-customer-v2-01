@@ -1,0 +1,83 @@
+
+# nodejs
+/node_modules
+
+# testing
+/coverage
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+# FE build
+**/.next/
+**/out/
+**/.sst/
+
+# BE builds
+**/.generated/
+**/.temp-*/
+
+# production
+**/build/
+**/dist/
+**/out/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+#maintenance
+**/.history/
+**/tmp/
+**/temp/
+**/logs/
+*scratch*
+**/.scratch/
+.vscode/notes.txt
+
+#caches
+**/.cache/
+**/cache/
+**/tsconfig.tsbuildinfo
+
+
+
+#amplify-do-not-edit-begin
+amplify/\#current-cloud-backend
+amplify/.config/local-*
+amplify/logs
+amplify/mock-data
+amplify/backend/amplify-meta.json
+amplify/backend/awscloudformation
+amplify/backend/.temp
+build/
+dist/
+node_modules/
+aws-exports.js
+awsconfiguration.json
+amplifyconfiguration.json
+amplifyconfiguration.dart
+amplify-build-config.json
+amplify-gradle-config.json
+amplifytools.xcconfig
+.secret-*
+#amplify-do-not-edit-end
+
+#environment dependent
+**/.env
+apps/paycode-proxy/template.yaml
+apps/paycode-proxy/samconfig.toml

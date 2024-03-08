@@ -1,0 +1,14 @@
+version = 0.1
+
+#!DeploymentEnv is set here
+[dev.deploy.parameters]
+capabilities = "CAPABILITY_IAM CAPABILITY_NAMED_IAM"
+confirm_changeset = true
+parameter_overrides = "DeploymentEnv=dev  IsVpcLog='${IS_VPC_LOG}' PaycodeProxyApiIdParameterStoreHandle='${PAYCODE_PROXY_API_ID_PARAMETER_STORE_HANDLE}' PaycodeProxyApiUrlParameterStoreHandle='${PAYCODE_PROXY_API_URL_PARAMETER_STORE_HANDLE}' PaycodeVpcId='${PAYCODE_VPC_ID}' PaycodeAccountId='${PAYCODE_ACCOUNT_ID}' PaycodePcxRoleArn='${PAYCODE_PCX_ROLE_ARN}' PaycodeVpcCidr='${PAYCODE_VPC_CIDR}' PaycodeProxyCidrBlock='${PAYCODE_PROXY_CIDR_BLOCK}' VpcLogRetention='${VPC_LOG_RETENTION}'"
+stack_name = '${STACK_NAME_KEBAB_CASE}'
+
+[prod.deploy.parameters]
+capabilities = "CAPABILITY_IAM CAPABILITY_NAMED_IAM"
+confirm_changeset = true
+parameter_overrides = "DeploymentEnv=prod IsVpcLog='${IS_VPC_LOG}' PaycodeProxyApiIdParameterStoreHandle='${PAYCODE_PROXY_API_ID_PARAMETER_STORE_HANDLE}' PaycodeProxyApiUrlParameterStoreHandle='${PAYCODE_PROXY_API_URL_PARAMETER_STORE_HANDLE}' PaycodeVpcId='${PAYCODE_VPC_ID}' PaycodeAccountId='${PAYCODE_ACCOUNT_ID}' PaycodePcxRoleArn='${PAYCODE_PCX_ROLE_ARN}' PaycodeVpcCidr='${PAYCODE_VPC_CIDR}' PaycodeProxyCidrBlock='${PAYCODE_PROXY_CIDR_BLOCK}' VpcLogRetention='${VPC_LOG_RETENTION}'"
+stack_name = '${STACK_NAME_KEBAB_CASE}'

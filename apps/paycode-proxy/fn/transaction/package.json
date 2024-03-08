@@ -1,0 +1,37 @@
+{
+  "name": "@paycode-customer-v2/transaction-proxy",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types":"dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && tsc-alias && esbuild src/index.ts --bundle --platform=node --target=node18 --outfile=dist/index.js ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@paycode-customer-v2/lib": "*",
+    "axios":"^1.x"
+  },
+  "devDependencies": {
+    "@paycode-customer-v2/utils": "*",
+    "@types/node": "^20.x",
+    "@types/jest": "^27.x",
+    "@types/aws-lambda": "8.x",
+    "@types/aws4": "1.x",
+    "@typescript-eslint/eslint-plugin": "^6.x",
+    "@typescript-eslint/parser": "^6.x",
+    "esbuild": "0.x",
+    "eslint": "^8.x",
+    "eslint-config-prettier": "^9.x",
+    "eslint-plugin-prettier": "^5.x",
+    "jest": "^29.x",
+    "ts-jest": "^29.x",
+    "tsc-alias": "1.x",
+    "typescript": "^5.x"
+  },
+  "description": ""
+}

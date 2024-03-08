@@ -1,0 +1,324 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: An AWS SAM application featuring Lambda functions with API Gateway, Cognito user pool, and environment-dependent secrets.
+
+#! avoiding the use of secrets manager or the parameter store as the lambda is stuck in a VPC and didn't find the private link or NGW use that worthy when you can implement a very light internal decryption mechanism during production (can be made as part of the paycode/lib). Note that, anyone with access to your lambda and logs can technically log these values negating their security. While this is still more secure, given your use case, I rather use a simple encrypted env var which is already encrypted by the lambda service at rest.
+
+Globals:
+  Function:
+    Runtime: nodejs20.x
+    Handler: index.handler
+    Timeout: 29
+    Environment:
+      Variables:
+        ##
+        #*Start __INCLUDE by scripts/build-template.js
+        ##
+        ${__INCLUDE_ENV_VARIABLES__}
+        ##
+        #*End __INCLUDE by scripts/build-template.js
+        ##
+
+
+Parameters:
+  DeploymentEnv:
+    Type: String
+    Default: dev
+    AllowedValues: [dev, prod]
+    Description: Deployment environment parameter
+  IsVpcLog:
+    Type: String
+    Default: false
+    AllowedValues: [true, false]
+    Description: Enable VPC flow logs
+  PaycodeProxyApiIdParameterStoreHandle:
+    Type: String
+    Default: '/paycode/paycode-proxy/V1/outputs/apiId'
+  PaycodeProxyApiUrlParameterStoreHandle:
+    Type: String
+    Default: '/paycode/paycode-proxy/V1/outputs/paycodeProxyApiUrl'
+  PaycodeVpcId:
+    Type: String
+    Description: The VPC ID of the peer VPC
+  PaycodeAccountId:
+    Type: String
+    Description: The AWS Account ID of the peer VPC owner
+  PaycodePcxRoleArn:
+    Type: String
+    Description: The ARN of the IAM role for VPC peering connection
+  PaycodeVpcCidr:
+    Type: String
+    Description: CIDR block for the peered VPC
+  PaycodeProxyCidrBlock:
+    Type: String
+    Description: The CIDR block for the VPC
+  VpcLogRetention:
+    Type: Number
+    Default: 7
+    #!filled by copilot: looks fine , didn't check!
+    AllowedValues: [1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 3653]
+    Description: VPC flow logs retention period
+
+Conditions:
+  # IsProd: !Equals [ !Ref DeploymentEnv, "prod" ]
+  IsDev: !Equals [ !Ref DeploymentEnv, "dev" ]
+  IsVpcLog: !Equals [ !Ref IsVpcLog, "true" ]
+
+
+
+Resources:
+  ############ API Gateway  ############
+  Api:
+    Type: AWS::Serverless::Api
+    Properties:
+      #! this is a placeholder b/c it's requirement here -> manage the staging directly
+      StageName:  !Ref DeploymentEnv
+      DefinitionBody:
+        ##
+        #*Start __INCLUDE by scripts/build-template.js
+        ##
+        ${__INCLUDE_OPENAPI_SPEC__}
+        ##
+        #*End __INCLUDE by scripts/build-template.js
+        ##
+      Auth:
+        DefaultAuthorizer: CognitoAuthorizer
+        Authorizers:
+          CognitoAuthorizer:
+            Type: COGNITO_USER_POOLS
+            UserPoolArn: !Sub arn:aws:cognito-idp:${AWS::Region}:${AWS::AccountId}:userpool/${AwsUserPoolsId}
+
+############ VPC  ############
+  Vpc:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: !Ref PaycodeProxyCidrBlock
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+
+  SubnetA:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref Vpc
+      CidrBlock: !Select [0, !Cidr [!Ref PaycodeProxyCidrBlock, 2, 8]]
+      AvailabilityZone: !Select [0, !GetAZs '']
+      MapPublicIpOnLaunch: false
+
+  SubnetB:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref Vpc
+      CidrBlock: !Select [1, !Cidr [!Ref PaycodeProxyCidrBlock, 2, 8]]
+      AvailabilityZone: !Select [1, !GetAZs '']
+      MapPublicIpOnLaunch: false
+  #NOTE: your subnets come with default routing for local traffic. What we do here is create a custom route table and associate the subnets with it. Then we add a route to the peered VPC CIDR block to the custom route table
+  CustomRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref Vpc
+
+  PeeringConnectionRoute:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !Ref CustomRouteTable
+      DestinationCidrBlock: !Ref PaycodeVpcCidr
+      VpcPeeringConnectionId: !Ref VPCPeeringConnection
+
+  SubnetARouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref SubnetA
+      RouteTableId: !Ref CustomRouteTable
+
+  SubnetBRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref SubnetB
+      RouteTableId: !Ref CustomRouteTable
+
+  VPCPeeringConnection:
+    Type: AWS::EC2::VPCPeeringConnection
+    Properties:
+      VpcId: !Ref Vpc
+      PeerVpcId: !Ref PaycodeVpcId
+      PeerOwnerId: !Ref PaycodeAccountId
+      PeerRoleArn: !Ref PaycodePcxRoleArn
+
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security Group for Lambda function in VPC
+      VpcId: !Ref Vpc
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: !Ref PaycodeVpcCidr
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: !Ref PaycodeVpcCidr
+
+
+  ############ Lambda functions  ############
+  #! no access for lambda:it's stuck in a VPC. If it needs to access the internet, you need to add a NAT Gateway and to access AWS endpoints,  you can use PrivateLinks and VPC endpoints or the internet if available via NGW -> for now, there is no access, and no need for permission (note that the serverless function has a default policy that allows it to push logs )
+  BalanceFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: fn/balance/dist/
+      VpcConfig:
+        SubnetIds:
+          - !Ref SubnetA
+          - !Ref SubnetB
+        SecurityGroupIds:
+          - !Ref SecurityGroup
+
+  TransactionFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: fn/transaction/dist/
+      VpcConfig:
+        SubnetIds:
+          - !Ref SubnetA
+          - !Ref SubnetB
+        SecurityGroupIds:
+          - !Ref SecurityGroup
+
+  PaymentFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: fn/payment/dist/
+      VpcConfig:
+        SubnetIds:
+          - !Ref SubnetA
+          - !Ref SubnetB
+        SecurityGroupIds:
+          - !Ref SecurityGroup
+
+
+ ############ IAM Roles  ############
+  ApiInvokeLambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: apigateway.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: LambdaInvokePolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: lambda:InvokeFunction
+                Resource:
+                  - !GetAtt BalanceFunction.Arn
+                  - !GetAtt TransactionFunction.Arn
+                  - !GetAtt PaymentFunction.Arn
+        - PolicyName: ApiGatewayCloudWatchLogsPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:DescribeLogStreams
+                  - logs:PutLogEvents
+                Resource: arn:aws:logs:*:*:*
+
+  FlowLogRole:
+    Type: AWS::IAM::Role
+    Condition: IsVpcLog
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: "vpc-flow-logs.amazonaws.com"
+            Action: "sts:AssumeRole"
+      Policies:
+        - PolicyName: RootPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action: "logs:CreateLogGroup"
+                Resource: "*"
+              - Effect: Allow
+                Action:
+                  - "logs:CreateLogStream"
+                  - "logs:PutLogEvents"
+                Resource: !Sub "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:${AWS::StackName}-VPCFlowLogs:*"
+
+  ############ Logs  ############
+  VpcFlowLogGroup:
+    Type: AWS::Logs::LogGroup
+    Condition: IsVpcLog
+    Properties:
+      LogGroupName: !Sub "${AWS::StackName}-VPCFlowLogs"
+      RetentionInDays:  !Ref VpcLogRetention
+
+  VpcFlowLog:
+    Type: AWS::EC2::FlowLog
+    Condition: IsVpcLog
+    Properties:
+      DeliverLogsPermissionArn: !GetAtt FlowLogRole.Arn
+      LogGroupName: !Ref VpcFlowLogGroup
+      ResourceId: !Ref Vpc
+      ResourceType: VPC
+      TrafficType: ALL
+
+
+  ############ API Key  ############
+  DevApiKey:
+    Type: 'AWS::ApiGateway::ApiKey'
+    Condition: IsDev
+    Properties:
+      Name: !Sub '${AWS::StackName}-api-key'
+      Description: 'API Key for paycode-proxy API in development only'
+      Enabled: true
+
+  ############ API Secrets  ############
+  #!removed in favor of internally encrypted env vars for prod
+
+  ############ Outputs ############
+  ApiIdParameterStore:
+    Type: 'AWS::SSM::Parameter'
+    Properties:
+      Name: !Ref PaycodeProxyApiIdParameterStoreHandle
+      Type: 'String'
+      Value: !Ref Api
+
+  ApiUrlParameterStore:
+    Type: 'AWS::SSM::Parameter'
+    Properties:
+      Name: !Ref PaycodeProxyApiUrlParameterStoreHandle
+      Type: 'String'
+      Value: !Sub "https://${Api}.execute-api.${AWS::Region}.amazonaws.com/${DeploymentEnv}"
+
+Outputs:
+  VpcId:
+    Description: "VPC ID"
+    Value: !Ref Vpc
+
+  VPCPeeringConnectionId:
+    Description: "VPC Peering Connection ID"
+    Value: !Ref VPCPeeringConnection
+
+  ExecutionUrl:
+    Description: "API Gateway Execution URL"
+    Value: !Sub "https://${Api}.execute-api.${AWS::Region}.amazonaws.com/${DeploymentEnv}"
+    Export:
+      Name:
+        !Sub "${AWS::StackName}-ApiGatewayExecutionUrl"
+
+  ApiId:
+    Description: "API Gateway API ID"
+    Value: !Ref Api
+    Export:
+      Name: !Sub "${AWS::StackName}-ApiGatewayApiId"

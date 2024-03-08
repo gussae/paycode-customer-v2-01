@@ -1,0 +1,45 @@
+{
+  "name": "@paycode-customer-v2/ui-components",
+  "version": "1.0.1",
+  "main": "dist/index.js",
+  "type":"module",
+  "types": "dist/index.d.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && copyfiles -u 1 \"src/**/*.css\" dist/"
+  },
+  "author": "",
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.x",
+    "@chakra-ui/react": "^2.x",
+    "@emotion/react": "^11.x",
+    "@emotion/styled": "^11.x",
+    "framer-motion": "^11.x",
+    "react": "^18.x",
+    "react-dom": "^18.x"
+  },
+  "description": "",
+  "devDependencies": {
+    "@smithy/types": "2.x",
+    "@types/jest": "^27.x",
+    "@types/node": "^20.x",
+    "@types/react": "^18.x",
+    "@types/react-dom": "^18.x",
+    "@typescript-eslint/eslint-plugin": "^6.x",
+    "@typescript-eslint/parser": "^6.x",
+    "copyfiles": "2.x",
+    "eslint": "^8.x",
+    "eslint-plugin-react-hooks": "^4.x",
+    "eslint-plugin-react-refresh": "^0.x",
+    "eslint-config-prettier": "^9.x",
+    "eslint-plugin-prettier": "^5.x",
+    "jest": "^29.x",
+    "ts-jest": "^29.x",
+    "ts-node": "^10.x",
+    "typescript": "^5.x"
+  }
+}

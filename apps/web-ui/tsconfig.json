@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "outDir": "dist",
+    "composite": true,
+    "module": "ESNext",
+    "noEmit": true
+  },
+  "exclude": ["node_modules", "dist", "build"],
+  "include": [
+    "**/*.ts",
+    "**/*.js",
+    "**/*.json",
+    "**/.*.json"
+  ],
+}

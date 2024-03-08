@@ -1,0 +1,234 @@
+openapi: 3.0.2
+info:
+  title: PayCodeProxy API
+  version: 1.0.0
+  license:
+    name: XXX
+    url: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+paths:
+  /balance:
+    get:
+      summary: Get balance for a user
+      operationId: getBalance
+      parameters:
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  balance:
+                    type: number
+                    description: The current balance for the specified username.
+      security:
+        - CognitoAuthorizer: []
+        - api_key: []
+        - sigv4: []
+      x-amazon-apigateway-request-validators: validateParameters
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        credentials:
+          Fn::GetAtt:
+            - ApiInvokeLambdaRole
+            - Arn
+        httpMethod: POST
+        uri:
+          Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${BalanceFunction.Arn}/invocations
+        passthroughBehavior: when_no_match
+    options: &a1
+      summary: CORS support
+      description: Enable CORS by returning the correct headers
+      responses:
+        "200":
+          description: CORS response
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                default: "*"
+            Access-Control-Allow-Methods:
+              schema:
+                type: string
+                default: GET, POST, OPTIONS
+            Access-Control-Allow-Headers:
+              schema:
+                type: string
+                default: Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token
+            Access-Control-Max-Age:
+              schema:
+                type: string
+                default: "3600"
+      x-amazon-apigateway-integration:
+        type: mock
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Methods: "'*'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,\
+                Authorization,X-Api-Key,X-Amz-Security-Token'"
+            responseTemplates:
+              application/json: "{}"
+      security: []
+  /transactions:
+    get:
+      summary: Get transactions for a user
+      operationId: getTransactions
+      parameters:
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &a2
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      description: Unique identifier for the transaction.
+                    date:
+                      type: string
+                      description: Date when the transaction occurred.
+                    amount:
+                      type: string
+                      description: Transaction amount.
+                    status:
+                      type: string
+                      description: Current status of the transaction.
+      security:
+        - CognitoAuthorizer: []
+        - api_key: []
+        - sigv4: []
+      x-amazon-apigateway-request-validators: validateParameters
+      x-amazon-apigateway-integration: &a3
+        type: aws_proxy
+        credentials:
+          Fn::GetAtt:
+            - ApiInvokeLambdaRole
+            - Arn
+        httpMethod: POST
+        uri:
+          Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${TransactionFunction.Arn}/invocations
+        passthroughBehavior: when_no_match
+    options: *a1
+  /transaction:
+    get:
+      summary: Get transaction by ID and username
+      operationId: getTransactionById
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema: *a2
+      security:
+        - CognitoAuthorizer: []
+        - api_key: []
+        - sigv4: []
+      x-amazon-apigateway-request-validators: validateParameters
+      x-amazon-apigateway-integration: *a3
+    options: *a1
+  /payment:
+    post:
+      summary: Post a payment
+      operationId: postPayment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: The username initiating the payment.
+                amount:
+                  type: string
+                  description: Amount to be paid.
+      responses:
+        "202":
+          description: Successful payment
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: Unique identifier for the payment.
+                  status:
+                    type: string
+                    description: Status of the payment operation.
+      security:
+        - CognitoAuthorizer: []
+        - api_key: []
+        - sigv4: []
+      x-amazon-apigateway-request-validators: validateBody
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        credentials:
+          Fn::GetAtt:
+            - ApiInvokeLambdaRole
+            - Arn
+        httpMethod: POST
+        uri:
+          Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PaymentFunction.Arn}/invocations
+        passthroughBehavior: when_no_match
+    options: *a1
+x-amazon-apigateway-request-validators:
+  validateBody:
+    validateRequestParameters: false
+    validateRequestBody: true
+  validateParameters:
+    validateRequestParameters: true
+    validateRequestBody: false
+  validateBodyAndParameters:
+    validateRequestParameters: true
+    validateRequestBody: true
+components:
+  securitySchemes:
+    CognitoAuthorizer:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-amazon-apigateway-authtype: cognito_user_pools
+      x-amazon-apigateway-authorizer:
+        providerARNs:
+          - arn:aws:cognito-idp:{region}:{account}:userpool/${AwsUserPoolsId}
+    sigv4:
+      type: apiKey
+      name: Authorization
+      in: header
+      x-amazon-apigateway-authtype: awsSigv4
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header

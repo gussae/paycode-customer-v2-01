@@ -1,0 +1,59 @@
+# See https://redocly.com/docs/cli/configuration/
+
+extends:
+  - recommended
+
+rules:
+  # A sample custom rule. Read more about rules: https://redocly.com/docs/cli/rules/
+  no-empty-servers: off
+  # rule/operation-description:
+  #   subject:
+  #     type: Operation
+  #     property: description
+  #   assertions:
+  #     defined: true
+  #     minLength: 2 #!Too lazy to write a long description
+
+theme:
+  openapi:
+    generateCodeSamples:
+      languages:
+        - lang: Node.js
+        - lang: Python
+
+# Documentation Reference for recommended
+#  Errors:
+
+#     no-empty-servers
+#     no-enum-type-mismatch
+#     no-example-value-and-externalValue
+#     no-identical-paths
+#     no-path-trailing-slash
+#     no-server-trailing-slash
+#     no-server-variables-empty-enum
+#     no-undefined-server-variable
+#     no-unresolved-refs
+#     operation-operationId-unique
+#     operation-operationId-url-safe
+#     operation-parameters-unique
+#     operation-summary
+#     path-declaration-must-exist
+#     path-not-include-query
+#     path-parameters-defined
+#     security-defined
+#     spec-components-invalid-map-name
+#     spec
+
+# Warnings:
+
+#     configurable rules
+#     info-license-url
+#     info-license
+#     no-ambiguous-paths
+#     no-invalid-media-type-examples
+#     no-server-example-com
+#     no-unused-components
+#     operation-2xx-response
+#     operation-4xx-response
+#     operation-operationId
+#     tag-description

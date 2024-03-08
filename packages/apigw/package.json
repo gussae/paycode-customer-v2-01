@@ -1,0 +1,36 @@
+{
+  "name": "@paycode-customer-v2/apigw",
+  "version": "1.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --strict false --skipLibCheck true --noEmitOnError false || exit 0"
+  },
+  "author": "",
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ssm": "*",
+    "@aws-sdk/credential-providers": "3.*",
+    "@paycode-customer-v2/config": "*",
+    "amazon-cognito-identity-js": "^6.x",
+    "axios": "1.*"
+  },
+  "description": "",
+  "devDependencies": {
+    "@types/jest": "^27.x",
+    "@types/node": "^20.x",
+    "@typescript-eslint/eslint-plugin": "^6.x",
+    "@typescript-eslint/parser": "^6.x",
+    "eslint": "^8.x",
+    "eslint-config-prettier": "^9.x",
+    "eslint-plugin-prettier": "^5.x",
+    "jest": "^29.x",
+    "ts-jest": "^29.x",
+    "typescript": "^5.x"
+  }
+}

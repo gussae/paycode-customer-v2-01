@@ -1,0 +1,92 @@
+{
+  "appEnvConfig": [
+    {
+      "deploymentEnv": "dev",
+      "allowedOrigins": [
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "http://localhost:5175",
+        "d2wdxwimsxswj0.cloudfront.net"
+      ],
+      "preflightCacheTtl": 3600
+    }, {
+      "deploymentEnv": "prod",
+      "allowedOrigins": [
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "http://localhost:5175",
+        "d2wdxwimsxswj0.cloudfront.net"
+      ],
+      "preflightCacheTtl": 3600
+    }
+  ],
+  "customSettings": {
+    "__git_actions_trigger": 78,
+    "paycodeProxyCidrBlock": "10.0.1.0/16"
+  },
+  "defaultImports": [
+    {
+      "awsUserPoolsId": "us-west-2_GwWa3hP5B",
+      "branch": "dev",
+      "paycodeVpcId": "vpc-f3ddda8b",
+      "paycodeAccountId": "760554368476",
+      "paycodePcxRoleArn": "arn:aws:iam::760554368476:role/VPCPeeringRole",
+      "paycodeVpcCidr": "172.31.0.0/16",
+      "repo": "https://github.com/gussae/paycode-customer-v2.git"
+    },
+    {
+      "awsUserPoolsId": "us-west-2_37luWeyxV",
+      "branch": "main",
+      "paycodeVpcId": "vpc-f3ddda8b",
+      "paycodeAccountId": "760554368476",
+      "paycodePcxRoleArn": "arn:aws:iam::760554368476:role/VPCPeeringRole",
+      "paycodeVpcCidr": "172.31.0.0/16",
+      "repo": "https://github.com/gussae/paycode-customer-v2.git"
+    },
+    {
+      "awsUserPoolsId": "us-west-2_L7tkeiV1P",
+      "branch": "dev",
+      "paycodeVpcId": "vpc-c1db18a7",
+      "paycodeAccountId": "815832738898",
+      "paycodePcxRoleArn": "arn:aws:iam::815832738898:role/VPCPeeringRole",
+      "paycodeVpcCidr": "10.40.0.0/16",
+      "repo": "https://github.com/kulikowska/paycode-customer-v2.git"
+    }
+  ],
+  "infraEnvConfig": [
+    {
+      "apiLogRetention": 7,
+      "deploymentEnv": "dev",
+      "isVpcLog": true,
+      "isApiLog": true,
+      "vpcLogRetention": 7
+    },
+    {
+      "apiLogRetention": 30,
+      "deploymentEnv": "prod",
+      "isVpcLog": false,
+      "isApiLog": true,
+      "vpcLogRetention": 30
+    }
+  ],
+  "envVars": {
+    "PAYCODE_SERVER_API_KEY_NAME": "paycode-server-api-key",
+    "PAYCODE_API_URL": "MOCK"
+  },
+  "deploymentOptions": {
+    "autoDeployApi": true,
+    "noConfirmChangeSet": true
+  },
+  "paths": {
+    "apiClientAndDocDir": "../../packages/apigw/src/.generated/paycode-proxy",
+    "bundledOpenapiPath": "api/openapi.bundled.yaml",
+    "openapiSpecPath": "api/openapi.spec.yaml",
+    "samconfigTomlInputPath": "samconfig.build.toml",
+    "samconfigTomlOutputPath": "samconfig.toml",
+    "templateInputPath": "template.build.yaml",
+    "templateOutputPath": "template.yaml",
+    "tsClientDocDir": "docs"
+  }
+}

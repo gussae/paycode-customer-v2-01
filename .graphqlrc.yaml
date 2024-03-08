@@ -1,0 +1,9 @@
+schema:
+  - apps/amplify-be/amplify/backend/api/paycodegql/amplify-transformer-type-def/def.graphql
+  - apps/amplify-be/amplify/backend/api/paycodegql/schema/customer.graphql
+documents:
+  - apps/amplify-be/src/graphql/**/*.ts
+extensions:
+  languageService:
+    useSchemaFileDefinitions: true
+    keepClientSchema: true

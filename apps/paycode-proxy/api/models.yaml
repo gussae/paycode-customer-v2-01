@@ -1,0 +1,178 @@
+$schema: http://json-schema.org/draft-07/schema#
+GetBalanceRequest:
+  type: object
+  properties:
+    username:
+      type: string
+      description: The username to query the balance for.
+
+GetBalanceResponse:
+  type: object
+  properties:
+    balance:
+      type: number
+      description: The current balance for the specified username.
+
+GetTransactionRequest:
+  type: object
+  properties:
+    username:
+      type: string
+      description: The username to query transactions for.
+    id:
+      type: string
+      description: Unique identifier for the transaction, required when fetching a specific transaction.
+
+GetTransactionResponse:
+  type: object
+  properties:
+    id:
+      type: string
+      description: Unique identifier for the transaction.
+    date:
+      type: string
+      description: Date when the transaction occurred.
+    amount:
+      type: string
+      description: Transaction amount.
+    status:
+      type: string
+      description: Current status of the transaction.
+
+GetTransactionsRequest:
+  type: object
+  properties:
+    username:
+      type: string
+      description: The username to query multiple transactions for.
+
+
+GetTransactionsResponse:
+  type: array
+  items:
+    $ref: '#/GetTransactionResponse'
+
+PostPaymentRequest:
+  type: object
+  properties:
+    username:
+      type: string
+      description: The username initiating the payment.
+    amount:
+      type: string
+      description: Amount to be paid.
+
+PostPaymentResponse:
+  type: object
+  properties:
+    id:
+      type: string
+      description: Unique identifier for the payment.
+    status:
+      type: string
+      description: Status of the payment operation.
+
+GetQRCodeRequest:
+  type: object
+  properties:
+    username:
+      type: string
+      description: The username to generate a QR code for.
+
+GetQRCodeResponse:
+  type: object
+  properties:
+    qrCode:
+      type: object
+      properties:
+        url:
+          type: string
+          description: URL to the generated QR code.
+
+Empty:
+  type: object
+  additionalProperties: false
+
+ErrorResponse:
+  type: object
+  properties:
+    errorCode:
+      type: string
+    errorMessage:
+      type: string
+    details:
+      type: array
+      items:
+        type: string
+  required:
+    - errorCode
+    - errorMessage
+
+HealthCheckResponse:
+  type: object
+  properties:
+    status:
+      type: string
+    timestamp:
+      type: string
+      format: date-time
+    details:
+      type: object
+  required:
+    - status
+    - timestamp
+
+MetaInfo:
+  type: object
+  properties:
+    request_id:
+      type: string
+    response_time:
+      type: string
+  required:
+    - request_id
+    - response_time
+
+PaginationInfo:
+  type: object
+  properties:
+    currentPage:
+      type: integer
+    totalPages:
+      type: integer
+    pageSize:
+      type: integer
+    totalItems:
+      type: integer
+  required:
+    - currentPage
+    - totalPages
+    - pageSize
+    - totalItems
+
+SuccessResponse:
+  type: object
+  properties:
+    success:
+      type: boolean
+    message:
+      type: string
+  required:
+    - success
+    - message
+
+ValidationErrorResponse:
+  type: object
+  properties:
+    errors:
+      type: array
+      items:
+        type: object
+        properties:
+          field:
+            type: string
+          message:
+            type: string
+        required:
+          - field
+          - message

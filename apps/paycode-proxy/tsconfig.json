@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "outDir": "dist",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true
+  },
+  "exclude": ["node_modules", "dist", "build"],
+  "include": [
+    ".temp-generateClientAndDocs/client/API.ts",
+    "**/*.ts",
+    "**/*.js",
+    "**/*.json",
+    "**/.*.json"
+, "fn/balance/execute-check-bundled.mjs"  ]
+}

@@ -1,0 +1,44 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-paycodeamplifybe-dev-172046-authRole",
+      "UnauthRoleArn": "arn:aws:iam::653991346912:role/amplify-paycodeamplifybe-dev-172046-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::653991346912:role/amplify-paycodeamplifybe-dev-172046-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-paycodeamplifybe-dev-172046-deployment",
+      "UnauthRoleName": "amplify-paycodeamplifybe-dev-172046-unauthRole",
+      "StackName": "amplify-paycodeamplifybe-dev-172046",
+      "StackId": "arn:aws:cloudformation:us-west-2:653991346912:stack/amplify-paycodeamplifybe-dev-172046/5ca083b0-c546-11ee-aafb-0687f8b398d7",
+      "AmplifyAppId": "d3ciw3wgm1tvrq"
+    },
+    "categories": {
+      "auth": {
+        "paycodeamplifybeb7417453": {}
+      },
+      "api": {
+        "paycodegql": {}
+      }
+    }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-paycodeamplifybe-prod-120222-authRole",
+      "UnauthRoleArn": "arn:aws:iam::760554368476:role/amplify-paycodeamplifybe-prod-120222-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::760554368476:role/amplify-paycodeamplifybe-prod-120222-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-paycodeamplifybe-prod-120222-deployment",
+      "UnauthRoleName": "amplify-paycodeamplifybe-prod-120222-unauthRole",
+      "StackName": "amplify-paycodeamplifybe-prod-120222",
+      "StackId": "arn:aws:cloudformation:us-west-2:760554368476:stack/amplify-paycodeamplifybe-prod-120222/db718680-dcac-11ee-a243-063e432f4183",
+      "AmplifyAppId": "d26mjfok8pa6w4"
+    },
+    "categories": {
+      "auth": {
+        "paycodeamplifybeb7417453": {}
+      },
+      "api": {
+        "paycodegql": {}
+      }
+    }
+  }
+}
