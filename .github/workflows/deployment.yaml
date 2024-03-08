@@ -295,6 +295,7 @@ jobs:
         working-directory: apps/paycode-proxy
 
       # #! TODO: the above step generates the .generated folder into the apigw package which is used by the ui-web -> a more appropriate approach is to import it as published package
+      #
       # - name: generate .generated folder for use by ui-web
       #   run: npm run generate
       #   working-directory: apps/paycode-proxy

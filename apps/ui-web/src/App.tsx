@@ -1,39 +1,37 @@
-import { useEffect, useState } from 'react';
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import { Demo } from '@paycode-customer-v2/ui-components';
 import { getCurrentUser } from 'aws-amplify/auth';
+import { useEffect, useState } from 'react';
 import {
-  subscribeToNotifications,
-  sendNotification,
-  fetchProfile,
-  updateProfile,
-  fetchTransactions,
-  postPayment,
   fetchBalance,
+  fetchProfile,
+  fetchTransactions,
+  handleUserSignIn,
+  postPayment,
+  sendNotification,
+  subscribeToNotifications,
+  updateProfile,
 } from './utils'; // Import the utility functions
-
-
-
 
 const App = () => {
   const [initializing, setInitializing] = useState(true);
   const [username, setUsername] = useState('');
 
-  useEffect(() => {
-    // Asynchronously sign in the user and set the username
-    const signInUser = async () => {
-      try {
-        const user = await getCurrentUser(); // Assume this is available and correctly implemented
-        setUsername(user.username);
-        setInitializing(false);
-      } catch (error) {
-        console.error('Error during user sign-in or creation:', error);
-        setInitializing(false);
-      }
-    };
+  // This function handles the onboarding process
 
-    signInUser();
+  useEffect(() => {
+    handleUserSignIn()
+      .then(() => getCurrentUser())
+      .then(user => {
+        setUsername(user.username);
+      })
+      .catch(error => {
+        console.error('Error during initialization:', error);
+      })
+      .finally(() => {
+        setInitializing(false);
+      });
   }, []);
 
   if (initializing) {
@@ -41,7 +39,7 @@ const App = () => {
   }
 
   return (
-    <Authenticator signUpAttributes={["email"]}>
+    <Authenticator signUpAttributes={['email']}>
       {({ signOut }) => (
         <div
           style={{

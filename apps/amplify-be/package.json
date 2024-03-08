@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node amplify/hooks//post-push.js",
     "build": "tsc && vite build",
-"prebuild":"node scripts/ci-amplify.js",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

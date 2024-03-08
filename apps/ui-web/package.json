@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "prebuild": "node scripts/prebuild.js",
+    "postbuild": "npm run deploy",
     "deploy": "node scripts/deploy.js ",
     "postdeploy": "node scripts/postdeploy.js",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
