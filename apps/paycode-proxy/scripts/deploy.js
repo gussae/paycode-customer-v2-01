@@ -4,7 +4,7 @@ import CONFIG from './config.js';
 const {
   paths: { templateOutputPath },
   deploymentConfig: { deploymentEnv, profile },
-  deploymentOptions: { noConfirmChangeSet },
+  deploymentOptions: { noConfirmChangeSet, disableRollback },
 } = CONFIG;
 
 
@@ -26,6 +26,8 @@ function getDeployCommandArgs() {
 
   if (noConfirmChangeSet || process.env.CI == 'true')
     baseArgs.push('--no-confirm-changeset');
+
+  if (disableRollback) baseArgs.push('--disable-rollback');
 
   return process.env.CI === 'true'
     ? [...baseArgs]

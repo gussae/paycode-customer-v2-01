@@ -77,7 +77,8 @@
   },
   "deploymentOptions": {
     "autoDeployApi": true,
-    "noConfirmChangeSet": true
+    "noConfirmChangeSet": true,
+    "disableRollback": true
   },
   "paths": {
     "apiClientAndDocDir": "../../packages/apigw/src/.generated/paycode-proxy",
