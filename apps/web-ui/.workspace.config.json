@@ -1,6 +1,6 @@
 {
   "customSettings": {
-    "__git_actions_trigger": 83,
+    "__git_actions_trigger": 84,
     "staticFilesDir": "./dist"
   },
   "envVars": {
