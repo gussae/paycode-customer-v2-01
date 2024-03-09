@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getProxyApiAdapter } from './utils';
+// import { getProxyApiAdapter } from './utils';
 import { getCurrentUser } from 'aws-amplify/auth';
 
 import './home.css';
@@ -35,8 +35,9 @@ function Home() {
 
   async function fetchBalance() {
     try {
-      const proxyApi = await getProxyApiAdapter();
-      const result = await proxyApi.getBalance({ username });
+      // const proxyApi = await getProxyApiAdapter();
+      // const result = await proxyApi.getBalance({ username });
+      const result = { data: { balance: 123456.78 } };
       if (result.data) {
         const balanceResponse = result.data.balance;
         console.log(999, { balanceResponse });
