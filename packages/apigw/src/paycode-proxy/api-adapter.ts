@@ -24,7 +24,7 @@ const setupApiClient = (
     (config: { method: string; headers: { [x: string]: string } }) => {
       console.debug(8880, 'Intercepted request: ', config);
       if (config.method && config.method.toLowerCase() !== 'options') {
-        if (headersToInject && typeof headersToInject == 'object') {
+        if (headersToInject && typeof headersToInject === 'object') {
           console.debug(8882, headersToInject);
           Object.assign(config.headers, headersToInject);
         } else {

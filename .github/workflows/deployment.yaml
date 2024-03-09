@@ -558,6 +558,7 @@ jobs:
         run:  |
           ls -lah packages/apigw/dist/.generated/paycode-proxy/client
           ls -lah apps/amplify-be/src/graphql
+          cat apps/amplify-be/src/graphql/paycode-proxy/client/API.js
         shell: bash
 
       - name: Build and Deploy Web UI from the Root of ui-web WS
