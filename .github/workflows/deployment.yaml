@@ -242,13 +242,14 @@ jobs:
           echo "Orchestrate Deployment: ${{needs.setup-environment.outputs.orchestrateDeployment }}"
 
   test-deployment:
+    needs: setup-environment
     name: Test Deployment
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           sparse-checkout: |
-            apps/test-ui
+            apps/test-ui/
             scripts/
             package.json
             package-lock.json
