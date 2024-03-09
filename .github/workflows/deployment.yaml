@@ -249,6 +249,7 @@ jobs:
         with:
           sparse-checkout: |
             apps/test-ui
+            scripts/
             package.json
             package-lock.json
             tsconfig.base.json
