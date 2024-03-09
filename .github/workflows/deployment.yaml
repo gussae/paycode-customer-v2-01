@@ -185,13 +185,13 @@ jobs:
               - 'apps/ui-web/**/*.json'
               - 'apps/ui-web/**/*.ts'
             webUi:
-              - 'apps/ui-web/**/*.css'
-              - 'apps/ui-web/**/*.html'
-              - 'apps/ui-web/**/*.jsx'
-              - 'apps/ui-web/**/*.js'
-              - 'apps/ui-web/**/*.tsx'
-              - 'apps/ui-web/**/*.json'
-              - 'apps/ui-web/**/*.ts'
+              - 'apps/web-ui/**/*.css'
+              - 'apps/web-ui/**/*.html'
+              - 'apps/web-ui/**/*.jsx'
+              - 'apps/web-ui/**/*.js'
+              - 'apps/web-ui/**/*.tsx'
+              - 'apps/web-ui/**/*.json'
+              - 'apps/web-ui/**/*.ts'
 
       - name: Modify Deployment Trigger Logic
         id: modify_deployment_trigger_logic
