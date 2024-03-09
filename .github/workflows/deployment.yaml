@@ -566,4 +566,4 @@ jobs:
           npm cache clean --force
           npm run build
           npm run deploy
-        working-directory: apps/ui-web
+        working-directory: apps/web-ui
