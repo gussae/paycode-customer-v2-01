@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-// import { getProxyApiAdapter } from './utils';
+import { getProxyApiAdapter } from './utils';
 import { getCurrentUser } from 'aws-amplify/auth';
 
 import './home.css';
