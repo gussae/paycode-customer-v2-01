@@ -241,6 +241,33 @@ jobs:
           echo "Web UI Update: ${{needs.setup-environment.outputs.uiWebUpdate }}"
           echo "Orchestrate Deployment: ${{needs.setup-environment.outputs.orchestrateDeployment }}"
 
+  test-deployment:
+    name: Test Deployment
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            apps/test-ui
+            package.json
+            package-lock.json
+            tsconfig.base.json
+            tsconfig.json
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.7'
+
+      - name: Install Dependencies at Monorepo Root
+        run: npm ci
+
+      - name: Test UI from the Root of test-ui
+        run: |
+          npm cache clean --force
+          npm run build
+        working-directory: apps/test-ui
+
   full-deployment:
     name: Full Deployment
     runs-on: ubuntu-latest

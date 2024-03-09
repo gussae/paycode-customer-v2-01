@@ -5,7 +5,7 @@
     "baseUrl": ".",
     "outDir": "dist",
     "composite": true,
-    "noEmit": true,
+    "noEmit": true
   },
   "exclude": [
     "node_modules",
@@ -20,8 +20,5 @@
     "docs",
     "build"
   ],
-  "include": [
-    "**/*.ts",
-    "**/*.json",
-    "jest-preset.js", "apps/web-ui/src/utils.js", "apps/web-ui/sst.config.js", "apps/paycode-proxy/fn/balance/execute-check.js",  ]
+  "include": ["**/*.ts", "**/*.json", "jest-preset.js"]
 }
