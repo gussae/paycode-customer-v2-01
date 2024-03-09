@@ -263,6 +263,12 @@ jobs:
       - name: Install Dependencies at Monorepo Root
         run: npm ci
 
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: packages-artifacts
+          path: packages
+
       - name: Test UI from the Root of test-ui
         run: |
           npm cache clean --force
