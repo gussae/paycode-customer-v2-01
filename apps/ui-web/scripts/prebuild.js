@@ -1,7 +1,6 @@
-import CONFIG from './config.js';
 import fs from 'fs';
 import path from 'path';
-
+import CONFIG from './config.js';
 const {
   paths: { __workspaceRoot },
   imports,
@@ -12,7 +11,9 @@ const configPath = path.resolve(
   'amplify-be.config.json',
 );
 
-//we need to map to snake case so as to directly use it with the Amplify configuration method and the amplify team made bad choices and stuck with inconsistent casing scheme that needs to be handled here
+//Grab workspace imports
+
+// for amplify-be exports, we need to map to snake case so as to directly use it with the Amplify configuration to handle inconsistent casing scheme
 const configurationJson = JSON.stringify(imports, (key, value) => {
   if (value && typeof value === 'object' && !Array.isArray(value)) {
     const replacement = {};
@@ -36,5 +37,4 @@ const configurationJson = JSON.stringify(imports, (key, value) => {
 });
 
 console.log({ configurationJson });
-
 fs.writeFileSync(configPath, configurationJson);

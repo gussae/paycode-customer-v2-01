@@ -6,7 +6,7 @@
     "outDir": "dist",
     "composite": true,
     "noEmit": false,
-    "noEmitOnError": false
+    "noEmitOnError": false,
   },
   "exclude": ["node_modules", "dist", "build"],
   "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.json"]

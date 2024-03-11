@@ -1,9 +1,0 @@
-{
-  "customSettings": {
-    "__git_actions_trigger": 86,
-    "staticFilesDir": "./dist"
-  },
-  "envVars": {
-    "IS_PAYCODE_PROXY_URL_MOCK": "false"
-  }
-}

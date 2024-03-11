@@ -122,9 +122,9 @@ async function getRepoUrl() {
  */
 async function getDeploymentConfig(deploymentConfigs) {
   try {
-    console.log('getDeploymentConfig', deploymentConfigs);
+    // console.debug('getDeploymentConfig', deploymentConfigs);
     const [branch, repoUrl] = await Promise.all([getBranch(), getRepoUrl()]);
-    console.log('branch:', branch, 'repoUrl:', repoUrl);
+    console.debug('branch:', branch, 'repoUrl:', repoUrl);
 
     const config = deploymentConfigs.find(
       config => config.branch === branch && repoUrl.includes(config.repo),

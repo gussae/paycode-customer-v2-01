@@ -17,6 +17,7 @@
     "axios": "1.x"
   },
   "devDependencies": {
+    "@paycode-customer-v2/config": "*",
     "@paycode-customer-v2/utils": "*",
     "@types/node": "^20.x",
     "@types/jest": "^27.x",

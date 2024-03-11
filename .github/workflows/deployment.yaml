@@ -251,41 +251,6 @@ jobs:
           echo "WebUi Update: ${{needs.setup-environment.outputs.webUiUpdate }}"
           echo "Orchestrate Deployment: ${{needs.setup-environment.outputs.orchestrateDeployment }}"
 
-  # test-deployment:
-  #   needs: setup-environment
-  #   name: Test Deployment
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #       with:
-  #         sparse-checkout: |
-  #           apps/test-ui/
-  #           scripts/
-  #           package.json
-  #           package-lock.json
-  #           tsconfig.base.json
-  #           tsconfig.json
-
-  #     - name: Setup Node.js
-  #       uses: actions/setup-node@v4
-  #       with:
-  #         node-version: '20.7'
-
-  #     - name: Install Dependencies at Monorepo Root
-  #       run: npm ci
-
-  #     - name: Download Build Artifacts
-  #       uses: actions/download-artifact@v4
-  #       with:
-  #         name: packages-artifacts
-  #         path: packages
-
-  #     - name: Test UI from the Root of test-ui
-  #       run: |
-  #         npm cache clean --force
-  #         npm run build
-  #       working-directory: apps/test-ui
-
   full-deployment:
     name: Full Deployment
     runs-on: ubuntu-latest
@@ -342,32 +307,32 @@ jobs:
 
       # #! TODO: the above step generates the .generated folder into the apigw package which is used by the ui-web -> a more appropriate approach is to import it as published package
       #
-      - name: generate .generated folder for use by ui-web
-        run: npm run generate
-        working-directory: apps/paycode-proxy
+      # - name: generate .generated folder for use by ui-web
+      #   run: npm run generate
+      #   working-directory: apps/paycode-proxy
 
-      - name: build apigw to pick up the .generated folder
-        run:  node scripts/build-packages.js --browser
+      # - name: build apigw to pick up the .generated folder
+      #   run:  node scripts/build-packages.js --browser
 
-      - name: Download Graphql Clients
-        uses: actions/download-artifact@v4
-        with:
-          name: graphql-artifacts
-          path: apps/amplify-be/src/graphql
+      # - name: Download Graphql Clients
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: graphql-artifacts
+      #     path: apps/amplify-be/src/graphql
 
-      - name: List required files
-        run:  |
-          ls -lah packages/apigw/dist/.generated/paycode-proxy/client
-          ls -lah apps/amplify-be/src/graphql
-        shell: bash
+      # - name: List required files
+      #   run:  |
+      #     ls -lah packages/apigw/dist/.generated/paycode-proxy/client
+      #     ls -lah apps/amplify-be/src/graphql
+      #   shell: bash
 
-      - name: Build and Deploy Web UI from the Root of ui-web WS
-        run: npm run build
-        working-directory: apps/web-ui
+      # - name: Build and Deploy Web UI from the Root of ui-web WS
+      #   run: npm run build
+      #   working-directory: apps/web-ui
 
-      - name: Build and Deploy UI Web  from the Root of web-ui WS
-        run: npm run build
-        working-directory: apps/ui-web
+      # - name: Build and Deploy UI Web  from the Root of web-ui WS
+      #   run: npm run build
+      #   working-directory: apps/ui-web
 
 
   #once the paycode proxy is available: either can be updated independently of the other using the path filter logic
@@ -422,149 +387,149 @@ jobs:
         run: npm run build-core && npm run deploy
         working-directory: apps/paycode-proxy
 
-  deploy-ui-web:
-    name: Deploy Web UI
-    runs-on: ubuntu-latest
-    needs: setup-environment
-    if: needs.setup-environment.outputs.uiWebUpdate == 'true' && needs.setup-environment.outputs.orchestrateDeployment == 'false'
-    permissions:
-      id-token: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            apps/amplify-be/
-            apps/ui-web/
-            apps/paycode-proxy/
-            scripts/
-            .monorepo.config.json
-            package.json
-            package-lock.json
-            tsconfig.base.json
-            tsconfig.json
+  # deploy-ui-web:
+  #   name: Deploy Web UI
+  #   runs-on: ubuntu-latest
+  #   needs: setup-environment
+  #   if: needs.setup-environment.outputs.uiWebUpdate == 'true' && needs.setup-environment.outputs.orchestrateDeployment == 'false'
+  #   permissions:
+  #     id-token: write
+  #     contents: read
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #       with:
+  #         sparse-checkout: |
+  #           apps/amplify-be/
+  #           apps/ui-web/
+  #           apps/paycode-proxy/
+  #           scripts/
+  #           .monorepo.config.json
+  #           package.json
+  #           package-lock.json
+  #           tsconfig.base.json
+  #           tsconfig.json
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.7'
+  #     - name: Setup Node.js
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: '20.7'
 
-      - name: Configure AWS Credentials via OIDC
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: ${{ needs.setup-environment.outputs.aws_role_arn }}
-          aws-region: ${{ needs.setup-environment.outputs.aws_region }}
+  #     - name: Configure AWS Credentials via OIDC
+  #       uses: aws-actions/configure-aws-credentials@v4
+  #       with:
+  #         role-to-assume: ${{ needs.setup-environment.outputs.aws_role_arn }}
+  #         aws-region: ${{ needs.setup-environment.outputs.aws_region }}
 
-      - name: Download Build Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: packages-artifacts
-          path: packages
+  #     - name: Download Build Artifacts
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: packages-artifacts
+  #         path: packages
 
-      - name: Install Dependencies at Monorepo Root
-        run: npm ci
+  #     - name: Install Dependencies at Monorepo Root
+  #       run: npm ci
 
-      - name: Add node_modules/.bin to PATH
-        run: echo "${{ github.workspace }}/node_modules/.bin" >> $GITHUB_PATH
+  #     - name: Add node_modules/.bin to PATH
+  #       run: echo "${{ github.workspace }}/node_modules/.bin" >> $GITHUB_PATH
 
-        #! TODO temp fix: should not tap into the paycode-proxy workspace to generate the .generated folder -> should instead import it from published repository
-      - name: generate .generated folder for use by ui-web
-        run: npm run bundle-api && npm run generate
-        working-directory: apps/paycode-proxy
+  #       #! TODO temp fix: should not tap into the paycode-proxy workspace to generate the .generated folder -> should instead import it from published repository
+  #     - name: generate .generated folder for use by ui-web
+  #       run: npm run bundle-api && npm run generate
+  #       working-directory: apps/paycode-proxy
 
-      - name: build apigw to pick up the .generated folder
-        run:  node scripts/build-packages.js --browser
+  #     - name: build apigw to pick up the .generated folder
+  #       run:  node scripts/build-packages.js --browser
 
-      - name: Download Graphql Clients
-        uses: actions/download-artifact@v4
-        with:
-          name: graphql-artifacts
-          path: apps/amplify-be/src/graphql
+  #     - name: Download Graphql Clients
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: graphql-artifacts
+  #         path: apps/amplify-be/src/graphql
 
-      - name: List required files
-        run:  |
-          ls -lah packages/apigw/dist/.generated/paycode-proxy/client
-          ls -lah apps/amplify-be/src/graphql
-        shell: bash
+  #     - name: List required files
+  #       run:  |
+  #         ls -lah packages/apigw/dist/.generated/paycode-proxy/client
+  #         ls -lah apps/amplify-be/src/graphql
+  #       shell: bash
 
-      - name: Build and Deploy Web UI from the Root of ui-web WS
-        run: |
-          rm -rf node_modules/.vite
-          npm cache clean --force
-          npm run build
-          npm run deploy
-        working-directory: apps/ui-web
+  #     - name: Build and Deploy Web UI from the Root of ui-web WS
+  #       run: |
+  #         rm -rf node_modules/.vite
+  #         npm cache clean --force
+  #         npm run build
+  #         npm run deploy
+  #       working-directory: apps/ui-web
 
-  deploy-web-ui:
-    name: Deploy Web UI
-    runs-on: ubuntu-latest
-    needs: setup-environment
-    if: needs.setup-environment.outputs.webUiUpdate == 'true' && needs.setup-environment.outputs.orchestrateDeployment == 'false'
-    permissions:
-      id-token: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            apps/amplify-be/
-            apps/web-ui/
-            apps/paycode-proxy/
-            scripts/
-            .monorepo.config.json
-            package.json
-            package-lock.json
-            tsconfig.base.json
-            tsconfig.json
+  # deploy-web-ui:
+  #   name: Deploy Web UI
+  #   runs-on: ubuntu-latest
+  #   needs: setup-environment
+  #   if: needs.setup-environment.outputs.webUiUpdate == 'true' && needs.setup-environment.outputs.orchestrateDeployment == 'false'
+  #   permissions:
+  #     id-token: write
+  #     contents: read
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #       with:
+  #         sparse-checkout: |
+  #           apps/amplify-be/
+  #           apps/web-ui/
+  #           apps/paycode-proxy/
+  #           scripts/
+  #           .monorepo.config.json
+  #           package.json
+  #           package-lock.json
+  #           tsconfig.base.json
+  #           tsconfig.json
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.7'
+  #     - name: Setup Node.js
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: '20.7'
 
-      - name: Configure AWS Credentials via OIDC
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: ${{ needs.setup-environment.outputs.aws_role_arn }}
-          aws-region: ${{ needs.setup-environment.outputs.aws_region }}
+  #     - name: Configure AWS Credentials via OIDC
+  #       uses: aws-actions/configure-aws-credentials@v4
+  #       with:
+  #         role-to-assume: ${{ needs.setup-environment.outputs.aws_role_arn }}
+  #         aws-region: ${{ needs.setup-environment.outputs.aws_region }}
 
-      - name: Download Build Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: packages-artifacts
-          path: packages
+  #     - name: Download Build Artifacts
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: packages-artifacts
+  #         path: packages
 
-      - name: Install Dependencies at Monorepo Root
-        run: npm ci
+  #     - name: Install Dependencies at Monorepo Root
+  #       run: npm ci
 
-      - name: Add node_modules/.bin to PATH
-        run: echo "${{ github.workspace }}/node_modules/.bin" >> $GITHUB_PATH
+  #     - name: Add node_modules/.bin to PATH
+  #       run: echo "${{ github.workspace }}/node_modules/.bin" >> $GITHUB_PATH
 
-        #! TODO temp fix: should not tap into the paycode-proxy workspace to generate the .generated folder -> should instead import it from published repository
-      - name: generate .generated folder for use by ui-web
-        run: npm run bundle-api && npm run generate
-        working-directory: apps/paycode-proxy
+  #       #! TODO temp fix: should not tap into the paycode-proxy workspace to generate the .generated folder -> should instead import it from published repository
+  #     - name: generate .generated folder for use by ui-web
+  #       run: npm run bundle-api && npm run generate
+  #       working-directory: apps/paycode-proxy
 
-      - name: build apigw to pick up the .generated folder
-        run:  node scripts/build-packages.js --browser
+  #     - name: build apigw to pick up the .generated folder
+  #       run:  node scripts/build-packages.js --browser
 
-      - name: Download Graphql Clients
-        uses: actions/download-artifact@v4
-        with:
-          name: graphql-artifacts
-          path: apps/amplify-be/src/graphql
+  #     - name: Download Graphql Clients
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: graphql-artifacts
+  #         path: apps/amplify-be/src/graphql
 
-      - name: List required files
-        run:  |
-          ls -lah packages/apigw/dist/.generated/paycode-proxy/client
-          ls -lah apps/amplify-be/src/graphql
-          cat packages/apigw/dist/.generated/paycode-proxy/client/API.js
-        shell: bash
+  #     - name: List required files
+  #       run:  |
+  #         ls -lah packages/apigw/dist/.generated/paycode-proxy/client
+  #         ls -lah apps/amplify-be/src/graphql
+  #         cat packages/apigw/dist/.generated/paycode-proxy/client/API.js
+  #       shell: bash
 
-      - name: Build and Deploy Web UI from the Root of ui-web WS
-        run: |
-          rm -rf node_modules/.vite
-          npm cache clean --force
-          npm run build
-          npm run deploy
-        working-directory: apps/web-ui
+  #     - name: Build and Deploy Web UI from the Root of ui-web WS
+  #       run: |
+  #         rm -rf node_modules/.vite
+  #         npm cache clean --force
+  #         npm run build
+  #         npm run deploy
+  #       working-directory: apps/web-ui

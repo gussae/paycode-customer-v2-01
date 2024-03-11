@@ -14,18 +14,36 @@
   },
   "description": "",
   "devDependencies": {
+    "@apidevtools/json-schema-ref-parser": "^11.x",
+    "@aws-sdk/client-api-gateway": "^3.x",
+    "@aws-sdk/credential-providers": "3.*",
     "@paycode-customer-v2/config": "*",
+    "@paycode-customer-v2/lib": "*",
+    "@paycode-customer-v2/utils": "*",
+    "@redocly/cli": "^1.x",
+    "@redocly/openapi-core": "^1.x",
     "@smithy/types": "2.x",
     "@types/jest": "^27.x",
     "@types/node": "^20.x",
     "@typescript-eslint/eslint-plugin": "^6.x",
     "@typescript-eslint/parser": "^6.x",
+    "axios": "^1.x",
+    "concurrently": "^8.x",
+    "change-case-all": "^2.x",
+    "cross-env": "^7.x",
+    "fs-extra": "^11.x",
     "eslint": "^8.x",
     "eslint-config-prettier": "^9.x",
     "eslint-plugin-prettier": "^5.x",
     "jest": "^29.x",
+    "orval": "^6.x",
+    "rimraf": "5.x",
     "ts-jest": "^29.x",
     "ts-node": "^10.x",
-    "typescript": "^5.x"
+    "typescript": "^5.x",
+    "yaml": "^2.3.4"
+  },
+  "dependencies": {
+    "fs-extra": "^11.x"
   }
 }

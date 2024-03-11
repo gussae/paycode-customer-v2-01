@@ -2,14 +2,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import path from 'path';
 import fs from 'fs';
-import { getMonorepoConfig } from '@paycode-customer-v2/config';
 import { log, logError, runBuildInProjectRoot } from './utils';
 
 export interface ExecuteCheckProps {
+  deploymentEnv: string;
   envars: Record<string, string>;
   event: any;
+  profile: string;
   projectRoot: string;
+  region: string;
   options?: {
+    debug: boolean;
     srcDir?: string;
     distDir?: string;
     srcEntryTsFilename?: string;
@@ -27,26 +30,24 @@ export interface ExecuteCheckProps {
  * @defaults srcDir - './src', distDir - './dist', srcEntryTsFilename - 'index.ts', distEntryJsFilename - 'index.js'
  */
 export async function executeCheckLambda({
+  deploymentEnv,
   envars,
-  projectRoot,
   event,
   options,
+  profile,
+  projectRoot,
+  region,
 }: ExecuteCheckProps): Promise<void> {
   // Set environment variables
   Object.entries(envars).forEach(([key, value]) => {
     process.env[key] = value;
   });
 
-  const {
-    //@ts-ignore
-    deploymentConfig: { region, profile, deploymentEnv },
-    //@ts-ignore
-  } = await getMonorepoConfig();
+
+  console.log('Env:', { region, profile, deploymentEnv });
   process.env.AWS_REGION = region;
   process.env.AWS_PROFILE = profile;
   process.env.DEPLOYMENT_ENV = deploymentEnv;
-  process.env.LOGGING_LEVEL = ''; //turn off it avoid duplicate logs
-  console.log('Env:', { region, profile, deploymentEnv });
 
   // Path configurations
   const {
@@ -54,9 +55,14 @@ export async function executeCheckLambda({
     distDir = './dist',
     srcEntryTsFilename = 'index.ts',
     distEntryJsFilename = 'index.js',
+    debug = false,
   } = options || {};
   const srcPath = path.resolve(projectRoot, srcDir, srcEntryTsFilename);
   const distPath = path.resolve(projectRoot, distDir, distEntryJsFilename);
+
+  //turn off Logging Level to avoid duplicate:instead use DEBUG = true
+  process.env.LOGGING_LEVEL = '';
+  process.env.DEBUG = debug ? 'true' : '';
 
   try {
     log('Starting source check...');
