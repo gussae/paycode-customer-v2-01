@@ -166,14 +166,6 @@
       "platform": "ts"
     },
     {
-      "name": "apigw-client",
-      "env": {
-        "node": true,
-        "browser": true
-      },
-      "platform": "ts"
-    },
-    {
       "name": "config",
       "env": {
         "node": true,
