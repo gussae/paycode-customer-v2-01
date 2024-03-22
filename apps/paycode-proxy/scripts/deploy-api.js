@@ -1,4 +1,4 @@
-import { getAwsCredsProvider } from '@paycode-customer-v2/lib';
+import { getAwsCredsProvider}from '@paycode-customer-v2/lib/dist/esm';
 import CONFIG from './config.js';
 import { getApiId } from './utils.js';
 import {
@@ -7,6 +7,7 @@ import {
   UpdateStageCommand,
 } from '@aws-sdk/client-api-gateway';
 
+// const { getAwsCredsProvider } = Lib;
 // Configurations from your existing setup
 const {
   deploymentConfig: {

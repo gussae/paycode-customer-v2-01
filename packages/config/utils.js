@@ -473,8 +473,45 @@ async function fetchWsImportValuesFromParameterStore(
   return fetchedValues;
 }
 
+async function fetchExportedValuesFromParameterStore(
+  exportsKeyValues,
+  region,
+  profile = undefined,
+) {
+  const ssmClient = new SSMClient({
+    region,
+    credentials: profile ? fromIni({ profile }) : undefined,
+  });
+  const fetchedValues = {};
+
+  for (const value of Object.values(exportsKeyValues)) {
+    const handle = value.split('/').pop();
+    const command = new GetParameterCommand({
+      Name: value,
+    });
+
+    try {
+      const { Parameter } = await ssmClient.send(command);
+      fetchedValues[handle] = Parameter.Value;
+    } catch (error) {
+      // Silently handle the error to ensure consistent flow
+      if (error.name === 'ParameterNotFound') {
+        console.error(
+          `WARNING: Export ${value} not found in Parameter Store. Will use workspace default if available`,
+        );
+      } else {
+        console.error(`Error fetching parameter ${value}:`, error.message);
+      }
+      fetchedValues[handle] = null;
+    }
+  }
+
+  return fetchedValues;
+}
+
 module.exports = {
   extractRepoDetails,
+  fetchExportedValuesFromParameterStore,
   fetchWsImportValuesFromParameterStore,
   findMonorepoConfig,
   findWorkspaceConfig,

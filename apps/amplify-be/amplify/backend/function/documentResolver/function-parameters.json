@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "storage": {
+      "documentStore": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "User:@model(appsync)": [
+        "read"
+      ],
+      "Document:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

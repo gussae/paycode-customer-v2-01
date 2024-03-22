@@ -1,0 +1,12 @@
+{
+  "resourceName": "documentStore",
+  "policyUUID": "63620320",
+  "bucketName": "paycode-customer-v2-document-store",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE"
+  ],
+  "triggerFunction": "storeS3ObjectMetadata",
+  "groupAccess": {}
+}

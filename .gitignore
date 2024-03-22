@@ -1,45 +1,18 @@
 
-# nodejs
-/node_modules
-
-# testing
-/coverage
-
-# CDK asset staging directory
-.cdk.staging
-cdk.out
-
-# CDK asset staging directory
-.cdk.staging
-cdk.out
-
-# FE build
+# build and tests
 **/.next/
 **/out/
 **/.sst/
-
-# BE builds
-**/.generated/
-**/.temp-*/
-
-# production
 **/build/
 **/dist/
 **/out/
+**/.generated*
 **/.temp-*
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-
-# local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+**/.execute-check*
+.cdk.staging
+cdk.out
+/coverage
+/node_modules
 
 #maintenance
 **/.history/
@@ -49,13 +22,25 @@ npm-debug.log*
 *scratch*
 **/.scratch/
 **/notes.txt
+npm-debug.log*
 
 #caches
 **/.cache/
 **/cache/
 **/tsconfig.tsbuildinfo
 
+# misc
+.DS_Store
+*.pem
 
+# local env files, environment dependent
+**/.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+apps/paycode-proxy/template.yaml
+apps/paycode-proxy/samconfig.toml
 
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
@@ -78,7 +63,3 @@ amplifytools.xcconfig
 .secret-*
 #amplify-do-not-edit-end
 
-#environment dependent
-**/.env
-apps/paycode-proxy/template.yaml
-apps/paycode-proxy/samconfig.toml

@@ -14,7 +14,6 @@
     "build-core": "concurrently \"npm:build-api\" \"npm:build-payment\" \"npm:build-balance\" \"npm:build-transaction\"",
     "deploy": "node scripts/deploy.js",
     "deploy-api": "node scripts/deploy-api.js",
-    "generate": "node scripts/generate.js",
     "patch-api": "node scripts/patch-api.js",
     "postbuild": "npm run deploy && npm run patch-api && npm run deploy-api",
     "prebuild": "npm install && tsc && rimraf samconfig.toml template.yaml",

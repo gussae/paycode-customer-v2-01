@@ -17,6 +17,24 @@
       },
       "api": {
         "paycodegql": {}
+      },
+      "function": {
+        "documentResolver": {
+          "deploymentBucketName": "amplify-paycodeamplifybe-dev-172046-deployment",
+          "s3Key": "amplify-builds/documentResolver-6c46674c775555755a64-build.zip"
+        },
+        "documentStore": {},
+        "removeS3Object": {
+          "deploymentBucketName": "amplify-paycodeamplifybe-dev-172046-deployment",
+          "s3Key": "amplify-builds/removeS3Object-3161415a78434343326d-build.zip"
+        },
+        "storeS3ObjectMetadata": {
+          "deploymentBucketName": "amplify-paycodeamplifybe-dev-172046-deployment",
+          "s3Key": "amplify-builds/storeS3ObjectMetadata-47632b624636482f6559-build.zip"
+        }
+      },
+      "storage": {
+        "documentStore": {}
       }
     }
   },
@@ -38,6 +56,15 @@
       },
       "api": {
         "paycodegql": {}
+      },
+      "function": {
+        "documentResolver": {
+          "deploymentBucketName": "amplify-paycodeamplifybe-prod-120222-deployment",
+          "s3Key": "amplify-builds/documentResolver-357931666f664b624d33-build.zip"
+        }
+      },
+      "storage": {
+        "documentStore": {}
       }
     }
   }

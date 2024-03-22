@@ -41,19 +41,18 @@ export const createResponse = (
 ): APIGatewayProxyResult => {
   let origin;
   if (eventHeaders) origin = eventHeaders['Origin'] || eventHeaders['origin'];
+  const basicResponse = {
+    statusCode: statusCode,
+    body: JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
   if (origin && allowedOrigins.includes(origin)) {
-    return addCORSHeaders(
-      {
-        statusCode: statusCode,
-        body: JSON.stringify(body),
-      },
-      origin as string,
-    );
+    return addCORSHeaders(basicResponse, origin as string);
   } else {
-    return {
-      statusCode: statusCode,
-      body: JSON.stringify(body),
-    };
+    return basicResponse;
   }
 };
 

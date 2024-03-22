@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import { Demo } from '@paycode-customer-v2/ui-components';
@@ -8,18 +9,18 @@ import {
   fetchProfile,
   fetchTransactions,
   handleUserSignIn,
-  postPayment,
+  makePayment,
   sendNotification,
   subscribeToNotifications,
   updateProfile,
-} from './utils'; // Import the utility functions
+} from '@paycode-customer-v2/utils/dist/browser'; // Import the utility functions
+
 
 const App = () => {
   const [initializing, setInitializing] = useState(true);
   const [username, setUsername] = useState('');
 
-  // This function handles the onboarding process
-
+  //handles onboarding
   useEffect(() => {
     handleUserSignIn()
       .then(() => getCurrentUser())
@@ -57,7 +58,7 @@ const App = () => {
             fetchProfile={fetchProfile}
             updateProfile={updateProfile}
             fetchTransactions={fetchTransactions}
-            postPayment={postPayment}
+            makePayment={makePayment}
             fetchBalance={fetchBalance}
           />
           <button

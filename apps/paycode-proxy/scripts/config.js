@@ -15,4 +15,4 @@ const {
 setEnv(__workspaceRoot, imports, envVars);
 
 export default config;
-console.log({ config });
+console.debug({ config });

@@ -1,0 +1,39 @@
+{
+  "name": "@paycode-customer-v2/document-resolver",
+  "version": "2.0.0",
+  "description": "Used to resolve the graphql document upload/download operations",
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "scripts": {
+    "_prebuild": "npm run build -w @paycode-customer-v2/graphql",
+    "build": "tsc && tsc-alias && esbuild src/index.ts --bundle --platform=node --target=node18 --outfile=dist/index.js --external:@aws-sdk/client-dynamodb  --external:@aws-sdk/client-s3 --external:@aws-sdk/s3-request-presigner --external:@aws-sdk/lib-dynamodb",
+    "postbuild": "copyfiles -u 1 dist/index.js ../../amplify/backend/function/documentResolver/src",
+    "check": "ts-node execute-check.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@paycode-customer-v2/graphql": "*",
+    "@paycode-customer-v2/lib": "*",
+    "tsc-alias": "1.x"
+  },
+  "devDependencies": {
+    "@paycode-customer-v2/config": "*",
+    "@paycode-customer-v2/utils": "*",
+    "@types/node": "^20.x",
+    "@types/jest": "^27.x",
+    "@types/aws-lambda": "8.x",
+    "@types/aws4": "1.x",
+    "@typescript-eslint/eslint-plugin": "^6.x",
+    "@typescript-eslint/parser": "^6.x",
+    "esbuild": "0.x",
+    "eslint": "^8.x",
+    "eslint-config-prettier": "^9.x",
+    "eslint-plugin-prettier": "^5.x",
+    "copyfiles": "^2.x",
+    "jest": "^29.x",
+    "ts-jest": "^29.x",
+    "ts-node": "^10.x",
+    "tsc-alias": "1.x",
+    "typescript": "^5.x"
+  }
+}

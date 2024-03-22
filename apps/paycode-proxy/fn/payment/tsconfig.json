@@ -5,8 +5,8 @@
     "baseUrl": ".",
     "outDir": "dist",
     "composite": true,
-    "noEmit": true
+    "noEmit": true,
   },
-  "exclude": ["node_modules", "dist", "build"],
-  "include": ["src/**/*.ts", "*src/*/*.js", "src/**/*.json"]
+  "exclude": ["node_modules", "dist", "build", "execute-check.ts"],
+  "include": ["**/*.ts", "**/*.js", "**/*.json"]
 }

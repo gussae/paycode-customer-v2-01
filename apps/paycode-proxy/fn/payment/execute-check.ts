@@ -14,11 +14,10 @@ getMonorepoConfig(__dirname)
         ALLOWED_ORIGINS: '["http://localhost:3000"]',
       },
       event: {
-        body: {
+        body: JSON.stringify({
           username: 'test',
-          id: 'test',
           amount: 50,
-        },
+        }),
         headers: {
           // origin: 'http://localhost:3000',
         },

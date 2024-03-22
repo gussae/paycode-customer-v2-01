@@ -54,5 +54,124 @@
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
     }
+  },
+  "function": {
+    "documentResolver": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "BucketName"
+          ],
+          "category": "storage",
+          "resourceName": "documentStore"
+        },
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput"
+          ],
+          "category": "api",
+          "resourceName": "paycodegql"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "removeS3Object": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "BucketName"
+          ],
+          "category": "storage",
+          "resourceName": "documentStore"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "storeS3ObjectMetadata": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "paycodegql"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_documentResolver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "documentResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_documentResolver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "documentResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_removeS3Object_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "removeS3Object"
+        }
+      ]
+    },
+    "AMPLIFY_function_removeS3Object_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "removeS3Object"
+        }
+      ]
+    },
+    "AMPLIFY_function_storeS3ObjectMetadata_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "storeS3ObjectMetadata"
+        }
+      ]
+    },
+    "AMPLIFY_function_storeS3ObjectMetadata_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "storeS3ObjectMetadata"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "documentStore": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
+          ],
+          "category": "function",
+          "resourceName": "storeS3ObjectMetadata"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
   }
 }

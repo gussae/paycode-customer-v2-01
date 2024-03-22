@@ -1,7 +1,7 @@
 import { SSMClient, PutParameterCommand } from '@aws-sdk/client-ssm';
-import { getAwsCredsProvider } from '@paycode-customer-v2/lib';
+import { getAwsCredsProvider } from '@paycode-customer-v2/lib/dist/esm';
 import CONFIG from '../../scripts/config.js';
-import { readFileSync } from 'fs';
+import { readFile } from 'fs/promises';
 import { fileURLToPath } from 'url';
 import path from 'path';
 
@@ -13,13 +13,6 @@ const {
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-let amplifyConfig = JSON.parse(
-  readFileSync(
-    path.resolve(__dirname, '../../src/amplifyconfiguration.json'),
-    'utf8',
-  ),
-);
 
 function convertKeysToSnakeCase(obj) {
   if (typeof obj !== 'object' || obj === null) {
@@ -36,7 +29,6 @@ function convertKeysToSnakeCase(obj) {
     return acc;
   }, {});
 }
-amplifyConfig = convertKeysToSnakeCase(amplifyConfig);
 
 function toSnakeCase(str) {
   return str.replace(/([a-z])([A-Z])/g, '$1_$2').toLowerCase();
@@ -60,6 +52,13 @@ async function putParameter(ssmClient, name, value) {
 // Putting parameters to the SSM Parameter Store
 
 async function updateParameters() {
+  let amplifyConfig = JSON.parse(
+    await readFile(
+      path.resolve(__dirname, '../../src/amplifyconfiguration.json'),
+      'utf8',
+    ),
+  );
+  amplifyConfig = convertKeysToSnakeCase(amplifyConfig);
   const ssmClient = new SSMClient({
     credentials: getAwsCredsProvider(profile),
     region,
@@ -67,7 +66,9 @@ async function updateParameters() {
 
   //TODO, simply (this was modified to adapt to the new configuration structure)
   //map the exports to the old config format (uses )
-  const mappedExports = Object.values(exports).map(value => value.split('/').pop());
+  const mappedExports = Object.values(exports).map(value =>
+    value.split('/').pop(),
+  );
 
   for (const key of mappedExports) {
     const snakeCaseKey = toSnakeCase(key);
@@ -82,7 +83,34 @@ async function updateParameters() {
     }
   }
 }
+//!TODO  this version only catches process exit failures
+// async function checkAmplifyPushSuccess() {
+//   try {
+//     const data = await readFile(0, 'utf8');
+//     const event = JSON.parse(data);
 
-updateParameters()
-  .then(() => console.log('All parameters updated successfully.'))
-  .catch(error => console.error(error));
+//     // Check if the error key exists and has a value
+//     if (event.error) {
+//       console.error('Amplify push failed with error:', event.error);
+//       throw new Error('Amplify push failed. No parameters were updated.');
+//     } else {
+//       console.log('Amplify push succeeded');
+//     }
+//   } catch (error) {
+//     console.error('Failed to process Amplify push event:', error);
+//     throw error; // Re-throw the error to be caught by the caller
+//   }
+// }
+
+async function postPush() {
+  try {
+    // await checkAmplifyPushSuccess();
+    console.log('updating parameters...');
+    await updateParameters();
+    console.log('All parameters updated successfully.');
+  } catch (error) {
+    console.error('An error occurred:', error);
+  }
+}
+
+postPush();

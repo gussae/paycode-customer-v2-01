@@ -4,13 +4,16 @@ import { Box, Text } from '@chakra-ui/react';
 import styles from './Demo.module.css';
 
 export interface Balance {
+  balance?: number;
+}
+
+export interface GetBalanceParams {
   username: string;
-  amount: number;
 }
 
 export interface BalanceComponentProps {
   username: string;
-  fetchBalance: (username: string) => Promise<Balance>;
+  fetchBalance: (params: GetBalanceParams) => Promise<Balance>;
 }
 
 export const BalanceComponent: React.FC<BalanceComponentProps> = ({
@@ -23,9 +26,9 @@ export const BalanceComponent: React.FC<BalanceComponentProps> = ({
     const loadBalance = async () => {
       try {
         console.log(666, username);
-        const balanceAmount = await fetchBalance(username);
-        console.log(9999, `Fetched balance: ${balanceAmount}`);
-        setBalance(balanceAmount.toString());
+        const res = await fetchBalance({ username });
+        console.log(9999, `Fetched balance: ${res}`);
+        if(res.balance)setBalance(res.balance.toString());
       } catch (err) {
         console.error('Error fetching balance:', err);
       }
@@ -41,4 +44,3 @@ export const BalanceComponent: React.FC<BalanceComponentProps> = ({
     </Box>
   );
 };
-

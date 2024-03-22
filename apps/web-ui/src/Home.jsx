@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getProxyApiAdapter } from './utils';
 import { getCurrentUser } from 'aws-amplify/auth';
+import { fetchBalance } from '@paycode-customer-v2/utils/dist/browser';
 
 import './home.css';
 
@@ -20,7 +20,7 @@ function Home() {
 
   useEffect(() => {
     if (username) {
-      fetchBalance();
+      loadBalance();
     }
   }, [username]); //Watch changes to username
 
@@ -33,13 +33,11 @@ function Home() {
     }
   }
 
-  async function fetchBalance() {
+  async function loadBalance() {
     try {
-      // const proxyApi = await getProxyApiAdapter();
-      // const result = await proxyApi.getBalance({ username });
-      const result = { data: { balance: 123456.78 } };
-      if (result.data) {
-        const balanceResponse = result.data.balance;
+      const result = await fetchBalance({ username });
+      if (result) {
+        const balanceResponse = result.balance;
         console.log(999, { balanceResponse });
         const formattedBalance = `$${balanceResponse.toLocaleString('en-US', { minimumFractionDigits: 2 })}`;
         setBalance(formattedBalance);

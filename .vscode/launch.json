@@ -27,6 +27,17 @@
     },
     {
       "type": "node-terminal",
+      "name": "Debug Current Jest Test",
+      "request": "launch",
+      "command": "npx jest --runInBand ${file}",
+      "cwd": "${workspaceFolder}",
+      "internalConsoleOptions": "neverOpen",
+      "sourceMaps": true,
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+    },
+
+    {
+      "type": "node-terminal",
       "name": "Current-TS-File",
       "request": "launch",
       "command": "node -r ts-node/register ${file}",

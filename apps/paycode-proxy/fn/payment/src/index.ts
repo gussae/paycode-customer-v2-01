@@ -23,8 +23,6 @@ export const handler: APIGatewayProxyHandler = async event => {
     // const token = event.headers.Authorization || event.headers.authorization;
 
     //auto generate id (something like nanoid)
-    //@ts-ignore
-    event.body.id = Math.random().toString(36).substring(7);
     return await runApiOps({ operation: postPayment, event, apiUrl, apiKey });
   } catch (error) {
     console.error('error:', error);

@@ -2,16 +2,17 @@ projects:
   paycodegql:
     schemaPath: amplify/backend/api/paycodegql/build/schema.graphql
     includes:
-      - src/graphql/**/*.ts
+      - ../../packages/graphql/src/**/*.ts
     excludes:
       - amplify/**
+      - ../../packages/graphql/src/API.ts
     extensions:
       amplify:
         codeGenTarget: typescript
-        generatedFileName: src/graphql/API.ts
-        docsFilePath: src/graphql
+        generatedFileName: ../../packages/graphql/src/API.ts
+        docsFilePath: ../../packages/graphql/src
         region: us-west-2
-        maxDepth: 3
+        maxDepth: 5
 extensions:
   amplify:
     version: 3

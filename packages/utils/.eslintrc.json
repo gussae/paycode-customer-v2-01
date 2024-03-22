@@ -2,12 +2,14 @@
   "root": true,
   "env": {
     "node": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true,
   },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended" // If using TypeScript
   ],
+  "ignorePatterns": ["./src/paycode-proxy-api-factory.ts"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 12,

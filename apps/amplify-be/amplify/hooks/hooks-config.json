@@ -1,0 +1,9 @@
+{
+  "extensions": {
+    "js": {
+      "runtime": "node",
+      "runtime_windows": "C:\\Program Files\\nodejs\\node.exe"
+    }
+  },
+  "include": ["node_modules"]
+}

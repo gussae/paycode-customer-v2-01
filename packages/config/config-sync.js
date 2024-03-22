@@ -33,10 +33,16 @@ if (require.main === module) {
       __dirname,
       '../../apps/paycode-proxy',
     );
-    const config1= getConfigSync(__dirname);
+    let amplifyBeProjectRoot = path.resolve(
+      __dirname,
+      '../../apps/amplify-be',
+    );
+    const config0 = getConfigSync(__dirname);
+    const config1 = getConfigSync(amplifyBeProjectRoot);
     const config2 = getConfigSync(webUiProjectRoot);
     const config3 = getConfigSync(paycodeProxyProjectRoot);
-    console.log('ws=config:', config1);
+    console.log('ws=config:', config0);
+    console.log('ws=amplify-be:', config1);
     console.log('ws=web-ui:', config2);
     console.log('ws=paycode-proxy:', config3);
   } catch (error) {

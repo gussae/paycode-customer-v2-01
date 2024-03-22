@@ -4,7 +4,6 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
-    "noEmitOnError": false,
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
@@ -13,9 +12,8 @@
     "incremental": true,
     "inlineSourceMap": true,
     "inlineSources": true,
-    "lib": ["ES2023", "ES2022", "DOM"],
-    "module": "CommonJS",
     "moduleResolution": "Node",
+    "noEmitOnError": false,
     "noFallthroughCasesInSwitch": false,
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -23,22 +21,21 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
+    "types": ["node",],
     "paths": {
-      //these are paths that would be imported by other workspaces
-      "@paycode-customer-v2/constructs/*": ["./packages/constructs/*"],
+      "@paycode-customer-v2/config": ["./packages/config/*"],
       "@paycode-customer-v2/lib": ["./packages/lib/*"],
-      "@paycode-customer-v2/models/*": ["./packages/models/*"],
       "@paycode-customer-v2/ui-components/*": ["./packages/ui-components/*"],
-      "@paycode-customer-v2/ui-utils/*": ["./packages/ui-utils/*"],
+      "@paycode-customer-v2/ui-utils/*": ["./packages/utils/*"]
     },
+    "preserveConstEnums": true,
     "removeComments": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": false,
-    "preserveConstEnums": true,
-    "target": "ES2021",
+    "target": "ES2022",
     "useUnknownInCatchVariables": false
   }
 }

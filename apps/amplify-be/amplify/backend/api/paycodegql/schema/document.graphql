@@ -1,0 +1,66 @@
+# Example Document implementation (starter)
+#* Note: deleteDocument metadata will trigger lambda which will remove the object from  the S3 and  uploadDocument putObject will trigger lambda the will use createMutation to save metadata to DDB. Such event orchestration is more robust and easier to maintain compared to using sync transactional operations in the resolver
+ type Document
+   @model(
+     #? get & list only and deal with metadata in the Document DDB
+    queries: { get: "getDocument", list: "listDocuments" }
+    mutations: { create: "createDocument", delete: "deleteDocument" }
+    subscriptions: null #* no subscriptions for now
+  )
+  @auth(rules: [{ allow: owner, ownerField: "username" }]) {
+  #object key path in the S3 bucket is {username}/{dirname}{filename}.
+  username: String! @primaryKey(sortKeyFields: ["key"])
+  key: String! @index(name: "byKey", sortKeyFields: ["version"])
+  version: String!
+  filename: String!
+  extension: String! #file extension
+  dirname: String! #This is app layer construct and you can progressively add more features such user created folders. By abstracting this in the app layer, the document structure can remain stable.
+  size: Float! #in kilobytes
+  ttl: Int #Epoch time when this item should expire
+  type: String! #MIME type
+  user: User
+    @belongsTo(fields: ["username"])
+    @auth(
+      rules: [
+        {
+          allow: owner
+          ownerField: "username"
+          operations: [create, read, delete]
+        }
+      ]
+    )
+}
+
+enum DocumentStatus {
+  ABORTED
+  ACTIVE
+  PENDING
+}
+#? custom mutation to access Document from the Document Store in S3
+#?download is considered a mutation because it may entail an update operation to the Document say if you start implementing a download count or similar features
+
+input DocumentKeyInput {
+  dirname: String!
+  filename: String!
+  username: String!
+  version:  String
+}
+
+input UploadDocumentInput {
+  dirname: String!
+  extension: String!
+  filename: String!
+  size: Float!
+  ttl: Int
+  type: String!
+  username: String!
+  version: String
+}
+
+type Mutation {
+  downloadDocument(input: DocumentKeyInput!): String
+    @function(name: "documentResolver-${env}")
+  #*saveMetadata to DDB will be implemented by s3 trigger
+  uploadDocument(input: UploadDocumentInput!): Document
+    @function(name: "documentResolver-${env}")
+}

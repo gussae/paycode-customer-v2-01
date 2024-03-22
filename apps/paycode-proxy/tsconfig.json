@@ -6,16 +6,9 @@
     "baseUrl": ".",
     "outDir": "dist",
     "module": "ESNext",
-    "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Node",
     "noEmit": true
   },
   "exclude": ["node_modules", "dist", "build"],
-  "include": [
-    ".temp-generateClientAndDocs/client/API.ts",
-    "**/*.ts",
-    "**/*.js",
-    "**/*.json",
-    "**/.*.json"
-, "fn/balance/execute-check-bundled.mjs"  ]
+  "include": ["**/*.ts", "**/*.js", "**/*.json", "**/.*.json"]
 }

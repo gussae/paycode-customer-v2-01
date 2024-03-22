@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react';
 import './Balance2.module.css';
 import { Card, Heading, Loader } from '@aws-amplify/ui-react';
 
-export interface Balance2Props {
-  username: string; // Directly use username passed as a prop
-  fetchBalance: (username: string) => Promise<Balance2>;
+export interface Balance2 {
+  balance?: number;
 }
 
-export interface Balance2 {
-  amount: number;
+export interface GetBalance2Params {
+  username: string;
+}
+
+export interface Balance2Props {
+  username: string; // Directly use username passed as a prop
+  fetchBalance: (params: GetBalance2Params) => Promise<Balance2>;
 }
 
 export const Balance2Component: React.FC<Balance2Props> = ({
@@ -16,14 +20,15 @@ export const Balance2Component: React.FC<Balance2Props> = ({
   fetchBalance,
 }) => {
   const [balance, setBalance] = useState<string | null>(null);
-  const [accountId, setAccountId] = useState<string>('987654321'); // Assuming accountId is static or fetched differently
+  const [accountId, setAccountId] = useState<string>('987654321');
 
   useEffect(() => {
     const loadBalance = async () => {
       if (username) {
         try {
-          const balanceResponse = await fetchBalance(username);
-          setBalance(String(balanceResponse.amount));
+          const res = await fetchBalance({username});
+          console.log(3443, res);
+        if(res.balance)setBalance(res.balance.toString());
         } catch (error) {
           console.error('Error fetching balance:', error);
           setBalance('Error');

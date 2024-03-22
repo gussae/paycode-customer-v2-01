@@ -1,13 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-unused-vars */
 import styles from './Demo.module.css';
-import { NotificationsComponent, GenericNotification } from './Notification';
-import { ProfileComponent, Profile } from './Profile';
-import { TransferComponent } from './Transfer';
-import { TransactionComponent, Transaction } from './Transaction';
-import { PaymentComponent } from './Payment';
-import { BalanceComponent, Balance } from './Balance';
+import { GenericNotification, NotificationsComponent } from './Notification';
+import { Profile, ProfileComponent } from './Profile';
+// import { TransferComponent } from './Transfer';
+import { Balance, BalanceComponent, GetBalanceParams } from './Balance';
 import { Balance2Component } from './Balance2';
+import {
+  PaymentComponent,
+  MakePaymentParams,
+  MakePaymentReceipt,
+} from './Payment';
+import {
+  GetTransactionsParams,
+  TransactionResponse,
+  TransactionComponent,
+} from './Transaction';
 // import Document from './Document';
 // import QRCode  from './QRCode';
 // Types for the functions to be passed to Demo
@@ -31,10 +39,15 @@ export interface DemoFunctions {
   }) => Promise<void>;
   // Updated return types for fetching functions to be more specific
   fetchProfile: (username: string) => Promise<Profile>;
-  updateProfile: (profile: { bio: string; username: string }) => Promise<Profile>;
-  fetchTransactions: (username: string) => Promise<Transaction[]>;
-  postPayment: (params: { username: string; amount: number }) => Promise<void>;
-  fetchBalance: (username: string) => Promise<Balance>;
+  updateProfile: (profile: {
+    bio: string;
+    username: string;
+  }) => Promise<Profile>;
+  fetchTransactions: (
+    params: GetTransactionsParams,
+  ) => Promise<TransactionResponse>;
+  makePayment: (params: MakePaymentParams) => Promise<MakePaymentReceipt>;
+  fetchBalance: (params: GetBalanceParams) => Promise<Balance>;
 }
 export const Demo: React.FC<DemoProps> = ({
   username,
@@ -43,7 +56,7 @@ export const Demo: React.FC<DemoProps> = ({
   fetchProfile,
   updateProfile,
   fetchTransactions,
-  postPayment,
+  makePayment,
   fetchBalance,
 }) => {
   // No need to fetch username inside Demo, it's passed as a prop
@@ -65,11 +78,10 @@ export const Demo: React.FC<DemoProps> = ({
         fetchProfile={fetchProfile}
         updateProfile={updateProfile}
       />
-      {/* TransferComponent can be similarly implemented */}
       <h3>APIGW BE - Paycode Proxy</h3>
       <BalanceComponent username={username} fetchBalance={fetchBalance} />
       <Balance2Component username={username} fetchBalance={fetchBalance} />
-      <PaymentComponent username={username} postPayment={postPayment} />
+      <PaymentComponent username={username} makePayment={makePayment} />
       <TransactionComponent
         username={username}
         fetchTransactions={fetchTransactions}

@@ -1,0 +1,35 @@
+{
+  "name": "@paycode-customer-v2/graphql",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "files": ["./dist/esm", "./dist/cjs"],
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./dist/esm": "./dist/esm/index.js",
+    "./dist/cjs": "./dist/cjs/index.js"
+  },
+  "scripts": {
+    "build": "concurrently \"tsc -p tsconfig.cjs.json\" \"tsc -p tsconfig.esm.json\"",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "prebuild": "node -e \"const { exec } = require('child_process'); const path = require('path'); const amplifyProjectRoot = path.resolve(__dirname, '../../apps/amplify-be'); exec('amplify codegen', { cwd: amplifyProjectRoot, env: {...process.env}, shell: true }, (error, stdout, stderr) => { console.log(stdout); console.error(stderr); if (error) { console.error('exec error:', error); process.exit(1); } });\"",
+    "postbuild":"node fix-esm.js && node -e \"fs.writeFileSync('./dist/esm/package.json', JSON.stringify({ type: 'module' }), 'utf8')\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.x",
+    "@typescript-eslint/parser": "^6.x",
+    "@types/jest": "^27.x",
+    "@types/node": "^20.x",
+    "concurrently": "^8.x",
+    "eslint": "^8.x",
+    "eslint-config-prettier": "^9.x",
+    "eslint-plugin-prettier": "^5.x",
+    "rimraf": "5.x",
+    "typescript": "^5.x"
+  }
+}

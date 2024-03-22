@@ -3,6 +3,7 @@ const { getWorkspaceInfo } = require('./workspace-info');
 const { getMonorepoConfig } = require('./monorepo-config');
 const { getWorkspaceConfig } = require('./workspace-config');
 const {
+  fetchExportedValuesFromParameterStore,
   fetchWsImportValuesFromParameterStore, // Updated to async version
   getEnvMarkedAndDeploymentNamespacedStackNames,
   getCasedAppNames,
@@ -34,7 +35,7 @@ async function getConfigAsync(currentPath) {
     domainPartition,
     paths: paths1,
     imports,
-    exports,
+    exports: exportsList,
     ...monorepoConfig
   } = monorepoConfigResult;
 
@@ -143,11 +144,20 @@ async function getConfigAsync(currentPath) {
   });
 
   // Transform exports to their respective parameter store handles
-  config.exports = exports
+  const exportsKeyValues = exportsList
     .map(key => ({
       [`${key}ParameterStoreHandle`]: `${outputsPartitionNamespaced}${key}`,
     }))
     .reduce((acc, curr) => ({ ...acc, ...curr }), {});
+
+  config.exports = exportsKeyValues;
+
+  //The importing workspace should use the imports. However, some applications leverage exports to directly grab it from the exporting workspace
+  config.exportsLookup = await fetchExportedValuesFromParameterStore(
+    exportsKeyValues,
+    region,
+    profile,
+  );
 
   return {
     ...config,

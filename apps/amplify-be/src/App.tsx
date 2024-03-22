@@ -8,11 +8,11 @@ import {
   fetchProfile,
   fetchTransactions,
   handleUserSignIn,
-  postPayment,
+  makePayment,
   sendNotification,
   subscribeToNotifications,
   updateProfile,
-} from './utils'; // Import the utility functions
+} from '@paycode-customer-v2/utils/dist/browser';
 
 const App = () => {
   const [initializing, setInitializing] = useState(true);
@@ -57,7 +57,7 @@ const App = () => {
             fetchProfile={fetchProfile}
             updateProfile={updateProfile}
             fetchTransactions={fetchTransactions}
-            postPayment={postPayment}
+            makePayment={makePayment}
             fetchBalance={fetchBalance}
           />
           <button

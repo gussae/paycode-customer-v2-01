@@ -3,43 +3,38 @@ import React, { useEffect, useState } from 'react';
 import { Box, Text } from '@chakra-ui/react';
 import styles from './Demo.module.css';
 
+export interface GetTransactionsParams {
+  username: string;
+}
+export interface Transaction {
+  id?: string;
+  date?: string;
+  amount?: string;
+  status?: string;
+}
 export interface TransactionComponentProps {
   username: string;
-  fetchTransactions: (username: string) => Promise<
-    Array<{
-      id: string;
-      date: string;
-      amount: string;
-      status: string;
-    }>
-  >;
+  fetchTransactions: (
+    params: GetTransactionsParams,
+  ) => Promise<TransactionResponse>;
 }
 
-export interface Transaction {
-  id: string;
-  date: string;
-  amount: string;
-  status: string;
+export interface TransactionResponse {
+  transactions: Transaction[];
 }
+
 export const TransactionComponent: React.FC<TransactionComponentProps> = ({
   username,
   fetchTransactions,
 }) => {
-  const [transactions, setTransactions] = useState<
-    Array<{
-      id: string;
-      date: string;
-      amount: string;
-      status: string;
-    }>
-  >([]);
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
 
   useEffect(() => {
     const loadTransactions = async () => {
       try {
-        const result = await fetchTransactions(username);
+        const result = await fetchTransactions({ username });
         console.log('Transactions fetched successfully', result);
-        setTransactions(result);
+        if (result.transactions) setTransactions(result.transactions);
       } catch (err) {
         console.error('Error fetching transactions:', err);
       }
@@ -61,10 +56,10 @@ export const TransactionComponent: React.FC<TransactionComponentProps> = ({
         </thead>
         <tbody>
           {transactions.map(transaction => (
-            <tr key={transaction.id}>
-              <td>{transaction.date}</td>
-              <td>{transaction.amount}</td>
-              <td>{transaction.status}</td>
+            <tr key={transaction?.id}>
+              <td>{transaction?.date}</td>
+              <td>{transaction?.amount}</td>
+              <td>{transaction?.status}</td>
             </tr>
           ))}
         </tbody>
@@ -72,4 +67,3 @@ export const TransactionComponent: React.FC<TransactionComponentProps> = ({
     </Box>
   );
 };
-

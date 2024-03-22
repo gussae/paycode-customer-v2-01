@@ -1,11 +1,18 @@
 {
   "name": "@paycode-customer-v2/utils",
   "version": "1.0.1",
-  "main": "dist/index.js",
-  "types": "dist/index.d.js",
+  "main": "dist/node/index.js",
+  "browser": "dist/browser/index.js",
+  "files": ["./dist/browser", "./dist/node"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "test": "jest",
+    "build": "concurrently \"npm run build-node\" \"npm run build-browser\" ",
+    "build-node": "tsc -p tsconfig.node.json",
+    "build-browser": "tsc -p tsconfig.browser.json && node fix-browser-client.js",
+    "build-paycode-proxy-client": "ts-node src/node/builders/paycode-proxy-api/build-paycode-proxy-client.ts -p tsconfig.node.json",
+    "postbuild": "node -e \"setTimeout(() => require('child_process').execSync('rimraf dist/node/builders/'), 10000)\"",
+    "prebuild": "concurrently \"npm run build -w @paycode-customer-v2/graphql\" \"npm run build-paycode-proxy-client\"",
+    "clear": "rimraf dist tsconfig.tsbuildinfo tsconfig.node.tsbuildinfo tsconfig.browser.tsbuildinfo "
   },
   "author": "",
   "license": "ISC",
@@ -14,36 +21,28 @@
   },
   "description": "",
   "devDependencies": {
-    "@apidevtools/json-schema-ref-parser": "^11.x",
-    "@aws-sdk/client-api-gateway": "^3.x",
-    "@aws-sdk/credential-providers": "3.*",
     "@paycode-customer-v2/config": "*",
-    "@paycode-customer-v2/lib": "*",
-    "@paycode-customer-v2/utils": "*",
-    "@redocly/cli": "^1.x",
-    "@redocly/openapi-core": "^1.x",
-    "@smithy/types": "2.x",
     "@types/jest": "^27.x",
     "@types/node": "^20.x",
     "@typescript-eslint/eslint-plugin": "^6.x",
     "@typescript-eslint/parser": "^6.x",
-    "axios": "^1.x",
     "concurrently": "^8.x",
     "change-case-all": "^2.x",
     "cross-env": "^7.x",
-    "fs-extra": "^11.x",
+    "dotenv": "^16.x",
     "eslint": "^8.x",
     "eslint-config-prettier": "^9.x",
     "eslint-plugin-prettier": "^5.x",
     "jest": "^29.x",
-    "orval": "^6.x",
     "rimraf": "5.x",
     "ts-jest": "^29.x",
     "ts-node": "^10.x",
-    "typescript": "^5.x",
-    "yaml": "^2.3.4"
+    "typescript": "^5.x"
   },
   "dependencies": {
+    "amazon-cognito-identity-js": "^6.x",
+    "@paycode-customer-v2/graphql": "*",
+    "axios": "^1.x",
     "fs-extra": "^11.x"
   }
 }

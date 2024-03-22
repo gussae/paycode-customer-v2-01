@@ -7,8 +7,6 @@ const {
   deploymentOptions: { noConfirmChangeSet, disableRollback },
 } = CONFIG;
 
-
-
 /**
  * Returns the command arguments for deployment.
  * @returns {string[]} The command arguments for deployment.

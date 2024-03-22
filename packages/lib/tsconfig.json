@@ -3,10 +3,9 @@
   "compilerOptions": {
     "rootDir": "./src",
     "baseUrl": ".",
-    "outDir": "./dist",
     "composite": true,
-    "noEmit": false
+    "noEmit": true,
   },
-  "exclude": ["node_modules", "dist", "build", "tsconfig.json"],
-  "include": ["src/*.ts", "src/*.js", "src/*.json"]
+  "exclude": ["node_modules", "dist", "build"],
+  "include": ["src"]
 }

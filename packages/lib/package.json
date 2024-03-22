@@ -1,11 +1,22 @@
 {
   "name": "@paycode-customer-v2/lib",
   "version": "1.0.1",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "files": ["./dist/esm", "./dist/cjs"],
+  "main": "./dist/cjs/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./dist/esm": "./dist/esm/index.js",
+    "./dist/cjs": "./dist/cjs/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "concurrently \"tsc -p tsconfig.cjs.json\" \"tsc -p tsconfig.esm.json\"",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "postbuild":"node fix-esm.js && node -e \"fs.writeFileSync('./dist/esm/package.json', JSON.stringify({ type: 'module' }), 'utf8')\""
   },
   "author": "",
   "license": "ISC",
@@ -15,9 +26,18 @@
 
   "description": "",
   "dependencies": {
+    "@aws-crypto/sha256-js": "^5.x",
     "@aws-sdk/client-ssm": "^3.x",
     "@aws-sdk/credential-providers": "^3.x",
-    "@aws-sdk/client-secrets-manager": "^3.x"
+    "@aws-sdk/client-secrets-manager": "^3.x",
+    "@aws-sdk/credential-provider-node": "^3.x",
+    "@aws-sdk/client-dynamodb": "3.x",
+    "@aws-sdk/client-s3": "3.x",
+    "@paycode-customer-v2/graphql": "*",
+    "@aws-sdk/lib-dynamodb": "3.x",
+    "@smithy/protocol-http": "^3.x",
+    "@aws-sdk/s3-request-presigner": "^3.x",
+    "@smithy/signature-v4": "^2.x"
   },
   "devDependencies": {
     "@aws-sdk/types": "^3.x",

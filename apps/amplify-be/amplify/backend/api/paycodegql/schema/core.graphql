@@ -1,0 +1,31 @@
+# Example Transfer implementation (starter)
+#NOTE: To efficiently handle queries like "all sent by me" and "all sent to me",  avoid using `@hasMany` in the User model due to inefficiencies with DynamoDB RCUs. Instead, implement custom indexes and queries leveraging range operations (e.g., `begin_with`) for precise targeting in the Transfer model =>minimized RCU usage by directly fetching needed data. Key indexes: `bySenderTo` and `byReceiverFrom` with `createdAt` and `status` as sort keys. Manual insertion of `createdAt` is required, and projecting 'to' and 'from' in indexes is unnecessary, as they're part of partition keys.
+
+# #custom query example (the lambdas implement these custom resolvers)
+# type Query {
+#   transfersBySender(senderId: ID!): [Transfer] @function(name: "queryTransfersBySender-${env}")
+#   transfersByReceiver(receiverId: ID!): [Transfer] @function(name: "queryTransfersByReceiver-${env}")
+# }
+
+type Transfer @model @auth(rules: [{ allow: owner, ownerField: "from" }]) {
+  id: ID!
+  from: String!
+    @auth(
+      rules: [
+        { allow: owner, ownerField: "from", operations: [create, read, delete] }
+      ]
+    )
+  to: String!
+
+  amount: Float!
+  status: TransferStatus!
+}
+
+enum TransferStatus {
+  COMPLETED
+  FAILED
+  REJECTED
+  PENDING
+}
+
+

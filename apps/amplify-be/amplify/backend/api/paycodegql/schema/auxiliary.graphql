@@ -1,0 +1,19 @@
+type Notification
+  @model
+  @auth(rules: [{ allow: owner, ownerField: "username" }]) {
+  id: ID!
+  username: String!
+    @auth(
+      rules: [
+        {
+          allow: owner
+          ownerField: "username"
+          operations: [create, read, delete]
+        }
+      ]
+    )
+  title: String!
+  message: String!
+  read: Boolean!
+  user: User @belongsTo(fields: ["username"])
+}
