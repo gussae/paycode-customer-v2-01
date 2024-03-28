@@ -208,11 +208,6 @@ jobs:
         run: node scripts/build-packages.js
         shell: bash
 
-      - name: List directory contents
-        run: |
-          ls -la apps/amplify-be/src/
-          ls -la apps/amplify-be/src/graphql/
-
       - name: Upload Packages Artifacts
         if: steps.deployment_trigger_logic.outputs.isDeployment == 'true'
         uses: actions/upload-artifact@v4
@@ -305,12 +300,6 @@ jobs:
       - name: Build and Deploy Paycode Proxy from the Root of paycode-proxy WS
         run: npm run build
         working-directory: apps/paycode-proxy
-
-      - name: List required files
-        run:  |
-          ls -lah packages/apigw/dist/.generated/paycode-proxy/client
-          ls -lah apps/amplify-be/src/graphql
-        shell: bash
 
       - name: Build and Deploy Web UI from the Root of ui-web WS
         run: npm run build
@@ -418,12 +407,6 @@ jobs:
       - name: Add node_modules/.bin to PATH
         run: echo "${{ github.workspace }}/node_modules/.bin" >> $GITHUB_PATH
 
-      - name: List required files
-        run:  |
-          ls -lah packages/apigw/dist/.generated/paycode-proxy/client
-          ls -lah apps/amplify-be/src/graphql
-        shell: bash
-
       - name: Build and Deploy Web UI from the Root of ui-web WS
         run: |
           rm -rf node_modules/.vite
@@ -476,13 +459,6 @@ jobs:
 
       - name: Add node_modules/.bin to PATH
         run: echo "${{ github.workspace }}/node_modules/.bin" >> $GITHUB_PATH
-
-      - name: List required files
-        run:  |
-          ls -lah packages/apigw/dist/.generated/paycode-proxy/client
-          ls -lah apps/amplify-be/src/graphql
-          cat packages/apigw/dist/.generated/paycode-proxy/client/API.js
-        shell: bash
 
       - name: Build and Deploy Web UI from the Root of ui-web WS
         run: |
