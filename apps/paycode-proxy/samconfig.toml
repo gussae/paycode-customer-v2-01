@@ -1,0 +1,14 @@
+version = 0.1
+
+#!DeploymentEnv is set here
+[dev.deploy.parameters]
+capabilities = "CAPABILITY_IAM CAPABILITY_NAMED_IAM"
+confirm_changeset = true
+parameter_overrides = "DeploymentEnv=dev  IsVpcLog='true' PaycodeProxyApiIdParameterStoreHandle='/paycode-customer-v2/paycode-proxy/V1/outputs/3024/paycodeProxyApiId' PaycodeProxyApiUrlParameterStoreHandle='/paycode-customer-v2/paycode-proxy/V1/outputs/3024/paycodeProxyApiUrl' PaycodeVpcId='vpc-f3ddda8b' PaycodeAccountId='760554368476' PaycodePcxRoleArn='arn:aws:iam::760554368476:role/VPCPeeringRole' PaycodeVpcCidr='172.31.0.0/16' PaycodeProxyCidrBlock='10.0.1.0/16' VpcLogRetention='7'"
+stack_name = 'paycode-proxy-v1-dev-3024'
+
+[prod.deploy.parameters]
+capabilities = "CAPABILITY_IAM CAPABILITY_NAMED_IAM"
+confirm_changeset = true
+parameter_overrides = "DeploymentEnv=prod IsVpcLog='true' PaycodeProxyApiIdParameterStoreHandle='/paycode-customer-v2/paycode-proxy/V1/outputs/3024/paycodeProxyApiId' PaycodeProxyApiUrlParameterStoreHandle='/paycode-customer-v2/paycode-proxy/V1/outputs/3024/paycodeProxyApiUrl' PaycodeVpcId='vpc-f3ddda8b' PaycodeAccountId='760554368476' PaycodePcxRoleArn='arn:aws:iam::760554368476:role/VPCPeeringRole' PaycodeVpcCidr='172.31.0.0/16' PaycodeProxyCidrBlock='10.0.1.0/16' VpcLogRetention='7'"
+stack_name = 'paycode-proxy-v1-dev-3024'

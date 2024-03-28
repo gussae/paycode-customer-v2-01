@@ -44,3 +44,7 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+
+# amplify api build files should be handled special: the build schema is used in codgen and since we don't have ci/cd, we need to commit the schema
+amplify/backend/api/paycodegql/build/
+!amplify/backend/api/paycodegql/build/schema.graphql
