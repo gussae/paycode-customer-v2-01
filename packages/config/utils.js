@@ -3,10 +3,30 @@ const util = require('util');
 const fs = require('fs/promises');
 const changeCase = require('change-case-all');
 const { SSMClient, GetParameterCommand } = require('@aws-sdk/client-ssm');
-const { fromIni } = require('@aws-sdk/credential-providers');
+const { fromIni, fromEnv } = require('@aws-sdk/credential-providers');
 const names = require('./names.json');
 const exec = util.promisify(require('child_process').exec);
 const crypto = require('crypto');
+
+//!Do not export:this same function is exported in lib under the name getAwsCredsProvider
+function getCredsProvider(profile) {
+  // Check if running in CI environment
+  if (process.env.CI === 'true') {
+    // Attempt to load AWS credentials via environment variables for CI environments
+    try {
+      return fromEnv();
+    } catch (error) {
+      console.error('Failed to load AWS credentials from environment variables:', error);
+      return undefined; // Hopefully, it will pick up from defaultConfig on the CI
+    }
+  } else if (process.env.AWS_LAMBDA_FUNCTION_NAME) {
+    console.log('Running in AWS Lambda. Using execution role for credentials.');
+    return undefined;
+  } else {
+    // Load credentials from AWS profiles for non-CI environments
+    return fromIni({ profile });
+  }
+}
 
 function generateDeploymentNamespace(
   username,
@@ -438,7 +458,7 @@ async function fetchWsImportValuesFromParameterStore(
 ) {
   const ssmClient = new SSMClient({
     region,
-    credentials: profile ? fromIni({ profile }) : undefined,
+    credentials: getCredsProvider(profile),
   });
   const fetchedValues = {};
 
@@ -480,7 +500,7 @@ async function fetchExportedValuesFromParameterStore(
 ) {
   const ssmClient = new SSMClient({
     region,
-    credentials: profile ? fromIni({ profile }) : undefined,
+    credentials: getCredsProvider(profile),
   });
   const fetchedValues = {};
 
