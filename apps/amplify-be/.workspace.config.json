@@ -1,6 +1,6 @@
 {
   "customSettings": {
-    "__git_actions_trigger": 75,
+    "__git_actions_trigger": 74,
     "amplifyInit": {
       "frontend": {
         "frontend": "javascript",
