@@ -1,25 +1,35 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
-import { Demo } from '@paycode-customer-v2/ui-components';
-import { getCurrentUser } from 'aws-amplify/auth';
-import { useEffect, useState } from 'react';
 import {
+  Demo,
+  DownloadDocumentParams,
+  UploadDocumentParams,
+} from '@paycode-customer-v2/ui-components';
+import {
+  downloadDocument,
   fetchBalance,
+  fetchDocumentIndex,
   fetchProfile,
   fetchTransactions,
   handleUserSignIn,
+  listDocuments,
   makePayment,
   sendNotification,
   subscribeToNotifications,
   updateProfile,
-} from '@paycode-customer-v2/utils/dist/browser';
+  uploadDocument,
+  deleteDocument,
+} from '@paycode-customer-v2/utils/dist/browser'; // Import the utility functions
+import { getCurrentUser } from 'aws-amplify/auth';
+import { useEffect, useState } from 'react';
 
 const App = () => {
   const [initializing, setInitializing] = useState(true);
   const [username, setUsername] = useState('');
 
-  // This function handles the onboarding process
-
+  //handles onboarding
   useEffect(() => {
     handleUserSignIn()
       .then(() => getCurrentUser())
@@ -59,6 +69,24 @@ const App = () => {
             fetchTransactions={fetchTransactions}
             makePayment={makePayment}
             fetchBalance={fetchBalance}
+            downloadDocument={
+              downloadDocument as (
+                params: DownloadDocumentParams,
+              ) => Promise<string | null>
+            }
+            uploadDocument={
+              uploadDocument as (
+                params: UploadDocumentParams,
+              ) => Promise<boolean>
+            }
+            getDocumentIndex={
+              fetchDocumentIndex as (params: {
+                username: string;
+                key: string;
+              }) => Promise<any>
+            }
+            listDocuments={listDocuments}
+            deleteDocument={deleteDocument}
           />
           <button
             onClick={signOut}

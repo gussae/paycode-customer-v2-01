@@ -216,18 +216,6 @@ jobs:
           #*NOTE: not worth filtering here since the node modules are mostly hoisted
           path: packages/
 
-      - name: Build Graphql Artifacts
-        if: steps.deployment_trigger_logic.outputs.fullDeployment == 'true' || steps.modify_deployment_trigger_logic.outputs.orchestrateDeployment == 'true' || steps.filter_paths.outputs.uiWeb == 'true'
-        run: npm run build
-        working-directory: apps/amplify-be/src/graphql
-
-      - name:  Upload GraphQL Artificats
-        if: steps.deployment_trigger_logic.outputs.fullDeployment == 'true' || steps.modify_deployment_trigger_logic.outputs.orchestrateDeployment == 'true' || steps.filter_paths.outputs.uiWeb == 'true' || steps.filter_paths.outputs.webUi == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: graphql-artifacts
-          path: apps/amplify-be/src/graphql/
-
   print-deployments-state:
     runs-on: ubuntu-latest
     needs: setup-environment
