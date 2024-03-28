@@ -6,7 +6,7 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "auth": {
-    "paycodeamplifybeb7417453": {
+    "paycodeamplifybee1dd5abc": {
       "AppClientID": "string",
       "AppClientIDWeb": "string",
       "IdentityPoolId": "string",
@@ -17,21 +17,21 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "function": {
-    "documentResolver": {
+    "documentAccess": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
       "Name": "string",
       "Region": "string"
     },
-    "removeS3Object": {
+    "documentIndex": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
       "Name": "string",
       "Region": "string"
     },
-    "storeS3ObjectMetadata": {
+    "removeDocument": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",

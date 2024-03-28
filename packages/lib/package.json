@@ -16,7 +16,7 @@
     "build": "concurrently \"tsc -p tsconfig.cjs.json\" \"tsc -p tsconfig.esm.json\"",
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:cjs": "tsc -p tsconfig.cjs.json",
-    "postbuild":"node fix-esm.js && node -e \"fs.writeFileSync('./dist/esm/package.json', JSON.stringify({ type: 'module' }), 'utf8')\""
+    "postbuild":"node fix-dist.js"
   },
   "author": "",
   "license": "ISC",
@@ -33,11 +33,12 @@
     "@aws-sdk/credential-provider-node": "^3.x",
     "@aws-sdk/client-dynamodb": "3.x",
     "@aws-sdk/client-s3": "3.x",
-    "@paycode-customer-v2/graphql": "*",
     "@aws-sdk/lib-dynamodb": "3.x",
-    "@smithy/protocol-http": "^3.x",
     "@aws-sdk/s3-request-presigner": "^3.x",
-    "@smithy/signature-v4": "^2.x"
+    "@paycode-customer-v2/graphql": "*",
+    "@smithy/protocol-http": "^3.x",
+    "@smithy/signature-v4": "^2.x",
+    "change-case-all": "^2.x"
   },
   "devDependencies": {
     "@aws-sdk/types": "^3.x",

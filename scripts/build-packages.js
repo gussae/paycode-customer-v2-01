@@ -1,117 +1,187 @@
-const { promisify } = require('util');
-const fs = require('fs');
+const { readdir, unlink, readFile, writeFile } = require('fs/promises');
 const path = require('path');
-const exec = promisify(require('child_process').exec);
+const crypto = require('crypto');
 const { glob } = require('glob');
+const { spawn } = require('child_process');
 const { packagesConfig: PACKAGES_CONFIG } = require('../.monorepo.config.json');
-const statAsync = promisify(fs.stat);
-const readFileAsync = promisify(fs.readFile);
-
-
-
-const readdirAsync = promisify(fs.readdir);
 
 const rootDir = path.join(__dirname, '../');
 const packagesDir = path.join(rootDir, 'packages');
+const hashFilePath = path.join(rootDir, '.package-hashes.json');
 
-async function buildPackage(packageDir) {
-  //you want error to be thrown if build fails
-  await cleanTsBuildInfo(packageDir);
-  const { stdout } = await exec('npm run build', { cwd: packageDir });
-  console.log(stdout);
+async function computeHashForDirectory(directory) {
+  const files = await glob('**/*', {
+    cwd: directory,
+    nodir: true,
+    absolute: true,
+    ignore: [
+      '**/node_modules/**',
+      '**/.temp*/**',
+      '**/tmp/**',
+      '**/temp/**',
+      '**/dist/**',
+      '**/build/**',
+    ],
+  });
+
+  const hash = crypto.createHash('sha256');
+  for (const file of files) {
+    const content = await readFile(file);
+    hash.update(content);
+  }
+  return hash.digest('hex');
+}
+
+async function getStoredHashes() {
+  try {
+    const content = await readFile(hashFilePath, 'utf8');
+    return JSON.parse(content);
+  } catch (error) {
+    return {};
+  }
+}
+
+async function saveStoredHashes(hashes) {
+  await writeFile(hashFilePath, JSON.stringify(hashes, null, 2), 'utf8');
+}
+
+async function buildPackage(packageDir, packageName, uncached = false) {
+  if (uncached) {
+    await cleanTsBuildInfo(packageDir);
+  } else {
+    const storedHashes = await getStoredHashes();
+    const currentHash = await computeHashForDirectory(packageDir);
+    if (storedHashes[packageName] === currentHash) {
+      console.log(`Skipping ${packageName}, no changes detected.`);
+      return;
+    }
+    storedHashes[packageName] = currentHash;
+    await saveStoredHashes(storedHashes);
+  }
+
+  return new Promise((resolve, reject) => {
+    const buildProcess = spawn('npm', ['run', 'build'], {
+      cwd: packageDir,
+      stdio: 'inherit',
+      shell: true,
+      env: { ...process.env, FORCE_COLOR: '1' },
+    });
+
+    buildProcess.on('close', code => {
+      if (code === 0) {
+        resolve();
+      } else {
+        reject(new Error(`Build process exited with code ${code}`));
+      }
+    });
+  });
 }
 
 async function getDirectories(source) {
-  const dirs = await readdirAsync(source, { withFileTypes: true });
+  const dirs = await readdir(source, { withFileTypes: true });
   return dirs.filter(dirent => dirent.isDirectory()).map(dirent => dirent.name);
 }
 
 async function cleanTsBuildInfo(packageDir) {
-  try {
-    const tsBuildInfoFiles = await glob('**/*.tsbuildinfo', {
-      cwd: packageDir,
-      absolute: true,
-    });
-    tsBuildInfoFiles.forEach(async file => {
-      await fs.promises.unlink(file);
-    });
-  } catch (error) {
-    console.error(`Error cleaning .tsbuildinfo in ${packageDir}:`, error);
+  const tsBuildInfoFiles = await glob('**/*.tsbuildinfo', {
+    cwd: packageDir,
+    absolute: true,
+  });
+  for (const file of tsBuildInfoFiles) {
+    await unlink(file);
   }
 }
 
-async function buildPackages() {
-  const isBrowser = process.argv.includes('--browser');
-  const isNode = process.argv.includes('--node');
-  const isNodeAndBrowser = (isBrowser && isNode) || (!isBrowser && !isNode);
+async function sortPackagesForBuild(directories) {
+  let batches = [];
+  let processed = new Set();
+  let toProcess = new Set(directories);
 
-  try {
-    const directories = await getDirectories(packagesDir);
-    const buildPromises = directories.map(async dirName => {
+  while (toProcess.size > 0) {
+    let batch = [];
+    for (const dirName of toProcess) {
+      const pkgConfig = PACKAGES_CONFIG.find(pkg => pkg.name === dirName);
+      const { dependsOn = [] } = pkgConfig || {};
+      if (dependsOn.every(dep => processed.has(dep))) {
+        batch.push(dirName);
+      }
+    }
+
+    if (batch.length > 0) {
+      batches.push(batch);
+      batch.forEach(pkg => {
+        processed.add(pkg);
+        toProcess.delete(pkg);
+      });
+    } else {
+      throw new Error(
+        'Unable to resolve all package dependencies. Check for circular dependencies or configuration errors.',
+      );
+    }
+  }
+
+  return batches;
+}
+
+async function buildPackagesInBatch(batch, uncached) {
+  await Promise.all(
+    batch.map(async dirName => {
       const packageConfig = PACKAGES_CONFIG.find(pkg => pkg.name === dirName);
       if (!packageConfig) {
         console.log(`No config found for ${dirName}, skipping.`);
         return;
       }
-      const dirPath = path.join(packagesDir, dirName);
-      const packageJsonPath = path.join(dirPath, 'package.json');
-      let packageJsonExists = false;
-      let packageJson;
 
-      try {
-        const stats = await statAsync(packageJsonPath);
-        if (stats.isFile()) {
-          packageJson = JSON.parse(
-            await readFileAsync(packageJsonPath, 'utf8'),
-          );
-          packageJsonExists = true;
-        }
-      } catch (error) {
-        if (error.code === 'ENOENT') {
-          console.log(`No package.json found for ${dirName}, skipping.`);
-          return;
-        } else {
-          console.error(`Error reading ${dirName}:`, error);
-          return;
-        }
+      // Checking for build requirement
+      if (!packageConfig.build) {
+        console.log(`Skipping ${dirName}, build not required.`);
+        return;
       }
 
-      // Proceed if package.json exists and has a build script
+      // Checking environment flags
+      const isBrowser = process.argv.includes('--browser');
+      const isNode = process.argv.includes('--node');
+      const isNodeAndBrowser = (!isBrowser && !isNode) || (isBrowser && isNode);
       if (
-        packageJsonExists &&
-        packageJson.scripts &&
-        packageJson.scripts.build
+        !(isBrowser && packageConfig.browser) &&
+        !(isNode && packageConfig.node) &&
+        !isNodeAndBrowser
       ) {
-        // Filter based on the environment flags and platform
-        if (
-          packageConfig.platform === 'ts' &&
-          ((isBrowser && packageConfig.env.browser) ||
-            (isNode && packageConfig.env.node) ||
-            isNodeAndBrowser)
-        ) {
-          try {
-            await buildPackage(dirPath);
-          } catch (error) {
-            // Log but do not halt the build process for other packages
-            console.error(`Error building ${dirName}:`, error);
-          }
-        } else {
-          console.log(
-            `Skipping ${dirName} due to environment flags or platform.`,
-          );
-        }
-      } else if (!packageJson.scripts || !packageJson.scripts.build) {
-        console.log(
-          `No build script found in package.json for ${dirName}, skipping.`,
-        );
+        console.log(`Skipping ${dirName} due to environment flags.`);
+        return;
       }
-    });
 
-    await Promise.all(buildPromises);
-    console.log('Relevant packages built successfully.');
-  } catch (error) {
-    console.error('Error in building process:', error);
+      const dirPath = path.join(packagesDir, dirName);
+
+      // Hashing logic
+      if (!uncached && packageConfig.hash) {
+        const currentHash = await computeHashForDirectory(dirPath);
+        const storedHashes = await getStoredHashes();
+        if (storedHashes[dirName] === currentHash) {
+          console.log(`Skipping ${dirName}, no changes detected.`);
+          return;
+        } else {
+          storedHashes[dirName] = currentHash;
+          await saveStoredHashes(storedHashes);
+        }
+      }
+
+      // Proceed with the build
+      await buildPackage(dirPath, dirName, uncached);
+    }),
+  );
+}
+
+async function buildPackages() {
+  const isUncached = process.argv.includes('--uncached');
+  const directories = await getDirectories(packagesDir);
+  const batches = await sortPackagesForBuild(directories);
+
+  for (const batch of batches) {
+    await buildPackagesInBatch(batch, isUncached);
   }
+
+  console.log('All relevant packages built successfully.');
 }
 
 buildPackages().catch(console.error);

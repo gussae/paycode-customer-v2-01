@@ -1,67 +1,36 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-paycodeamplifybe-dev-172046-authRole",
-      "UnauthRoleArn": "arn:aws:iam::653991346912:role/amplify-paycodeamplifybe-dev-172046-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::653991346912:role/amplify-paycodeamplifybe-dev-172046-authRole",
+      "AuthRoleName": "amplify-paycodeamplifybe-dev-153324-authRole",
+      "UnauthRoleArn": "arn:aws:iam::653991346912:role/amplify-paycodeamplifybe-dev-153324-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::653991346912:role/amplify-paycodeamplifybe-dev-153324-authRole",
       "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-paycodeamplifybe-dev-172046-deployment",
-      "UnauthRoleName": "amplify-paycodeamplifybe-dev-172046-unauthRole",
-      "StackName": "amplify-paycodeamplifybe-dev-172046",
-      "StackId": "arn:aws:cloudformation:us-west-2:653991346912:stack/amplify-paycodeamplifybe-dev-172046/5ca083b0-c546-11ee-aafb-0687f8b398d7",
-      "AmplifyAppId": "d3ciw3wgm1tvrq"
+      "DeploymentBucketName": "amplify-paycodeamplifybe-dev-153324-deployment",
+      "UnauthRoleName": "amplify-paycodeamplifybe-dev-153324-unauthRole",
+      "StackName": "amplify-paycodeamplifybe-dev-153324",
+      "StackId": "arn:aws:cloudformation:us-west-2:653991346912:stack/amplify-paycodeamplifybe-dev-153324/9a1b7740-e954-11ee-9ab2-0ade1052f91f",
+      "AmplifyAppId": "d2pptv4v4kzm67"
     },
     "categories": {
       "auth": {
-        "paycodeamplifybeb7417453": {}
+        "paycodeamplifybee1dd5abc": {}
+      },
+      "function": {
+        "documentAccess": {
+          "deploymentBucketName": "amplify-paycodeamplifybe-dev-153324-deployment",
+          "s3Key": "amplify-builds/documentAccess-516e585036346d6c3237-build.zip"
+        },
+        "documentIndex": {
+          "deploymentBucketName": "amplify-paycodeamplifybe-dev-153324-deployment",
+          "s3Key": "amplify-builds/documentIndex-667038493547594b6d2f-build.zip"
+        },
+        "removeDocument": {
+          "deploymentBucketName": "amplify-paycodeamplifybe-dev-153324-deployment",
+          "s3Key": "amplify-builds/removeDocument-456f576b456663573651-build.zip"
+        }
       },
       "api": {
         "paycodegql": {}
-      },
-      "function": {
-        "documentResolver": {
-          "deploymentBucketName": "amplify-paycodeamplifybe-dev-172046-deployment",
-          "s3Key": "amplify-builds/documentResolver-6c46674c775555755a64-build.zip"
-        },
-        "documentStore": {},
-        "removeS3Object": {
-          "deploymentBucketName": "amplify-paycodeamplifybe-dev-172046-deployment",
-          "s3Key": "amplify-builds/removeS3Object-3161415a78434343326d-build.zip"
-        },
-        "storeS3ObjectMetadata": {
-          "deploymentBucketName": "amplify-paycodeamplifybe-dev-172046-deployment",
-          "s3Key": "amplify-builds/storeS3ObjectMetadata-47632b624636482f6559-build.zip"
-        }
-      },
-      "storage": {
-        "documentStore": {}
-      }
-    }
-  },
-  "prod": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-paycodeamplifybe-prod-120222-authRole",
-      "UnauthRoleArn": "arn:aws:iam::760554368476:role/amplify-paycodeamplifybe-prod-120222-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::760554368476:role/amplify-paycodeamplifybe-prod-120222-authRole",
-      "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-paycodeamplifybe-prod-120222-deployment",
-      "UnauthRoleName": "amplify-paycodeamplifybe-prod-120222-unauthRole",
-      "StackName": "amplify-paycodeamplifybe-prod-120222",
-      "StackId": "arn:aws:cloudformation:us-west-2:760554368476:stack/amplify-paycodeamplifybe-prod-120222/db718680-dcac-11ee-a243-063e432f4183",
-      "AmplifyAppId": "d26mjfok8pa6w4"
-    },
-    "categories": {
-      "auth": {
-        "paycodeamplifybeb7417453": {}
-      },
-      "api": {
-        "paycodegql": {}
-      },
-      "function": {
-        "documentResolver": {
-          "deploymentBucketName": "amplify-paycodeamplifybe-prod-120222-deployment",
-          "s3Key": "amplify-builds/documentResolver-357931666f664b624d33-build.zip"
-        }
       },
       "storage": {
         "documentStore": {}

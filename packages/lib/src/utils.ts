@@ -6,14 +6,6 @@ import { HeaderBag } from '@aws-sdk/types';
 import { HttpRequest } from '@smithy/protocol-http';
 import { SignatureV4 } from '@smithy/signature-v4';
 import { AwsCredentialIdentityProvider } from '@smithy/types';
-import { getSignedUrl as awsGetSignedUrl } from '@aws-sdk/s3-request-presigner';
-import {
-  S3Client,
-  GetObjectCommand,
-  PutObjectCommand,
-  PutObjectCommandInput,
-  GetObjectCommandInput,
-} from '@aws-sdk/client-s3';
 
 export type ReplacementPairs = [target: string, replacement: string][];
 export type TemplateTag = [open: string, close: string];
@@ -86,14 +78,7 @@ export async function signAwsRequest(
   request: HttpRequest,
   region: string,
 ): Promise<HttpRequest> {
-  const signer = new SignatureV4({
-    credentials: defaultProvider(),
-    region,
-    service,
-    sha256: Sha256,
-  });
-
-  const signedRequest = await signer.sign(request);
+  request.headers['Host'] = new URL(`https://${request.hostname}`).hostname;
 
   function headersToHeaderBag(headers: Headers): HeaderBag {
     const headerBag: HeaderBag = {};
@@ -108,53 +93,15 @@ export async function signAwsRequest(
     new Headers(Object.entries(request.headers)),
   );
 
+  console.log(444, request.headers);
+  const signer = new SignatureV4({
+    credentials: defaultProvider(),
+    region,
+    service,
+    sha256: Sha256,
+  });
+
+  const signedRequest = await signer.sign(request);
+
   return signedRequest as HttpRequest;
 }
-
-export interface GetSignedUrlParams {
-  method: 'getObject' | 'putObject';
-  bucket: string;
-  key: string;
-  expiry: number;
-  versionId?: string; // Optional version ID for getObject
-  metadataHeaders?: Record<string, string>; // Optional metadata for putObject
-}
-
-/**
- * Generates a signed URL for accessing an S3 object or uploading an object to S3.
- * @param params - The parameters for generating the signed URL.
- * @returns A Promise that resolves to the signed URL.
- */
-export const getSignedUrl = async (
-  params: GetSignedUrlParams,
-): Promise<string> => {
-  const s3Client = new S3Client({ region: process.env.REGION });
-
-  let command;
-  if (params.method === 'getObject') {
-    // Include versionId conditionally for getObject
-    const getObjectParams: GetObjectCommandInput = {
-      Bucket: params.bucket,
-      Key: params.key,
-      ...(params.versionId && { VersionId: params.versionId }),
-    };
-    command = new GetObjectCommand(getObjectParams);
-  } else {
-    const metadataHeaders = params.metadataHeaders || {};
-    const commandInput: PutObjectCommandInput = {
-      Bucket: params.bucket,
-      Key: params.key,
-      Metadata: params?.metadataHeaders,
-      ContentType:
-        metadataHeaders['Content-Type'] ||
-        metadataHeaders['content-type'] ||
-        metadataHeaders['x-amz-meta-type'],
-    };
-    command = new PutObjectCommand(commandInput);
-  }
-
-  const signedUrl = await awsGetSignedUrl(s3Client, command, {
-    expiresIn: params.expiry,
-  });
-  return signedUrl;
-};

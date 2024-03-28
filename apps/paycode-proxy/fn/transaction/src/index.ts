@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { APIGatewayProxyHandler } from 'aws-lambda';
-import { handleError, runApiOps } from '@paycode-customer-v2/lib';
+import { handleError, runApiOps } from '@paycode-customer-v2/lib/dist/esm';
 import { handleTransactionsRequests } from './transaction';
 
 const apiKey = process.env.PAYCODE_SERVER_API_KEY_NAME;

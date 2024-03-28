@@ -72,8 +72,11 @@ export interface WorkspaceConfig {
 
 export interface PackagesConfig {
   name: string;
-  env: { node: boolean; browser: boolean };
-  platform: 'ts' | 'js';
+  browser: boolean;
+  build: boolean;
+  dependsOn?: string[];
+  hash: boolean
+  node: boolean;
 }
 
 type Config = {

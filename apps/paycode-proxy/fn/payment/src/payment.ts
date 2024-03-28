@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import axios, { AxiosResponse } from 'axios';
-import { RunApiOps } from '@paycode-customer-v2/lib';
+import { RunApiOps } from '@paycode-customer-v2/lib/dist/esm';
 
 //TODO!use API exported from @paycode-customer-v2/utils to set the types but that require dynamic import as you are in CJS module and importing an es6 module
 export interface PostPaymentResponse {

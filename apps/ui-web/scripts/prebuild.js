@@ -1,8 +1,12 @@
 import fs from 'fs';
+// import { execSync } from 'child_process';
 import path from 'path';
-import CONFIG from './config.js';
+import CONFIG from './config.js'; //also runs set-env
 const {
-  paths: { __workspaceRoot },
+  paths: {
+    //__monorepoRoot,
+    __workspaceRoot,
+  },
   imports,
 } = CONFIG;
 const configPath = path.resolve(
@@ -11,8 +15,15 @@ const configPath = path.resolve(
   'amplify-be.config.json',
 );
 
-//Grab workspace imports
+//! comment out to build packages but might take too long
+// console.log('Building packages...');
+// const builderScript = path.resolve(
+//   __monorepoRoot,
+//   'scripts/build-packages.js',
+// );
+// execSync(`node ${builderScript}`);
 
+//Grab workspace imports
 // for amplify-be exports, we need to map to snake case so as to directly use it with the Amplify configuration to handle inconsistent casing scheme
 const configurationJson = JSON.stringify(imports, (key, value) => {
   if (value && typeof value === 'object' && !Array.isArray(value)) {

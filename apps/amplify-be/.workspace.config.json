@@ -20,11 +20,35 @@
       }
     }
   },
+  "infraEnvConfig": [
+    {
+      "deploymentEnv": "dev",
+      "allowedOriginsForS3Access": [
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "http://localhost:5175",
+        "https://d2wdxwimsxswj0.cloudfront.net"
+      ],
+      "preflightCacheTtl": 3600
+    },
+    {
+      "deploymentEnv": "prod",
+      "allowedOriginsForS3Access": [
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "http://localhost:5175",
+        "https://dgl6oedwyp4k8.cloudfront.net"
+      ],
+      "preflightCacheTtl": 3600
+    }
+  ],
   "envVars": {
     "IS_DOCUMENT_API_MOCK": "true",
     "IS_PAYCODE_PROXY_URL_MOCK": "false"
   },
-  "paths":{
+  "paths": {
     "amplifyAppsyncSchema": "amplify/backend/api/paycodegql/schema/"
   }
 }

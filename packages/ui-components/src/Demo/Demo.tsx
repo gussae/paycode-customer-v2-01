@@ -3,9 +3,8 @@
 import styles from './Demo.module.css';
 import { GenericNotification, NotificationsComponent } from './Notification';
 import { Profile, ProfileComponent } from './Profile';
-// import { TransferComponent } from './Transfer';
 import { Balance, BalanceComponent, GetBalanceParams } from './Balance';
-import { Balance2Component } from './Balance2';
+// import { Balance2Component } from './Balance2';
 import {
   PaymentComponent,
   MakePaymentParams,
@@ -16,7 +15,11 @@ import {
   TransactionResponse,
   TransactionComponent,
 } from './Transaction';
-// import Document from './Document';
+import DocumentComponent, {
+  DeleteDocumentParams,
+  DownloadDocumentParams,
+  UploadDocumentParams,
+} from './Document';
 // import QRCode  from './QRCode';
 // Types for the functions to be passed to Demo
 
@@ -48,7 +51,17 @@ export interface DemoFunctions {
   ) => Promise<TransactionResponse>;
   makePayment: (params: MakePaymentParams) => Promise<MakePaymentReceipt>;
   fetchBalance: (params: GetBalanceParams) => Promise<Balance>;
+
+  getDocumentIndex: (params: {
+    username: string;
+    key: string;
+  }) => Promise<any[]>; //not implemented
+  listDocuments: ({ username }: { username: string }) => Promise<any[]>;
+  uploadDocument: (params: UploadDocumentParams) => Promise<boolean>;
+  downloadDocument: (params: DownloadDocumentParams) => Promise<string | null>;
+  deleteDocument: (params: DeleteDocumentParams) => Promise<boolean>;
 }
+
 export const Demo: React.FC<DemoProps> = ({
   username,
   subscribeToNotifications,
@@ -58,6 +71,11 @@ export const Demo: React.FC<DemoProps> = ({
   fetchTransactions,
   makePayment,
   fetchBalance,
+  getDocumentIndex,
+  listDocuments,
+  uploadDocument,
+  downloadDocument,
+  deleteDocument,
 }) => {
   // No need to fetch username inside Demo, it's passed as a prop
   if (!username) {
@@ -67,7 +85,7 @@ export const Demo: React.FC<DemoProps> = ({
   return (
     <div className={styles.demoContainer}>
       <h2>Demo</h2>
-      <h3>GraphQL BE</h3>
+      <h3>GraphQL BE - Paycode GQL</h3>
       <NotificationsComponent
         username={username}
         subscribeToNotifications={subscribeToNotifications}
@@ -78,14 +96,23 @@ export const Demo: React.FC<DemoProps> = ({
         fetchProfile={fetchProfile}
         updateProfile={updateProfile}
       />
+      <DocumentComponent
+        username={username}
+        listDocuments={listDocuments}
+        uploadDocument={uploadDocument}
+        downloadDocument={downloadDocument}
+        getDocumentIndex={getDocumentIndex}
+        deleteDocument={deleteDocument}
+      />
       <h3>APIGW BE - Paycode Proxy</h3>
       <BalanceComponent username={username} fetchBalance={fetchBalance} />
-      <Balance2Component username={username} fetchBalance={fetchBalance} />
+      {/* <Balance2Component username={username} fetchBalance={fetchBalance} /> */}
       <PaymentComponent username={username} makePayment={makePayment} />
       <TransactionComponent
         username={username}
         fetchTransactions={fetchTransactions}
       />
+      ,
     </div>
   );
 };

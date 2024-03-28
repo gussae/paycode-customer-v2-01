@@ -1,0 +1,5 @@
+{
+    "adminRoleNames": [
+      "arn:aws:iam::653991346912:user/awsist-dev"
+    ]
+  }

@@ -7,7 +7,7 @@
             "UserPoolId"
           ],
           "category": "auth",
-          "resourceName": "paycodeamplifybeb7417453"
+          "resourceName": "paycodeamplifybee1dd5abc"
         }
       ],
       "output": {
@@ -20,7 +20,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authpaycodeamplifybeb7417453"
+              "userPoolId": "authpaycodeamplifybee1dd5abc"
             }
           }
         }
@@ -30,7 +30,7 @@
     }
   },
   "auth": {
-    "paycodeamplifybeb7417453": {
+    "paycodeamplifybee1dd5abc": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -56,7 +56,7 @@
     }
   },
   "function": {
-    "documentResolver": {
+    "documentAccess": {
       "build": true,
       "dependsOn": [
         {
@@ -77,21 +77,7 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
-    "removeS3Object": {
-      "build": true,
-      "dependsOn": [
-        {
-          "attributes": [
-            "BucketName"
-          ],
-          "category": "storage",
-          "resourceName": "documentStore"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "storeS3ObjectMetadata": {
+    "documentIndex": {
       "build": true,
       "dependsOn": [
         {
@@ -105,54 +91,68 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "removeDocument": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "BucketName"
+          ],
+          "category": "storage",
+          "resourceName": "documentStore"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
-    "AMPLIFY_function_documentResolver_deploymentBucketName": {
+    "AMPLIFY_function_documentAccess_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "documentResolver"
+          "resourceName": "documentAccess"
         }
       ]
     },
-    "AMPLIFY_function_documentResolver_s3Key": {
+    "AMPLIFY_function_documentAccess_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "documentResolver"
+          "resourceName": "documentAccess"
         }
       ]
     },
-    "AMPLIFY_function_removeS3Object_deploymentBucketName": {
+    "AMPLIFY_function_documentIndex_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "removeS3Object"
+          "resourceName": "documentIndex"
         }
       ]
     },
-    "AMPLIFY_function_removeS3Object_s3Key": {
+    "AMPLIFY_function_documentIndex_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "removeS3Object"
+          "resourceName": "documentIndex"
         }
       ]
     },
-    "AMPLIFY_function_storeS3ObjectMetadata_deploymentBucketName": {
+    "AMPLIFY_function_removeDocument_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "storeS3ObjectMetadata"
+          "resourceName": "removeDocument"
         }
       ]
     },
-    "AMPLIFY_function_storeS3ObjectMetadata_s3Key": {
+    "AMPLIFY_function_removeDocument_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "storeS3ObjectMetadata"
+          "resourceName": "removeDocument"
         }
       ]
     }
@@ -167,7 +167,7 @@
             "LambdaExecutionRole"
           ],
           "category": "function",
-          "resourceName": "storeS3ObjectMetadata"
+          "resourceName": "documentIndex"
         }
       ],
       "providerPlugin": "awscloudformation",

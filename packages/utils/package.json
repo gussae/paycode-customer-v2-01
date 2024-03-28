@@ -11,7 +11,7 @@
     "build-browser": "tsc -p tsconfig.browser.json && node fix-browser-client.js",
     "build-paycode-proxy-client": "ts-node src/node/builders/paycode-proxy-api/build-paycode-proxy-client.ts -p tsconfig.node.json",
     "postbuild": "node -e \"setTimeout(() => require('child_process').execSync('rimraf dist/node/builders/'), 10000)\"",
-    "prebuild": "concurrently \"npm run build -w @paycode-customer-v2/graphql\" \"npm run build-paycode-proxy-client\"",
+    "prebuild": "npm run build-paycode-proxy-client",
     "clear": "rimraf dist tsconfig.tsbuildinfo tsconfig.node.tsbuildinfo tsconfig.browser.tsbuildinfo "
   },
   "author": "",
@@ -40,8 +40,8 @@
     "typescript": "^5.x"
   },
   "dependencies": {
-    "amazon-cognito-identity-js": "^6.x",
     "@paycode-customer-v2/graphql": "*",
+    "amazon-cognito-identity-js": "^6.x",
     "axios": "^1.x",
     "fs-extra": "^11.x"
   }

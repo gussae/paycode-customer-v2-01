@@ -33,7 +33,9 @@ export const ProfileComponent: React.FC<ProfileComponentProps> = ({
   const handleUpdateProfile = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await updateProfile(profile);
+      //?turns out during spread, extraneous properties might pop
+      const { bio, username } = profile;
+      await updateProfile({ bio, username });
       console.log('Profile updated');
     } catch (err) {
       console.error('Error updating profile:', err);
@@ -77,4 +79,3 @@ export const ProfileComponent: React.FC<ProfileComponentProps> = ({
     </Box>
   );
 };
-

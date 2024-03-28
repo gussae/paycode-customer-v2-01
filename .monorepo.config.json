@@ -81,11 +81,11 @@
         "name": "paycode-proxy",
         "exports": ["paycodeProxyApiUrl", "paycodeProxyApiId"],
         "imports": [
-          "paycode-api/outputs/V2/awsUserPoolsId",
-          "paycode-api/outputs/V2/paycodeVpcId",
-          "paycode-api/outputs/V2/paycodeAccountId",
-          "paycode-api/outputs/V2/paycodePcxRoleArn",
-          "paycode-api/outputs/V2/paycodeVpcCidr"
+          "amplify-be/V1/outputs/awsUserPoolsId",
+          "amplify-be/V1/outputs/paycodeVpcId",
+          "amplify-be/V1/outputs/paycodeAccountId",
+          "amplify-be/V1/outputs/paycodePcxRoleArn",
+          "amplify-be/V1/outputs/paycodeVpcCidr"
         ],
         "versions": ["V1"]
       },
@@ -138,12 +138,6 @@
         "versions": ["V1"]
       },
       {
-        "name": "document-api",
-        "exports": ["documentApiUrl", "documentApiId"],
-        "imports": ["amplify-be/V1/outputs/awsUserPoolsId"],
-        "versions": ["V1"]
-      },
-      {
         "name": "paycode-api",
         "exports": [
           "paycodeVpcId",
@@ -152,50 +146,47 @@
           "paycodeVpcCidr"
         ],
         "imports": [],
-        "versions": ["V2"]
+        "versions": ["V1"]
       }
     ]
   },
   "packagesConfig": [
     {
-      "name": "apigw",
-      "env": {
-        "node": true,
-        "browser": true
-      },
-      "platform": "ts"
+      "name": "config",
+      "browser": false,
+      "build": false,
+      "hash": false,
+      "node": true
     },
     {
-      "name": "config",
-      "env": {
-        "node": true,
-        "browser": false
-      },
-      "platform": "js"
+      "name": "graphql",
+      "browser": true,
+      "build": true,
+      "hash": true,
+      "node": true
     },
     {
       "name": "lib",
-      "env": {
-        "node": true,
-        "browser": false
-      },
-      "platform": "ts"
+      "browser": false,
+      "build": true,
+      "dependsOn": ["graphql"],
+      "hash": false,
+      "node": true
     },
     {
       "name": "ui-components",
-      "env": {
-        "node": false,
-        "browser": true
-      },
-      "platform": "ts"
+      "browser": true,
+      "build": true,
+      "hash": true,
+      "node": false
     },
     {
       "name": "utils",
-      "env": {
-        "node": true,
-        "browser": false
-      },
-      "platform": "ts"
+      "browser": true,
+      "build": true,
+      "dependsOn": ["config", "graphql"],
+      "hash": false,
+      "node": true
     }
   ]
 }

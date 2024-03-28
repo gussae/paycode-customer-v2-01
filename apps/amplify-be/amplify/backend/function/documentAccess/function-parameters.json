@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "storage": {
+      "documentStore": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "DocumentIndex:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

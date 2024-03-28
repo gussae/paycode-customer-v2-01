@@ -9,9 +9,8 @@ const {
   imports,
   envVars,
 } = config;
-// console.log({ __workspaceRoot, imports, envVars });
 const envars = { ...envVars, ...config.deploymentConfig };
 setEnv(__workspaceRoot, imports, envars, 'VITE_');
 
 export default config;
-console.log({ config });
+console.debug({ config });

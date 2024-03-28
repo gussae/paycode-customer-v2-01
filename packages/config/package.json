@@ -4,6 +4,12 @@
   "private": true,
   "description": "A package for synchronously loading configuration from .monorepo.config.json at the root of the monorepo and .workspace.config.js at the root of the project.",
   "main": "index.js",
+  "scripts": {
+    "build": "",
+    "test": "jest",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix"
+  },
   "dependencies": {
     "@aws-sdk/client-ssm": "^3.x",
     "@aws-sdk/credential-provider-node": "^3.x",

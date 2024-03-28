@@ -8,6 +8,27 @@ type GeneratedQuery<InputType, OutputType> = string & {
   __generatedQueryOutput: OutputType;
 };
 
+export const getDownloadDocumentAccess = /* GraphQL */ `query GetDownloadDocumentAccess($params: DownloadDocumentAccessInput) {
+  getDownloadDocumentAccess(params: $params) {
+    signedUrl
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.GetDownloadDocumentAccessQueryVariables,
+  APITypes.GetDownloadDocumentAccessQuery
+>;
+export const getUploadDocumentAccess = /* GraphQL */ `query GetUploadDocumentAccess($params: UploadDocumentAccessInput) {
+  getUploadDocumentAccess(params: $params) {
+    signedUrl
+    metadataHeaders
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.GetUploadDocumentAccessQueryVariables,
+  APITypes.GetUploadDocumentAccessQuery
+>;
 export const getNotification = /* GraphQL */ `query GetNotification($id: ID!) {
   getNotification(id: $id) {
     id
@@ -18,83 +39,18 @@ export const getNotification = /* GraphQL */ `query GetNotification($id: ID!) {
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -128,55 +84,6 @@ export const listNotifications = /* GraphQL */ `query ListNotifications(
       user {
         username
         email
-        document {
-          items {
-            username
-            key
-            version
-            filename
-            extension
-            dirname
-            size
-            ttl
-            type
-            createdAt
-            updatedAt
-            userDocumentUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
-        profile {
-          username
-          bio
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          __typename
-        }
-        notifications {
-          items {
-            id
-            username
-            title
-            message
-            read
-            createdAt
-            updatedAt
-            userNotificationsUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         userProfileUsername
@@ -239,43 +146,25 @@ export const getUser = /* GraphQL */ `query GetUser($username: String!) {
   getUser(username: $username) {
     username
     email
-    document {
+    documentIndexes {
       items {
         username
         key
-        version
-        filename
-        extension
+        bucketName
         dirname
+        filename
+        entityType
+        eTag
+        extension
+        mimetype
         size
+        storageClass
+        tags
         ttl
-        type
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
+        version
         createdAt
         updatedAt
-        userDocumentUsername
+        userDocumentIndexesUsername
         __typename
       }
       nextToken
@@ -287,55 +176,6 @@ export const getUser = /* GraphQL */ `query GetUser($username: String!) {
       user {
         username
         email
-        document {
-          items {
-            username
-            key
-            version
-            filename
-            extension
-            dirname
-            size
-            ttl
-            type
-            createdAt
-            updatedAt
-            userDocumentUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
-        profile {
-          username
-          bio
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          __typename
-        }
-        notifications {
-          items {
-            id
-            username
-            title
-            message
-            read
-            createdAt
-            updatedAt
-            userNotificationsUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         userProfileUsername
@@ -352,29 +192,6 @@ export const getUser = /* GraphQL */ `query GetUser($username: String!) {
         title
         message
         read
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         userNotificationsUsername
@@ -407,83 +224,18 @@ export const listUsers = /* GraphQL */ `query ListUsers(
     items {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -504,83 +256,18 @@ export const getProfile = /* GraphQL */ `query GetProfile($username: String!) {
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -618,55 +305,6 @@ export const listProfiles = /* GraphQL */ `query ListProfiles(
       user {
         username
         email
-        document {
-          items {
-            username
-            key
-            version
-            filename
-            extension
-            dirname
-            size
-            ttl
-            type
-            createdAt
-            updatedAt
-            userDocumentUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
-        profile {
-          username
-          bio
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          __typename
-        }
-        notifications {
-          items {
-            id
-            username
-            title
-            message
-            read
-            createdAt
-            updatedAt
-            userNotificationsUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         userProfileUsername
@@ -684,97 +322,37 @@ export const listProfiles = /* GraphQL */ `query ListProfiles(
   APITypes.ListProfilesQueryVariables,
   APITypes.ListProfilesQuery
 >;
-export const getDocument = /* GraphQL */ `query GetDocument($username: String!, $key: String!) {
-  getDocument(username: $username, key: $key) {
+export const getDocumentIndex = /* GraphQL */ `query GetDocumentIndex($username: String!, $key: String!) {
+  getDocumentIndex(username: $username, key: $key) {
     username
     key
-    version
-    filename
-    extension
+    bucketName
     dirname
+    filename
+    entityType
+    eTag
+    extension
+    mimetype
     size
+    storageClass
+    tags
     ttl
-    type
+    version
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -785,23 +363,23 @@ export const getDocument = /* GraphQL */ `query GetDocument($username: String!, 
     }
     createdAt
     updatedAt
-    userDocumentUsername
+    userDocumentIndexesUsername
     __typename
   }
 }
 ` as GeneratedQuery<
-  APITypes.GetDocumentQueryVariables,
-  APITypes.GetDocumentQuery
+  APITypes.GetDocumentIndexQueryVariables,
+  APITypes.GetDocumentIndexQuery
 >;
-export const listDocuments = /* GraphQL */ `query ListDocuments(
+export const listDocumentIndexes = /* GraphQL */ `query ListDocumentIndexes(
   $username: String
   $key: ModelStringKeyConditionInput
-  $filter: ModelDocumentFilterInput
+  $filter: ModelDocumentIndexFilterInput
   $limit: Int
   $nextToken: String
   $sortDirection: ModelSortDirection
 ) {
-  listDocuments(
+  listDocumentIndexes(
     username: $username
     key: $key
     filter: $filter
@@ -812,65 +390,21 @@ export const listDocuments = /* GraphQL */ `query ListDocuments(
     items {
       username
       key
-      version
-      filename
-      extension
+      bucketName
       dirname
+      filename
+      entityType
+      eTag
+      extension
+      mimetype
       size
+      storageClass
+      tags
       ttl
-      type
+      version
       user {
         username
         email
-        document {
-          items {
-            username
-            key
-            version
-            filename
-            extension
-            dirname
-            size
-            ttl
-            type
-            createdAt
-            updatedAt
-            userDocumentUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
-        profile {
-          username
-          bio
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          __typename
-        }
-        notifications {
-          items {
-            id
-            username
-            title
-            message
-            read
-            createdAt
-            updatedAt
-            userNotificationsUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         userProfileUsername
@@ -878,7 +412,7 @@ export const listDocuments = /* GraphQL */ `query ListDocuments(
       }
       createdAt
       updatedAt
-      userDocumentUsername
+      userDocumentIndexesUsername
       __typename
     }
     nextToken
@@ -886,18 +420,18 @@ export const listDocuments = /* GraphQL */ `query ListDocuments(
   }
 }
 ` as GeneratedQuery<
-  APITypes.ListDocumentsQueryVariables,
-  APITypes.ListDocumentsQuery
+  APITypes.ListDocumentIndexesQueryVariables,
+  APITypes.ListDocumentIndexesQuery
 >;
-export const documentsByKeyAndVersion = /* GraphQL */ `query DocumentsByKeyAndVersion(
+export const documentIndicesByKeyAndVersion = /* GraphQL */ `query DocumentIndicesByKeyAndVersion(
   $key: String!
   $version: ModelStringKeyConditionInput
   $sortDirection: ModelSortDirection
-  $filter: ModelDocumentFilterInput
+  $filter: ModelDocumentIndexFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  documentsByKeyAndVersion(
+  documentIndicesByKeyAndVersion(
     key: $key
     version: $version
     sortDirection: $sortDirection
@@ -908,65 +442,21 @@ export const documentsByKeyAndVersion = /* GraphQL */ `query DocumentsByKeyAndVe
     items {
       username
       key
-      version
-      filename
-      extension
+      bucketName
       dirname
+      filename
+      entityType
+      eTag
+      extension
+      mimetype
       size
+      storageClass
+      tags
       ttl
-      type
+      version
       user {
         username
         email
-        document {
-          items {
-            username
-            key
-            version
-            filename
-            extension
-            dirname
-            size
-            ttl
-            type
-            createdAt
-            updatedAt
-            userDocumentUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
-        profile {
-          username
-          bio
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          __typename
-        }
-        notifications {
-          items {
-            id
-            username
-            title
-            message
-            read
-            createdAt
-            updatedAt
-            userNotificationsUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         userProfileUsername
@@ -974,7 +464,7 @@ export const documentsByKeyAndVersion = /* GraphQL */ `query DocumentsByKeyAndVe
       }
       createdAt
       updatedAt
-      userDocumentUsername
+      userDocumentIndexesUsername
       __typename
     }
     nextToken
@@ -982,6 +472,6 @@ export const documentsByKeyAndVersion = /* GraphQL */ `query DocumentsByKeyAndVe
   }
 }
 ` as GeneratedQuery<
-  APITypes.DocumentsByKeyAndVersionQueryVariables,
-  APITypes.DocumentsByKeyAndVersionQuery
+  APITypes.DocumentIndicesByKeyAndVersionQueryVariables,
+  APITypes.DocumentIndicesByKeyAndVersionQuery
 >;

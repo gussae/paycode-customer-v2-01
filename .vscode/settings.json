@@ -27,6 +27,7 @@
     "amplifybe",
     "CRUDLS",
     "dequeuers",
+    "DOCUMENTINDEXTABLE",
     "GRAPHQLAPIENDPOINTOUTPUT",
     "GRAPHQLAPIIDOUTPUT",
     "infralib",

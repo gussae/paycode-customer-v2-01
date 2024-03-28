@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+//!note: you are in a cjs module and the this export is intended for use by a bundler. Hence not fixing of the 'js' extensions =>you may need to if you change the dev environment consuming this client
+
 function updateImportPaths(filePath) {
   if (filePath.endsWith('.js')) {
     let content = fs.readFileSync(filePath, 'utf8');

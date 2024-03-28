@@ -21,83 +21,18 @@ export const onCreateNotification = /* GraphQL */ `subscription OnCreateNotifica
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -129,83 +64,18 @@ export const onUpdateNotification = /* GraphQL */ `subscription OnUpdateNotifica
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -237,83 +107,18 @@ export const onDeleteNotification = /* GraphQL */ `subscription OnDeleteNotifica
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -396,43 +201,25 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser(
   onCreateUser(filter: $filter, username: $username) {
     username
     email
-    document {
+    documentIndexes {
       items {
         username
         key
-        version
-        filename
-        extension
+        bucketName
         dirname
+        filename
+        entityType
+        eTag
+        extension
+        mimetype
         size
+        storageClass
+        tags
         ttl
-        type
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
+        version
         createdAt
         updatedAt
-        userDocumentUsername
+        userDocumentIndexesUsername
         __typename
       }
       nextToken
@@ -444,55 +231,6 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser(
       user {
         username
         email
-        document {
-          items {
-            username
-            key
-            version
-            filename
-            extension
-            dirname
-            size
-            ttl
-            type
-            createdAt
-            updatedAt
-            userDocumentUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
-        profile {
-          username
-          bio
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          __typename
-        }
-        notifications {
-          items {
-            id
-            username
-            title
-            message
-            read
-            createdAt
-            updatedAt
-            userNotificationsUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         userProfileUsername
@@ -509,29 +247,6 @@ export const onCreateUser = /* GraphQL */ `subscription OnCreateUser(
         title
         message
         read
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         userNotificationsUsername
@@ -557,43 +272,25 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser(
   onUpdateUser(filter: $filter, username: $username) {
     username
     email
-    document {
+    documentIndexes {
       items {
         username
         key
-        version
-        filename
-        extension
+        bucketName
         dirname
+        filename
+        entityType
+        eTag
+        extension
+        mimetype
         size
+        storageClass
+        tags
         ttl
-        type
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
+        version
         createdAt
         updatedAt
-        userDocumentUsername
+        userDocumentIndexesUsername
         __typename
       }
       nextToken
@@ -605,55 +302,6 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser(
       user {
         username
         email
-        document {
-          items {
-            username
-            key
-            version
-            filename
-            extension
-            dirname
-            size
-            ttl
-            type
-            createdAt
-            updatedAt
-            userDocumentUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
-        profile {
-          username
-          bio
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          __typename
-        }
-        notifications {
-          items {
-            id
-            username
-            title
-            message
-            read
-            createdAt
-            updatedAt
-            userNotificationsUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         userProfileUsername
@@ -670,29 +318,6 @@ export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser(
         title
         message
         read
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         userNotificationsUsername
@@ -718,43 +343,25 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser(
   onDeleteUser(filter: $filter, username: $username) {
     username
     email
-    document {
+    documentIndexes {
       items {
         username
         key
-        version
-        filename
-        extension
+        bucketName
         dirname
+        filename
+        entityType
+        eTag
+        extension
+        mimetype
         size
+        storageClass
+        tags
         ttl
-        type
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
+        version
         createdAt
         updatedAt
-        userDocumentUsername
+        userDocumentIndexesUsername
         __typename
       }
       nextToken
@@ -766,55 +373,6 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser(
       user {
         username
         email
-        document {
-          items {
-            username
-            key
-            version
-            filename
-            extension
-            dirname
-            size
-            ttl
-            type
-            createdAt
-            updatedAt
-            userDocumentUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
-        profile {
-          username
-          bio
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          __typename
-        }
-        notifications {
-          items {
-            id
-            username
-            title
-            message
-            read
-            createdAt
-            updatedAt
-            userNotificationsUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         userProfileUsername
@@ -831,29 +389,6 @@ export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser(
         title
         message
         read
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         userNotificationsUsername
@@ -882,83 +417,18 @@ export const onCreateProfile = /* GraphQL */ `subscription OnCreateProfile(
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -986,83 +456,18 @@ export const onUpdateProfile = /* GraphQL */ `subscription OnUpdateProfile(
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -1090,83 +495,18 @@ export const onDeleteProfile = /* GraphQL */ `subscription OnDeleteProfile(
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }

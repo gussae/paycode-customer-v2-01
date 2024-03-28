@@ -17,7 +17,7 @@
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "prebuild": "node -e \"const { exec } = require('child_process'); const path = require('path'); const amplifyProjectRoot = path.resolve(__dirname, '../../apps/amplify-be'); exec('amplify codegen', { cwd: amplifyProjectRoot, env: {...process.env}, shell: true }, (error, stdout, stderr) => { console.log(stdout); console.error(stderr); if (error) { console.error('exec error:', error); process.exit(1); } });\"",
-    "postbuild":"node fix-esm.js && node -e \"fs.writeFileSync('./dist/esm/package.json', JSON.stringify({ type: 'module' }), 'utf8')\""
+    "postbuild":"node fix-dist.js"
   },
   "dependencies": {},
   "devDependencies": {

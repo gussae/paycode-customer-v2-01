@@ -8,121 +8,16 @@ type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationOutput: OutputType;
 };
 
-export const downloadDocument = /* GraphQL */ `mutation DownloadDocument($input: DocumentKeyInput!) {
-  downloadDocument(input: $input)
-}
-` as GeneratedMutation<
-  APITypes.DownloadDocumentMutationVariables,
-  APITypes.DownloadDocumentMutation
->;
-export const uploadDocument = /* GraphQL */ `mutation UploadDocument($input: UploadDocumentInput!) {
-  uploadDocument(input: $input) {
-    username
-    key
-    version
-    filename
-    extension
-    dirname
-    size
-    ttl
-    type
-    user {
-      username
-      email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
-        nextToken
-        __typename
-      }
-      profile {
-        username
-        bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      userProfileUsername
-      __typename
-    }
-    createdAt
-    updatedAt
-    userDocumentUsername
+export const removeDocument = /* GraphQL */ `mutation RemoveDocument($params: RemoveDocumentInput) {
+  removeDocument(params: $params) {
+    success
+    message
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.UploadDocumentMutationVariables,
-  APITypes.UploadDocumentMutation
+  APITypes.RemoveDocumentMutationVariables,
+  APITypes.RemoveDocumentMutation
 >;
 export const createNotification = /* GraphQL */ `mutation CreateNotification(
   $input: CreateNotificationInput!
@@ -137,83 +32,18 @@ export const createNotification = /* GraphQL */ `mutation CreateNotification(
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -245,83 +75,18 @@ export const updateNotification = /* GraphQL */ `mutation UpdateNotification(
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -353,83 +118,18 @@ export const deleteNotification = /* GraphQL */ `mutation DeleteNotification(
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -512,43 +212,25 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
   createUser(input: $input, condition: $condition) {
     username
     email
-    document {
+    documentIndexes {
       items {
         username
         key
-        version
-        filename
-        extension
+        bucketName
         dirname
+        filename
+        entityType
+        eTag
+        extension
+        mimetype
         size
+        storageClass
+        tags
         ttl
-        type
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
+        version
         createdAt
         updatedAt
-        userDocumentUsername
+        userDocumentIndexesUsername
         __typename
       }
       nextToken
@@ -560,55 +242,6 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
       user {
         username
         email
-        document {
-          items {
-            username
-            key
-            version
-            filename
-            extension
-            dirname
-            size
-            ttl
-            type
-            createdAt
-            updatedAt
-            userDocumentUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
-        profile {
-          username
-          bio
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          __typename
-        }
-        notifications {
-          items {
-            id
-            username
-            title
-            message
-            read
-            createdAt
-            updatedAt
-            userNotificationsUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         userProfileUsername
@@ -625,29 +258,6 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
         title
         message
         read
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         userNotificationsUsername
@@ -673,43 +283,25 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
   updateUser(input: $input, condition: $condition) {
     username
     email
-    document {
+    documentIndexes {
       items {
         username
         key
-        version
-        filename
-        extension
+        bucketName
         dirname
+        filename
+        entityType
+        eTag
+        extension
+        mimetype
         size
+        storageClass
+        tags
         ttl
-        type
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
+        version
         createdAt
         updatedAt
-        userDocumentUsername
+        userDocumentIndexesUsername
         __typename
       }
       nextToken
@@ -721,55 +313,6 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
       user {
         username
         email
-        document {
-          items {
-            username
-            key
-            version
-            filename
-            extension
-            dirname
-            size
-            ttl
-            type
-            createdAt
-            updatedAt
-            userDocumentUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
-        profile {
-          username
-          bio
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          __typename
-        }
-        notifications {
-          items {
-            id
-            username
-            title
-            message
-            read
-            createdAt
-            updatedAt
-            userNotificationsUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         userProfileUsername
@@ -786,29 +329,6 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
         title
         message
         read
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         userNotificationsUsername
@@ -834,43 +354,25 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
   deleteUser(input: $input, condition: $condition) {
     username
     email
-    document {
+    documentIndexes {
       items {
         username
         key
-        version
-        filename
-        extension
+        bucketName
         dirname
+        filename
+        entityType
+        eTag
+        extension
+        mimetype
         size
+        storageClass
+        tags
         ttl
-        type
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
+        version
         createdAt
         updatedAt
-        userDocumentUsername
+        userDocumentIndexesUsername
         __typename
       }
       nextToken
@@ -882,55 +384,6 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
       user {
         username
         email
-        document {
-          items {
-            username
-            key
-            version
-            filename
-            extension
-            dirname
-            size
-            ttl
-            type
-            createdAt
-            updatedAt
-            userDocumentUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
-        profile {
-          username
-          bio
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          __typename
-        }
-        notifications {
-          items {
-            id
-            username
-            title
-            message
-            read
-            createdAt
-            updatedAt
-            userNotificationsUsername
-            __typename
-          }
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         userProfileUsername
@@ -947,29 +400,6 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
         title
         message
         read
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         userNotificationsUsername
@@ -998,83 +428,18 @@ export const createProfile = /* GraphQL */ `mutation CreateProfile(
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -1102,83 +467,18 @@ export const updateProfile = /* GraphQL */ `mutation UpdateProfile(
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -1206,83 +506,18 @@ export const deleteProfile = /* GraphQL */ `mutation DeleteProfile(
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -1300,100 +535,40 @@ export const deleteProfile = /* GraphQL */ `mutation DeleteProfile(
   APITypes.DeleteProfileMutationVariables,
   APITypes.DeleteProfileMutation
 >;
-export const createDocument = /* GraphQL */ `mutation CreateDocument(
-  $input: CreateDocumentInput!
-  $condition: ModelDocumentConditionInput
+export const createDocumentIndex = /* GraphQL */ `mutation CreateDocumentIndex(
+  $input: CreateDocumentIndexInput!
+  $condition: ModelDocumentIndexConditionInput
 ) {
-  createDocument(input: $input, condition: $condition) {
+  createDocumentIndex(input: $input, condition: $condition) {
     username
     key
-    version
-    filename
-    extension
+    bucketName
     dirname
+    filename
+    entityType
+    eTag
+    extension
+    mimetype
     size
+    storageClass
+    tags
     ttl
-    type
+    version
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -1404,108 +579,48 @@ export const createDocument = /* GraphQL */ `mutation CreateDocument(
     }
     createdAt
     updatedAt
-    userDocumentUsername
+    userDocumentIndexesUsername
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateDocumentMutationVariables,
-  APITypes.CreateDocumentMutation
+  APITypes.CreateDocumentIndexMutationVariables,
+  APITypes.CreateDocumentIndexMutation
 >;
-export const deleteDocument = /* GraphQL */ `mutation DeleteDocument(
-  $input: DeleteDocumentInput!
-  $condition: ModelDocumentConditionInput
+export const deleteDocumentIndex = /* GraphQL */ `mutation DeleteDocumentIndex(
+  $input: DeleteDocumentIndexInput!
+  $condition: ModelDocumentIndexConditionInput
 ) {
-  deleteDocument(input: $input, condition: $condition) {
+  deleteDocumentIndex(input: $input, condition: $condition) {
     username
     key
-    version
-    filename
-    extension
+    bucketName
     dirname
+    filename
+    entityType
+    eTag
+    extension
+    mimetype
     size
+    storageClass
+    tags
     ttl
-    type
+    version
     user {
       username
       email
-      document {
-        items {
-          username
-          key
-          version
-          filename
-          extension
-          dirname
-          size
-          ttl
-          type
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userDocumentUsername
-          __typename
-        }
+      documentIndexes {
         nextToken
         __typename
       }
       profile {
         username
         bio
-        user {
-          username
-          email
-          document {
-            nextToken
-            __typename
-          }
-          profile {
-            username
-            bio
-            createdAt
-            updatedAt
-            __typename
-          }
-          notifications {
-            nextToken
-            __typename
-          }
-          createdAt
-          updatedAt
-          userProfileUsername
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
       notifications {
-        items {
-          id
-          username
-          title
-          message
-          read
-          user {
-            username
-            email
-            createdAt
-            updatedAt
-            userProfileUsername
-            __typename
-          }
-          createdAt
-          updatedAt
-          userNotificationsUsername
-          __typename
-        }
         nextToken
         __typename
       }
@@ -1516,11 +631,11 @@ export const deleteDocument = /* GraphQL */ `mutation DeleteDocument(
     }
     createdAt
     updatedAt
-    userDocumentUsername
+    userDocumentIndexesUsername
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteDocumentMutationVariables,
-  APITypes.DeleteDocumentMutation
+  APITypes.DeleteDocumentIndexMutationVariables,
+  APITypes.DeleteDocumentIndexMutation
 >;

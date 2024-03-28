@@ -366,7 +366,6 @@ function getEnvMarkedAndDeploymentNamespacedStackNames(
   return mappedCasing[`stackName${changeCase.capitalCase(casing)}`];
 }
 
-
 /**
  * Returns the cased versions of the given app name based on the specified casing.
  * If no casing is provided, it returns an object containing all cased versions.
@@ -445,6 +444,7 @@ async function fetchWsImportValuesFromParameterStore(
 
   for (const importName of imports) {
     if (!importName) continue;
+    //! NB, the output partition we seek here is that of the workspace to import, not this workspace and hence not part of the argument (it's derived from imports)
     const importNameParts = importName.split('/');
     const poppedKey = importNameParts.pop();
     const remaining = importNameParts.join('/');

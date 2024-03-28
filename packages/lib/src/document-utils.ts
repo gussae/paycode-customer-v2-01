@@ -1,42 +1,67 @@
-import { S3 } from '@aws-sdk/client-s3';
 import { DynamoDBDocumentClient, GetCommand } from '@aws-sdk/lib-dynamodb';
-import {
-  Document,
-  DocumentKeyInput,
-} from '@paycode-customer-v2/graphql/dist/esm';
+import { Case } from 'change-case-all';
 
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
+import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
+import {
+  S3Client,
+  GetObjectCommand,
+  PutObjectCommand,
+  PutObjectCommandInput,
+  GetObjectCommandInput,
+} from '@aws-sdk/client-s3';
 
-export type DocumentMetadata = Omit<
-  Document,
-  | '__typename'
-  | 'createdAt'
-  | 'key'
-  | 'updatedAt'
-  | 'user'
-  | 'userDocumentUsername'
->;
+export interface S3ObjectKeyInput {
+  dirname: string;
+  filename: string;
+  username: string;
+}
 
+export interface UploadDocumentMetadata extends S3ObjectKeyInput {
+  mimetype: string;
+  entityType: string;
+  tags?: string[];
+  ttl?: number;
+}
+
+export interface DownloadDocumentKeys extends S3ObjectKeyInput {
+  version?: string;
+}
 /**
  * Checks if the provided document metadata is valid.
  * @param metadata - The document metadata to validate.
  * @returns A boolean indicating whether the metadata is valid or not.
  */
-export const isValidDocumentMetadata = (
-  metadata: Partial<DocumentMetadata>,
-): metadata is DocumentMetadata => {
-  return (
-    typeof metadata.username === 'string' &&
-    typeof metadata.filename === 'string' &&
-    typeof metadata.extension === 'string' &&
-    typeof metadata.dirname === 'string' &&
-    typeof metadata.size === 'number' &&
-    typeof metadata.type === 'string' &&
-    (typeof metadata.version === 'string' || metadata.version === undefined) &&
-    (typeof metadata.ttl === 'number' ||
-      metadata.ttl === null ||
-      metadata.ttl === undefined)
-  );
+export const isValidUploadDocumentMetadata = (
+  metadata: unknown,
+): metadata is UploadDocumentMetadata => {
+  // First, ensure metadata is an object
+  if (typeof metadata !== 'object' || metadata === null) return false;
+
+  // Type assertion to access properties
+  const meta = metadata as Partial<UploadDocumentMetadata>;
+
+  // Check if required fields are of type 'string' and not empty
+  const isValidStrings = [
+    'mimetype',
+    'dirname',
+    'entityType',
+    'filename',
+    'username',
+    //@ts-ignore description: should
+  ].every(field => typeof meta[field] === 'string' && meta[field] !== '');
+
+  // Validate tags if present, should be an array of strings
+  const isValidTags =
+    !meta.tags ||
+    (Array.isArray(meta.tags) &&
+      meta.tags.every(tag => typeof tag === 'string'));
+
+  // TTL can be a number, null, or undefined
+  const isValidTtl =
+    typeof meta.ttl === 'number' || meta.ttl === null || meta.ttl === undefined;
+
+  return isValidStrings && isValidTags && isValidTtl;
 };
 
 const ddbClient = new DynamoDBClient({ region: process.env.REGION });
@@ -50,24 +75,31 @@ const ddbDocClient = DynamoDBDocumentClient.from(ddbClient);
  * @returns A promise that resolves to the validated S3 object key, DocumentStatus, or null.
  */
 export const getValidatedS3ObjectKey = async (
-  args: DocumentKeyInput,
+  args: DownloadDocumentKeys,
   tableName: string,
 ): Promise<string | null> => {
-  const key = createS3ObjectKey(args);
+  const key = createS3ObjectKey(args as S3ObjectKeyInput);
+  console.log({
+    args,
+    tableName,
+  });
 
   const { Item } = await ddbDocClient.send(
     new GetCommand({
       TableName: tableName,
-      Key: { key },
-      ProjectionExpression: 'username, dirname, filename, status',
+      Key: { key, username: args.username },
+      ProjectionExpression: 'username, dirname, filename',
     }),
   );
 
   if (Item) {
-    const isExpectedDocument =
+    let isExpectedDocument =
       Item.username === args.username &&
       Item.dirname === args.dirname &&
       Item.filename === args.filename;
+    if (args.version) {
+      isExpectedDocument = isExpectedDocument && Item.version === args.version;
+    }
 
     if (isExpectedDocument) {
       return key;
@@ -85,45 +117,83 @@ export const getValidatedS3ObjectKey = async (
  * @throws Error if the provided metadata is invalid.
  */
 export const createMetadata = (
-  metadata: Partial<DocumentMetadata>,
+  metadata: Partial<UploadDocumentMetadata>,
   mode: 'metadata' | 'headers' = 'metadata',
-): DocumentMetadata | Record<string, string> => {
-  if (!isValidDocumentMetadata(metadata)) {
+): UploadDocumentMetadata | Record<string, string> => {
+  if (!isValidUploadDocumentMetadata(metadata)) {
     throw new Error('Invalid metadata provided');
   }
+  const { mimetype, dirname, filename, entityType, username, ttl, tags } =
+    metadata;
 
+  // Note: No change needed for handling arrays in header mode due to toString() behavior
   const formattedMetadata = {
-    filename: metadata.filename!,
-    extension: metadata.extension!,
-    dirname: metadata.dirname!,
-    size: metadata.size!,
-    type: metadata.type!,
-    ttl: metadata.ttl,
-    username: metadata.username!,
-    version: metadata.version || '',
+    mimetype,
+    dirname,
+    filename,
+    entityType,
+    username,
+    ...(ttl && { ttl }),
+    ...(tags && { tags: tags.toString() }),
   };
+
   if (mode !== 'metadata' && mode !== 'headers')
     throw new Error('Invalid mode provided');
 
   if (mode === 'headers') {
-    const headers: Record<string, string> = {};
-    Object.entries(formattedMetadata).forEach(([key, value]) => {
-      // Prefix with 'x-amz-meta-' for S3 metadata headers, omitting undefined values
-      if (value !== undefined) {
-        headers[`x-amz-meta-${key}`] = value?.toString() || 'Invalid_Metadata';
-      }
-    });
-    return headers;
+    //Metadata handling will lower case the keys so to preserve the casing during extraction, kebab case it
+    return Object.entries(formattedMetadata)
+      .map(([key, value]: [string, unknown]) => ({
+        [Case.kebab(key)]: value?.toString(),
+      }))
+      .reduce((acc, curr) => ({ ...acc, ...curr }), {}) as Record<
+      string,
+      string
+    >;
+  }
+  return formattedMetadata as UploadDocumentMetadata;
+};
+
+/**
+ * Extracts and transforms metadata from S3 object headers.
+ * @param {Record<string, string> | undefined} Metadata - The S3 object metadata.
+ * @returns {UploadDocumentMetadata | undefined} - Transformed metadata.
+ */
+export function extractMetadataFromHeaders(
+  Metadata: Record<string, string> | undefined,
+): UploadDocumentMetadata | undefined {
+  //! Assumes the metadata headers are all strings except for ttl which is a number.
+  if (!Metadata) return undefined;
+
+  const extractedMetadata: Partial<UploadDocumentMetadata> = {};
+
+  Object.entries(Metadata).forEach(([key, value]) => {
+    // Normalize key to camelCase to preserve original casing scheme
+    const normalizedKey = Case.camel(
+      key.startsWith('x-amz-meta-') ? key.substring(11) : key,
+    );
+
+    if (normalizedKey === 'ttl') {
+      extractedMetadata[normalizedKey] = parseInt(value, 10);
+    } else {
+      //@ts-ignore description: will be validated
+      extractedMetadata[normalizedKey] = value;
+    }
+  });
+
+  if (extractedMetadata.tags && typeof extractedMetadata.tags === 'string') {
+    extractedMetadata.tags = (extractedMetadata.tags as string).split(',');
   }
 
-  return formattedMetadata;
-};
+  return extractedMetadata as UploadDocumentMetadata;
+}
+
 /**
  * Creates an S3 object key based on the provided arguments.
  * @param args - The input arguments for creating the S3 object key.
  * @returns The generated S3 object key.
  */
-export const createS3ObjectKey = (args: DocumentKeyInput): string => {
+export const createS3ObjectKey = (args: S3ObjectKeyInput): string => {
   return `${args.username}/${args.dirname}/${args.filename}`;
 };
 
@@ -134,63 +204,83 @@ export const createS3ObjectKey = (args: DocumentKeyInput): string => {
  * @returns A Promise that resolves to the S3 object key of the document, or null if it cannot be determined.
  */
 export const getS3ObjectKey = async (
-  args: DocumentKeyInput,
+  args: DownloadDocumentKeys,
   tableName: string,
 ): Promise<string | null> => {
   return getValidatedS3ObjectKey(args, tableName);
 };
 
+export interface GetPresignedUrlParams {
+  method: 'getObject' | 'putObject';
+  bucket: string;
+  contentType?: string;
+  key: string;
+  expiry: number;
+  versionId?: string; // Optional version ID for getObject
+  metadata?: Record<string, string>; // Optional metadata for putObject
+}
+
 /**
- * Retrieves metadata from an S3 object.
- * @param bucketName - The name of the S3 bucket.
- * @param objectKey - The key of the S3 object.
- * @returns A promise that resolves to the metadata of the S3 object, or null if the object does not exist.
+ * Generates a signed URL for accessing an S3 object or uploading an object to S3.
+ * @param params - The parameters for generating the signed URL.
+ * @returns A Promise that resolves to the signed URL.
  */
-export const getMetadataFromS3Object = async (
-  bucketName: string,
-  objectKey: string,
-): Promise<DocumentMetadata | null> => {
-  const s3Client = new S3({});
-  const response = await s3Client.headObject({
-    Bucket: bucketName,
-    Key: objectKey,
-  });
+export const getPresignedUrl = async (
+  params: GetPresignedUrlParams,
+): Promise<string> => {
+  const s3Client = new S3Client({ region: process.env.REGION });
 
-  if (response.Metadata) {
-    // Provide fallback values or handle undefined cases
-    return {
-      filename: response.Metadata['filename'] || '',
-      extension: response.Metadata['extension'] || '',
-      dirname: response.Metadata['dirname'] || '',
-      size: response.Metadata['size']
-        ? parseInt(response.Metadata['size'], 10)
-        : 0,
-      type: response.Metadata['type'] || '',
-      ttl: response.Metadata['ttl']
-        ? parseInt(response.Metadata['ttl'], 10)
-        : null,
-      username: response.Metadata['username'] || '',
-      version: response.Metadata['version'] || '',
+  let command;
+  if (params.method === 'getObject') {
+    // Include versionId conditionally for getObject
+    const getObjectParams: GetObjectCommandInput = {
+      Bucket: params.bucket,
+      Key: params.key,
+      ...(params.versionId && { VersionId: params.versionId }),
     };
+    command = new GetObjectCommand(getObjectParams);
+  } else if (params.method === 'putObject') {
+    const commandInput: PutObjectCommandInput = {
+      Bucket: params.bucket,
+      Key: params.key,
+      Metadata: params.metadata,
+      //@ts-ignore description:it should exist
+      ContentType: params?.contentType,
+    };
+    command = new PutObjectCommand(commandInput);
+    // console.debug({ command, metadata });
   } else {
-    return null;
+    throw new Error('Unsupported method provided');
   }
-};
 
-export interface UploadDocumentWithSignedUrlParams {
+  const signedUrl = await getSignedUrl(s3Client, command, {
+    expiresIn: params.expiry,
+  });
+  return signedUrl;
+};
+export interface UploadDocumentWithPresignedUrlParams {
   signedUrl: string;
   metadataHeaders: Record<string, string>;
+  contentType?: string;
   content: string;
 }
-export async function uploadDocumentWithSignedUrl(
-  params: UploadDocumentWithSignedUrlParams,
+
+/**
+ * Uploads a document to a pre-signed URL with the specified parameters.
+ * @param params - The parameters for uploading the document.
+ * @returns A Promise that resolves to the response of the upload operation.
+ */
+export async function uploadDocumentWithPresignedUrl(
+  params: UploadDocumentWithPresignedUrlParams,
 ): Promise<Response> {
-  // Construct metadata headers
-  const { signedUrl, metadataHeaders, content } = params;
-  console.debug({ signedUrl, metadataHeaders });
+  const { signedUrl, metadataHeaders, content, contentType } = params;
+
   const uploadResult = await fetch(signedUrl, {
     method: 'PUT',
-    headers: metadataHeaders,
+    headers: {
+      ...metadataHeaders,
+      'Content-Type': contentType || 'application/octet-stream',
+    },
     body: content,
   });
 
@@ -198,14 +288,15 @@ export async function uploadDocumentWithSignedUrl(
 }
 
 /**
- * Fetches a document from AWS S3 using a signed URL and automatically handles
- * the content type of the response.
+ * Fetches a document using a pre-signed URL.
  *
- * @param {string} downloadUrl - The signed URL provided for the document download.
- * @returns {Promise<unknown>} - A promise that resolves with the document content.
- *                            The content type is automatically handled.
+ * @param downloadUrl - The URL to download the document from.
+ * @returns A Promise that resolves to the fetched document.
+ * @throws If there is an error fetching the document.
  */
-export async function fetchDocumentWithSignedUrl(downloadUrl: string): Promise<unknown> {
+export async function fetchDocumentWithPresignedUrl(
+  downloadUrl: string,
+): Promise<unknown> {
   try {
     const response = await fetch(downloadUrl);
     if (!response.ok) {
@@ -213,10 +304,10 @@ export async function fetchDocumentWithSignedUrl(downloadUrl: string): Promise<u
     }
 
     // Automatically handle content based on the response's Content-Type header
-    const contentType = response.headers.get('Content-Type');
-    if (contentType?.includes('application/json')) {
+    const mimetype = response.headers.get('Content-Type');
+    if (mimetype?.includes('application/json')) {
       return await response.json();
-    } else if (contentType?.includes('text')) {
+    } else if (mimetype?.includes('text')) {
       return await response.text();
     } else {
       //default
@@ -227,4 +318,3 @@ export async function fetchDocumentWithSignedUrl(downloadUrl: string): Promise<u
     throw error; // Re-throw
   }
 }
-

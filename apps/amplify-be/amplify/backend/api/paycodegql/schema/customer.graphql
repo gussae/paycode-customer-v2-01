@@ -16,7 +16,7 @@ type User @model @auth(rules: [{ allow: owner, ownerField: "username" }]) {
       ]
     )
   email: String!
-  document: [Document] @hasMany
+  documentIndexes: [DocumentIndex] @hasMany
   profile: Profile @hasOne
   notifications: [Notification] @hasMany
 }
