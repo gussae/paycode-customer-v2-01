@@ -14,6 +14,9 @@ cdk.out
 /coverage
 /node_modules
 
+# un-ignore the following files
+!apps/amplify-be/amplify/backend/api/paycodegql/build/schema.graphql
+
 #maintenance
 **/.history/
 **/tmp/
