@@ -204,8 +204,8 @@ jobs:
 
       - name: Build Packages
         if: steps.deployment_trigger_logic.outputs.isDeployment == 'true'
-        #!TODO! abandoned browser/node build distinction for now. It can save time during build by building the packages needed for the deployment but the minute or two saved is not worth the complexity of managing the two builds - unless u come up with a better solution..it was once working but during some update, it became a headache so it was removed for now
-        run: node scripts/build-packages.js
+        #!TODO! abandoned browser/node build distinction for now. It can save time during build by building the packages needed for the deployment but the minute or two saved is not worth the complexity of managing the two builds - aslo the use of hashing to speed up local builds complicates the build->for now, must build uncached
+        run: node scripts/build-packages.js --uncached
         shell: bash
 
       - name: Upload Packages Artifacts
