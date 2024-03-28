@@ -1,29 +1,24 @@
 import { spawn } from 'child_process';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-function runNpmScript(scriptName) {
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export function runNpmScript(scriptName) {
   console.log(`Running ${scriptName}...`);
 
   const childProcess = spawn('npm', ['run', scriptName], {
     stdio: 'inherit',
     shell: true,
     env: { ...process.env, FORCE_COLOR: '1' },
+    cwd: path.resolve(__dirname, '../'),
   });
 
-  childProcess.on('exit', (code) => {
+  childProcess.on('exit', code => {
     console.log(`${scriptName} exited with code ${code}`);
     if (code !== 0) {
       console.error(`${scriptName} failed.`);
       process.exit(code);
     }
   });
-}
-
-// Example usage for prebuild and postbuild hooks
-const scriptName = process.argv[2]; // Expecting 'prebuild' or 'postbuild'
-
-if (scriptName === 'prebuild' || scriptName === 'postbuild') {
-  runNpmScript(scriptName);
-} else {
-  console.error('Please specify "prebuild" or "postbuild" as an argument.');
-  process.exit(1);
 }

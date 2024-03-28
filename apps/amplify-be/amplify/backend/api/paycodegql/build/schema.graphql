@@ -1,0 +1,626 @@
+type Notification @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  username: String!
+  title: String!
+  message: String!
+  read: Boolean!
+  user: User
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  userNotificationsUsername: String
+}
+
+type Transfer @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  from: String!
+  to: String!
+  amount: Float!
+  status: TransferStatus!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+enum TransferStatus {
+  COMPLETED
+  FAILED
+  REJECTED
+  PENDING
+}
+
+type User @aws_iam @aws_cognito_user_pools {
+  username: String!
+  email: String!
+  documentIndexes(key: ModelStringKeyConditionInput, filter: ModelDocumentIndexFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelDocumentIndexConnection
+  profile: Profile
+  notifications(filter: ModelNotificationFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelNotificationConnection
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  userProfileUsername: String
+}
+
+type Profile @aws_iam @aws_cognito_user_pools {
+  username: String!
+  bio: String
+  user: User
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type DocumentIndex @aws_iam @aws_cognito_user_pools {
+  username: String!
+  key: String!
+  bucketName: String!
+  dirname: String!
+  filename: String!
+  entityType: EntityType!
+  eTag: String
+  extension: String!
+  mimetype: String!
+  size: Float!
+  storageClass: StorageClass
+  tags: [String]
+  ttl: Int
+  version: String!
+  user: User
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  userDocumentIndexesUsername: String
+}
+
+enum EntityType {
+  BILLING
+  DOCUMENT
+  HISTORY
+  RECEIPT
+  PROFILE
+}
+
+enum StorageClass {
+  DEEP_ARCHIVE
+  EXPRESS_ONEZONE
+  GLACIER
+  GLACIER_IR
+  INTELLIGENT_TIERING
+  ONEZONE_IA
+  OUTPOSTS
+  REDUCED_REDUNDANCY
+  SNOW
+  STANDARD
+}
+
+type Query {
+  getDownloadDocumentAccess(params: DownloadDocumentAccessInput): DownloadDocumentAccess
+  getUploadDocumentAccess(params: UploadDocumentAccessInput): UploadDocumentAccess
+  getNotification(id: ID!): Notification @aws_iam @aws_cognito_user_pools
+  listNotifications(filter: ModelNotificationFilterInput, limit: Int, nextToken: String): ModelNotificationConnection @aws_iam @aws_cognito_user_pools
+  getTransfer(id: ID!): Transfer @aws_iam @aws_cognito_user_pools
+  listTransfers(filter: ModelTransferFilterInput, limit: Int, nextToken: String): ModelTransferConnection @aws_iam @aws_cognito_user_pools
+  getUser(username: String!): User @aws_iam @aws_cognito_user_pools
+  listUsers(username: String, filter: ModelUserFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelUserConnection @aws_iam @aws_cognito_user_pools
+  getProfile(username: String!): Profile @aws_iam @aws_cognito_user_pools
+  listProfiles(username: String, filter: ModelProfileFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelProfileConnection @aws_iam @aws_cognito_user_pools
+  getDocumentIndex(username: String!, key: String!): DocumentIndex @aws_iam @aws_cognito_user_pools
+  listDocumentIndexes(username: String, key: ModelStringKeyConditionInput, filter: ModelDocumentIndexFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelDocumentIndexConnection @aws_iam @aws_cognito_user_pools
+  documentIndicesByKeyAndVersion(key: String!, version: ModelStringKeyConditionInput, sortDirection: ModelSortDirection, filter: ModelDocumentIndexFilterInput, limit: Int, nextToken: String): ModelDocumentIndexConnection @aws_iam @aws_cognito_user_pools
+}
+
+type Mutation {
+  removeDocument(params: RemoveDocumentInput): RemoveDocumentResponse
+  createNotification(input: CreateNotificationInput!, condition: ModelNotificationConditionInput): Notification @aws_iam @aws_cognito_user_pools
+  updateNotification(input: UpdateNotificationInput!, condition: ModelNotificationConditionInput): Notification @aws_iam @aws_cognito_user_pools
+  deleteNotification(input: DeleteNotificationInput!, condition: ModelNotificationConditionInput): Notification @aws_iam @aws_cognito_user_pools
+  createTransfer(input: CreateTransferInput!, condition: ModelTransferConditionInput): Transfer @aws_iam @aws_cognito_user_pools
+  updateTransfer(input: UpdateTransferInput!, condition: ModelTransferConditionInput): Transfer @aws_iam @aws_cognito_user_pools
+  deleteTransfer(input: DeleteTransferInput!, condition: ModelTransferConditionInput): Transfer @aws_iam @aws_cognito_user_pools
+  createUser(input: CreateUserInput!, condition: ModelUserConditionInput): User @aws_iam @aws_cognito_user_pools
+  updateUser(input: UpdateUserInput!, condition: ModelUserConditionInput): User @aws_iam @aws_cognito_user_pools
+  deleteUser(input: DeleteUserInput!, condition: ModelUserConditionInput): User @aws_iam @aws_cognito_user_pools
+  createProfile(input: CreateProfileInput!, condition: ModelProfileConditionInput): Profile @aws_iam @aws_cognito_user_pools
+  updateProfile(input: UpdateProfileInput!, condition: ModelProfileConditionInput): Profile @aws_iam @aws_cognito_user_pools
+  deleteProfile(input: DeleteProfileInput!, condition: ModelProfileConditionInput): Profile @aws_iam @aws_cognito_user_pools
+  createDocumentIndex(input: CreateDocumentIndexInput!, condition: ModelDocumentIndexConditionInput): DocumentIndex @aws_iam @aws_cognito_user_pools
+  deleteDocumentIndex(input: DeleteDocumentIndexInput!, condition: ModelDocumentIndexConditionInput): DocumentIndex @aws_iam @aws_cognito_user_pools
+}
+
+enum S3Operation {
+  GET
+  PUT
+}
+
+input UploadDocumentAccessInput {
+  dirname: String!
+  filename: String!
+  entityType: EntityType!
+  expiry: Int
+  mimetype: String!
+  operation: S3Operation!
+  ttl: Int
+  tags: [String]
+  username: String!
+}
+
+input DownloadDocumentAccessInput {
+  dirname: String!
+  filename: String!
+  expiry: Int
+  username: String!
+  version: String
+  operation: S3Operation!
+}
+
+input RemoveDocumentInput {
+  dirname: String!
+  filename: String!
+  username: String!
+  versionId: String
+}
+
+type DownloadDocumentAccess {
+  signedUrl: String!
+}
+
+type UploadDocumentAccess {
+  signedUrl: String!
+  metadataHeaders: AWSJSON
+}
+
+type RemoveDocumentResponse {
+  success: Boolean!
+  message: String
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelNotificationConnection @aws_iam @aws_cognito_user_pools {
+  items: [Notification]!
+  nextToken: String
+}
+
+input ModelNotificationFilterInput {
+  id: ModelIDInput
+  username: ModelStringInput
+  title: ModelStringInput
+  message: ModelStringInput
+  read: ModelBooleanInput
+  and: [ModelNotificationFilterInput]
+  or: [ModelNotificationFilterInput]
+  not: ModelNotificationFilterInput
+  userNotificationsUsername: ModelStringInput
+}
+
+input ModelNotificationConditionInput {
+  username: ModelStringInput
+  title: ModelStringInput
+  message: ModelStringInput
+  read: ModelBooleanInput
+  and: [ModelNotificationConditionInput]
+  or: [ModelNotificationConditionInput]
+  not: ModelNotificationConditionInput
+  userNotificationsUsername: ModelStringInput
+}
+
+input CreateNotificationInput {
+  id: ID
+  username: String!
+  title: String!
+  message: String!
+  read: Boolean!
+  userNotificationsUsername: String
+}
+
+input UpdateNotificationInput {
+  id: ID!
+  username: String
+  title: String
+  message: String
+  read: Boolean
+  userNotificationsUsername: String
+}
+
+input DeleteNotificationInput {
+  id: ID!
+}
+
+input ModelSubscriptionNotificationFilterInput {
+  id: ModelSubscriptionIDInput
+  title: ModelSubscriptionStringInput
+  message: ModelSubscriptionStringInput
+  read: ModelSubscriptionBooleanInput
+  and: [ModelSubscriptionNotificationFilterInput]
+  or: [ModelSubscriptionNotificationFilterInput]
+}
+
+type Subscription {
+  onCreateNotification(filter: ModelSubscriptionNotificationFilterInput, username: String): Notification @aws_subscribe(mutations: ["createNotification"]) @aws_iam @aws_cognito_user_pools
+  onUpdateNotification(filter: ModelSubscriptionNotificationFilterInput, username: String): Notification @aws_subscribe(mutations: ["updateNotification"]) @aws_iam @aws_cognito_user_pools
+  onDeleteNotification(filter: ModelSubscriptionNotificationFilterInput, username: String): Notification @aws_subscribe(mutations: ["deleteNotification"]) @aws_iam @aws_cognito_user_pools
+  onCreateTransfer(filter: ModelSubscriptionTransferFilterInput, from: String): Transfer @aws_subscribe(mutations: ["createTransfer"]) @aws_iam @aws_cognito_user_pools
+  onUpdateTransfer(filter: ModelSubscriptionTransferFilterInput, from: String): Transfer @aws_subscribe(mutations: ["updateTransfer"]) @aws_iam @aws_cognito_user_pools
+  onDeleteTransfer(filter: ModelSubscriptionTransferFilterInput, from: String): Transfer @aws_subscribe(mutations: ["deleteTransfer"]) @aws_iam @aws_cognito_user_pools
+  onCreateUser(filter: ModelSubscriptionUserFilterInput, username: String): User @aws_subscribe(mutations: ["createUser"]) @aws_iam @aws_cognito_user_pools
+  onUpdateUser(filter: ModelSubscriptionUserFilterInput, username: String): User @aws_subscribe(mutations: ["updateUser"]) @aws_iam @aws_cognito_user_pools
+  onDeleteUser(filter: ModelSubscriptionUserFilterInput, username: String): User @aws_subscribe(mutations: ["deleteUser"]) @aws_iam @aws_cognito_user_pools
+  onCreateProfile(filter: ModelSubscriptionProfileFilterInput, username: String): Profile @aws_subscribe(mutations: ["createProfile"]) @aws_iam @aws_cognito_user_pools
+  onUpdateProfile(filter: ModelSubscriptionProfileFilterInput, username: String): Profile @aws_subscribe(mutations: ["updateProfile"]) @aws_iam @aws_cognito_user_pools
+  onDeleteProfile(filter: ModelSubscriptionProfileFilterInput, username: String): Profile @aws_subscribe(mutations: ["deleteProfile"]) @aws_iam @aws_cognito_user_pools
+}
+
+type ModelTransferConnection @aws_iam @aws_cognito_user_pools {
+  items: [Transfer]!
+  nextToken: String
+}
+
+input ModelTransferStatusInput {
+  eq: TransferStatus
+  ne: TransferStatus
+}
+
+input ModelTransferFilterInput {
+  id: ModelIDInput
+  from: ModelStringInput
+  to: ModelStringInput
+  amount: ModelFloatInput
+  status: ModelTransferStatusInput
+  and: [ModelTransferFilterInput]
+  or: [ModelTransferFilterInput]
+  not: ModelTransferFilterInput
+}
+
+input ModelTransferConditionInput {
+  from: ModelStringInput
+  to: ModelStringInput
+  amount: ModelFloatInput
+  status: ModelTransferStatusInput
+  and: [ModelTransferConditionInput]
+  or: [ModelTransferConditionInput]
+  not: ModelTransferConditionInput
+}
+
+input CreateTransferInput {
+  id: ID
+  from: String!
+  to: String!
+  amount: Float!
+  status: TransferStatus!
+}
+
+input UpdateTransferInput {
+  id: ID!
+  from: String
+  to: String
+  amount: Float
+  status: TransferStatus
+}
+
+input DeleteTransferInput {
+  id: ID!
+}
+
+input ModelSubscriptionTransferFilterInput {
+  id: ModelSubscriptionIDInput
+  to: ModelSubscriptionStringInput
+  amount: ModelSubscriptionFloatInput
+  status: ModelSubscriptionStringInput
+  and: [ModelSubscriptionTransferFilterInput]
+  or: [ModelSubscriptionTransferFilterInput]
+}
+
+type ModelUserConnection @aws_iam @aws_cognito_user_pools {
+  items: [User]!
+  nextToken: String
+}
+
+input ModelUserFilterInput {
+  username: ModelStringInput
+  email: ModelStringInput
+  and: [ModelUserFilterInput]
+  or: [ModelUserFilterInput]
+  not: ModelUserFilterInput
+  userProfileUsername: ModelStringInput
+}
+
+input ModelUserConditionInput {
+  email: ModelStringInput
+  and: [ModelUserConditionInput]
+  or: [ModelUserConditionInput]
+  not: ModelUserConditionInput
+  userProfileUsername: ModelStringInput
+}
+
+input CreateUserInput {
+  username: String!
+  email: String!
+  userProfileUsername: String
+}
+
+input UpdateUserInput {
+  username: String!
+  email: String
+  userProfileUsername: String
+}
+
+input DeleteUserInput {
+  username: String!
+}
+
+input ModelSubscriptionUserFilterInput {
+  email: ModelSubscriptionStringInput
+  and: [ModelSubscriptionUserFilterInput]
+  or: [ModelSubscriptionUserFilterInput]
+}
+
+type ModelProfileConnection @aws_iam @aws_cognito_user_pools {
+  items: [Profile]!
+  nextToken: String
+}
+
+input ModelProfileFilterInput {
+  username: ModelStringInput
+  bio: ModelStringInput
+  and: [ModelProfileFilterInput]
+  or: [ModelProfileFilterInput]
+  not: ModelProfileFilterInput
+}
+
+input ModelProfileConditionInput {
+  bio: ModelStringInput
+  and: [ModelProfileConditionInput]
+  or: [ModelProfileConditionInput]
+  not: ModelProfileConditionInput
+}
+
+input CreateProfileInput {
+  username: String!
+  bio: String
+}
+
+input UpdateProfileInput {
+  username: String!
+  bio: String
+}
+
+input DeleteProfileInput {
+  username: String!
+}
+
+input ModelSubscriptionProfileFilterInput {
+  bio: ModelSubscriptionStringInput
+  and: [ModelSubscriptionProfileFilterInput]
+  or: [ModelSubscriptionProfileFilterInput]
+}
+
+type ModelDocumentIndexConnection @aws_iam @aws_cognito_user_pools {
+  items: [DocumentIndex]!
+  nextToken: String
+}
+
+input ModelEntityTypeInput {
+  eq: EntityType
+  ne: EntityType
+}
+
+input ModelStorageClassInput {
+  eq: StorageClass
+  ne: StorageClass
+}
+
+input ModelDocumentIndexFilterInput {
+  username: ModelStringInput
+  key: ModelStringInput
+  bucketName: ModelStringInput
+  dirname: ModelStringInput
+  filename: ModelStringInput
+  entityType: ModelEntityTypeInput
+  eTag: ModelStringInput
+  extension: ModelStringInput
+  mimetype: ModelStringInput
+  size: ModelFloatInput
+  storageClass: ModelStorageClassInput
+  tags: ModelStringInput
+  ttl: ModelIntInput
+  version: ModelStringInput
+  and: [ModelDocumentIndexFilterInput]
+  or: [ModelDocumentIndexFilterInput]
+  not: ModelDocumentIndexFilterInput
+  userDocumentIndexesUsername: ModelStringInput
+}
+
+input ModelDocumentIndexConditionInput {
+  bucketName: ModelStringInput
+  dirname: ModelStringInput
+  filename: ModelStringInput
+  entityType: ModelEntityTypeInput
+  eTag: ModelStringInput
+  extension: ModelStringInput
+  mimetype: ModelStringInput
+  size: ModelFloatInput
+  storageClass: ModelStorageClassInput
+  tags: ModelStringInput
+  ttl: ModelIntInput
+  version: ModelStringInput
+  and: [ModelDocumentIndexConditionInput]
+  or: [ModelDocumentIndexConditionInput]
+  not: ModelDocumentIndexConditionInput
+  userDocumentIndexesUsername: ModelStringInput
+}
+
+input CreateDocumentIndexInput {
+  username: String!
+  key: String!
+  bucketName: String!
+  dirname: String!
+  filename: String!
+  entityType: EntityType!
+  eTag: String
+  extension: String!
+  mimetype: String!
+  size: Float!
+  storageClass: StorageClass
+  tags: [String]
+  ttl: Int
+  version: String!
+  userDocumentIndexesUsername: String
+}
+
+input DeleteDocumentIndexInput {
+  username: String!
+  key: String!
+}
+
+input ModelStringKeyConditionInput {
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  between: [String]
+  beginsWith: String
+}
