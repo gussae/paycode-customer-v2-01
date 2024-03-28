@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite ",
-    "prebuild": "node amplify/hooks/post-push.js",
+    "fix-s3-cors": "node scripts/fix-s3-cors.js",
+    "export-to-param-store": "node scripts/export-to-param-store.js",
+    "prebuild": "npm run export-to-param-store",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

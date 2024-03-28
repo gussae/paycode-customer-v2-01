@@ -14,7 +14,20 @@ cdk.out
 /coverage
 /node_modules
 
-# un-ignore the following files
+# amplify api build files should be handled special: the build schema is used in codgen and since we don't have ci/cd, we need to commit the schema
+!apps/
+apps/**/build/
+!apps/amplify-be/
+apps/amplify-be/**/build/
+!apps/amplify-be/amplify/
+apps/amplify-be/amplify/**/build/
+!apps/amplify-be/amplify/backend/
+apps/amplify-be/amplify/backend/**/build/
+!apps/amplify-be/amplify/backend/api/
+apps/amplify-be/amplify/backend/api/**/build/
+!apps/amplify-be/amplify/backend/api/paycodegql/
+apps/amplify-be/amplify/backend/api/paycodegql/**/build/
+!apps/amplify-be/amplify/backend/api/paycodegql/build/
 !apps/amplify-be/amplify/backend/api/paycodegql/build/schema.graphql
 
 #maintenance

@@ -1,6 +1,6 @@
 //! Run from cli, not intended for CI as the Amplify CI/CD is abandoned
 import { S3Client, PutBucketCorsCommand } from '@aws-sdk/client-s3';
-import CONFIG from '../scripts/config.js';
+import CONFIG from './config.js';
 import { getAwsCredsProvider } from '@paycode-customer-v2/lib/dist/esm';
 import awsExports from '../src/aws-exports.js';
 
