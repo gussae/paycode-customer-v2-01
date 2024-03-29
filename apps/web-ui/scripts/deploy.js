@@ -1,4 +1,4 @@
-import { spawn } from 'child_process';
+import { spawn, exec } from 'child_process';
 import CONFIG from './config.js';
 import path from 'path';
 
@@ -50,5 +50,19 @@ deployment.on('error', error => {
 
 deployment.on('exit', code => {
   console.log(`Deployment process exited with code ${code}`);
-  // Optionally, trigger any post-deployment actions here
+  //Get outputs on success
+  if (code === 0) {
+    const describeCommand = `aws cloudformation describe-stacks --stack-name ${stackNameKebabCase} --query "Stacks[0].Outputs" --output text`;
+    exec(describeCommand, { env }, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Error fetching stack outputs: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        console.error(`Error: ${stderr}`);
+        return;
+      }
+      console.log('Stack Outputs:\n', stdout);
+    });
+  }
 });

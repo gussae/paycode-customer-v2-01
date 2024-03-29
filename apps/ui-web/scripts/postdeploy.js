@@ -46,7 +46,7 @@ async function syncToS3(bucketName) {
     shell: true,
     env: {
       ...process.env,
-      AWS_PROFILE: PROFILE,
+      AWS_PROFILE: process.env.CI === 'true' ? undefined : profile,
       AWS_REGION: REGION,
       FORCE_COLOR: '1',
     },

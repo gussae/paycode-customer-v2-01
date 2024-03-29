@@ -16,7 +16,7 @@
     "deploy-api": "node scripts/deploy-api.js",
     "patch-api": "node scripts/patch-api.js",
     "postbuild": "npm run deploy && npm run patch-api && npm run deploy-api",
-    "prebuild": "npm install && tsc && rimraf samconfig.toml template.yaml",
+    "prebuild": "npm install && tsc && rimraf dist/tsconfig.tsbuildinfo samconfig.toml template.yaml",
     "test": "echo \"Error: no test specified\" && exit 1",
     "validate-template": "sam validate --lint",
     "validate-api": "node scripts/validate-openapi.js",

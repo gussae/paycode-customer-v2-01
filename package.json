@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/kkortje/paycode-customer-v2.git"
   },
+  "scripts": {
+    "build-packages": "node ./scripts/build-packages.js"
+  },
   "dependencies": {
     "@aws-crypto/sha256-browser": "^5.2.0",
     "@aws-crypto/sha256-js": "^5.2.0",

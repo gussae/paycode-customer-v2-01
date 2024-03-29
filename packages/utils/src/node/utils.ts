@@ -1,17 +1,47 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { SpawnOptions, exec, execSync, spawn } from 'child_process';
-import { existsSync, promises as fsPromise } from 'fs';
-import { CompilerOptions } from 'typescript';
-import fs from 'fs-extra';
-import { dirname, join } from 'path';
-import { stringify } from 'yaml';
 import {
   CloudFormationClient,
   ListExportsCommand,
   ListExportsCommandOutput,
 } from '@aws-sdk/client-cloudformation';
+import { fromEnv, fromIni } from '@aws-sdk/credential-providers';
+import { AwsCredentialIdentityProvider } from '@smithy/types';
+import { SpawnOptions, exec, execSync, spawn } from 'child_process';
+import { existsSync, promises as fsPromise } from 'fs';
+import fs from 'fs-extra';
+import { dirname, join } from 'path';
+import { CompilerOptions } from 'typescript';
+import { stringify } from 'yaml';
 
+//! THIS function is also exported from the lib package. To avoid unnecessary, dependency, it is copied here as this is purely intended for dev utils
+/**
+ * Retrieves AWS credentials based on the provided profile.
+ * If running in a CI environment, it attempts to load AWS credentials via OIDC token file.
+ * If running in a non-CI environment, it loads credentials from AWS profiles.
+ * @param profile - The AWS profile to use for retrieving credentials.
+ * @returns The AWS credential identity provider or undefined if credentials cannot be loaded.
+ */
+export function getAwsCredsProvider(
+  profile: string | undefined,
+): AwsCredentialIdentityProvider | undefined {
+  // Check if running in CI environment
+  if (process.env.CI === 'true') {
+    // Attempt to load AWS credentials via OIDC token file for CI environments
+    try {
+      return fromEnv();
+    } catch (error) {
+      console.error('Failed to load AWS credentials from token file:', error);
+      return undefined; //hopefully it will pick up from defaultConfig on the CI
+    }
+  } else if (process.env.AWS_LAMBDA_FUNCTION_NAME) {
+    console.log('Running in AWS Lambda. Using execution role for credentials.');
+    return undefined;
+  } else {
+    // Load credentials from AWS profiles for non-CI environments
+    return fromIni({ profile });
+  }
+}
 /**
  * Executes a synchronous command and returns the output as a string.
  * @param command The command to execute.
@@ -277,8 +307,12 @@ export async function runBuildInProjectRoot(
 export async function getExportValue(
   exportName: string,
   region: string,
+  profile: string | undefined
 ): Promise<string | undefined> {
-  const client = new CloudFormationClient({ region: region });
+  const client = new CloudFormationClient({
+    region: region,
+    credentials: getAwsCredsProvider(profile),
+  });
   let nextToken: string | undefined = undefined;
   do {
     const response: ListExportsCommandOutput = await client.send(
@@ -296,18 +330,4 @@ export async function getExportValue(
   return undefined;
 }
 
-// Usage example
-const exportName = "GetAttDocumentDataSourceName";
-const region = "us-west-2"; // Specify your AWS region
-process.env.AWS_PROFILE= "awsist-dev"
-getExportValue(exportName, region)
-  .then(value => {
-    if (value) {
-      console.log(`Value for ${exportName}:`, value);
-    } else {
-      console.log(`Export named ${exportName} not found.`);
-    }
-  })
-  .catch(error => {
-    console.error("Error fetching export value:", error);
-  });
+

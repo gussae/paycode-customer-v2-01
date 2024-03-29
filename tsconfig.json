@@ -20,5 +20,5 @@
     "docs",
     "build"
   ],
-  "include": ["**/*.ts", "**/*.json", "jest-preset.js", "packages/utils/test/generate-proxy-api.test.mjs", "packages/ui-clients/test/execute-check.js", "apps/paycode-proxy/fn/balance/execute-check.ts", "apps/amplify-be/scripts/s3-cors.js"]
+  "include": ["**/*.ts", "**/*.json", "jest-preset.js", "packages/utils/test/generate-proxy-api.test.mjs", "packages/ui-clients/test/execute-check.js", "apps/paycode-proxy/fn/balance/execute-check.ts", "apps/amplify-be/scripts/fix-s3-cors.js"]
 }

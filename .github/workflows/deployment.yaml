@@ -77,6 +77,7 @@ jobs:
             apps/amplify-be/amplify/backend/api/paycodegql/build/schema.graphql
             apps/paycode-proxy/package.json
             apps/paycode-proxy/.workspace.config.json
+            apps/paycode-proxy/api/openapi.bundled.yaml
             .monorepo.config.json
             package.json
             package-lock.json
@@ -202,14 +203,10 @@ jobs:
               echo "orchestrateDeployment=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Add amplify cli for graphql codegen
-        run: npm install -g @aws-amplify/cli
-
+        #!TODO! abandoned browser/node build distinction for now. It can save time during build by building the packages needed for the deployment but the minute or two saved is not worth the complexity of managing the two builds - aslo the use of hashing to speed up local builds complicates the build->for now, must build uncached
       - name: Build Packages
         if: steps.deployment_trigger_logic.outputs.isDeployment == 'true'
-        #!TODO! abandoned browser/node build distinction for now. It can save time during build by building the packages needed for the deployment but the minute or two saved is not worth the complexity of managing the two builds - aslo the use of hashing to speed up local builds complicates the build->for now, must build uncached
-        run: node scripts/build-packages.js --uncached
-        shell: bash
+        run: npm install -g @aws-amplify/cli && npm run build-packages -- --uncached
 
       - name: Upload Packages Artifacts
         if: steps.deployment_trigger_logic.outputs.isDeployment == 'true'

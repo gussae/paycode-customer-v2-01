@@ -124,8 +124,16 @@ async function sortPackagesForBuild(directories) {
 }
 
 async function buildPackagesInBatch(batch, uncached) {
+  const skipArgIndex = process.argv.findIndex(arg => arg === '--skip');
+  const skippedPackages =
+    skipArgIndex !== -1 ? process.argv[skipArgIndex + 1].split(',') : [];
+
   await Promise.all(
     batch.map(async dirName => {
+      if (skippedPackages.includes(dirName)) {
+        console.log(`Skipping ${dirName} as specified by the skip argument.`);
+        return;
+      }
       const packageConfig = PACKAGES_CONFIG.find(pkg => pkg.name === dirName);
       if (!packageConfig) {
         console.log(`No config found for ${dirName}, skipping.`);
