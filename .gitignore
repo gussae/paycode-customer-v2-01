@@ -13,7 +13,15 @@
 **/cdk.out
 **/coverage/
 **/node_modules/
+**/.package-hashes.json
+**/tsconfig.tsbuildinfo
+**/tsconfig.node.tsbuildinfo
+**/tsconfig.browser.tsbuildinfo
+**/tsconfig.esm.tsbuildinfo
+**/tsconfig.cjs.tsbuildinfo
 
+# special builds
+packages/utils/src/browser/paycode-proxy-api/client/*
 
 #maintenance
 **/.history/
@@ -24,17 +32,12 @@
 **/.scratch/
 **/notes.txt
 npm-debug.log*
-
-#caches
 **/.cache/
 **/cache/
-**/tsconfig.tsbuildinfo
-
-# misc
 **/.DS_Store
-**/*.pem
 
-# local env files, environment dependent
+# local env files, environment dependent, sensitive
+**/*.pem
 **/.env
 **/.env.local
 **/.env.development.local

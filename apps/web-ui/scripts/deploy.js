@@ -62,7 +62,23 @@ deployment.on('exit', code => {
         console.error(`Error: ${stderr}`);
         return;
       }
-      console.log('Stack Outputs:\n', stdout);
+      const outputLines = stdout.split('\n').filter(line => line.trim() !== '');
+
+      const outputObject = outputLines.reduce(
+        (acc, line) => {
+          if (line.includes('BucketName')) {
+            acc.bucketName = line.split('\t').pop().trim();
+          } else if (line.includes('CloudFrontDistributionId')) {
+            acc.distributionId = line.split('\t').pop().trim();
+          } else if (line.includes('CloudFrontDistributionDomainName')) {
+            acc.distributionUrl = `https://${line.split('\t').pop().trim()}`;
+          }
+          return acc;
+        },
+        { bucketName: '', distributionId: '', distributionUrl: '' },
+      );
+
+      console.log(outputObject);
     });
   }
 });

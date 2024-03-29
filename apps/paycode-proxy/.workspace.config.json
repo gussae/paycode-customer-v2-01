@@ -11,14 +11,16 @@
         "https://d220aoa1zjqs4t.cloudfront.net"
       ],
       "preflightCacheTtl": 3600
-    }, {
+    },
+    {
       "deploymentEnv": "prod",
       "allowedOrigins": [
         "http://localhost:3000",
         "http://localhost:5173",
         "http://localhost:5174",
         "http://localhost:5175",
-        "https://dgl6oedwyp4k8.cloudfront.net"
+        "https://dgl6oedwyp4k8.cloudfront.net",
+        "https://d1acsqaktcps5p.cloudfront.net"
       ],
       "preflightCacheTtl": 3600
     }

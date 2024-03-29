@@ -5,13 +5,21 @@ import { getAwsCredsProvider } from '@paycode-customer-v2/lib/dist/esm';
 import awsExports from '../src/aws-exports.js';
 
 const {
-  deploymentConfig: { profile, region },
-  infraEnvConfig: { allowedOriginsForS3Access, preflightCacheTtl },
+  deploymentConfig: { profile: PROFILE, region: REGION },
+  infraEnvConfig: { allowedOrigins: ALLOWED_ORIGINS, preflightCacheTtl },
 } = CONFIG;
 
+console.debug({
+  bucketName: awsExports.aws_user_files_s3_bucket,
+  profile: PROFILE,
+  region: REGION,
+  allowedOrigins: ALLOWED_ORIGINS,
+  preflightCacheTtl: preflightCacheTtl,
+});
+
 const s3Client = new S3Client({
-  credentials: getAwsCredsProvider(profile),
-  region,
+  credentials: getAwsCredsProvider(PROFILE),
+  region: REGION,
 });
 
 // Function to update the CORS configuration
@@ -43,7 +51,7 @@ async function updateS3Cors(bucketName, allowedOrigins, ttl) {
 
 updateS3Cors(
   awsExports.aws_user_files_s3_bucket,
-  allowedOriginsForS3Access,
+  ALLOWED_ORIGINS,
   preflightCacheTtl,
 )
   .then(console.log) //is undefined when successful

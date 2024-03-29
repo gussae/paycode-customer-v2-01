@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Sha256 } from '@aws-crypto/sha256-js';
+import { CloudFormationClient, DescribeStackResourcesCommand } from '@aws-sdk/client-cloudformation';
 import { defaultProvider } from '@aws-sdk/credential-provider-node';
 import { fromEnv, fromIni } from '@aws-sdk/credential-providers';
 import { HeaderBag } from '@aws-sdk/types';
@@ -104,4 +105,41 @@ export async function signAwsRequest(
   const signedRequest = await signer.sign(request);
 
   return signedRequest as HttpRequest;
+}
+
+export interface LogicalIdResourcesMap {
+  [logicalId: string]: string;
+}
+
+/**
+ * Fetches resources by logical ID from a CloudFormation stack.
+ * @param resources - The map of logical IDs to resource types.
+ * @param stackName - The name of the stack.
+ * @param client - The CloudFormation client.
+ * @returns A promise that resolves to a map of logical IDs to physical resource IDs, or undefined if the stack resources are not available.
+ */
+export async function fetchResourcesByLogicalId(
+  resources: LogicalIdResourcesMap,
+  stackName: string,
+  client: CloudFormationClient,
+): Promise<LogicalIdResourcesMap | undefined> {
+  const command = new DescribeStackResourcesCommand({ StackName: stackName });
+  const response = await client.send(command);
+  const result: LogicalIdResourcesMap = {};
+  if(!response.StackResources) {
+    return undefined;
+  }
+
+  response.StackResources.forEach(resource => {
+    const logicalResourceId = resource.LogicalResourceId as string;
+    if(!logicalResourceId) return
+    if (
+      resources[logicalResourceId] &&
+      resource.ResourceType === resources[logicalResourceId]
+    ) {
+      result[logicalResourceId] = resource.PhysicalResourceId as string;
+    }
+  });
+
+  return result;
 }

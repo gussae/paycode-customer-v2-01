@@ -28,6 +28,7 @@
   "dependencies": {
     "@aws-crypto/sha256-js": "^5.x",
     "@aws-sdk/client-ssm": "^3.x",
+    "@aws-sdk/client-cloudformation": "^3.x",
     "@aws-sdk/credential-providers": "^3.x",
     "@aws-sdk/client-secrets-manager": "^3.x",
     "@aws-sdk/credential-provider-node": "^3.x",

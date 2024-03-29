@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite ",
-    "fix-s3-cors": "node scripts/fix-s3-cors.js",
+    "fix-cors": "node scripts/fix-cors.js",
     "build-fn": "node scripts/build-fn.js",
     "export-to-param-store": "node scripts/export-to-param-store.js",
     "prebuild": "npm run export-to-param-store",

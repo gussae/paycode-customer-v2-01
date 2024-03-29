@@ -8,7 +8,8 @@
     "url": "https://github.com/kkortje/paycode-customer-v2.git"
   },
   "scripts": {
-    "build-packages": "node ./scripts/build-packages.js"
+    "build-packages": "node ./scripts/build-packages.js",
+    "fix-cors": "concurrently \"npm run fix-cors --workspace=@paycode-customer-v2/paycode-proxy\"  \"npm run fix-cors --workspace=@paycode-customer-v2/amplify-be\""
   },
   "dependencies": {
     "@aws-crypto/sha256-browser": "^5.2.0",
