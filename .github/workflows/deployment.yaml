@@ -203,7 +203,7 @@ jobs:
               echo "orchestrateDeployment=false" >> $GITHUB_OUTPUT
           fi
 
-        #!TODO! abandoned browser/node build distinction for now. It can save time during build by building the packages needed for the deployment but the minute or two saved is not worth the complexity of managing the two builds - aslo the use of hashing to speed up local builds complicates the build->for now, must build uncached
+        #!TODO! abandoned browser/node build distinction for now. It can save time during build by building the packages needed for the deployment but the minute or so saved is not worth the complexity of managing the two builds - aslo the use of hashing to speed up local builds complicates the build->for now, must build uncached
       - name: Build Packages
         if: steps.deployment_trigger_logic.outputs.isDeployment == 'true'
         run: npm install -g @aws-amplify/cli && npm run build-packages -- --uncached
@@ -235,6 +235,7 @@ jobs:
           echo "WebUi Update: ${{needs.setup-environment.outputs.webUiUpdate }}"
           echo "Orchestrate Deployment: ${{needs.setup-environment.outputs.orchestrateDeployment }}"
 
+  # full deployment at init or orchestrateDeployment
   full-deployment:
     name: Full Deployment
     runs-on: ubuntu-latest
