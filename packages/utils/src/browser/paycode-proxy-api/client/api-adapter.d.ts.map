@@ -1,1 +1,0 @@
-{"version":3,"file":"api-adapter.d.ts","sourceRoot":"","sources":["../api-adapter.ts"],"names":[],"mappings":"AAIA,OAAO,EAGL,WAAW,EAEZ,MAAM,OAAO,CAAC;AAKf,MAAM,WAAW,UAAU;IACzB,CAAC,GAAG,EAAE,MAAM,GAAG,GAAG,CAAC;IACnB,gBAAgB,EAAE,MAAM,WAAW,CAAC;CACrC;AAsCD,eAAO,MAAM,UAAU,WACb,MAAM,YACJ,MAAM,OACX,UAAU,KACd,QAAQ,UAAU,CA+CpB,CAAC"}
