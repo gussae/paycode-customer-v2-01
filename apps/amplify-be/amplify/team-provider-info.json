@@ -27,7 +27,51 @@
         "removeDocument": {
           "deploymentBucketName": "amplify-paycodeamplifybe-dev-153324-deployment",
           "s3Key": "amplify-builds/removeDocument-456f576b456663573651-build.zip"
-        }
+        },
+        "documentStore": {},
+        "paycodegql": {},
+        "paycodeamplifybee1dd5abc": {}
+      },
+      "api": {
+        "paycodegql": {}
+      },
+      "storage": {
+        "documentStore": {}
+      }
+    }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-paycodeamplifybe-prod-223007-authRole",
+      "UnauthRoleArn": "arn:aws:iam::760554368476:role/amplify-paycodeamplifybe-prod-223007-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::760554368476:role/amplify-paycodeamplifybe-prod-223007-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-paycodeamplifybe-prod-223007-deployment",
+      "UnauthRoleName": "amplify-paycodeamplifybe-prod-223007-unauthRole",
+      "StackName": "amplify-paycodeamplifybe-prod-223007",
+      "StackId": "arn:aws:cloudformation:us-west-2:760554368476:stack/amplify-paycodeamplifybe-prod-223007/a4db7f00-ed7c-11ee-affb-0600b74ede99",
+      "AmplifyAppId": "d2mks2ryzf76y8"
+    },
+    "categories": {
+      "auth": {
+        "paycodeamplifybee1dd5abc": {}
+      },
+      "function": {
+        "documentAccess": {
+          "deploymentBucketName": "amplify-paycodeamplifybe-prod-223007-deployment",
+          "s3Key": "amplify-builds/documentAccess-516e585036346d6c3237-build.zip"
+        },
+        "documentIndex": {
+          "deploymentBucketName": "amplify-paycodeamplifybe-prod-223007-deployment",
+          "s3Key": "amplify-builds/documentIndex-667038493547594b6d2f-build.zip"
+        },
+        "removeDocument": {
+          "deploymentBucketName": "amplify-paycodeamplifybe-prod-223007-deployment",
+          "s3Key": "amplify-builds/removeDocument-456f576b456663573651-build.zip"
+        },
+        "documentStore": {},
+        "paycodegql": {},
+        "paycodeamplifybee1dd5abc": {}
       },
       "api": {
         "paycodegql": {}
