@@ -1,50 +1,7 @@
 {
   "customSettings": {
-    "__git_actions_trigger": 74,
-    "amplifyInit": {
-      "frontend": {
-        "frontend": "javascript",
-        "framework": "react",
-        "config": {
-          "SourceDir": "src",
-          "DistributionDir": "build",
-          "BuildCommand": "npm run-script build",
-          "StartCommand": "npm run-script start"
-        }
-      },
-      "providers": {
-        "awscloudformation": {
-          "configLevel": "project",
-          "useProfile": false
-        }
-      }
-    }
+    "__git_actions_trigger": 74
   },
-  "infraEnvConfig": [
-    {
-      "deploymentEnv": "dev",
-      "allowedOrigins": [
-        "http://localhost:3000",
-        "http://localhost:5173",
-        "http://localhost:5174",
-        "http://localhost:5175",
-        "https://d302savtrk7oq5.cloudfront.net",
-        "https://d220aoa1zjqs4t.cloudfront.net"
-      ],
-      "preflightCacheTtl": 3600
-    },
-    {
-      "deploymentEnv": "prod",
-      "allowedOrigins": [
-        "http://localhost:3000",
-        "http://localhost:5173",
-        "http://localhost:5174",
-        "http://localhost:5175",
-        "https://dgl6oedwyp4k8.cloudfront.net"
-      ],
-      "preflightCacheTtl": 3600
-    }
-  ],
   "envVars": {
     "IS_DOCUMENT_API_MOCK": "true",
     "IS_PAYCODE_PROXY_URL_MOCK": "false"

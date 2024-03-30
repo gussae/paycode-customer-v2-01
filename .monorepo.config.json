@@ -7,12 +7,30 @@
       {
         "branch": "dev",
         "runtimeEnv": "dev",
-        "loggingLevel": "debug"
+        "loggingLevel": "debug",
+        "preflightCacheTtl": 3600,
+        "allowedOrigins": [
+          "http://localhost:3000",
+          "http://localhost:5173",
+          "http://localhost:5174",
+          "http://localhost:5175",
+          "https://d302savtrk7oq5.cloudfront.net",
+          "https://d220aoa1zjqs4t.cloudfront.net"
+        ]
       },
       {
         "branch": "main",
         "runtimeEnv": "prod",
-        "loggingLevel": "error"
+        "loggingLevel": "error",
+        "preflightCacheTtl": 3600,
+        "allowedOrigins": [
+          "http://localhost:3000",
+          "http://localhost:5173",
+          "http://localhost:5174",
+          "http://localhost:5175",
+          "https://dgl6oedwyp4k8.cloudfront.net",
+          "https://d1acsqaktcps5p.cloudfront.net"
+        ]
       }
     ]
   },

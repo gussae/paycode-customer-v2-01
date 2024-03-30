@@ -13,7 +13,7 @@
 **/cdk.out
 **/coverage/
 **/node_modules/
-**/.package-hashes.json
+.package-hashes.json
 **/tsconfig.tsbuildinfo
 **/tsconfig.node.tsbuildinfo
 **/tsconfig.browser.tsbuildinfo
@@ -22,6 +22,7 @@
 
 # special builds
 packages/utils/src/browser/paycode-proxy-api/client/*
+
 
 #maintenance
 **/.history/
@@ -43,7 +44,7 @@ npm-debug.log*
 **/.env.development.local
 **/.env.test.local
 **/.env.production.local
-
+**/amplify-be.config.json
 
 
 

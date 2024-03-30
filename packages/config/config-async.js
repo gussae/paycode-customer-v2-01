@@ -76,19 +76,12 @@ async function getConfigAsync(currentPath) {
     envVars,
     ...wsConfig
   } = wsConfigResult;
+
+  //Grab envVars
   //merge appEnvConfig and monorepo appConfig to envVars after extracting the config for the deploymentEnv
   let _appEnvConfig = appEnvConfig.find(
-    envConfig => envConfig.deploymentEnv === deploymentEnv,
-    //keep deploymentEnv as part of the envVars
+    envConfig => envConfig.branch === branch,
   );
-  if (!_appEnvConfig) {
-    _appEnvConfig = {
-      deploymentEnv,
-    };
-  }
-  if (!_appEnvConfig.deploymentEnv) {
-    _appEnvConfig.deploymentEnv = deploymentEnv;
-  }
 
   let { appEnvConfig: monorepoAppEnvConfig, appGlobalConfig } = monorepoConfig;
   config.envVars = {

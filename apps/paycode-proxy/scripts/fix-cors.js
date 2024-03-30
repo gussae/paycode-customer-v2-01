@@ -22,7 +22,7 @@ const {
 console.debug({
   region: REGION,
   profile: PROFILE,
-  allowedOrigins: ALLOWED_ORIGINS,
+  allowedOrigins: JSON.stringify(ALLOWED_ORIGINS),
   stackName: STACK_NAME,
 });
 

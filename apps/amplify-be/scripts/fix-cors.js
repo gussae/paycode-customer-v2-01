@@ -6,14 +6,14 @@ import awsExports from '../src/aws-exports.js';
 
 const {
   deploymentConfig: { profile: PROFILE, region: REGION },
-  infraEnvConfig: { allowedOrigins: ALLOWED_ORIGINS, preflightCacheTtl },
+  envVars: { allowedOrigins: ALLOWED_ORIGINS, preflightCacheTtl },
 } = CONFIG;
 
 console.debug({
   bucketName: awsExports.aws_user_files_s3_bucket,
   profile: PROFILE,
   region: REGION,
-  allowedOrigins: ALLOWED_ORIGINS,
+  allowedOrigins: JSON.stringify(ALLOWED_ORIGINS),
   preflightCacheTtl: preflightCacheTtl,
 });
 
