@@ -1,13 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Sha256 } from '@aws-crypto/sha256-js';
-import { CloudFormationClient, DescribeStackResourcesCommand } from '@aws-sdk/client-cloudformation';
+import {
+  CloudFormationClient,
+  DescribeStackResourcesCommand,
+} from '@aws-sdk/client-cloudformation';
 import { defaultProvider } from '@aws-sdk/credential-provider-node';
 import { fromEnv, fromIni } from '@aws-sdk/credential-providers';
 import { HeaderBag } from '@aws-sdk/types';
 import { HttpRequest } from '@smithy/protocol-http';
 import { SignatureV4 } from '@smithy/signature-v4';
 import { AwsCredentialIdentityProvider } from '@smithy/types';
-
+import { AppSyncClient, ListGraphqlApisCommand, ListGraphqlApisCommandOutput } from '@aws-sdk/client-appsync';
 export type ReplacementPairs = [target: string, replacement: string][];
 export type TemplateTag = [open: string, close: string];
 
@@ -126,13 +129,13 @@ export async function fetchResourcesByLogicalId(
   const command = new DescribeStackResourcesCommand({ StackName: stackName });
   const response = await client.send(command);
   const result: LogicalIdResourcesMap = {};
-  if(!response.StackResources) {
+  if (!response.StackResources) {
     return undefined;
   }
 
   response.StackResources.forEach(resource => {
     const logicalResourceId = resource.LogicalResourceId as string;
-    if(!logicalResourceId) return
+    if (!logicalResourceId) return;
     if (
       resources[logicalResourceId] &&
       resource.ResourceType === resources[logicalResourceId]
@@ -143,3 +146,47 @@ export async function fetchResourcesByLogicalId(
 
   return result;
 }
+
+export interface FindAppSyncAPiIdParams {
+  endpoint?: string;
+  name?: string;
+  client: AppSyncClient;
+}
+/**
+ * Finds the AppSync API ID corresponding to a given GraphQL endpoint URL or API name.
+ *
+ * @param {object} params - The parameters for the function.
+ * @param {string} [params.endpoint] - The GraphQL endpoint URL to match.
+ * @param {string} [params.name] - The name of the AppSync API to match.
+ * @param {AppSyncClient} params.client - An instance of the AppSyncClient.
+ * @returns {Promise<string | null>} The API ID if found, or null if not found.
+ *
+ */
+export async function findAppSyncApiId({
+  endpoint,
+  name,
+  client,
+}: FindAppSyncAPiIdParams): Promise<string | null> {
+  if (!endpoint && !name) {
+    throw new Error("Either 'endpoint' or 'name' must be provided.");
+  }
+
+  let nextToken: string | undefined = undefined;
+  do {
+    const response: ListGraphqlApisCommandOutput = await client.send(
+      new ListGraphqlApisCommand({ nextToken }),
+    );
+    for (const api of response.graphqlApis || []) {
+      if (endpoint && api.uris?.GRAPHQL === endpoint) {
+        return api.apiId || null;
+      } else if (name && api.name === name) {
+        return api.apiId || null;
+      }
+    }
+    nextToken = response.nextToken;
+  } while (nextToken);
+
+  return null;
+}
+
+

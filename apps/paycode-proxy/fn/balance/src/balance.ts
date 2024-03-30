@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import axios, { AxiosResponse } from 'axios';
-import { RunApiOps } from '@paycode-customer-v2/lib/dist/esm';
+import { RunApiOps } from '@paycode-customer-v2/lib/dist/cjs';
 //TODO!use API exported from @paycode-customer-v2/utils to set the types but that entails importing browser module in a nodejs requiring some polyfills
 export interface BalanceResponse {
   balance: number;

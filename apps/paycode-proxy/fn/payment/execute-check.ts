@@ -1,5 +1,5 @@
 import { getMonorepoConfig } from '@paycode-customer-v2/config';
-import { executeCheckLambda } from '@paycode-customer-v2/utils';
+import { executeCheckLambda } from '@paycode-customer-v2/utils/dist/node';
 
 getMonorepoConfig(__dirname)
   .then(config =>

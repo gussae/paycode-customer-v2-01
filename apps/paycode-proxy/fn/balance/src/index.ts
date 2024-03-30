@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import { handleError, runApiOps } from '@paycode-customer-v2/lib/dist/esm';
+import { handleError, runApiOps } from '@paycode-customer-v2/lib/dist/cjs';
 import { APIGatewayProxyHandler } from 'aws-lambda';
 import { getBalance } from './balance';
 

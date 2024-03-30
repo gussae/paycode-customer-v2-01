@@ -1438,904 +1438,74 @@ var require_main2 = __commonJS({
   }
 });
 
-// ../../../../node_modules/@aws-crypto/crc32/node_modules/tslib/tslib.es6.js
-var tslib_es6_exports2 = {};
-__export(tslib_es6_exports2, {
-  __assign: () => __assign2,
-  __asyncDelegator: () => __asyncDelegator2,
-  __asyncGenerator: () => __asyncGenerator2,
-  __asyncValues: () => __asyncValues2,
-  __await: () => __await2,
-  __awaiter: () => __awaiter2,
-  __classPrivateFieldGet: () => __classPrivateFieldGet2,
-  __classPrivateFieldSet: () => __classPrivateFieldSet2,
-  __createBinding: () => __createBinding2,
-  __decorate: () => __decorate2,
-  __exportStar: () => __exportStar2,
-  __extends: () => __extends2,
-  __generator: () => __generator2,
-  __importDefault: () => __importDefault2,
-  __importStar: () => __importStar2,
-  __makeTemplateObject: () => __makeTemplateObject2,
-  __metadata: () => __metadata2,
-  __param: () => __param2,
-  __read: () => __read2,
-  __rest: () => __rest2,
-  __spread: () => __spread2,
-  __spreadArrays: () => __spreadArrays2,
-  __values: () => __values2
-});
-function __extends2(d, b) {
-  extendStatics2(d, b);
-  function __() {
-    this.constructor = d;
-  }
-  d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-function __rest2(s, e) {
-  var t = {};
-  for (var p in s)
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-      t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function")
-    for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-      if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-        t[p[i]] = s[p[i]];
-    }
-  return t;
-}
-function __decorate2(decorators, target, key, desc) {
-  var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-  if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
-    r = Reflect.decorate(decorators, target, key, desc);
-  else
-    for (var i = decorators.length - 1; i >= 0; i--)
-      if (d = decorators[i])
-        r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-}
-function __param2(paramIndex, decorator) {
-  return function(target, key) {
-    decorator(target, key, paramIndex);
-  };
-}
-function __metadata2(metadataKey, metadataValue) {
-  if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
-    return Reflect.metadata(metadataKey, metadataValue);
-}
-function __awaiter2(thisArg, _arguments, P, generator) {
-  function adopt(value) {
-    return value instanceof P ? value : new P(function(resolve) {
-      resolve(value);
-    });
-  }
-  return new (P || (P = Promise))(function(resolve, reject) {
-    function fulfilled(value) {
-      try {
-        step(generator.next(value));
-      } catch (e) {
-        reject(e);
-      }
-    }
-    function rejected(value) {
-      try {
-        step(generator["throw"](value));
-      } catch (e) {
-        reject(e);
-      }
-    }
-    function step(result) {
-      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
-    }
-    step((generator = generator.apply(thisArg, _arguments || [])).next());
-  });
-}
-function __generator2(thisArg, body) {
-  var _ = { label: 0, sent: function() {
-    if (t[0] & 1)
-      throw t[1];
-    return t[1];
-  }, trys: [], ops: [] }, f, y, t, g;
-  return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() {
-    return this;
-  }), g;
-  function verb(n) {
-    return function(v) {
-      return step([n, v]);
-    };
-  }
-  function step(op) {
-    if (f)
-      throw new TypeError("Generator is already executing.");
-    while (_)
-      try {
-        if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done)
-          return t;
-        if (y = 0, t)
-          op = [op[0] & 2, t.value];
-        switch (op[0]) {
-          case 0:
-          case 1:
-            t = op;
-            break;
-          case 4:
-            _.label++;
-            return { value: op[1], done: false };
-          case 5:
-            _.label++;
-            y = op[1];
-            op = [0];
-            continue;
-          case 7:
-            op = _.ops.pop();
-            _.trys.pop();
-            continue;
-          default:
-            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
-              _ = 0;
-              continue;
-            }
-            if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
-              _.label = op[1];
-              break;
-            }
-            if (op[0] === 6 && _.label < t[1]) {
-              _.label = t[1];
-              t = op;
-              break;
-            }
-            if (t && _.label < t[2]) {
-              _.label = t[2];
-              _.ops.push(op);
-              break;
-            }
-            if (t[2])
-              _.ops.pop();
-            _.trys.pop();
-            continue;
-        }
-        op = body.call(thisArg, _);
-      } catch (e) {
-        op = [6, e];
-        y = 0;
-      } finally {
-        f = t = 0;
-      }
-    if (op[0] & 5)
-      throw op[1];
-    return { value: op[0] ? op[1] : void 0, done: true };
-  }
-}
-function __createBinding2(o, m, k, k2) {
-  if (k2 === void 0)
-    k2 = k;
-  o[k2] = m[k];
-}
-function __exportStar2(m, exports2) {
-  for (var p in m)
-    if (p !== "default" && !exports2.hasOwnProperty(p))
-      exports2[p] = m[p];
-}
-function __values2(o) {
-  var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-  if (m)
-    return m.call(o);
-  if (o && typeof o.length === "number")
-    return {
-      next: function() {
-        if (o && i >= o.length)
-          o = void 0;
-        return { value: o && o[i++], done: !o };
-      }
-    };
-  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-}
-function __read2(o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m)
-    return o;
-  var i = m.call(o), r, ar = [], e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done)
-      ar.push(r.value);
-  } catch (error) {
-    e = { error };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"]))
-        m.call(i);
-    } finally {
-      if (e)
-        throw e.error;
-    }
-  }
-  return ar;
-}
-function __spread2() {
-  for (var ar = [], i = 0; i < arguments.length; i++)
-    ar = ar.concat(__read2(arguments[i]));
-  return ar;
-}
-function __spreadArrays2() {
-  for (var s = 0, i = 0, il = arguments.length; i < il; i++)
-    s += arguments[i].length;
-  for (var r = Array(s), k = 0, i = 0; i < il; i++)
-    for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-      r[k] = a[j];
-  return r;
-}
-function __await2(v) {
-  return this instanceof __await2 ? (this.v = v, this) : new __await2(v);
-}
-function __asyncGenerator2(thisArg, _arguments, generator) {
-  if (!Symbol.asyncIterator)
-    throw new TypeError("Symbol.asyncIterator is not defined.");
-  var g = generator.apply(thisArg, _arguments || []), i, q = [];
-  return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
-    return this;
-  }, i;
-  function verb(n) {
-    if (g[n])
-      i[n] = function(v) {
-        return new Promise(function(a, b) {
-          q.push([n, v, a, b]) > 1 || resume(n, v);
-        });
-      };
-  }
-  function resume(n, v) {
-    try {
-      step(g[n](v));
-    } catch (e) {
-      settle(q[0][3], e);
-    }
-  }
-  function step(r) {
-    r.value instanceof __await2 ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
-  }
-  function fulfill(value) {
-    resume("next", value);
-  }
-  function reject(value) {
-    resume("throw", value);
-  }
-  function settle(f, v) {
-    if (f(v), q.shift(), q.length)
-      resume(q[0][0], q[0][1]);
-  }
-}
-function __asyncDelegator2(o) {
-  var i, p;
-  return i = {}, verb("next"), verb("throw", function(e) {
-    throw e;
-  }), verb("return"), i[Symbol.iterator] = function() {
-    return this;
-  }, i;
-  function verb(n, f) {
-    i[n] = o[n] ? function(v) {
-      return (p = !p) ? { value: __await2(o[n](v)), done: n === "return" } : f ? f(v) : v;
-    } : f;
-  }
-}
-function __asyncValues2(o) {
-  if (!Symbol.asyncIterator)
-    throw new TypeError("Symbol.asyncIterator is not defined.");
-  var m = o[Symbol.asyncIterator], i;
-  return m ? m.call(o) : (o = typeof __values2 === "function" ? __values2(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
-    return this;
-  }, i);
-  function verb(n) {
-    i[n] = o[n] && function(v) {
-      return new Promise(function(resolve, reject) {
-        v = o[n](v), settle(resolve, reject, v.done, v.value);
-      });
-    };
-  }
-  function settle(resolve, reject, d, v) {
-    Promise.resolve(v).then(function(v2) {
-      resolve({ value: v2, done: d });
-    }, reject);
-  }
-}
-function __makeTemplateObject2(cooked, raw) {
-  if (Object.defineProperty) {
-    Object.defineProperty(cooked, "raw", { value: raw });
-  } else {
-    cooked.raw = raw;
-  }
-  return cooked;
-}
-function __importStar2(mod) {
-  if (mod && mod.__esModule)
-    return mod;
-  var result = {};
-  if (mod != null) {
-    for (var k in mod)
-      if (Object.hasOwnProperty.call(mod, k))
-        result[k] = mod[k];
-  }
-  result.default = mod;
-  return result;
-}
-function __importDefault2(mod) {
-  return mod && mod.__esModule ? mod : { default: mod };
-}
-function __classPrivateFieldGet2(receiver, privateMap) {
-  if (!privateMap.has(receiver)) {
-    throw new TypeError("attempted to get private field on non-instance");
-  }
-  return privateMap.get(receiver);
-}
-function __classPrivateFieldSet2(receiver, privateMap, value) {
-  if (!privateMap.has(receiver)) {
-    throw new TypeError("attempted to set private field on non-instance");
-  }
-  privateMap.set(receiver, value);
-  return value;
-}
-var extendStatics2, __assign2;
-var init_tslib_es62 = __esm({
-  "../../../../node_modules/@aws-crypto/crc32/node_modules/tslib/tslib.es6.js"() {
-    extendStatics2 = function(d, b) {
-      extendStatics2 = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-        d2.__proto__ = b2;
-      } || function(d2, b2) {
-        for (var p in b2)
-          if (b2.hasOwnProperty(p))
-            d2[p] = b2[p];
-      };
-      return extendStatics2(d, b);
-    };
-    __assign2 = function() {
-      __assign2 = Object.assign || function __assign3(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s)
-            if (Object.prototype.hasOwnProperty.call(s, p))
-              t[p] = s[p];
-        }
-        return t;
-      };
-      return __assign2.apply(this, arguments);
-    };
-  }
-});
-
-// ../../../../node_modules/@aws-sdk/util-utf8-browser/dist-cjs/pureJs.js
-var require_pureJs = __commonJS({
-  "../../../../node_modules/@aws-sdk/util-utf8-browser/dist-cjs/pureJs.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.toUtf8 = exports2.fromUtf8 = void 0;
-    var fromUtf8 = (input) => {
-      const bytes = [];
-      for (let i = 0, len = input.length; i < len; i++) {
-        const value = input.charCodeAt(i);
-        if (value < 128) {
-          bytes.push(value);
-        } else if (value < 2048) {
-          bytes.push(value >> 6 | 192, value & 63 | 128);
-        } else if (i + 1 < input.length && (value & 64512) === 55296 && (input.charCodeAt(i + 1) & 64512) === 56320) {
-          const surrogatePair = 65536 + ((value & 1023) << 10) + (input.charCodeAt(++i) & 1023);
-          bytes.push(surrogatePair >> 18 | 240, surrogatePair >> 12 & 63 | 128, surrogatePair >> 6 & 63 | 128, surrogatePair & 63 | 128);
-        } else {
-          bytes.push(value >> 12 | 224, value >> 6 & 63 | 128, value & 63 | 128);
-        }
-      }
-      return Uint8Array.from(bytes);
-    };
-    exports2.fromUtf8 = fromUtf8;
-    var toUtf8 = (input) => {
-      let decoded = "";
-      for (let i = 0, len = input.length; i < len; i++) {
-        const byte = input[i];
-        if (byte < 128) {
-          decoded += String.fromCharCode(byte);
-        } else if (192 <= byte && byte < 224) {
-          const nextByte = input[++i];
-          decoded += String.fromCharCode((byte & 31) << 6 | nextByte & 63);
-        } else if (240 <= byte && byte < 365) {
-          const surrogatePair = [byte, input[++i], input[++i], input[++i]];
-          const encoded = "%" + surrogatePair.map((byteValue) => byteValue.toString(16)).join("%");
-          decoded += decodeURIComponent(encoded);
-        } else {
-          decoded += String.fromCharCode((byte & 15) << 12 | (input[++i] & 63) << 6 | input[++i] & 63);
-        }
-      }
-      return decoded;
-    };
-    exports2.toUtf8 = toUtf8;
-  }
-});
-
-// ../../../../node_modules/@aws-sdk/util-utf8-browser/dist-cjs/whatwgEncodingApi.js
-var require_whatwgEncodingApi = __commonJS({
-  "../../../../node_modules/@aws-sdk/util-utf8-browser/dist-cjs/whatwgEncodingApi.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.toUtf8 = exports2.fromUtf8 = void 0;
-    function fromUtf8(input) {
-      return new TextEncoder().encode(input);
-    }
-    exports2.fromUtf8 = fromUtf8;
-    function toUtf8(input) {
-      return new TextDecoder("utf-8").decode(input);
-    }
-    exports2.toUtf8 = toUtf8;
-  }
-});
-
-// ../../../../node_modules/@aws-sdk/util-utf8-browser/dist-cjs/index.js
+// ../../../../node_modules/@aws-sdk/middleware-host-header/dist-cjs/index.js
 var require_dist_cjs6 = __commonJS({
-  "../../../../node_modules/@aws-sdk/util-utf8-browser/dist-cjs/index.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.toUtf8 = exports2.fromUtf8 = void 0;
-    var pureJs_1 = require_pureJs();
-    var whatwgEncodingApi_1 = require_whatwgEncodingApi();
-    var fromUtf8 = (input) => typeof TextEncoder === "function" ? (0, whatwgEncodingApi_1.fromUtf8)(input) : (0, pureJs_1.fromUtf8)(input);
-    exports2.fromUtf8 = fromUtf8;
-    var toUtf8 = (input) => typeof TextDecoder === "function" ? (0, whatwgEncodingApi_1.toUtf8)(input) : (0, pureJs_1.toUtf8)(input);
-    exports2.toUtf8 = toUtf8;
-  }
-});
-
-// ../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/convertToBuffer.js
-var require_convertToBuffer2 = __commonJS({
-  "../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/convertToBuffer.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.convertToBuffer = void 0;
-    var util_utf8_browser_1 = require_dist_cjs6();
-    var fromUtf8 = typeof Buffer !== "undefined" && Buffer.from ? function(input) {
-      return Buffer.from(input, "utf8");
-    } : util_utf8_browser_1.fromUtf8;
-    function convertToBuffer(data) {
-      if (data instanceof Uint8Array)
-        return data;
-      if (typeof data === "string") {
-        return fromUtf8(data);
+  "../../../../node_modules/@aws-sdk/middleware-host-header/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
       }
-      if (ArrayBuffer.isView(data)) {
-        return new Uint8Array(data.buffer, data.byteOffset, data.byteLength / Uint8Array.BYTES_PER_ELEMENT);
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      getHostHeaderPlugin: () => getHostHeaderPlugin,
+      hostHeaderMiddleware: () => hostHeaderMiddleware,
+      hostHeaderMiddlewareOptions: () => hostHeaderMiddlewareOptions,
+      resolveHostHeaderConfig: () => resolveHostHeaderConfig
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var import_protocol_http = require_dist_cjs2();
+    function resolveHostHeaderConfig(input) {
+      return input;
+    }
+    __name(resolveHostHeaderConfig, "resolveHostHeaderConfig");
+    var hostHeaderMiddleware = /* @__PURE__ */ __name((options) => (next) => async (args) => {
+      if (!import_protocol_http.HttpRequest.isInstance(args.request))
+        return next(args);
+      const { request } = args;
+      const { handlerProtocol = "" } = options.requestHandler.metadata || {};
+      if (handlerProtocol.indexOf("h2") >= 0 && !request.headers[":authority"]) {
+        delete request.headers["host"];
+        request.headers[":authority"] = request.hostname + (request.port ? ":" + request.port : "");
+      } else if (!request.headers["host"]) {
+        let host = request.hostname;
+        if (request.port != null)
+          host += `:${request.port}`;
+        request.headers["host"] = host;
       }
-      return new Uint8Array(data);
-    }
-    exports2.convertToBuffer = convertToBuffer;
-  }
-});
-
-// ../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/isEmptyData.js
-var require_isEmptyData2 = __commonJS({
-  "../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/isEmptyData.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.isEmptyData = void 0;
-    function isEmptyData(data) {
-      if (typeof data === "string") {
-        return data.length === 0;
+      return next(args);
+    }, "hostHeaderMiddleware");
+    var hostHeaderMiddlewareOptions = {
+      name: "hostHeaderMiddleware",
+      step: "build",
+      priority: "low",
+      tags: ["HOST"],
+      override: true
+    };
+    var getHostHeaderPlugin = /* @__PURE__ */ __name((options) => ({
+      applyToStack: (clientStack) => {
+        clientStack.add(hostHeaderMiddleware(options), hostHeaderMiddlewareOptions);
       }
-      return data.byteLength === 0;
-    }
-    exports2.isEmptyData = isEmptyData;
+    }), "getHostHeaderPlugin");
   }
 });
 
-// ../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/numToUint8.js
-var require_numToUint82 = __commonJS({
-  "../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/numToUint8.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.numToUint8 = void 0;
-    function numToUint8(num) {
-      return new Uint8Array([
-        (num & 4278190080) >> 24,
-        (num & 16711680) >> 16,
-        (num & 65280) >> 8,
-        num & 255
-      ]);
-    }
-    exports2.numToUint8 = numToUint8;
-  }
-});
-
-// ../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/uint32ArrayFrom.js
-var require_uint32ArrayFrom2 = __commonJS({
-  "../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/uint32ArrayFrom.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.uint32ArrayFrom = void 0;
-    function uint32ArrayFrom(a_lookUpTable) {
-      if (!Uint32Array.from) {
-        var return_array = new Uint32Array(a_lookUpTable.length);
-        var a_index = 0;
-        while (a_index < a_lookUpTable.length) {
-          return_array[a_index] = a_lookUpTable[a_index];
-          a_index += 1;
-        }
-        return return_array;
-      }
-      return Uint32Array.from(a_lookUpTable);
-    }
-    exports2.uint32ArrayFrom = uint32ArrayFrom;
-  }
-});
-
-// ../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/index.js
-var require_build = __commonJS({
-  "../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/index.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.uint32ArrayFrom = exports2.numToUint8 = exports2.isEmptyData = exports2.convertToBuffer = void 0;
-    var convertToBuffer_1 = require_convertToBuffer2();
-    Object.defineProperty(exports2, "convertToBuffer", { enumerable: true, get: function() {
-      return convertToBuffer_1.convertToBuffer;
-    } });
-    var isEmptyData_1 = require_isEmptyData2();
-    Object.defineProperty(exports2, "isEmptyData", { enumerable: true, get: function() {
-      return isEmptyData_1.isEmptyData;
-    } });
-    var numToUint8_1 = require_numToUint82();
-    Object.defineProperty(exports2, "numToUint8", { enumerable: true, get: function() {
-      return numToUint8_1.numToUint8;
-    } });
-    var uint32ArrayFrom_1 = require_uint32ArrayFrom2();
-    Object.defineProperty(exports2, "uint32ArrayFrom", { enumerable: true, get: function() {
-      return uint32ArrayFrom_1.uint32ArrayFrom;
-    } });
-  }
-});
-
-// ../../../../node_modules/@aws-crypto/crc32/build/aws_crc32.js
-var require_aws_crc32 = __commonJS({
-  "../../../../node_modules/@aws-crypto/crc32/build/aws_crc32.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.AwsCrc32 = void 0;
-    var tslib_1 = (init_tslib_es62(), __toCommonJS(tslib_es6_exports2));
-    var util_1 = require_build();
-    var index_1 = require_build2();
-    var AwsCrc32 = (
-      /** @class */
-      function() {
-        function AwsCrc322() {
-          this.crc32 = new index_1.Crc32();
-        }
-        AwsCrc322.prototype.update = function(toHash) {
-          if ((0, util_1.isEmptyData)(toHash))
-            return;
-          this.crc32.update((0, util_1.convertToBuffer)(toHash));
-        };
-        AwsCrc322.prototype.digest = function() {
-          return tslib_1.__awaiter(this, void 0, void 0, function() {
-            return tslib_1.__generator(this, function(_a) {
-              return [2, (0, util_1.numToUint8)(this.crc32.digest())];
-            });
-          });
-        };
-        AwsCrc322.prototype.reset = function() {
-          this.crc32 = new index_1.Crc32();
-        };
-        return AwsCrc322;
-      }()
-    );
-    exports2.AwsCrc32 = AwsCrc32;
-  }
-});
-
-// ../../../../node_modules/@aws-crypto/crc32/build/index.js
-var require_build2 = __commonJS({
-  "../../../../node_modules/@aws-crypto/crc32/build/index.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.AwsCrc32 = exports2.Crc32 = exports2.crc32 = void 0;
-    var tslib_1 = (init_tslib_es62(), __toCommonJS(tslib_es6_exports2));
-    var util_1 = require_build();
-    function crc32(data) {
-      return new Crc32().update(data).digest();
-    }
-    exports2.crc32 = crc32;
-    var Crc32 = (
-      /** @class */
-      function() {
-        function Crc322() {
-          this.checksum = 4294967295;
-        }
-        Crc322.prototype.update = function(data) {
-          var e_1, _a;
-          try {
-            for (var data_1 = tslib_1.__values(data), data_1_1 = data_1.next(); !data_1_1.done; data_1_1 = data_1.next()) {
-              var byte = data_1_1.value;
-              this.checksum = this.checksum >>> 8 ^ lookupTable[(this.checksum ^ byte) & 255];
-            }
-          } catch (e_1_1) {
-            e_1 = { error: e_1_1 };
-          } finally {
-            try {
-              if (data_1_1 && !data_1_1.done && (_a = data_1.return))
-                _a.call(data_1);
-            } finally {
-              if (e_1)
-                throw e_1.error;
-            }
-          }
-          return this;
-        };
-        Crc322.prototype.digest = function() {
-          return (this.checksum ^ 4294967295) >>> 0;
-        };
-        return Crc322;
-      }()
-    );
-    exports2.Crc32 = Crc32;
-    var a_lookUpTable = [
-      0,
-      1996959894,
-      3993919788,
-      2567524794,
-      124634137,
-      1886057615,
-      3915621685,
-      2657392035,
-      249268274,
-      2044508324,
-      3772115230,
-      2547177864,
-      162941995,
-      2125561021,
-      3887607047,
-      2428444049,
-      498536548,
-      1789927666,
-      4089016648,
-      2227061214,
-      450548861,
-      1843258603,
-      4107580753,
-      2211677639,
-      325883990,
-      1684777152,
-      4251122042,
-      2321926636,
-      335633487,
-      1661365465,
-      4195302755,
-      2366115317,
-      997073096,
-      1281953886,
-      3579855332,
-      2724688242,
-      1006888145,
-      1258607687,
-      3524101629,
-      2768942443,
-      901097722,
-      1119000684,
-      3686517206,
-      2898065728,
-      853044451,
-      1172266101,
-      3705015759,
-      2882616665,
-      651767980,
-      1373503546,
-      3369554304,
-      3218104598,
-      565507253,
-      1454621731,
-      3485111705,
-      3099436303,
-      671266974,
-      1594198024,
-      3322730930,
-      2970347812,
-      795835527,
-      1483230225,
-      3244367275,
-      3060149565,
-      1994146192,
-      31158534,
-      2563907772,
-      4023717930,
-      1907459465,
-      112637215,
-      2680153253,
-      3904427059,
-      2013776290,
-      251722036,
-      2517215374,
-      3775830040,
-      2137656763,
-      141376813,
-      2439277719,
-      3865271297,
-      1802195444,
-      476864866,
-      2238001368,
-      4066508878,
-      1812370925,
-      453092731,
-      2181625025,
-      4111451223,
-      1706088902,
-      314042704,
-      2344532202,
-      4240017532,
-      1658658271,
-      366619977,
-      2362670323,
-      4224994405,
-      1303535960,
-      984961486,
-      2747007092,
-      3569037538,
-      1256170817,
-      1037604311,
-      2765210733,
-      3554079995,
-      1131014506,
-      879679996,
-      2909243462,
-      3663771856,
-      1141124467,
-      855842277,
-      2852801631,
-      3708648649,
-      1342533948,
-      654459306,
-      3188396048,
-      3373015174,
-      1466479909,
-      544179635,
-      3110523913,
-      3462522015,
-      1591671054,
-      702138776,
-      2966460450,
-      3352799412,
-      1504918807,
-      783551873,
-      3082640443,
-      3233442989,
-      3988292384,
-      2596254646,
-      62317068,
-      1957810842,
-      3939845945,
-      2647816111,
-      81470997,
-      1943803523,
-      3814918930,
-      2489596804,
-      225274430,
-      2053790376,
-      3826175755,
-      2466906013,
-      167816743,
-      2097651377,
-      4027552580,
-      2265490386,
-      503444072,
-      1762050814,
-      4150417245,
-      2154129355,
-      426522225,
-      1852507879,
-      4275313526,
-      2312317920,
-      282753626,
-      1742555852,
-      4189708143,
-      2394877945,
-      397917763,
-      1622183637,
-      3604390888,
-      2714866558,
-      953729732,
-      1340076626,
-      3518719985,
-      2797360999,
-      1068828381,
-      1219638859,
-      3624741850,
-      2936675148,
-      906185462,
-      1090812512,
-      3747672003,
-      2825379669,
-      829329135,
-      1181335161,
-      3412177804,
-      3160834842,
-      628085408,
-      1382605366,
-      3423369109,
-      3138078467,
-      570562233,
-      1426400815,
-      3317316542,
-      2998733608,
-      733239954,
-      1555261956,
-      3268935591,
-      3050360625,
-      752459403,
-      1541320221,
-      2607071920,
-      3965973030,
-      1969922972,
-      40735498,
-      2617837225,
-      3943577151,
-      1913087877,
-      83908371,
-      2512341634,
-      3803740692,
-      2075208622,
-      213261112,
-      2463272603,
-      3855990285,
-      2094854071,
-      198958881,
-      2262029012,
-      4057260610,
-      1759359992,
-      534414190,
-      2176718541,
-      4139329115,
-      1873836001,
-      414664567,
-      2282248934,
-      4279200368,
-      1711684554,
-      285281116,
-      2405801727,
-      4167216745,
-      1634467795,
-      376229701,
-      2685067896,
-      3608007406,
-      1308918612,
-      956543938,
-      2808555105,
-      3495958263,
-      1231636301,
-      1047427035,
-      2932959818,
-      3654703836,
-      1088359270,
-      936918e3,
-      2847714899,
-      3736837829,
-      1202900863,
-      817233897,
-      3183342108,
-      3401237130,
-      1404277552,
-      615818150,
-      3134207493,
-      3453421203,
-      1423857449,
-      601450431,
-      3009837614,
-      3294710456,
-      1567103746,
-      711928724,
-      3020668471,
-      3272380065,
-      1510334235,
-      755167117
-    ];
-    var lookupTable = (0, util_1.uint32ArrayFrom)(a_lookUpTable);
-    var aws_crc32_1 = require_aws_crc32();
-    Object.defineProperty(exports2, "AwsCrc32", { enumerable: true, get: function() {
-      return aws_crc32_1.AwsCrc32;
-    } });
-  }
-});
-
-// ../../../../node_modules/@smithy/util-hex-encoding/dist-cjs/index.js
+// ../../../../node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js
 var require_dist_cjs7 = __commonJS({
-  "../../../../node_modules/@smithy/util-hex-encoding/dist-cjs/index.js"(exports2, module2) {
+  "../../../../node_modules/@aws-sdk/middleware-logger/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -2356,50 +1526,59 @@ var require_dist_cjs7 = __commonJS({
     var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
     var src_exports2 = {};
     __export2(src_exports2, {
-      fromHex: () => fromHex,
-      toHex: () => toHex
+      getLoggerPlugin: () => getLoggerPlugin,
+      loggerMiddleware: () => loggerMiddleware,
+      loggerMiddlewareOptions: () => loggerMiddlewareOptions
     });
     module2.exports = __toCommonJS2(src_exports2);
-    var SHORT_TO_HEX = {};
-    var HEX_TO_SHORT = {};
-    for (let i = 0; i < 256; i++) {
-      let encodedByte = i.toString(16).toLowerCase();
-      if (encodedByte.length === 1) {
-        encodedByte = `0${encodedByte}`;
+    var loggerMiddleware = /* @__PURE__ */ __name(() => (next, context) => async (args) => {
+      var _a, _b;
+      try {
+        const response = await next(args);
+        const { clientName, commandName, logger, dynamoDbDocumentClientOptions = {} } = context;
+        const { overrideInputFilterSensitiveLog, overrideOutputFilterSensitiveLog } = dynamoDbDocumentClientOptions;
+        const inputFilterSensitiveLog = overrideInputFilterSensitiveLog ?? context.inputFilterSensitiveLog;
+        const outputFilterSensitiveLog = overrideOutputFilterSensitiveLog ?? context.outputFilterSensitiveLog;
+        const { $metadata, ...outputWithoutMetadata } = response.output;
+        (_a = logger == null ? void 0 : logger.info) == null ? void 0 : _a.call(logger, {
+          clientName,
+          commandName,
+          input: inputFilterSensitiveLog(args.input),
+          output: outputFilterSensitiveLog(outputWithoutMetadata),
+          metadata: $metadata
+        });
+        return response;
+      } catch (error) {
+        const { clientName, commandName, logger, dynamoDbDocumentClientOptions = {} } = context;
+        const { overrideInputFilterSensitiveLog } = dynamoDbDocumentClientOptions;
+        const inputFilterSensitiveLog = overrideInputFilterSensitiveLog ?? context.inputFilterSensitiveLog;
+        (_b = logger == null ? void 0 : logger.error) == null ? void 0 : _b.call(logger, {
+          clientName,
+          commandName,
+          input: inputFilterSensitiveLog(args.input),
+          error,
+          metadata: error.$metadata
+        });
+        throw error;
       }
-      SHORT_TO_HEX[i] = encodedByte;
-      HEX_TO_SHORT[encodedByte] = i;
-    }
-    function fromHex(encoded) {
-      if (encoded.length % 2 !== 0) {
-        throw new Error("Hex encoded strings must have an even number length");
+    }, "loggerMiddleware");
+    var loggerMiddlewareOptions = {
+      name: "loggerMiddleware",
+      tags: ["LOGGER"],
+      step: "initialize",
+      override: true
+    };
+    var getLoggerPlugin = /* @__PURE__ */ __name((options) => ({
+      applyToStack: (clientStack) => {
+        clientStack.add(loggerMiddleware(), loggerMiddlewareOptions);
       }
-      const out = new Uint8Array(encoded.length / 2);
-      for (let i = 0; i < encoded.length; i += 2) {
-        const encodedByte = encoded.slice(i, i + 2).toLowerCase();
-        if (encodedByte in HEX_TO_SHORT) {
-          out[i / 2] = HEX_TO_SHORT[encodedByte];
-        } else {
-          throw new Error(`Cannot decode unrecognized sequence ${encodedByte} as hexadecimal`);
-        }
-      }
-      return out;
-    }
-    __name(fromHex, "fromHex");
-    function toHex(bytes) {
-      let out = "";
-      for (let i = 0; i < bytes.byteLength; i++) {
-        out += SHORT_TO_HEX[bytes[i]];
-      }
-      return out;
-    }
-    __name(toHex, "toHex");
+    }), "getLoggerPlugin");
   }
 });
 
-// ../../../../node_modules/@smithy/eventstream-codec/dist-cjs/index.js
+// ../../../../node_modules/@aws-sdk/middleware-recursion-detection/dist-cjs/index.js
 var require_dist_cjs8 = __commonJS({
-  "../../../../node_modules/@smithy/eventstream-codec/dist-cjs/index.js"(exports2, module2) {
+  "../../../../node_modules/@aws-sdk/middleware-recursion-detection/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -2420,443 +1599,984 @@ var require_dist_cjs8 = __commonJS({
     var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
     var src_exports2 = {};
     __export2(src_exports2, {
-      EventStreamCodec: () => EventStreamCodec,
-      HeaderMarshaller: () => HeaderMarshaller,
-      Int64: () => Int64,
-      MessageDecoderStream: () => MessageDecoderStream,
-      MessageEncoderStream: () => MessageEncoderStream,
-      SmithyMessageDecoderStream: () => SmithyMessageDecoderStream,
-      SmithyMessageEncoderStream: () => SmithyMessageEncoderStream
+      addRecursionDetectionMiddlewareOptions: () => addRecursionDetectionMiddlewareOptions,
+      getRecursionDetectionPlugin: () => getRecursionDetectionPlugin,
+      recursionDetectionMiddleware: () => recursionDetectionMiddleware
     });
     module2.exports = __toCommonJS2(src_exports2);
-    var import_crc322 = require_build2();
-    var import_util_hex_encoding = require_dist_cjs7();
-    var _Int64 = class _Int642 {
-      constructor(bytes) {
-        this.bytes = bytes;
-        if (bytes.byteLength !== 8) {
-          throw new Error("Int64 buffers must be exactly 8 bytes");
+    var import_protocol_http = require_dist_cjs2();
+    var TRACE_ID_HEADER_NAME = "X-Amzn-Trace-Id";
+    var ENV_LAMBDA_FUNCTION_NAME = "AWS_LAMBDA_FUNCTION_NAME";
+    var ENV_TRACE_ID = "_X_AMZN_TRACE_ID";
+    var recursionDetectionMiddleware = /* @__PURE__ */ __name((options) => (next) => async (args) => {
+      const { request } = args;
+      if (!import_protocol_http.HttpRequest.isInstance(request) || options.runtime !== "node" || request.headers.hasOwnProperty(TRACE_ID_HEADER_NAME)) {
+        return next(args);
+      }
+      const functionName = process.env[ENV_LAMBDA_FUNCTION_NAME];
+      const traceId = process.env[ENV_TRACE_ID];
+      const nonEmptyString = /* @__PURE__ */ __name((str) => typeof str === "string" && str.length > 0, "nonEmptyString");
+      if (nonEmptyString(functionName) && nonEmptyString(traceId)) {
+        request.headers[TRACE_ID_HEADER_NAME] = traceId;
+      }
+      return next({
+        ...args,
+        request
+      });
+    }, "recursionDetectionMiddleware");
+    var addRecursionDetectionMiddlewareOptions = {
+      step: "build",
+      tags: ["RECURSION_DETECTION"],
+      name: "recursionDetectionMiddleware",
+      override: true,
+      priority: "low"
+    };
+    var getRecursionDetectionPlugin = /* @__PURE__ */ __name((options) => ({
+      applyToStack: (clientStack) => {
+        clientStack.add(recursionDetectionMiddleware(options), addRecursionDetectionMiddlewareOptions);
+      }
+    }), "getRecursionDetectionPlugin");
+  }
+});
+
+// ../../../../node_modules/@smithy/util-endpoints/dist-cjs/index.js
+var require_dist_cjs9 = __commonJS({
+  "../../../../node_modules/@smithy/util-endpoints/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      EndpointError: () => EndpointError2,
+      customEndpointFunctions: () => customEndpointFunctions,
+      isIpAddress: () => isIpAddress2,
+      isValidHostLabel: () => isValidHostLabel,
+      resolveEndpoint: () => resolveEndpoint2
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var IP_V4_REGEX = new RegExp(
+      `^(?:25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]\\d|\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]\\d|\\d)){3}$`
+    );
+    var isIpAddress2 = /* @__PURE__ */ __name((value) => IP_V4_REGEX.test(value) || value.startsWith("[") && value.endsWith("]"), "isIpAddress");
+    var VALID_HOST_LABEL_REGEX = new RegExp(`^(?!.*-$)(?!-)[a-zA-Z0-9-]{1,63}$`);
+    var isValidHostLabel = /* @__PURE__ */ __name((value, allowSubDomains = false) => {
+      if (!allowSubDomains) {
+        return VALID_HOST_LABEL_REGEX.test(value);
+      }
+      const labels = value.split(".");
+      for (const label of labels) {
+        if (!isValidHostLabel(label)) {
+          return false;
         }
       }
-      static fromNumber(number) {
-        if (number > 9223372036854776e3 || number < -9223372036854776e3) {
-          throw new Error(`${number} is too large (or, if negative, too small) to represent as an Int64`);
-        }
-        const bytes = new Uint8Array(8);
-        for (let i = 7, remaining = Math.abs(Math.round(number)); i > -1 && remaining > 0; i--, remaining /= 256) {
-          bytes[i] = remaining;
-        }
-        if (number < 0) {
-          negate(bytes);
-        }
-        return new _Int642(bytes);
+      return true;
+    }, "isValidHostLabel");
+    var customEndpointFunctions = {};
+    var debugId = "endpoints";
+    function toDebugString(input) {
+      if (typeof input !== "object" || input == null) {
+        return input;
       }
-      /**
-       * Called implicitly by infix arithmetic operators.
-       */
-      valueOf() {
-        const bytes = this.bytes.slice(0);
-        const negative = bytes[0] & 128;
-        if (negative) {
-          negate(bytes);
-        }
-        return parseInt((0, import_util_hex_encoding.toHex)(bytes), 16) * (negative ? -1 : 1);
+      if ("ref" in input) {
+        return `$${toDebugString(input.ref)}`;
       }
-      toString() {
-        return String(this.valueOf());
+      if ("fn" in input) {
+        return `${input.fn}(${(input.argv || []).map(toDebugString).join(", ")})`;
+      }
+      return JSON.stringify(input, null, 2);
+    }
+    __name(toDebugString, "toDebugString");
+    var _EndpointError = class _EndpointError extends Error {
+      constructor(message) {
+        super(message);
+        this.name = "EndpointError";
       }
     };
-    __name(_Int64, "Int64");
-    var Int64 = _Int64;
-    function negate(bytes) {
-      for (let i = 0; i < 8; i++) {
-        bytes[i] ^= 255;
+    __name(_EndpointError, "EndpointError");
+    var EndpointError2 = _EndpointError;
+    var booleanEquals = /* @__PURE__ */ __name((value1, value2) => value1 === value2, "booleanEquals");
+    var getAttrPathList = /* @__PURE__ */ __name((path) => {
+      const parts = path.split(".");
+      const pathList = [];
+      for (const part of parts) {
+        const squareBracketIndex = part.indexOf("[");
+        if (squareBracketIndex !== -1) {
+          if (part.indexOf("]") !== part.length - 1) {
+            throw new EndpointError2(`Path: '${path}' does not end with ']'`);
+          }
+          const arrayIndex = part.slice(squareBracketIndex + 1, -1);
+          if (Number.isNaN(parseInt(arrayIndex))) {
+            throw new EndpointError2(`Invalid array index: '${arrayIndex}' in path: '${path}'`);
+          }
+          if (squareBracketIndex !== 0) {
+            pathList.push(part.slice(0, squareBracketIndex));
+          }
+          pathList.push(arrayIndex);
+        } else {
+          pathList.push(part);
+        }
       }
-      for (let i = 7; i > -1; i--) {
-        bytes[i]++;
-        if (bytes[i] !== 0)
+      return pathList;
+    }, "getAttrPathList");
+    var getAttr = /* @__PURE__ */ __name((value, path) => getAttrPathList(path).reduce((acc, index) => {
+      if (typeof acc !== "object") {
+        throw new EndpointError2(`Index '${index}' in '${path}' not found in '${JSON.stringify(value)}'`);
+      } else if (Array.isArray(acc)) {
+        return acc[parseInt(index)];
+      }
+      return acc[index];
+    }, value), "getAttr");
+    var isSet = /* @__PURE__ */ __name((value) => value != null, "isSet");
+    var not = /* @__PURE__ */ __name((value) => !value, "not");
+    var import_types3 = require_dist_cjs();
+    var DEFAULT_PORTS = {
+      [import_types3.EndpointURLScheme.HTTP]: 80,
+      [import_types3.EndpointURLScheme.HTTPS]: 443
+    };
+    var parseURL = /* @__PURE__ */ __name((value) => {
+      const whatwgURL = (() => {
+        try {
+          if (value instanceof URL) {
+            return value;
+          }
+          if (typeof value === "object" && "hostname" in value) {
+            const { hostname: hostname2, port, protocol: protocol2 = "", path = "", query = {} } = value;
+            const url = new URL(`${protocol2}//${hostname2}${port ? `:${port}` : ""}${path}`);
+            url.search = Object.entries(query).map(([k, v]) => `${k}=${v}`).join("&");
+            return url;
+          }
+          return new URL(value);
+        } catch (error) {
+          return null;
+        }
+      })();
+      if (!whatwgURL) {
+        console.error(`Unable to parse ${JSON.stringify(value)} as a whatwg URL.`);
+        return null;
+      }
+      const urlString = whatwgURL.href;
+      const { host, hostname, pathname, protocol, search } = whatwgURL;
+      if (search) {
+        return null;
+      }
+      const scheme = protocol.slice(0, -1);
+      if (!Object.values(import_types3.EndpointURLScheme).includes(scheme)) {
+        return null;
+      }
+      const isIp = isIpAddress2(hostname);
+      const inputContainsDefaultPort = urlString.includes(`${host}:${DEFAULT_PORTS[scheme]}`) || typeof value === "string" && value.includes(`${host}:${DEFAULT_PORTS[scheme]}`);
+      const authority = `${host}${inputContainsDefaultPort ? `:${DEFAULT_PORTS[scheme]}` : ``}`;
+      return {
+        scheme,
+        authority,
+        path: pathname,
+        normalizedPath: pathname.endsWith("/") ? pathname : `${pathname}/`,
+        isIp
+      };
+    }, "parseURL");
+    var stringEquals = /* @__PURE__ */ __name((value1, value2) => value1 === value2, "stringEquals");
+    var substring = /* @__PURE__ */ __name((input, start, stop, reverse) => {
+      if (start >= stop || input.length < stop) {
+        return null;
+      }
+      if (!reverse) {
+        return input.substring(start, stop);
+      }
+      return input.substring(input.length - stop, input.length - start);
+    }, "substring");
+    var uriEncode = /* @__PURE__ */ __name((value) => encodeURIComponent(value).replace(/[!*'()]/g, (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`), "uriEncode");
+    var endpointFunctions = {
+      booleanEquals,
+      getAttr,
+      isSet,
+      isValidHostLabel,
+      not,
+      parseURL,
+      stringEquals,
+      substring,
+      uriEncode
+    };
+    var evaluateTemplate = /* @__PURE__ */ __name((template, options) => {
+      const evaluatedTemplateArr = [];
+      const templateContext = {
+        ...options.endpointParams,
+        ...options.referenceRecord
+      };
+      let currentIndex = 0;
+      while (currentIndex < template.length) {
+        const openingBraceIndex = template.indexOf("{", currentIndex);
+        if (openingBraceIndex === -1) {
+          evaluatedTemplateArr.push(template.slice(currentIndex));
           break;
-      }
-    }
-    __name(negate, "negate");
-    var _HeaderMarshaller = class _HeaderMarshaller {
-      constructor(toUtf8, fromUtf8) {
-        this.toUtf8 = toUtf8;
-        this.fromUtf8 = fromUtf8;
-      }
-      format(headers) {
-        const chunks = [];
-        for (const headerName of Object.keys(headers)) {
-          const bytes = this.fromUtf8(headerName);
-          chunks.push(Uint8Array.from([bytes.byteLength]), bytes, this.formatHeaderValue(headers[headerName]));
         }
-        const out = new Uint8Array(chunks.reduce((carry, bytes) => carry + bytes.byteLength, 0));
-        let position = 0;
-        for (const chunk of chunks) {
-          out.set(chunk, position);
-          position += chunk.byteLength;
+        evaluatedTemplateArr.push(template.slice(currentIndex, openingBraceIndex));
+        const closingBraceIndex = template.indexOf("}", openingBraceIndex);
+        if (closingBraceIndex === -1) {
+          evaluatedTemplateArr.push(template.slice(openingBraceIndex));
+          break;
         }
-        return out;
+        if (template[openingBraceIndex + 1] === "{" && template[closingBraceIndex + 1] === "}") {
+          evaluatedTemplateArr.push(template.slice(openingBraceIndex + 1, closingBraceIndex));
+          currentIndex = closingBraceIndex + 2;
+        }
+        const parameterName = template.substring(openingBraceIndex + 1, closingBraceIndex);
+        if (parameterName.includes("#")) {
+          const [refName, attrName] = parameterName.split("#");
+          evaluatedTemplateArr.push(getAttr(templateContext[refName], attrName));
+        } else {
+          evaluatedTemplateArr.push(templateContext[parameterName]);
+        }
+        currentIndex = closingBraceIndex + 1;
       }
-      formatHeaderValue(header) {
-        switch (header.type) {
-          case "boolean":
-            return Uint8Array.from([
-              header.value ? 0 : 1
-              /* boolFalse */
-            ]);
-          case "byte":
-            return Uint8Array.from([2, header.value]);
-          case "short":
-            const shortView = new DataView(new ArrayBuffer(3));
-            shortView.setUint8(
-              0,
-              3
-              /* short */
-            );
-            shortView.setInt16(1, header.value, false);
-            return new Uint8Array(shortView.buffer);
-          case "integer":
-            const intView = new DataView(new ArrayBuffer(5));
-            intView.setUint8(
-              0,
-              4
-              /* integer */
-            );
-            intView.setInt32(1, header.value, false);
-            return new Uint8Array(intView.buffer);
-          case "long":
-            const longBytes = new Uint8Array(9);
-            longBytes[0] = 5;
-            longBytes.set(header.value.bytes, 1);
-            return longBytes;
-          case "binary":
-            const binView = new DataView(new ArrayBuffer(3 + header.value.byteLength));
-            binView.setUint8(
-              0,
-              6
-              /* byteArray */
-            );
-            binView.setUint16(1, header.value.byteLength, false);
-            const binBytes = new Uint8Array(binView.buffer);
-            binBytes.set(header.value, 3);
-            return binBytes;
-          case "string":
-            const utf8Bytes = this.fromUtf8(header.value);
-            const strView = new DataView(new ArrayBuffer(3 + utf8Bytes.byteLength));
-            strView.setUint8(
-              0,
-              7
-              /* string */
-            );
-            strView.setUint16(1, utf8Bytes.byteLength, false);
-            const strBytes = new Uint8Array(strView.buffer);
-            strBytes.set(utf8Bytes, 3);
-            return strBytes;
-          case "timestamp":
-            const tsBytes = new Uint8Array(9);
-            tsBytes[0] = 8;
-            tsBytes.set(Int64.fromNumber(header.value.valueOf()).bytes, 1);
-            return tsBytes;
-          case "uuid":
-            if (!UUID_PATTERN.test(header.value)) {
-              throw new Error(`Invalid UUID received: ${header.value}`);
-            }
-            const uuidBytes = new Uint8Array(17);
-            uuidBytes[0] = 9;
-            uuidBytes.set((0, import_util_hex_encoding.fromHex)(header.value.replace(/\-/g, "")), 1);
-            return uuidBytes;
+      return evaluatedTemplateArr.join("");
+    }, "evaluateTemplate");
+    var getReferenceValue = /* @__PURE__ */ __name(({ ref }, options) => {
+      const referenceRecord = {
+        ...options.endpointParams,
+        ...options.referenceRecord
+      };
+      return referenceRecord[ref];
+    }, "getReferenceValue");
+    var evaluateExpression = /* @__PURE__ */ __name((obj, keyName, options) => {
+      if (typeof obj === "string") {
+        return evaluateTemplate(obj, options);
+      } else if (obj["fn"]) {
+        return callFunction(obj, options);
+      } else if (obj["ref"]) {
+        return getReferenceValue(obj, options);
+      }
+      throw new EndpointError2(`'${keyName}': ${String(obj)} is not a string, function or reference.`);
+    }, "evaluateExpression");
+    var callFunction = /* @__PURE__ */ __name(({ fn, argv }, options) => {
+      const evaluatedArgs = argv.map(
+        (arg) => ["boolean", "number"].includes(typeof arg) ? arg : evaluateExpression(arg, "arg", options)
+      );
+      const fnSegments = fn.split(".");
+      if (fnSegments[0] in customEndpointFunctions && fnSegments[1] != null) {
+        return customEndpointFunctions[fnSegments[0]][fnSegments[1]](...evaluatedArgs);
+      }
+      return endpointFunctions[fn](...evaluatedArgs);
+    }, "callFunction");
+    var evaluateCondition = /* @__PURE__ */ __name(({ assign, ...fnArgs }, options) => {
+      var _a, _b;
+      if (assign && assign in options.referenceRecord) {
+        throw new EndpointError2(`'${assign}' is already defined in Reference Record.`);
+      }
+      const value = callFunction(fnArgs, options);
+      (_b = (_a = options.logger) == null ? void 0 : _a.debug) == null ? void 0 : _b.call(_a, debugId, `evaluateCondition: ${toDebugString(fnArgs)} = ${toDebugString(value)}`);
+      return {
+        result: value === "" ? true : !!value,
+        ...assign != null && { toAssign: { name: assign, value } }
+      };
+    }, "evaluateCondition");
+    var evaluateConditions = /* @__PURE__ */ __name((conditions = [], options) => {
+      var _a, _b;
+      const conditionsReferenceRecord = {};
+      for (const condition of conditions) {
+        const { result, toAssign } = evaluateCondition(condition, {
+          ...options,
+          referenceRecord: {
+            ...options.referenceRecord,
+            ...conditionsReferenceRecord
+          }
+        });
+        if (!result) {
+          return { result };
+        }
+        if (toAssign) {
+          conditionsReferenceRecord[toAssign.name] = toAssign.value;
+          (_b = (_a = options.logger) == null ? void 0 : _a.debug) == null ? void 0 : _b.call(_a, debugId, `assign: ${toAssign.name} := ${toDebugString(toAssign.value)}`);
         }
       }
-      parse(headers) {
-        const out = {};
-        let position = 0;
-        while (position < headers.byteLength) {
-          const nameLength = headers.getUint8(position++);
-          const name = this.toUtf8(new Uint8Array(headers.buffer, headers.byteOffset + position, nameLength));
-          position += nameLength;
-          switch (headers.getUint8(position++)) {
-            case 0:
-              out[name] = {
-                type: BOOLEAN_TAG,
-                value: true
-              };
-              break;
-            case 1:
-              out[name] = {
-                type: BOOLEAN_TAG,
-                value: false
-              };
-              break;
-            case 2:
-              out[name] = {
-                type: BYTE_TAG,
-                value: headers.getInt8(position++)
-              };
-              break;
-            case 3:
-              out[name] = {
-                type: SHORT_TAG,
-                value: headers.getInt16(position, false)
-              };
-              position += 2;
-              break;
-            case 4:
-              out[name] = {
-                type: INT_TAG,
-                value: headers.getInt32(position, false)
-              };
-              position += 4;
-              break;
-            case 5:
-              out[name] = {
-                type: LONG_TAG,
-                value: new Int64(new Uint8Array(headers.buffer, headers.byteOffset + position, 8))
-              };
-              position += 8;
-              break;
-            case 6:
-              const binaryLength = headers.getUint16(position, false);
-              position += 2;
-              out[name] = {
-                type: BINARY_TAG,
-                value: new Uint8Array(headers.buffer, headers.byteOffset + position, binaryLength)
-              };
-              position += binaryLength;
-              break;
-            case 7:
-              const stringLength = headers.getUint16(position, false);
-              position += 2;
-              out[name] = {
-                type: STRING_TAG,
-                value: this.toUtf8(new Uint8Array(headers.buffer, headers.byteOffset + position, stringLength))
-              };
-              position += stringLength;
-              break;
-            case 8:
-              out[name] = {
-                type: TIMESTAMP_TAG,
-                value: new Date(new Int64(new Uint8Array(headers.buffer, headers.byteOffset + position, 8)).valueOf())
-              };
-              position += 8;
-              break;
-            case 9:
-              const uuidBytes = new Uint8Array(headers.buffer, headers.byteOffset + position, 16);
-              position += 16;
-              out[name] = {
-                type: UUID_TAG,
-                value: `${(0, import_util_hex_encoding.toHex)(uuidBytes.subarray(0, 4))}-${(0, import_util_hex_encoding.toHex)(uuidBytes.subarray(4, 6))}-${(0, import_util_hex_encoding.toHex)(
-                  uuidBytes.subarray(6, 8)
-                )}-${(0, import_util_hex_encoding.toHex)(uuidBytes.subarray(8, 10))}-${(0, import_util_hex_encoding.toHex)(uuidBytes.subarray(10))}`
-              };
-              break;
-            default:
-              throw new Error(`Unrecognized header type tag`);
+      return { result: true, referenceRecord: conditionsReferenceRecord };
+    }, "evaluateConditions");
+    var getEndpointHeaders = /* @__PURE__ */ __name((headers, options) => Object.entries(headers).reduce(
+      (acc, [headerKey, headerVal]) => ({
+        ...acc,
+        [headerKey]: headerVal.map((headerValEntry) => {
+          const processedExpr = evaluateExpression(headerValEntry, "Header value entry", options);
+          if (typeof processedExpr !== "string") {
+            throw new EndpointError2(`Header '${headerKey}' value '${processedExpr}' is not a string`);
+          }
+          return processedExpr;
+        })
+      }),
+      {}
+    ), "getEndpointHeaders");
+    var getEndpointProperty = /* @__PURE__ */ __name((property, options) => {
+      if (Array.isArray(property)) {
+        return property.map((propertyEntry) => getEndpointProperty(propertyEntry, options));
+      }
+      switch (typeof property) {
+        case "string":
+          return evaluateTemplate(property, options);
+        case "object":
+          if (property === null) {
+            throw new EndpointError2(`Unexpected endpoint property: ${property}`);
+          }
+          return getEndpointProperties(property, options);
+        case "boolean":
+          return property;
+        default:
+          throw new EndpointError2(`Unexpected endpoint property type: ${typeof property}`);
+      }
+    }, "getEndpointProperty");
+    var getEndpointProperties = /* @__PURE__ */ __name((properties, options) => Object.entries(properties).reduce(
+      (acc, [propertyKey, propertyVal]) => ({
+        ...acc,
+        [propertyKey]: getEndpointProperty(propertyVal, options)
+      }),
+      {}
+    ), "getEndpointProperties");
+    var getEndpointUrl = /* @__PURE__ */ __name((endpointUrl, options) => {
+      const expression = evaluateExpression(endpointUrl, "Endpoint URL", options);
+      if (typeof expression === "string") {
+        try {
+          return new URL(expression);
+        } catch (error) {
+          console.error(`Failed to construct URL with ${expression}`, error);
+          throw error;
+        }
+      }
+      throw new EndpointError2(`Endpoint URL must be a string, got ${typeof expression}`);
+    }, "getEndpointUrl");
+    var evaluateEndpointRule = /* @__PURE__ */ __name((endpointRule, options) => {
+      var _a, _b;
+      const { conditions, endpoint } = endpointRule;
+      const { result, referenceRecord } = evaluateConditions(conditions, options);
+      if (!result) {
+        return;
+      }
+      const endpointRuleOptions = {
+        ...options,
+        referenceRecord: { ...options.referenceRecord, ...referenceRecord }
+      };
+      const { url, properties, headers } = endpoint;
+      (_b = (_a = options.logger) == null ? void 0 : _a.debug) == null ? void 0 : _b.call(_a, debugId, `Resolving endpoint from template: ${toDebugString(endpoint)}`);
+      return {
+        ...headers != void 0 && {
+          headers: getEndpointHeaders(headers, endpointRuleOptions)
+        },
+        ...properties != void 0 && {
+          properties: getEndpointProperties(properties, endpointRuleOptions)
+        },
+        url: getEndpointUrl(url, endpointRuleOptions)
+      };
+    }, "evaluateEndpointRule");
+    var evaluateErrorRule = /* @__PURE__ */ __name((errorRule, options) => {
+      const { conditions, error } = errorRule;
+      const { result, referenceRecord } = evaluateConditions(conditions, options);
+      if (!result) {
+        return;
+      }
+      throw new EndpointError2(
+        evaluateExpression(error, "Error", {
+          ...options,
+          referenceRecord: { ...options.referenceRecord, ...referenceRecord }
+        })
+      );
+    }, "evaluateErrorRule");
+    var evaluateTreeRule = /* @__PURE__ */ __name((treeRule, options) => {
+      const { conditions, rules } = treeRule;
+      const { result, referenceRecord } = evaluateConditions(conditions, options);
+      if (!result) {
+        return;
+      }
+      return evaluateRules(rules, {
+        ...options,
+        referenceRecord: { ...options.referenceRecord, ...referenceRecord }
+      });
+    }, "evaluateTreeRule");
+    var evaluateRules = /* @__PURE__ */ __name((rules, options) => {
+      for (const rule of rules) {
+        if (rule.type === "endpoint") {
+          const endpointOrUndefined = evaluateEndpointRule(rule, options);
+          if (endpointOrUndefined) {
+            return endpointOrUndefined;
+          }
+        } else if (rule.type === "error") {
+          evaluateErrorRule(rule, options);
+        } else if (rule.type === "tree") {
+          const endpointOrUndefined = evaluateTreeRule(rule, options);
+          if (endpointOrUndefined) {
+            return endpointOrUndefined;
+          }
+        } else {
+          throw new EndpointError2(`Unknown endpoint rule: ${rule}`);
+        }
+      }
+      throw new EndpointError2(`Rules evaluation failed`);
+    }, "evaluateRules");
+    var resolveEndpoint2 = /* @__PURE__ */ __name((ruleSetObject, options) => {
+      var _a, _b, _c, _d, _e;
+      const { endpointParams, logger } = options;
+      const { parameters, rules } = ruleSetObject;
+      (_b = (_a = options.logger) == null ? void 0 : _a.debug) == null ? void 0 : _b.call(_a, `${debugId} Initial EndpointParams: ${toDebugString(endpointParams)}`);
+      const paramsWithDefault = Object.entries(parameters).filter(([, v]) => v.default != null).map(([k, v]) => [k, v.default]);
+      if (paramsWithDefault.length > 0) {
+        for (const [paramKey, paramDefaultValue] of paramsWithDefault) {
+          endpointParams[paramKey] = endpointParams[paramKey] ?? paramDefaultValue;
+        }
+      }
+      const requiredParams = Object.entries(parameters).filter(([, v]) => v.required).map(([k]) => k);
+      for (const requiredParam of requiredParams) {
+        if (endpointParams[requiredParam] == null) {
+          throw new EndpointError2(`Missing required parameter: '${requiredParam}'`);
+        }
+      }
+      const endpoint = evaluateRules(rules, { endpointParams, logger, referenceRecord: {} });
+      if ((_c = options.endpointParams) == null ? void 0 : _c.Endpoint) {
+        try {
+          const givenEndpoint = new URL(options.endpointParams.Endpoint);
+          const { protocol, port } = givenEndpoint;
+          endpoint.url.protocol = protocol;
+          endpoint.url.port = port;
+        } catch (e) {
+        }
+      }
+      (_e = (_d = options.logger) == null ? void 0 : _d.debug) == null ? void 0 : _e.call(_d, `${debugId} Resolved endpoint: ${toDebugString(endpoint)}`);
+      return endpoint;
+    }, "resolveEndpoint");
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/util-endpoints/dist-cjs/index.js
+var require_dist_cjs10 = __commonJS({
+  "../../../../node_modules/@aws-sdk/util-endpoints/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      ConditionObject: () => import_util_endpoints.ConditionObject,
+      DeprecatedObject: () => import_util_endpoints.DeprecatedObject,
+      EndpointError: () => import_util_endpoints.EndpointError,
+      EndpointObject: () => import_util_endpoints.EndpointObject,
+      EndpointObjectHeaders: () => import_util_endpoints.EndpointObjectHeaders,
+      EndpointObjectProperties: () => import_util_endpoints.EndpointObjectProperties,
+      EndpointParams: () => import_util_endpoints.EndpointParams,
+      EndpointResolverOptions: () => import_util_endpoints.EndpointResolverOptions,
+      EndpointRuleObject: () => import_util_endpoints.EndpointRuleObject,
+      ErrorRuleObject: () => import_util_endpoints.ErrorRuleObject,
+      EvaluateOptions: () => import_util_endpoints.EvaluateOptions,
+      Expression: () => import_util_endpoints.Expression,
+      FunctionArgv: () => import_util_endpoints.FunctionArgv,
+      FunctionObject: () => import_util_endpoints.FunctionObject,
+      FunctionReturn: () => import_util_endpoints.FunctionReturn,
+      ParameterObject: () => import_util_endpoints.ParameterObject,
+      ReferenceObject: () => import_util_endpoints.ReferenceObject,
+      ReferenceRecord: () => import_util_endpoints.ReferenceRecord,
+      RuleSetObject: () => import_util_endpoints.RuleSetObject,
+      RuleSetRules: () => import_util_endpoints.RuleSetRules,
+      TreeRuleObject: () => import_util_endpoints.TreeRuleObject,
+      getUserAgentPrefix: () => getUserAgentPrefix,
+      isIpAddress: () => import_util_endpoints.isIpAddress,
+      partition: () => partition,
+      resolveEndpoint: () => import_util_endpoints.resolveEndpoint,
+      setPartitionInfo: () => setPartitionInfo,
+      useDefaultPartitionInfo: () => useDefaultPartitionInfo
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var import_util_endpoints = require_dist_cjs9();
+    var isVirtualHostableS3Bucket = /* @__PURE__ */ __name((value, allowSubDomains = false) => {
+      if (allowSubDomains) {
+        for (const label of value.split(".")) {
+          if (!isVirtualHostableS3Bucket(label)) {
+            return false;
           }
         }
-        return out;
+        return true;
       }
+      if (!(0, import_util_endpoints.isValidHostLabel)(value)) {
+        return false;
+      }
+      if (value.length < 3 || value.length > 63) {
+        return false;
+      }
+      if (value !== value.toLowerCase()) {
+        return false;
+      }
+      if ((0, import_util_endpoints.isIpAddress)(value)) {
+        return false;
+      }
+      return true;
+    }, "isVirtualHostableS3Bucket");
+    var parseArn = /* @__PURE__ */ __name((value) => {
+      const segments = value.split(":");
+      if (segments.length < 6)
+        return null;
+      const [arn, partition2, service, region, accountId, ...resourceId] = segments;
+      if (arn !== "arn" || partition2 === "" || service === "" || resourceId[0] === "")
+        return null;
+      return {
+        partition: partition2,
+        service,
+        region,
+        accountId,
+        resourceId: resourceId[0].includes("/") ? resourceId[0].split("/") : resourceId
+      };
+    }, "parseArn");
+    var partitions_default = {
+      partitions: [{
+        id: "aws",
+        outputs: {
+          dnsSuffix: "amazonaws.com",
+          dualStackDnsSuffix: "api.aws",
+          implicitGlobalRegion: "us-east-1",
+          name: "aws",
+          supportsDualStack: true,
+          supportsFIPS: true
+        },
+        regionRegex: "^(us|eu|ap|sa|ca|me|af|il)\\-\\w+\\-\\d+$",
+        regions: {
+          "af-south-1": {
+            description: "Africa (Cape Town)"
+          },
+          "ap-east-1": {
+            description: "Asia Pacific (Hong Kong)"
+          },
+          "ap-northeast-1": {
+            description: "Asia Pacific (Tokyo)"
+          },
+          "ap-northeast-2": {
+            description: "Asia Pacific (Seoul)"
+          },
+          "ap-northeast-3": {
+            description: "Asia Pacific (Osaka)"
+          },
+          "ap-south-1": {
+            description: "Asia Pacific (Mumbai)"
+          },
+          "ap-south-2": {
+            description: "Asia Pacific (Hyderabad)"
+          },
+          "ap-southeast-1": {
+            description: "Asia Pacific (Singapore)"
+          },
+          "ap-southeast-2": {
+            description: "Asia Pacific (Sydney)"
+          },
+          "ap-southeast-3": {
+            description: "Asia Pacific (Jakarta)"
+          },
+          "ap-southeast-4": {
+            description: "Asia Pacific (Melbourne)"
+          },
+          "aws-global": {
+            description: "AWS Standard global region"
+          },
+          "ca-central-1": {
+            description: "Canada (Central)"
+          },
+          "ca-west-1": {
+            description: "Canada West (Calgary)"
+          },
+          "eu-central-1": {
+            description: "Europe (Frankfurt)"
+          },
+          "eu-central-2": {
+            description: "Europe (Zurich)"
+          },
+          "eu-north-1": {
+            description: "Europe (Stockholm)"
+          },
+          "eu-south-1": {
+            description: "Europe (Milan)"
+          },
+          "eu-south-2": {
+            description: "Europe (Spain)"
+          },
+          "eu-west-1": {
+            description: "Europe (Ireland)"
+          },
+          "eu-west-2": {
+            description: "Europe (London)"
+          },
+          "eu-west-3": {
+            description: "Europe (Paris)"
+          },
+          "il-central-1": {
+            description: "Israel (Tel Aviv)"
+          },
+          "me-central-1": {
+            description: "Middle East (UAE)"
+          },
+          "me-south-1": {
+            description: "Middle East (Bahrain)"
+          },
+          "sa-east-1": {
+            description: "South America (Sao Paulo)"
+          },
+          "us-east-1": {
+            description: "US East (N. Virginia)"
+          },
+          "us-east-2": {
+            description: "US East (Ohio)"
+          },
+          "us-west-1": {
+            description: "US West (N. California)"
+          },
+          "us-west-2": {
+            description: "US West (Oregon)"
+          }
+        }
+      }, {
+        id: "aws-cn",
+        outputs: {
+          dnsSuffix: "amazonaws.com.cn",
+          dualStackDnsSuffix: "api.amazonwebservices.com.cn",
+          implicitGlobalRegion: "cn-northwest-1",
+          name: "aws-cn",
+          supportsDualStack: true,
+          supportsFIPS: true
+        },
+        regionRegex: "^cn\\-\\w+\\-\\d+$",
+        regions: {
+          "aws-cn-global": {
+            description: "AWS China global region"
+          },
+          "cn-north-1": {
+            description: "China (Beijing)"
+          },
+          "cn-northwest-1": {
+            description: "China (Ningxia)"
+          }
+        }
+      }, {
+        id: "aws-us-gov",
+        outputs: {
+          dnsSuffix: "amazonaws.com",
+          dualStackDnsSuffix: "api.aws",
+          implicitGlobalRegion: "us-gov-west-1",
+          name: "aws-us-gov",
+          supportsDualStack: true,
+          supportsFIPS: true
+        },
+        regionRegex: "^us\\-gov\\-\\w+\\-\\d+$",
+        regions: {
+          "aws-us-gov-global": {
+            description: "AWS GovCloud (US) global region"
+          },
+          "us-gov-east-1": {
+            description: "AWS GovCloud (US-East)"
+          },
+          "us-gov-west-1": {
+            description: "AWS GovCloud (US-West)"
+          }
+        }
+      }, {
+        id: "aws-iso",
+        outputs: {
+          dnsSuffix: "c2s.ic.gov",
+          dualStackDnsSuffix: "c2s.ic.gov",
+          implicitGlobalRegion: "us-iso-east-1",
+          name: "aws-iso",
+          supportsDualStack: false,
+          supportsFIPS: true
+        },
+        regionRegex: "^us\\-iso\\-\\w+\\-\\d+$",
+        regions: {
+          "aws-iso-global": {
+            description: "AWS ISO (US) global region"
+          },
+          "us-iso-east-1": {
+            description: "US ISO East"
+          },
+          "us-iso-west-1": {
+            description: "US ISO WEST"
+          }
+        }
+      }, {
+        id: "aws-iso-b",
+        outputs: {
+          dnsSuffix: "sc2s.sgov.gov",
+          dualStackDnsSuffix: "sc2s.sgov.gov",
+          implicitGlobalRegion: "us-isob-east-1",
+          name: "aws-iso-b",
+          supportsDualStack: false,
+          supportsFIPS: true
+        },
+        regionRegex: "^us\\-isob\\-\\w+\\-\\d+$",
+        regions: {
+          "aws-iso-b-global": {
+            description: "AWS ISOB (US) global region"
+          },
+          "us-isob-east-1": {
+            description: "US ISOB East (Ohio)"
+          }
+        }
+      }, {
+        id: "aws-iso-e",
+        outputs: {
+          dnsSuffix: "cloud.adc-e.uk",
+          dualStackDnsSuffix: "cloud.adc-e.uk",
+          implicitGlobalRegion: "eu-isoe-west-1",
+          name: "aws-iso-e",
+          supportsDualStack: false,
+          supportsFIPS: true
+        },
+        regionRegex: "^eu\\-isoe\\-\\w+\\-\\d+$",
+        regions: {}
+      }, {
+        id: "aws-iso-f",
+        outputs: {
+          dnsSuffix: "csp.hci.ic.gov",
+          dualStackDnsSuffix: "csp.hci.ic.gov",
+          implicitGlobalRegion: "us-isof-south-1",
+          name: "aws-iso-f",
+          supportsDualStack: false,
+          supportsFIPS: true
+        },
+        regionRegex: "^us\\-isof\\-\\w+\\-\\d+$",
+        regions: {}
+      }],
+      version: "1.1"
     };
-    __name(_HeaderMarshaller, "HeaderMarshaller");
-    var HeaderMarshaller = _HeaderMarshaller;
-    var BOOLEAN_TAG = "boolean";
-    var BYTE_TAG = "byte";
-    var SHORT_TAG = "short";
-    var INT_TAG = "integer";
-    var LONG_TAG = "long";
-    var BINARY_TAG = "binary";
-    var STRING_TAG = "string";
-    var TIMESTAMP_TAG = "timestamp";
-    var UUID_TAG = "uuid";
-    var UUID_PATTERN = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/;
-    var import_crc32 = require_build2();
-    var PRELUDE_MEMBER_LENGTH = 4;
-    var PRELUDE_LENGTH = PRELUDE_MEMBER_LENGTH * 2;
-    var CHECKSUM_LENGTH = 4;
-    var MINIMUM_MESSAGE_LENGTH = PRELUDE_LENGTH + CHECKSUM_LENGTH * 2;
-    function splitMessage({ byteLength, byteOffset, buffer }) {
-      if (byteLength < MINIMUM_MESSAGE_LENGTH) {
-        throw new Error("Provided message too short to accommodate event stream message overhead");
+    var selectedPartitionsInfo = partitions_default;
+    var selectedUserAgentPrefix = "";
+    var partition = /* @__PURE__ */ __name((value) => {
+      const { partitions } = selectedPartitionsInfo;
+      for (const partition2 of partitions) {
+        const { regions, outputs } = partition2;
+        for (const [region, regionData] of Object.entries(regions)) {
+          if (region === value) {
+            return {
+              ...outputs,
+              ...regionData
+            };
+          }
+        }
       }
-      const view = new DataView(buffer, byteOffset, byteLength);
-      const messageLength = view.getUint32(0, false);
-      if (byteLength !== messageLength) {
-        throw new Error("Reported message length does not match received message length");
+      for (const partition2 of partitions) {
+        const { regionRegex, outputs } = partition2;
+        if (new RegExp(regionRegex).test(value)) {
+          return {
+            ...outputs
+          };
+        }
       }
-      const headerLength = view.getUint32(PRELUDE_MEMBER_LENGTH, false);
-      const expectedPreludeChecksum = view.getUint32(PRELUDE_LENGTH, false);
-      const expectedMessageChecksum = view.getUint32(byteLength - CHECKSUM_LENGTH, false);
-      const checksummer = new import_crc32.Crc32().update(new Uint8Array(buffer, byteOffset, PRELUDE_LENGTH));
-      if (expectedPreludeChecksum !== checksummer.digest()) {
+      const DEFAULT_PARTITION = partitions.find((partition2) => partition2.id === "aws");
+      if (!DEFAULT_PARTITION) {
         throw new Error(
-          `The prelude checksum specified in the message (${expectedPreludeChecksum}) does not match the calculated CRC32 checksum (${checksummer.digest()})`
-        );
-      }
-      checksummer.update(
-        new Uint8Array(buffer, byteOffset + PRELUDE_LENGTH, byteLength - (PRELUDE_LENGTH + CHECKSUM_LENGTH))
-      );
-      if (expectedMessageChecksum !== checksummer.digest()) {
-        throw new Error(
-          `The message checksum (${checksummer.digest()}) did not match the expected value of ${expectedMessageChecksum}`
+          "Provided region was not found in the partition array or regex, and default partition with id 'aws' doesn't exist."
         );
       }
       return {
-        headers: new DataView(buffer, byteOffset + PRELUDE_LENGTH + CHECKSUM_LENGTH, headerLength),
-        body: new Uint8Array(
-          buffer,
-          byteOffset + PRELUDE_LENGTH + CHECKSUM_LENGTH + headerLength,
-          messageLength - headerLength - (PRELUDE_LENGTH + CHECKSUM_LENGTH + CHECKSUM_LENGTH)
-        )
+        ...DEFAULT_PARTITION.outputs
+      };
+    }, "partition");
+    var setPartitionInfo = /* @__PURE__ */ __name((partitionsInfo, userAgentPrefix = "") => {
+      selectedPartitionsInfo = partitionsInfo;
+      selectedUserAgentPrefix = userAgentPrefix;
+    }, "setPartitionInfo");
+    var useDefaultPartitionInfo = /* @__PURE__ */ __name(() => {
+      setPartitionInfo(partitions_default, "");
+    }, "useDefaultPartitionInfo");
+    var getUserAgentPrefix = /* @__PURE__ */ __name(() => selectedUserAgentPrefix, "getUserAgentPrefix");
+    var awsEndpointFunctions = {
+      isVirtualHostableS3Bucket,
+      parseArn,
+      partition
+    };
+    import_util_endpoints.customEndpointFunctions.aws = awsEndpointFunctions;
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/middleware-user-agent/dist-cjs/index.js
+var require_dist_cjs11 = __commonJS({
+  "../../../../node_modules/@aws-sdk/middleware-user-agent/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      getUserAgentMiddlewareOptions: () => getUserAgentMiddlewareOptions,
+      getUserAgentPlugin: () => getUserAgentPlugin,
+      resolveUserAgentConfig: () => resolveUserAgentConfig,
+      userAgentMiddleware: () => userAgentMiddleware
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    function resolveUserAgentConfig(input) {
+      return {
+        ...input,
+        customUserAgent: typeof input.customUserAgent === "string" ? [[input.customUserAgent]] : input.customUserAgent
       };
     }
-    __name(splitMessage, "splitMessage");
-    var _EventStreamCodec = class _EventStreamCodec {
-      constructor(toUtf8, fromUtf8) {
-        this.headerMarshaller = new HeaderMarshaller(toUtf8, fromUtf8);
-        this.messageBuffer = [];
-        this.isEndOfStream = false;
-      }
-      feed(message) {
-        this.messageBuffer.push(this.decode(message));
-      }
-      endOfStream() {
-        this.isEndOfStream = true;
-      }
-      getMessage() {
-        const message = this.messageBuffer.pop();
-        const isEndOfStream = this.isEndOfStream;
-        return {
-          getMessage() {
-            return message;
-          },
-          isEndOfStream() {
-            return isEndOfStream;
-          }
-        };
-      }
-      getAvailableMessages() {
-        const messages = this.messageBuffer;
-        this.messageBuffer = [];
-        const isEndOfStream = this.isEndOfStream;
-        return {
-          getMessages() {
-            return messages;
-          },
-          isEndOfStream() {
-            return isEndOfStream;
-          }
-        };
-      }
-      /**
-       * Convert a structured JavaScript object with tagged headers into a binary
-       * event stream message.
-       */
-      encode({ headers: rawHeaders, body }) {
-        const headers = this.headerMarshaller.format(rawHeaders);
-        const length = headers.byteLength + body.byteLength + 16;
-        const out = new Uint8Array(length);
-        const view = new DataView(out.buffer, out.byteOffset, out.byteLength);
-        const checksum = new import_crc322.Crc32();
-        view.setUint32(0, length, false);
-        view.setUint32(4, headers.byteLength, false);
-        view.setUint32(8, checksum.update(out.subarray(0, 8)).digest(), false);
-        out.set(headers, 12);
-        out.set(body, headers.byteLength + 12);
-        view.setUint32(length - 4, checksum.update(out.subarray(8, length - 4)).digest(), false);
-        return out;
-      }
-      /**
-       * Convert a binary event stream message into a JavaScript object with an
-       * opaque, binary body and tagged, parsed headers.
-       */
-      decode(message) {
-        const { headers, body } = splitMessage(message);
-        return { headers: this.headerMarshaller.parse(headers), body };
-      }
-      /**
-       * Convert a structured JavaScript object with tagged headers into a binary
-       * event stream message header.
-       */
-      formatHeaders(rawHeaders) {
-        return this.headerMarshaller.format(rawHeaders);
-      }
-    };
-    __name(_EventStreamCodec, "EventStreamCodec");
-    var EventStreamCodec = _EventStreamCodec;
-    var _MessageDecoderStream = class _MessageDecoderStream {
-      constructor(options) {
-        this.options = options;
-      }
-      [Symbol.asyncIterator]() {
-        return this.asyncIterator();
-      }
-      async *asyncIterator() {
-        for await (const bytes of this.options.inputStream) {
-          const decoded = this.options.decoder.decode(bytes);
-          yield decoded;
+    __name(resolveUserAgentConfig, "resolveUserAgentConfig");
+    var import_util_endpoints = require_dist_cjs10();
+    var import_protocol_http = require_dist_cjs2();
+    var USER_AGENT = "user-agent";
+    var X_AMZ_USER_AGENT = "x-amz-user-agent";
+    var SPACE = " ";
+    var UA_NAME_SEPARATOR = "/";
+    var UA_NAME_ESCAPE_REGEX = /[^\!\$\%\&\'\*\+\-\.\^\_\`\|\~\d\w]/g;
+    var UA_VALUE_ESCAPE_REGEX = /[^\!\$\%\&\'\*\+\-\.\^\_\`\|\~\d\w\#]/g;
+    var UA_ESCAPE_CHAR = "-";
+    var userAgentMiddleware = /* @__PURE__ */ __name((options) => (next, context) => async (args) => {
+      var _a, _b;
+      const { request } = args;
+      if (!import_protocol_http.HttpRequest.isInstance(request))
+        return next(args);
+      const { headers } = request;
+      const userAgent = ((_a = context == null ? void 0 : context.userAgent) == null ? void 0 : _a.map(escapeUserAgent)) || [];
+      const defaultUserAgent = (await options.defaultUserAgentProvider()).map(escapeUserAgent);
+      const customUserAgent = ((_b = options == null ? void 0 : options.customUserAgent) == null ? void 0 : _b.map(escapeUserAgent)) || [];
+      const prefix = (0, import_util_endpoints.getUserAgentPrefix)();
+      const sdkUserAgentValue = (prefix ? [prefix] : []).concat([...defaultUserAgent, ...userAgent, ...customUserAgent]).join(SPACE);
+      const normalUAValue = [
+        ...defaultUserAgent.filter((section) => section.startsWith("aws-sdk-")),
+        ...customUserAgent
+      ].join(SPACE);
+      if (options.runtime !== "browser") {
+        if (normalUAValue) {
+          headers[X_AMZ_USER_AGENT] = headers[X_AMZ_USER_AGENT] ? `${headers[USER_AGENT]} ${normalUAValue}` : normalUAValue;
         }
+        headers[USER_AGENT] = sdkUserAgentValue;
+      } else {
+        headers[X_AMZ_USER_AGENT] = sdkUserAgentValue;
       }
-    };
-    __name(_MessageDecoderStream, "MessageDecoderStream");
-    var MessageDecoderStream = _MessageDecoderStream;
-    var _MessageEncoderStream = class _MessageEncoderStream {
-      constructor(options) {
-        this.options = options;
+      return next({
+        ...args,
+        request
+      });
+    }, "userAgentMiddleware");
+    var escapeUserAgent = /* @__PURE__ */ __name((userAgentPair) => {
+      var _a;
+      const name = userAgentPair[0].split(UA_NAME_SEPARATOR).map((part) => part.replace(UA_NAME_ESCAPE_REGEX, UA_ESCAPE_CHAR)).join(UA_NAME_SEPARATOR);
+      const version3 = (_a = userAgentPair[1]) == null ? void 0 : _a.replace(UA_VALUE_ESCAPE_REGEX, UA_ESCAPE_CHAR);
+      const prefixSeparatorIndex = name.indexOf(UA_NAME_SEPARATOR);
+      const prefix = name.substring(0, prefixSeparatorIndex);
+      let uaName = name.substring(prefixSeparatorIndex + 1);
+      if (prefix === "api") {
+        uaName = uaName.toLowerCase();
       }
-      [Symbol.asyncIterator]() {
-        return this.asyncIterator();
-      }
-      async *asyncIterator() {
-        for await (const msg of this.options.messageStream) {
-          const encoded = this.options.encoder.encode(msg);
-          yield encoded;
+      return [prefix, uaName, version3].filter((item) => item && item.length > 0).reduce((acc, item, index) => {
+        switch (index) {
+          case 0:
+            return item;
+          case 1:
+            return `${acc}/${item}`;
+          default:
+            return `${acc}#${item}`;
         }
-        if (this.options.includeEndFrame) {
-          yield new Uint8Array(0);
-        }
-      }
+      }, "");
+    }, "escapeUserAgent");
+    var getUserAgentMiddlewareOptions = {
+      name: "getUserAgentMiddleware",
+      step: "build",
+      priority: "low",
+      tags: ["SET_USER_AGENT", "USER_AGENT"],
+      override: true
     };
-    __name(_MessageEncoderStream, "MessageEncoderStream");
-    var MessageEncoderStream = _MessageEncoderStream;
-    var _SmithyMessageDecoderStream = class _SmithyMessageDecoderStream {
-      constructor(options) {
-        this.options = options;
+    var getUserAgentPlugin = /* @__PURE__ */ __name((config) => ({
+      applyToStack: (clientStack) => {
+        clientStack.add(userAgentMiddleware(config), getUserAgentMiddlewareOptions);
       }
-      [Symbol.asyncIterator]() {
-        return this.asyncIterator();
-      }
-      async *asyncIterator() {
-        for await (const message of this.options.messageStream) {
-          const deserialized = await this.options.deserializer(message);
-          if (deserialized === void 0)
-            continue;
-          yield deserialized;
-        }
-      }
+    }), "getUserAgentPlugin");
+  }
+});
+
+// ../../../../node_modules/@smithy/util-config-provider/dist-cjs/index.js
+var require_dist_cjs12 = __commonJS({
+  "../../../../node_modules/@smithy/util-config-provider/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
     };
-    __name(_SmithyMessageDecoderStream, "SmithyMessageDecoderStream");
-    var SmithyMessageDecoderStream = _SmithyMessageDecoderStream;
-    var _SmithyMessageEncoderStream = class _SmithyMessageEncoderStream {
-      constructor(options) {
-        this.options = options;
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
       }
-      [Symbol.asyncIterator]() {
-        return this.asyncIterator();
-      }
-      async *asyncIterator() {
-        for await (const chunk of this.options.inputStream) {
-          const payloadBuf = this.options.serializer(chunk);
-          yield payloadBuf;
-        }
-      }
+      return to;
     };
-    __name(_SmithyMessageEncoderStream, "SmithyMessageEncoderStream");
-    var SmithyMessageEncoderStream = _SmithyMessageEncoderStream;
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      SelectorType: () => SelectorType,
+      booleanSelector: () => booleanSelector,
+      numberSelector: () => numberSelector
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var booleanSelector = /* @__PURE__ */ __name((obj, key, type) => {
+      if (!(key in obj))
+        return void 0;
+      if (obj[key] === "true")
+        return true;
+      if (obj[key] === "false")
+        return false;
+      throw new Error(`Cannot load ${type} "${key}". Expected "true" or "false", got ${obj[key]}.`);
+    }, "booleanSelector");
+    var numberSelector = /* @__PURE__ */ __name((obj, key, type) => {
+      if (!(key in obj))
+        return void 0;
+      const numberValue = parseInt(obj[key], 10);
+      if (Number.isNaN(numberValue)) {
+        throw new TypeError(`Cannot load ${type} '${key}'. Expected number, got '${obj[key]}'.`);
+      }
+      return numberValue;
+    }, "numberSelector");
+    var SelectorType = /* @__PURE__ */ ((SelectorType2) => {
+      SelectorType2["ENV"] = "env";
+      SelectorType2["CONFIG"] = "shared config entry";
+      return SelectorType2;
+    })(SelectorType || {});
   }
 });
 
 // ../../../../node_modules/@smithy/util-middleware/dist-cjs/index.js
-var require_dist_cjs9 = __commonJS({
+var require_dist_cjs13 = __commonJS({
   "../../../../node_modules/@smithy/util-middleware/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -2878,12 +2598,12 @@ var require_dist_cjs9 = __commonJS({
     var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
     var src_exports2 = {};
     __export2(src_exports2, {
-      getSmithyContext: () => getSmithyContext,
+      getSmithyContext: () => getSmithyContext2,
       normalizeProvider: () => normalizeProvider
     });
     module2.exports = __toCommonJS2(src_exports2);
     var import_types = require_dist_cjs();
-    var getSmithyContext = /* @__PURE__ */ __name((context) => context[import_types.SMITHY_CONTEXT_KEY] || (context[import_types.SMITHY_CONTEXT_KEY] = {}), "getSmithyContext");
+    var getSmithyContext2 = /* @__PURE__ */ __name((context) => context[import_types.SMITHY_CONTEXT_KEY] || (context[import_types.SMITHY_CONTEXT_KEY] = {}), "getSmithyContext");
     var normalizeProvider = /* @__PURE__ */ __name((input) => {
       if (typeof input === "function")
         return input;
@@ -2893,9 +2613,9 @@ var require_dist_cjs9 = __commonJS({
   }
 });
 
-// ../../../../node_modules/@smithy/util-uri-escape/dist-cjs/index.js
-var require_dist_cjs10 = __commonJS({
-  "../../../../node_modules/@smithy/util-uri-escape/dist-cjs/index.js"(exports2, module2) {
+// ../../../../node_modules/@smithy/config-resolver/dist-cjs/index.js
+var require_dist_cjs14 = __commonJS({
+  "../../../../node_modules/@smithy/config-resolver/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -2916,1062 +2636,171 @@ var require_dist_cjs10 = __commonJS({
     var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
     var src_exports2 = {};
     __export2(src_exports2, {
-      escapeUri: () => escapeUri,
-      escapeUriPath: () => escapeUriPath
+      CONFIG_USE_DUALSTACK_ENDPOINT: () => CONFIG_USE_DUALSTACK_ENDPOINT,
+      CONFIG_USE_FIPS_ENDPOINT: () => CONFIG_USE_FIPS_ENDPOINT,
+      DEFAULT_USE_DUALSTACK_ENDPOINT: () => DEFAULT_USE_DUALSTACK_ENDPOINT,
+      DEFAULT_USE_FIPS_ENDPOINT: () => DEFAULT_USE_FIPS_ENDPOINT,
+      ENV_USE_DUALSTACK_ENDPOINT: () => ENV_USE_DUALSTACK_ENDPOINT,
+      ENV_USE_FIPS_ENDPOINT: () => ENV_USE_FIPS_ENDPOINT,
+      NODE_REGION_CONFIG_FILE_OPTIONS: () => NODE_REGION_CONFIG_FILE_OPTIONS,
+      NODE_REGION_CONFIG_OPTIONS: () => NODE_REGION_CONFIG_OPTIONS,
+      NODE_USE_DUALSTACK_ENDPOINT_CONFIG_OPTIONS: () => NODE_USE_DUALSTACK_ENDPOINT_CONFIG_OPTIONS,
+      NODE_USE_FIPS_ENDPOINT_CONFIG_OPTIONS: () => NODE_USE_FIPS_ENDPOINT_CONFIG_OPTIONS,
+      REGION_ENV_NAME: () => REGION_ENV_NAME,
+      REGION_INI_NAME: () => REGION_INI_NAME,
+      getRegionInfo: () => getRegionInfo,
+      resolveCustomEndpointsConfig: () => resolveCustomEndpointsConfig,
+      resolveEndpointsConfig: () => resolveEndpointsConfig,
+      resolveRegionConfig: () => resolveRegionConfig
     });
     module2.exports = __toCommonJS2(src_exports2);
-    var escapeUri = /* @__PURE__ */ __name((uri) => (
-      // AWS percent-encodes some extra non-standard characters in a URI
-      encodeURIComponent(uri).replace(/[!'()*]/g, hexEncode)
-    ), "escapeUri");
-    var hexEncode = /* @__PURE__ */ __name((c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode");
-    var escapeUriPath = /* @__PURE__ */ __name((uri) => uri.split("/").map(escapeUri).join("/"), "escapeUriPath");
-  }
-});
-
-// ../../../../node_modules/@smithy/signature-v4/dist-cjs/index.js
-var require_dist_cjs11 = __commonJS({
-  "../../../../node_modules/@smithy/signature-v4/dist-cjs/index.js"(exports2, module2) {
-    var __defProp2 = Object.defineProperty;
-    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
-    var __getOwnPropNames2 = Object.getOwnPropertyNames;
-    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
-    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
-    var __export2 = (target, all) => {
-      for (var name in all)
-        __defProp2(target, name, { get: all[name], enumerable: true });
+    var import_util_config_provider = require_dist_cjs12();
+    var ENV_USE_DUALSTACK_ENDPOINT = "AWS_USE_DUALSTACK_ENDPOINT";
+    var CONFIG_USE_DUALSTACK_ENDPOINT = "use_dualstack_endpoint";
+    var DEFAULT_USE_DUALSTACK_ENDPOINT = false;
+    var NODE_USE_DUALSTACK_ENDPOINT_CONFIG_OPTIONS = {
+      environmentVariableSelector: (env) => (0, import_util_config_provider.booleanSelector)(env, ENV_USE_DUALSTACK_ENDPOINT, import_util_config_provider.SelectorType.ENV),
+      configFileSelector: (profile) => (0, import_util_config_provider.booleanSelector)(profile, CONFIG_USE_DUALSTACK_ENDPOINT, import_util_config_provider.SelectorType.CONFIG),
+      default: false
     };
-    var __copyProps2 = (to, from, except, desc) => {
-      if (from && typeof from === "object" || typeof from === "function") {
-        for (let key of __getOwnPropNames2(from))
-          if (!__hasOwnProp2.call(to, key) && key !== except)
-            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
-      }
-      return to;
+    var ENV_USE_FIPS_ENDPOINT = "AWS_USE_FIPS_ENDPOINT";
+    var CONFIG_USE_FIPS_ENDPOINT = "use_fips_endpoint";
+    var DEFAULT_USE_FIPS_ENDPOINT = false;
+    var NODE_USE_FIPS_ENDPOINT_CONFIG_OPTIONS = {
+      environmentVariableSelector: (env) => (0, import_util_config_provider.booleanSelector)(env, ENV_USE_FIPS_ENDPOINT, import_util_config_provider.SelectorType.ENV),
+      configFileSelector: (profile) => (0, import_util_config_provider.booleanSelector)(profile, CONFIG_USE_FIPS_ENDPOINT, import_util_config_provider.SelectorType.CONFIG),
+      default: false
     };
-    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
-    var src_exports2 = {};
-    __export2(src_exports2, {
-      SignatureV4: () => SignatureV4,
-      clearCredentialCache: () => clearCredentialCache,
-      createScope: () => createScope,
-      getCanonicalHeaders: () => getCanonicalHeaders,
-      getCanonicalQuery: () => getCanonicalQuery,
-      getPayloadHash: () => getPayloadHash,
-      getSigningKey: () => getSigningKey,
-      moveHeadersToQuery: () => moveHeadersToQuery,
-      prepareRequest: () => prepareRequest
-    });
-    module2.exports = __toCommonJS2(src_exports2);
-    var import_eventstream_codec = require_dist_cjs8();
-    var import_util_middleware = require_dist_cjs9();
-    var import_util_utf83 = require_dist_cjs5();
-    var ALGORITHM_QUERY_PARAM = "X-Amz-Algorithm";
-    var CREDENTIAL_QUERY_PARAM = "X-Amz-Credential";
-    var AMZ_DATE_QUERY_PARAM = "X-Amz-Date";
-    var SIGNED_HEADERS_QUERY_PARAM = "X-Amz-SignedHeaders";
-    var EXPIRES_QUERY_PARAM = "X-Amz-Expires";
-    var SIGNATURE_QUERY_PARAM = "X-Amz-Signature";
-    var TOKEN_QUERY_PARAM = "X-Amz-Security-Token";
-    var AUTH_HEADER = "authorization";
-    var AMZ_DATE_HEADER = AMZ_DATE_QUERY_PARAM.toLowerCase();
-    var DATE_HEADER = "date";
-    var GENERATED_HEADERS = [AUTH_HEADER, AMZ_DATE_HEADER, DATE_HEADER];
-    var SIGNATURE_HEADER = SIGNATURE_QUERY_PARAM.toLowerCase();
-    var SHA256_HEADER = "x-amz-content-sha256";
-    var TOKEN_HEADER = TOKEN_QUERY_PARAM.toLowerCase();
-    var ALWAYS_UNSIGNABLE_HEADERS = {
-      authorization: true,
-      "cache-control": true,
-      connection: true,
-      expect: true,
-      from: true,
-      "keep-alive": true,
-      "max-forwards": true,
-      pragma: true,
-      referer: true,
-      te: true,
-      trailer: true,
-      "transfer-encoding": true,
-      upgrade: true,
-      "user-agent": true,
-      "x-amzn-trace-id": true
-    };
-    var PROXY_HEADER_PATTERN = /^proxy-/;
-    var SEC_HEADER_PATTERN = /^sec-/;
-    var ALGORITHM_IDENTIFIER = "AWS4-HMAC-SHA256";
-    var EVENT_ALGORITHM_IDENTIFIER = "AWS4-HMAC-SHA256-PAYLOAD";
-    var UNSIGNED_PAYLOAD = "UNSIGNED-PAYLOAD";
-    var MAX_CACHE_SIZE = 50;
-    var KEY_TYPE_IDENTIFIER = "aws4_request";
-    var MAX_PRESIGNED_TTL = 60 * 60 * 24 * 7;
-    var import_util_hex_encoding = require_dist_cjs7();
-    var import_util_utf8 = require_dist_cjs5();
-    var signingKeyCache = {};
-    var cacheQueue = [];
-    var createScope = /* @__PURE__ */ __name((shortDate, region, service) => `${shortDate}/${region}/${service}/${KEY_TYPE_IDENTIFIER}`, "createScope");
-    var getSigningKey = /* @__PURE__ */ __name(async (sha256Constructor, credentials, shortDate, region, service) => {
-      const credsHash = await hmac(sha256Constructor, credentials.secretAccessKey, credentials.accessKeyId);
-      const cacheKey = `${shortDate}:${region}:${service}:${(0, import_util_hex_encoding.toHex)(credsHash)}:${credentials.sessionToken}`;
-      if (cacheKey in signingKeyCache) {
-        return signingKeyCache[cacheKey];
-      }
-      cacheQueue.push(cacheKey);
-      while (cacheQueue.length > MAX_CACHE_SIZE) {
-        delete signingKeyCache[cacheQueue.shift()];
-      }
-      let key = `AWS4${credentials.secretAccessKey}`;
-      for (const signable of [shortDate, region, service, KEY_TYPE_IDENTIFIER]) {
-        key = await hmac(sha256Constructor, key, signable);
-      }
-      return signingKeyCache[cacheKey] = key;
-    }, "getSigningKey");
-    var clearCredentialCache = /* @__PURE__ */ __name(() => {
-      cacheQueue.length = 0;
-      Object.keys(signingKeyCache).forEach((cacheKey) => {
-        delete signingKeyCache[cacheKey];
-      });
-    }, "clearCredentialCache");
-    var hmac = /* @__PURE__ */ __name((ctor, secret, data) => {
-      const hash = new ctor(secret);
-      hash.update((0, import_util_utf8.toUint8Array)(data));
-      return hash.digest();
-    }, "hmac");
-    var getCanonicalHeaders = /* @__PURE__ */ __name(({ headers }, unsignableHeaders, signableHeaders) => {
-      const canonical = {};
-      for (const headerName of Object.keys(headers).sort()) {
-        if (headers[headerName] == void 0) {
-          continue;
-        }
-        const canonicalHeaderName = headerName.toLowerCase();
-        if (canonicalHeaderName in ALWAYS_UNSIGNABLE_HEADERS || (unsignableHeaders == null ? void 0 : unsignableHeaders.has(canonicalHeaderName)) || PROXY_HEADER_PATTERN.test(canonicalHeaderName) || SEC_HEADER_PATTERN.test(canonicalHeaderName)) {
-          if (!signableHeaders || signableHeaders && !signableHeaders.has(canonicalHeaderName)) {
-            continue;
-          }
-        }
-        canonical[canonicalHeaderName] = headers[headerName].trim().replace(/\s+/g, " ");
-      }
-      return canonical;
-    }, "getCanonicalHeaders");
-    var import_util_uri_escape = require_dist_cjs10();
-    var getCanonicalQuery = /* @__PURE__ */ __name(({ query = {} }) => {
-      const keys = [];
-      const serialized = {};
-      for (const key of Object.keys(query).sort()) {
-        if (key.toLowerCase() === SIGNATURE_HEADER) {
-          continue;
-        }
-        keys.push(key);
-        const value = query[key];
-        if (typeof value === "string") {
-          serialized[key] = `${(0, import_util_uri_escape.escapeUri)(key)}=${(0, import_util_uri_escape.escapeUri)(value)}`;
-        } else if (Array.isArray(value)) {
-          serialized[key] = value.slice(0).reduce(
-            (encoded, value2) => encoded.concat([`${(0, import_util_uri_escape.escapeUri)(key)}=${(0, import_util_uri_escape.escapeUri)(value2)}`]),
-            []
-          ).sort().join("&");
-        }
-      }
-      return keys.map((key) => serialized[key]).filter((serialized2) => serialized2).join("&");
-    }, "getCanonicalQuery");
-    var import_is_array_buffer = require_dist_cjs3();
-    var import_util_utf82 = require_dist_cjs5();
-    var getPayloadHash = /* @__PURE__ */ __name(async ({ headers, body }, hashConstructor) => {
-      for (const headerName of Object.keys(headers)) {
-        if (headerName.toLowerCase() === SHA256_HEADER) {
-          return headers[headerName];
-        }
-      }
-      if (body == void 0) {
-        return "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
-      } else if (typeof body === "string" || ArrayBuffer.isView(body) || (0, import_is_array_buffer.isArrayBuffer)(body)) {
-        const hashCtor = new hashConstructor();
-        hashCtor.update((0, import_util_utf82.toUint8Array)(body));
-        return (0, import_util_hex_encoding.toHex)(await hashCtor.digest());
-      }
-      return UNSIGNED_PAYLOAD;
-    }, "getPayloadHash");
-    var hasHeader = /* @__PURE__ */ __name((soughtHeader, headers) => {
-      soughtHeader = soughtHeader.toLowerCase();
-      for (const headerName of Object.keys(headers)) {
-        if (soughtHeader === headerName.toLowerCase()) {
-          return true;
-        }
-      }
-      return false;
-    }, "hasHeader");
-    var cloneRequest = /* @__PURE__ */ __name(({ headers, query, ...rest }) => ({
-      ...rest,
-      headers: { ...headers },
-      query: query ? cloneQuery(query) : void 0
-    }), "cloneRequest");
-    var cloneQuery = /* @__PURE__ */ __name((query) => Object.keys(query).reduce((carry, paramName) => {
-      const param = query[paramName];
+    var import_util_middleware = require_dist_cjs13();
+    var resolveCustomEndpointsConfig = /* @__PURE__ */ __name((input) => {
+      const { endpoint, urlParser } = input;
       return {
-        ...carry,
-        [paramName]: Array.isArray(param) ? [...param] : param
+        ...input,
+        tls: input.tls ?? true,
+        endpoint: (0, import_util_middleware.normalizeProvider)(typeof endpoint === "string" ? urlParser(endpoint) : endpoint),
+        isCustomEndpoint: true,
+        useDualstackEndpoint: (0, import_util_middleware.normalizeProvider)(input.useDualstackEndpoint ?? false)
       };
-    }, {}), "cloneQuery");
-    var moveHeadersToQuery = /* @__PURE__ */ __name((request, options = {}) => {
-      var _a;
-      const { headers, query = {} } = typeof request.clone === "function" ? request.clone() : cloneRequest(request);
-      for (const name of Object.keys(headers)) {
-        const lname = name.toLowerCase();
-        if (lname.slice(0, 6) === "x-amz-" && !((_a = options.unhoistableHeaders) == null ? void 0 : _a.has(lname))) {
-          query[name] = headers[name];
-          delete headers[name];
-        }
+    }, "resolveCustomEndpointsConfig");
+    var getEndpointFromRegion = /* @__PURE__ */ __name(async (input) => {
+      const { tls = true } = input;
+      const region = await input.region();
+      const dnsHostRegex = new RegExp(/^([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9])$/);
+      if (!dnsHostRegex.test(region)) {
+        throw new Error("Invalid region in client config");
+      }
+      const useDualstackEndpoint = await input.useDualstackEndpoint();
+      const useFipsEndpoint = await input.useFipsEndpoint();
+      const { hostname } = await input.regionInfoProvider(region, { useDualstackEndpoint, useFipsEndpoint }) ?? {};
+      if (!hostname) {
+        throw new Error("Cannot resolve hostname from client config");
+      }
+      return input.urlParser(`${tls ? "https:" : "http:"}//${hostname}`);
+    }, "getEndpointFromRegion");
+    var resolveEndpointsConfig = /* @__PURE__ */ __name((input) => {
+      const useDualstackEndpoint = (0, import_util_middleware.normalizeProvider)(input.useDualstackEndpoint ?? false);
+      const { endpoint, useFipsEndpoint, urlParser } = input;
+      return {
+        ...input,
+        tls: input.tls ?? true,
+        endpoint: endpoint ? (0, import_util_middleware.normalizeProvider)(typeof endpoint === "string" ? urlParser(endpoint) : endpoint) : () => getEndpointFromRegion({ ...input, useDualstackEndpoint, useFipsEndpoint }),
+        isCustomEndpoint: !!endpoint,
+        useDualstackEndpoint
+      };
+    }, "resolveEndpointsConfig");
+    var REGION_ENV_NAME = "AWS_REGION";
+    var REGION_INI_NAME = "region";
+    var NODE_REGION_CONFIG_OPTIONS = {
+      environmentVariableSelector: (env) => env[REGION_ENV_NAME],
+      configFileSelector: (profile) => profile[REGION_INI_NAME],
+      default: () => {
+        throw new Error("Region is missing");
+      }
+    };
+    var NODE_REGION_CONFIG_FILE_OPTIONS = {
+      preferredFile: "credentials"
+    };
+    var isFipsRegion = /* @__PURE__ */ __name((region) => typeof region === "string" && (region.startsWith("fips-") || region.endsWith("-fips")), "isFipsRegion");
+    var getRealRegion = /* @__PURE__ */ __name((region) => isFipsRegion(region) ? ["fips-aws-global", "aws-fips"].includes(region) ? "us-east-1" : region.replace(/fips-(dkr-|prod-)?|-fips/, "") : region, "getRealRegion");
+    var resolveRegionConfig = /* @__PURE__ */ __name((input) => {
+      const { region, useFipsEndpoint } = input;
+      if (!region) {
+        throw new Error("Region is missing");
       }
       return {
-        ...request,
-        headers,
-        query
-      };
-    }, "moveHeadersToQuery");
-    var prepareRequest = /* @__PURE__ */ __name((request) => {
-      request = typeof request.clone === "function" ? request.clone() : cloneRequest(request);
-      for (const headerName of Object.keys(request.headers)) {
-        if (GENERATED_HEADERS.indexOf(headerName.toLowerCase()) > -1) {
-          delete request.headers[headerName];
-        }
-      }
-      return request;
-    }, "prepareRequest");
-    var iso8601 = /* @__PURE__ */ __name((time) => toDate(time).toISOString().replace(/\.\d{3}Z$/, "Z"), "iso8601");
-    var toDate = /* @__PURE__ */ __name((time) => {
-      if (typeof time === "number") {
-        return new Date(time * 1e3);
-      }
-      if (typeof time === "string") {
-        if (Number(time)) {
-          return new Date(Number(time) * 1e3);
-        }
-        return new Date(time);
-      }
-      return time;
-    }, "toDate");
-    var _SignatureV4 = class _SignatureV4 {
-      constructor({
-        applyChecksum,
-        credentials,
-        region,
-        service,
-        sha256,
-        uriEscapePath = true
-      }) {
-        this.headerMarshaller = new import_eventstream_codec.HeaderMarshaller(import_util_utf83.toUtf8, import_util_utf83.fromUtf8);
-        this.service = service;
-        this.sha256 = sha256;
-        this.uriEscapePath = uriEscapePath;
-        this.applyChecksum = typeof applyChecksum === "boolean" ? applyChecksum : true;
-        this.regionProvider = (0, import_util_middleware.normalizeProvider)(region);
-        this.credentialProvider = (0, import_util_middleware.normalizeProvider)(credentials);
-      }
-      async presign(originalRequest, options = {}) {
-        const {
-          signingDate = /* @__PURE__ */ new Date(),
-          expiresIn = 3600,
-          unsignableHeaders,
-          unhoistableHeaders,
-          signableHeaders,
-          signingRegion,
-          signingService
-        } = options;
-        const credentials = await this.credentialProvider();
-        this.validateResolvedCredentials(credentials);
-        const region = signingRegion ?? await this.regionProvider();
-        const { longDate, shortDate } = formatDate(signingDate);
-        if (expiresIn > MAX_PRESIGNED_TTL) {
-          return Promise.reject(
-            "Signature version 4 presigned URLs must have an expiration date less than one week in the future"
-          );
-        }
-        const scope = createScope(shortDate, region, signingService ?? this.service);
-        const request = moveHeadersToQuery(prepareRequest(originalRequest), { unhoistableHeaders });
-        if (credentials.sessionToken) {
-          request.query[TOKEN_QUERY_PARAM] = credentials.sessionToken;
-        }
-        request.query[ALGORITHM_QUERY_PARAM] = ALGORITHM_IDENTIFIER;
-        request.query[CREDENTIAL_QUERY_PARAM] = `${credentials.accessKeyId}/${scope}`;
-        request.query[AMZ_DATE_QUERY_PARAM] = longDate;
-        request.query[EXPIRES_QUERY_PARAM] = expiresIn.toString(10);
-        const canonicalHeaders = getCanonicalHeaders(request, unsignableHeaders, signableHeaders);
-        request.query[SIGNED_HEADERS_QUERY_PARAM] = getCanonicalHeaderList(canonicalHeaders);
-        request.query[SIGNATURE_QUERY_PARAM] = await this.getSignature(
-          longDate,
-          scope,
-          this.getSigningKey(credentials, region, shortDate, signingService),
-          this.createCanonicalRequest(request, canonicalHeaders, await getPayloadHash(originalRequest, this.sha256))
-        );
-        return request;
-      }
-      async sign(toSign, options) {
-        if (typeof toSign === "string") {
-          return this.signString(toSign, options);
-        } else if (toSign.headers && toSign.payload) {
-          return this.signEvent(toSign, options);
-        } else if (toSign.message) {
-          return this.signMessage(toSign, options);
-        } else {
-          return this.signRequest(toSign, options);
-        }
-      }
-      async signEvent({ headers, payload }, { signingDate = /* @__PURE__ */ new Date(), priorSignature, signingRegion, signingService }) {
-        const region = signingRegion ?? await this.regionProvider();
-        const { shortDate, longDate } = formatDate(signingDate);
-        const scope = createScope(shortDate, region, signingService ?? this.service);
-        const hashedPayload = await getPayloadHash({ headers: {}, body: payload }, this.sha256);
-        const hash = new this.sha256();
-        hash.update(headers);
-        const hashedHeaders = (0, import_util_hex_encoding.toHex)(await hash.digest());
-        const stringToSign = [
-          EVENT_ALGORITHM_IDENTIFIER,
-          longDate,
-          scope,
-          priorSignature,
-          hashedHeaders,
-          hashedPayload
-        ].join("\n");
-        return this.signString(stringToSign, { signingDate, signingRegion: region, signingService });
-      }
-      async signMessage(signableMessage, { signingDate = /* @__PURE__ */ new Date(), signingRegion, signingService }) {
-        const promise = this.signEvent(
-          {
-            headers: this.headerMarshaller.format(signableMessage.message.headers),
-            payload: signableMessage.message.body
-          },
-          {
-            signingDate,
-            signingRegion,
-            signingService,
-            priorSignature: signableMessage.priorSignature
+        ...input,
+        region: async () => {
+          if (typeof region === "string") {
+            return getRealRegion(region);
           }
-        );
-        return promise.then((signature) => {
-          return { message: signableMessage.message, signature };
-        });
-      }
-      async signString(stringToSign, { signingDate = /* @__PURE__ */ new Date(), signingRegion, signingService } = {}) {
-        const credentials = await this.credentialProvider();
-        this.validateResolvedCredentials(credentials);
-        const region = signingRegion ?? await this.regionProvider();
-        const { shortDate } = formatDate(signingDate);
-        const hash = new this.sha256(await this.getSigningKey(credentials, region, shortDate, signingService));
-        hash.update((0, import_util_utf83.toUint8Array)(stringToSign));
-        return (0, import_util_hex_encoding.toHex)(await hash.digest());
-      }
-      async signRequest(requestToSign, {
-        signingDate = /* @__PURE__ */ new Date(),
-        signableHeaders,
-        unsignableHeaders,
-        signingRegion,
-        signingService
-      } = {}) {
-        const credentials = await this.credentialProvider();
-        this.validateResolvedCredentials(credentials);
-        const region = signingRegion ?? await this.regionProvider();
-        const request = prepareRequest(requestToSign);
-        const { longDate, shortDate } = formatDate(signingDate);
-        const scope = createScope(shortDate, region, signingService ?? this.service);
-        request.headers[AMZ_DATE_HEADER] = longDate;
-        if (credentials.sessionToken) {
-          request.headers[TOKEN_HEADER] = credentials.sessionToken;
-        }
-        const payloadHash = await getPayloadHash(request, this.sha256);
-        if (!hasHeader(SHA256_HEADER, request.headers) && this.applyChecksum) {
-          request.headers[SHA256_HEADER] = payloadHash;
-        }
-        const canonicalHeaders = getCanonicalHeaders(request, unsignableHeaders, signableHeaders);
-        const signature = await this.getSignature(
-          longDate,
-          scope,
-          this.getSigningKey(credentials, region, shortDate, signingService),
-          this.createCanonicalRequest(request, canonicalHeaders, payloadHash)
-        );
-        request.headers[AUTH_HEADER] = `${ALGORITHM_IDENTIFIER} Credential=${credentials.accessKeyId}/${scope}, SignedHeaders=${getCanonicalHeaderList(canonicalHeaders)}, Signature=${signature}`;
-        return request;
-      }
-      createCanonicalRequest(request, canonicalHeaders, payloadHash) {
-        const sortedHeaders = Object.keys(canonicalHeaders).sort();
-        return `${request.method}
-${this.getCanonicalPath(request)}
-${getCanonicalQuery(request)}
-${sortedHeaders.map((name) => `${name}:${canonicalHeaders[name]}`).join("\n")}
-
-${sortedHeaders.join(";")}
-${payloadHash}`;
-      }
-      async createStringToSign(longDate, credentialScope, canonicalRequest) {
-        const hash = new this.sha256();
-        hash.update((0, import_util_utf83.toUint8Array)(canonicalRequest));
-        const hashedRequest = await hash.digest();
-        return `${ALGORITHM_IDENTIFIER}
-${longDate}
-${credentialScope}
-${(0, import_util_hex_encoding.toHex)(hashedRequest)}`;
-      }
-      getCanonicalPath({ path }) {
-        if (this.uriEscapePath) {
-          const normalizedPathSegments = [];
-          for (const pathSegment of path.split("/")) {
-            if ((pathSegment == null ? void 0 : pathSegment.length) === 0)
-              continue;
-            if (pathSegment === ".")
-              continue;
-            if (pathSegment === "..") {
-              normalizedPathSegments.pop();
-            } else {
-              normalizedPathSegments.push(pathSegment);
-            }
-          }
-          const normalizedPath = `${(path == null ? void 0 : path.startsWith("/")) ? "/" : ""}${normalizedPathSegments.join("/")}${normalizedPathSegments.length > 0 && (path == null ? void 0 : path.endsWith("/")) ? "/" : ""}`;
-          const doubleEncoded = encodeURIComponent(normalizedPath);
-          return doubleEncoded.replace(/%2F/g, "/");
-        }
-        return path;
-      }
-      async getSignature(longDate, credentialScope, keyPromise, canonicalRequest) {
-        const stringToSign = await this.createStringToSign(longDate, credentialScope, canonicalRequest);
-        const hash = new this.sha256(await keyPromise);
-        hash.update((0, import_util_utf83.toUint8Array)(stringToSign));
-        return (0, import_util_hex_encoding.toHex)(await hash.digest());
-      }
-      getSigningKey(credentials, region, shortDate, service) {
-        return getSigningKey(this.sha256, credentials, shortDate, region, service || this.service);
-      }
-      validateResolvedCredentials(credentials) {
-        if (typeof credentials !== "object" || // @ts-expect-error: Property 'accessKeyId' does not exist on type 'object'.ts(2339)
-        typeof credentials.accessKeyId !== "string" || // @ts-expect-error: Property 'secretAccessKey' does not exist on type 'object'.ts(2339)
-        typeof credentials.secretAccessKey !== "string") {
-          throw new Error("Resolved credential object is not valid");
-        }
-      }
-    };
-    __name(_SignatureV4, "SignatureV4");
-    var SignatureV4 = _SignatureV4;
-    var formatDate = /* @__PURE__ */ __name((now) => {
-      const longDate = iso8601(now).replace(/[\-:]/g, "");
-      return {
-        longDate,
-        shortDate: longDate.slice(0, 8)
-      };
-    }, "formatDate");
-    var getCanonicalHeaderList = /* @__PURE__ */ __name((headers) => Object.keys(headers).sort().join(";"), "getCanonicalHeaderList");
-  }
-});
-
-// ../../../../packages/lib/dist/cjs/utils.js
-var require_utils = __commonJS({
-  "../../../../packages/lib/dist/cjs/utils.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.signAwsRequest = exports2.getAwsCredsProvider = exports2.replacePlaceholdersInText = void 0;
-    var sha256_js_1 = require_main2();
-    var credential_provider_node_1 = require("@aws-sdk/credential-provider-node");
-    var credential_providers_1 = require("@aws-sdk/credential-providers");
-    var signature_v4_1 = require_dist_cjs11();
-    function replacePlaceholdersInText(text, replacementPairs, templateTag = ["${", "}"]) {
-      let replacedText = text;
-      replacementPairs.forEach(([target, replacement]) => {
-        const regex = new RegExp(`${templateTag[0]}${target}${templateTag[1]}`, "g");
-        replacedText = replacedText.replace(regex, replacement);
-      });
-      return replacedText;
-    }
-    exports2.replacePlaceholdersInText = replacePlaceholdersInText;
-    function getAwsCredsProvider(profile) {
-      if (process.env.CI === "true") {
-        try {
-          return (0, credential_providers_1.fromEnv)();
-        } catch (error) {
-          console.error("Failed to load AWS credentials from token file:", error);
-          return void 0;
-        }
-      } else if (process.env.AWS_LAMBDA_FUNCTION_NAME) {
-        console.log("Running in AWS Lambda. Using execution role for credentials.");
-        return void 0;
-      } else {
-        return (0, credential_providers_1.fromIni)({ profile });
-      }
-    }
-    exports2.getAwsCredsProvider = getAwsCredsProvider;
-    async function signAwsRequest(service, request, region) {
-      request.headers["Host"] = new URL(`https://${request.hostname}`).hostname;
-      function headersToHeaderBag(headers) {
-        const headerBag = {};
-        headers.forEach((value, key) => {
-          headerBag[key] = value;
-        });
-        return headerBag;
-      }
-      request.headers = headersToHeaderBag(new Headers(Object.entries(request.headers)));
-      console.log(444, request.headers);
-      const signer = new signature_v4_1.SignatureV4({
-        credentials: (0, credential_provider_node_1.defaultProvider)(),
-        region,
-        service,
-        sha256: sha256_js_1.Sha256
-      });
-      const signedRequest = await signer.sign(request);
-      return signedRequest;
-    }
-    exports2.signAwsRequest = signAwsRequest;
-  }
-});
-
-// ../../../../packages/lib/dist/cjs/appsync.js
-var require_appsync = __commonJS({
-  "../../../../packages/lib/dist/cjs/appsync.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.callGqlEndpoint = void 0;
-    var protocol_http_1 = require_dist_cjs2();
-    var utils_1 = require_utils();
-    async function callGqlEndpoint(params) {
-      const region = process.env.AWS_REGION || process.env.REGION;
-      if (!region)
-        throw new Error("Region not found in environment variables");
-      const { graphqlEndpoint, query, variables } = params;
-      const request = new protocol_http_1.HttpRequest({
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        hostname: new URL(graphqlEndpoint).hostname,
-        path: params.path,
-        body: JSON.stringify({ query, variables })
-      });
-      const signedRequest = await (0, utils_1.signAwsRequest)("appsync", request, region);
-      const response = await fetch(graphqlEndpoint, {
-        method: "POST",
-        headers: signedRequest.headers,
-        body: signedRequest.body
-      });
-      if (!response.ok) {
-        const errorBody = await response.text();
-        console.error(`Error calling GraphQL endpoint: ${errorBody}`);
-        throw new Error(`Network response was not ok: ${response.statusText}`);
-      }
-      return response.json();
-    }
-    exports2.callGqlEndpoint = callGqlEndpoint;
-  }
-});
-
-// ../../../../packages/lib/dist/cjs/lambda-response.js
-var require_lambda_response = __commonJS({
-  "../../../../packages/lib/dist/cjs/lambda-response.js"(exports2) {
-    "use strict";
-    var _a;
-    var _b;
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.runApiOps = exports2.handleError = exports2.createResponse = exports2.addCORSHeaders = void 0;
-    var preflightCacheTtl = process.env.PREFLIGHT_CACHE_TTL || "3600";
-    var allowedOrigins = JSON.parse(process.env.ALLOWED_ORIGINS || "[]");
-    var isConsole = ((_a = process.env.LOGGING_LEVEL) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === "debug" || ((_b = process.env.LOGGING_LEVEL) === null || _b === void 0 ? void 0 : _b.toLowerCase()) === "verbose";
-    var addCORSHeaders = (response, allowedOrigin) => {
-      response.headers = {
-        ...response.headers,
-        "Access-Control-Allow-Origin": allowedOrigin,
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS, PATCH",
-        "Access-Control-Allow-Headers": "Content-Type, X-Amz-Date, Authorization, X-Api-Key, X-Amz-Security-Token",
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Control-Max-Age": preflightCacheTtl
-      };
-      return response;
-    };
-    exports2.addCORSHeaders = addCORSHeaders;
-    var createResponse = (eventHeaders, statusCode, body) => {
-      let origin;
-      if (eventHeaders)
-        origin = eventHeaders["Origin"] || eventHeaders["origin"];
-      const basicResponse = {
-        statusCode,
-        body: JSON.stringify(body),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      };
-      if (origin && allowedOrigins.includes(origin)) {
-        return (0, exports2.addCORSHeaders)(basicResponse, origin);
-      } else {
-        return basicResponse;
-      }
-    };
-    exports2.createResponse = createResponse;
-    var handleError = (error) => {
-      console.error(error);
-      const response = {
-        statusCode: 500,
-        body: JSON.stringify({ message: "Internal Server Error" })
-      };
-      const errorMappings = {
-        ValidationError: { statusCode: 400, message: "Validation failed" },
-        UnauthorizedError: { statusCode: 401, message: "Unauthorized access" },
-        ForbiddenError: { statusCode: 403, message: "Access forbidden" },
-        NotFoundError: { statusCode: 404, message: "Resource not found" },
-        MethodNotAllowedError: { statusCode: 405, message: "Method not allowed" },
-        ConflictError: { statusCode: 409, message: "Resource conflict" },
-        InternalServerError: {
-          statusCode: 500,
-          message: "Internal server error"
+          const providedRegion = await region();
+          return getRealRegion(providedRegion);
         },
-        ServiceUnavailableError: {
-          statusCode: 503,
-          message: "Service unavailable"
+        useFipsEndpoint: async () => {
+          const providedRegion = typeof region === "string" ? region : await region();
+          if (isFipsRegion(providedRegion)) {
+            return true;
+          }
+          return typeof useFipsEndpoint !== "function" ? Promise.resolve(!!useFipsEndpoint) : useFipsEndpoint();
         }
       };
-      if (errorMappings[error.name]) {
-        const mappedError = errorMappings[error.name];
-        response.statusCode = mappedError === null || mappedError === void 0 ? void 0 : mappedError.statusCode;
-        response.body = JSON.stringify({
-          message: error.message || (mappedError === null || mappedError === void 0 ? void 0 : mappedError.message)
-        });
-      } else if (error.statusCode) {
-        response.statusCode = error.statusCode;
-        response.body = JSON.stringify({ message: error.message });
-      }
-      return response;
-    };
-    exports2.handleError = handleError;
-    async function runApiOps({ operation, event, apiUrl, apiKey }) {
-      try {
-        if (isConsole)
-          console.log({ event });
-        const result = await operation({ event, apiUrl, apiKey });
-        const response = (0, exports2.createResponse)(event.headers, 200, result);
-        if (isConsole)
-          console.log({ response });
-        return response;
-      } catch (error) {
-        console.error("Error:", error);
-        return (0, exports2.handleError)(error);
-      }
-    }
-    exports2.runApiOps = runApiOps;
-  }
-});
-
-// ../../../../packages/lib/dist/cjs/parameter.js
-var require_parameter = __commonJS({
-  "../../../../packages/lib/dist/cjs/parameter.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.getParameter = void 0;
-    var client_ssm_1 = require("@aws-sdk/client-ssm");
-    var utils_1 = require_utils();
-    var getParameter = async (parameterName, region, profile) => {
+    }, "resolveRegionConfig");
+    var getHostnameFromVariants = /* @__PURE__ */ __name((variants = [], { useFipsEndpoint, useDualstackEndpoint }) => {
       var _a;
-      const ssmClient = new client_ssm_1.SSMClient({
-        region,
-        credentials: (0, utils_1.getAwsCredsProvider)(profile)
+      return (_a = variants.find(
+        ({ tags }) => useFipsEndpoint === tags.includes("fips") && useDualstackEndpoint === tags.includes("dualstack")
+      )) == null ? void 0 : _a.hostname;
+    }, "getHostnameFromVariants");
+    var getResolvedHostname = /* @__PURE__ */ __name((resolvedRegion, { regionHostname, partitionHostname }) => regionHostname ? regionHostname : partitionHostname ? partitionHostname.replace("{region}", resolvedRegion) : void 0, "getResolvedHostname");
+    var getResolvedPartition = /* @__PURE__ */ __name((region, { partitionHash }) => Object.keys(partitionHash || {}).find((key) => partitionHash[key].regions.includes(region)) ?? "aws", "getResolvedPartition");
+    var getResolvedSigningRegion = /* @__PURE__ */ __name((hostname, { signingRegion, regionRegex, useFipsEndpoint }) => {
+      if (signingRegion) {
+        return signingRegion;
+      } else if (useFipsEndpoint) {
+        const regionRegexJs = regionRegex.replace("\\\\", "\\").replace(/^\^/g, "\\.").replace(/\$$/g, "\\.");
+        const regionRegexmatchArray = hostname.match(regionRegexJs);
+        if (regionRegexmatchArray) {
+          return regionRegexmatchArray[0].slice(1, -1);
+        }
+      }
+    }, "getResolvedSigningRegion");
+    var getRegionInfo = /* @__PURE__ */ __name((region, {
+      useFipsEndpoint = false,
+      useDualstackEndpoint = false,
+      signingService,
+      regionHash,
+      partitionHash
+    }) => {
+      var _a, _b, _c, _d, _e;
+      const partition = getResolvedPartition(region, { partitionHash });
+      const resolvedRegion = region in regionHash ? region : ((_a = partitionHash[partition]) == null ? void 0 : _a.endpoint) ?? region;
+      const hostnameOptions = { useFipsEndpoint, useDualstackEndpoint };
+      const regionHostname = getHostnameFromVariants((_b = regionHash[resolvedRegion]) == null ? void 0 : _b.variants, hostnameOptions);
+      const partitionHostname = getHostnameFromVariants((_c = partitionHash[partition]) == null ? void 0 : _c.variants, hostnameOptions);
+      const hostname = getResolvedHostname(resolvedRegion, { regionHostname, partitionHostname });
+      if (hostname === void 0) {
+        throw new Error(`Endpoint resolution failed for: ${{ resolvedRegion, useFipsEndpoint, useDualstackEndpoint }}`);
+      }
+      const signingRegion = getResolvedSigningRegion(hostname, {
+        signingRegion: (_d = regionHash[resolvedRegion]) == null ? void 0 : _d.signingRegion,
+        regionRegex: partitionHash[partition].regionRegex,
+        useFipsEndpoint
       });
-      try {
-        const command = new client_ssm_1.GetParameterCommand({
-          Name: parameterName,
-          WithDecryption: true
-        });
-        const response = await ssmClient.send(command);
-        return ((_a = response.Parameter) === null || _a === void 0 ? void 0 : _a.Value) || "";
-      } catch (error) {
-        console.warn(`Error fetching parameter: ${error}`);
-        throw error;
-      }
-    };
-    exports2.getParameter = getParameter;
-  }
-});
-
-// ../../../../packages/lib/dist/cjs/secret.js
-var require_secret = __commonJS({
-  "../../../../packages/lib/dist/cjs/secret.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.getSecret = exports2.getSecretFromSecretsManager = void 0;
-    var client_secrets_manager_1 = require("@aws-sdk/client-secrets-manager");
-    var parameter_1 = require_parameter();
-    var utils_1 = require_utils();
-    var getSecretFromSecretsManager = async ({ secretId, region, profile }) => {
-      const secretsManagerClient = new client_secrets_manager_1.SecretsManagerClient({
-        region,
-        credentials: (0, utils_1.getAwsCredsProvider)(profile)
-      });
-      try {
-        const command = new client_secrets_manager_1.GetSecretValueCommand({ SecretId: secretId });
-        const response = await secretsManagerClient.send(command);
-        return response.SecretString || "";
-      } catch (error) {
-        console.error(`Error fetching secret: ${error}`);
-        throw error;
-      }
-    };
-    exports2.getSecretFromSecretsManager = getSecretFromSecretsManager;
-    var getSecret = async ({ key, env, region, profile }) => {
-      try {
-        if (env === "prod") {
-          return await (0, exports2.getSecretFromSecretsManager)({
-            secretId: key,
-            region,
-            profile
-          });
-        } else {
-          const secret = await (0, parameter_1.getParameter)(key, region, profile);
-          return secret || process.env[key];
+      return {
+        partition,
+        signingService,
+        hostname,
+        ...signingRegion && { signingRegion },
+        ...((_e = regionHash[resolvedRegion]) == null ? void 0 : _e.signingService) && {
+          signingService: regionHash[resolvedRegion].signingService
         }
-      } catch (error) {
-        console.warn(`Error fetching secret: ${error}`);
-        return void 0;
-      }
-    };
-    exports2.getSecret = getSecret;
-  }
-});
-
-// ../../../../node_modules/change-case-all/dist/index.umd.cjs
-var require_index_umd = __commonJS({
-  "../../../../node_modules/change-case-all/dist/index.umd.cjs"(exports2, module2) {
-    (function(global, factory) {
-      typeof exports2 === "object" && typeof module2 !== "undefined" ? factory(exports2) : typeof define === "function" && define.amd ? define(["exports"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.ChangeCaseAll = {}));
-    })(exports2, function(exports22) {
-      "use strict";
-      const SPLIT_LOWER_UPPER_RE = new RegExp("([\\p{Ll}\\d])(\\p{Lu})", "gu");
-      const SPLIT_UPPER_UPPER_RE = new RegExp("(\\p{Lu})([\\p{Lu}][\\p{Ll}])", "gu");
-      const SPLIT_NUMBER_LOWER_RE = new RegExp("(\\d)(\\p{Ll})", "gu");
-      const SPLIT_LETTER_NUMBER_RE = new RegExp("(\\p{L})(\\d)", "gu");
-      const DEFAULT_STRIP_REGEXP = /[^\p{L}\d]+/giu;
-      const SPLIT_REPLACE_VALUE = "$1\0$2";
-      const DEFAULT_PREFIX_CHARACTERS = "";
-      function split(input, options) {
-        let result = input.trim();
-        result = result.replace(SPLIT_LOWER_UPPER_RE, SPLIT_REPLACE_VALUE).replace(SPLIT_UPPER_UPPER_RE, SPLIT_REPLACE_VALUE);
-        if (options == null ? void 0 : options.separateNumbers) {
-          result = result.replace(SPLIT_NUMBER_LOWER_RE, SPLIT_REPLACE_VALUE).replace(SPLIT_LETTER_NUMBER_RE, SPLIT_REPLACE_VALUE);
-        }
-        result = result.replace(DEFAULT_STRIP_REGEXP, "\0");
-        let start = 0;
-        let end = result.length;
-        while (result.charAt(start) === "\0")
-          start++;
-        if (start === end)
-          return [];
-        while (result.charAt(end - 1) === "\0")
-          end--;
-        return result.slice(start, end).split(/\0/g);
-      }
-      function noCase$1(input, options) {
-        const prefix = getPrefix(input, options == null ? void 0 : options.prefixCharacters);
-        return prefix + split(input, options).map(lowerFactory(options == null ? void 0 : options.locale)).join((options == null ? void 0 : options.delimiter) ?? " ");
-      }
-      function camelCase$1(input, options) {
-        const prefix = getPrefix(input, options == null ? void 0 : options.prefixCharacters);
-        const lower = lowerFactory(options == null ? void 0 : options.locale);
-        const upper = upperFactory(options == null ? void 0 : options.locale);
-        const transform = (options == null ? void 0 : options.mergeAmbiguousCharacters) ? capitalCaseTransformFactory(lower, upper) : pascalCaseTransformFactory(lower, upper);
-        return prefix + split(input, options).map((word, index) => {
-          if (index === 0)
-            return lower(word);
-          return transform(word, index);
-        }).join((options == null ? void 0 : options.delimiter) ?? "");
-      }
-      function pascalCase$1(input, options) {
-        const prefix = getPrefix(input, options == null ? void 0 : options.prefixCharacters);
-        const lower = lowerFactory(options == null ? void 0 : options.locale);
-        const upper = upperFactory(options == null ? void 0 : options.locale);
-        const transform = (options == null ? void 0 : options.mergeAmbiguousCharacters) ? capitalCaseTransformFactory(lower, upper) : pascalCaseTransformFactory(lower, upper);
-        return prefix + split(input, options).map(transform).join((options == null ? void 0 : options.delimiter) ?? "");
-      }
-      function capitalCase$1(input, options) {
-        const prefix = getPrefix(input, options == null ? void 0 : options.prefixCharacters);
-        const lower = lowerFactory(options == null ? void 0 : options.locale);
-        const upper = upperFactory(options == null ? void 0 : options.locale);
-        return prefix + split(input, options).map(capitalCaseTransformFactory(lower, upper)).join((options == null ? void 0 : options.delimiter) ?? " ");
-      }
-      function constantCase$1(input, options) {
-        const prefix = getPrefix(input, options == null ? void 0 : options.prefixCharacters);
-        return prefix + split(input, options).map(upperFactory(options == null ? void 0 : options.locale)).join((options == null ? void 0 : options.delimiter) ?? "_");
-      }
-      function dotCase$1(input, options) {
-        return noCase$1(input, { delimiter: ".", ...options });
-      }
-      function kebabCase$1(input, options) {
-        return noCase$1(input, { delimiter: "-", ...options });
-      }
-      function pathCase$1(input, options) {
-        return noCase$1(input, { delimiter: "/", ...options });
-      }
-      function sentenceCase$1(input, options) {
-        const prefix = getPrefix(input, options == null ? void 0 : options.prefixCharacters);
-        const lower = lowerFactory(options == null ? void 0 : options.locale);
-        const upper = upperFactory(options == null ? void 0 : options.locale);
-        const transform = capitalCaseTransformFactory(lower, upper);
-        return prefix + split(input, options).map((word, index) => {
-          if (index === 0)
-            return transform(word);
-          return lower(word);
-        }).join((options == null ? void 0 : options.delimiter) ?? " ");
-      }
-      function snakeCase$1(input, options) {
-        return noCase$1(input, { delimiter: "_", ...options });
-      }
-      function trainCase$1(input, options) {
-        return capitalCase$1(input, { delimiter: "-", ...options });
-      }
-      function lowerFactory(locale) {
-        return locale === false ? (input) => input.toLowerCase() : (input) => input.toLocaleLowerCase(locale);
-      }
-      function upperFactory(locale) {
-        return locale === false ? (input) => input.toUpperCase() : (input) => input.toLocaleUpperCase(locale);
-      }
-      function capitalCaseTransformFactory(lower, upper) {
-        return (word) => `${upper(word[0])}${lower(word.slice(1))}`;
-      }
-      function pascalCaseTransformFactory(lower, upper) {
-        return (word, index) => {
-          const char0 = word[0];
-          const initial = index > 0 && char0 >= "0" && char0 <= "9" ? "_" + char0 : upper(char0);
-          return initial + lower(word.slice(1));
-        };
-      }
-      function getPrefix(input, prefixCharacters = DEFAULT_PREFIX_CHARACTERS) {
-        let prefix = "";
-        for (let i = 0; i < input.length; i++) {
-          const char = input.charAt(i);
-          if (prefixCharacters.includes(char)) {
-            prefix += char;
-          } else {
-            break;
-          }
-        }
-        return prefix;
-      }
-      function spongeCase$1(input, locale) {
-        let result = "";
-        for (const char of input) {
-          result += Math.random() > 0.5 ? char.toLocaleUpperCase(locale) : char.toLocaleLowerCase(locale);
-        }
-        return result;
-      }
-      function swapCase$1(input, locale) {
-        let result = "";
-        for (const char of input) {
-          const lower = char.toLocaleLowerCase(locale);
-          result += char === lower ? char.toLocaleUpperCase(locale) : lower;
-        }
-        return result;
-      }
-      var SMALL_WORDS = /\b(?:an?d?|a[st]|because|but|by|en|for|i[fn]|neither|nor|o[fnr]|only|over|per|so|some|tha[tn]|the|to|up|upon|vs?\.?|versus|via|when|with|without|yet)\b/i;
-      var TOKENS = /[^\s:–—-]+|./g;
-      var WHITESPACE = /\s/;
-      var IS_MANUAL_CASE = /.(?=[A-Z]|\..)/;
-      var ALPHANUMERIC_PATTERN = /[A-Za-z0-9\u00C0-\u00FF]/;
-      function titleCase$1(input) {
-        var result = "";
-        var m;
-        while ((m = TOKENS.exec(input)) !== null) {
-          var token = m[0], index = m.index;
-          if (
-            // Ignore already capitalized words.
-            !IS_MANUAL_CASE.test(token) && // Ignore small words except at beginning or end.
-            (!SMALL_WORDS.test(token) || index === 0 || index + token.length === input.length) && // Ignore URLs.
-            (input.charAt(index + token.length) !== ":" || WHITESPACE.test(input.charAt(index + token.length + 1)))
-          ) {
-            result += token.replace(ALPHANUMERIC_PATTERN, function(m2) {
-              return m2.toUpperCase();
-            });
-            continue;
-          }
-          result += token;
-        }
-        return result;
-      }
-      const camelCase = camelCase$1;
-      const capitalCase = capitalCase$1;
-      const constantCase = constantCase$1;
-      const dotCase = dotCase$1;
-      const noCase = noCase$1;
-      const pascalCase = pascalCase$1;
-      const pathCase = pathCase$1;
-      const sentenceCase = sentenceCase$1;
-      const snakeCase = snakeCase$1;
-      const headerCase = trainCase$1;
-      const trainCase = trainCase$1;
-      const paramCase = kebabCase$1;
-      const kebabCase = kebabCase$1;
-      const spongeCase = spongeCase$1;
-      const swapCase = swapCase$1;
-      const titleCase = titleCase$1;
-      const upperCase = (str) => str.toUpperCase();
-      const localeUpperCase = (str, locales) => str.toLocaleUpperCase(locales);
-      const lowerCase = (str) => str.toLowerCase();
-      const localeLowerCase = (str, locales) => str.toLocaleLowerCase(locales);
-      const lowerCaseFirst = (str) => str.charAt(0).toLowerCase() + str.slice(1);
-      const upperCaseFirst = (str) => str.charAt(0).toUpperCase() + str.slice(1);
-      const isUpperCase = (str) => str === str.toUpperCase();
-      const isLowerCase = (str) => str === str.toLowerCase();
-      const _Case = class _Case {
       };
-      _Case.camel = camelCase;
-      _Case.capital = capitalCase;
-      _Case.constant = constantCase;
-      _Case.dot = dotCase;
-      _Case.kebab = kebabCase;
-      _Case.lower = lowerCase;
-      _Case.lowerFirst = lowerCaseFirst;
-      _Case.localeLower = localeLowerCase;
-      _Case.localeUpper = localeUpperCase;
-      _Case.no = noCase;
-      _Case.pascal = pascalCase;
-      _Case.path = pathCase;
-      _Case.sentence = sentenceCase;
-      _Case.snake = snakeCase;
-      _Case.sponge = spongeCase;
-      _Case.swap = swapCase;
-      _Case.title = titleCase;
-      _Case.train = trainCase;
-      _Case.upper = upperCase;
-      _Case.upperFirst = upperCaseFirst;
-      _Case.isUpper = isUpperCase;
-      _Case.isLower = isLowerCase;
-      let Case = _Case;
-      exports22.Case = Case;
-      exports22.camelCase = camelCase;
-      exports22.capitalCase = capitalCase;
-      exports22.constantCase = constantCase;
-      exports22.dotCase = dotCase;
-      exports22.headerCase = headerCase;
-      exports22.isLowerCase = isLowerCase;
-      exports22.isUpperCase = isUpperCase;
-      exports22.kebabCase = kebabCase;
-      exports22.localeLowerCase = localeLowerCase;
-      exports22.localeUpperCase = localeUpperCase;
-      exports22.lowerCase = lowerCase;
-      exports22.lowerCaseFirst = lowerCaseFirst;
-      exports22.noCase = noCase;
-      exports22.paramCase = paramCase;
-      exports22.pascalCase = pascalCase;
-      exports22.pathCase = pathCase;
-      exports22.sentenceCase = sentenceCase;
-      exports22.snakeCase = snakeCase;
-      exports22.spongeCase = spongeCase;
-      exports22.swapCase = swapCase;
-      exports22.titleCase = titleCase;
-      exports22.trainCase = trainCase;
-      exports22.upperCase = upperCase;
-      exports22.upperCaseFirst = upperCaseFirst;
-      Object.defineProperty(exports22, Symbol.toStringTag, { value: "Module" });
-    });
-  }
-});
-
-// ../../../../node_modules/@smithy/querystring-builder/dist-cjs/index.js
-var require_dist_cjs12 = __commonJS({
-  "../../../../node_modules/@smithy/querystring-builder/dist-cjs/index.js"(exports2, module2) {
-    var __defProp2 = Object.defineProperty;
-    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
-    var __getOwnPropNames2 = Object.getOwnPropertyNames;
-    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
-    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
-    var __export2 = (target, all) => {
-      for (var name in all)
-        __defProp2(target, name, { get: all[name], enumerable: true });
-    };
-    var __copyProps2 = (to, from, except, desc) => {
-      if (from && typeof from === "object" || typeof from === "function") {
-        for (let key of __getOwnPropNames2(from))
-          if (!__hasOwnProp2.call(to, key) && key !== except)
-            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
-      }
-      return to;
-    };
-    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
-    var src_exports2 = {};
-    __export2(src_exports2, {
-      buildQueryString: () => buildQueryString
-    });
-    module2.exports = __toCommonJS2(src_exports2);
-    var import_util_uri_escape = require_dist_cjs10();
-    function buildQueryString(query) {
-      const parts = [];
-      for (let key of Object.keys(query).sort()) {
-        const value = query[key];
-        key = (0, import_util_uri_escape.escapeUri)(key);
-        if (Array.isArray(value)) {
-          for (let i = 0, iLen = value.length; i < iLen; i++) {
-            parts.push(`${key}=${(0, import_util_uri_escape.escapeUri)(value[i])}`);
-          }
-        } else {
-          let qsEntry = key;
-          if (value || typeof value === "string") {
-            qsEntry += `=${(0, import_util_uri_escape.escapeUri)(value)}`;
-          }
-          parts.push(qsEntry);
-        }
-      }
-      return parts.join("&");
-    }
-    __name(buildQueryString, "buildQueryString");
-  }
-});
-
-// ../../../../node_modules/@aws-sdk/util-format-url/dist-cjs/index.js
-var require_dist_cjs13 = __commonJS({
-  "../../../../node_modules/@aws-sdk/util-format-url/dist-cjs/index.js"(exports2, module2) {
-    var __defProp2 = Object.defineProperty;
-    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
-    var __getOwnPropNames2 = Object.getOwnPropertyNames;
-    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
-    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
-    var __export2 = (target, all) => {
-      for (var name in all)
-        __defProp2(target, name, { get: all[name], enumerable: true });
-    };
-    var __copyProps2 = (to, from, except, desc) => {
-      if (from && typeof from === "object" || typeof from === "function") {
-        for (let key of __getOwnPropNames2(from))
-          if (!__hasOwnProp2.call(to, key) && key !== except)
-            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
-      }
-      return to;
-    };
-    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
-    var src_exports2 = {};
-    __export2(src_exports2, {
-      formatUrl: () => formatUrl
-    });
-    module2.exports = __toCommonJS2(src_exports2);
-    var import_querystring_builder = require_dist_cjs12();
-    function formatUrl(request) {
-      const { port, query } = request;
-      let { protocol, path, hostname } = request;
-      if (protocol && protocol.slice(-1) !== ":") {
-        protocol += ":";
-      }
-      if (port) {
-        hostname += `:${port}`;
-      }
-      if (path && path.charAt(0) !== "/") {
-        path = `/${path}`;
-      }
-      let queryString = query ? (0, import_querystring_builder.buildQueryString)(query) : "";
-      if (queryString && queryString[0] !== "?") {
-        queryString = `?${queryString}`;
-      }
-      let auth = "";
-      if (request.username != null || request.password != null) {
-        const username = request.username ?? "";
-        const password = request.password ?? "";
-        auth = `${username}:${password}@`;
-      }
-      let fragment = "";
-      if (request.fragment) {
-        fragment = `#${request.fragment}`;
-      }
-      return `${protocol}//${auth}${hostname}${path}${queryString}${fragment}`;
-    }
-    __name(formatUrl, "formatUrl");
+    }, "getRegionInfo");
   }
 });
 
 // ../../../../node_modules/@smithy/property-provider/dist-cjs/index.js
-var require_dist_cjs14 = __commonJS({
+var require_dist_cjs15 = __commonJS({
   "../../../../node_modules/@smithy/property-provider/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -4189,7 +3018,7 @@ var require_slurpFile = __commonJS({
 });
 
 // ../../../../node_modules/@smithy/shared-ini-file-loader/dist-cjs/index.js
-var require_dist_cjs15 = __commonJS({
+var require_dist_cjs16 = __commonJS({
   "../../../../node_modules/@smithy/shared-ini-file-loader/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -4343,7 +3172,7 @@ var require_dist_cjs15 = __commonJS({
 });
 
 // ../../../../node_modules/@smithy/node-config-provider/dist-cjs/index.js
-var require_dist_cjs16 = __commonJS({
+var require_dist_cjs17 = __commonJS({
   "../../../../node_modules/@smithy/node-config-provider/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -4368,7 +3197,7 @@ var require_dist_cjs16 = __commonJS({
       loadConfig: () => loadConfig
     });
     module2.exports = __toCommonJS2(src_exports2);
-    var import_property_provider = require_dist_cjs14();
+    var import_property_provider = require_dist_cjs15();
     var fromEnv = /* @__PURE__ */ __name((envVarSelector) => async () => {
       try {
         const config = envVarSelector(process.env);
@@ -4382,7 +3211,7 @@ var require_dist_cjs16 = __commonJS({
         );
       }
     }, "fromEnv");
-    var import_shared_ini_file_loader = require_dist_cjs15();
+    var import_shared_ini_file_loader = require_dist_cjs16();
     var fromSharedConfigFiles = /* @__PURE__ */ __name((configSelector, { preferredFile = "config", ...init } = {}) => async () => {
       const profile = (0, import_shared_ini_file_loader.getProfileName)(init);
       const { configFile, credentialsFile } = await (0, import_shared_ini_file_loader.loadSharedConfigFiles)(init);
@@ -4420,7 +3249,7 @@ var require_getEndpointUrlConfig = __commonJS({
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.getEndpointUrlConfig = void 0;
-    var shared_ini_file_loader_1 = require_dist_cjs15();
+    var shared_ini_file_loader_1 = require_dist_cjs16();
     var ENV_ENDPOINT_URL = "AWS_ENDPOINT_URL";
     var CONFIG_ENDPOINT_URL = "endpoint_url";
     var getEndpointUrlConfig = (serviceId) => ({
@@ -4461,7 +3290,7 @@ var require_getEndpointFromConfig = __commonJS({
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.getEndpointFromConfig = void 0;
-    var node_config_provider_1 = require_dist_cjs16();
+    var node_config_provider_1 = require_dist_cjs17();
     var getEndpointUrlConfig_1 = require_getEndpointUrlConfig();
     var getEndpointFromConfig = async (serviceId) => (0, node_config_provider_1.loadConfig)((0, getEndpointUrlConfig_1.getEndpointUrlConfig)(serviceId))();
     exports2.getEndpointFromConfig = getEndpointFromConfig;
@@ -4469,7 +3298,7 @@ var require_getEndpointFromConfig = __commonJS({
 });
 
 // ../../../../node_modules/@smithy/querystring-parser/dist-cjs/index.js
-var require_dist_cjs17 = __commonJS({
+var require_dist_cjs18 = __commonJS({
   "../../../../node_modules/@smithy/querystring-parser/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -4520,7 +3349,7 @@ var require_dist_cjs17 = __commonJS({
 });
 
 // ../../../../node_modules/@smithy/url-parser/dist-cjs/index.js
-var require_dist_cjs18 = __commonJS({
+var require_dist_cjs19 = __commonJS({
   "../../../../node_modules/@smithy/url-parser/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -4545,7 +3374,7 @@ var require_dist_cjs18 = __commonJS({
       parseUrl: () => parseUrl
     });
     module2.exports = __toCommonJS2(src_exports2);
-    var import_querystring_parser = require_dist_cjs17();
+    var import_querystring_parser = require_dist_cjs18();
     var parseUrl = /* @__PURE__ */ __name((url) => {
       if (typeof url === "string") {
         return parseUrl(new URL(url));
@@ -4567,7 +3396,7 @@ var require_dist_cjs18 = __commonJS({
 });
 
 // ../../../../node_modules/@smithy/middleware-serde/dist-cjs/index.js
-var require_dist_cjs19 = __commonJS({
+var require_dist_cjs20 = __commonJS({
   "../../../../node_modules/@smithy/middleware-serde/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -4657,7 +3486,7 @@ var require_dist_cjs19 = __commonJS({
 });
 
 // ../../../../node_modules/@smithy/middleware-endpoint/dist-cjs/index.js
-var require_dist_cjs20 = __commonJS({
+var require_dist_cjs21 = __commonJS({
   "../../../../node_modules/@smithy/middleware-endpoint/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -4752,7 +3581,7 @@ var require_dist_cjs20 = __commonJS({
       return configProvider;
     }, "createConfigValueProvider");
     var import_getEndpointFromConfig = require_getEndpointFromConfig();
-    var import_url_parser = require_dist_cjs18();
+    var import_url_parser = require_dist_cjs19();
     var toEndpointV1 = /* @__PURE__ */ __name((endpoint) => {
       if (typeof endpoint === "object") {
         if ("url" in endpoint) {
@@ -4804,7 +3633,7 @@ var require_dist_cjs20 = __commonJS({
       }
       return endpointParams;
     }, "resolveParams");
-    var import_util_middleware = require_dist_cjs9();
+    var import_util_middleware = require_dist_cjs13();
     var endpointMiddleware = /* @__PURE__ */ __name(({
       config,
       instructions
@@ -4848,7 +3677,7 @@ var require_dist_cjs20 = __commonJS({
         });
       };
     }, "endpointMiddleware");
-    var import_middleware_serde = require_dist_cjs19();
+    var import_middleware_serde = require_dist_cjs20();
     var endpointMiddlewareOptions = {
       step: "serialize",
       tags: ["ENDPOINT_PARAMETERS", "ENDPOINT_V2", "ENDPOINT"],
@@ -4885,8 +3714,741 @@ var require_dist_cjs20 = __commonJS({
   }
 });
 
+// ../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/rng.js
+function rng() {
+  if (poolPtr > rnds8Pool.length - 16) {
+    import_crypto.default.randomFillSync(rnds8Pool);
+    poolPtr = 0;
+  }
+  return rnds8Pool.slice(poolPtr, poolPtr += 16);
+}
+var import_crypto, rnds8Pool, poolPtr;
+var init_rng = __esm({
+  "../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/rng.js"() {
+    import_crypto = __toESM(require("crypto"));
+    rnds8Pool = new Uint8Array(256);
+    poolPtr = rnds8Pool.length;
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/regex.js
+var regex_default;
+var init_regex = __esm({
+  "../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/regex.js"() {
+    regex_default = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/validate.js
+function validate(uuid) {
+  return typeof uuid === "string" && regex_default.test(uuid);
+}
+var validate_default;
+var init_validate = __esm({
+  "../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/validate.js"() {
+    init_regex();
+    validate_default = validate;
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/stringify.js
+function stringify(arr, offset = 0) {
+  const uuid = (byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + "-" + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + "-" + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + "-" + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + "-" + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]]).toLowerCase();
+  if (!validate_default(uuid)) {
+    throw TypeError("Stringified UUID is invalid");
+  }
+  return uuid;
+}
+var byteToHex, stringify_default;
+var init_stringify = __esm({
+  "../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/stringify.js"() {
+    init_validate();
+    byteToHex = [];
+    for (let i = 0; i < 256; ++i) {
+      byteToHex.push((i + 256).toString(16).substr(1));
+    }
+    stringify_default = stringify;
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/v1.js
+function v1(options, buf, offset) {
+  let i = buf && offset || 0;
+  const b = buf || new Array(16);
+  options = options || {};
+  let node = options.node || _nodeId;
+  let clockseq = options.clockseq !== void 0 ? options.clockseq : _clockseq;
+  if (node == null || clockseq == null) {
+    const seedBytes = options.random || (options.rng || rng)();
+    if (node == null) {
+      node = _nodeId = [seedBytes[0] | 1, seedBytes[1], seedBytes[2], seedBytes[3], seedBytes[4], seedBytes[5]];
+    }
+    if (clockseq == null) {
+      clockseq = _clockseq = (seedBytes[6] << 8 | seedBytes[7]) & 16383;
+    }
+  }
+  let msecs = options.msecs !== void 0 ? options.msecs : Date.now();
+  let nsecs = options.nsecs !== void 0 ? options.nsecs : _lastNSecs + 1;
+  const dt = msecs - _lastMSecs + (nsecs - _lastNSecs) / 1e4;
+  if (dt < 0 && options.clockseq === void 0) {
+    clockseq = clockseq + 1 & 16383;
+  }
+  if ((dt < 0 || msecs > _lastMSecs) && options.nsecs === void 0) {
+    nsecs = 0;
+  }
+  if (nsecs >= 1e4) {
+    throw new Error("uuid.v1(): Can't create more than 10M uuids/sec");
+  }
+  _lastMSecs = msecs;
+  _lastNSecs = nsecs;
+  _clockseq = clockseq;
+  msecs += 122192928e5;
+  const tl = ((msecs & 268435455) * 1e4 + nsecs) % 4294967296;
+  b[i++] = tl >>> 24 & 255;
+  b[i++] = tl >>> 16 & 255;
+  b[i++] = tl >>> 8 & 255;
+  b[i++] = tl & 255;
+  const tmh = msecs / 4294967296 * 1e4 & 268435455;
+  b[i++] = tmh >>> 8 & 255;
+  b[i++] = tmh & 255;
+  b[i++] = tmh >>> 24 & 15 | 16;
+  b[i++] = tmh >>> 16 & 255;
+  b[i++] = clockseq >>> 8 | 128;
+  b[i++] = clockseq & 255;
+  for (let n = 0; n < 6; ++n) {
+    b[i + n] = node[n];
+  }
+  return buf || stringify_default(b);
+}
+var _nodeId, _clockseq, _lastMSecs, _lastNSecs, v1_default;
+var init_v1 = __esm({
+  "../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/v1.js"() {
+    init_rng();
+    init_stringify();
+    _lastMSecs = 0;
+    _lastNSecs = 0;
+    v1_default = v1;
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/parse.js
+function parse(uuid) {
+  if (!validate_default(uuid)) {
+    throw TypeError("Invalid UUID");
+  }
+  let v;
+  const arr = new Uint8Array(16);
+  arr[0] = (v = parseInt(uuid.slice(0, 8), 16)) >>> 24;
+  arr[1] = v >>> 16 & 255;
+  arr[2] = v >>> 8 & 255;
+  arr[3] = v & 255;
+  arr[4] = (v = parseInt(uuid.slice(9, 13), 16)) >>> 8;
+  arr[5] = v & 255;
+  arr[6] = (v = parseInt(uuid.slice(14, 18), 16)) >>> 8;
+  arr[7] = v & 255;
+  arr[8] = (v = parseInt(uuid.slice(19, 23), 16)) >>> 8;
+  arr[9] = v & 255;
+  arr[10] = (v = parseInt(uuid.slice(24, 36), 16)) / 1099511627776 & 255;
+  arr[11] = v / 4294967296 & 255;
+  arr[12] = v >>> 24 & 255;
+  arr[13] = v >>> 16 & 255;
+  arr[14] = v >>> 8 & 255;
+  arr[15] = v & 255;
+  return arr;
+}
+var parse_default;
+var init_parse = __esm({
+  "../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/parse.js"() {
+    init_validate();
+    parse_default = parse;
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/v35.js
+function stringToBytes(str) {
+  str = unescape(encodeURIComponent(str));
+  const bytes = [];
+  for (let i = 0; i < str.length; ++i) {
+    bytes.push(str.charCodeAt(i));
+  }
+  return bytes;
+}
+function v35_default(name, version3, hashfunc) {
+  function generateUUID(value, namespace, buf, offset) {
+    if (typeof value === "string") {
+      value = stringToBytes(value);
+    }
+    if (typeof namespace === "string") {
+      namespace = parse_default(namespace);
+    }
+    if (namespace.length !== 16) {
+      throw TypeError("Namespace must be array-like (16 iterable integer values, 0-255)");
+    }
+    let bytes = new Uint8Array(16 + value.length);
+    bytes.set(namespace);
+    bytes.set(value, namespace.length);
+    bytes = hashfunc(bytes);
+    bytes[6] = bytes[6] & 15 | version3;
+    bytes[8] = bytes[8] & 63 | 128;
+    if (buf) {
+      offset = offset || 0;
+      for (let i = 0; i < 16; ++i) {
+        buf[offset + i] = bytes[i];
+      }
+      return buf;
+    }
+    return stringify_default(bytes);
+  }
+  try {
+    generateUUID.name = name;
+  } catch (err) {
+  }
+  generateUUID.DNS = DNS;
+  generateUUID.URL = URL2;
+  return generateUUID;
+}
+var DNS, URL2;
+var init_v35 = __esm({
+  "../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/v35.js"() {
+    init_stringify();
+    init_parse();
+    DNS = "6ba7b810-9dad-11d1-80b4-00c04fd430c8";
+    URL2 = "6ba7b811-9dad-11d1-80b4-00c04fd430c8";
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/md5.js
+function md5(bytes) {
+  if (Array.isArray(bytes)) {
+    bytes = Buffer.from(bytes);
+  } else if (typeof bytes === "string") {
+    bytes = Buffer.from(bytes, "utf8");
+  }
+  return import_crypto2.default.createHash("md5").update(bytes).digest();
+}
+var import_crypto2, md5_default;
+var init_md5 = __esm({
+  "../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/md5.js"() {
+    import_crypto2 = __toESM(require("crypto"));
+    md5_default = md5;
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/v3.js
+var v3, v3_default;
+var init_v3 = __esm({
+  "../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/v3.js"() {
+    init_v35();
+    init_md5();
+    v3 = v35_default("v3", 48, md5_default);
+    v3_default = v3;
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/v4.js
+function v4(options, buf, offset) {
+  options = options || {};
+  const rnds = options.random || (options.rng || rng)();
+  rnds[6] = rnds[6] & 15 | 64;
+  rnds[8] = rnds[8] & 63 | 128;
+  if (buf) {
+    offset = offset || 0;
+    for (let i = 0; i < 16; ++i) {
+      buf[offset + i] = rnds[i];
+    }
+    return buf;
+  }
+  return stringify_default(rnds);
+}
+var v4_default;
+var init_v4 = __esm({
+  "../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/v4.js"() {
+    init_rng();
+    init_stringify();
+    v4_default = v4;
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/sha1.js
+function sha1(bytes) {
+  if (Array.isArray(bytes)) {
+    bytes = Buffer.from(bytes);
+  } else if (typeof bytes === "string") {
+    bytes = Buffer.from(bytes, "utf8");
+  }
+  return import_crypto3.default.createHash("sha1").update(bytes).digest();
+}
+var import_crypto3, sha1_default;
+var init_sha1 = __esm({
+  "../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/sha1.js"() {
+    import_crypto3 = __toESM(require("crypto"));
+    sha1_default = sha1;
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/v5.js
+var v5, v5_default;
+var init_v5 = __esm({
+  "../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/v5.js"() {
+    init_v35();
+    init_sha1();
+    v5 = v35_default("v5", 80, sha1_default);
+    v5_default = v5;
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/nil.js
+var nil_default;
+var init_nil = __esm({
+  "../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/nil.js"() {
+    nil_default = "00000000-0000-0000-0000-000000000000";
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/version.js
+function version(uuid) {
+  if (!validate_default(uuid)) {
+    throw TypeError("Invalid UUID");
+  }
+  return parseInt(uuid.substr(14, 1), 16);
+}
+var version_default;
+var init_version = __esm({
+  "../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/version.js"() {
+    init_validate();
+    version_default = version;
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/index.js
+var esm_node_exports = {};
+__export(esm_node_exports, {
+  NIL: () => nil_default,
+  parse: () => parse_default,
+  stringify: () => stringify_default,
+  v1: () => v1_default,
+  v3: () => v3_default,
+  v4: () => v4_default,
+  v5: () => v5_default,
+  validate: () => validate_default,
+  version: () => version_default
+});
+var init_esm_node = __esm({
+  "../../../../node_modules/@smithy/middleware-retry/node_modules/uuid/dist/esm-node/index.js"() {
+    init_v1();
+    init_v3();
+    init_v4();
+    init_v5();
+    init_nil();
+    init_version();
+    init_validate();
+    init_stringify();
+    init_parse();
+  }
+});
+
+// ../../../../node_modules/@smithy/service-error-classification/dist-cjs/index.js
+var require_dist_cjs22 = __commonJS({
+  "../../../../node_modules/@smithy/service-error-classification/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      isClockSkewCorrectedError: () => isClockSkewCorrectedError,
+      isClockSkewError: () => isClockSkewError,
+      isRetryableByTrait: () => isRetryableByTrait,
+      isServerError: () => isServerError,
+      isThrottlingError: () => isThrottlingError,
+      isTransientError: () => isTransientError
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var CLOCK_SKEW_ERROR_CODES = [
+      "AuthFailure",
+      "InvalidSignatureException",
+      "RequestExpired",
+      "RequestInTheFuture",
+      "RequestTimeTooSkewed",
+      "SignatureDoesNotMatch"
+    ];
+    var THROTTLING_ERROR_CODES = [
+      "BandwidthLimitExceeded",
+      "EC2ThrottledException",
+      "LimitExceededException",
+      "PriorRequestNotComplete",
+      "ProvisionedThroughputExceededException",
+      "RequestLimitExceeded",
+      "RequestThrottled",
+      "RequestThrottledException",
+      "SlowDown",
+      "ThrottledException",
+      "Throttling",
+      "ThrottlingException",
+      "TooManyRequestsException",
+      "TransactionInProgressException"
+      // DynamoDB
+    ];
+    var TRANSIENT_ERROR_CODES = ["TimeoutError", "RequestTimeout", "RequestTimeoutException"];
+    var TRANSIENT_ERROR_STATUS_CODES = [500, 502, 503, 504];
+    var NODEJS_TIMEOUT_ERROR_CODES = ["ECONNRESET", "ECONNREFUSED", "EPIPE", "ETIMEDOUT"];
+    var isRetryableByTrait = /* @__PURE__ */ __name((error) => error.$retryable !== void 0, "isRetryableByTrait");
+    var isClockSkewError = /* @__PURE__ */ __name((error) => CLOCK_SKEW_ERROR_CODES.includes(error.name), "isClockSkewError");
+    var isClockSkewCorrectedError = /* @__PURE__ */ __name((error) => {
+      var _a;
+      return (_a = error.$metadata) == null ? void 0 : _a.clockSkewCorrected;
+    }, "isClockSkewCorrectedError");
+    var isThrottlingError = /* @__PURE__ */ __name((error) => {
+      var _a, _b;
+      return ((_a = error.$metadata) == null ? void 0 : _a.httpStatusCode) === 429 || THROTTLING_ERROR_CODES.includes(error.name) || ((_b = error.$retryable) == null ? void 0 : _b.throttling) == true;
+    }, "isThrottlingError");
+    var isTransientError = /* @__PURE__ */ __name((error) => {
+      var _a;
+      return isClockSkewCorrectedError(error) || TRANSIENT_ERROR_CODES.includes(error.name) || NODEJS_TIMEOUT_ERROR_CODES.includes((error == null ? void 0 : error.code) || "") || TRANSIENT_ERROR_STATUS_CODES.includes(((_a = error.$metadata) == null ? void 0 : _a.httpStatusCode) || 0);
+    }, "isTransientError");
+    var isServerError = /* @__PURE__ */ __name((error) => {
+      var _a;
+      if (((_a = error.$metadata) == null ? void 0 : _a.httpStatusCode) !== void 0) {
+        const statusCode = error.$metadata.httpStatusCode;
+        if (500 <= statusCode && statusCode <= 599 && !isTransientError(error)) {
+          return true;
+        }
+        return false;
+      }
+      return false;
+    }, "isServerError");
+  }
+});
+
+// ../../../../node_modules/@smithy/util-retry/dist-cjs/index.js
+var require_dist_cjs23 = __commonJS({
+  "../../../../node_modules/@smithy/util-retry/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      AdaptiveRetryStrategy: () => AdaptiveRetryStrategy,
+      ConfiguredRetryStrategy: () => ConfiguredRetryStrategy,
+      DEFAULT_MAX_ATTEMPTS: () => DEFAULT_MAX_ATTEMPTS,
+      DEFAULT_RETRY_DELAY_BASE: () => DEFAULT_RETRY_DELAY_BASE,
+      DEFAULT_RETRY_MODE: () => DEFAULT_RETRY_MODE,
+      DefaultRateLimiter: () => DefaultRateLimiter,
+      INITIAL_RETRY_TOKENS: () => INITIAL_RETRY_TOKENS,
+      INVOCATION_ID_HEADER: () => INVOCATION_ID_HEADER,
+      MAXIMUM_RETRY_DELAY: () => MAXIMUM_RETRY_DELAY,
+      NO_RETRY_INCREMENT: () => NO_RETRY_INCREMENT,
+      REQUEST_HEADER: () => REQUEST_HEADER,
+      RETRY_COST: () => RETRY_COST,
+      RETRY_MODES: () => RETRY_MODES,
+      StandardRetryStrategy: () => StandardRetryStrategy,
+      THROTTLING_RETRY_DELAY_BASE: () => THROTTLING_RETRY_DELAY_BASE,
+      TIMEOUT_RETRY_COST: () => TIMEOUT_RETRY_COST
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var RETRY_MODES = /* @__PURE__ */ ((RETRY_MODES2) => {
+      RETRY_MODES2["STANDARD"] = "standard";
+      RETRY_MODES2["ADAPTIVE"] = "adaptive";
+      return RETRY_MODES2;
+    })(RETRY_MODES || {});
+    var DEFAULT_MAX_ATTEMPTS = 3;
+    var DEFAULT_RETRY_MODE = "standard";
+    var import_service_error_classification = require_dist_cjs22();
+    var _DefaultRateLimiter = class _DefaultRateLimiter {
+      constructor(options) {
+        this.currentCapacity = 0;
+        this.enabled = false;
+        this.lastMaxRate = 0;
+        this.measuredTxRate = 0;
+        this.requestCount = 0;
+        this.lastTimestamp = 0;
+        this.timeWindow = 0;
+        this.beta = (options == null ? void 0 : options.beta) ?? 0.7;
+        this.minCapacity = (options == null ? void 0 : options.minCapacity) ?? 1;
+        this.minFillRate = (options == null ? void 0 : options.minFillRate) ?? 0.5;
+        this.scaleConstant = (options == null ? void 0 : options.scaleConstant) ?? 0.4;
+        this.smooth = (options == null ? void 0 : options.smooth) ?? 0.8;
+        const currentTimeInSeconds = this.getCurrentTimeInSeconds();
+        this.lastThrottleTime = currentTimeInSeconds;
+        this.lastTxRateBucket = Math.floor(this.getCurrentTimeInSeconds());
+        this.fillRate = this.minFillRate;
+        this.maxCapacity = this.minCapacity;
+      }
+      getCurrentTimeInSeconds() {
+        return Date.now() / 1e3;
+      }
+      async getSendToken() {
+        return this.acquireTokenBucket(1);
+      }
+      async acquireTokenBucket(amount) {
+        if (!this.enabled) {
+          return;
+        }
+        this.refillTokenBucket();
+        if (amount > this.currentCapacity) {
+          const delay = (amount - this.currentCapacity) / this.fillRate * 1e3;
+          await new Promise((resolve) => setTimeout(resolve, delay));
+        }
+        this.currentCapacity = this.currentCapacity - amount;
+      }
+      refillTokenBucket() {
+        const timestamp = this.getCurrentTimeInSeconds();
+        if (!this.lastTimestamp) {
+          this.lastTimestamp = timestamp;
+          return;
+        }
+        const fillAmount = (timestamp - this.lastTimestamp) * this.fillRate;
+        this.currentCapacity = Math.min(this.maxCapacity, this.currentCapacity + fillAmount);
+        this.lastTimestamp = timestamp;
+      }
+      updateClientSendingRate(response) {
+        let calculatedRate;
+        this.updateMeasuredRate();
+        if ((0, import_service_error_classification.isThrottlingError)(response)) {
+          const rateToUse = !this.enabled ? this.measuredTxRate : Math.min(this.measuredTxRate, this.fillRate);
+          this.lastMaxRate = rateToUse;
+          this.calculateTimeWindow();
+          this.lastThrottleTime = this.getCurrentTimeInSeconds();
+          calculatedRate = this.cubicThrottle(rateToUse);
+          this.enableTokenBucket();
+        } else {
+          this.calculateTimeWindow();
+          calculatedRate = this.cubicSuccess(this.getCurrentTimeInSeconds());
+        }
+        const newRate = Math.min(calculatedRate, 2 * this.measuredTxRate);
+        this.updateTokenBucketRate(newRate);
+      }
+      calculateTimeWindow() {
+        this.timeWindow = this.getPrecise(Math.pow(this.lastMaxRate * (1 - this.beta) / this.scaleConstant, 1 / 3));
+      }
+      cubicThrottle(rateToUse) {
+        return this.getPrecise(rateToUse * this.beta);
+      }
+      cubicSuccess(timestamp) {
+        return this.getPrecise(
+          this.scaleConstant * Math.pow(timestamp - this.lastThrottleTime - this.timeWindow, 3) + this.lastMaxRate
+        );
+      }
+      enableTokenBucket() {
+        this.enabled = true;
+      }
+      updateTokenBucketRate(newRate) {
+        this.refillTokenBucket();
+        this.fillRate = Math.max(newRate, this.minFillRate);
+        this.maxCapacity = Math.max(newRate, this.minCapacity);
+        this.currentCapacity = Math.min(this.currentCapacity, this.maxCapacity);
+      }
+      updateMeasuredRate() {
+        const t = this.getCurrentTimeInSeconds();
+        const timeBucket = Math.floor(t * 2) / 2;
+        this.requestCount++;
+        if (timeBucket > this.lastTxRateBucket) {
+          const currentRate = this.requestCount / (timeBucket - this.lastTxRateBucket);
+          this.measuredTxRate = this.getPrecise(currentRate * this.smooth + this.measuredTxRate * (1 - this.smooth));
+          this.requestCount = 0;
+          this.lastTxRateBucket = timeBucket;
+        }
+      }
+      getPrecise(num) {
+        return parseFloat(num.toFixed(8));
+      }
+    };
+    __name(_DefaultRateLimiter, "DefaultRateLimiter");
+    var DefaultRateLimiter = _DefaultRateLimiter;
+    var DEFAULT_RETRY_DELAY_BASE = 100;
+    var MAXIMUM_RETRY_DELAY = 20 * 1e3;
+    var THROTTLING_RETRY_DELAY_BASE = 500;
+    var INITIAL_RETRY_TOKENS = 500;
+    var RETRY_COST = 5;
+    var TIMEOUT_RETRY_COST = 10;
+    var NO_RETRY_INCREMENT = 1;
+    var INVOCATION_ID_HEADER = "amz-sdk-invocation-id";
+    var REQUEST_HEADER = "amz-sdk-request";
+    var getDefaultRetryBackoffStrategy = /* @__PURE__ */ __name(() => {
+      let delayBase = DEFAULT_RETRY_DELAY_BASE;
+      const computeNextBackoffDelay = /* @__PURE__ */ __name((attempts) => {
+        return Math.floor(Math.min(MAXIMUM_RETRY_DELAY, Math.random() * 2 ** attempts * delayBase));
+      }, "computeNextBackoffDelay");
+      const setDelayBase = /* @__PURE__ */ __name((delay) => {
+        delayBase = delay;
+      }, "setDelayBase");
+      return {
+        computeNextBackoffDelay,
+        setDelayBase
+      };
+    }, "getDefaultRetryBackoffStrategy");
+    var createDefaultRetryToken = /* @__PURE__ */ __name(({
+      retryDelay,
+      retryCount,
+      retryCost
+    }) => {
+      const getRetryCount = /* @__PURE__ */ __name(() => retryCount, "getRetryCount");
+      const getRetryDelay = /* @__PURE__ */ __name(() => Math.min(MAXIMUM_RETRY_DELAY, retryDelay), "getRetryDelay");
+      const getRetryCost = /* @__PURE__ */ __name(() => retryCost, "getRetryCost");
+      return {
+        getRetryCount,
+        getRetryDelay,
+        getRetryCost
+      };
+    }, "createDefaultRetryToken");
+    var _StandardRetryStrategy = class _StandardRetryStrategy {
+      constructor(maxAttempts) {
+        this.maxAttempts = maxAttempts;
+        this.mode = "standard";
+        this.capacity = INITIAL_RETRY_TOKENS;
+        this.retryBackoffStrategy = getDefaultRetryBackoffStrategy();
+        this.maxAttemptsProvider = typeof maxAttempts === "function" ? maxAttempts : async () => maxAttempts;
+      }
+      async acquireInitialRetryToken(retryTokenScope) {
+        return createDefaultRetryToken({
+          retryDelay: DEFAULT_RETRY_DELAY_BASE,
+          retryCount: 0
+        });
+      }
+      async refreshRetryTokenForRetry(token, errorInfo) {
+        const maxAttempts = await this.getMaxAttempts();
+        if (this.shouldRetry(token, errorInfo, maxAttempts)) {
+          const errorType = errorInfo.errorType;
+          this.retryBackoffStrategy.setDelayBase(
+            errorType === "THROTTLING" ? THROTTLING_RETRY_DELAY_BASE : DEFAULT_RETRY_DELAY_BASE
+          );
+          const delayFromErrorType = this.retryBackoffStrategy.computeNextBackoffDelay(token.getRetryCount());
+          const retryDelay = errorInfo.retryAfterHint ? Math.max(errorInfo.retryAfterHint.getTime() - Date.now() || 0, delayFromErrorType) : delayFromErrorType;
+          const capacityCost = this.getCapacityCost(errorType);
+          this.capacity -= capacityCost;
+          return createDefaultRetryToken({
+            retryDelay,
+            retryCount: token.getRetryCount() + 1,
+            retryCost: capacityCost
+          });
+        }
+        throw new Error("No retry token available");
+      }
+      recordSuccess(token) {
+        this.capacity = Math.max(INITIAL_RETRY_TOKENS, this.capacity + (token.getRetryCost() ?? NO_RETRY_INCREMENT));
+      }
+      /**
+       * @returns the current available retry capacity.
+       *
+       * This number decreases when retries are executed and refills when requests or retries succeed.
+       */
+      getCapacity() {
+        return this.capacity;
+      }
+      async getMaxAttempts() {
+        try {
+          return await this.maxAttemptsProvider();
+        } catch (error) {
+          console.warn(`Max attempts provider could not resolve. Using default of ${DEFAULT_MAX_ATTEMPTS}`);
+          return DEFAULT_MAX_ATTEMPTS;
+        }
+      }
+      shouldRetry(tokenToRenew, errorInfo, maxAttempts) {
+        const attempts = tokenToRenew.getRetryCount() + 1;
+        return attempts < maxAttempts && this.capacity >= this.getCapacityCost(errorInfo.errorType) && this.isRetryableError(errorInfo.errorType);
+      }
+      getCapacityCost(errorType) {
+        return errorType === "TRANSIENT" ? TIMEOUT_RETRY_COST : RETRY_COST;
+      }
+      isRetryableError(errorType) {
+        return errorType === "THROTTLING" || errorType === "TRANSIENT";
+      }
+    };
+    __name(_StandardRetryStrategy, "StandardRetryStrategy");
+    var StandardRetryStrategy = _StandardRetryStrategy;
+    var _AdaptiveRetryStrategy = class _AdaptiveRetryStrategy {
+      constructor(maxAttemptsProvider, options) {
+        this.maxAttemptsProvider = maxAttemptsProvider;
+        this.mode = "adaptive";
+        const { rateLimiter } = options ?? {};
+        this.rateLimiter = rateLimiter ?? new DefaultRateLimiter();
+        this.standardRetryStrategy = new StandardRetryStrategy(maxAttemptsProvider);
+      }
+      async acquireInitialRetryToken(retryTokenScope) {
+        await this.rateLimiter.getSendToken();
+        return this.standardRetryStrategy.acquireInitialRetryToken(retryTokenScope);
+      }
+      async refreshRetryTokenForRetry(tokenToRenew, errorInfo) {
+        this.rateLimiter.updateClientSendingRate(errorInfo);
+        return this.standardRetryStrategy.refreshRetryTokenForRetry(tokenToRenew, errorInfo);
+      }
+      recordSuccess(token) {
+        this.rateLimiter.updateClientSendingRate({});
+        this.standardRetryStrategy.recordSuccess(token);
+      }
+    };
+    __name(_AdaptiveRetryStrategy, "AdaptiveRetryStrategy");
+    var AdaptiveRetryStrategy = _AdaptiveRetryStrategy;
+    var _ConfiguredRetryStrategy = class _ConfiguredRetryStrategy extends StandardRetryStrategy {
+      /**
+       * @param maxAttempts - the maximum number of retry attempts allowed.
+       *                      e.g., if set to 3, then 4 total requests are possible.
+       * @param computeNextBackoffDelay - a millisecond delay for each retry or a function that takes the retry attempt
+       *                                  and returns the delay.
+       *
+       * @example exponential backoff.
+       * ```js
+       * new Client({
+       *   retryStrategy: new ConfiguredRetryStrategy(3, (attempt) => attempt ** 2)
+       * });
+       * ```
+       * @example constant delay.
+       * ```js
+       * new Client({
+       *   retryStrategy: new ConfiguredRetryStrategy(3, 2000)
+       * });
+       * ```
+       */
+      constructor(maxAttempts, computeNextBackoffDelay = DEFAULT_RETRY_DELAY_BASE) {
+        super(typeof maxAttempts === "function" ? maxAttempts : async () => maxAttempts);
+        if (typeof computeNextBackoffDelay === "number") {
+          this.computeNextBackoffDelay = () => computeNextBackoffDelay;
+        } else {
+          this.computeNextBackoffDelay = computeNextBackoffDelay;
+        }
+      }
+      async refreshRetryTokenForRetry(tokenToRenew, errorInfo) {
+        const token = await super.refreshRetryTokenForRetry(tokenToRenew, errorInfo);
+        token.getRetryDelay = () => this.computeNextBackoffDelay(token.getRetryCount());
+        return token;
+      }
+    };
+    __name(_ConfiguredRetryStrategy, "ConfiguredRetryStrategy");
+    var ConfiguredRetryStrategy = _ConfiguredRetryStrategy;
+  }
+});
+
 // ../../../../node_modules/@smithy/middleware-stack/dist-cjs/index.js
-var require_dist_cjs21 = __commonJS({
+var require_dist_cjs24 = __commonJS({
   "../../../../node_modules/@smithy/middleware-stack/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -5246,7 +4808,7 @@ var require_toBase64 = __commonJS({
 });
 
 // ../../../../node_modules/@smithy/util-base64/dist-cjs/index.js
-var require_dist_cjs22 = __commonJS({
+var require_dist_cjs25 = __commonJS({
   "../../../../node_modules/@smithy/util-base64/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -5307,8 +4869,94 @@ var require_getAwsChunkedEncodingStream = __commonJS({
   }
 });
 
+// ../../../../node_modules/@smithy/util-uri-escape/dist-cjs/index.js
+var require_dist_cjs26 = __commonJS({
+  "../../../../node_modules/@smithy/util-uri-escape/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      escapeUri: () => escapeUri,
+      escapeUriPath: () => escapeUriPath
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var escapeUri = /* @__PURE__ */ __name((uri) => (
+      // AWS percent-encodes some extra non-standard characters in a URI
+      encodeURIComponent(uri).replace(/[!'()*]/g, hexEncode)
+    ), "escapeUri");
+    var hexEncode = /* @__PURE__ */ __name((c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`, "hexEncode");
+    var escapeUriPath = /* @__PURE__ */ __name((uri) => uri.split("/").map(escapeUri).join("/"), "escapeUriPath");
+  }
+});
+
+// ../../../../node_modules/@smithy/querystring-builder/dist-cjs/index.js
+var require_dist_cjs27 = __commonJS({
+  "../../../../node_modules/@smithy/querystring-builder/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      buildQueryString: () => buildQueryString
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var import_util_uri_escape = require_dist_cjs26();
+    function buildQueryString(query) {
+      const parts = [];
+      for (let key of Object.keys(query).sort()) {
+        const value = query[key];
+        key = (0, import_util_uri_escape.escapeUri)(key);
+        if (Array.isArray(value)) {
+          for (let i = 0, iLen = value.length; i < iLen; i++) {
+            parts.push(`${key}=${(0, import_util_uri_escape.escapeUri)(value[i])}`);
+          }
+        } else {
+          let qsEntry = key;
+          if (value || typeof value === "string") {
+            qsEntry += `=${(0, import_util_uri_escape.escapeUri)(value)}`;
+          }
+          parts.push(qsEntry);
+        }
+      }
+      return parts.join("&");
+    }
+    __name(buildQueryString, "buildQueryString");
+  }
+});
+
 // ../../../../node_modules/@smithy/node-http-handler/dist-cjs/index.js
-var require_dist_cjs23 = __commonJS({
+var require_dist_cjs28 = __commonJS({
   "../../../../node_modules/@smithy/node-http-handler/dist-cjs/index.js"(exports2, module2) {
     var __create2 = Object.create;
     var __defProp2 = Object.defineProperty;
@@ -5347,7 +4995,7 @@ var require_dist_cjs23 = __commonJS({
     });
     module2.exports = __toCommonJS2(src_exports2);
     var import_protocol_http = require_dist_cjs2();
-    var import_querystring_builder = require_dist_cjs12();
+    var import_querystring_builder = require_dist_cjs27();
     var import_http = require("http");
     var import_https = require("https");
     var NODEJS_TIMEOUT_ERROR_CODES = ["ECONNRESET", "EPIPE", "ETIMEDOUT"];
@@ -5961,7 +5609,7 @@ var require_sdk_stream_mixin = __commonJS({
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.sdkStreamMixin = void 0;
-    var node_http_handler_1 = require_dist_cjs23();
+    var node_http_handler_1 = require_dist_cjs28();
     var util_buffer_from_1 = require_dist_cjs4();
     var stream_1 = require("stream");
     var util_1 = require("util");
@@ -6011,7 +5659,7 @@ var require_sdk_stream_mixin = __commonJS({
 });
 
 // ../../../../node_modules/@smithy/util-stream/dist-cjs/index.js
-var require_dist_cjs24 = __commonJS({
+var require_dist_cjs29 = __commonJS({
   "../../../../node_modules/@smithy/util-stream/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -6037,7 +5685,7 @@ var require_dist_cjs24 = __commonJS({
       Uint8ArrayBlobAdapter: () => Uint8ArrayBlobAdapter
     });
     module2.exports = __toCommonJS2(src_exports2);
-    var import_util_base64 = require_dist_cjs22();
+    var import_util_base64 = require_dist_cjs25();
     var import_util_utf8 = require_dist_cjs5();
     function transformToString(payload, encoding = "utf-8") {
       if (encoding === "base64") {
@@ -6090,7 +5738,7 @@ var require_dist_cjs24 = __commonJS({
 });
 
 // ../../../../node_modules/@smithy/smithy-client/dist-cjs/index.js
-var require_dist_cjs25 = __commonJS({
+var require_dist_cjs30 = __commonJS({
   "../../../../node_modules/@smithy/smithy-client/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -6186,7 +5834,7 @@ var require_dist_cjs25 = __commonJS({
     };
     __name(_NoOpLogger, "NoOpLogger");
     var NoOpLogger = _NoOpLogger;
-    var import_middleware_stack = require_dist_cjs21();
+    var import_middleware_stack = require_dist_cjs24();
     var _Client = class _Client {
       constructor(config) {
         this.middlewareStack = (0, import_middleware_stack.constructStack)();
@@ -6217,7 +5865,7 @@ var require_dist_cjs25 = __commonJS({
     };
     __name(_Client, "Client");
     var Client = _Client;
-    var import_util_stream = require_dist_cjs24();
+    var import_util_stream = require_dist_cjs29();
     var collectBody = /* @__PURE__ */ __name(async (streamBody = new Uint8Array(), context) => {
       if (streamBody instanceof Uint8Array) {
         return import_util_stream.Uint8ArrayBlobAdapter.mutate(streamBody);
@@ -6943,8 +6591,8 @@ var require_dist_cjs25 = __commonJS({
       }
     }, "loadConfigsForDefaultMode");
     var warningEmitted = false;
-    var emitWarningIfUnsupportedVersion = /* @__PURE__ */ __name((version) => {
-      if (version && !warningEmitted && parseInt(version.substring(1, version.indexOf("."))) < 14) {
+    var emitWarningIfUnsupportedVersion = /* @__PURE__ */ __name((version3) => {
+      if (version3 && !warningEmitted && parseInt(version3.substring(1, version3.indexOf("."))) < 14) {
         warningEmitted = true;
       }
     }, "emitWarningIfUnsupportedVersion");
@@ -7228,9 +6876,21 @@ var require_dist_cjs25 = __commonJS({
   }
 });
 
-// ../../../../node_modules/@smithy/util-config-provider/dist-cjs/index.js
-var require_dist_cjs26 = __commonJS({
-  "../../../../node_modules/@smithy/util-config-provider/dist-cjs/index.js"(exports2, module2) {
+// ../../../../node_modules/@smithy/middleware-retry/dist-cjs/isStreamingPayload/isStreamingPayload.js
+var require_isStreamingPayload = __commonJS({
+  "../../../../node_modules/@smithy/middleware-retry/dist-cjs/isStreamingPayload/isStreamingPayload.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.isStreamingPayload = void 0;
+    var stream_1 = require("stream");
+    var isStreamingPayload = (request) => (request === null || request === void 0 ? void 0 : request.body) instanceof stream_1.Readable || typeof ReadableStream !== "undefined" && (request === null || request === void 0 ? void 0 : request.body) instanceof ReadableStream;
+    exports2.isStreamingPayload = isStreamingPayload;
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-retry/dist-cjs/index.js
+var require_dist_cjs31 = __commonJS({
+  "../../../../node_modules/@smithy/middleware-retry/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
     var __getOwnPropNames2 = Object.getOwnPropertyNames;
@@ -7251,39 +6911,18045 @@ var require_dist_cjs26 = __commonJS({
     var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
     var src_exports2 = {};
     __export2(src_exports2, {
-      SelectorType: () => SelectorType,
-      booleanSelector: () => booleanSelector,
-      numberSelector: () => numberSelector
+      AdaptiveRetryStrategy: () => AdaptiveRetryStrategy,
+      CONFIG_MAX_ATTEMPTS: () => CONFIG_MAX_ATTEMPTS,
+      CONFIG_RETRY_MODE: () => CONFIG_RETRY_MODE,
+      ENV_MAX_ATTEMPTS: () => ENV_MAX_ATTEMPTS,
+      ENV_RETRY_MODE: () => ENV_RETRY_MODE,
+      NODE_MAX_ATTEMPT_CONFIG_OPTIONS: () => NODE_MAX_ATTEMPT_CONFIG_OPTIONS,
+      NODE_RETRY_MODE_CONFIG_OPTIONS: () => NODE_RETRY_MODE_CONFIG_OPTIONS,
+      StandardRetryStrategy: () => StandardRetryStrategy,
+      defaultDelayDecider: () => defaultDelayDecider,
+      defaultRetryDecider: () => defaultRetryDecider,
+      getOmitRetryHeadersPlugin: () => getOmitRetryHeadersPlugin,
+      getRetryAfterHint: () => getRetryAfterHint,
+      getRetryPlugin: () => getRetryPlugin,
+      omitRetryHeadersMiddleware: () => omitRetryHeadersMiddleware,
+      omitRetryHeadersMiddlewareOptions: () => omitRetryHeadersMiddlewareOptions,
+      resolveRetryConfig: () => resolveRetryConfig,
+      retryMiddleware: () => retryMiddleware,
+      retryMiddlewareOptions: () => retryMiddlewareOptions
     });
     module2.exports = __toCommonJS2(src_exports2);
-    var booleanSelector = /* @__PURE__ */ __name((obj, key, type) => {
-      if (!(key in obj))
-        return void 0;
-      if (obj[key] === "true")
-        return true;
-      if (obj[key] === "false")
+    var import_protocol_http = require_dist_cjs2();
+    var import_uuid = (init_esm_node(), __toCommonJS(esm_node_exports));
+    var import_util_retry = require_dist_cjs23();
+    var getDefaultRetryQuota = /* @__PURE__ */ __name((initialRetryTokens, options) => {
+      const MAX_CAPACITY = initialRetryTokens;
+      const noRetryIncrement = (options == null ? void 0 : options.noRetryIncrement) ?? import_util_retry.NO_RETRY_INCREMENT;
+      const retryCost = (options == null ? void 0 : options.retryCost) ?? import_util_retry.RETRY_COST;
+      const timeoutRetryCost = (options == null ? void 0 : options.timeoutRetryCost) ?? import_util_retry.TIMEOUT_RETRY_COST;
+      let availableCapacity = initialRetryTokens;
+      const getCapacityAmount = /* @__PURE__ */ __name((error) => error.name === "TimeoutError" ? timeoutRetryCost : retryCost, "getCapacityAmount");
+      const hasRetryTokens = /* @__PURE__ */ __name((error) => getCapacityAmount(error) <= availableCapacity, "hasRetryTokens");
+      const retrieveRetryTokens = /* @__PURE__ */ __name((error) => {
+        if (!hasRetryTokens(error)) {
+          throw new Error("No retry token available");
+        }
+        const capacityAmount = getCapacityAmount(error);
+        availableCapacity -= capacityAmount;
+        return capacityAmount;
+      }, "retrieveRetryTokens");
+      const releaseRetryTokens = /* @__PURE__ */ __name((capacityReleaseAmount) => {
+        availableCapacity += capacityReleaseAmount ?? noRetryIncrement;
+        availableCapacity = Math.min(availableCapacity, MAX_CAPACITY);
+      }, "releaseRetryTokens");
+      return Object.freeze({
+        hasRetryTokens,
+        retrieveRetryTokens,
+        releaseRetryTokens
+      });
+    }, "getDefaultRetryQuota");
+    var defaultDelayDecider = /* @__PURE__ */ __name((delayBase, attempts) => Math.floor(Math.min(import_util_retry.MAXIMUM_RETRY_DELAY, Math.random() * 2 ** attempts * delayBase)), "defaultDelayDecider");
+    var import_service_error_classification = require_dist_cjs22();
+    var defaultRetryDecider = /* @__PURE__ */ __name((error) => {
+      if (!error) {
         return false;
-      throw new Error(`Cannot load ${type} "${key}". Expected "true" or "false", got ${obj[key]}.`);
-    }, "booleanSelector");
-    var numberSelector = /* @__PURE__ */ __name((obj, key, type) => {
-      if (!(key in obj))
-        return void 0;
-      const numberValue = parseInt(obj[key], 10);
-      if (Number.isNaN(numberValue)) {
-        throw new TypeError(`Cannot load ${type} '${key}'. Expected number, got '${obj[key]}'.`);
       }
-      return numberValue;
-    }, "numberSelector");
-    var SelectorType = /* @__PURE__ */ ((SelectorType2) => {
-      SelectorType2["ENV"] = "env";
-      SelectorType2["CONFIG"] = "shared config entry";
-      return SelectorType2;
-    })(SelectorType || {});
+      return (0, import_service_error_classification.isRetryableByTrait)(error) || (0, import_service_error_classification.isClockSkewError)(error) || (0, import_service_error_classification.isThrottlingError)(error) || (0, import_service_error_classification.isTransientError)(error);
+    }, "defaultRetryDecider");
+    var asSdkError = /* @__PURE__ */ __name((error) => {
+      if (error instanceof Error)
+        return error;
+      if (error instanceof Object)
+        return Object.assign(new Error(), error);
+      if (typeof error === "string")
+        return new Error(error);
+      return new Error(`AWS SDK error wrapper for ${error}`);
+    }, "asSdkError");
+    var _StandardRetryStrategy = class _StandardRetryStrategy {
+      constructor(maxAttemptsProvider, options) {
+        this.maxAttemptsProvider = maxAttemptsProvider;
+        this.mode = import_util_retry.RETRY_MODES.STANDARD;
+        this.retryDecider = (options == null ? void 0 : options.retryDecider) ?? defaultRetryDecider;
+        this.delayDecider = (options == null ? void 0 : options.delayDecider) ?? defaultDelayDecider;
+        this.retryQuota = (options == null ? void 0 : options.retryQuota) ?? getDefaultRetryQuota(import_util_retry.INITIAL_RETRY_TOKENS);
+      }
+      shouldRetry(error, attempts, maxAttempts) {
+        return attempts < maxAttempts && this.retryDecider(error) && this.retryQuota.hasRetryTokens(error);
+      }
+      async getMaxAttempts() {
+        let maxAttempts;
+        try {
+          maxAttempts = await this.maxAttemptsProvider();
+        } catch (error) {
+          maxAttempts = import_util_retry.DEFAULT_MAX_ATTEMPTS;
+        }
+        return maxAttempts;
+      }
+      async retry(next, args, options) {
+        let retryTokenAmount;
+        let attempts = 0;
+        let totalDelay = 0;
+        const maxAttempts = await this.getMaxAttempts();
+        const { request } = args;
+        if (import_protocol_http.HttpRequest.isInstance(request)) {
+          request.headers[import_util_retry.INVOCATION_ID_HEADER] = (0, import_uuid.v4)();
+        }
+        while (true) {
+          try {
+            if (import_protocol_http.HttpRequest.isInstance(request)) {
+              request.headers[import_util_retry.REQUEST_HEADER] = `attempt=${attempts + 1}; max=${maxAttempts}`;
+            }
+            if (options == null ? void 0 : options.beforeRequest) {
+              await options.beforeRequest();
+            }
+            const { response, output } = await next(args);
+            if (options == null ? void 0 : options.afterRequest) {
+              options.afterRequest(response);
+            }
+            this.retryQuota.releaseRetryTokens(retryTokenAmount);
+            output.$metadata.attempts = attempts + 1;
+            output.$metadata.totalRetryDelay = totalDelay;
+            return { response, output };
+          } catch (e) {
+            const err = asSdkError(e);
+            attempts++;
+            if (this.shouldRetry(err, attempts, maxAttempts)) {
+              retryTokenAmount = this.retryQuota.retrieveRetryTokens(err);
+              const delayFromDecider = this.delayDecider(
+                (0, import_service_error_classification.isThrottlingError)(err) ? import_util_retry.THROTTLING_RETRY_DELAY_BASE : import_util_retry.DEFAULT_RETRY_DELAY_BASE,
+                attempts
+              );
+              const delayFromResponse = getDelayFromRetryAfterHeader(err.$response);
+              const delay = Math.max(delayFromResponse || 0, delayFromDecider);
+              totalDelay += delay;
+              await new Promise((resolve) => setTimeout(resolve, delay));
+              continue;
+            }
+            if (!err.$metadata) {
+              err.$metadata = {};
+            }
+            err.$metadata.attempts = attempts;
+            err.$metadata.totalRetryDelay = totalDelay;
+            throw err;
+          }
+        }
+      }
+    };
+    __name(_StandardRetryStrategy, "StandardRetryStrategy");
+    var StandardRetryStrategy = _StandardRetryStrategy;
+    var getDelayFromRetryAfterHeader = /* @__PURE__ */ __name((response) => {
+      if (!import_protocol_http.HttpResponse.isInstance(response))
+        return;
+      const retryAfterHeaderName = Object.keys(response.headers).find((key) => key.toLowerCase() === "retry-after");
+      if (!retryAfterHeaderName)
+        return;
+      const retryAfter = response.headers[retryAfterHeaderName];
+      const retryAfterSeconds = Number(retryAfter);
+      if (!Number.isNaN(retryAfterSeconds))
+        return retryAfterSeconds * 1e3;
+      const retryAfterDate = new Date(retryAfter);
+      return retryAfterDate.getTime() - Date.now();
+    }, "getDelayFromRetryAfterHeader");
+    var _AdaptiveRetryStrategy = class _AdaptiveRetryStrategy extends StandardRetryStrategy {
+      constructor(maxAttemptsProvider, options) {
+        const { rateLimiter, ...superOptions } = options ?? {};
+        super(maxAttemptsProvider, superOptions);
+        this.rateLimiter = rateLimiter ?? new import_util_retry.DefaultRateLimiter();
+        this.mode = import_util_retry.RETRY_MODES.ADAPTIVE;
+      }
+      async retry(next, args) {
+        return super.retry(next, args, {
+          beforeRequest: async () => {
+            return this.rateLimiter.getSendToken();
+          },
+          afterRequest: (response) => {
+            this.rateLimiter.updateClientSendingRate(response);
+          }
+        });
+      }
+    };
+    __name(_AdaptiveRetryStrategy, "AdaptiveRetryStrategy");
+    var AdaptiveRetryStrategy = _AdaptiveRetryStrategy;
+    var import_util_middleware = require_dist_cjs13();
+    var ENV_MAX_ATTEMPTS = "AWS_MAX_ATTEMPTS";
+    var CONFIG_MAX_ATTEMPTS = "max_attempts";
+    var NODE_MAX_ATTEMPT_CONFIG_OPTIONS = {
+      environmentVariableSelector: (env) => {
+        const value = env[ENV_MAX_ATTEMPTS];
+        if (!value)
+          return void 0;
+        const maxAttempt = parseInt(value);
+        if (Number.isNaN(maxAttempt)) {
+          throw new Error(`Environment variable ${ENV_MAX_ATTEMPTS} mast be a number, got "${value}"`);
+        }
+        return maxAttempt;
+      },
+      configFileSelector: (profile) => {
+        const value = profile[CONFIG_MAX_ATTEMPTS];
+        if (!value)
+          return void 0;
+        const maxAttempt = parseInt(value);
+        if (Number.isNaN(maxAttempt)) {
+          throw new Error(`Shared config file entry ${CONFIG_MAX_ATTEMPTS} mast be a number, got "${value}"`);
+        }
+        return maxAttempt;
+      },
+      default: import_util_retry.DEFAULT_MAX_ATTEMPTS
+    };
+    var resolveRetryConfig = /* @__PURE__ */ __name((input) => {
+      const { retryStrategy } = input;
+      const maxAttempts = (0, import_util_middleware.normalizeProvider)(input.maxAttempts ?? import_util_retry.DEFAULT_MAX_ATTEMPTS);
+      return {
+        ...input,
+        maxAttempts,
+        retryStrategy: async () => {
+          if (retryStrategy) {
+            return retryStrategy;
+          }
+          const retryMode = await (0, import_util_middleware.normalizeProvider)(input.retryMode)();
+          if (retryMode === import_util_retry.RETRY_MODES.ADAPTIVE) {
+            return new import_util_retry.AdaptiveRetryStrategy(maxAttempts);
+          }
+          return new import_util_retry.StandardRetryStrategy(maxAttempts);
+        }
+      };
+    }, "resolveRetryConfig");
+    var ENV_RETRY_MODE = "AWS_RETRY_MODE";
+    var CONFIG_RETRY_MODE = "retry_mode";
+    var NODE_RETRY_MODE_CONFIG_OPTIONS = {
+      environmentVariableSelector: (env) => env[ENV_RETRY_MODE],
+      configFileSelector: (profile) => profile[CONFIG_RETRY_MODE],
+      default: import_util_retry.DEFAULT_RETRY_MODE
+    };
+    var omitRetryHeadersMiddleware = /* @__PURE__ */ __name(() => (next) => async (args) => {
+      const { request } = args;
+      if (import_protocol_http.HttpRequest.isInstance(request)) {
+        delete request.headers[import_util_retry.INVOCATION_ID_HEADER];
+        delete request.headers[import_util_retry.REQUEST_HEADER];
+      }
+      return next(args);
+    }, "omitRetryHeadersMiddleware");
+    var omitRetryHeadersMiddlewareOptions = {
+      name: "omitRetryHeadersMiddleware",
+      tags: ["RETRY", "HEADERS", "OMIT_RETRY_HEADERS"],
+      relation: "before",
+      toMiddleware: "awsAuthMiddleware",
+      override: true
+    };
+    var getOmitRetryHeadersPlugin = /* @__PURE__ */ __name((options) => ({
+      applyToStack: (clientStack) => {
+        clientStack.addRelativeTo(omitRetryHeadersMiddleware(), omitRetryHeadersMiddlewareOptions);
+      }
+    }), "getOmitRetryHeadersPlugin");
+    var import_smithy_client = require_dist_cjs30();
+    var import_isStreamingPayload = require_isStreamingPayload();
+    var retryMiddleware = /* @__PURE__ */ __name((options) => (next, context) => async (args) => {
+      var _a;
+      let retryStrategy = await options.retryStrategy();
+      const maxAttempts = await options.maxAttempts();
+      if (isRetryStrategyV2(retryStrategy)) {
+        retryStrategy = retryStrategy;
+        let retryToken = await retryStrategy.acquireInitialRetryToken(context["partition_id"]);
+        let lastError = new Error();
+        let attempts = 0;
+        let totalRetryDelay = 0;
+        const { request } = args;
+        const isRequest = import_protocol_http.HttpRequest.isInstance(request);
+        if (isRequest) {
+          request.headers[import_util_retry.INVOCATION_ID_HEADER] = (0, import_uuid.v4)();
+        }
+        while (true) {
+          try {
+            if (isRequest) {
+              request.headers[import_util_retry.REQUEST_HEADER] = `attempt=${attempts + 1}; max=${maxAttempts}`;
+            }
+            const { response, output } = await next(args);
+            retryStrategy.recordSuccess(retryToken);
+            output.$metadata.attempts = attempts + 1;
+            output.$metadata.totalRetryDelay = totalRetryDelay;
+            return { response, output };
+          } catch (e) {
+            const retryErrorInfo = getRetryErrorInfo(e);
+            lastError = asSdkError(e);
+            if (isRequest && (0, import_isStreamingPayload.isStreamingPayload)(request)) {
+              (_a = context.logger instanceof import_smithy_client.NoOpLogger ? console : context.logger) == null ? void 0 : _a.warn(
+                "An error was encountered in a non-retryable streaming request."
+              );
+              throw lastError;
+            }
+            try {
+              retryToken = await retryStrategy.refreshRetryTokenForRetry(retryToken, retryErrorInfo);
+            } catch (refreshError) {
+              if (!lastError.$metadata) {
+                lastError.$metadata = {};
+              }
+              lastError.$metadata.attempts = attempts + 1;
+              lastError.$metadata.totalRetryDelay = totalRetryDelay;
+              throw lastError;
+            }
+            attempts = retryToken.getRetryCount();
+            const delay = retryToken.getRetryDelay();
+            totalRetryDelay += delay;
+            await new Promise((resolve) => setTimeout(resolve, delay));
+          }
+        }
+      } else {
+        retryStrategy = retryStrategy;
+        if (retryStrategy == null ? void 0 : retryStrategy.mode)
+          context.userAgent = [...context.userAgent || [], ["cfg/retry-mode", retryStrategy.mode]];
+        return retryStrategy.retry(next, args);
+      }
+    }, "retryMiddleware");
+    var isRetryStrategyV2 = /* @__PURE__ */ __name((retryStrategy) => typeof retryStrategy.acquireInitialRetryToken !== "undefined" && typeof retryStrategy.refreshRetryTokenForRetry !== "undefined" && typeof retryStrategy.recordSuccess !== "undefined", "isRetryStrategyV2");
+    var getRetryErrorInfo = /* @__PURE__ */ __name((error) => {
+      const errorInfo = {
+        error,
+        errorType: getRetryErrorType(error)
+      };
+      const retryAfterHint = getRetryAfterHint(error.$response);
+      if (retryAfterHint) {
+        errorInfo.retryAfterHint = retryAfterHint;
+      }
+      return errorInfo;
+    }, "getRetryErrorInfo");
+    var getRetryErrorType = /* @__PURE__ */ __name((error) => {
+      if ((0, import_service_error_classification.isThrottlingError)(error))
+        return "THROTTLING";
+      if ((0, import_service_error_classification.isTransientError)(error))
+        return "TRANSIENT";
+      if ((0, import_service_error_classification.isServerError)(error))
+        return "SERVER_ERROR";
+      return "CLIENT_ERROR";
+    }, "getRetryErrorType");
+    var retryMiddlewareOptions = {
+      name: "retryMiddleware",
+      tags: ["RETRY"],
+      step: "finalizeRequest",
+      priority: "high",
+      override: true
+    };
+    var getRetryPlugin = /* @__PURE__ */ __name((options) => ({
+      applyToStack: (clientStack) => {
+        clientStack.add(retryMiddleware(options), retryMiddlewareOptions);
+      }
+    }), "getRetryPlugin");
+    var getRetryAfterHint = /* @__PURE__ */ __name((response) => {
+      if (!import_protocol_http.HttpResponse.isInstance(response))
+        return;
+      const retryAfterHeaderName = Object.keys(response.headers).find((key) => key.toLowerCase() === "retry-after");
+      if (!retryAfterHeaderName)
+        return;
+      const retryAfter = response.headers[retryAfterHeaderName];
+      const retryAfterSeconds = Number(retryAfter);
+      if (!Number.isNaN(retryAfterSeconds))
+        return new Date(retryAfterSeconds * 1e3);
+      const retryAfterDate = new Date(retryAfter);
+      return retryAfterDate;
+    }, "getRetryAfterHint");
+  }
+});
+
+// ../../../../node_modules/@smithy/core/dist-cjs/index.js
+var require_dist_cjs32 = __commonJS({
+  "../../../../node_modules/@smithy/core/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      DefaultIdentityProviderConfig: () => DefaultIdentityProviderConfig,
+      EXPIRATION_MS: () => EXPIRATION_MS,
+      HttpApiKeyAuthSigner: () => HttpApiKeyAuthSigner,
+      HttpBearerAuthSigner: () => HttpBearerAuthSigner,
+      NoAuthSigner: () => NoAuthSigner,
+      RequestBuilder: () => RequestBuilder,
+      createIsIdentityExpiredFunction: () => createIsIdentityExpiredFunction,
+      createPaginator: () => createPaginator,
+      doesIdentityRequireRefresh: () => doesIdentityRequireRefresh,
+      getHttpAuthSchemeEndpointRuleSetPlugin: () => getHttpAuthSchemeEndpointRuleSetPlugin,
+      getHttpAuthSchemePlugin: () => getHttpAuthSchemePlugin,
+      getHttpSigningPlugin: () => getHttpSigningPlugin,
+      getSmithyContext: () => getSmithyContext3,
+      httpAuthSchemeEndpointRuleSetMiddlewareOptions: () => httpAuthSchemeEndpointRuleSetMiddlewareOptions,
+      httpAuthSchemeMiddleware: () => httpAuthSchemeMiddleware,
+      httpAuthSchemeMiddlewareOptions: () => httpAuthSchemeMiddlewareOptions,
+      httpSigningMiddleware: () => httpSigningMiddleware,
+      httpSigningMiddlewareOptions: () => httpSigningMiddlewareOptions,
+      isIdentityExpired: () => isIdentityExpired,
+      memoizeIdentityProvider: () => memoizeIdentityProvider,
+      normalizeProvider: () => normalizeProvider,
+      requestBuilder: () => requestBuilder
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var import_util_middleware = require_dist_cjs13();
+    function convertHttpAuthSchemesToMap(httpAuthSchemes) {
+      const map = /* @__PURE__ */ new Map();
+      for (const scheme of httpAuthSchemes) {
+        map.set(scheme.schemeId, scheme);
+      }
+      return map;
+    }
+    __name(convertHttpAuthSchemesToMap, "convertHttpAuthSchemesToMap");
+    var httpAuthSchemeMiddleware = /* @__PURE__ */ __name((config, mwOptions) => (next, context) => async (args) => {
+      var _a;
+      const options = config.httpAuthSchemeProvider(
+        await mwOptions.httpAuthSchemeParametersProvider(config, context, args.input)
+      );
+      const authSchemes = convertHttpAuthSchemesToMap(config.httpAuthSchemes);
+      const smithyContext = (0, import_util_middleware.getSmithyContext)(context);
+      const failureReasons = [];
+      for (const option of options) {
+        const scheme = authSchemes.get(option.schemeId);
+        if (!scheme) {
+          failureReasons.push(`HttpAuthScheme \`${option.schemeId}\` was not enabled for this service.`);
+          continue;
+        }
+        const identityProvider = scheme.identityProvider(await mwOptions.identityProviderConfigProvider(config));
+        if (!identityProvider) {
+          failureReasons.push(`HttpAuthScheme \`${option.schemeId}\` did not have an IdentityProvider configured.`);
+          continue;
+        }
+        const { identityProperties = {}, signingProperties = {} } = ((_a = option.propertiesExtractor) == null ? void 0 : _a.call(option, config, context)) || {};
+        option.identityProperties = Object.assign(option.identityProperties || {}, identityProperties);
+        option.signingProperties = Object.assign(option.signingProperties || {}, signingProperties);
+        smithyContext.selectedHttpAuthScheme = {
+          httpAuthOption: option,
+          identity: await identityProvider(option.identityProperties),
+          signer: scheme.signer
+        };
+        break;
+      }
+      if (!smithyContext.selectedHttpAuthScheme) {
+        throw new Error(failureReasons.join("\n"));
+      }
+      return next(args);
+    }, "httpAuthSchemeMiddleware");
+    var import_middleware_endpoint = require_dist_cjs21();
+    var httpAuthSchemeEndpointRuleSetMiddlewareOptions = {
+      step: "serialize",
+      tags: ["HTTP_AUTH_SCHEME"],
+      name: "httpAuthSchemeMiddleware",
+      override: true,
+      relation: "before",
+      toMiddleware: import_middleware_endpoint.endpointMiddlewareOptions.name
+    };
+    var getHttpAuthSchemeEndpointRuleSetPlugin = /* @__PURE__ */ __name((config, {
+      httpAuthSchemeParametersProvider,
+      identityProviderConfigProvider
+    }) => ({
+      applyToStack: (clientStack) => {
+        clientStack.addRelativeTo(
+          httpAuthSchemeMiddleware(config, {
+            httpAuthSchemeParametersProvider,
+            identityProviderConfigProvider
+          }),
+          httpAuthSchemeEndpointRuleSetMiddlewareOptions
+        );
+      }
+    }), "getHttpAuthSchemeEndpointRuleSetPlugin");
+    var import_middleware_serde = require_dist_cjs20();
+    var httpAuthSchemeMiddlewareOptions = {
+      step: "serialize",
+      tags: ["HTTP_AUTH_SCHEME"],
+      name: "httpAuthSchemeMiddleware",
+      override: true,
+      relation: "before",
+      toMiddleware: import_middleware_serde.serializerMiddlewareOption.name
+    };
+    var getHttpAuthSchemePlugin = /* @__PURE__ */ __name((config, {
+      httpAuthSchemeParametersProvider,
+      identityProviderConfigProvider
+    }) => ({
+      applyToStack: (clientStack) => {
+        clientStack.addRelativeTo(
+          httpAuthSchemeMiddleware(config, {
+            httpAuthSchemeParametersProvider,
+            identityProviderConfigProvider
+          }),
+          httpAuthSchemeMiddlewareOptions
+        );
+      }
+    }), "getHttpAuthSchemePlugin");
+    var import_protocol_http = require_dist_cjs2();
+    var defaultErrorHandler = /* @__PURE__ */ __name((signingProperties) => (error) => {
+      throw error;
+    }, "defaultErrorHandler");
+    var defaultSuccessHandler = /* @__PURE__ */ __name((httpResponse, signingProperties) => {
+    }, "defaultSuccessHandler");
+    var httpSigningMiddleware = /* @__PURE__ */ __name((config) => (next, context) => async (args) => {
+      if (!import_protocol_http.HttpRequest.isInstance(args.request)) {
+        return next(args);
+      }
+      const smithyContext = (0, import_util_middleware.getSmithyContext)(context);
+      const scheme = smithyContext.selectedHttpAuthScheme;
+      if (!scheme) {
+        throw new Error(`No HttpAuthScheme was selected: unable to sign request`);
+      }
+      const {
+        httpAuthOption: { signingProperties = {} },
+        identity,
+        signer
+      } = scheme;
+      const output = await next({
+        ...args,
+        request: await signer.sign(args.request, identity, signingProperties)
+      }).catch((signer.errorHandler || defaultErrorHandler)(signingProperties));
+      (signer.successHandler || defaultSuccessHandler)(output.response, signingProperties);
+      return output;
+    }, "httpSigningMiddleware");
+    var import_middleware_retry = require_dist_cjs31();
+    var httpSigningMiddlewareOptions = {
+      step: "finalizeRequest",
+      tags: ["HTTP_SIGNING"],
+      name: "httpSigningMiddleware",
+      aliases: ["apiKeyMiddleware", "tokenMiddleware", "awsAuthMiddleware"],
+      override: true,
+      relation: "after",
+      toMiddleware: import_middleware_retry.retryMiddlewareOptions.name
+    };
+    var getHttpSigningPlugin = /* @__PURE__ */ __name((config) => ({
+      applyToStack: (clientStack) => {
+        clientStack.addRelativeTo(httpSigningMiddleware(config), httpSigningMiddlewareOptions);
+      }
+    }), "getHttpSigningPlugin");
+    var _DefaultIdentityProviderConfig = class _DefaultIdentityProviderConfig {
+      /**
+       * Creates an IdentityProviderConfig with a record of scheme IDs to identity providers.
+       *
+       * @param config scheme IDs and identity providers to configure
+       */
+      constructor(config) {
+        this.authSchemes = /* @__PURE__ */ new Map();
+        for (const [key, value] of Object.entries(config)) {
+          if (value !== void 0) {
+            this.authSchemes.set(key, value);
+          }
+        }
+      }
+      getIdentityProvider(schemeId) {
+        return this.authSchemes.get(schemeId);
+      }
+    };
+    __name(_DefaultIdentityProviderConfig, "DefaultIdentityProviderConfig");
+    var DefaultIdentityProviderConfig = _DefaultIdentityProviderConfig;
+    var import_types = require_dist_cjs();
+    var _HttpApiKeyAuthSigner = class _HttpApiKeyAuthSigner {
+      async sign(httpRequest, identity, signingProperties) {
+        if (!signingProperties) {
+          throw new Error(
+            "request could not be signed with `apiKey` since the `name` and `in` signer properties are missing"
+          );
+        }
+        if (!signingProperties.name) {
+          throw new Error("request could not be signed with `apiKey` since the `name` signer property is missing");
+        }
+        if (!signingProperties.in) {
+          throw new Error("request could not be signed with `apiKey` since the `in` signer property is missing");
+        }
+        if (!identity.apiKey) {
+          throw new Error("request could not be signed with `apiKey` since the `apiKey` is not defined");
+        }
+        const clonedRequest = httpRequest.clone();
+        if (signingProperties.in === import_types.HttpApiKeyAuthLocation.QUERY) {
+          clonedRequest.query[signingProperties.name] = identity.apiKey;
+        } else if (signingProperties.in === import_types.HttpApiKeyAuthLocation.HEADER) {
+          clonedRequest.headers[signingProperties.name] = signingProperties.scheme ? `${signingProperties.scheme} ${identity.apiKey}` : identity.apiKey;
+        } else {
+          throw new Error(
+            "request can only be signed with `apiKey` locations `query` or `header`, but found: `" + signingProperties.in + "`"
+          );
+        }
+        return clonedRequest;
+      }
+    };
+    __name(_HttpApiKeyAuthSigner, "HttpApiKeyAuthSigner");
+    var HttpApiKeyAuthSigner = _HttpApiKeyAuthSigner;
+    var _HttpBearerAuthSigner = class _HttpBearerAuthSigner {
+      async sign(httpRequest, identity, signingProperties) {
+        const clonedRequest = httpRequest.clone();
+        if (!identity.token) {
+          throw new Error("request could not be signed with `token` since the `token` is not defined");
+        }
+        clonedRequest.headers["Authorization"] = `Bearer ${identity.token}`;
+        return clonedRequest;
+      }
+    };
+    __name(_HttpBearerAuthSigner, "HttpBearerAuthSigner");
+    var HttpBearerAuthSigner = _HttpBearerAuthSigner;
+    var _NoAuthSigner = class _NoAuthSigner {
+      async sign(httpRequest, identity, signingProperties) {
+        return httpRequest;
+      }
+    };
+    __name(_NoAuthSigner, "NoAuthSigner");
+    var NoAuthSigner = _NoAuthSigner;
+    var createIsIdentityExpiredFunction = /* @__PURE__ */ __name((expirationMs) => (identity) => doesIdentityRequireRefresh(identity) && identity.expiration.getTime() - Date.now() < expirationMs, "createIsIdentityExpiredFunction");
+    var EXPIRATION_MS = 3e5;
+    var isIdentityExpired = createIsIdentityExpiredFunction(EXPIRATION_MS);
+    var doesIdentityRequireRefresh = /* @__PURE__ */ __name((identity) => identity.expiration !== void 0, "doesIdentityRequireRefresh");
+    var memoizeIdentityProvider = /* @__PURE__ */ __name((provider, isExpired, requiresRefresh) => {
+      if (provider === void 0) {
+        return void 0;
+      }
+      const normalizedProvider = typeof provider !== "function" ? async () => Promise.resolve(provider) : provider;
+      let resolved;
+      let pending;
+      let hasResult;
+      let isConstant = false;
+      const coalesceProvider = /* @__PURE__ */ __name(async (options) => {
+        if (!pending) {
+          pending = normalizedProvider(options);
+        }
+        try {
+          resolved = await pending;
+          hasResult = true;
+          isConstant = false;
+        } finally {
+          pending = void 0;
+        }
+        return resolved;
+      }, "coalesceProvider");
+      if (isExpired === void 0) {
+        return async (options) => {
+          if (!hasResult || (options == null ? void 0 : options.forceRefresh)) {
+            resolved = await coalesceProvider(options);
+          }
+          return resolved;
+        };
+      }
+      return async (options) => {
+        if (!hasResult || (options == null ? void 0 : options.forceRefresh)) {
+          resolved = await coalesceProvider(options);
+        }
+        if (isConstant) {
+          return resolved;
+        }
+        if (!requiresRefresh(resolved)) {
+          isConstant = true;
+          return resolved;
+        }
+        if (isExpired(resolved)) {
+          await coalesceProvider(options);
+          return resolved;
+        }
+        return resolved;
+      };
+    }, "memoizeIdentityProvider");
+    var getSmithyContext3 = /* @__PURE__ */ __name((context) => context[import_types.SMITHY_CONTEXT_KEY] || (context[import_types.SMITHY_CONTEXT_KEY] = {}), "getSmithyContext");
+    var normalizeProvider = /* @__PURE__ */ __name((input) => {
+      if (typeof input === "function")
+        return input;
+      const promisified = Promise.resolve(input);
+      return () => promisified;
+    }, "normalizeProvider");
+    var import_smithy_client = require_dist_cjs30();
+    function requestBuilder(input, context) {
+      return new RequestBuilder(input, context);
+    }
+    __name(requestBuilder, "requestBuilder");
+    var _RequestBuilder = class _RequestBuilder {
+      constructor(input, context) {
+        this.input = input;
+        this.context = context;
+        this.query = {};
+        this.method = "";
+        this.headers = {};
+        this.path = "";
+        this.body = null;
+        this.hostname = "";
+        this.resolvePathStack = [];
+      }
+      async build() {
+        const { hostname, protocol = "https", port, path: basePath } = await this.context.endpoint();
+        this.path = basePath;
+        for (const resolvePath of this.resolvePathStack) {
+          resolvePath(this.path);
+        }
+        return new import_protocol_http.HttpRequest({
+          protocol,
+          hostname: this.hostname || hostname,
+          port,
+          method: this.method,
+          path: this.path,
+          query: this.query,
+          body: this.body,
+          headers: this.headers
+        });
+      }
+      /**
+       * Brevity setter for "hostname".
+       */
+      hn(hostname) {
+        this.hostname = hostname;
+        return this;
+      }
+      /**
+       * Brevity initial builder for "basepath".
+       */
+      bp(uriLabel) {
+        this.resolvePathStack.push((basePath) => {
+          this.path = `${(basePath == null ? void 0 : basePath.endsWith("/")) ? basePath.slice(0, -1) : basePath || ""}` + uriLabel;
+        });
+        return this;
+      }
+      /**
+       * Brevity incremental builder for "path".
+       */
+      p(memberName, labelValueProvider, uriLabel, isGreedyLabel) {
+        this.resolvePathStack.push((path) => {
+          this.path = (0, import_smithy_client.resolvedPath)(path, this.input, memberName, labelValueProvider, uriLabel, isGreedyLabel);
+        });
+        return this;
+      }
+      /**
+       * Brevity setter for "headers".
+       */
+      h(headers) {
+        this.headers = headers;
+        return this;
+      }
+      /**
+       * Brevity setter for "query".
+       */
+      q(query) {
+        this.query = query;
+        return this;
+      }
+      /**
+       * Brevity setter for "body".
+       */
+      b(body) {
+        this.body = body;
+        return this;
+      }
+      /**
+       * Brevity setter for "method".
+       */
+      m(method) {
+        this.method = method;
+        return this;
+      }
+    };
+    __name(_RequestBuilder, "RequestBuilder");
+    var RequestBuilder = _RequestBuilder;
+    var makePagedClientRequest = /* @__PURE__ */ __name(async (CommandCtor, client, input, ...args) => {
+      return await client.send(new CommandCtor(input), ...args);
+    }, "makePagedClientRequest");
+    function createPaginator(ClientCtor, CommandCtor, inputTokenName, outputTokenName, pageSizeTokenName) {
+      return /* @__PURE__ */ __name(async function* paginateOperation(config, input, ...additionalArguments) {
+        let token = config.startingToken || void 0;
+        let hasNext = true;
+        let page;
+        while (hasNext) {
+          input[inputTokenName] = token;
+          if (pageSizeTokenName) {
+            input[pageSizeTokenName] = input[pageSizeTokenName] ?? config.pageSize;
+          }
+          if (config.client instanceof ClientCtor) {
+            page = await makePagedClientRequest(CommandCtor, config.client, input, ...additionalArguments);
+          } else {
+            throw new Error(`Invalid client, expected instance of ${ClientCtor.name}`);
+          }
+          yield page;
+          const prevToken = token;
+          token = get(page, outputTokenName);
+          hasNext = !!(token && (!config.stopOnSameToken || token !== prevToken));
+        }
+        return void 0;
+      }, "paginateOperation");
+    }
+    __name(createPaginator, "createPaginator");
+    var get = /* @__PURE__ */ __name((fromObject, path) => {
+      let cursor = fromObject;
+      const pathComponents = path.split(".");
+      for (const step of pathComponents) {
+        if (!cursor || typeof cursor !== "object") {
+          return void 0;
+        }
+        cursor = cursor[step];
+      }
+      return cursor;
+    }, "get");
+  }
+});
+
+// ../../../../node_modules/@smithy/middleware-content-length/dist-cjs/index.js
+var require_dist_cjs33 = __commonJS({
+  "../../../../node_modules/@smithy/middleware-content-length/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      contentLengthMiddleware: () => contentLengthMiddleware,
+      contentLengthMiddlewareOptions: () => contentLengthMiddlewareOptions,
+      getContentLengthPlugin: () => getContentLengthPlugin
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var import_protocol_http = require_dist_cjs2();
+    var CONTENT_LENGTH_HEADER = "content-length";
+    function contentLengthMiddleware(bodyLengthChecker) {
+      return (next) => async (args) => {
+        const request = args.request;
+        if (import_protocol_http.HttpRequest.isInstance(request)) {
+          const { body, headers } = request;
+          if (body && Object.keys(headers).map((str) => str.toLowerCase()).indexOf(CONTENT_LENGTH_HEADER) === -1) {
+            try {
+              const length = bodyLengthChecker(body);
+              request.headers = {
+                ...request.headers,
+                [CONTENT_LENGTH_HEADER]: String(length)
+              };
+            } catch (error) {
+            }
+          }
+        }
+        return next({
+          ...args,
+          request
+        });
+      };
+    }
+    __name(contentLengthMiddleware, "contentLengthMiddleware");
+    var contentLengthMiddlewareOptions = {
+      step: "build",
+      tags: ["SET_CONTENT_LENGTH", "CONTENT_LENGTH"],
+      name: "contentLengthMiddleware",
+      override: true
+    };
+    var getContentLengthPlugin = /* @__PURE__ */ __name((options) => ({
+      applyToStack: (clientStack) => {
+        clientStack.add(contentLengthMiddleware(options.bodyLengthChecker), contentLengthMiddlewareOptions);
+      }
+    }), "getContentLengthPlugin");
+  }
+});
+
+// ../../../../node_modules/@aws-crypto/crc32/node_modules/tslib/tslib.es6.js
+var tslib_es6_exports2 = {};
+__export(tslib_es6_exports2, {
+  __assign: () => __assign2,
+  __asyncDelegator: () => __asyncDelegator2,
+  __asyncGenerator: () => __asyncGenerator2,
+  __asyncValues: () => __asyncValues2,
+  __await: () => __await2,
+  __awaiter: () => __awaiter2,
+  __classPrivateFieldGet: () => __classPrivateFieldGet2,
+  __classPrivateFieldSet: () => __classPrivateFieldSet2,
+  __createBinding: () => __createBinding2,
+  __decorate: () => __decorate2,
+  __exportStar: () => __exportStar2,
+  __extends: () => __extends2,
+  __generator: () => __generator2,
+  __importDefault: () => __importDefault2,
+  __importStar: () => __importStar2,
+  __makeTemplateObject: () => __makeTemplateObject2,
+  __metadata: () => __metadata2,
+  __param: () => __param2,
+  __read: () => __read2,
+  __rest: () => __rest2,
+  __spread: () => __spread2,
+  __spreadArrays: () => __spreadArrays2,
+  __values: () => __values2
+});
+function __extends2(d, b) {
+  extendStatics2(d, b);
+  function __() {
+    this.constructor = d;
+  }
+  d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+function __rest2(s, e) {
+  var t = {};
+  for (var p in s)
+    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+      t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function")
+    for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+      if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+        t[p[i]] = s[p[i]];
+    }
+  return t;
+}
+function __decorate2(decorators, target, key, desc) {
+  var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+  if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+    r = Reflect.decorate(decorators, target, key, desc);
+  else
+    for (var i = decorators.length - 1; i >= 0; i--)
+      if (d = decorators[i])
+        r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+function __param2(paramIndex, decorator) {
+  return function(target, key) {
+    decorator(target, key, paramIndex);
+  };
+}
+function __metadata2(metadataKey, metadataValue) {
+  if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+    return Reflect.metadata(metadataKey, metadataValue);
+}
+function __awaiter2(thisArg, _arguments, P, generator) {
+  function adopt(value) {
+    return value instanceof P ? value : new P(function(resolve) {
+      resolve(value);
+    });
+  }
+  return new (P || (P = Promise))(function(resolve, reject) {
+    function fulfilled(value) {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function rejected(value) {
+      try {
+        step(generator["throw"](value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function step(result) {
+      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+    }
+    step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
+}
+function __generator2(thisArg, body) {
+  var _ = { label: 0, sent: function() {
+    if (t[0] & 1)
+      throw t[1];
+    return t[1];
+  }, trys: [], ops: [] }, f, y, t, g;
+  return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() {
+    return this;
+  }), g;
+  function verb(n) {
+    return function(v) {
+      return step([n, v]);
+    };
+  }
+  function step(op) {
+    if (f)
+      throw new TypeError("Generator is already executing.");
+    while (_)
+      try {
+        if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done)
+          return t;
+        if (y = 0, t)
+          op = [op[0] & 2, t.value];
+        switch (op[0]) {
+          case 0:
+          case 1:
+            t = op;
+            break;
+          case 4:
+            _.label++;
+            return { value: op[1], done: false };
+          case 5:
+            _.label++;
+            y = op[1];
+            op = [0];
+            continue;
+          case 7:
+            op = _.ops.pop();
+            _.trys.pop();
+            continue;
+          default:
+            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+              _ = 0;
+              continue;
+            }
+            if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+              _.label = op[1];
+              break;
+            }
+            if (op[0] === 6 && _.label < t[1]) {
+              _.label = t[1];
+              t = op;
+              break;
+            }
+            if (t && _.label < t[2]) {
+              _.label = t[2];
+              _.ops.push(op);
+              break;
+            }
+            if (t[2])
+              _.ops.pop();
+            _.trys.pop();
+            continue;
+        }
+        op = body.call(thisArg, _);
+      } catch (e) {
+        op = [6, e];
+        y = 0;
+      } finally {
+        f = t = 0;
+      }
+    if (op[0] & 5)
+      throw op[1];
+    return { value: op[0] ? op[1] : void 0, done: true };
+  }
+}
+function __createBinding2(o, m, k, k2) {
+  if (k2 === void 0)
+    k2 = k;
+  o[k2] = m[k];
+}
+function __exportStar2(m, exports2) {
+  for (var p in m)
+    if (p !== "default" && !exports2.hasOwnProperty(p))
+      exports2[p] = m[p];
+}
+function __values2(o) {
+  var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+  if (m)
+    return m.call(o);
+  if (o && typeof o.length === "number")
+    return {
+      next: function() {
+        if (o && i >= o.length)
+          o = void 0;
+        return { value: o && o[i++], done: !o };
+      }
+    };
+  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+function __read2(o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m)
+    return o;
+  var i = m.call(o), r, ar = [], e;
+  try {
+    while ((n === void 0 || n-- > 0) && !(r = i.next()).done)
+      ar.push(r.value);
+  } catch (error) {
+    e = { error };
+  } finally {
+    try {
+      if (r && !r.done && (m = i["return"]))
+        m.call(i);
+    } finally {
+      if (e)
+        throw e.error;
+    }
+  }
+  return ar;
+}
+function __spread2() {
+  for (var ar = [], i = 0; i < arguments.length; i++)
+    ar = ar.concat(__read2(arguments[i]));
+  return ar;
+}
+function __spreadArrays2() {
+  for (var s = 0, i = 0, il = arguments.length; i < il; i++)
+    s += arguments[i].length;
+  for (var r = Array(s), k = 0, i = 0; i < il; i++)
+    for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+      r[k] = a[j];
+  return r;
+}
+function __await2(v) {
+  return this instanceof __await2 ? (this.v = v, this) : new __await2(v);
+}
+function __asyncGenerator2(thisArg, _arguments, generator) {
+  if (!Symbol.asyncIterator)
+    throw new TypeError("Symbol.asyncIterator is not defined.");
+  var g = generator.apply(thisArg, _arguments || []), i, q = [];
+  return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
+    return this;
+  }, i;
+  function verb(n) {
+    if (g[n])
+      i[n] = function(v) {
+        return new Promise(function(a, b) {
+          q.push([n, v, a, b]) > 1 || resume(n, v);
+        });
+      };
+  }
+  function resume(n, v) {
+    try {
+      step(g[n](v));
+    } catch (e) {
+      settle(q[0][3], e);
+    }
+  }
+  function step(r) {
+    r.value instanceof __await2 ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
+  }
+  function fulfill(value) {
+    resume("next", value);
+  }
+  function reject(value) {
+    resume("throw", value);
+  }
+  function settle(f, v) {
+    if (f(v), q.shift(), q.length)
+      resume(q[0][0], q[0][1]);
+  }
+}
+function __asyncDelegator2(o) {
+  var i, p;
+  return i = {}, verb("next"), verb("throw", function(e) {
+    throw e;
+  }), verb("return"), i[Symbol.iterator] = function() {
+    return this;
+  }, i;
+  function verb(n, f) {
+    i[n] = o[n] ? function(v) {
+      return (p = !p) ? { value: __await2(o[n](v)), done: n === "return" } : f ? f(v) : v;
+    } : f;
+  }
+}
+function __asyncValues2(o) {
+  if (!Symbol.asyncIterator)
+    throw new TypeError("Symbol.asyncIterator is not defined.");
+  var m = o[Symbol.asyncIterator], i;
+  return m ? m.call(o) : (o = typeof __values2 === "function" ? __values2(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
+    return this;
+  }, i);
+  function verb(n) {
+    i[n] = o[n] && function(v) {
+      return new Promise(function(resolve, reject) {
+        v = o[n](v), settle(resolve, reject, v.done, v.value);
+      });
+    };
+  }
+  function settle(resolve, reject, d, v) {
+    Promise.resolve(v).then(function(v2) {
+      resolve({ value: v2, done: d });
+    }, reject);
+  }
+}
+function __makeTemplateObject2(cooked, raw) {
+  if (Object.defineProperty) {
+    Object.defineProperty(cooked, "raw", { value: raw });
+  } else {
+    cooked.raw = raw;
+  }
+  return cooked;
+}
+function __importStar2(mod) {
+  if (mod && mod.__esModule)
+    return mod;
+  var result = {};
+  if (mod != null) {
+    for (var k in mod)
+      if (Object.hasOwnProperty.call(mod, k))
+        result[k] = mod[k];
+  }
+  result.default = mod;
+  return result;
+}
+function __importDefault2(mod) {
+  return mod && mod.__esModule ? mod : { default: mod };
+}
+function __classPrivateFieldGet2(receiver, privateMap) {
+  if (!privateMap.has(receiver)) {
+    throw new TypeError("attempted to get private field on non-instance");
+  }
+  return privateMap.get(receiver);
+}
+function __classPrivateFieldSet2(receiver, privateMap, value) {
+  if (!privateMap.has(receiver)) {
+    throw new TypeError("attempted to set private field on non-instance");
+  }
+  privateMap.set(receiver, value);
+  return value;
+}
+var extendStatics2, __assign2;
+var init_tslib_es62 = __esm({
+  "../../../../node_modules/@aws-crypto/crc32/node_modules/tslib/tslib.es6.js"() {
+    extendStatics2 = function(d, b) {
+      extendStatics2 = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
+        d2.__proto__ = b2;
+      } || function(d2, b2) {
+        for (var p in b2)
+          if (b2.hasOwnProperty(p))
+            d2[p] = b2[p];
+      };
+      return extendStatics2(d, b);
+    };
+    __assign2 = function() {
+      __assign2 = Object.assign || function __assign3(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+          for (var p in s)
+            if (Object.prototype.hasOwnProperty.call(s, p))
+              t[p] = s[p];
+        }
+        return t;
+      };
+      return __assign2.apply(this, arguments);
+    };
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/util-utf8-browser/dist-cjs/pureJs.js
+var require_pureJs = __commonJS({
+  "../../../../node_modules/@aws-sdk/util-utf8-browser/dist-cjs/pureJs.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.toUtf8 = exports2.fromUtf8 = void 0;
+    var fromUtf8 = (input) => {
+      const bytes = [];
+      for (let i = 0, len = input.length; i < len; i++) {
+        const value = input.charCodeAt(i);
+        if (value < 128) {
+          bytes.push(value);
+        } else if (value < 2048) {
+          bytes.push(value >> 6 | 192, value & 63 | 128);
+        } else if (i + 1 < input.length && (value & 64512) === 55296 && (input.charCodeAt(i + 1) & 64512) === 56320) {
+          const surrogatePair = 65536 + ((value & 1023) << 10) + (input.charCodeAt(++i) & 1023);
+          bytes.push(surrogatePair >> 18 | 240, surrogatePair >> 12 & 63 | 128, surrogatePair >> 6 & 63 | 128, surrogatePair & 63 | 128);
+        } else {
+          bytes.push(value >> 12 | 224, value >> 6 & 63 | 128, value & 63 | 128);
+        }
+      }
+      return Uint8Array.from(bytes);
+    };
+    exports2.fromUtf8 = fromUtf8;
+    var toUtf8 = (input) => {
+      let decoded = "";
+      for (let i = 0, len = input.length; i < len; i++) {
+        const byte = input[i];
+        if (byte < 128) {
+          decoded += String.fromCharCode(byte);
+        } else if (192 <= byte && byte < 224) {
+          const nextByte = input[++i];
+          decoded += String.fromCharCode((byte & 31) << 6 | nextByte & 63);
+        } else if (240 <= byte && byte < 365) {
+          const surrogatePair = [byte, input[++i], input[++i], input[++i]];
+          const encoded = "%" + surrogatePair.map((byteValue) => byteValue.toString(16)).join("%");
+          decoded += decodeURIComponent(encoded);
+        } else {
+          decoded += String.fromCharCode((byte & 15) << 12 | (input[++i] & 63) << 6 | input[++i] & 63);
+        }
+      }
+      return decoded;
+    };
+    exports2.toUtf8 = toUtf8;
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/util-utf8-browser/dist-cjs/whatwgEncodingApi.js
+var require_whatwgEncodingApi = __commonJS({
+  "../../../../node_modules/@aws-sdk/util-utf8-browser/dist-cjs/whatwgEncodingApi.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.toUtf8 = exports2.fromUtf8 = void 0;
+    function fromUtf8(input) {
+      return new TextEncoder().encode(input);
+    }
+    exports2.fromUtf8 = fromUtf8;
+    function toUtf8(input) {
+      return new TextDecoder("utf-8").decode(input);
+    }
+    exports2.toUtf8 = toUtf8;
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/util-utf8-browser/dist-cjs/index.js
+var require_dist_cjs34 = __commonJS({
+  "../../../../node_modules/@aws-sdk/util-utf8-browser/dist-cjs/index.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.toUtf8 = exports2.fromUtf8 = void 0;
+    var pureJs_1 = require_pureJs();
+    var whatwgEncodingApi_1 = require_whatwgEncodingApi();
+    var fromUtf8 = (input) => typeof TextEncoder === "function" ? (0, whatwgEncodingApi_1.fromUtf8)(input) : (0, pureJs_1.fromUtf8)(input);
+    exports2.fromUtf8 = fromUtf8;
+    var toUtf8 = (input) => typeof TextDecoder === "function" ? (0, whatwgEncodingApi_1.toUtf8)(input) : (0, pureJs_1.toUtf8)(input);
+    exports2.toUtf8 = toUtf8;
+  }
+});
+
+// ../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/convertToBuffer.js
+var require_convertToBuffer2 = __commonJS({
+  "../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/convertToBuffer.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.convertToBuffer = void 0;
+    var util_utf8_browser_1 = require_dist_cjs34();
+    var fromUtf8 = typeof Buffer !== "undefined" && Buffer.from ? function(input) {
+      return Buffer.from(input, "utf8");
+    } : util_utf8_browser_1.fromUtf8;
+    function convertToBuffer(data) {
+      if (data instanceof Uint8Array)
+        return data;
+      if (typeof data === "string") {
+        return fromUtf8(data);
+      }
+      if (ArrayBuffer.isView(data)) {
+        return new Uint8Array(data.buffer, data.byteOffset, data.byteLength / Uint8Array.BYTES_PER_ELEMENT);
+      }
+      return new Uint8Array(data);
+    }
+    exports2.convertToBuffer = convertToBuffer;
+  }
+});
+
+// ../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/isEmptyData.js
+var require_isEmptyData2 = __commonJS({
+  "../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/isEmptyData.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.isEmptyData = void 0;
+    function isEmptyData(data) {
+      if (typeof data === "string") {
+        return data.length === 0;
+      }
+      return data.byteLength === 0;
+    }
+    exports2.isEmptyData = isEmptyData;
+  }
+});
+
+// ../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/numToUint8.js
+var require_numToUint82 = __commonJS({
+  "../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/numToUint8.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.numToUint8 = void 0;
+    function numToUint8(num) {
+      return new Uint8Array([
+        (num & 4278190080) >> 24,
+        (num & 16711680) >> 16,
+        (num & 65280) >> 8,
+        num & 255
+      ]);
+    }
+    exports2.numToUint8 = numToUint8;
+  }
+});
+
+// ../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/uint32ArrayFrom.js
+var require_uint32ArrayFrom2 = __commonJS({
+  "../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/uint32ArrayFrom.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.uint32ArrayFrom = void 0;
+    function uint32ArrayFrom(a_lookUpTable) {
+      if (!Uint32Array.from) {
+        var return_array = new Uint32Array(a_lookUpTable.length);
+        var a_index = 0;
+        while (a_index < a_lookUpTable.length) {
+          return_array[a_index] = a_lookUpTable[a_index];
+          a_index += 1;
+        }
+        return return_array;
+      }
+      return Uint32Array.from(a_lookUpTable);
+    }
+    exports2.uint32ArrayFrom = uint32ArrayFrom;
+  }
+});
+
+// ../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/index.js
+var require_build = __commonJS({
+  "../../../../node_modules/@aws-crypto/crc32/node_modules/@aws-crypto/util/build/index.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.uint32ArrayFrom = exports2.numToUint8 = exports2.isEmptyData = exports2.convertToBuffer = void 0;
+    var convertToBuffer_1 = require_convertToBuffer2();
+    Object.defineProperty(exports2, "convertToBuffer", { enumerable: true, get: function() {
+      return convertToBuffer_1.convertToBuffer;
+    } });
+    var isEmptyData_1 = require_isEmptyData2();
+    Object.defineProperty(exports2, "isEmptyData", { enumerable: true, get: function() {
+      return isEmptyData_1.isEmptyData;
+    } });
+    var numToUint8_1 = require_numToUint82();
+    Object.defineProperty(exports2, "numToUint8", { enumerable: true, get: function() {
+      return numToUint8_1.numToUint8;
+    } });
+    var uint32ArrayFrom_1 = require_uint32ArrayFrom2();
+    Object.defineProperty(exports2, "uint32ArrayFrom", { enumerable: true, get: function() {
+      return uint32ArrayFrom_1.uint32ArrayFrom;
+    } });
+  }
+});
+
+// ../../../../node_modules/@aws-crypto/crc32/build/aws_crc32.js
+var require_aws_crc32 = __commonJS({
+  "../../../../node_modules/@aws-crypto/crc32/build/aws_crc32.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.AwsCrc32 = void 0;
+    var tslib_1 = (init_tslib_es62(), __toCommonJS(tslib_es6_exports2));
+    var util_1 = require_build();
+    var index_1 = require_build2();
+    var AwsCrc32 = (
+      /** @class */
+      function() {
+        function AwsCrc322() {
+          this.crc32 = new index_1.Crc32();
+        }
+        AwsCrc322.prototype.update = function(toHash) {
+          if ((0, util_1.isEmptyData)(toHash))
+            return;
+          this.crc32.update((0, util_1.convertToBuffer)(toHash));
+        };
+        AwsCrc322.prototype.digest = function() {
+          return tslib_1.__awaiter(this, void 0, void 0, function() {
+            return tslib_1.__generator(this, function(_a) {
+              return [2, (0, util_1.numToUint8)(this.crc32.digest())];
+            });
+          });
+        };
+        AwsCrc322.prototype.reset = function() {
+          this.crc32 = new index_1.Crc32();
+        };
+        return AwsCrc322;
+      }()
+    );
+    exports2.AwsCrc32 = AwsCrc32;
+  }
+});
+
+// ../../../../node_modules/@aws-crypto/crc32/build/index.js
+var require_build2 = __commonJS({
+  "../../../../node_modules/@aws-crypto/crc32/build/index.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.AwsCrc32 = exports2.Crc32 = exports2.crc32 = void 0;
+    var tslib_1 = (init_tslib_es62(), __toCommonJS(tslib_es6_exports2));
+    var util_1 = require_build();
+    function crc32(data) {
+      return new Crc32().update(data).digest();
+    }
+    exports2.crc32 = crc32;
+    var Crc32 = (
+      /** @class */
+      function() {
+        function Crc322() {
+          this.checksum = 4294967295;
+        }
+        Crc322.prototype.update = function(data) {
+          var e_1, _a;
+          try {
+            for (var data_1 = tslib_1.__values(data), data_1_1 = data_1.next(); !data_1_1.done; data_1_1 = data_1.next()) {
+              var byte = data_1_1.value;
+              this.checksum = this.checksum >>> 8 ^ lookupTable[(this.checksum ^ byte) & 255];
+            }
+          } catch (e_1_1) {
+            e_1 = { error: e_1_1 };
+          } finally {
+            try {
+              if (data_1_1 && !data_1_1.done && (_a = data_1.return))
+                _a.call(data_1);
+            } finally {
+              if (e_1)
+                throw e_1.error;
+            }
+          }
+          return this;
+        };
+        Crc322.prototype.digest = function() {
+          return (this.checksum ^ 4294967295) >>> 0;
+        };
+        return Crc322;
+      }()
+    );
+    exports2.Crc32 = Crc32;
+    var a_lookUpTable = [
+      0,
+      1996959894,
+      3993919788,
+      2567524794,
+      124634137,
+      1886057615,
+      3915621685,
+      2657392035,
+      249268274,
+      2044508324,
+      3772115230,
+      2547177864,
+      162941995,
+      2125561021,
+      3887607047,
+      2428444049,
+      498536548,
+      1789927666,
+      4089016648,
+      2227061214,
+      450548861,
+      1843258603,
+      4107580753,
+      2211677639,
+      325883990,
+      1684777152,
+      4251122042,
+      2321926636,
+      335633487,
+      1661365465,
+      4195302755,
+      2366115317,
+      997073096,
+      1281953886,
+      3579855332,
+      2724688242,
+      1006888145,
+      1258607687,
+      3524101629,
+      2768942443,
+      901097722,
+      1119000684,
+      3686517206,
+      2898065728,
+      853044451,
+      1172266101,
+      3705015759,
+      2882616665,
+      651767980,
+      1373503546,
+      3369554304,
+      3218104598,
+      565507253,
+      1454621731,
+      3485111705,
+      3099436303,
+      671266974,
+      1594198024,
+      3322730930,
+      2970347812,
+      795835527,
+      1483230225,
+      3244367275,
+      3060149565,
+      1994146192,
+      31158534,
+      2563907772,
+      4023717930,
+      1907459465,
+      112637215,
+      2680153253,
+      3904427059,
+      2013776290,
+      251722036,
+      2517215374,
+      3775830040,
+      2137656763,
+      141376813,
+      2439277719,
+      3865271297,
+      1802195444,
+      476864866,
+      2238001368,
+      4066508878,
+      1812370925,
+      453092731,
+      2181625025,
+      4111451223,
+      1706088902,
+      314042704,
+      2344532202,
+      4240017532,
+      1658658271,
+      366619977,
+      2362670323,
+      4224994405,
+      1303535960,
+      984961486,
+      2747007092,
+      3569037538,
+      1256170817,
+      1037604311,
+      2765210733,
+      3554079995,
+      1131014506,
+      879679996,
+      2909243462,
+      3663771856,
+      1141124467,
+      855842277,
+      2852801631,
+      3708648649,
+      1342533948,
+      654459306,
+      3188396048,
+      3373015174,
+      1466479909,
+      544179635,
+      3110523913,
+      3462522015,
+      1591671054,
+      702138776,
+      2966460450,
+      3352799412,
+      1504918807,
+      783551873,
+      3082640443,
+      3233442989,
+      3988292384,
+      2596254646,
+      62317068,
+      1957810842,
+      3939845945,
+      2647816111,
+      81470997,
+      1943803523,
+      3814918930,
+      2489596804,
+      225274430,
+      2053790376,
+      3826175755,
+      2466906013,
+      167816743,
+      2097651377,
+      4027552580,
+      2265490386,
+      503444072,
+      1762050814,
+      4150417245,
+      2154129355,
+      426522225,
+      1852507879,
+      4275313526,
+      2312317920,
+      282753626,
+      1742555852,
+      4189708143,
+      2394877945,
+      397917763,
+      1622183637,
+      3604390888,
+      2714866558,
+      953729732,
+      1340076626,
+      3518719985,
+      2797360999,
+      1068828381,
+      1219638859,
+      3624741850,
+      2936675148,
+      906185462,
+      1090812512,
+      3747672003,
+      2825379669,
+      829329135,
+      1181335161,
+      3412177804,
+      3160834842,
+      628085408,
+      1382605366,
+      3423369109,
+      3138078467,
+      570562233,
+      1426400815,
+      3317316542,
+      2998733608,
+      733239954,
+      1555261956,
+      3268935591,
+      3050360625,
+      752459403,
+      1541320221,
+      2607071920,
+      3965973030,
+      1969922972,
+      40735498,
+      2617837225,
+      3943577151,
+      1913087877,
+      83908371,
+      2512341634,
+      3803740692,
+      2075208622,
+      213261112,
+      2463272603,
+      3855990285,
+      2094854071,
+      198958881,
+      2262029012,
+      4057260610,
+      1759359992,
+      534414190,
+      2176718541,
+      4139329115,
+      1873836001,
+      414664567,
+      2282248934,
+      4279200368,
+      1711684554,
+      285281116,
+      2405801727,
+      4167216745,
+      1634467795,
+      376229701,
+      2685067896,
+      3608007406,
+      1308918612,
+      956543938,
+      2808555105,
+      3495958263,
+      1231636301,
+      1047427035,
+      2932959818,
+      3654703836,
+      1088359270,
+      936918e3,
+      2847714899,
+      3736837829,
+      1202900863,
+      817233897,
+      3183342108,
+      3401237130,
+      1404277552,
+      615818150,
+      3134207493,
+      3453421203,
+      1423857449,
+      601450431,
+      3009837614,
+      3294710456,
+      1567103746,
+      711928724,
+      3020668471,
+      3272380065,
+      1510334235,
+      755167117
+    ];
+    var lookupTable = (0, util_1.uint32ArrayFrom)(a_lookUpTable);
+    var aws_crc32_1 = require_aws_crc32();
+    Object.defineProperty(exports2, "AwsCrc32", { enumerable: true, get: function() {
+      return aws_crc32_1.AwsCrc32;
+    } });
+  }
+});
+
+// ../../../../node_modules/@smithy/util-hex-encoding/dist-cjs/index.js
+var require_dist_cjs35 = __commonJS({
+  "../../../../node_modules/@smithy/util-hex-encoding/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      fromHex: () => fromHex,
+      toHex: () => toHex
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var SHORT_TO_HEX = {};
+    var HEX_TO_SHORT = {};
+    for (let i = 0; i < 256; i++) {
+      let encodedByte = i.toString(16).toLowerCase();
+      if (encodedByte.length === 1) {
+        encodedByte = `0${encodedByte}`;
+      }
+      SHORT_TO_HEX[i] = encodedByte;
+      HEX_TO_SHORT[encodedByte] = i;
+    }
+    function fromHex(encoded) {
+      if (encoded.length % 2 !== 0) {
+        throw new Error("Hex encoded strings must have an even number length");
+      }
+      const out = new Uint8Array(encoded.length / 2);
+      for (let i = 0; i < encoded.length; i += 2) {
+        const encodedByte = encoded.slice(i, i + 2).toLowerCase();
+        if (encodedByte in HEX_TO_SHORT) {
+          out[i / 2] = HEX_TO_SHORT[encodedByte];
+        } else {
+          throw new Error(`Cannot decode unrecognized sequence ${encodedByte} as hexadecimal`);
+        }
+      }
+      return out;
+    }
+    __name(fromHex, "fromHex");
+    function toHex(bytes) {
+      let out = "";
+      for (let i = 0; i < bytes.byteLength; i++) {
+        out += SHORT_TO_HEX[bytes[i]];
+      }
+      return out;
+    }
+    __name(toHex, "toHex");
+  }
+});
+
+// ../../../../node_modules/@smithy/eventstream-codec/dist-cjs/index.js
+var require_dist_cjs36 = __commonJS({
+  "../../../../node_modules/@smithy/eventstream-codec/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      EventStreamCodec: () => EventStreamCodec,
+      HeaderMarshaller: () => HeaderMarshaller,
+      Int64: () => Int64,
+      MessageDecoderStream: () => MessageDecoderStream,
+      MessageEncoderStream: () => MessageEncoderStream,
+      SmithyMessageDecoderStream: () => SmithyMessageDecoderStream,
+      SmithyMessageEncoderStream: () => SmithyMessageEncoderStream
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var import_crc322 = require_build2();
+    var import_util_hex_encoding = require_dist_cjs35();
+    var _Int64 = class _Int642 {
+      constructor(bytes) {
+        this.bytes = bytes;
+        if (bytes.byteLength !== 8) {
+          throw new Error("Int64 buffers must be exactly 8 bytes");
+        }
+      }
+      static fromNumber(number) {
+        if (number > 9223372036854776e3 || number < -9223372036854776e3) {
+          throw new Error(`${number} is too large (or, if negative, too small) to represent as an Int64`);
+        }
+        const bytes = new Uint8Array(8);
+        for (let i = 7, remaining = Math.abs(Math.round(number)); i > -1 && remaining > 0; i--, remaining /= 256) {
+          bytes[i] = remaining;
+        }
+        if (number < 0) {
+          negate(bytes);
+        }
+        return new _Int642(bytes);
+      }
+      /**
+       * Called implicitly by infix arithmetic operators.
+       */
+      valueOf() {
+        const bytes = this.bytes.slice(0);
+        const negative = bytes[0] & 128;
+        if (negative) {
+          negate(bytes);
+        }
+        return parseInt((0, import_util_hex_encoding.toHex)(bytes), 16) * (negative ? -1 : 1);
+      }
+      toString() {
+        return String(this.valueOf());
+      }
+    };
+    __name(_Int64, "Int64");
+    var Int64 = _Int64;
+    function negate(bytes) {
+      for (let i = 0; i < 8; i++) {
+        bytes[i] ^= 255;
+      }
+      for (let i = 7; i > -1; i--) {
+        bytes[i]++;
+        if (bytes[i] !== 0)
+          break;
+      }
+    }
+    __name(negate, "negate");
+    var _HeaderMarshaller = class _HeaderMarshaller {
+      constructor(toUtf8, fromUtf8) {
+        this.toUtf8 = toUtf8;
+        this.fromUtf8 = fromUtf8;
+      }
+      format(headers) {
+        const chunks = [];
+        for (const headerName of Object.keys(headers)) {
+          const bytes = this.fromUtf8(headerName);
+          chunks.push(Uint8Array.from([bytes.byteLength]), bytes, this.formatHeaderValue(headers[headerName]));
+        }
+        const out = new Uint8Array(chunks.reduce((carry, bytes) => carry + bytes.byteLength, 0));
+        let position = 0;
+        for (const chunk of chunks) {
+          out.set(chunk, position);
+          position += chunk.byteLength;
+        }
+        return out;
+      }
+      formatHeaderValue(header) {
+        switch (header.type) {
+          case "boolean":
+            return Uint8Array.from([
+              header.value ? 0 : 1
+              /* boolFalse */
+            ]);
+          case "byte":
+            return Uint8Array.from([2, header.value]);
+          case "short":
+            const shortView = new DataView(new ArrayBuffer(3));
+            shortView.setUint8(
+              0,
+              3
+              /* short */
+            );
+            shortView.setInt16(1, header.value, false);
+            return new Uint8Array(shortView.buffer);
+          case "integer":
+            const intView = new DataView(new ArrayBuffer(5));
+            intView.setUint8(
+              0,
+              4
+              /* integer */
+            );
+            intView.setInt32(1, header.value, false);
+            return new Uint8Array(intView.buffer);
+          case "long":
+            const longBytes = new Uint8Array(9);
+            longBytes[0] = 5;
+            longBytes.set(header.value.bytes, 1);
+            return longBytes;
+          case "binary":
+            const binView = new DataView(new ArrayBuffer(3 + header.value.byteLength));
+            binView.setUint8(
+              0,
+              6
+              /* byteArray */
+            );
+            binView.setUint16(1, header.value.byteLength, false);
+            const binBytes = new Uint8Array(binView.buffer);
+            binBytes.set(header.value, 3);
+            return binBytes;
+          case "string":
+            const utf8Bytes = this.fromUtf8(header.value);
+            const strView = new DataView(new ArrayBuffer(3 + utf8Bytes.byteLength));
+            strView.setUint8(
+              0,
+              7
+              /* string */
+            );
+            strView.setUint16(1, utf8Bytes.byteLength, false);
+            const strBytes = new Uint8Array(strView.buffer);
+            strBytes.set(utf8Bytes, 3);
+            return strBytes;
+          case "timestamp":
+            const tsBytes = new Uint8Array(9);
+            tsBytes[0] = 8;
+            tsBytes.set(Int64.fromNumber(header.value.valueOf()).bytes, 1);
+            return tsBytes;
+          case "uuid":
+            if (!UUID_PATTERN.test(header.value)) {
+              throw new Error(`Invalid UUID received: ${header.value}`);
+            }
+            const uuidBytes = new Uint8Array(17);
+            uuidBytes[0] = 9;
+            uuidBytes.set((0, import_util_hex_encoding.fromHex)(header.value.replace(/\-/g, "")), 1);
+            return uuidBytes;
+        }
+      }
+      parse(headers) {
+        const out = {};
+        let position = 0;
+        while (position < headers.byteLength) {
+          const nameLength = headers.getUint8(position++);
+          const name = this.toUtf8(new Uint8Array(headers.buffer, headers.byteOffset + position, nameLength));
+          position += nameLength;
+          switch (headers.getUint8(position++)) {
+            case 0:
+              out[name] = {
+                type: BOOLEAN_TAG,
+                value: true
+              };
+              break;
+            case 1:
+              out[name] = {
+                type: BOOLEAN_TAG,
+                value: false
+              };
+              break;
+            case 2:
+              out[name] = {
+                type: BYTE_TAG,
+                value: headers.getInt8(position++)
+              };
+              break;
+            case 3:
+              out[name] = {
+                type: SHORT_TAG,
+                value: headers.getInt16(position, false)
+              };
+              position += 2;
+              break;
+            case 4:
+              out[name] = {
+                type: INT_TAG,
+                value: headers.getInt32(position, false)
+              };
+              position += 4;
+              break;
+            case 5:
+              out[name] = {
+                type: LONG_TAG,
+                value: new Int64(new Uint8Array(headers.buffer, headers.byteOffset + position, 8))
+              };
+              position += 8;
+              break;
+            case 6:
+              const binaryLength = headers.getUint16(position, false);
+              position += 2;
+              out[name] = {
+                type: BINARY_TAG,
+                value: new Uint8Array(headers.buffer, headers.byteOffset + position, binaryLength)
+              };
+              position += binaryLength;
+              break;
+            case 7:
+              const stringLength = headers.getUint16(position, false);
+              position += 2;
+              out[name] = {
+                type: STRING_TAG,
+                value: this.toUtf8(new Uint8Array(headers.buffer, headers.byteOffset + position, stringLength))
+              };
+              position += stringLength;
+              break;
+            case 8:
+              out[name] = {
+                type: TIMESTAMP_TAG,
+                value: new Date(new Int64(new Uint8Array(headers.buffer, headers.byteOffset + position, 8)).valueOf())
+              };
+              position += 8;
+              break;
+            case 9:
+              const uuidBytes = new Uint8Array(headers.buffer, headers.byteOffset + position, 16);
+              position += 16;
+              out[name] = {
+                type: UUID_TAG,
+                value: `${(0, import_util_hex_encoding.toHex)(uuidBytes.subarray(0, 4))}-${(0, import_util_hex_encoding.toHex)(uuidBytes.subarray(4, 6))}-${(0, import_util_hex_encoding.toHex)(
+                  uuidBytes.subarray(6, 8)
+                )}-${(0, import_util_hex_encoding.toHex)(uuidBytes.subarray(8, 10))}-${(0, import_util_hex_encoding.toHex)(uuidBytes.subarray(10))}`
+              };
+              break;
+            default:
+              throw new Error(`Unrecognized header type tag`);
+          }
+        }
+        return out;
+      }
+    };
+    __name(_HeaderMarshaller, "HeaderMarshaller");
+    var HeaderMarshaller = _HeaderMarshaller;
+    var BOOLEAN_TAG = "boolean";
+    var BYTE_TAG = "byte";
+    var SHORT_TAG = "short";
+    var INT_TAG = "integer";
+    var LONG_TAG = "long";
+    var BINARY_TAG = "binary";
+    var STRING_TAG = "string";
+    var TIMESTAMP_TAG = "timestamp";
+    var UUID_TAG = "uuid";
+    var UUID_PATTERN = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/;
+    var import_crc32 = require_build2();
+    var PRELUDE_MEMBER_LENGTH = 4;
+    var PRELUDE_LENGTH = PRELUDE_MEMBER_LENGTH * 2;
+    var CHECKSUM_LENGTH = 4;
+    var MINIMUM_MESSAGE_LENGTH = PRELUDE_LENGTH + CHECKSUM_LENGTH * 2;
+    function splitMessage({ byteLength, byteOffset, buffer }) {
+      if (byteLength < MINIMUM_MESSAGE_LENGTH) {
+        throw new Error("Provided message too short to accommodate event stream message overhead");
+      }
+      const view = new DataView(buffer, byteOffset, byteLength);
+      const messageLength = view.getUint32(0, false);
+      if (byteLength !== messageLength) {
+        throw new Error("Reported message length does not match received message length");
+      }
+      const headerLength = view.getUint32(PRELUDE_MEMBER_LENGTH, false);
+      const expectedPreludeChecksum = view.getUint32(PRELUDE_LENGTH, false);
+      const expectedMessageChecksum = view.getUint32(byteLength - CHECKSUM_LENGTH, false);
+      const checksummer = new import_crc32.Crc32().update(new Uint8Array(buffer, byteOffset, PRELUDE_LENGTH));
+      if (expectedPreludeChecksum !== checksummer.digest()) {
+        throw new Error(
+          `The prelude checksum specified in the message (${expectedPreludeChecksum}) does not match the calculated CRC32 checksum (${checksummer.digest()})`
+        );
+      }
+      checksummer.update(
+        new Uint8Array(buffer, byteOffset + PRELUDE_LENGTH, byteLength - (PRELUDE_LENGTH + CHECKSUM_LENGTH))
+      );
+      if (expectedMessageChecksum !== checksummer.digest()) {
+        throw new Error(
+          `The message checksum (${checksummer.digest()}) did not match the expected value of ${expectedMessageChecksum}`
+        );
+      }
+      return {
+        headers: new DataView(buffer, byteOffset + PRELUDE_LENGTH + CHECKSUM_LENGTH, headerLength),
+        body: new Uint8Array(
+          buffer,
+          byteOffset + PRELUDE_LENGTH + CHECKSUM_LENGTH + headerLength,
+          messageLength - headerLength - (PRELUDE_LENGTH + CHECKSUM_LENGTH + CHECKSUM_LENGTH)
+        )
+      };
+    }
+    __name(splitMessage, "splitMessage");
+    var _EventStreamCodec = class _EventStreamCodec {
+      constructor(toUtf8, fromUtf8) {
+        this.headerMarshaller = new HeaderMarshaller(toUtf8, fromUtf8);
+        this.messageBuffer = [];
+        this.isEndOfStream = false;
+      }
+      feed(message) {
+        this.messageBuffer.push(this.decode(message));
+      }
+      endOfStream() {
+        this.isEndOfStream = true;
+      }
+      getMessage() {
+        const message = this.messageBuffer.pop();
+        const isEndOfStream = this.isEndOfStream;
+        return {
+          getMessage() {
+            return message;
+          },
+          isEndOfStream() {
+            return isEndOfStream;
+          }
+        };
+      }
+      getAvailableMessages() {
+        const messages = this.messageBuffer;
+        this.messageBuffer = [];
+        const isEndOfStream = this.isEndOfStream;
+        return {
+          getMessages() {
+            return messages;
+          },
+          isEndOfStream() {
+            return isEndOfStream;
+          }
+        };
+      }
+      /**
+       * Convert a structured JavaScript object with tagged headers into a binary
+       * event stream message.
+       */
+      encode({ headers: rawHeaders, body }) {
+        const headers = this.headerMarshaller.format(rawHeaders);
+        const length = headers.byteLength + body.byteLength + 16;
+        const out = new Uint8Array(length);
+        const view = new DataView(out.buffer, out.byteOffset, out.byteLength);
+        const checksum = new import_crc322.Crc32();
+        view.setUint32(0, length, false);
+        view.setUint32(4, headers.byteLength, false);
+        view.setUint32(8, checksum.update(out.subarray(0, 8)).digest(), false);
+        out.set(headers, 12);
+        out.set(body, headers.byteLength + 12);
+        view.setUint32(length - 4, checksum.update(out.subarray(8, length - 4)).digest(), false);
+        return out;
+      }
+      /**
+       * Convert a binary event stream message into a JavaScript object with an
+       * opaque, binary body and tagged, parsed headers.
+       */
+      decode(message) {
+        const { headers, body } = splitMessage(message);
+        return { headers: this.headerMarshaller.parse(headers), body };
+      }
+      /**
+       * Convert a structured JavaScript object with tagged headers into a binary
+       * event stream message header.
+       */
+      formatHeaders(rawHeaders) {
+        return this.headerMarshaller.format(rawHeaders);
+      }
+    };
+    __name(_EventStreamCodec, "EventStreamCodec");
+    var EventStreamCodec = _EventStreamCodec;
+    var _MessageDecoderStream = class _MessageDecoderStream {
+      constructor(options) {
+        this.options = options;
+      }
+      [Symbol.asyncIterator]() {
+        return this.asyncIterator();
+      }
+      async *asyncIterator() {
+        for await (const bytes of this.options.inputStream) {
+          const decoded = this.options.decoder.decode(bytes);
+          yield decoded;
+        }
+      }
+    };
+    __name(_MessageDecoderStream, "MessageDecoderStream");
+    var MessageDecoderStream = _MessageDecoderStream;
+    var _MessageEncoderStream = class _MessageEncoderStream {
+      constructor(options) {
+        this.options = options;
+      }
+      [Symbol.asyncIterator]() {
+        return this.asyncIterator();
+      }
+      async *asyncIterator() {
+        for await (const msg of this.options.messageStream) {
+          const encoded = this.options.encoder.encode(msg);
+          yield encoded;
+        }
+        if (this.options.includeEndFrame) {
+          yield new Uint8Array(0);
+        }
+      }
+    };
+    __name(_MessageEncoderStream, "MessageEncoderStream");
+    var MessageEncoderStream = _MessageEncoderStream;
+    var _SmithyMessageDecoderStream = class _SmithyMessageDecoderStream {
+      constructor(options) {
+        this.options = options;
+      }
+      [Symbol.asyncIterator]() {
+        return this.asyncIterator();
+      }
+      async *asyncIterator() {
+        for await (const message of this.options.messageStream) {
+          const deserialized = await this.options.deserializer(message);
+          if (deserialized === void 0)
+            continue;
+          yield deserialized;
+        }
+      }
+    };
+    __name(_SmithyMessageDecoderStream, "SmithyMessageDecoderStream");
+    var SmithyMessageDecoderStream = _SmithyMessageDecoderStream;
+    var _SmithyMessageEncoderStream = class _SmithyMessageEncoderStream {
+      constructor(options) {
+        this.options = options;
+      }
+      [Symbol.asyncIterator]() {
+        return this.asyncIterator();
+      }
+      async *asyncIterator() {
+        for await (const chunk of this.options.inputStream) {
+          const payloadBuf = this.options.serializer(chunk);
+          yield payloadBuf;
+        }
+      }
+    };
+    __name(_SmithyMessageEncoderStream, "SmithyMessageEncoderStream");
+    var SmithyMessageEncoderStream = _SmithyMessageEncoderStream;
+  }
+});
+
+// ../../../../node_modules/@smithy/signature-v4/dist-cjs/index.js
+var require_dist_cjs37 = __commonJS({
+  "../../../../node_modules/@smithy/signature-v4/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      SignatureV4: () => SignatureV4,
+      clearCredentialCache: () => clearCredentialCache,
+      createScope: () => createScope,
+      getCanonicalHeaders: () => getCanonicalHeaders,
+      getCanonicalQuery: () => getCanonicalQuery,
+      getPayloadHash: () => getPayloadHash,
+      getSigningKey: () => getSigningKey,
+      moveHeadersToQuery: () => moveHeadersToQuery,
+      prepareRequest: () => prepareRequest
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var import_eventstream_codec = require_dist_cjs36();
+    var import_util_middleware = require_dist_cjs13();
+    var import_util_utf83 = require_dist_cjs5();
+    var ALGORITHM_QUERY_PARAM = "X-Amz-Algorithm";
+    var CREDENTIAL_QUERY_PARAM = "X-Amz-Credential";
+    var AMZ_DATE_QUERY_PARAM = "X-Amz-Date";
+    var SIGNED_HEADERS_QUERY_PARAM = "X-Amz-SignedHeaders";
+    var EXPIRES_QUERY_PARAM = "X-Amz-Expires";
+    var SIGNATURE_QUERY_PARAM = "X-Amz-Signature";
+    var TOKEN_QUERY_PARAM = "X-Amz-Security-Token";
+    var AUTH_HEADER = "authorization";
+    var AMZ_DATE_HEADER = AMZ_DATE_QUERY_PARAM.toLowerCase();
+    var DATE_HEADER = "date";
+    var GENERATED_HEADERS = [AUTH_HEADER, AMZ_DATE_HEADER, DATE_HEADER];
+    var SIGNATURE_HEADER = SIGNATURE_QUERY_PARAM.toLowerCase();
+    var SHA256_HEADER = "x-amz-content-sha256";
+    var TOKEN_HEADER = TOKEN_QUERY_PARAM.toLowerCase();
+    var ALWAYS_UNSIGNABLE_HEADERS = {
+      authorization: true,
+      "cache-control": true,
+      connection: true,
+      expect: true,
+      from: true,
+      "keep-alive": true,
+      "max-forwards": true,
+      pragma: true,
+      referer: true,
+      te: true,
+      trailer: true,
+      "transfer-encoding": true,
+      upgrade: true,
+      "user-agent": true,
+      "x-amzn-trace-id": true
+    };
+    var PROXY_HEADER_PATTERN = /^proxy-/;
+    var SEC_HEADER_PATTERN = /^sec-/;
+    var ALGORITHM_IDENTIFIER = "AWS4-HMAC-SHA256";
+    var EVENT_ALGORITHM_IDENTIFIER = "AWS4-HMAC-SHA256-PAYLOAD";
+    var UNSIGNED_PAYLOAD = "UNSIGNED-PAYLOAD";
+    var MAX_CACHE_SIZE = 50;
+    var KEY_TYPE_IDENTIFIER = "aws4_request";
+    var MAX_PRESIGNED_TTL = 60 * 60 * 24 * 7;
+    var import_util_hex_encoding = require_dist_cjs35();
+    var import_util_utf8 = require_dist_cjs5();
+    var signingKeyCache = {};
+    var cacheQueue = [];
+    var createScope = /* @__PURE__ */ __name((shortDate, region, service) => `${shortDate}/${region}/${service}/${KEY_TYPE_IDENTIFIER}`, "createScope");
+    var getSigningKey = /* @__PURE__ */ __name(async (sha256Constructor, credentials, shortDate, region, service) => {
+      const credsHash = await hmac(sha256Constructor, credentials.secretAccessKey, credentials.accessKeyId);
+      const cacheKey = `${shortDate}:${region}:${service}:${(0, import_util_hex_encoding.toHex)(credsHash)}:${credentials.sessionToken}`;
+      if (cacheKey in signingKeyCache) {
+        return signingKeyCache[cacheKey];
+      }
+      cacheQueue.push(cacheKey);
+      while (cacheQueue.length > MAX_CACHE_SIZE) {
+        delete signingKeyCache[cacheQueue.shift()];
+      }
+      let key = `AWS4${credentials.secretAccessKey}`;
+      for (const signable of [shortDate, region, service, KEY_TYPE_IDENTIFIER]) {
+        key = await hmac(sha256Constructor, key, signable);
+      }
+      return signingKeyCache[cacheKey] = key;
+    }, "getSigningKey");
+    var clearCredentialCache = /* @__PURE__ */ __name(() => {
+      cacheQueue.length = 0;
+      Object.keys(signingKeyCache).forEach((cacheKey) => {
+        delete signingKeyCache[cacheKey];
+      });
+    }, "clearCredentialCache");
+    var hmac = /* @__PURE__ */ __name((ctor, secret, data) => {
+      const hash = new ctor(secret);
+      hash.update((0, import_util_utf8.toUint8Array)(data));
+      return hash.digest();
+    }, "hmac");
+    var getCanonicalHeaders = /* @__PURE__ */ __name(({ headers }, unsignableHeaders, signableHeaders) => {
+      const canonical = {};
+      for (const headerName of Object.keys(headers).sort()) {
+        if (headers[headerName] == void 0) {
+          continue;
+        }
+        const canonicalHeaderName = headerName.toLowerCase();
+        if (canonicalHeaderName in ALWAYS_UNSIGNABLE_HEADERS || (unsignableHeaders == null ? void 0 : unsignableHeaders.has(canonicalHeaderName)) || PROXY_HEADER_PATTERN.test(canonicalHeaderName) || SEC_HEADER_PATTERN.test(canonicalHeaderName)) {
+          if (!signableHeaders || signableHeaders && !signableHeaders.has(canonicalHeaderName)) {
+            continue;
+          }
+        }
+        canonical[canonicalHeaderName] = headers[headerName].trim().replace(/\s+/g, " ");
+      }
+      return canonical;
+    }, "getCanonicalHeaders");
+    var import_util_uri_escape = require_dist_cjs26();
+    var getCanonicalQuery = /* @__PURE__ */ __name(({ query = {} }) => {
+      const keys = [];
+      const serialized = {};
+      for (const key of Object.keys(query).sort()) {
+        if (key.toLowerCase() === SIGNATURE_HEADER) {
+          continue;
+        }
+        keys.push(key);
+        const value = query[key];
+        if (typeof value === "string") {
+          serialized[key] = `${(0, import_util_uri_escape.escapeUri)(key)}=${(0, import_util_uri_escape.escapeUri)(value)}`;
+        } else if (Array.isArray(value)) {
+          serialized[key] = value.slice(0).reduce(
+            (encoded, value2) => encoded.concat([`${(0, import_util_uri_escape.escapeUri)(key)}=${(0, import_util_uri_escape.escapeUri)(value2)}`]),
+            []
+          ).sort().join("&");
+        }
+      }
+      return keys.map((key) => serialized[key]).filter((serialized2) => serialized2).join("&");
+    }, "getCanonicalQuery");
+    var import_is_array_buffer = require_dist_cjs3();
+    var import_util_utf82 = require_dist_cjs5();
+    var getPayloadHash = /* @__PURE__ */ __name(async ({ headers, body }, hashConstructor) => {
+      for (const headerName of Object.keys(headers)) {
+        if (headerName.toLowerCase() === SHA256_HEADER) {
+          return headers[headerName];
+        }
+      }
+      if (body == void 0) {
+        return "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
+      } else if (typeof body === "string" || ArrayBuffer.isView(body) || (0, import_is_array_buffer.isArrayBuffer)(body)) {
+        const hashCtor = new hashConstructor();
+        hashCtor.update((0, import_util_utf82.toUint8Array)(body));
+        return (0, import_util_hex_encoding.toHex)(await hashCtor.digest());
+      }
+      return UNSIGNED_PAYLOAD;
+    }, "getPayloadHash");
+    var hasHeader = /* @__PURE__ */ __name((soughtHeader, headers) => {
+      soughtHeader = soughtHeader.toLowerCase();
+      for (const headerName of Object.keys(headers)) {
+        if (soughtHeader === headerName.toLowerCase()) {
+          return true;
+        }
+      }
+      return false;
+    }, "hasHeader");
+    var cloneRequest = /* @__PURE__ */ __name(({ headers, query, ...rest }) => ({
+      ...rest,
+      headers: { ...headers },
+      query: query ? cloneQuery(query) : void 0
+    }), "cloneRequest");
+    var cloneQuery = /* @__PURE__ */ __name((query) => Object.keys(query).reduce((carry, paramName) => {
+      const param = query[paramName];
+      return {
+        ...carry,
+        [paramName]: Array.isArray(param) ? [...param] : param
+      };
+    }, {}), "cloneQuery");
+    var moveHeadersToQuery = /* @__PURE__ */ __name((request, options = {}) => {
+      var _a;
+      const { headers, query = {} } = typeof request.clone === "function" ? request.clone() : cloneRequest(request);
+      for (const name of Object.keys(headers)) {
+        const lname = name.toLowerCase();
+        if (lname.slice(0, 6) === "x-amz-" && !((_a = options.unhoistableHeaders) == null ? void 0 : _a.has(lname))) {
+          query[name] = headers[name];
+          delete headers[name];
+        }
+      }
+      return {
+        ...request,
+        headers,
+        query
+      };
+    }, "moveHeadersToQuery");
+    var prepareRequest = /* @__PURE__ */ __name((request) => {
+      request = typeof request.clone === "function" ? request.clone() : cloneRequest(request);
+      for (const headerName of Object.keys(request.headers)) {
+        if (GENERATED_HEADERS.indexOf(headerName.toLowerCase()) > -1) {
+          delete request.headers[headerName];
+        }
+      }
+      return request;
+    }, "prepareRequest");
+    var iso8601 = /* @__PURE__ */ __name((time) => toDate(time).toISOString().replace(/\.\d{3}Z$/, "Z"), "iso8601");
+    var toDate = /* @__PURE__ */ __name((time) => {
+      if (typeof time === "number") {
+        return new Date(time * 1e3);
+      }
+      if (typeof time === "string") {
+        if (Number(time)) {
+          return new Date(Number(time) * 1e3);
+        }
+        return new Date(time);
+      }
+      return time;
+    }, "toDate");
+    var _SignatureV4 = class _SignatureV4 {
+      constructor({
+        applyChecksum,
+        credentials,
+        region,
+        service,
+        sha256,
+        uriEscapePath = true
+      }) {
+        this.headerMarshaller = new import_eventstream_codec.HeaderMarshaller(import_util_utf83.toUtf8, import_util_utf83.fromUtf8);
+        this.service = service;
+        this.sha256 = sha256;
+        this.uriEscapePath = uriEscapePath;
+        this.applyChecksum = typeof applyChecksum === "boolean" ? applyChecksum : true;
+        this.regionProvider = (0, import_util_middleware.normalizeProvider)(region);
+        this.credentialProvider = (0, import_util_middleware.normalizeProvider)(credentials);
+      }
+      async presign(originalRequest, options = {}) {
+        const {
+          signingDate = /* @__PURE__ */ new Date(),
+          expiresIn = 3600,
+          unsignableHeaders,
+          unhoistableHeaders,
+          signableHeaders,
+          signingRegion,
+          signingService
+        } = options;
+        const credentials = await this.credentialProvider();
+        this.validateResolvedCredentials(credentials);
+        const region = signingRegion ?? await this.regionProvider();
+        const { longDate, shortDate } = formatDate(signingDate);
+        if (expiresIn > MAX_PRESIGNED_TTL) {
+          return Promise.reject(
+            "Signature version 4 presigned URLs must have an expiration date less than one week in the future"
+          );
+        }
+        const scope = createScope(shortDate, region, signingService ?? this.service);
+        const request = moveHeadersToQuery(prepareRequest(originalRequest), { unhoistableHeaders });
+        if (credentials.sessionToken) {
+          request.query[TOKEN_QUERY_PARAM] = credentials.sessionToken;
+        }
+        request.query[ALGORITHM_QUERY_PARAM] = ALGORITHM_IDENTIFIER;
+        request.query[CREDENTIAL_QUERY_PARAM] = `${credentials.accessKeyId}/${scope}`;
+        request.query[AMZ_DATE_QUERY_PARAM] = longDate;
+        request.query[EXPIRES_QUERY_PARAM] = expiresIn.toString(10);
+        const canonicalHeaders = getCanonicalHeaders(request, unsignableHeaders, signableHeaders);
+        request.query[SIGNED_HEADERS_QUERY_PARAM] = getCanonicalHeaderList(canonicalHeaders);
+        request.query[SIGNATURE_QUERY_PARAM] = await this.getSignature(
+          longDate,
+          scope,
+          this.getSigningKey(credentials, region, shortDate, signingService),
+          this.createCanonicalRequest(request, canonicalHeaders, await getPayloadHash(originalRequest, this.sha256))
+        );
+        return request;
+      }
+      async sign(toSign, options) {
+        if (typeof toSign === "string") {
+          return this.signString(toSign, options);
+        } else if (toSign.headers && toSign.payload) {
+          return this.signEvent(toSign, options);
+        } else if (toSign.message) {
+          return this.signMessage(toSign, options);
+        } else {
+          return this.signRequest(toSign, options);
+        }
+      }
+      async signEvent({ headers, payload }, { signingDate = /* @__PURE__ */ new Date(), priorSignature, signingRegion, signingService }) {
+        const region = signingRegion ?? await this.regionProvider();
+        const { shortDate, longDate } = formatDate(signingDate);
+        const scope = createScope(shortDate, region, signingService ?? this.service);
+        const hashedPayload = await getPayloadHash({ headers: {}, body: payload }, this.sha256);
+        const hash = new this.sha256();
+        hash.update(headers);
+        const hashedHeaders = (0, import_util_hex_encoding.toHex)(await hash.digest());
+        const stringToSign = [
+          EVENT_ALGORITHM_IDENTIFIER,
+          longDate,
+          scope,
+          priorSignature,
+          hashedHeaders,
+          hashedPayload
+        ].join("\n");
+        return this.signString(stringToSign, { signingDate, signingRegion: region, signingService });
+      }
+      async signMessage(signableMessage, { signingDate = /* @__PURE__ */ new Date(), signingRegion, signingService }) {
+        const promise = this.signEvent(
+          {
+            headers: this.headerMarshaller.format(signableMessage.message.headers),
+            payload: signableMessage.message.body
+          },
+          {
+            signingDate,
+            signingRegion,
+            signingService,
+            priorSignature: signableMessage.priorSignature
+          }
+        );
+        return promise.then((signature) => {
+          return { message: signableMessage.message, signature };
+        });
+      }
+      async signString(stringToSign, { signingDate = /* @__PURE__ */ new Date(), signingRegion, signingService } = {}) {
+        const credentials = await this.credentialProvider();
+        this.validateResolvedCredentials(credentials);
+        const region = signingRegion ?? await this.regionProvider();
+        const { shortDate } = formatDate(signingDate);
+        const hash = new this.sha256(await this.getSigningKey(credentials, region, shortDate, signingService));
+        hash.update((0, import_util_utf83.toUint8Array)(stringToSign));
+        return (0, import_util_hex_encoding.toHex)(await hash.digest());
+      }
+      async signRequest(requestToSign, {
+        signingDate = /* @__PURE__ */ new Date(),
+        signableHeaders,
+        unsignableHeaders,
+        signingRegion,
+        signingService
+      } = {}) {
+        const credentials = await this.credentialProvider();
+        this.validateResolvedCredentials(credentials);
+        const region = signingRegion ?? await this.regionProvider();
+        const request = prepareRequest(requestToSign);
+        const { longDate, shortDate } = formatDate(signingDate);
+        const scope = createScope(shortDate, region, signingService ?? this.service);
+        request.headers[AMZ_DATE_HEADER] = longDate;
+        if (credentials.sessionToken) {
+          request.headers[TOKEN_HEADER] = credentials.sessionToken;
+        }
+        const payloadHash = await getPayloadHash(request, this.sha256);
+        if (!hasHeader(SHA256_HEADER, request.headers) && this.applyChecksum) {
+          request.headers[SHA256_HEADER] = payloadHash;
+        }
+        const canonicalHeaders = getCanonicalHeaders(request, unsignableHeaders, signableHeaders);
+        const signature = await this.getSignature(
+          longDate,
+          scope,
+          this.getSigningKey(credentials, region, shortDate, signingService),
+          this.createCanonicalRequest(request, canonicalHeaders, payloadHash)
+        );
+        request.headers[AUTH_HEADER] = `${ALGORITHM_IDENTIFIER} Credential=${credentials.accessKeyId}/${scope}, SignedHeaders=${getCanonicalHeaderList(canonicalHeaders)}, Signature=${signature}`;
+        return request;
+      }
+      createCanonicalRequest(request, canonicalHeaders, payloadHash) {
+        const sortedHeaders = Object.keys(canonicalHeaders).sort();
+        return `${request.method}
+${this.getCanonicalPath(request)}
+${getCanonicalQuery(request)}
+${sortedHeaders.map((name) => `${name}:${canonicalHeaders[name]}`).join("\n")}
+
+${sortedHeaders.join(";")}
+${payloadHash}`;
+      }
+      async createStringToSign(longDate, credentialScope, canonicalRequest) {
+        const hash = new this.sha256();
+        hash.update((0, import_util_utf83.toUint8Array)(canonicalRequest));
+        const hashedRequest = await hash.digest();
+        return `${ALGORITHM_IDENTIFIER}
+${longDate}
+${credentialScope}
+${(0, import_util_hex_encoding.toHex)(hashedRequest)}`;
+      }
+      getCanonicalPath({ path }) {
+        if (this.uriEscapePath) {
+          const normalizedPathSegments = [];
+          for (const pathSegment of path.split("/")) {
+            if ((pathSegment == null ? void 0 : pathSegment.length) === 0)
+              continue;
+            if (pathSegment === ".")
+              continue;
+            if (pathSegment === "..") {
+              normalizedPathSegments.pop();
+            } else {
+              normalizedPathSegments.push(pathSegment);
+            }
+          }
+          const normalizedPath = `${(path == null ? void 0 : path.startsWith("/")) ? "/" : ""}${normalizedPathSegments.join("/")}${normalizedPathSegments.length > 0 && (path == null ? void 0 : path.endsWith("/")) ? "/" : ""}`;
+          const doubleEncoded = encodeURIComponent(normalizedPath);
+          return doubleEncoded.replace(/%2F/g, "/");
+        }
+        return path;
+      }
+      async getSignature(longDate, credentialScope, keyPromise, canonicalRequest) {
+        const stringToSign = await this.createStringToSign(longDate, credentialScope, canonicalRequest);
+        const hash = new this.sha256(await keyPromise);
+        hash.update((0, import_util_utf83.toUint8Array)(stringToSign));
+        return (0, import_util_hex_encoding.toHex)(await hash.digest());
+      }
+      getSigningKey(credentials, region, shortDate, service) {
+        return getSigningKey(this.sha256, credentials, shortDate, region, service || this.service);
+      }
+      validateResolvedCredentials(credentials) {
+        if (typeof credentials !== "object" || // @ts-expect-error: Property 'accessKeyId' does not exist on type 'object'.ts(2339)
+        typeof credentials.accessKeyId !== "string" || // @ts-expect-error: Property 'secretAccessKey' does not exist on type 'object'.ts(2339)
+        typeof credentials.secretAccessKey !== "string") {
+          throw new Error("Resolved credential object is not valid");
+        }
+      }
+    };
+    __name(_SignatureV4, "SignatureV4");
+    var SignatureV4 = _SignatureV4;
+    var formatDate = /* @__PURE__ */ __name((now) => {
+      const longDate = iso8601(now).replace(/[\-:]/g, "");
+      return {
+        longDate,
+        shortDate: longDate.slice(0, 8)
+      };
+    }, "formatDate");
+    var getCanonicalHeaderList = /* @__PURE__ */ __name((headers) => Object.keys(headers).sort().join(";"), "getCanonicalHeaderList");
+  }
+});
+
+// ../../../../node_modules/fast-xml-parser/src/util.js
+var require_util = __commonJS({
+  "../../../../node_modules/fast-xml-parser/src/util.js"(exports2) {
+    "use strict";
+    var nameStartChar = ":A-Za-z_\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD";
+    var nameChar = nameStartChar + "\\-.\\d\\u00B7\\u0300-\\u036F\\u203F-\\u2040";
+    var nameRegexp = "[" + nameStartChar + "][" + nameChar + "]*";
+    var regexName = new RegExp("^" + nameRegexp + "$");
+    var getAllMatches = function(string, regex) {
+      const matches = [];
+      let match = regex.exec(string);
+      while (match) {
+        const allmatches = [];
+        allmatches.startIndex = regex.lastIndex - match[0].length;
+        const len = match.length;
+        for (let index = 0; index < len; index++) {
+          allmatches.push(match[index]);
+        }
+        matches.push(allmatches);
+        match = regex.exec(string);
+      }
+      return matches;
+    };
+    var isName = function(string) {
+      const match = regexName.exec(string);
+      return !(match === null || typeof match === "undefined");
+    };
+    exports2.isExist = function(v) {
+      return typeof v !== "undefined";
+    };
+    exports2.isEmptyObject = function(obj) {
+      return Object.keys(obj).length === 0;
+    };
+    exports2.merge = function(target, a, arrayMode) {
+      if (a) {
+        const keys = Object.keys(a);
+        const len = keys.length;
+        for (let i = 0; i < len; i++) {
+          if (arrayMode === "strict") {
+            target[keys[i]] = [a[keys[i]]];
+          } else {
+            target[keys[i]] = a[keys[i]];
+          }
+        }
+      }
+    };
+    exports2.getValue = function(v) {
+      if (exports2.isExist(v)) {
+        return v;
+      } else {
+        return "";
+      }
+    };
+    exports2.isName = isName;
+    exports2.getAllMatches = getAllMatches;
+    exports2.nameRegexp = nameRegexp;
+  }
+});
+
+// ../../../../node_modules/fast-xml-parser/src/validator.js
+var require_validator = __commonJS({
+  "../../../../node_modules/fast-xml-parser/src/validator.js"(exports2) {
+    "use strict";
+    var util = require_util();
+    var defaultOptions = {
+      allowBooleanAttributes: false,
+      //A tag can have attributes without any value
+      unpairedTags: []
+    };
+    exports2.validate = function(xmlData, options) {
+      options = Object.assign({}, defaultOptions, options);
+      const tags = [];
+      let tagFound = false;
+      let reachedRoot = false;
+      if (xmlData[0] === "\uFEFF") {
+        xmlData = xmlData.substr(1);
+      }
+      for (let i = 0; i < xmlData.length; i++) {
+        if (xmlData[i] === "<" && xmlData[i + 1] === "?") {
+          i += 2;
+          i = readPI(xmlData, i);
+          if (i.err)
+            return i;
+        } else if (xmlData[i] === "<") {
+          let tagStartPos = i;
+          i++;
+          if (xmlData[i] === "!") {
+            i = readCommentAndCDATA(xmlData, i);
+            continue;
+          } else {
+            let closingTag = false;
+            if (xmlData[i] === "/") {
+              closingTag = true;
+              i++;
+            }
+            let tagName = "";
+            for (; i < xmlData.length && xmlData[i] !== ">" && xmlData[i] !== " " && xmlData[i] !== "	" && xmlData[i] !== "\n" && xmlData[i] !== "\r"; i++) {
+              tagName += xmlData[i];
+            }
+            tagName = tagName.trim();
+            if (tagName[tagName.length - 1] === "/") {
+              tagName = tagName.substring(0, tagName.length - 1);
+              i--;
+            }
+            if (!validateTagName(tagName)) {
+              let msg;
+              if (tagName.trim().length === 0) {
+                msg = "Invalid space after '<'.";
+              } else {
+                msg = "Tag '" + tagName + "' is an invalid name.";
+              }
+              return getErrorObject("InvalidTag", msg, getLineNumberForPosition(xmlData, i));
+            }
+            const result = readAttributeStr(xmlData, i);
+            if (result === false) {
+              return getErrorObject("InvalidAttr", "Attributes for '" + tagName + "' have open quote.", getLineNumberForPosition(xmlData, i));
+            }
+            let attrStr = result.value;
+            i = result.index;
+            if (attrStr[attrStr.length - 1] === "/") {
+              const attrStrStart = i - attrStr.length;
+              attrStr = attrStr.substring(0, attrStr.length - 1);
+              const isValid = validateAttributeString(attrStr, options);
+              if (isValid === true) {
+                tagFound = true;
+              } else {
+                return getErrorObject(isValid.err.code, isValid.err.msg, getLineNumberForPosition(xmlData, attrStrStart + isValid.err.line));
+              }
+            } else if (closingTag) {
+              if (!result.tagClosed) {
+                return getErrorObject("InvalidTag", "Closing tag '" + tagName + "' doesn't have proper closing.", getLineNumberForPosition(xmlData, i));
+              } else if (attrStr.trim().length > 0) {
+                return getErrorObject("InvalidTag", "Closing tag '" + tagName + "' can't have attributes or invalid starting.", getLineNumberForPosition(xmlData, tagStartPos));
+              } else {
+                const otg = tags.pop();
+                if (tagName !== otg.tagName) {
+                  let openPos = getLineNumberForPosition(xmlData, otg.tagStartPos);
+                  return getErrorObject(
+                    "InvalidTag",
+                    "Expected closing tag '" + otg.tagName + "' (opened in line " + openPos.line + ", col " + openPos.col + ") instead of closing tag '" + tagName + "'.",
+                    getLineNumberForPosition(xmlData, tagStartPos)
+                  );
+                }
+                if (tags.length == 0) {
+                  reachedRoot = true;
+                }
+              }
+            } else {
+              const isValid = validateAttributeString(attrStr, options);
+              if (isValid !== true) {
+                return getErrorObject(isValid.err.code, isValid.err.msg, getLineNumberForPosition(xmlData, i - attrStr.length + isValid.err.line));
+              }
+              if (reachedRoot === true) {
+                return getErrorObject("InvalidXml", "Multiple possible root nodes found.", getLineNumberForPosition(xmlData, i));
+              } else if (options.unpairedTags.indexOf(tagName) !== -1) {
+              } else {
+                tags.push({ tagName, tagStartPos });
+              }
+              tagFound = true;
+            }
+            for (i++; i < xmlData.length; i++) {
+              if (xmlData[i] === "<") {
+                if (xmlData[i + 1] === "!") {
+                  i++;
+                  i = readCommentAndCDATA(xmlData, i);
+                  continue;
+                } else if (xmlData[i + 1] === "?") {
+                  i = readPI(xmlData, ++i);
+                  if (i.err)
+                    return i;
+                } else {
+                  break;
+                }
+              } else if (xmlData[i] === "&") {
+                const afterAmp = validateAmpersand(xmlData, i);
+                if (afterAmp == -1)
+                  return getErrorObject("InvalidChar", "char '&' is not expected.", getLineNumberForPosition(xmlData, i));
+                i = afterAmp;
+              } else {
+                if (reachedRoot === true && !isWhiteSpace(xmlData[i])) {
+                  return getErrorObject("InvalidXml", "Extra text at the end", getLineNumberForPosition(xmlData, i));
+                }
+              }
+            }
+            if (xmlData[i] === "<") {
+              i--;
+            }
+          }
+        } else {
+          if (isWhiteSpace(xmlData[i])) {
+            continue;
+          }
+          return getErrorObject("InvalidChar", "char '" + xmlData[i] + "' is not expected.", getLineNumberForPosition(xmlData, i));
+        }
+      }
+      if (!tagFound) {
+        return getErrorObject("InvalidXml", "Start tag expected.", 1);
+      } else if (tags.length == 1) {
+        return getErrorObject("InvalidTag", "Unclosed tag '" + tags[0].tagName + "'.", getLineNumberForPosition(xmlData, tags[0].tagStartPos));
+      } else if (tags.length > 0) {
+        return getErrorObject("InvalidXml", "Invalid '" + JSON.stringify(tags.map((t) => t.tagName), null, 4).replace(/\r?\n/g, "") + "' found.", { line: 1, col: 1 });
+      }
+      return true;
+    };
+    function isWhiteSpace(char) {
+      return char === " " || char === "	" || char === "\n" || char === "\r";
+    }
+    function readPI(xmlData, i) {
+      const start = i;
+      for (; i < xmlData.length; i++) {
+        if (xmlData[i] == "?" || xmlData[i] == " ") {
+          const tagname = xmlData.substr(start, i - start);
+          if (i > 5 && tagname === "xml") {
+            return getErrorObject("InvalidXml", "XML declaration allowed only at the start of the document.", getLineNumberForPosition(xmlData, i));
+          } else if (xmlData[i] == "?" && xmlData[i + 1] == ">") {
+            i++;
+            break;
+          } else {
+            continue;
+          }
+        }
+      }
+      return i;
+    }
+    function readCommentAndCDATA(xmlData, i) {
+      if (xmlData.length > i + 5 && xmlData[i + 1] === "-" && xmlData[i + 2] === "-") {
+        for (i += 3; i < xmlData.length; i++) {
+          if (xmlData[i] === "-" && xmlData[i + 1] === "-" && xmlData[i + 2] === ">") {
+            i += 2;
+            break;
+          }
+        }
+      } else if (xmlData.length > i + 8 && xmlData[i + 1] === "D" && xmlData[i + 2] === "O" && xmlData[i + 3] === "C" && xmlData[i + 4] === "T" && xmlData[i + 5] === "Y" && xmlData[i + 6] === "P" && xmlData[i + 7] === "E") {
+        let angleBracketsCount = 1;
+        for (i += 8; i < xmlData.length; i++) {
+          if (xmlData[i] === "<") {
+            angleBracketsCount++;
+          } else if (xmlData[i] === ">") {
+            angleBracketsCount--;
+            if (angleBracketsCount === 0) {
+              break;
+            }
+          }
+        }
+      } else if (xmlData.length > i + 9 && xmlData[i + 1] === "[" && xmlData[i + 2] === "C" && xmlData[i + 3] === "D" && xmlData[i + 4] === "A" && xmlData[i + 5] === "T" && xmlData[i + 6] === "A" && xmlData[i + 7] === "[") {
+        for (i += 8; i < xmlData.length; i++) {
+          if (xmlData[i] === "]" && xmlData[i + 1] === "]" && xmlData[i + 2] === ">") {
+            i += 2;
+            break;
+          }
+        }
+      }
+      return i;
+    }
+    var doubleQuote = '"';
+    var singleQuote = "'";
+    function readAttributeStr(xmlData, i) {
+      let attrStr = "";
+      let startChar = "";
+      let tagClosed = false;
+      for (; i < xmlData.length; i++) {
+        if (xmlData[i] === doubleQuote || xmlData[i] === singleQuote) {
+          if (startChar === "") {
+            startChar = xmlData[i];
+          } else if (startChar !== xmlData[i]) {
+          } else {
+            startChar = "";
+          }
+        } else if (xmlData[i] === ">") {
+          if (startChar === "") {
+            tagClosed = true;
+            break;
+          }
+        }
+        attrStr += xmlData[i];
+      }
+      if (startChar !== "") {
+        return false;
+      }
+      return {
+        value: attrStr,
+        index: i,
+        tagClosed
+      };
+    }
+    var validAttrStrRegxp = new RegExp(`(\\s*)([^\\s=]+)(\\s*=)?(\\s*(['"])(([\\s\\S])*?)\\5)?`, "g");
+    function validateAttributeString(attrStr, options) {
+      const matches = util.getAllMatches(attrStr, validAttrStrRegxp);
+      const attrNames = {};
+      for (let i = 0; i < matches.length; i++) {
+        if (matches[i][1].length === 0) {
+          return getErrorObject("InvalidAttr", "Attribute '" + matches[i][2] + "' has no space in starting.", getPositionFromMatch(matches[i]));
+        } else if (matches[i][3] !== void 0 && matches[i][4] === void 0) {
+          return getErrorObject("InvalidAttr", "Attribute '" + matches[i][2] + "' is without value.", getPositionFromMatch(matches[i]));
+        } else if (matches[i][3] === void 0 && !options.allowBooleanAttributes) {
+          return getErrorObject("InvalidAttr", "boolean attribute '" + matches[i][2] + "' is not allowed.", getPositionFromMatch(matches[i]));
+        }
+        const attrName = matches[i][2];
+        if (!validateAttrName(attrName)) {
+          return getErrorObject("InvalidAttr", "Attribute '" + attrName + "' is an invalid name.", getPositionFromMatch(matches[i]));
+        }
+        if (!attrNames.hasOwnProperty(attrName)) {
+          attrNames[attrName] = 1;
+        } else {
+          return getErrorObject("InvalidAttr", "Attribute '" + attrName + "' is repeated.", getPositionFromMatch(matches[i]));
+        }
+      }
+      return true;
+    }
+    function validateNumberAmpersand(xmlData, i) {
+      let re = /\d/;
+      if (xmlData[i] === "x") {
+        i++;
+        re = /[\da-fA-F]/;
+      }
+      for (; i < xmlData.length; i++) {
+        if (xmlData[i] === ";")
+          return i;
+        if (!xmlData[i].match(re))
+          break;
+      }
+      return -1;
+    }
+    function validateAmpersand(xmlData, i) {
+      i++;
+      if (xmlData[i] === ";")
+        return -1;
+      if (xmlData[i] === "#") {
+        i++;
+        return validateNumberAmpersand(xmlData, i);
+      }
+      let count = 0;
+      for (; i < xmlData.length; i++, count++) {
+        if (xmlData[i].match(/\w/) && count < 20)
+          continue;
+        if (xmlData[i] === ";")
+          break;
+        return -1;
+      }
+      return i;
+    }
+    function getErrorObject(code, message, lineNumber) {
+      return {
+        err: {
+          code,
+          msg: message,
+          line: lineNumber.line || lineNumber,
+          col: lineNumber.col
+        }
+      };
+    }
+    function validateAttrName(attrName) {
+      return util.isName(attrName);
+    }
+    function validateTagName(tagname) {
+      return util.isName(tagname);
+    }
+    function getLineNumberForPosition(xmlData, index) {
+      const lines = xmlData.substring(0, index).split(/\r?\n/);
+      return {
+        line: lines.length,
+        // column number is last line's length + 1, because column numbering starts at 1:
+        col: lines[lines.length - 1].length + 1
+      };
+    }
+    function getPositionFromMatch(match) {
+      return match.startIndex + match[1].length;
+    }
+  }
+});
+
+// ../../../../node_modules/fast-xml-parser/src/xmlparser/OptionsBuilder.js
+var require_OptionsBuilder = __commonJS({
+  "../../../../node_modules/fast-xml-parser/src/xmlparser/OptionsBuilder.js"(exports2) {
+    var defaultOptions = {
+      preserveOrder: false,
+      attributeNamePrefix: "@_",
+      attributesGroupName: false,
+      textNodeName: "#text",
+      ignoreAttributes: true,
+      removeNSPrefix: false,
+      // remove NS from tag name or attribute name if true
+      allowBooleanAttributes: false,
+      //a tag can have attributes without any value
+      //ignoreRootElement : false,
+      parseTagValue: true,
+      parseAttributeValue: false,
+      trimValues: true,
+      //Trim string values of tag and attributes
+      cdataPropName: false,
+      numberParseOptions: {
+        hex: true,
+        leadingZeros: true,
+        eNotation: true
+      },
+      tagValueProcessor: function(tagName, val2) {
+        return val2;
+      },
+      attributeValueProcessor: function(attrName, val2) {
+        return val2;
+      },
+      stopNodes: [],
+      //nested tags will not be parsed even for errors
+      alwaysCreateTextNode: false,
+      isArray: () => false,
+      commentPropName: false,
+      unpairedTags: [],
+      processEntities: true,
+      htmlEntities: false,
+      ignoreDeclaration: false,
+      ignorePiTags: false,
+      transformTagName: false,
+      transformAttributeName: false,
+      updateTag: function(tagName, jPath, attrs) {
+        return tagName;
+      }
+      // skipEmptyListItem: false
+    };
+    var buildOptions = function(options) {
+      return Object.assign({}, defaultOptions, options);
+    };
+    exports2.buildOptions = buildOptions;
+    exports2.defaultOptions = defaultOptions;
+  }
+});
+
+// ../../../../node_modules/fast-xml-parser/src/xmlparser/xmlNode.js
+var require_xmlNode = __commonJS({
+  "../../../../node_modules/fast-xml-parser/src/xmlparser/xmlNode.js"(exports2, module2) {
+    "use strict";
+    var XmlNode = class {
+      constructor(tagname) {
+        this.tagname = tagname;
+        this.child = [];
+        this[":@"] = {};
+      }
+      add(key, val2) {
+        if (key === "__proto__")
+          key = "#__proto__";
+        this.child.push({ [key]: val2 });
+      }
+      addChild(node) {
+        if (node.tagname === "__proto__")
+          node.tagname = "#__proto__";
+        if (node[":@"] && Object.keys(node[":@"]).length > 0) {
+          this.child.push({ [node.tagname]: node.child, [":@"]: node[":@"] });
+        } else {
+          this.child.push({ [node.tagname]: node.child });
+        }
+      }
+    };
+    module2.exports = XmlNode;
+  }
+});
+
+// ../../../../node_modules/fast-xml-parser/src/xmlparser/DocTypeReader.js
+var require_DocTypeReader = __commonJS({
+  "../../../../node_modules/fast-xml-parser/src/xmlparser/DocTypeReader.js"(exports2, module2) {
+    var util = require_util();
+    function readDocType(xmlData, i) {
+      const entities = {};
+      if (xmlData[i + 3] === "O" && xmlData[i + 4] === "C" && xmlData[i + 5] === "T" && xmlData[i + 6] === "Y" && xmlData[i + 7] === "P" && xmlData[i + 8] === "E") {
+        i = i + 9;
+        let angleBracketsCount = 1;
+        let hasBody = false, comment = false;
+        let exp = "";
+        for (; i < xmlData.length; i++) {
+          if (xmlData[i] === "<" && !comment) {
+            if (hasBody && isEntity(xmlData, i)) {
+              i += 7;
+              [entityName, val, i] = readEntityExp(xmlData, i + 1);
+              if (val.indexOf("&") === -1)
+                entities[validateEntityName(entityName)] = {
+                  regx: RegExp(`&${entityName};`, "g"),
+                  val
+                };
+            } else if (hasBody && isElement(xmlData, i))
+              i += 8;
+            else if (hasBody && isAttlist(xmlData, i))
+              i += 8;
+            else if (hasBody && isNotation(xmlData, i))
+              i += 9;
+            else if (isComment)
+              comment = true;
+            else
+              throw new Error("Invalid DOCTYPE");
+            angleBracketsCount++;
+            exp = "";
+          } else if (xmlData[i] === ">") {
+            if (comment) {
+              if (xmlData[i - 1] === "-" && xmlData[i - 2] === "-") {
+                comment = false;
+                angleBracketsCount--;
+              }
+            } else {
+              angleBracketsCount--;
+            }
+            if (angleBracketsCount === 0) {
+              break;
+            }
+          } else if (xmlData[i] === "[") {
+            hasBody = true;
+          } else {
+            exp += xmlData[i];
+          }
+        }
+        if (angleBracketsCount !== 0) {
+          throw new Error(`Unclosed DOCTYPE`);
+        }
+      } else {
+        throw new Error(`Invalid Tag instead of DOCTYPE`);
+      }
+      return { entities, i };
+    }
+    function readEntityExp(xmlData, i) {
+      let entityName2 = "";
+      for (; i < xmlData.length && (xmlData[i] !== "'" && xmlData[i] !== '"'); i++) {
+        entityName2 += xmlData[i];
+      }
+      entityName2 = entityName2.trim();
+      if (entityName2.indexOf(" ") !== -1)
+        throw new Error("External entites are not supported");
+      const startChar = xmlData[i++];
+      let val2 = "";
+      for (; i < xmlData.length && xmlData[i] !== startChar; i++) {
+        val2 += xmlData[i];
+      }
+      return [entityName2, val2, i];
+    }
+    function isComment(xmlData, i) {
+      if (xmlData[i + 1] === "!" && xmlData[i + 2] === "-" && xmlData[i + 3] === "-")
+        return true;
+      return false;
+    }
+    function isEntity(xmlData, i) {
+      if (xmlData[i + 1] === "!" && xmlData[i + 2] === "E" && xmlData[i + 3] === "N" && xmlData[i + 4] === "T" && xmlData[i + 5] === "I" && xmlData[i + 6] === "T" && xmlData[i + 7] === "Y")
+        return true;
+      return false;
+    }
+    function isElement(xmlData, i) {
+      if (xmlData[i + 1] === "!" && xmlData[i + 2] === "E" && xmlData[i + 3] === "L" && xmlData[i + 4] === "E" && xmlData[i + 5] === "M" && xmlData[i + 6] === "E" && xmlData[i + 7] === "N" && xmlData[i + 8] === "T")
+        return true;
+      return false;
+    }
+    function isAttlist(xmlData, i) {
+      if (xmlData[i + 1] === "!" && xmlData[i + 2] === "A" && xmlData[i + 3] === "T" && xmlData[i + 4] === "T" && xmlData[i + 5] === "L" && xmlData[i + 6] === "I" && xmlData[i + 7] === "S" && xmlData[i + 8] === "T")
+        return true;
+      return false;
+    }
+    function isNotation(xmlData, i) {
+      if (xmlData[i + 1] === "!" && xmlData[i + 2] === "N" && xmlData[i + 3] === "O" && xmlData[i + 4] === "T" && xmlData[i + 5] === "A" && xmlData[i + 6] === "T" && xmlData[i + 7] === "I" && xmlData[i + 8] === "O" && xmlData[i + 9] === "N")
+        return true;
+      return false;
+    }
+    function validateEntityName(name) {
+      if (util.isName(name))
+        return name;
+      else
+        throw new Error(`Invalid entity name ${name}`);
+    }
+    module2.exports = readDocType;
+  }
+});
+
+// ../../../../node_modules/strnum/strnum.js
+var require_strnum = __commonJS({
+  "../../../../node_modules/strnum/strnum.js"(exports2, module2) {
+    var hexRegex = /^[-+]?0x[a-fA-F0-9]+$/;
+    var numRegex = /^([\-\+])?(0*)(\.[0-9]+([eE]\-?[0-9]+)?|[0-9]+(\.[0-9]+([eE]\-?[0-9]+)?)?)$/;
+    if (!Number.parseInt && window.parseInt) {
+      Number.parseInt = window.parseInt;
+    }
+    if (!Number.parseFloat && window.parseFloat) {
+      Number.parseFloat = window.parseFloat;
+    }
+    var consider = {
+      hex: true,
+      leadingZeros: true,
+      decimalPoint: ".",
+      eNotation: true
+      //skipLike: /regex/
+    };
+    function toNumber(str, options = {}) {
+      options = Object.assign({}, consider, options);
+      if (!str || typeof str !== "string")
+        return str;
+      let trimmedStr = str.trim();
+      if (options.skipLike !== void 0 && options.skipLike.test(trimmedStr))
+        return str;
+      else if (options.hex && hexRegex.test(trimmedStr)) {
+        return Number.parseInt(trimmedStr, 16);
+      } else {
+        const match = numRegex.exec(trimmedStr);
+        if (match) {
+          const sign = match[1];
+          const leadingZeros = match[2];
+          let numTrimmedByZeros = trimZeros(match[3]);
+          const eNotation = match[4] || match[6];
+          if (!options.leadingZeros && leadingZeros.length > 0 && sign && trimmedStr[2] !== ".")
+            return str;
+          else if (!options.leadingZeros && leadingZeros.length > 0 && !sign && trimmedStr[1] !== ".")
+            return str;
+          else {
+            const num = Number(trimmedStr);
+            const numStr = "" + num;
+            if (numStr.search(/[eE]/) !== -1) {
+              if (options.eNotation)
+                return num;
+              else
+                return str;
+            } else if (eNotation) {
+              if (options.eNotation)
+                return num;
+              else
+                return str;
+            } else if (trimmedStr.indexOf(".") !== -1) {
+              if (numStr === "0" && numTrimmedByZeros === "")
+                return num;
+              else if (numStr === numTrimmedByZeros)
+                return num;
+              else if (sign && numStr === "-" + numTrimmedByZeros)
+                return num;
+              else
+                return str;
+            }
+            if (leadingZeros) {
+              if (numTrimmedByZeros === numStr)
+                return num;
+              else if (sign + numTrimmedByZeros === numStr)
+                return num;
+              else
+                return str;
+            }
+            if (trimmedStr === numStr)
+              return num;
+            else if (trimmedStr === sign + numStr)
+              return num;
+            return str;
+          }
+        } else {
+          return str;
+        }
+      }
+    }
+    function trimZeros(numStr) {
+      if (numStr && numStr.indexOf(".") !== -1) {
+        numStr = numStr.replace(/0+$/, "");
+        if (numStr === ".")
+          numStr = "0";
+        else if (numStr[0] === ".")
+          numStr = "0" + numStr;
+        else if (numStr[numStr.length - 1] === ".")
+          numStr = numStr.substr(0, numStr.length - 1);
+        return numStr;
+      }
+      return numStr;
+    }
+    module2.exports = toNumber;
+  }
+});
+
+// ../../../../node_modules/fast-xml-parser/src/xmlparser/OrderedObjParser.js
+var require_OrderedObjParser = __commonJS({
+  "../../../../node_modules/fast-xml-parser/src/xmlparser/OrderedObjParser.js"(exports2, module2) {
+    "use strict";
+    var util = require_util();
+    var xmlNode = require_xmlNode();
+    var readDocType = require_DocTypeReader();
+    var toNumber = require_strnum();
+    var regx = "<((!\\[CDATA\\[([\\s\\S]*?)(]]>))|((NAME:)?(NAME))([^>]*)>|((\\/)(NAME)\\s*>))([^<]*)".replace(/NAME/g, util.nameRegexp);
+    var OrderedObjParser = class {
+      constructor(options) {
+        this.options = options;
+        this.currentNode = null;
+        this.tagsNodeStack = [];
+        this.docTypeEntities = {};
+        this.lastEntities = {
+          "apos": { regex: /&(apos|#39|#x27);/g, val: "'" },
+          "gt": { regex: /&(gt|#62|#x3E);/g, val: ">" },
+          "lt": { regex: /&(lt|#60|#x3C);/g, val: "<" },
+          "quot": { regex: /&(quot|#34|#x22);/g, val: '"' }
+        };
+        this.ampEntity = { regex: /&(amp|#38|#x26);/g, val: "&" };
+        this.htmlEntities = {
+          "space": { regex: /&(nbsp|#160);/g, val: " " },
+          // "lt" : { regex: /&(lt|#60);/g, val: "<" },
+          // "gt" : { regex: /&(gt|#62);/g, val: ">" },
+          // "amp" : { regex: /&(amp|#38);/g, val: "&" },
+          // "quot" : { regex: /&(quot|#34);/g, val: "\"" },
+          // "apos" : { regex: /&(apos|#39);/g, val: "'" },
+          "cent": { regex: /&(cent|#162);/g, val: "\xA2" },
+          "pound": { regex: /&(pound|#163);/g, val: "\xA3" },
+          "yen": { regex: /&(yen|#165);/g, val: "\xA5" },
+          "euro": { regex: /&(euro|#8364);/g, val: "\u20AC" },
+          "copyright": { regex: /&(copy|#169);/g, val: "\xA9" },
+          "reg": { regex: /&(reg|#174);/g, val: "\xAE" },
+          "inr": { regex: /&(inr|#8377);/g, val: "\u20B9" }
+        };
+        this.addExternalEntities = addExternalEntities;
+        this.parseXml = parseXml;
+        this.parseTextData = parseTextData;
+        this.resolveNameSpace = resolveNameSpace;
+        this.buildAttributesMap = buildAttributesMap;
+        this.isItStopNode = isItStopNode;
+        this.replaceEntitiesValue = replaceEntitiesValue;
+        this.readStopNodeData = readStopNodeData;
+        this.saveTextToParentTag = saveTextToParentTag;
+        this.addChild = addChild;
+      }
+    };
+    function addExternalEntities(externalEntities) {
+      const entKeys = Object.keys(externalEntities);
+      for (let i = 0; i < entKeys.length; i++) {
+        const ent = entKeys[i];
+        this.lastEntities[ent] = {
+          regex: new RegExp("&" + ent + ";", "g"),
+          val: externalEntities[ent]
+        };
+      }
+    }
+    function parseTextData(val2, tagName, jPath, dontTrim, hasAttributes, isLeafNode, escapeEntities) {
+      if (val2 !== void 0) {
+        if (this.options.trimValues && !dontTrim) {
+          val2 = val2.trim();
+        }
+        if (val2.length > 0) {
+          if (!escapeEntities)
+            val2 = this.replaceEntitiesValue(val2);
+          const newval = this.options.tagValueProcessor(tagName, val2, jPath, hasAttributes, isLeafNode);
+          if (newval === null || newval === void 0) {
+            return val2;
+          } else if (typeof newval !== typeof val2 || newval !== val2) {
+            return newval;
+          } else if (this.options.trimValues) {
+            return parseValue(val2, this.options.parseTagValue, this.options.numberParseOptions);
+          } else {
+            const trimmedVal = val2.trim();
+            if (trimmedVal === val2) {
+              return parseValue(val2, this.options.parseTagValue, this.options.numberParseOptions);
+            } else {
+              return val2;
+            }
+          }
+        }
+      }
+    }
+    function resolveNameSpace(tagname) {
+      if (this.options.removeNSPrefix) {
+        const tags = tagname.split(":");
+        const prefix = tagname.charAt(0) === "/" ? "/" : "";
+        if (tags[0] === "xmlns") {
+          return "";
+        }
+        if (tags.length === 2) {
+          tagname = prefix + tags[1];
+        }
+      }
+      return tagname;
+    }
+    var attrsRegx = new RegExp(`([^\\s=]+)\\s*(=\\s*(['"])([\\s\\S]*?)\\3)?`, "gm");
+    function buildAttributesMap(attrStr, jPath, tagName) {
+      if (!this.options.ignoreAttributes && typeof attrStr === "string") {
+        const matches = util.getAllMatches(attrStr, attrsRegx);
+        const len = matches.length;
+        const attrs = {};
+        for (let i = 0; i < len; i++) {
+          const attrName = this.resolveNameSpace(matches[i][1]);
+          let oldVal = matches[i][4];
+          let aName = this.options.attributeNamePrefix + attrName;
+          if (attrName.length) {
+            if (this.options.transformAttributeName) {
+              aName = this.options.transformAttributeName(aName);
+            }
+            if (aName === "__proto__")
+              aName = "#__proto__";
+            if (oldVal !== void 0) {
+              if (this.options.trimValues) {
+                oldVal = oldVal.trim();
+              }
+              oldVal = this.replaceEntitiesValue(oldVal);
+              const newVal = this.options.attributeValueProcessor(attrName, oldVal, jPath);
+              if (newVal === null || newVal === void 0) {
+                attrs[aName] = oldVal;
+              } else if (typeof newVal !== typeof oldVal || newVal !== oldVal) {
+                attrs[aName] = newVal;
+              } else {
+                attrs[aName] = parseValue(
+                  oldVal,
+                  this.options.parseAttributeValue,
+                  this.options.numberParseOptions
+                );
+              }
+            } else if (this.options.allowBooleanAttributes) {
+              attrs[aName] = true;
+            }
+          }
+        }
+        if (!Object.keys(attrs).length) {
+          return;
+        }
+        if (this.options.attributesGroupName) {
+          const attrCollection = {};
+          attrCollection[this.options.attributesGroupName] = attrs;
+          return attrCollection;
+        }
+        return attrs;
+      }
+    }
+    var parseXml = function(xmlData) {
+      xmlData = xmlData.replace(/\r\n?/g, "\n");
+      const xmlObj = new xmlNode("!xml");
+      let currentNode = xmlObj;
+      let textData = "";
+      let jPath = "";
+      for (let i = 0; i < xmlData.length; i++) {
+        const ch = xmlData[i];
+        if (ch === "<") {
+          if (xmlData[i + 1] === "/") {
+            const closeIndex = findClosingIndex(xmlData, ">", i, "Closing Tag is not closed.");
+            let tagName = xmlData.substring(i + 2, closeIndex).trim();
+            if (this.options.removeNSPrefix) {
+              const colonIndex = tagName.indexOf(":");
+              if (colonIndex !== -1) {
+                tagName = tagName.substr(colonIndex + 1);
+              }
+            }
+            if (this.options.transformTagName) {
+              tagName = this.options.transformTagName(tagName);
+            }
+            if (currentNode) {
+              textData = this.saveTextToParentTag(textData, currentNode, jPath);
+            }
+            const lastTagName = jPath.substring(jPath.lastIndexOf(".") + 1);
+            if (tagName && this.options.unpairedTags.indexOf(tagName) !== -1) {
+              throw new Error(`Unpaired tag can not be used as closing tag: </${tagName}>`);
+            }
+            let propIndex = 0;
+            if (lastTagName && this.options.unpairedTags.indexOf(lastTagName) !== -1) {
+              propIndex = jPath.lastIndexOf(".", jPath.lastIndexOf(".") - 1);
+              this.tagsNodeStack.pop();
+            } else {
+              propIndex = jPath.lastIndexOf(".");
+            }
+            jPath = jPath.substring(0, propIndex);
+            currentNode = this.tagsNodeStack.pop();
+            textData = "";
+            i = closeIndex;
+          } else if (xmlData[i + 1] === "?") {
+            let tagData = readTagExp(xmlData, i, false, "?>");
+            if (!tagData)
+              throw new Error("Pi Tag is not closed.");
+            textData = this.saveTextToParentTag(textData, currentNode, jPath);
+            if (this.options.ignoreDeclaration && tagData.tagName === "?xml" || this.options.ignorePiTags) {
+            } else {
+              const childNode = new xmlNode(tagData.tagName);
+              childNode.add(this.options.textNodeName, "");
+              if (tagData.tagName !== tagData.tagExp && tagData.attrExpPresent) {
+                childNode[":@"] = this.buildAttributesMap(tagData.tagExp, jPath, tagData.tagName);
+              }
+              this.addChild(currentNode, childNode, jPath);
+            }
+            i = tagData.closeIndex + 1;
+          } else if (xmlData.substr(i + 1, 3) === "!--") {
+            const endIndex = findClosingIndex(xmlData, "-->", i + 4, "Comment is not closed.");
+            if (this.options.commentPropName) {
+              const comment = xmlData.substring(i + 4, endIndex - 2);
+              textData = this.saveTextToParentTag(textData, currentNode, jPath);
+              currentNode.add(this.options.commentPropName, [{ [this.options.textNodeName]: comment }]);
+            }
+            i = endIndex;
+          } else if (xmlData.substr(i + 1, 2) === "!D") {
+            const result = readDocType(xmlData, i);
+            this.docTypeEntities = result.entities;
+            i = result.i;
+          } else if (xmlData.substr(i + 1, 2) === "![") {
+            const closeIndex = findClosingIndex(xmlData, "]]>", i, "CDATA is not closed.") - 2;
+            const tagExp = xmlData.substring(i + 9, closeIndex);
+            textData = this.saveTextToParentTag(textData, currentNode, jPath);
+            if (this.options.cdataPropName) {
+              currentNode.add(this.options.cdataPropName, [{ [this.options.textNodeName]: tagExp }]);
+            } else {
+              let val2 = this.parseTextData(tagExp, currentNode.tagname, jPath, true, false, true);
+              if (val2 == void 0)
+                val2 = "";
+              currentNode.add(this.options.textNodeName, val2);
+            }
+            i = closeIndex + 2;
+          } else {
+            let result = readTagExp(xmlData, i, this.options.removeNSPrefix);
+            let tagName = result.tagName;
+            let tagExp = result.tagExp;
+            let attrExpPresent = result.attrExpPresent;
+            let closeIndex = result.closeIndex;
+            if (this.options.transformTagName) {
+              tagName = this.options.transformTagName(tagName);
+            }
+            if (currentNode && textData) {
+              if (currentNode.tagname !== "!xml") {
+                textData = this.saveTextToParentTag(textData, currentNode, jPath, false);
+              }
+            }
+            const lastTag = currentNode;
+            if (lastTag && this.options.unpairedTags.indexOf(lastTag.tagname) !== -1) {
+              currentNode = this.tagsNodeStack.pop();
+              jPath = jPath.substring(0, jPath.lastIndexOf("."));
+            }
+            if (tagName !== xmlObj.tagname) {
+              jPath += jPath ? "." + tagName : tagName;
+            }
+            if (this.isItStopNode(this.options.stopNodes, jPath, tagName)) {
+              let tagContent = "";
+              if (tagExp.length > 0 && tagExp.lastIndexOf("/") === tagExp.length - 1) {
+                i = result.closeIndex;
+              } else if (this.options.unpairedTags.indexOf(tagName) !== -1) {
+                i = result.closeIndex;
+              } else {
+                const result2 = this.readStopNodeData(xmlData, tagName, closeIndex + 1);
+                if (!result2)
+                  throw new Error(`Unexpected end of ${tagName}`);
+                i = result2.i;
+                tagContent = result2.tagContent;
+              }
+              const childNode = new xmlNode(tagName);
+              if (tagName !== tagExp && attrExpPresent) {
+                childNode[":@"] = this.buildAttributesMap(tagExp, jPath, tagName);
+              }
+              if (tagContent) {
+                tagContent = this.parseTextData(tagContent, tagName, jPath, true, attrExpPresent, true, true);
+              }
+              jPath = jPath.substr(0, jPath.lastIndexOf("."));
+              childNode.add(this.options.textNodeName, tagContent);
+              this.addChild(currentNode, childNode, jPath);
+            } else {
+              if (tagExp.length > 0 && tagExp.lastIndexOf("/") === tagExp.length - 1) {
+                if (tagName[tagName.length - 1] === "/") {
+                  tagName = tagName.substr(0, tagName.length - 1);
+                  tagExp = tagName;
+                } else {
+                  tagExp = tagExp.substr(0, tagExp.length - 1);
+                }
+                if (this.options.transformTagName) {
+                  tagName = this.options.transformTagName(tagName);
+                }
+                const childNode = new xmlNode(tagName);
+                if (tagName !== tagExp && attrExpPresent) {
+                  childNode[":@"] = this.buildAttributesMap(tagExp, jPath, tagName);
+                }
+                this.addChild(currentNode, childNode, jPath);
+                jPath = jPath.substr(0, jPath.lastIndexOf("."));
+              } else {
+                const childNode = new xmlNode(tagName);
+                this.tagsNodeStack.push(currentNode);
+                if (tagName !== tagExp && attrExpPresent) {
+                  childNode[":@"] = this.buildAttributesMap(tagExp, jPath, tagName);
+                }
+                this.addChild(currentNode, childNode, jPath);
+                currentNode = childNode;
+              }
+              textData = "";
+              i = closeIndex;
+            }
+          }
+        } else {
+          textData += xmlData[i];
+        }
+      }
+      return xmlObj.child;
+    };
+    function addChild(currentNode, childNode, jPath) {
+      const result = this.options.updateTag(childNode.tagname, jPath, childNode[":@"]);
+      if (result === false) {
+      } else if (typeof result === "string") {
+        childNode.tagname = result;
+        currentNode.addChild(childNode);
+      } else {
+        currentNode.addChild(childNode);
+      }
+    }
+    var replaceEntitiesValue = function(val2) {
+      if (this.options.processEntities) {
+        for (let entityName2 in this.docTypeEntities) {
+          const entity = this.docTypeEntities[entityName2];
+          val2 = val2.replace(entity.regx, entity.val);
+        }
+        for (let entityName2 in this.lastEntities) {
+          const entity = this.lastEntities[entityName2];
+          val2 = val2.replace(entity.regex, entity.val);
+        }
+        if (this.options.htmlEntities) {
+          for (let entityName2 in this.htmlEntities) {
+            const entity = this.htmlEntities[entityName2];
+            val2 = val2.replace(entity.regex, entity.val);
+          }
+        }
+        val2 = val2.replace(this.ampEntity.regex, this.ampEntity.val);
+      }
+      return val2;
+    };
+    function saveTextToParentTag(textData, currentNode, jPath, isLeafNode) {
+      if (textData) {
+        if (isLeafNode === void 0)
+          isLeafNode = Object.keys(currentNode.child).length === 0;
+        textData = this.parseTextData(
+          textData,
+          currentNode.tagname,
+          jPath,
+          false,
+          currentNode[":@"] ? Object.keys(currentNode[":@"]).length !== 0 : false,
+          isLeafNode
+        );
+        if (textData !== void 0 && textData !== "")
+          currentNode.add(this.options.textNodeName, textData);
+        textData = "";
+      }
+      return textData;
+    }
+    function isItStopNode(stopNodes, jPath, currentTagName) {
+      const allNodesExp = "*." + currentTagName;
+      for (const stopNodePath in stopNodes) {
+        const stopNodeExp = stopNodes[stopNodePath];
+        if (allNodesExp === stopNodeExp || jPath === stopNodeExp)
+          return true;
+      }
+      return false;
+    }
+    function tagExpWithClosingIndex(xmlData, i, closingChar = ">") {
+      let attrBoundary;
+      let tagExp = "";
+      for (let index = i; index < xmlData.length; index++) {
+        let ch = xmlData[index];
+        if (attrBoundary) {
+          if (ch === attrBoundary)
+            attrBoundary = "";
+        } else if (ch === '"' || ch === "'") {
+          attrBoundary = ch;
+        } else if (ch === closingChar[0]) {
+          if (closingChar[1]) {
+            if (xmlData[index + 1] === closingChar[1]) {
+              return {
+                data: tagExp,
+                index
+              };
+            }
+          } else {
+            return {
+              data: tagExp,
+              index
+            };
+          }
+        } else if (ch === "	") {
+          ch = " ";
+        }
+        tagExp += ch;
+      }
+    }
+    function findClosingIndex(xmlData, str, i, errMsg) {
+      const closingIndex = xmlData.indexOf(str, i);
+      if (closingIndex === -1) {
+        throw new Error(errMsg);
+      } else {
+        return closingIndex + str.length - 1;
+      }
+    }
+    function readTagExp(xmlData, i, removeNSPrefix, closingChar = ">") {
+      const result = tagExpWithClosingIndex(xmlData, i + 1, closingChar);
+      if (!result)
+        return;
+      let tagExp = result.data;
+      const closeIndex = result.index;
+      const separatorIndex = tagExp.search(/\s/);
+      let tagName = tagExp;
+      let attrExpPresent = true;
+      if (separatorIndex !== -1) {
+        tagName = tagExp.substr(0, separatorIndex).replace(/\s\s*$/, "");
+        tagExp = tagExp.substr(separatorIndex + 1);
+      }
+      if (removeNSPrefix) {
+        const colonIndex = tagName.indexOf(":");
+        if (colonIndex !== -1) {
+          tagName = tagName.substr(colonIndex + 1);
+          attrExpPresent = tagName !== result.data.substr(colonIndex + 1);
+        }
+      }
+      return {
+        tagName,
+        tagExp,
+        closeIndex,
+        attrExpPresent
+      };
+    }
+    function readStopNodeData(xmlData, tagName, i) {
+      const startIndex = i;
+      let openTagCount = 1;
+      for (; i < xmlData.length; i++) {
+        if (xmlData[i] === "<") {
+          if (xmlData[i + 1] === "/") {
+            const closeIndex = findClosingIndex(xmlData, ">", i, `${tagName} is not closed`);
+            let closeTagName = xmlData.substring(i + 2, closeIndex).trim();
+            if (closeTagName === tagName) {
+              openTagCount--;
+              if (openTagCount === 0) {
+                return {
+                  tagContent: xmlData.substring(startIndex, i),
+                  i: closeIndex
+                };
+              }
+            }
+            i = closeIndex;
+          } else if (xmlData[i + 1] === "?") {
+            const closeIndex = findClosingIndex(xmlData, "?>", i + 1, "StopNode is not closed.");
+            i = closeIndex;
+          } else if (xmlData.substr(i + 1, 3) === "!--") {
+            const closeIndex = findClosingIndex(xmlData, "-->", i + 3, "StopNode is not closed.");
+            i = closeIndex;
+          } else if (xmlData.substr(i + 1, 2) === "![") {
+            const closeIndex = findClosingIndex(xmlData, "]]>", i, "StopNode is not closed.") - 2;
+            i = closeIndex;
+          } else {
+            const tagData = readTagExp(xmlData, i, ">");
+            if (tagData) {
+              const openTagName = tagData && tagData.tagName;
+              if (openTagName === tagName && tagData.tagExp[tagData.tagExp.length - 1] !== "/") {
+                openTagCount++;
+              }
+              i = tagData.closeIndex;
+            }
+          }
+        }
+      }
+    }
+    function parseValue(val2, shouldParse, options) {
+      if (shouldParse && typeof val2 === "string") {
+        const newval = val2.trim();
+        if (newval === "true")
+          return true;
+        else if (newval === "false")
+          return false;
+        else
+          return toNumber(val2, options);
+      } else {
+        if (util.isExist(val2)) {
+          return val2;
+        } else {
+          return "";
+        }
+      }
+    }
+    module2.exports = OrderedObjParser;
+  }
+});
+
+// ../../../../node_modules/fast-xml-parser/src/xmlparser/node2json.js
+var require_node2json = __commonJS({
+  "../../../../node_modules/fast-xml-parser/src/xmlparser/node2json.js"(exports2) {
+    "use strict";
+    function prettify(node, options) {
+      return compress(node, options);
+    }
+    function compress(arr, options, jPath) {
+      let text;
+      const compressedObj = {};
+      for (let i = 0; i < arr.length; i++) {
+        const tagObj = arr[i];
+        const property = propName(tagObj);
+        let newJpath = "";
+        if (jPath === void 0)
+          newJpath = property;
+        else
+          newJpath = jPath + "." + property;
+        if (property === options.textNodeName) {
+          if (text === void 0)
+            text = tagObj[property];
+          else
+            text += "" + tagObj[property];
+        } else if (property === void 0) {
+          continue;
+        } else if (tagObj[property]) {
+          let val2 = compress(tagObj[property], options, newJpath);
+          const isLeaf = isLeafTag(val2, options);
+          if (tagObj[":@"]) {
+            assignAttributes(val2, tagObj[":@"], newJpath, options);
+          } else if (Object.keys(val2).length === 1 && val2[options.textNodeName] !== void 0 && !options.alwaysCreateTextNode) {
+            val2 = val2[options.textNodeName];
+          } else if (Object.keys(val2).length === 0) {
+            if (options.alwaysCreateTextNode)
+              val2[options.textNodeName] = "";
+            else
+              val2 = "";
+          }
+          if (compressedObj[property] !== void 0 && compressedObj.hasOwnProperty(property)) {
+            if (!Array.isArray(compressedObj[property])) {
+              compressedObj[property] = [compressedObj[property]];
+            }
+            compressedObj[property].push(val2);
+          } else {
+            if (options.isArray(property, newJpath, isLeaf)) {
+              compressedObj[property] = [val2];
+            } else {
+              compressedObj[property] = val2;
+            }
+          }
+        }
+      }
+      if (typeof text === "string") {
+        if (text.length > 0)
+          compressedObj[options.textNodeName] = text;
+      } else if (text !== void 0)
+        compressedObj[options.textNodeName] = text;
+      return compressedObj;
+    }
+    function propName(obj) {
+      const keys = Object.keys(obj);
+      for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+        if (key !== ":@")
+          return key;
+      }
+    }
+    function assignAttributes(obj, attrMap, jpath, options) {
+      if (attrMap) {
+        const keys = Object.keys(attrMap);
+        const len = keys.length;
+        for (let i = 0; i < len; i++) {
+          const atrrName = keys[i];
+          if (options.isArray(atrrName, jpath + "." + atrrName, true, true)) {
+            obj[atrrName] = [attrMap[atrrName]];
+          } else {
+            obj[atrrName] = attrMap[atrrName];
+          }
+        }
+      }
+    }
+    function isLeafTag(obj, options) {
+      const { textNodeName } = options;
+      const propCount = Object.keys(obj).length;
+      if (propCount === 0) {
+        return true;
+      }
+      if (propCount === 1 && (obj[textNodeName] || typeof obj[textNodeName] === "boolean" || obj[textNodeName] === 0)) {
+        return true;
+      }
+      return false;
+    }
+    exports2.prettify = prettify;
+  }
+});
+
+// ../../../../node_modules/fast-xml-parser/src/xmlparser/XMLParser.js
+var require_XMLParser = __commonJS({
+  "../../../../node_modules/fast-xml-parser/src/xmlparser/XMLParser.js"(exports2, module2) {
+    var { buildOptions } = require_OptionsBuilder();
+    var OrderedObjParser = require_OrderedObjParser();
+    var { prettify } = require_node2json();
+    var validator = require_validator();
+    var XMLParser = class {
+      constructor(options) {
+        this.externalEntities = {};
+        this.options = buildOptions(options);
+      }
+      /**
+       * Parse XML dats to JS object 
+       * @param {string|Buffer} xmlData 
+       * @param {boolean|Object} validationOption 
+       */
+      parse(xmlData, validationOption) {
+        if (typeof xmlData === "string") {
+        } else if (xmlData.toString) {
+          xmlData = xmlData.toString();
+        } else {
+          throw new Error("XML data is accepted in String or Bytes[] form.");
+        }
+        if (validationOption) {
+          if (validationOption === true)
+            validationOption = {};
+          const result = validator.validate(xmlData, validationOption);
+          if (result !== true) {
+            throw Error(`${result.err.msg}:${result.err.line}:${result.err.col}`);
+          }
+        }
+        const orderedObjParser = new OrderedObjParser(this.options);
+        orderedObjParser.addExternalEntities(this.externalEntities);
+        const orderedResult = orderedObjParser.parseXml(xmlData);
+        if (this.options.preserveOrder || orderedResult === void 0)
+          return orderedResult;
+        else
+          return prettify(orderedResult, this.options);
+      }
+      /**
+       * Add Entity which is not by default supported by this library
+       * @param {string} key 
+       * @param {string} value 
+       */
+      addEntity(key, value) {
+        if (value.indexOf("&") !== -1) {
+          throw new Error("Entity value can't have '&'");
+        } else if (key.indexOf("&") !== -1 || key.indexOf(";") !== -1) {
+          throw new Error("An entity must be set without '&' and ';'. Eg. use '#xD' for '&#xD;'");
+        } else if (value === "&") {
+          throw new Error("An entity with value '&' is not permitted");
+        } else {
+          this.externalEntities[key] = value;
+        }
+      }
+    };
+    module2.exports = XMLParser;
+  }
+});
+
+// ../../../../node_modules/fast-xml-parser/src/xmlbuilder/orderedJs2Xml.js
+var require_orderedJs2Xml = __commonJS({
+  "../../../../node_modules/fast-xml-parser/src/xmlbuilder/orderedJs2Xml.js"(exports2, module2) {
+    var EOL = "\n";
+    function toXml(jArray, options) {
+      let indentation = "";
+      if (options.format && options.indentBy.length > 0) {
+        indentation = EOL;
+      }
+      return arrToStr(jArray, options, "", indentation);
+    }
+    function arrToStr(arr, options, jPath, indentation) {
+      let xmlStr = "";
+      let isPreviousElementTag = false;
+      for (let i = 0; i < arr.length; i++) {
+        const tagObj = arr[i];
+        const tagName = propName(tagObj);
+        let newJPath = "";
+        if (jPath.length === 0)
+          newJPath = tagName;
+        else
+          newJPath = `${jPath}.${tagName}`;
+        if (tagName === options.textNodeName) {
+          let tagText = tagObj[tagName];
+          if (!isStopNode(newJPath, options)) {
+            tagText = options.tagValueProcessor(tagName, tagText);
+            tagText = replaceEntitiesValue(tagText, options);
+          }
+          if (isPreviousElementTag) {
+            xmlStr += indentation;
+          }
+          xmlStr += tagText;
+          isPreviousElementTag = false;
+          continue;
+        } else if (tagName === options.cdataPropName) {
+          if (isPreviousElementTag) {
+            xmlStr += indentation;
+          }
+          xmlStr += `<![CDATA[${tagObj[tagName][0][options.textNodeName]}]]>`;
+          isPreviousElementTag = false;
+          continue;
+        } else if (tagName === options.commentPropName) {
+          xmlStr += indentation + `<!--${tagObj[tagName][0][options.textNodeName]}-->`;
+          isPreviousElementTag = true;
+          continue;
+        } else if (tagName[0] === "?") {
+          const attStr2 = attr_to_str(tagObj[":@"], options);
+          const tempInd = tagName === "?xml" ? "" : indentation;
+          let piTextNodeName = tagObj[tagName][0][options.textNodeName];
+          piTextNodeName = piTextNodeName.length !== 0 ? " " + piTextNodeName : "";
+          xmlStr += tempInd + `<${tagName}${piTextNodeName}${attStr2}?>`;
+          isPreviousElementTag = true;
+          continue;
+        }
+        let newIdentation = indentation;
+        if (newIdentation !== "") {
+          newIdentation += options.indentBy;
+        }
+        const attStr = attr_to_str(tagObj[":@"], options);
+        const tagStart = indentation + `<${tagName}${attStr}`;
+        const tagValue = arrToStr(tagObj[tagName], options, newJPath, newIdentation);
+        if (options.unpairedTags.indexOf(tagName) !== -1) {
+          if (options.suppressUnpairedNode)
+            xmlStr += tagStart + ">";
+          else
+            xmlStr += tagStart + "/>";
+        } else if ((!tagValue || tagValue.length === 0) && options.suppressEmptyNode) {
+          xmlStr += tagStart + "/>";
+        } else if (tagValue && tagValue.endsWith(">")) {
+          xmlStr += tagStart + `>${tagValue}${indentation}</${tagName}>`;
+        } else {
+          xmlStr += tagStart + ">";
+          if (tagValue && indentation !== "" && (tagValue.includes("/>") || tagValue.includes("</"))) {
+            xmlStr += indentation + options.indentBy + tagValue + indentation;
+          } else {
+            xmlStr += tagValue;
+          }
+          xmlStr += `</${tagName}>`;
+        }
+        isPreviousElementTag = true;
+      }
+      return xmlStr;
+    }
+    function propName(obj) {
+      const keys = Object.keys(obj);
+      for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+        if (key !== ":@")
+          return key;
+      }
+    }
+    function attr_to_str(attrMap, options) {
+      let attrStr = "";
+      if (attrMap && !options.ignoreAttributes) {
+        for (let attr in attrMap) {
+          let attrVal = options.attributeValueProcessor(attr, attrMap[attr]);
+          attrVal = replaceEntitiesValue(attrVal, options);
+          if (attrVal === true && options.suppressBooleanAttributes) {
+            attrStr += ` ${attr.substr(options.attributeNamePrefix.length)}`;
+          } else {
+            attrStr += ` ${attr.substr(options.attributeNamePrefix.length)}="${attrVal}"`;
+          }
+        }
+      }
+      return attrStr;
+    }
+    function isStopNode(jPath, options) {
+      jPath = jPath.substr(0, jPath.length - options.textNodeName.length - 1);
+      let tagName = jPath.substr(jPath.lastIndexOf(".") + 1);
+      for (let index in options.stopNodes) {
+        if (options.stopNodes[index] === jPath || options.stopNodes[index] === "*." + tagName)
+          return true;
+      }
+      return false;
+    }
+    function replaceEntitiesValue(textValue, options) {
+      if (textValue && textValue.length > 0 && options.processEntities) {
+        for (let i = 0; i < options.entities.length; i++) {
+          const entity = options.entities[i];
+          textValue = textValue.replace(entity.regex, entity.val);
+        }
+      }
+      return textValue;
+    }
+    module2.exports = toXml;
+  }
+});
+
+// ../../../../node_modules/fast-xml-parser/src/xmlbuilder/json2xml.js
+var require_json2xml = __commonJS({
+  "../../../../node_modules/fast-xml-parser/src/xmlbuilder/json2xml.js"(exports2, module2) {
+    "use strict";
+    var buildFromOrderedJs = require_orderedJs2Xml();
+    var defaultOptions = {
+      attributeNamePrefix: "@_",
+      attributesGroupName: false,
+      textNodeName: "#text",
+      ignoreAttributes: true,
+      cdataPropName: false,
+      format: false,
+      indentBy: "  ",
+      suppressEmptyNode: false,
+      suppressUnpairedNode: true,
+      suppressBooleanAttributes: true,
+      tagValueProcessor: function(key, a) {
+        return a;
+      },
+      attributeValueProcessor: function(attrName, a) {
+        return a;
+      },
+      preserveOrder: false,
+      commentPropName: false,
+      unpairedTags: [],
+      entities: [
+        { regex: new RegExp("&", "g"), val: "&amp;" },
+        //it must be on top
+        { regex: new RegExp(">", "g"), val: "&gt;" },
+        { regex: new RegExp("<", "g"), val: "&lt;" },
+        { regex: new RegExp("'", "g"), val: "&apos;" },
+        { regex: new RegExp('"', "g"), val: "&quot;" }
+      ],
+      processEntities: true,
+      stopNodes: [],
+      // transformTagName: false,
+      // transformAttributeName: false,
+      oneListGroup: false
+    };
+    function Builder(options) {
+      this.options = Object.assign({}, defaultOptions, options);
+      if (this.options.ignoreAttributes || this.options.attributesGroupName) {
+        this.isAttribute = function() {
+          return false;
+        };
+      } else {
+        this.attrPrefixLen = this.options.attributeNamePrefix.length;
+        this.isAttribute = isAttribute;
+      }
+      this.processTextOrObjNode = processTextOrObjNode;
+      if (this.options.format) {
+        this.indentate = indentate;
+        this.tagEndChar = ">\n";
+        this.newLine = "\n";
+      } else {
+        this.indentate = function() {
+          return "";
+        };
+        this.tagEndChar = ">";
+        this.newLine = "";
+      }
+    }
+    Builder.prototype.build = function(jObj) {
+      if (this.options.preserveOrder) {
+        return buildFromOrderedJs(jObj, this.options);
+      } else {
+        if (Array.isArray(jObj) && this.options.arrayNodeName && this.options.arrayNodeName.length > 1) {
+          jObj = {
+            [this.options.arrayNodeName]: jObj
+          };
+        }
+        return this.j2x(jObj, 0).val;
+      }
+    };
+    Builder.prototype.j2x = function(jObj, level) {
+      let attrStr = "";
+      let val2 = "";
+      for (let key in jObj) {
+        if (typeof jObj[key] === "undefined") {
+        } else if (jObj[key] === null) {
+          if (key[0] === "?")
+            val2 += this.indentate(level) + "<" + key + "?" + this.tagEndChar;
+          else
+            val2 += this.indentate(level) + "<" + key + "/" + this.tagEndChar;
+        } else if (jObj[key] instanceof Date) {
+          val2 += this.buildTextValNode(jObj[key], key, "", level);
+        } else if (typeof jObj[key] !== "object") {
+          const attr = this.isAttribute(key);
+          if (attr) {
+            attrStr += this.buildAttrPairStr(attr, "" + jObj[key]);
+          } else {
+            if (key === this.options.textNodeName) {
+              let newval = this.options.tagValueProcessor(key, "" + jObj[key]);
+              val2 += this.replaceEntitiesValue(newval);
+            } else {
+              val2 += this.buildTextValNode(jObj[key], key, "", level);
+            }
+          }
+        } else if (Array.isArray(jObj[key])) {
+          const arrLen = jObj[key].length;
+          let listTagVal = "";
+          for (let j = 0; j < arrLen; j++) {
+            const item = jObj[key][j];
+            if (typeof item === "undefined") {
+            } else if (item === null) {
+              if (key[0] === "?")
+                val2 += this.indentate(level) + "<" + key + "?" + this.tagEndChar;
+              else
+                val2 += this.indentate(level) + "<" + key + "/" + this.tagEndChar;
+            } else if (typeof item === "object") {
+              if (this.options.oneListGroup) {
+                listTagVal += this.j2x(item, level + 1).val;
+              } else {
+                listTagVal += this.processTextOrObjNode(item, key, level);
+              }
+            } else {
+              listTagVal += this.buildTextValNode(item, key, "", level);
+            }
+          }
+          if (this.options.oneListGroup) {
+            listTagVal = this.buildObjectNode(listTagVal, key, "", level);
+          }
+          val2 += listTagVal;
+        } else {
+          if (this.options.attributesGroupName && key === this.options.attributesGroupName) {
+            const Ks = Object.keys(jObj[key]);
+            const L = Ks.length;
+            for (let j = 0; j < L; j++) {
+              attrStr += this.buildAttrPairStr(Ks[j], "" + jObj[key][Ks[j]]);
+            }
+          } else {
+            val2 += this.processTextOrObjNode(jObj[key], key, level);
+          }
+        }
+      }
+      return { attrStr, val: val2 };
+    };
+    Builder.prototype.buildAttrPairStr = function(attrName, val2) {
+      val2 = this.options.attributeValueProcessor(attrName, "" + val2);
+      val2 = this.replaceEntitiesValue(val2);
+      if (this.options.suppressBooleanAttributes && val2 === "true") {
+        return " " + attrName;
+      } else
+        return " " + attrName + '="' + val2 + '"';
+    };
+    function processTextOrObjNode(object, key, level) {
+      const result = this.j2x(object, level + 1);
+      if (object[this.options.textNodeName] !== void 0 && Object.keys(object).length === 1) {
+        return this.buildTextValNode(object[this.options.textNodeName], key, result.attrStr, level);
+      } else {
+        return this.buildObjectNode(result.val, key, result.attrStr, level);
+      }
+    }
+    Builder.prototype.buildObjectNode = function(val2, key, attrStr, level) {
+      if (val2 === "") {
+        if (key[0] === "?")
+          return this.indentate(level) + "<" + key + attrStr + "?" + this.tagEndChar;
+        else {
+          return this.indentate(level) + "<" + key + attrStr + this.closeTag(key) + this.tagEndChar;
+        }
+      } else {
+        let tagEndExp = "</" + key + this.tagEndChar;
+        let piClosingChar = "";
+        if (key[0] === "?") {
+          piClosingChar = "?";
+          tagEndExp = "";
+        }
+        if (attrStr && val2.indexOf("<") === -1) {
+          return this.indentate(level) + "<" + key + attrStr + piClosingChar + ">" + val2 + tagEndExp;
+        } else if (this.options.commentPropName !== false && key === this.options.commentPropName && piClosingChar.length === 0) {
+          return this.indentate(level) + `<!--${val2}-->` + this.newLine;
+        } else {
+          return this.indentate(level) + "<" + key + attrStr + piClosingChar + this.tagEndChar + val2 + this.indentate(level) + tagEndExp;
+        }
+      }
+    };
+    Builder.prototype.closeTag = function(key) {
+      let closeTag = "";
+      if (this.options.unpairedTags.indexOf(key) !== -1) {
+        if (!this.options.suppressUnpairedNode)
+          closeTag = "/";
+      } else if (this.options.suppressEmptyNode) {
+        closeTag = "/";
+      } else {
+        closeTag = `></${key}`;
+      }
+      return closeTag;
+    };
+    Builder.prototype.buildTextValNode = function(val2, key, attrStr, level) {
+      if (this.options.cdataPropName !== false && key === this.options.cdataPropName) {
+        return this.indentate(level) + `<![CDATA[${val2}]]>` + this.newLine;
+      } else if (this.options.commentPropName !== false && key === this.options.commentPropName) {
+        return this.indentate(level) + `<!--${val2}-->` + this.newLine;
+      } else if (key[0] === "?") {
+        return this.indentate(level) + "<" + key + attrStr + "?" + this.tagEndChar;
+      } else {
+        let textValue = this.options.tagValueProcessor(key, val2);
+        textValue = this.replaceEntitiesValue(textValue);
+        if (textValue === "") {
+          return this.indentate(level) + "<" + key + attrStr + this.closeTag(key) + this.tagEndChar;
+        } else {
+          return this.indentate(level) + "<" + key + attrStr + ">" + textValue + "</" + key + this.tagEndChar;
+        }
+      }
+    };
+    Builder.prototype.replaceEntitiesValue = function(textValue) {
+      if (textValue && textValue.length > 0 && this.options.processEntities) {
+        for (let i = 0; i < this.options.entities.length; i++) {
+          const entity = this.options.entities[i];
+          textValue = textValue.replace(entity.regex, entity.val);
+        }
+      }
+      return textValue;
+    };
+    function indentate(level) {
+      return this.options.indentBy.repeat(level);
+    }
+    function isAttribute(name) {
+      if (name.startsWith(this.options.attributeNamePrefix)) {
+        return name.substr(this.attrPrefixLen);
+      } else {
+        return false;
+      }
+    }
+    module2.exports = Builder;
+  }
+});
+
+// ../../../../node_modules/fast-xml-parser/src/fxp.js
+var require_fxp = __commonJS({
+  "../../../../node_modules/fast-xml-parser/src/fxp.js"(exports2, module2) {
+    "use strict";
+    var validator = require_validator();
+    var XMLParser = require_XMLParser();
+    var XMLBuilder = require_json2xml();
+    module2.exports = {
+      XMLParser,
+      XMLValidator: validator,
+      XMLBuilder
+    };
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/core/dist-cjs/index.js
+var require_dist_cjs38 = __commonJS({
+  "../../../../node_modules/@aws-sdk/core/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      AWSSDKSigV4Signer: () => AWSSDKSigV4Signer,
+      AwsSdkSigV4Signer: () => AwsSdkSigV4Signer,
+      _toBool: () => _toBool,
+      _toNum: () => _toNum,
+      _toStr: () => _toStr,
+      awsExpectUnion: () => awsExpectUnion,
+      emitWarningIfUnsupportedVersion: () => emitWarningIfUnsupportedVersion,
+      loadRestJsonErrorCode: () => loadRestJsonErrorCode,
+      loadRestXmlErrorCode: () => loadRestXmlErrorCode,
+      parseJsonBody: () => parseJsonBody,
+      parseJsonErrorBody: () => parseJsonErrorBody,
+      parseXmlBody: () => parseXmlBody,
+      parseXmlErrorBody: () => parseXmlErrorBody,
+      resolveAWSSDKSigV4Config: () => resolveAWSSDKSigV4Config,
+      resolveAwsSdkSigV4Config: () => resolveAwsSdkSigV4Config
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var warningEmitted = false;
+    var emitWarningIfUnsupportedVersion = /* @__PURE__ */ __name((version3) => {
+      if (version3 && !warningEmitted && parseInt(version3.substring(1, version3.indexOf("."))) < 16) {
+        warningEmitted = true;
+        process.emitWarning(
+          `NodeDeprecationWarning: The AWS SDK for JavaScript (v3) will
+no longer support Node.js 14.x on May 1, 2024.
+
+To continue receiving updates to AWS services, bug fixes, and security
+updates please upgrade to an active Node.js LTS version.
+
+More information can be found at: https://a.co/dzr2AJd`
+        );
+      }
+    }, "emitWarningIfUnsupportedVersion");
+    var import_protocol_http = require_dist_cjs2();
+    var getDateHeader = /* @__PURE__ */ __name((response) => {
+      var _a, _b;
+      return import_protocol_http.HttpResponse.isInstance(response) ? ((_a = response.headers) == null ? void 0 : _a.date) ?? ((_b = response.headers) == null ? void 0 : _b.Date) : void 0;
+    }, "getDateHeader");
+    var getSkewCorrectedDate = /* @__PURE__ */ __name((systemClockOffset) => new Date(Date.now() + systemClockOffset), "getSkewCorrectedDate");
+    var isClockSkewed = /* @__PURE__ */ __name((clockTime, systemClockOffset) => Math.abs(getSkewCorrectedDate(systemClockOffset).getTime() - clockTime) >= 3e5, "isClockSkewed");
+    var getUpdatedSystemClockOffset = /* @__PURE__ */ __name((clockTime, currentSystemClockOffset) => {
+      const clockTimeInMs = Date.parse(clockTime);
+      if (isClockSkewed(clockTimeInMs, currentSystemClockOffset)) {
+        return clockTimeInMs - Date.now();
+      }
+      return currentSystemClockOffset;
+    }, "getUpdatedSystemClockOffset");
+    var throwSigningPropertyError = /* @__PURE__ */ __name((name, property) => {
+      if (!property) {
+        throw new Error(`Property \`${name}\` is not resolved for AWS SDK SigV4Auth`);
+      }
+      return property;
+    }, "throwSigningPropertyError");
+    var validateSigningProperties = /* @__PURE__ */ __name(async (signingProperties) => {
+      var _a, _b, _c;
+      const context = throwSigningPropertyError(
+        "context",
+        signingProperties.context
+      );
+      const config = throwSigningPropertyError("config", signingProperties.config);
+      const authScheme = (_c = (_b = (_a = context.endpointV2) == null ? void 0 : _a.properties) == null ? void 0 : _b.authSchemes) == null ? void 0 : _c[0];
+      const signerFunction = throwSigningPropertyError(
+        "signer",
+        config.signer
+      );
+      const signer = await signerFunction(authScheme);
+      const signingRegion = signingProperties == null ? void 0 : signingProperties.signingRegion;
+      const signingName = signingProperties == null ? void 0 : signingProperties.signingName;
+      return {
+        config,
+        signer,
+        signingRegion,
+        signingName
+      };
+    }, "validateSigningProperties");
+    var _AwsSdkSigV4Signer = class _AwsSdkSigV4Signer {
+      async sign(httpRequest, identity, signingProperties) {
+        if (!import_protocol_http.HttpRequest.isInstance(httpRequest)) {
+          throw new Error("The request is not an instance of `HttpRequest` and cannot be signed");
+        }
+        const { config, signer, signingRegion, signingName } = await validateSigningProperties(signingProperties);
+        const signedRequest = await signer.sign(httpRequest, {
+          signingDate: getSkewCorrectedDate(config.systemClockOffset),
+          signingRegion,
+          signingService: signingName
+        });
+        return signedRequest;
+      }
+      errorHandler(signingProperties) {
+        return (error) => {
+          const serverTime = error.ServerTime ?? getDateHeader(error.$response);
+          if (serverTime) {
+            const config = throwSigningPropertyError("config", signingProperties.config);
+            const initialSystemClockOffset = config.systemClockOffset;
+            config.systemClockOffset = getUpdatedSystemClockOffset(serverTime, config.systemClockOffset);
+            const clockSkewCorrected = config.systemClockOffset !== initialSystemClockOffset;
+            if (clockSkewCorrected && error.$metadata) {
+              error.$metadata.clockSkewCorrected = true;
+            }
+          }
+          throw error;
+        };
+      }
+      successHandler(httpResponse, signingProperties) {
+        const dateHeader = getDateHeader(httpResponse);
+        if (dateHeader) {
+          const config = throwSigningPropertyError("config", signingProperties.config);
+          config.systemClockOffset = getUpdatedSystemClockOffset(dateHeader, config.systemClockOffset);
+        }
+      }
+    };
+    __name(_AwsSdkSigV4Signer, "AwsSdkSigV4Signer");
+    var AwsSdkSigV4Signer = _AwsSdkSigV4Signer;
+    var AWSSDKSigV4Signer = AwsSdkSigV4Signer;
+    var import_core = require_dist_cjs32();
+    var import_signature_v4 = require_dist_cjs37();
+    var resolveAwsSdkSigV4Config = /* @__PURE__ */ __name((config) => {
+      let normalizedCreds;
+      if (config.credentials) {
+        normalizedCreds = (0, import_core.memoizeIdentityProvider)(config.credentials, import_core.isIdentityExpired, import_core.doesIdentityRequireRefresh);
+      }
+      if (!normalizedCreds) {
+        if (config.credentialDefaultProvider) {
+          normalizedCreds = (0, import_core.normalizeProvider)(
+            config.credentialDefaultProvider(
+              Object.assign({}, config, {
+                parentClientConfig: config
+              })
+            )
+          );
+        } else {
+          normalizedCreds = /* @__PURE__ */ __name(async () => {
+            throw new Error("`credentials` is missing");
+          }, "normalizedCreds");
+        }
+      }
+      const {
+        // Default for signingEscapePath
+        signingEscapePath = true,
+        // Default for systemClockOffset
+        systemClockOffset = config.systemClockOffset || 0,
+        // No default for sha256 since it is platform dependent
+        sha256
+      } = config;
+      let signer;
+      if (config.signer) {
+        signer = (0, import_core.normalizeProvider)(config.signer);
+      } else if (config.regionInfoProvider) {
+        signer = /* @__PURE__ */ __name(() => (0, import_core.normalizeProvider)(config.region)().then(
+          async (region) => [
+            await config.regionInfoProvider(region, {
+              useFipsEndpoint: await config.useFipsEndpoint(),
+              useDualstackEndpoint: await config.useDualstackEndpoint()
+            }) || {},
+            region
+          ]
+        ).then(([regionInfo, region]) => {
+          const { signingRegion, signingService } = regionInfo;
+          config.signingRegion = config.signingRegion || signingRegion || region;
+          config.signingName = config.signingName || signingService || config.serviceId;
+          const params = {
+            ...config,
+            credentials: normalizedCreds,
+            region: config.signingRegion,
+            service: config.signingName,
+            sha256,
+            uriEscapePath: signingEscapePath
+          };
+          const SignerCtor = config.signerConstructor || import_signature_v4.SignatureV4;
+          return new SignerCtor(params);
+        }), "signer");
+      } else {
+        signer = /* @__PURE__ */ __name(async (authScheme) => {
+          authScheme = Object.assign(
+            {},
+            {
+              name: "sigv4",
+              signingName: config.signingName || config.defaultSigningName,
+              signingRegion: await (0, import_core.normalizeProvider)(config.region)(),
+              properties: {}
+            },
+            authScheme
+          );
+          const signingRegion = authScheme.signingRegion;
+          const signingService = authScheme.signingName;
+          config.signingRegion = config.signingRegion || signingRegion;
+          config.signingName = config.signingName || signingService || config.serviceId;
+          const params = {
+            ...config,
+            credentials: normalizedCreds,
+            region: config.signingRegion,
+            service: config.signingName,
+            sha256,
+            uriEscapePath: signingEscapePath
+          };
+          const SignerCtor = config.signerConstructor || import_signature_v4.SignatureV4;
+          return new SignerCtor(params);
+        }, "signer");
+      }
+      return {
+        ...config,
+        systemClockOffset,
+        signingEscapePath,
+        credentials: normalizedCreds,
+        signer
+      };
+    }, "resolveAwsSdkSigV4Config");
+    var resolveAWSSDKSigV4Config = resolveAwsSdkSigV4Config;
+    var _toStr = /* @__PURE__ */ __name((val2) => {
+      if (val2 == null) {
+        return val2;
+      }
+      if (typeof val2 === "number" || typeof val2 === "bigint") {
+        const warning = new Error(`Received number ${val2} where a string was expected.`);
+        warning.name = "Warning";
+        console.warn(warning);
+        return String(val2);
+      }
+      if (typeof val2 === "boolean") {
+        const warning = new Error(`Received boolean ${val2} where a string was expected.`);
+        warning.name = "Warning";
+        console.warn(warning);
+        return String(val2);
+      }
+      return val2;
+    }, "_toStr");
+    var _toBool = /* @__PURE__ */ __name((val2) => {
+      if (val2 == null) {
+        return val2;
+      }
+      if (typeof val2 === "number") {
+      }
+      if (typeof val2 === "string") {
+        const lowercase = val2.toLowerCase();
+        if (val2 !== "" && lowercase !== "false" && lowercase !== "true") {
+          const warning = new Error(`Received string "${val2}" where a boolean was expected.`);
+          warning.name = "Warning";
+          console.warn(warning);
+        }
+        return val2 !== "" && lowercase !== "false";
+      }
+      return val2;
+    }, "_toBool");
+    var _toNum = /* @__PURE__ */ __name((val2) => {
+      if (val2 == null) {
+        return val2;
+      }
+      if (typeof val2 === "boolean") {
+      }
+      if (typeof val2 === "string") {
+        const num = Number(val2);
+        if (num.toString() !== val2) {
+          const warning = new Error(`Received string "${val2}" where a number was expected.`);
+          warning.name = "Warning";
+          console.warn(warning);
+          return val2;
+        }
+        return num;
+      }
+      return val2;
+    }, "_toNum");
+    var import_smithy_client = require_dist_cjs30();
+    var awsExpectUnion = /* @__PURE__ */ __name((value) => {
+      if (value == null) {
+        return void 0;
+      }
+      if (typeof value === "object" && "__type" in value) {
+        delete value.__type;
+      }
+      return (0, import_smithy_client.expectUnion)(value);
+    }, "awsExpectUnion");
+    var collectBodyString = /* @__PURE__ */ __name((streamBody, context) => (0, import_smithy_client.collectBody)(streamBody, context).then((body) => context.utf8Encoder(body)), "collectBodyString");
+    var parseJsonBody = /* @__PURE__ */ __name((streamBody, context) => collectBodyString(streamBody, context).then((encoded) => {
+      if (encoded.length) {
+        try {
+          return JSON.parse(encoded);
+        } catch (e) {
+          if ((e == null ? void 0 : e.name) === "SyntaxError") {
+            Object.defineProperty(e, "$responseBodyText", {
+              value: encoded
+            });
+          }
+          throw e;
+        }
+      }
+      return {};
+    }), "parseJsonBody");
+    var parseJsonErrorBody = /* @__PURE__ */ __name(async (errorBody, context) => {
+      const value = await parseJsonBody(errorBody, context);
+      value.message = value.message ?? value.Message;
+      return value;
+    }, "parseJsonErrorBody");
+    var loadRestJsonErrorCode = /* @__PURE__ */ __name((output, data) => {
+      const findKey = /* @__PURE__ */ __name((object, key) => Object.keys(object).find((k) => k.toLowerCase() === key.toLowerCase()), "findKey");
+      const sanitizeErrorCode = /* @__PURE__ */ __name((rawValue) => {
+        let cleanValue = rawValue;
+        if (typeof cleanValue === "number") {
+          cleanValue = cleanValue.toString();
+        }
+        if (cleanValue.indexOf(",") >= 0) {
+          cleanValue = cleanValue.split(",")[0];
+        }
+        if (cleanValue.indexOf(":") >= 0) {
+          cleanValue = cleanValue.split(":")[0];
+        }
+        if (cleanValue.indexOf("#") >= 0) {
+          cleanValue = cleanValue.split("#")[1];
+        }
+        return cleanValue;
+      }, "sanitizeErrorCode");
+      const headerKey = findKey(output.headers, "x-amzn-errortype");
+      if (headerKey !== void 0) {
+        return sanitizeErrorCode(output.headers[headerKey]);
+      }
+      if (data.code !== void 0) {
+        return sanitizeErrorCode(data.code);
+      }
+      if (data["__type"] !== void 0) {
+        return sanitizeErrorCode(data["__type"]);
+      }
+    }, "loadRestJsonErrorCode");
+    var import_fast_xml_parser = require_fxp();
+    var parseXmlBody = /* @__PURE__ */ __name((streamBody, context) => collectBodyString(streamBody, context).then((encoded) => {
+      if (encoded.length) {
+        const parser = new import_fast_xml_parser.XMLParser({
+          attributeNamePrefix: "",
+          htmlEntities: true,
+          ignoreAttributes: false,
+          ignoreDeclaration: true,
+          parseTagValue: false,
+          trimValues: false,
+          tagValueProcessor: (_, val2) => val2.trim() === "" && val2.includes("\n") ? "" : void 0
+        });
+        parser.addEntity("#xD", "\r");
+        parser.addEntity("#10", "\n");
+        let parsedObj;
+        try {
+          parsedObj = parser.parse(encoded);
+        } catch (e) {
+          if (e && typeof e === "object") {
+            Object.defineProperty(e, "$responseBodyText", {
+              value: encoded
+            });
+          }
+          throw e;
+        }
+        const textNodeName = "#text";
+        const key = Object.keys(parsedObj)[0];
+        const parsedObjToReturn = parsedObj[key];
+        if (parsedObjToReturn[textNodeName]) {
+          parsedObjToReturn[key] = parsedObjToReturn[textNodeName];
+          delete parsedObjToReturn[textNodeName];
+        }
+        return (0, import_smithy_client.getValueFromTextNode)(parsedObjToReturn);
+      }
+      return {};
+    }), "parseXmlBody");
+    var parseXmlErrorBody = /* @__PURE__ */ __name(async (errorBody, context) => {
+      const value = await parseXmlBody(errorBody, context);
+      if (value.Error) {
+        value.Error.message = value.Error.message ?? value.Error.Message;
+      }
+      return value;
+    }, "parseXmlErrorBody");
+    var loadRestXmlErrorCode = /* @__PURE__ */ __name((output, data) => {
+      var _a;
+      if (((_a = data == null ? void 0 : data.Error) == null ? void 0 : _a.Code) !== void 0) {
+        return data.Error.Code;
+      }
+      if ((data == null ? void 0 : data.Code) !== void 0) {
+        return data.Code;
+      }
+      if (output.statusCode == 404) {
+        return "NotFound";
+      }
+    }, "loadRestXmlErrorCode");
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/client-cloudformation/dist-cjs/auth/httpAuthSchemeProvider.js
+var require_httpAuthSchemeProvider = __commonJS({
+  "../../../../node_modules/@aws-sdk/client-cloudformation/dist-cjs/auth/httpAuthSchemeProvider.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.resolveHttpAuthSchemeConfig = exports2.defaultCloudFormationHttpAuthSchemeProvider = exports2.defaultCloudFormationHttpAuthSchemeParametersProvider = void 0;
+    var core_1 = require_dist_cjs38();
+    var util_middleware_1 = require_dist_cjs13();
+    var defaultCloudFormationHttpAuthSchemeParametersProvider = async (config, context, input) => {
+      return {
+        operation: (0, util_middleware_1.getSmithyContext)(context).operation,
+        region: await (0, util_middleware_1.normalizeProvider)(config.region)() || (() => {
+          throw new Error("expected `region` to be configured for `aws.auth#sigv4`");
+        })()
+      };
+    };
+    exports2.defaultCloudFormationHttpAuthSchemeParametersProvider = defaultCloudFormationHttpAuthSchemeParametersProvider;
+    function createAwsAuthSigv4HttpAuthOption(authParameters) {
+      return {
+        schemeId: "aws.auth#sigv4",
+        signingProperties: {
+          name: "cloudformation",
+          region: authParameters.region
+        },
+        propertiesExtractor: (config, context) => ({
+          signingProperties: {
+            config,
+            context
+          }
+        })
+      };
+    }
+    var defaultCloudFormationHttpAuthSchemeProvider = (authParameters) => {
+      const options = [];
+      switch (authParameters.operation) {
+        default: {
+          options.push(createAwsAuthSigv4HttpAuthOption(authParameters));
+        }
+      }
+      return options;
+    };
+    exports2.defaultCloudFormationHttpAuthSchemeProvider = defaultCloudFormationHttpAuthSchemeProvider;
+    var resolveHttpAuthSchemeConfig = (config) => {
+      const config_0 = (0, core_1.resolveAwsSdkSigV4Config)(config);
+      return {
+        ...config_0
+      };
+    };
+    exports2.resolveHttpAuthSchemeConfig = resolveHttpAuthSchemeConfig;
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/client-cloudformation/package.json
+var require_package = __commonJS({
+  "../../../../node_modules/@aws-sdk/client-cloudformation/package.json"(exports2, module2) {
+    module2.exports = {
+      name: "@aws-sdk/client-cloudformation",
+      description: "AWS SDK for JavaScript Cloudformation Client for Node.js, Browser and React Native",
+      version: "3.537.0",
+      scripts: {
+        build: "concurrently 'yarn:build:cjs' 'yarn:build:es' 'yarn:build:types'",
+        "build:cjs": "node ../../scripts/compilation/inline client-cloudformation",
+        "build:es": "tsc -p tsconfig.es.json",
+        "build:include:deps": "lerna run --scope $npm_package_name --include-dependencies build",
+        "build:types": "tsc -p tsconfig.types.json",
+        "build:types:downlevel": "downlevel-dts dist-types dist-types/ts3.4",
+        clean: "rimraf ./dist-* && rimraf *.tsbuildinfo",
+        "extract:docs": "api-extractor run --local",
+        "generate:client": "node ../../scripts/generate-clients/single-service --solo cloudformation"
+      },
+      main: "./dist-cjs/index.js",
+      types: "./dist-types/index.d.ts",
+      module: "./dist-es/index.js",
+      sideEffects: false,
+      dependencies: {
+        "@aws-crypto/sha256-browser": "3.0.0",
+        "@aws-crypto/sha256-js": "3.0.0",
+        "@aws-sdk/client-sts": "3.535.0",
+        "@aws-sdk/core": "3.535.0",
+        "@aws-sdk/credential-provider-node": "3.535.0",
+        "@aws-sdk/middleware-host-header": "3.535.0",
+        "@aws-sdk/middleware-logger": "3.535.0",
+        "@aws-sdk/middleware-recursion-detection": "3.535.0",
+        "@aws-sdk/middleware-user-agent": "3.535.0",
+        "@aws-sdk/region-config-resolver": "3.535.0",
+        "@aws-sdk/types": "3.535.0",
+        "@aws-sdk/util-endpoints": "3.535.0",
+        "@aws-sdk/util-user-agent-browser": "3.535.0",
+        "@aws-sdk/util-user-agent-node": "3.535.0",
+        "@smithy/config-resolver": "^2.2.0",
+        "@smithy/core": "^1.4.0",
+        "@smithy/fetch-http-handler": "^2.5.0",
+        "@smithy/hash-node": "^2.2.0",
+        "@smithy/invalid-dependency": "^2.2.0",
+        "@smithy/middleware-content-length": "^2.2.0",
+        "@smithy/middleware-endpoint": "^2.5.0",
+        "@smithy/middleware-retry": "^2.2.0",
+        "@smithy/middleware-serde": "^2.3.0",
+        "@smithy/middleware-stack": "^2.2.0",
+        "@smithy/node-config-provider": "^2.3.0",
+        "@smithy/node-http-handler": "^2.5.0",
+        "@smithy/protocol-http": "^3.3.0",
+        "@smithy/smithy-client": "^2.5.0",
+        "@smithy/types": "^2.12.0",
+        "@smithy/url-parser": "^2.2.0",
+        "@smithy/util-base64": "^2.3.0",
+        "@smithy/util-body-length-browser": "^2.2.0",
+        "@smithy/util-body-length-node": "^2.3.0",
+        "@smithy/util-defaults-mode-browser": "^2.2.0",
+        "@smithy/util-defaults-mode-node": "^2.3.0",
+        "@smithy/util-endpoints": "^1.2.0",
+        "@smithy/util-middleware": "^2.2.0",
+        "@smithy/util-retry": "^2.2.0",
+        "@smithy/util-utf8": "^2.3.0",
+        "@smithy/util-waiter": "^2.2.0",
+        tslib: "^2.6.2",
+        uuid: "^9.0.1"
+      },
+      devDependencies: {
+        "@smithy/service-client-documentation-generator": "^2.2.0",
+        "@tsconfig/node14": "1.0.3",
+        "@types/node": "^14.14.31",
+        "@types/uuid": "^9.0.4",
+        concurrently: "7.0.0",
+        "downlevel-dts": "0.10.1",
+        rimraf: "3.0.2",
+        typescript: "~4.9.5"
+      },
+      engines: {
+        node: ">=14.0.0"
+      },
+      typesVersions: {
+        "<4.0": {
+          "dist-types/*": [
+            "dist-types/ts3.4/*"
+          ]
+        }
+      },
+      files: [
+        "dist-*/**"
+      ],
+      author: {
+        name: "AWS SDK for JavaScript Team",
+        url: "https://aws.amazon.com/javascript/"
+      },
+      license: "Apache-2.0",
+      browser: {
+        "./dist-es/runtimeConfig": "./dist-es/runtimeConfig.browser"
+      },
+      "react-native": {
+        "./dist-es/runtimeConfig": "./dist-es/runtimeConfig.native"
+      },
+      homepage: "https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-cloudformation",
+      repository: {
+        type: "git",
+        url: "https://github.com/aws/aws-sdk-js-v3.git",
+        directory: "clients/client-cloudformation"
+      }
+    };
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/util-user-agent-node/dist-cjs/index.js
+var require_dist_cjs39 = __commonJS({
+  "../../../../node_modules/@aws-sdk/util-user-agent-node/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      UA_APP_ID_ENV_NAME: () => UA_APP_ID_ENV_NAME,
+      UA_APP_ID_INI_NAME: () => UA_APP_ID_INI_NAME,
+      crtAvailability: () => crtAvailability,
+      defaultUserAgent: () => defaultUserAgent
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var import_node_config_provider = require_dist_cjs17();
+    var import_os = require("os");
+    var import_process = require("process");
+    var crtAvailability = {
+      isCrtAvailable: false
+    };
+    var isCrtAvailable = /* @__PURE__ */ __name(() => {
+      if (crtAvailability.isCrtAvailable) {
+        return ["md/crt-avail"];
+      }
+      return null;
+    }, "isCrtAvailable");
+    var UA_APP_ID_ENV_NAME = "AWS_SDK_UA_APP_ID";
+    var UA_APP_ID_INI_NAME = "sdk-ua-app-id";
+    var defaultUserAgent = /* @__PURE__ */ __name(({ serviceId, clientVersion }) => {
+      const sections = [
+        // sdk-metadata
+        ["aws-sdk-js", clientVersion],
+        // ua-metadata
+        ["ua", "2.0"],
+        // os-metadata
+        [`os/${(0, import_os.platform)()}`, (0, import_os.release)()],
+        // language-metadata
+        // ECMAScript edition doesn't matter in JS, so no version needed.
+        ["lang/js"],
+        ["md/nodejs", `${import_process.versions.node}`]
+      ];
+      const crtAvailable = isCrtAvailable();
+      if (crtAvailable) {
+        sections.push(crtAvailable);
+      }
+      if (serviceId) {
+        sections.push([`api/${serviceId}`, clientVersion]);
+      }
+      if (import_process.env.AWS_EXECUTION_ENV) {
+        sections.push([`exec-env/${import_process.env.AWS_EXECUTION_ENV}`]);
+      }
+      const appIdPromise = (0, import_node_config_provider.loadConfig)({
+        environmentVariableSelector: (env2) => env2[UA_APP_ID_ENV_NAME],
+        configFileSelector: (profile) => profile[UA_APP_ID_INI_NAME],
+        default: void 0
+      })();
+      let resolvedUserAgent = void 0;
+      return async () => {
+        if (!resolvedUserAgent) {
+          const appId = await appIdPromise;
+          resolvedUserAgent = appId ? [...sections, [`app/${appId}`]] : [...sections];
+        }
+        return resolvedUserAgent;
+      };
+    }, "defaultUserAgent");
+  }
+});
+
+// ../../../../node_modules/@smithy/hash-node/dist-cjs/index.js
+var require_dist_cjs40 = __commonJS({
+  "../../../../node_modules/@smithy/hash-node/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      Hash: () => Hash
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var import_util_buffer_from = require_dist_cjs4();
+    var import_util_utf8 = require_dist_cjs5();
+    var import_buffer = require("buffer");
+    var import_crypto8 = require("crypto");
+    var _Hash = class _Hash {
+      constructor(algorithmIdentifier, secret) {
+        this.algorithmIdentifier = algorithmIdentifier;
+        this.secret = secret;
+        this.reset();
+      }
+      update(toHash, encoding) {
+        this.hash.update((0, import_util_utf8.toUint8Array)(castSourceData(toHash, encoding)));
+      }
+      digest() {
+        return Promise.resolve(this.hash.digest());
+      }
+      reset() {
+        this.hash = this.secret ? (0, import_crypto8.createHmac)(this.algorithmIdentifier, castSourceData(this.secret)) : (0, import_crypto8.createHash)(this.algorithmIdentifier);
+      }
+    };
+    __name(_Hash, "Hash");
+    var Hash = _Hash;
+    function castSourceData(toCast, encoding) {
+      if (import_buffer.Buffer.isBuffer(toCast)) {
+        return toCast;
+      }
+      if (typeof toCast === "string") {
+        return (0, import_util_buffer_from.fromString)(toCast, encoding);
+      }
+      if (ArrayBuffer.isView(toCast)) {
+        return (0, import_util_buffer_from.fromArrayBuffer)(toCast.buffer, toCast.byteOffset, toCast.byteLength);
+      }
+      return (0, import_util_buffer_from.fromArrayBuffer)(toCast);
+    }
+    __name(castSourceData, "castSourceData");
+  }
+});
+
+// ../../../../node_modules/@smithy/util-body-length-node/dist-cjs/index.js
+var require_dist_cjs41 = __commonJS({
+  "../../../../node_modules/@smithy/util-body-length-node/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      calculateBodyLength: () => calculateBodyLength
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var import_fs = require("fs");
+    var calculateBodyLength = /* @__PURE__ */ __name((body) => {
+      if (!body) {
+        return 0;
+      }
+      if (typeof body === "string") {
+        return Buffer.byteLength(body);
+      } else if (typeof body.byteLength === "number") {
+        return body.byteLength;
+      } else if (typeof body.size === "number") {
+        return body.size;
+      } else if (typeof body.start === "number" && typeof body.end === "number") {
+        return body.end + 1 - body.start;
+      } else if (typeof body.path === "string" || Buffer.isBuffer(body.path)) {
+        return (0, import_fs.lstatSync)(body.path).size;
+      } else if (typeof body.fd === "number") {
+        return (0, import_fs.fstatSync)(body.fd).size;
+      }
+      throw new Error(`Body Length computation failed for ${body}`);
+    }, "calculateBodyLength");
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/client-cloudformation/dist-cjs/endpoint/ruleset.js
+var require_ruleset = __commonJS({
+  "../../../../node_modules/@aws-sdk/client-cloudformation/dist-cjs/endpoint/ruleset.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.ruleSet = void 0;
+    var u = "required";
+    var v = "fn";
+    var w = "argv";
+    var x = "ref";
+    var a = true;
+    var b = "isSet";
+    var c = "booleanEquals";
+    var d = "error";
+    var e = "endpoint";
+    var f = "tree";
+    var g = "PartitionResult";
+    var h = "getAttr";
+    var i = { [u]: false, "type": "String" };
+    var j = { [u]: true, "default": false, "type": "Boolean" };
+    var k = { [x]: "Endpoint" };
+    var l = { [v]: c, [w]: [{ [x]: "UseFIPS" }, true] };
+    var m = { [v]: c, [w]: [{ [x]: "UseDualStack" }, true] };
+    var n = {};
+    var o = { [v]: h, [w]: [{ [x]: g }, "supportsFIPS"] };
+    var p = { [x]: g };
+    var q = { [v]: c, [w]: [true, { [v]: h, [w]: [p, "supportsDualStack"] }] };
+    var r = [l];
+    var s = [m];
+    var t = [{ [x]: "Region" }];
+    var _data = { version: "1.0", parameters: { Region: i, UseDualStack: j, UseFIPS: j, Endpoint: i }, rules: [{ conditions: [{ [v]: b, [w]: [k] }], rules: [{ conditions: r, error: "Invalid Configuration: FIPS and custom endpoint are not supported", type: d }, { conditions: s, error: "Invalid Configuration: Dualstack and custom endpoint are not supported", type: d }, { endpoint: { url: k, properties: n, headers: n }, type: e }], type: f }, { conditions: [{ [v]: b, [w]: t }], rules: [{ conditions: [{ [v]: "aws.partition", [w]: t, assign: g }], rules: [{ conditions: [l, m], rules: [{ conditions: [{ [v]: c, [w]: [a, o] }, q], rules: [{ endpoint: { url: "https://cloudformation-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", properties: n, headers: n }, type: e }], type: f }, { error: "FIPS and DualStack are enabled, but this partition does not support one or both", type: d }], type: f }, { conditions: r, rules: [{ conditions: [{ [v]: c, [w]: [o, a] }], rules: [{ conditions: [{ [v]: "stringEquals", [w]: [{ [v]: h, [w]: [p, "name"] }, "aws-us-gov"] }], endpoint: { url: "https://cloudformation.{Region}.amazonaws.com", properties: n, headers: n }, type: e }, { endpoint: { url: "https://cloudformation-fips.{Region}.{PartitionResult#dnsSuffix}", properties: n, headers: n }, type: e }], type: f }, { error: "FIPS is enabled but this partition does not support FIPS", type: d }], type: f }, { conditions: s, rules: [{ conditions: [q], rules: [{ endpoint: { url: "https://cloudformation.{Region}.{PartitionResult#dualStackDnsSuffix}", properties: n, headers: n }, type: e }], type: f }, { error: "DualStack is enabled but this partition does not support DualStack", type: d }], type: f }, { endpoint: { url: "https://cloudformation.{Region}.{PartitionResult#dnsSuffix}", properties: n, headers: n }, type: e }], type: f }], type: f }, { error: "Invalid Configuration: Missing Region", type: d }] };
+    exports2.ruleSet = _data;
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/client-cloudformation/dist-cjs/endpoint/endpointResolver.js
+var require_endpointResolver = __commonJS({
+  "../../../../node_modules/@aws-sdk/client-cloudformation/dist-cjs/endpoint/endpointResolver.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.defaultEndpointResolver = void 0;
+    var util_endpoints_1 = require_dist_cjs9();
+    var ruleset_1 = require_ruleset();
+    var defaultEndpointResolver = (endpointParams, context = {}) => {
+      return (0, util_endpoints_1.resolveEndpoint)(ruleset_1.ruleSet, {
+        endpointParams,
+        logger: context.logger
+      });
+    };
+    exports2.defaultEndpointResolver = defaultEndpointResolver;
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/client-cloudformation/dist-cjs/runtimeConfig.shared.js
+var require_runtimeConfig_shared = __commonJS({
+  "../../../../node_modules/@aws-sdk/client-cloudformation/dist-cjs/runtimeConfig.shared.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.getRuntimeConfig = void 0;
+    var core_1 = require_dist_cjs38();
+    var smithy_client_1 = require_dist_cjs30();
+    var url_parser_1 = require_dist_cjs19();
+    var util_base64_1 = require_dist_cjs25();
+    var util_utf8_1 = require_dist_cjs5();
+    var httpAuthSchemeProvider_1 = require_httpAuthSchemeProvider();
+    var endpointResolver_1 = require_endpointResolver();
+    var getRuntimeConfig = (config) => {
+      return {
+        apiVersion: "2010-05-15",
+        base64Decoder: config?.base64Decoder ?? util_base64_1.fromBase64,
+        base64Encoder: config?.base64Encoder ?? util_base64_1.toBase64,
+        disableHostPrefix: config?.disableHostPrefix ?? false,
+        endpointProvider: config?.endpointProvider ?? endpointResolver_1.defaultEndpointResolver,
+        extensions: config?.extensions ?? [],
+        httpAuthSchemeProvider: config?.httpAuthSchemeProvider ?? httpAuthSchemeProvider_1.defaultCloudFormationHttpAuthSchemeProvider,
+        httpAuthSchemes: config?.httpAuthSchemes ?? [
+          {
+            schemeId: "aws.auth#sigv4",
+            identityProvider: (ipc) => ipc.getIdentityProvider("aws.auth#sigv4"),
+            signer: new core_1.AwsSdkSigV4Signer()
+          }
+        ],
+        logger: config?.logger ?? new smithy_client_1.NoOpLogger(),
+        serviceId: config?.serviceId ?? "CloudFormation",
+        urlParser: config?.urlParser ?? url_parser_1.parseUrl,
+        utf8Decoder: config?.utf8Decoder ?? util_utf8_1.fromUtf8,
+        utf8Encoder: config?.utf8Encoder ?? util_utf8_1.toUtf8
+      };
+    };
+    exports2.getRuntimeConfig = getRuntimeConfig;
+  }
+});
+
+// ../../../../node_modules/@smithy/credential-provider-imds/dist-cjs/index.js
+var require_dist_cjs42 = __commonJS({
+  "../../../../node_modules/@smithy/credential-provider-imds/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      DEFAULT_MAX_RETRIES: () => DEFAULT_MAX_RETRIES,
+      DEFAULT_TIMEOUT: () => DEFAULT_TIMEOUT,
+      ENV_CMDS_AUTH_TOKEN: () => ENV_CMDS_AUTH_TOKEN,
+      ENV_CMDS_FULL_URI: () => ENV_CMDS_FULL_URI,
+      ENV_CMDS_RELATIVE_URI: () => ENV_CMDS_RELATIVE_URI,
+      Endpoint: () => Endpoint,
+      fromContainerMetadata: () => fromContainerMetadata,
+      fromInstanceMetadata: () => fromInstanceMetadata,
+      getInstanceMetadataEndpoint: () => getInstanceMetadataEndpoint,
+      httpRequest: () => httpRequest,
+      providerConfigFromInit: () => providerConfigFromInit
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var import_url = require("url");
+    var import_property_provider = require_dist_cjs15();
+    var import_buffer = require("buffer");
+    var import_http = require("http");
+    function httpRequest(options) {
+      return new Promise((resolve, reject) => {
+        var _a;
+        const req = (0, import_http.request)({
+          method: "GET",
+          ...options,
+          // Node.js http module doesn't accept hostname with square brackets
+          // Refs: https://github.com/nodejs/node/issues/39738
+          hostname: (_a = options.hostname) == null ? void 0 : _a.replace(/^\[(.+)\]$/, "$1")
+        });
+        req.on("error", (err) => {
+          reject(Object.assign(new import_property_provider.ProviderError("Unable to connect to instance metadata service"), err));
+          req.destroy();
+        });
+        req.on("timeout", () => {
+          reject(new import_property_provider.ProviderError("TimeoutError from instance metadata service"));
+          req.destroy();
+        });
+        req.on("response", (res) => {
+          const { statusCode = 400 } = res;
+          if (statusCode < 200 || 300 <= statusCode) {
+            reject(
+              Object.assign(new import_property_provider.ProviderError("Error response received from instance metadata service"), { statusCode })
+            );
+            req.destroy();
+          }
+          const chunks = [];
+          res.on("data", (chunk) => {
+            chunks.push(chunk);
+          });
+          res.on("end", () => {
+            resolve(import_buffer.Buffer.concat(chunks));
+            req.destroy();
+          });
+        });
+        req.end();
+      });
+    }
+    __name(httpRequest, "httpRequest");
+    var isImdsCredentials = /* @__PURE__ */ __name((arg) => Boolean(arg) && typeof arg === "object" && typeof arg.AccessKeyId === "string" && typeof arg.SecretAccessKey === "string" && typeof arg.Token === "string" && typeof arg.Expiration === "string", "isImdsCredentials");
+    var fromImdsCredentials = /* @__PURE__ */ __name((creds) => ({
+      accessKeyId: creds.AccessKeyId,
+      secretAccessKey: creds.SecretAccessKey,
+      sessionToken: creds.Token,
+      expiration: new Date(creds.Expiration)
+    }), "fromImdsCredentials");
+    var DEFAULT_TIMEOUT = 1e3;
+    var DEFAULT_MAX_RETRIES = 0;
+    var providerConfigFromInit = /* @__PURE__ */ __name(({
+      maxRetries = DEFAULT_MAX_RETRIES,
+      timeout = DEFAULT_TIMEOUT
+    }) => ({ maxRetries, timeout }), "providerConfigFromInit");
+    var retry = /* @__PURE__ */ __name((toRetry, maxRetries) => {
+      let promise = toRetry();
+      for (let i = 0; i < maxRetries; i++) {
+        promise = promise.catch(toRetry);
+      }
+      return promise;
+    }, "retry");
+    var ENV_CMDS_FULL_URI = "AWS_CONTAINER_CREDENTIALS_FULL_URI";
+    var ENV_CMDS_RELATIVE_URI = "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI";
+    var ENV_CMDS_AUTH_TOKEN = "AWS_CONTAINER_AUTHORIZATION_TOKEN";
+    var fromContainerMetadata = /* @__PURE__ */ __name((init = {}) => {
+      const { timeout, maxRetries } = providerConfigFromInit(init);
+      return () => retry(async () => {
+        const requestOptions = await getCmdsUri();
+        const credsResponse = JSON.parse(await requestFromEcsImds(timeout, requestOptions));
+        if (!isImdsCredentials(credsResponse)) {
+          throw new import_property_provider.CredentialsProviderError("Invalid response received from instance metadata service.");
+        }
+        return fromImdsCredentials(credsResponse);
+      }, maxRetries);
+    }, "fromContainerMetadata");
+    var requestFromEcsImds = /* @__PURE__ */ __name(async (timeout, options) => {
+      if (process.env[ENV_CMDS_AUTH_TOKEN]) {
+        options.headers = {
+          ...options.headers,
+          Authorization: process.env[ENV_CMDS_AUTH_TOKEN]
+        };
+      }
+      const buffer = await httpRequest({
+        ...options,
+        timeout
+      });
+      return buffer.toString();
+    }, "requestFromEcsImds");
+    var CMDS_IP = "169.254.170.2";
+    var GREENGRASS_HOSTS = {
+      localhost: true,
+      "127.0.0.1": true
+    };
+    var GREENGRASS_PROTOCOLS = {
+      "http:": true,
+      "https:": true
+    };
+    var getCmdsUri = /* @__PURE__ */ __name(async () => {
+      if (process.env[ENV_CMDS_RELATIVE_URI]) {
+        return {
+          hostname: CMDS_IP,
+          path: process.env[ENV_CMDS_RELATIVE_URI]
+        };
+      }
+      if (process.env[ENV_CMDS_FULL_URI]) {
+        const parsed = (0, import_url.parse)(process.env[ENV_CMDS_FULL_URI]);
+        if (!parsed.hostname || !(parsed.hostname in GREENGRASS_HOSTS)) {
+          throw new import_property_provider.CredentialsProviderError(
+            `${parsed.hostname} is not a valid container metadata service hostname`,
+            false
+          );
+        }
+        if (!parsed.protocol || !(parsed.protocol in GREENGRASS_PROTOCOLS)) {
+          throw new import_property_provider.CredentialsProviderError(
+            `${parsed.protocol} is not a valid container metadata service protocol`,
+            false
+          );
+        }
+        return {
+          ...parsed,
+          port: parsed.port ? parseInt(parsed.port, 10) : void 0
+        };
+      }
+      throw new import_property_provider.CredentialsProviderError(
+        `The container metadata credential provider cannot be used unless the ${ENV_CMDS_RELATIVE_URI} or ${ENV_CMDS_FULL_URI} environment variable is set`,
+        false
+      );
+    }, "getCmdsUri");
+    var _InstanceMetadataV1FallbackError = class _InstanceMetadataV1FallbackError2 extends import_property_provider.CredentialsProviderError {
+      constructor(message, tryNextLink = true) {
+        super(message, tryNextLink);
+        this.tryNextLink = tryNextLink;
+        this.name = "InstanceMetadataV1FallbackError";
+        Object.setPrototypeOf(this, _InstanceMetadataV1FallbackError2.prototype);
+      }
+    };
+    __name(_InstanceMetadataV1FallbackError, "InstanceMetadataV1FallbackError");
+    var InstanceMetadataV1FallbackError = _InstanceMetadataV1FallbackError;
+    var import_node_config_provider = require_dist_cjs17();
+    var import_url_parser = require_dist_cjs19();
+    var Endpoint = /* @__PURE__ */ ((Endpoint2) => {
+      Endpoint2["IPv4"] = "http://169.254.169.254";
+      Endpoint2["IPv6"] = "http://[fd00:ec2::254]";
+      return Endpoint2;
+    })(Endpoint || {});
+    var ENV_ENDPOINT_NAME = "AWS_EC2_METADATA_SERVICE_ENDPOINT";
+    var CONFIG_ENDPOINT_NAME = "ec2_metadata_service_endpoint";
+    var ENDPOINT_CONFIG_OPTIONS = {
+      environmentVariableSelector: (env) => env[ENV_ENDPOINT_NAME],
+      configFileSelector: (profile) => profile[CONFIG_ENDPOINT_NAME],
+      default: void 0
+    };
+    var EndpointMode = /* @__PURE__ */ ((EndpointMode2) => {
+      EndpointMode2["IPv4"] = "IPv4";
+      EndpointMode2["IPv6"] = "IPv6";
+      return EndpointMode2;
+    })(EndpointMode || {});
+    var ENV_ENDPOINT_MODE_NAME = "AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE";
+    var CONFIG_ENDPOINT_MODE_NAME = "ec2_metadata_service_endpoint_mode";
+    var ENDPOINT_MODE_CONFIG_OPTIONS = {
+      environmentVariableSelector: (env) => env[ENV_ENDPOINT_MODE_NAME],
+      configFileSelector: (profile) => profile[CONFIG_ENDPOINT_MODE_NAME],
+      default: "IPv4"
+      /* IPv4 */
+    };
+    var getInstanceMetadataEndpoint = /* @__PURE__ */ __name(async () => (0, import_url_parser.parseUrl)(await getFromEndpointConfig() || await getFromEndpointModeConfig()), "getInstanceMetadataEndpoint");
+    var getFromEndpointConfig = /* @__PURE__ */ __name(async () => (0, import_node_config_provider.loadConfig)(ENDPOINT_CONFIG_OPTIONS)(), "getFromEndpointConfig");
+    var getFromEndpointModeConfig = /* @__PURE__ */ __name(async () => {
+      const endpointMode = await (0, import_node_config_provider.loadConfig)(ENDPOINT_MODE_CONFIG_OPTIONS)();
+      switch (endpointMode) {
+        case "IPv4":
+          return "http://169.254.169.254";
+        case "IPv6":
+          return "http://[fd00:ec2::254]";
+        default:
+          throw new Error(`Unsupported endpoint mode: ${endpointMode}. Select from ${Object.values(EndpointMode)}`);
+      }
+    }, "getFromEndpointModeConfig");
+    var STATIC_STABILITY_REFRESH_INTERVAL_SECONDS = 5 * 60;
+    var STATIC_STABILITY_REFRESH_INTERVAL_JITTER_WINDOW_SECONDS = 5 * 60;
+    var STATIC_STABILITY_DOC_URL = "https://docs.aws.amazon.com/sdkref/latest/guide/feature-static-credentials.html";
+    var getExtendedInstanceMetadataCredentials = /* @__PURE__ */ __name((credentials, logger) => {
+      const refreshInterval = STATIC_STABILITY_REFRESH_INTERVAL_SECONDS + Math.floor(Math.random() * STATIC_STABILITY_REFRESH_INTERVAL_JITTER_WINDOW_SECONDS);
+      const newExpiration = new Date(Date.now() + refreshInterval * 1e3);
+      logger.warn(
+        `Attempting credential expiration extension due to a credential service availability issue. A refresh of these credentials will be attempted after ${new Date(newExpiration)}.
+For more information, please visit: ` + STATIC_STABILITY_DOC_URL
+      );
+      const originalExpiration = credentials.originalExpiration ?? credentials.expiration;
+      return {
+        ...credentials,
+        ...originalExpiration ? { originalExpiration } : {},
+        expiration: newExpiration
+      };
+    }, "getExtendedInstanceMetadataCredentials");
+    var staticStabilityProvider = /* @__PURE__ */ __name((provider, options = {}) => {
+      const logger = (options == null ? void 0 : options.logger) || console;
+      let pastCredentials;
+      return async () => {
+        let credentials;
+        try {
+          credentials = await provider();
+          if (credentials.expiration && credentials.expiration.getTime() < Date.now()) {
+            credentials = getExtendedInstanceMetadataCredentials(credentials, logger);
+          }
+        } catch (e) {
+          if (pastCredentials) {
+            logger.warn("Credential renew failed: ", e);
+            credentials = getExtendedInstanceMetadataCredentials(pastCredentials, logger);
+          } else {
+            throw e;
+          }
+        }
+        pastCredentials = credentials;
+        return credentials;
+      };
+    }, "staticStabilityProvider");
+    var IMDS_PATH = "/latest/meta-data/iam/security-credentials/";
+    var IMDS_TOKEN_PATH = "/latest/api/token";
+    var AWS_EC2_METADATA_V1_DISABLED = "AWS_EC2_METADATA_V1_DISABLED";
+    var PROFILE_AWS_EC2_METADATA_V1_DISABLED = "ec2_metadata_v1_disabled";
+    var X_AWS_EC2_METADATA_TOKEN = "x-aws-ec2-metadata-token";
+    var fromInstanceMetadata = /* @__PURE__ */ __name((init = {}) => staticStabilityProvider(getInstanceImdsProvider(init), { logger: init.logger }), "fromInstanceMetadata");
+    var getInstanceImdsProvider = /* @__PURE__ */ __name((init) => {
+      let disableFetchToken = false;
+      const { logger, profile } = init;
+      const { timeout, maxRetries } = providerConfigFromInit(init);
+      const getCredentials = /* @__PURE__ */ __name(async (maxRetries2, options) => {
+        var _a;
+        const isImdsV1Fallback = disableFetchToken || ((_a = options.headers) == null ? void 0 : _a[X_AWS_EC2_METADATA_TOKEN]) == null;
+        if (isImdsV1Fallback) {
+          let fallbackBlockedFromProfile = false;
+          let fallbackBlockedFromProcessEnv = false;
+          const configValue = await (0, import_node_config_provider.loadConfig)(
+            {
+              environmentVariableSelector: (env) => {
+                const envValue = env[AWS_EC2_METADATA_V1_DISABLED];
+                fallbackBlockedFromProcessEnv = !!envValue && envValue !== "false";
+                if (envValue === void 0) {
+                  throw new import_property_provider.CredentialsProviderError(
+                    `${AWS_EC2_METADATA_V1_DISABLED} not set in env, checking config file next.`
+                  );
+                }
+                return fallbackBlockedFromProcessEnv;
+              },
+              configFileSelector: (profile2) => {
+                const profileValue = profile2[PROFILE_AWS_EC2_METADATA_V1_DISABLED];
+                fallbackBlockedFromProfile = !!profileValue && profileValue !== "false";
+                return fallbackBlockedFromProfile;
+              },
+              default: false
+            },
+            {
+              profile
+            }
+          )();
+          if (init.ec2MetadataV1Disabled || configValue) {
+            const causes = [];
+            if (init.ec2MetadataV1Disabled)
+              causes.push("credential provider initialization (runtime option ec2MetadataV1Disabled)");
+            if (fallbackBlockedFromProfile)
+              causes.push(`config file profile (${PROFILE_AWS_EC2_METADATA_V1_DISABLED})`);
+            if (fallbackBlockedFromProcessEnv)
+              causes.push(`process environment variable (${AWS_EC2_METADATA_V1_DISABLED})`);
+            throw new InstanceMetadataV1FallbackError(
+              `AWS EC2 Metadata v1 fallback has been blocked by AWS SDK configuration in the following: [${causes.join(
+                ", "
+              )}].`
+            );
+          }
+        }
+        const imdsProfile = (await retry(async () => {
+          let profile2;
+          try {
+            profile2 = await getProfile(options);
+          } catch (err) {
+            if (err.statusCode === 401) {
+              disableFetchToken = false;
+            }
+            throw err;
+          }
+          return profile2;
+        }, maxRetries2)).trim();
+        return retry(async () => {
+          let creds;
+          try {
+            creds = await getCredentialsFromProfile(imdsProfile, options);
+          } catch (err) {
+            if (err.statusCode === 401) {
+              disableFetchToken = false;
+            }
+            throw err;
+          }
+          return creds;
+        }, maxRetries2);
+      }, "getCredentials");
+      return async () => {
+        const endpoint = await getInstanceMetadataEndpoint();
+        if (disableFetchToken) {
+          logger == null ? void 0 : logger.debug("AWS SDK Instance Metadata", "using v1 fallback (no token fetch)");
+          return getCredentials(maxRetries, { ...endpoint, timeout });
+        } else {
+          let token;
+          try {
+            token = (await getMetadataToken({ ...endpoint, timeout })).toString();
+          } catch (error) {
+            if ((error == null ? void 0 : error.statusCode) === 400) {
+              throw Object.assign(error, {
+                message: "EC2 Metadata token request returned error"
+              });
+            } else if (error.message === "TimeoutError" || [403, 404, 405].includes(error.statusCode)) {
+              disableFetchToken = true;
+            }
+            logger == null ? void 0 : logger.debug("AWS SDK Instance Metadata", "using v1 fallback (initial)");
+            return getCredentials(maxRetries, { ...endpoint, timeout });
+          }
+          return getCredentials(maxRetries, {
+            ...endpoint,
+            headers: {
+              [X_AWS_EC2_METADATA_TOKEN]: token
+            },
+            timeout
+          });
+        }
+      };
+    }, "getInstanceImdsProvider");
+    var getMetadataToken = /* @__PURE__ */ __name(async (options) => httpRequest({
+      ...options,
+      path: IMDS_TOKEN_PATH,
+      method: "PUT",
+      headers: {
+        "x-aws-ec2-metadata-token-ttl-seconds": "21600"
+      }
+    }), "getMetadataToken");
+    var getProfile = /* @__PURE__ */ __name(async (options) => (await httpRequest({ ...options, path: IMDS_PATH })).toString(), "getProfile");
+    var getCredentialsFromProfile = /* @__PURE__ */ __name(async (profile, options) => {
+      const credsResponse = JSON.parse(
+        (await httpRequest({
+          ...options,
+          path: IMDS_PATH + profile
+        })).toString()
+      );
+      if (!isImdsCredentials(credsResponse)) {
+        throw new import_property_provider.CredentialsProviderError("Invalid response received from instance metadata service.");
+      }
+      return fromImdsCredentials(credsResponse);
+    }, "getCredentialsFromProfile");
+  }
+});
+
+// ../../../../node_modules/@smithy/util-defaults-mode-node/dist-cjs/index.js
+var require_dist_cjs43 = __commonJS({
+  "../../../../node_modules/@smithy/util-defaults-mode-node/dist-cjs/index.js"(exports2, module2) {
+    var __create2 = Object.create;
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __getProtoOf2 = Object.getPrototypeOf;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toESM2 = (mod, isNodeMode, target) => (target = mod != null ? __create2(__getProtoOf2(mod)) : {}, __copyProps2(
+      // If the importer is in node compatibility mode or this is not an ESM
+      // file that has been converted to a CommonJS file using a Babel-
+      // compatible transform (i.e. "__esModule" has not been set), then set
+      // "default" to the CommonJS "module.exports" for node compatibility.
+      isNodeMode || !mod || !mod.__esModule ? __defProp2(target, "default", { value: mod, enumerable: true }) : target,
+      mod
+    ));
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      resolveDefaultsModeConfig: () => resolveDefaultsModeConfig
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var import_config_resolver = require_dist_cjs14();
+    var import_node_config_provider = require_dist_cjs17();
+    var import_property_provider = require_dist_cjs15();
+    var AWS_EXECUTION_ENV = "AWS_EXECUTION_ENV";
+    var AWS_REGION_ENV = "AWS_REGION";
+    var AWS_DEFAULT_REGION_ENV = "AWS_DEFAULT_REGION";
+    var ENV_IMDS_DISABLED = "AWS_EC2_METADATA_DISABLED";
+    var DEFAULTS_MODE_OPTIONS = ["in-region", "cross-region", "mobile", "standard", "legacy"];
+    var IMDS_REGION_PATH = "/latest/meta-data/placement/region";
+    var AWS_DEFAULTS_MODE_ENV = "AWS_DEFAULTS_MODE";
+    var AWS_DEFAULTS_MODE_CONFIG = "defaults_mode";
+    var NODE_DEFAULTS_MODE_CONFIG_OPTIONS = {
+      environmentVariableSelector: (env) => {
+        return env[AWS_DEFAULTS_MODE_ENV];
+      },
+      configFileSelector: (profile) => {
+        return profile[AWS_DEFAULTS_MODE_CONFIG];
+      },
+      default: "legacy"
+    };
+    var resolveDefaultsModeConfig = /* @__PURE__ */ __name(({
+      region = (0, import_node_config_provider.loadConfig)(import_config_resolver.NODE_REGION_CONFIG_OPTIONS),
+      defaultsMode = (0, import_node_config_provider.loadConfig)(NODE_DEFAULTS_MODE_CONFIG_OPTIONS)
+    } = {}) => (0, import_property_provider.memoize)(async () => {
+      const mode = typeof defaultsMode === "function" ? await defaultsMode() : defaultsMode;
+      switch (mode == null ? void 0 : mode.toLowerCase()) {
+        case "auto":
+          return resolveNodeDefaultsModeAuto(region);
+        case "in-region":
+        case "cross-region":
+        case "mobile":
+        case "standard":
+        case "legacy":
+          return Promise.resolve(mode == null ? void 0 : mode.toLocaleLowerCase());
+        case void 0:
+          return Promise.resolve("legacy");
+        default:
+          throw new Error(
+            `Invalid parameter for "defaultsMode", expect ${DEFAULTS_MODE_OPTIONS.join(", ")}, got ${mode}`
+          );
+      }
+    }), "resolveDefaultsModeConfig");
+    var resolveNodeDefaultsModeAuto = /* @__PURE__ */ __name(async (clientRegion) => {
+      if (clientRegion) {
+        const resolvedRegion = typeof clientRegion === "function" ? await clientRegion() : clientRegion;
+        const inferredRegion = await inferPhysicalRegion();
+        if (!inferredRegion) {
+          return "standard";
+        }
+        if (resolvedRegion === inferredRegion) {
+          return "in-region";
+        } else {
+          return "cross-region";
+        }
+      }
+      return "standard";
+    }, "resolveNodeDefaultsModeAuto");
+    var inferPhysicalRegion = /* @__PURE__ */ __name(async () => {
+      if (process.env[AWS_EXECUTION_ENV] && (process.env[AWS_REGION_ENV] || process.env[AWS_DEFAULT_REGION_ENV])) {
+        return process.env[AWS_REGION_ENV] ?? process.env[AWS_DEFAULT_REGION_ENV];
+      }
+      if (!process.env[ENV_IMDS_DISABLED]) {
+        try {
+          const { getInstanceMetadataEndpoint, httpRequest } = await Promise.resolve().then(() => __toESM2(require_dist_cjs42()));
+          const endpoint = await getInstanceMetadataEndpoint();
+          return (await httpRequest({ ...endpoint, path: IMDS_REGION_PATH })).toString();
+        } catch (e) {
+        }
+      }
+    }, "inferPhysicalRegion");
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/client-cloudformation/dist-cjs/runtimeConfig.js
+var require_runtimeConfig = __commonJS({
+  "../../../../node_modules/@aws-sdk/client-cloudformation/dist-cjs/runtimeConfig.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.getRuntimeConfig = void 0;
+    var tslib_1 = (init_tslib_es6(), __toCommonJS(tslib_es6_exports));
+    var package_json_1 = tslib_1.__importDefault(require_package());
+    var core_1 = require_dist_cjs38();
+    var credential_provider_node_1 = require("@aws-sdk/credential-provider-node");
+    var util_user_agent_node_1 = require_dist_cjs39();
+    var config_resolver_1 = require_dist_cjs14();
+    var hash_node_1 = require_dist_cjs40();
+    var middleware_retry_1 = require_dist_cjs31();
+    var node_config_provider_1 = require_dist_cjs17();
+    var node_http_handler_1 = require_dist_cjs28();
+    var util_body_length_node_1 = require_dist_cjs41();
+    var util_retry_1 = require_dist_cjs23();
+    var runtimeConfig_shared_1 = require_runtimeConfig_shared();
+    var smithy_client_1 = require_dist_cjs30();
+    var util_defaults_mode_node_1 = require_dist_cjs43();
+    var smithy_client_2 = require_dist_cjs30();
+    var getRuntimeConfig = (config) => {
+      (0, smithy_client_2.emitWarningIfUnsupportedVersion)(process.version);
+      const defaultsMode = (0, util_defaults_mode_node_1.resolveDefaultsModeConfig)(config);
+      const defaultConfigProvider = () => defaultsMode().then(smithy_client_1.loadConfigsForDefaultMode);
+      const clientSharedValues = (0, runtimeConfig_shared_1.getRuntimeConfig)(config);
+      (0, core_1.emitWarningIfUnsupportedVersion)(process.version);
+      return {
+        ...clientSharedValues,
+        ...config,
+        runtime: "node",
+        defaultsMode,
+        bodyLengthChecker: config?.bodyLengthChecker ?? util_body_length_node_1.calculateBodyLength,
+        credentialDefaultProvider: config?.credentialDefaultProvider ?? credential_provider_node_1.defaultProvider,
+        defaultUserAgentProvider: config?.defaultUserAgentProvider ?? (0, util_user_agent_node_1.defaultUserAgent)({ serviceId: clientSharedValues.serviceId, clientVersion: package_json_1.default.version }),
+        maxAttempts: config?.maxAttempts ?? (0, node_config_provider_1.loadConfig)(middleware_retry_1.NODE_MAX_ATTEMPT_CONFIG_OPTIONS),
+        region: config?.region ?? (0, node_config_provider_1.loadConfig)(config_resolver_1.NODE_REGION_CONFIG_OPTIONS, config_resolver_1.NODE_REGION_CONFIG_FILE_OPTIONS),
+        requestHandler: node_http_handler_1.NodeHttpHandler.create(config?.requestHandler ?? defaultConfigProvider),
+        retryMode: config?.retryMode ?? (0, node_config_provider_1.loadConfig)({
+          ...middleware_retry_1.NODE_RETRY_MODE_CONFIG_OPTIONS,
+          default: async () => (await defaultConfigProvider()).retryMode || util_retry_1.DEFAULT_RETRY_MODE
+        }),
+        sha256: config?.sha256 ?? hash_node_1.Hash.bind(null, "sha256"),
+        streamCollector: config?.streamCollector ?? node_http_handler_1.streamCollector,
+        useDualstackEndpoint: config?.useDualstackEndpoint ?? (0, node_config_provider_1.loadConfig)(config_resolver_1.NODE_USE_DUALSTACK_ENDPOINT_CONFIG_OPTIONS),
+        useFipsEndpoint: config?.useFipsEndpoint ?? (0, node_config_provider_1.loadConfig)(config_resolver_1.NODE_USE_FIPS_ENDPOINT_CONFIG_OPTIONS)
+      };
+    };
+    exports2.getRuntimeConfig = getRuntimeConfig;
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/region-config-resolver/dist-cjs/index.js
+var require_dist_cjs44 = __commonJS({
+  "../../../../node_modules/@aws-sdk/region-config-resolver/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      NODE_REGION_CONFIG_FILE_OPTIONS: () => NODE_REGION_CONFIG_FILE_OPTIONS,
+      NODE_REGION_CONFIG_OPTIONS: () => NODE_REGION_CONFIG_OPTIONS,
+      REGION_ENV_NAME: () => REGION_ENV_NAME,
+      REGION_INI_NAME: () => REGION_INI_NAME,
+      getAwsRegionExtensionConfiguration: () => getAwsRegionExtensionConfiguration,
+      resolveAwsRegionExtensionConfiguration: () => resolveAwsRegionExtensionConfiguration,
+      resolveRegionConfig: () => resolveRegionConfig
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var getAwsRegionExtensionConfiguration = /* @__PURE__ */ __name((runtimeConfig) => {
+      let runtimeConfigRegion = /* @__PURE__ */ __name(async () => {
+        if (runtimeConfig.region === void 0) {
+          throw new Error("Region is missing from runtimeConfig");
+        }
+        const region = runtimeConfig.region;
+        if (typeof region === "string") {
+          return region;
+        }
+        return region();
+      }, "runtimeConfigRegion");
+      return {
+        setRegion(region) {
+          runtimeConfigRegion = region;
+        },
+        region() {
+          return runtimeConfigRegion;
+        }
+      };
+    }, "getAwsRegionExtensionConfiguration");
+    var resolveAwsRegionExtensionConfiguration = /* @__PURE__ */ __name((awsRegionExtensionConfiguration) => {
+      return {
+        region: awsRegionExtensionConfiguration.region()
+      };
+    }, "resolveAwsRegionExtensionConfiguration");
+    var REGION_ENV_NAME = "AWS_REGION";
+    var REGION_INI_NAME = "region";
+    var NODE_REGION_CONFIG_OPTIONS = {
+      environmentVariableSelector: (env) => env[REGION_ENV_NAME],
+      configFileSelector: (profile) => profile[REGION_INI_NAME],
+      default: () => {
+        throw new Error("Region is missing");
+      }
+    };
+    var NODE_REGION_CONFIG_FILE_OPTIONS = {
+      preferredFile: "credentials"
+    };
+    var isFipsRegion = /* @__PURE__ */ __name((region) => typeof region === "string" && (region.startsWith("fips-") || region.endsWith("-fips")), "isFipsRegion");
+    var getRealRegion = /* @__PURE__ */ __name((region) => isFipsRegion(region) ? ["fips-aws-global", "aws-fips"].includes(region) ? "us-east-1" : region.replace(/fips-(dkr-|prod-)?|-fips/, "") : region, "getRealRegion");
+    var resolveRegionConfig = /* @__PURE__ */ __name((input) => {
+      const { region, useFipsEndpoint } = input;
+      if (!region) {
+        throw new Error("Region is missing");
+      }
+      return {
+        ...input,
+        region: async () => {
+          if (typeof region === "string") {
+            return getRealRegion(region);
+          }
+          const providedRegion = await region();
+          return getRealRegion(providedRegion);
+        },
+        useFipsEndpoint: async () => {
+          const providedRegion = typeof region === "string" ? region : await region();
+          if (isFipsRegion(providedRegion)) {
+            return true;
+          }
+          return typeof useFipsEndpoint !== "function" ? Promise.resolve(!!useFipsEndpoint) : useFipsEndpoint();
+        }
+      };
+    }, "resolveRegionConfig");
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/rng.js
+function rng2() {
+  if (poolPtr2 > rnds8Pool2.length - 16) {
+    import_crypto4.default.randomFillSync(rnds8Pool2);
+    poolPtr2 = 0;
+  }
+  return rnds8Pool2.slice(poolPtr2, poolPtr2 += 16);
+}
+var import_crypto4, rnds8Pool2, poolPtr2;
+var init_rng2 = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/rng.js"() {
+    import_crypto4 = __toESM(require("crypto"));
+    rnds8Pool2 = new Uint8Array(256);
+    poolPtr2 = rnds8Pool2.length;
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/regex.js
+var regex_default2;
+var init_regex2 = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/regex.js"() {
+    regex_default2 = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/validate.js
+function validate2(uuid) {
+  return typeof uuid === "string" && regex_default2.test(uuid);
+}
+var validate_default2;
+var init_validate2 = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/validate.js"() {
+    init_regex2();
+    validate_default2 = validate2;
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/stringify.js
+function unsafeStringify(arr, offset = 0) {
+  return byteToHex2[arr[offset + 0]] + byteToHex2[arr[offset + 1]] + byteToHex2[arr[offset + 2]] + byteToHex2[arr[offset + 3]] + "-" + byteToHex2[arr[offset + 4]] + byteToHex2[arr[offset + 5]] + "-" + byteToHex2[arr[offset + 6]] + byteToHex2[arr[offset + 7]] + "-" + byteToHex2[arr[offset + 8]] + byteToHex2[arr[offset + 9]] + "-" + byteToHex2[arr[offset + 10]] + byteToHex2[arr[offset + 11]] + byteToHex2[arr[offset + 12]] + byteToHex2[arr[offset + 13]] + byteToHex2[arr[offset + 14]] + byteToHex2[arr[offset + 15]];
+}
+function stringify2(arr, offset = 0) {
+  const uuid = unsafeStringify(arr, offset);
+  if (!validate_default2(uuid)) {
+    throw TypeError("Stringified UUID is invalid");
+  }
+  return uuid;
+}
+var byteToHex2, stringify_default2;
+var init_stringify2 = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/stringify.js"() {
+    init_validate2();
+    byteToHex2 = [];
+    for (let i = 0; i < 256; ++i) {
+      byteToHex2.push((i + 256).toString(16).slice(1));
+    }
+    stringify_default2 = stringify2;
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/v1.js
+function v12(options, buf, offset) {
+  let i = buf && offset || 0;
+  const b = buf || new Array(16);
+  options = options || {};
+  let node = options.node || _nodeId2;
+  let clockseq = options.clockseq !== void 0 ? options.clockseq : _clockseq2;
+  if (node == null || clockseq == null) {
+    const seedBytes = options.random || (options.rng || rng2)();
+    if (node == null) {
+      node = _nodeId2 = [seedBytes[0] | 1, seedBytes[1], seedBytes[2], seedBytes[3], seedBytes[4], seedBytes[5]];
+    }
+    if (clockseq == null) {
+      clockseq = _clockseq2 = (seedBytes[6] << 8 | seedBytes[7]) & 16383;
+    }
+  }
+  let msecs = options.msecs !== void 0 ? options.msecs : Date.now();
+  let nsecs = options.nsecs !== void 0 ? options.nsecs : _lastNSecs2 + 1;
+  const dt = msecs - _lastMSecs2 + (nsecs - _lastNSecs2) / 1e4;
+  if (dt < 0 && options.clockseq === void 0) {
+    clockseq = clockseq + 1 & 16383;
+  }
+  if ((dt < 0 || msecs > _lastMSecs2) && options.nsecs === void 0) {
+    nsecs = 0;
+  }
+  if (nsecs >= 1e4) {
+    throw new Error("uuid.v1(): Can't create more than 10M uuids/sec");
+  }
+  _lastMSecs2 = msecs;
+  _lastNSecs2 = nsecs;
+  _clockseq2 = clockseq;
+  msecs += 122192928e5;
+  const tl = ((msecs & 268435455) * 1e4 + nsecs) % 4294967296;
+  b[i++] = tl >>> 24 & 255;
+  b[i++] = tl >>> 16 & 255;
+  b[i++] = tl >>> 8 & 255;
+  b[i++] = tl & 255;
+  const tmh = msecs / 4294967296 * 1e4 & 268435455;
+  b[i++] = tmh >>> 8 & 255;
+  b[i++] = tmh & 255;
+  b[i++] = tmh >>> 24 & 15 | 16;
+  b[i++] = tmh >>> 16 & 255;
+  b[i++] = clockseq >>> 8 | 128;
+  b[i++] = clockseq & 255;
+  for (let n = 0; n < 6; ++n) {
+    b[i + n] = node[n];
+  }
+  return buf || unsafeStringify(b);
+}
+var _nodeId2, _clockseq2, _lastMSecs2, _lastNSecs2, v1_default2;
+var init_v12 = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/v1.js"() {
+    init_rng2();
+    init_stringify2();
+    _lastMSecs2 = 0;
+    _lastNSecs2 = 0;
+    v1_default2 = v12;
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/parse.js
+function parse2(uuid) {
+  if (!validate_default2(uuid)) {
+    throw TypeError("Invalid UUID");
+  }
+  let v;
+  const arr = new Uint8Array(16);
+  arr[0] = (v = parseInt(uuid.slice(0, 8), 16)) >>> 24;
+  arr[1] = v >>> 16 & 255;
+  arr[2] = v >>> 8 & 255;
+  arr[3] = v & 255;
+  arr[4] = (v = parseInt(uuid.slice(9, 13), 16)) >>> 8;
+  arr[5] = v & 255;
+  arr[6] = (v = parseInt(uuid.slice(14, 18), 16)) >>> 8;
+  arr[7] = v & 255;
+  arr[8] = (v = parseInt(uuid.slice(19, 23), 16)) >>> 8;
+  arr[9] = v & 255;
+  arr[10] = (v = parseInt(uuid.slice(24, 36), 16)) / 1099511627776 & 255;
+  arr[11] = v / 4294967296 & 255;
+  arr[12] = v >>> 24 & 255;
+  arr[13] = v >>> 16 & 255;
+  arr[14] = v >>> 8 & 255;
+  arr[15] = v & 255;
+  return arr;
+}
+var parse_default2;
+var init_parse2 = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/parse.js"() {
+    init_validate2();
+    parse_default2 = parse2;
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/v35.js
+function stringToBytes2(str) {
+  str = unescape(encodeURIComponent(str));
+  const bytes = [];
+  for (let i = 0; i < str.length; ++i) {
+    bytes.push(str.charCodeAt(i));
+  }
+  return bytes;
+}
+function v35(name, version3, hashfunc) {
+  function generateUUID(value, namespace, buf, offset) {
+    var _namespace;
+    if (typeof value === "string") {
+      value = stringToBytes2(value);
+    }
+    if (typeof namespace === "string") {
+      namespace = parse_default2(namespace);
+    }
+    if (((_namespace = namespace) === null || _namespace === void 0 ? void 0 : _namespace.length) !== 16) {
+      throw TypeError("Namespace must be array-like (16 iterable integer values, 0-255)");
+    }
+    let bytes = new Uint8Array(16 + value.length);
+    bytes.set(namespace);
+    bytes.set(value, namespace.length);
+    bytes = hashfunc(bytes);
+    bytes[6] = bytes[6] & 15 | version3;
+    bytes[8] = bytes[8] & 63 | 128;
+    if (buf) {
+      offset = offset || 0;
+      for (let i = 0; i < 16; ++i) {
+        buf[offset + i] = bytes[i];
+      }
+      return buf;
+    }
+    return unsafeStringify(bytes);
+  }
+  try {
+    generateUUID.name = name;
+  } catch (err) {
+  }
+  generateUUID.DNS = DNS2;
+  generateUUID.URL = URL3;
+  return generateUUID;
+}
+var DNS2, URL3;
+var init_v352 = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/v35.js"() {
+    init_stringify2();
+    init_parse2();
+    DNS2 = "6ba7b810-9dad-11d1-80b4-00c04fd430c8";
+    URL3 = "6ba7b811-9dad-11d1-80b4-00c04fd430c8";
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/md5.js
+function md52(bytes) {
+  if (Array.isArray(bytes)) {
+    bytes = Buffer.from(bytes);
+  } else if (typeof bytes === "string") {
+    bytes = Buffer.from(bytes, "utf8");
+  }
+  return import_crypto5.default.createHash("md5").update(bytes).digest();
+}
+var import_crypto5, md5_default2;
+var init_md52 = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/md5.js"() {
+    import_crypto5 = __toESM(require("crypto"));
+    md5_default2 = md52;
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/v3.js
+var v32, v3_default2;
+var init_v32 = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/v3.js"() {
+    init_v352();
+    init_md52();
+    v32 = v35("v3", 48, md5_default2);
+    v3_default2 = v32;
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/native.js
+var import_crypto6, native_default;
+var init_native = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/native.js"() {
+    import_crypto6 = __toESM(require("crypto"));
+    native_default = {
+      randomUUID: import_crypto6.default.randomUUID
+    };
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/v4.js
+function v42(options, buf, offset) {
+  if (native_default.randomUUID && !buf && !options) {
+    return native_default.randomUUID();
+  }
+  options = options || {};
+  const rnds = options.random || (options.rng || rng2)();
+  rnds[6] = rnds[6] & 15 | 64;
+  rnds[8] = rnds[8] & 63 | 128;
+  if (buf) {
+    offset = offset || 0;
+    for (let i = 0; i < 16; ++i) {
+      buf[offset + i] = rnds[i];
+    }
+    return buf;
+  }
+  return unsafeStringify(rnds);
+}
+var v4_default2;
+var init_v42 = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/v4.js"() {
+    init_native();
+    init_rng2();
+    init_stringify2();
+    v4_default2 = v42;
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/sha1.js
+function sha12(bytes) {
+  if (Array.isArray(bytes)) {
+    bytes = Buffer.from(bytes);
+  } else if (typeof bytes === "string") {
+    bytes = Buffer.from(bytes, "utf8");
+  }
+  return import_crypto7.default.createHash("sha1").update(bytes).digest();
+}
+var import_crypto7, sha1_default2;
+var init_sha12 = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/sha1.js"() {
+    import_crypto7 = __toESM(require("crypto"));
+    sha1_default2 = sha12;
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/v5.js
+var v52, v5_default2;
+var init_v52 = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/v5.js"() {
+    init_v352();
+    init_sha12();
+    v52 = v35("v5", 80, sha1_default2);
+    v5_default2 = v52;
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/nil.js
+var nil_default2;
+var init_nil2 = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/nil.js"() {
+    nil_default2 = "00000000-0000-0000-0000-000000000000";
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/version.js
+function version2(uuid) {
+  if (!validate_default2(uuid)) {
+    throw TypeError("Invalid UUID");
+  }
+  return parseInt(uuid.slice(14, 15), 16);
+}
+var version_default2;
+var init_version2 = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/version.js"() {
+    init_validate2();
+    version_default2 = version2;
+  }
+});
+
+// ../../../../node_modules/uuid/dist/esm-node/index.js
+var esm_node_exports2 = {};
+__export(esm_node_exports2, {
+  NIL: () => nil_default2,
+  parse: () => parse_default2,
+  stringify: () => stringify_default2,
+  v1: () => v1_default2,
+  v3: () => v3_default2,
+  v4: () => v4_default2,
+  v5: () => v5_default2,
+  validate: () => validate_default2,
+  version: () => version_default2
+});
+var init_esm_node2 = __esm({
+  "../../../../node_modules/uuid/dist/esm-node/index.js"() {
+    init_v12();
+    init_v32();
+    init_v42();
+    init_v52();
+    init_nil2();
+    init_version2();
+    init_validate2();
+    init_stringify2();
+    init_parse2();
+  }
+});
+
+// ../../../../node_modules/@smithy/util-waiter/dist-cjs/index.js
+var require_dist_cjs45 = __commonJS({
+  "../../../../node_modules/@smithy/util-waiter/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      WaiterState: () => WaiterState,
+      checkExceptions: () => checkExceptions,
+      createWaiter: () => createWaiter,
+      waiterServiceDefaults: () => waiterServiceDefaults
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var sleep = /* @__PURE__ */ __name((seconds) => {
+      return new Promise((resolve) => setTimeout(resolve, seconds * 1e3));
+    }, "sleep");
+    var waiterServiceDefaults = {
+      minDelay: 2,
+      maxDelay: 120
+    };
+    var WaiterState = /* @__PURE__ */ ((WaiterState2) => {
+      WaiterState2["ABORTED"] = "ABORTED";
+      WaiterState2["FAILURE"] = "FAILURE";
+      WaiterState2["SUCCESS"] = "SUCCESS";
+      WaiterState2["RETRY"] = "RETRY";
+      WaiterState2["TIMEOUT"] = "TIMEOUT";
+      return WaiterState2;
+    })(WaiterState || {});
+    var checkExceptions = /* @__PURE__ */ __name((result) => {
+      if (result.state === "ABORTED") {
+        const abortError = new Error(
+          `${JSON.stringify({
+            ...result,
+            reason: "Request was aborted"
+          })}`
+        );
+        abortError.name = "AbortError";
+        throw abortError;
+      } else if (result.state === "TIMEOUT") {
+        const timeoutError = new Error(
+          `${JSON.stringify({
+            ...result,
+            reason: "Waiter has timed out"
+          })}`
+        );
+        timeoutError.name = "TimeoutError";
+        throw timeoutError;
+      } else if (result.state !== "SUCCESS") {
+        throw new Error(`${JSON.stringify({ result })}`);
+      }
+      return result;
+    }, "checkExceptions");
+    var exponentialBackoffWithJitter = /* @__PURE__ */ __name((minDelay, maxDelay, attemptCeiling, attempt) => {
+      if (attempt > attemptCeiling)
+        return maxDelay;
+      const delay = minDelay * 2 ** (attempt - 1);
+      return randomInRange(minDelay, delay);
+    }, "exponentialBackoffWithJitter");
+    var randomInRange = /* @__PURE__ */ __name((min, max) => min + Math.random() * (max - min), "randomInRange");
+    var runPolling = /* @__PURE__ */ __name(async ({ minDelay, maxDelay, maxWaitTime, abortController, client, abortSignal }, input, acceptorChecks) => {
+      var _a;
+      const { state, reason } = await acceptorChecks(client, input);
+      if (state !== "RETRY") {
+        return { state, reason };
+      }
+      let currentAttempt = 1;
+      const waitUntil = Date.now() + maxWaitTime * 1e3;
+      const attemptCeiling = Math.log(maxDelay / minDelay) / Math.log(2) + 1;
+      while (true) {
+        if (((_a = abortController == null ? void 0 : abortController.signal) == null ? void 0 : _a.aborted) || (abortSignal == null ? void 0 : abortSignal.aborted)) {
+          return {
+            state: "ABORTED"
+            /* ABORTED */
+          };
+        }
+        const delay = exponentialBackoffWithJitter(minDelay, maxDelay, attemptCeiling, currentAttempt);
+        if (Date.now() + delay * 1e3 > waitUntil) {
+          return {
+            state: "TIMEOUT"
+            /* TIMEOUT */
+          };
+        }
+        await sleep(delay);
+        const { state: state2, reason: reason2 } = await acceptorChecks(client, input);
+        if (state2 !== "RETRY") {
+          return { state: state2, reason: reason2 };
+        }
+        currentAttempt += 1;
+      }
+    }, "runPolling");
+    var validateWaiterOptions = /* @__PURE__ */ __name((options) => {
+      if (options.maxWaitTime < 1) {
+        throw new Error(`WaiterConfiguration.maxWaitTime must be greater than 0`);
+      } else if (options.minDelay < 1) {
+        throw new Error(`WaiterConfiguration.minDelay must be greater than 0`);
+      } else if (options.maxDelay < 1) {
+        throw new Error(`WaiterConfiguration.maxDelay must be greater than 0`);
+      } else if (options.maxWaitTime <= options.minDelay) {
+        throw new Error(
+          `WaiterConfiguration.maxWaitTime [${options.maxWaitTime}] must be greater than WaiterConfiguration.minDelay [${options.minDelay}] for this waiter`
+        );
+      } else if (options.maxDelay < options.minDelay) {
+        throw new Error(
+          `WaiterConfiguration.maxDelay [${options.maxDelay}] must be greater than WaiterConfiguration.minDelay [${options.minDelay}] for this waiter`
+        );
+      }
+    }, "validateWaiterOptions");
+    var abortTimeout = /* @__PURE__ */ __name(async (abortSignal) => {
+      return new Promise((resolve) => {
+        abortSignal.onabort = () => resolve({
+          state: "ABORTED"
+          /* ABORTED */
+        });
+      });
+    }, "abortTimeout");
+    var createWaiter = /* @__PURE__ */ __name(async (options, input, acceptorChecks) => {
+      const params = {
+        ...waiterServiceDefaults,
+        ...options
+      };
+      validateWaiterOptions(params);
+      const exitConditions = [runPolling(params, input, acceptorChecks)];
+      if (options.abortController) {
+        exitConditions.push(abortTimeout(options.abortController.signal));
+      }
+      if (options.abortSignal) {
+        exitConditions.push(abortTimeout(options.abortSignal));
+      }
+      return Promise.race(exitConditions);
+    }, "createWaiter");
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/client-cloudformation/dist-cjs/index.js
+var require_dist_cjs46 = __commonJS({
+  "../../../../node_modules/@aws-sdk/client-cloudformation/dist-cjs/index.js"(exports2, module2) {
+    "use strict";
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      AccountFilterType: () => AccountFilterType,
+      AccountGateStatus: () => AccountGateStatus,
+      ActivateOrganizationsAccessCommand: () => ActivateOrganizationsAccessCommand,
+      ActivateTypeCommand: () => ActivateTypeCommand,
+      AlreadyExistsException: () => AlreadyExistsException,
+      BatchDescribeTypeConfigurationsCommand: () => BatchDescribeTypeConfigurationsCommand,
+      CFNRegistryException: () => CFNRegistryException,
+      CallAs: () => CallAs,
+      CancelUpdateStackCommand: () => CancelUpdateStackCommand,
+      Capability: () => Capability,
+      Category: () => Category,
+      ChangeAction: () => ChangeAction,
+      ChangeSetHooksStatus: () => ChangeSetHooksStatus,
+      ChangeSetNotFoundException: () => ChangeSetNotFoundException,
+      ChangeSetStatus: () => ChangeSetStatus,
+      ChangeSetType: () => ChangeSetType,
+      ChangeSource: () => ChangeSource,
+      ChangeType: () => ChangeType,
+      CloudFormation: () => CloudFormation,
+      CloudFormationClient: () => CloudFormationClient,
+      CloudFormationServiceException: () => CloudFormationServiceException,
+      ConcurrencyMode: () => ConcurrencyMode,
+      ConcurrentResourcesLimitExceededException: () => ConcurrentResourcesLimitExceededException,
+      ContinueUpdateRollbackCommand: () => ContinueUpdateRollbackCommand,
+      CreateChangeSetCommand: () => CreateChangeSetCommand,
+      CreateGeneratedTemplateCommand: () => CreateGeneratedTemplateCommand,
+      CreateStackCommand: () => CreateStackCommand,
+      CreateStackInstancesCommand: () => CreateStackInstancesCommand,
+      CreateStackSetCommand: () => CreateStackSetCommand,
+      CreatedButModifiedException: () => CreatedButModifiedException,
+      DeactivateOrganizationsAccessCommand: () => DeactivateOrganizationsAccessCommand,
+      DeactivateTypeCommand: () => DeactivateTypeCommand,
+      DeleteChangeSetCommand: () => DeleteChangeSetCommand,
+      DeleteGeneratedTemplateCommand: () => DeleteGeneratedTemplateCommand,
+      DeleteStackCommand: () => DeleteStackCommand,
+      DeleteStackInstancesCommand: () => DeleteStackInstancesCommand,
+      DeleteStackSetCommand: () => DeleteStackSetCommand,
+      DeprecatedStatus: () => DeprecatedStatus,
+      DeregisterTypeCommand: () => DeregisterTypeCommand,
+      DescribeAccountLimitsCommand: () => DescribeAccountLimitsCommand,
+      DescribeChangeSetCommand: () => DescribeChangeSetCommand,
+      DescribeChangeSetHooksCommand: () => DescribeChangeSetHooksCommand,
+      DescribeGeneratedTemplateCommand: () => DescribeGeneratedTemplateCommand,
+      DescribeOrganizationsAccessCommand: () => DescribeOrganizationsAccessCommand,
+      DescribePublisherCommand: () => DescribePublisherCommand,
+      DescribeResourceScanCommand: () => DescribeResourceScanCommand,
+      DescribeStackDriftDetectionStatusCommand: () => DescribeStackDriftDetectionStatusCommand,
+      DescribeStackEventsCommand: () => DescribeStackEventsCommand,
+      DescribeStackInstanceCommand: () => DescribeStackInstanceCommand,
+      DescribeStackResourceCommand: () => DescribeStackResourceCommand,
+      DescribeStackResourceDriftsCommand: () => DescribeStackResourceDriftsCommand,
+      DescribeStackResourcesCommand: () => DescribeStackResourcesCommand,
+      DescribeStackSetCommand: () => DescribeStackSetCommand,
+      DescribeStackSetOperationCommand: () => DescribeStackSetOperationCommand,
+      DescribeStacksCommand: () => DescribeStacksCommand,
+      DescribeTypeCommand: () => DescribeTypeCommand,
+      DescribeTypeRegistrationCommand: () => DescribeTypeRegistrationCommand,
+      DetailedStatus: () => DetailedStatus,
+      DetectStackDriftCommand: () => DetectStackDriftCommand,
+      DetectStackResourceDriftCommand: () => DetectStackResourceDriftCommand,
+      DetectStackSetDriftCommand: () => DetectStackSetDriftCommand,
+      DifferenceType: () => DifferenceType,
+      EstimateTemplateCostCommand: () => EstimateTemplateCostCommand,
+      EvaluationType: () => EvaluationType,
+      ExecuteChangeSetCommand: () => ExecuteChangeSetCommand,
+      ExecutionStatus: () => ExecutionStatus,
+      GeneratedTemplateDeletionPolicy: () => GeneratedTemplateDeletionPolicy,
+      GeneratedTemplateNotFoundException: () => GeneratedTemplateNotFoundException,
+      GeneratedTemplateResourceStatus: () => GeneratedTemplateResourceStatus,
+      GeneratedTemplateStatus: () => GeneratedTemplateStatus,
+      GeneratedTemplateUpdateReplacePolicy: () => GeneratedTemplateUpdateReplacePolicy,
+      GetGeneratedTemplateCommand: () => GetGeneratedTemplateCommand,
+      GetStackPolicyCommand: () => GetStackPolicyCommand,
+      GetTemplateCommand: () => GetTemplateCommand,
+      GetTemplateSummaryCommand: () => GetTemplateSummaryCommand,
+      HandlerErrorCode: () => HandlerErrorCode,
+      HookFailureMode: () => HookFailureMode,
+      HookInvocationPoint: () => HookInvocationPoint,
+      HookStatus: () => HookStatus,
+      HookTargetType: () => HookTargetType,
+      IdentityProvider: () => IdentityProvider,
+      ImportStacksToStackSetCommand: () => ImportStacksToStackSetCommand,
+      InsufficientCapabilitiesException: () => InsufficientCapabilitiesException,
+      InvalidChangeSetStatusException: () => InvalidChangeSetStatusException,
+      InvalidOperationException: () => InvalidOperationException,
+      InvalidStateTransitionException: () => InvalidStateTransitionException,
+      LimitExceededException: () => LimitExceededException,
+      ListChangeSetsCommand: () => ListChangeSetsCommand,
+      ListExportsCommand: () => ListExportsCommand,
+      ListGeneratedTemplatesCommand: () => ListGeneratedTemplatesCommand,
+      ListImportsCommand: () => ListImportsCommand,
+      ListResourceScanRelatedResourcesCommand: () => ListResourceScanRelatedResourcesCommand,
+      ListResourceScanResourcesCommand: () => ListResourceScanResourcesCommand,
+      ListResourceScansCommand: () => ListResourceScansCommand,
+      ListStackInstanceResourceDriftsCommand: () => ListStackInstanceResourceDriftsCommand,
+      ListStackInstancesCommand: () => ListStackInstancesCommand,
+      ListStackResourcesCommand: () => ListStackResourcesCommand,
+      ListStackSetAutoDeploymentTargetsCommand: () => ListStackSetAutoDeploymentTargetsCommand,
+      ListStackSetOperationResultsCommand: () => ListStackSetOperationResultsCommand,
+      ListStackSetOperationsCommand: () => ListStackSetOperationsCommand,
+      ListStackSetsCommand: () => ListStackSetsCommand,
+      ListStacksCommand: () => ListStacksCommand,
+      ListTypeRegistrationsCommand: () => ListTypeRegistrationsCommand,
+      ListTypeVersionsCommand: () => ListTypeVersionsCommand,
+      ListTypesCommand: () => ListTypesCommand,
+      NameAlreadyExistsException: () => NameAlreadyExistsException,
+      OnFailure: () => OnFailure,
+      OnStackFailure: () => OnStackFailure,
+      OperationIdAlreadyExistsException: () => OperationIdAlreadyExistsException,
+      OperationInProgressException: () => OperationInProgressException,
+      OperationNotFoundException: () => OperationNotFoundException,
+      OperationResultFilterName: () => OperationResultFilterName,
+      OperationStatus: () => OperationStatus,
+      OperationStatusCheckFailedException: () => OperationStatusCheckFailedException,
+      OrganizationStatus: () => OrganizationStatus,
+      PermissionModels: () => PermissionModels,
+      ProvisioningType: () => ProvisioningType,
+      PublishTypeCommand: () => PublishTypeCommand,
+      PublisherStatus: () => PublisherStatus,
+      RecordHandlerProgressCommand: () => RecordHandlerProgressCommand,
+      RegionConcurrencyType: () => RegionConcurrencyType,
+      RegisterPublisherCommand: () => RegisterPublisherCommand,
+      RegisterTypeCommand: () => RegisterTypeCommand,
+      RegistrationStatus: () => RegistrationStatus,
+      RegistryType: () => RegistryType,
+      Replacement: () => Replacement,
+      RequiresRecreation: () => RequiresRecreation,
+      ResourceAttribute: () => ResourceAttribute,
+      ResourceScanInProgressException: () => ResourceScanInProgressException,
+      ResourceScanLimitExceededException: () => ResourceScanLimitExceededException,
+      ResourceScanNotFoundException: () => ResourceScanNotFoundException,
+      ResourceScanStatus: () => ResourceScanStatus,
+      ResourceSignalStatus: () => ResourceSignalStatus,
+      ResourceStatus: () => ResourceStatus,
+      RollbackStackCommand: () => RollbackStackCommand,
+      SetStackPolicyCommand: () => SetStackPolicyCommand,
+      SetTypeConfigurationCommand: () => SetTypeConfigurationCommand,
+      SetTypeDefaultVersionCommand: () => SetTypeDefaultVersionCommand,
+      SignalResourceCommand: () => SignalResourceCommand,
+      StackDriftDetectionStatus: () => StackDriftDetectionStatus,
+      StackDriftStatus: () => StackDriftStatus,
+      StackInstanceDetailedStatus: () => StackInstanceDetailedStatus,
+      StackInstanceFilterName: () => StackInstanceFilterName,
+      StackInstanceNotFoundException: () => StackInstanceNotFoundException,
+      StackInstanceStatus: () => StackInstanceStatus,
+      StackNotFoundException: () => StackNotFoundException,
+      StackResourceDriftStatus: () => StackResourceDriftStatus,
+      StackSetDriftDetectionStatus: () => StackSetDriftDetectionStatus,
+      StackSetDriftStatus: () => StackSetDriftStatus,
+      StackSetNotEmptyException: () => StackSetNotEmptyException,
+      StackSetNotFoundException: () => StackSetNotFoundException,
+      StackSetOperationAction: () => StackSetOperationAction,
+      StackSetOperationResultStatus: () => StackSetOperationResultStatus,
+      StackSetOperationStatus: () => StackSetOperationStatus,
+      StackSetStatus: () => StackSetStatus,
+      StackStatus: () => StackStatus,
+      StaleRequestException: () => StaleRequestException,
+      StartResourceScanCommand: () => StartResourceScanCommand,
+      StopStackSetOperationCommand: () => StopStackSetOperationCommand,
+      TemplateFormat: () => TemplateFormat,
+      TemplateStage: () => TemplateStage,
+      TestTypeCommand: () => TestTypeCommand,
+      ThirdPartyType: () => ThirdPartyType,
+      TokenAlreadyExistsException: () => TokenAlreadyExistsException,
+      TypeConfigurationNotFoundException: () => TypeConfigurationNotFoundException,
+      TypeNotFoundException: () => TypeNotFoundException,
+      TypeTestsStatus: () => TypeTestsStatus,
+      UpdateGeneratedTemplateCommand: () => UpdateGeneratedTemplateCommand,
+      UpdateStackCommand: () => UpdateStackCommand,
+      UpdateStackInstancesCommand: () => UpdateStackInstancesCommand,
+      UpdateStackSetCommand: () => UpdateStackSetCommand,
+      UpdateTerminationProtectionCommand: () => UpdateTerminationProtectionCommand,
+      ValidateTemplateCommand: () => ValidateTemplateCommand,
+      VersionBump: () => VersionBump,
+      Visibility: () => Visibility,
+      WarningType: () => WarningType,
+      __Client: () => import_smithy_client.Client,
+      paginateDescribeAccountLimits: () => paginateDescribeAccountLimits,
+      paginateDescribeStackEvents: () => paginateDescribeStackEvents,
+      paginateDescribeStackResourceDrifts: () => paginateDescribeStackResourceDrifts,
+      paginateDescribeStacks: () => paginateDescribeStacks,
+      paginateListChangeSets: () => paginateListChangeSets,
+      paginateListExports: () => paginateListExports,
+      paginateListGeneratedTemplates: () => paginateListGeneratedTemplates,
+      paginateListImports: () => paginateListImports,
+      paginateListResourceScanRelatedResources: () => paginateListResourceScanRelatedResources,
+      paginateListResourceScanResources: () => paginateListResourceScanResources,
+      paginateListResourceScans: () => paginateListResourceScans,
+      paginateListStackInstances: () => paginateListStackInstances,
+      paginateListStackResources: () => paginateListStackResources,
+      paginateListStackSetOperationResults: () => paginateListStackSetOperationResults,
+      paginateListStackSetOperations: () => paginateListStackSetOperations,
+      paginateListStackSets: () => paginateListStackSets,
+      paginateListStacks: () => paginateListStacks,
+      paginateListTypeRegistrations: () => paginateListTypeRegistrations,
+      paginateListTypeVersions: () => paginateListTypeVersions,
+      paginateListTypes: () => paginateListTypes,
+      waitForChangeSetCreateComplete: () => waitForChangeSetCreateComplete,
+      waitForStackCreateComplete: () => waitForStackCreateComplete,
+      waitForStackDeleteComplete: () => waitForStackDeleteComplete,
+      waitForStackExists: () => waitForStackExists,
+      waitForStackImportComplete: () => waitForStackImportComplete,
+      waitForStackRollbackComplete: () => waitForStackRollbackComplete,
+      waitForStackUpdateComplete: () => waitForStackUpdateComplete,
+      waitForTypeRegistrationComplete: () => waitForTypeRegistrationComplete,
+      waitUntilChangeSetCreateComplete: () => waitUntilChangeSetCreateComplete,
+      waitUntilStackCreateComplete: () => waitUntilStackCreateComplete,
+      waitUntilStackDeleteComplete: () => waitUntilStackDeleteComplete,
+      waitUntilStackExists: () => waitUntilStackExists,
+      waitUntilStackImportComplete: () => waitUntilStackImportComplete,
+      waitUntilStackRollbackComplete: () => waitUntilStackRollbackComplete,
+      waitUntilStackUpdateComplete: () => waitUntilStackUpdateComplete,
+      waitUntilTypeRegistrationComplete: () => waitUntilTypeRegistrationComplete
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var import_middleware_host_header = require_dist_cjs6();
+    var import_middleware_logger = require_dist_cjs7();
+    var import_middleware_recursion_detection = require_dist_cjs8();
+    var import_middleware_user_agent = require_dist_cjs11();
+    var import_config_resolver = require_dist_cjs14();
+    var import_core = require_dist_cjs32();
+    var import_middleware_content_length = require_dist_cjs33();
+    var import_middleware_endpoint = require_dist_cjs21();
+    var import_middleware_retry = require_dist_cjs31();
+    var import_httpAuthSchemeProvider = require_httpAuthSchemeProvider();
+    var resolveClientEndpointParameters = /* @__PURE__ */ __name((options) => {
+      return {
+        ...options,
+        useDualstackEndpoint: options.useDualstackEndpoint ?? false,
+        useFipsEndpoint: options.useFipsEndpoint ?? false,
+        defaultSigningName: "cloudformation"
+      };
+    }, "resolveClientEndpointParameters");
+    var commonParams = {
+      UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
+      Endpoint: { type: "builtInParams", name: "endpoint" },
+      Region: { type: "builtInParams", name: "region" },
+      UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" }
+    };
+    var import_runtimeConfig = require_runtimeConfig();
+    var import_region_config_resolver = require_dist_cjs44();
+    var import_protocol_http = require_dist_cjs2();
+    var import_smithy_client = require_dist_cjs30();
+    var getHttpAuthExtensionConfiguration = /* @__PURE__ */ __name((runtimeConfig) => {
+      const _httpAuthSchemes = runtimeConfig.httpAuthSchemes;
+      let _httpAuthSchemeProvider = runtimeConfig.httpAuthSchemeProvider;
+      let _credentials = runtimeConfig.credentials;
+      return {
+        setHttpAuthScheme(httpAuthScheme) {
+          const index = _httpAuthSchemes.findIndex((scheme) => scheme.schemeId === httpAuthScheme.schemeId);
+          if (index === -1) {
+            _httpAuthSchemes.push(httpAuthScheme);
+          } else {
+            _httpAuthSchemes.splice(index, 1, httpAuthScheme);
+          }
+        },
+        httpAuthSchemes() {
+          return _httpAuthSchemes;
+        },
+        setHttpAuthSchemeProvider(httpAuthSchemeProvider) {
+          _httpAuthSchemeProvider = httpAuthSchemeProvider;
+        },
+        httpAuthSchemeProvider() {
+          return _httpAuthSchemeProvider;
+        },
+        setCredentials(credentials) {
+          _credentials = credentials;
+        },
+        credentials() {
+          return _credentials;
+        }
+      };
+    }, "getHttpAuthExtensionConfiguration");
+    var resolveHttpAuthRuntimeConfig = /* @__PURE__ */ __name((config) => {
+      return {
+        httpAuthSchemes: config.httpAuthSchemes(),
+        httpAuthSchemeProvider: config.httpAuthSchemeProvider(),
+        credentials: config.credentials()
+      };
+    }, "resolveHttpAuthRuntimeConfig");
+    var asPartial = /* @__PURE__ */ __name((t) => t, "asPartial");
+    var resolveRuntimeExtensions = /* @__PURE__ */ __name((runtimeConfig, extensions) => {
+      const extensionConfiguration = {
+        ...asPartial((0, import_region_config_resolver.getAwsRegionExtensionConfiguration)(runtimeConfig)),
+        ...asPartial((0, import_smithy_client.getDefaultExtensionConfiguration)(runtimeConfig)),
+        ...asPartial((0, import_protocol_http.getHttpHandlerExtensionConfiguration)(runtimeConfig)),
+        ...asPartial(getHttpAuthExtensionConfiguration(runtimeConfig))
+      };
+      extensions.forEach((extension) => extension.configure(extensionConfiguration));
+      return {
+        ...runtimeConfig,
+        ...(0, import_region_config_resolver.resolveAwsRegionExtensionConfiguration)(extensionConfiguration),
+        ...(0, import_smithy_client.resolveDefaultRuntimeConfig)(extensionConfiguration),
+        ...(0, import_protocol_http.resolveHttpHandlerRuntimeConfig)(extensionConfiguration),
+        ...resolveHttpAuthRuntimeConfig(extensionConfiguration)
+      };
+    }, "resolveRuntimeExtensions");
+    var _CloudFormationClient = class _CloudFormationClient extends import_smithy_client.Client {
+      constructor(...[configuration]) {
+        const _config_0 = (0, import_runtimeConfig.getRuntimeConfig)(configuration || {});
+        const _config_1 = resolveClientEndpointParameters(_config_0);
+        const _config_2 = (0, import_config_resolver.resolveRegionConfig)(_config_1);
+        const _config_3 = (0, import_middleware_endpoint.resolveEndpointConfig)(_config_2);
+        const _config_4 = (0, import_middleware_retry.resolveRetryConfig)(_config_3);
+        const _config_5 = (0, import_middleware_host_header.resolveHostHeaderConfig)(_config_4);
+        const _config_6 = (0, import_middleware_user_agent.resolveUserAgentConfig)(_config_5);
+        const _config_7 = (0, import_httpAuthSchemeProvider.resolveHttpAuthSchemeConfig)(_config_6);
+        const _config_8 = resolveRuntimeExtensions(_config_7, (configuration == null ? void 0 : configuration.extensions) || []);
+        super(_config_8);
+        this.config = _config_8;
+        this.middlewareStack.use((0, import_middleware_retry.getRetryPlugin)(this.config));
+        this.middlewareStack.use((0, import_middleware_content_length.getContentLengthPlugin)(this.config));
+        this.middlewareStack.use((0, import_middleware_host_header.getHostHeaderPlugin)(this.config));
+        this.middlewareStack.use((0, import_middleware_logger.getLoggerPlugin)(this.config));
+        this.middlewareStack.use((0, import_middleware_recursion_detection.getRecursionDetectionPlugin)(this.config));
+        this.middlewareStack.use((0, import_middleware_user_agent.getUserAgentPlugin)(this.config));
+        this.middlewareStack.use(
+          (0, import_core.getHttpAuthSchemeEndpointRuleSetPlugin)(this.config, {
+            httpAuthSchemeParametersProvider: this.getDefaultHttpAuthSchemeParametersProvider(),
+            identityProviderConfigProvider: this.getIdentityProviderConfigProvider()
+          })
+        );
+        this.middlewareStack.use((0, import_core.getHttpSigningPlugin)(this.config));
+      }
+      /**
+       * Destroy underlying resources, like sockets. It's usually not necessary to do this.
+       * However in Node.js, it's best to explicitly shut down the client's agent when it is no longer needed.
+       * Otherwise, sockets might stay open for quite a long time before the server terminates them.
+       */
+      destroy() {
+        super.destroy();
+      }
+      getDefaultHttpAuthSchemeParametersProvider() {
+        return import_httpAuthSchemeProvider.defaultCloudFormationHttpAuthSchemeParametersProvider;
+      }
+      getIdentityProviderConfigProvider() {
+        return async (config) => new import_core.DefaultIdentityProviderConfig({
+          "aws.auth#sigv4": config.credentials
+        });
+      }
+    };
+    __name(_CloudFormationClient, "CloudFormationClient");
+    var CloudFormationClient = _CloudFormationClient;
+    var import_middleware_serde = require_dist_cjs20();
+    var import_types = require_dist_cjs();
+    var import_core2 = require_dist_cjs38();
+    var import_uuid = (init_esm_node2(), __toCommonJS(esm_node_exports2));
+    var _CloudFormationServiceException = class _CloudFormationServiceException2 extends import_smithy_client.ServiceException {
+      /**
+       * @internal
+       */
+      constructor(options) {
+        super(options);
+        Object.setPrototypeOf(this, _CloudFormationServiceException2.prototype);
+      }
+    };
+    __name(_CloudFormationServiceException, "CloudFormationServiceException");
+    var CloudFormationServiceException = _CloudFormationServiceException;
+    var AccountFilterType = {
+      DIFFERENCE: "DIFFERENCE",
+      INTERSECTION: "INTERSECTION",
+      NONE: "NONE",
+      UNION: "UNION"
+    };
+    var AccountGateStatus = {
+      FAILED: "FAILED",
+      SKIPPED: "SKIPPED",
+      SUCCEEDED: "SUCCEEDED"
+    };
+    var _InvalidOperationException = class _InvalidOperationException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "InvalidOperationException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "InvalidOperationException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _InvalidOperationException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_InvalidOperationException, "InvalidOperationException");
+    var InvalidOperationException = _InvalidOperationException;
+    var _OperationNotFoundException = class _OperationNotFoundException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "OperationNotFoundException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "OperationNotFoundException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _OperationNotFoundException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_OperationNotFoundException, "OperationNotFoundException");
+    var OperationNotFoundException = _OperationNotFoundException;
+    var ThirdPartyType = {
+      HOOK: "HOOK",
+      MODULE: "MODULE",
+      RESOURCE: "RESOURCE"
+    };
+    var VersionBump = {
+      MAJOR: "MAJOR",
+      MINOR: "MINOR"
+    };
+    var _CFNRegistryException = class _CFNRegistryException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "CFNRegistryException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "CFNRegistryException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _CFNRegistryException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_CFNRegistryException, "CFNRegistryException");
+    var CFNRegistryException = _CFNRegistryException;
+    var _TypeNotFoundException = class _TypeNotFoundException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "TypeNotFoundException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "TypeNotFoundException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _TypeNotFoundException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_TypeNotFoundException, "TypeNotFoundException");
+    var TypeNotFoundException = _TypeNotFoundException;
+    var _AlreadyExistsException = class _AlreadyExistsException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "AlreadyExistsException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "AlreadyExistsException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _AlreadyExistsException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_AlreadyExistsException, "AlreadyExistsException");
+    var AlreadyExistsException = _AlreadyExistsException;
+    var _TypeConfigurationNotFoundException = class _TypeConfigurationNotFoundException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "TypeConfigurationNotFoundException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "TypeConfigurationNotFoundException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _TypeConfigurationNotFoundException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_TypeConfigurationNotFoundException, "TypeConfigurationNotFoundException");
+    var TypeConfigurationNotFoundException = _TypeConfigurationNotFoundException;
+    var CallAs = {
+      DELEGATED_ADMIN: "DELEGATED_ADMIN",
+      SELF: "SELF"
+    };
+    var _TokenAlreadyExistsException = class _TokenAlreadyExistsException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "TokenAlreadyExistsException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "TokenAlreadyExistsException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _TokenAlreadyExistsException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_TokenAlreadyExistsException, "TokenAlreadyExistsException");
+    var TokenAlreadyExistsException = _TokenAlreadyExistsException;
+    var Capability = {
+      CAPABILITY_AUTO_EXPAND: "CAPABILITY_AUTO_EXPAND",
+      CAPABILITY_IAM: "CAPABILITY_IAM",
+      CAPABILITY_NAMED_IAM: "CAPABILITY_NAMED_IAM"
+    };
+    var Category = {
+      ACTIVATED: "ACTIVATED",
+      AWS_TYPES: "AWS_TYPES",
+      REGISTERED: "REGISTERED",
+      THIRD_PARTY: "THIRD_PARTY"
+    };
+    var ChangeAction = {
+      Add: "Add",
+      Dynamic: "Dynamic",
+      Import: "Import",
+      Modify: "Modify",
+      Remove: "Remove"
+    };
+    var ChangeSource = {
+      Automatic: "Automatic",
+      DirectModification: "DirectModification",
+      ParameterReference: "ParameterReference",
+      ResourceAttribute: "ResourceAttribute",
+      ResourceReference: "ResourceReference"
+    };
+    var EvaluationType = {
+      Dynamic: "Dynamic",
+      Static: "Static"
+    };
+    var ResourceAttribute = {
+      CreationPolicy: "CreationPolicy",
+      DeletionPolicy: "DeletionPolicy",
+      Metadata: "Metadata",
+      Properties: "Properties",
+      Tags: "Tags",
+      UpdatePolicy: "UpdatePolicy",
+      UpdateReplacePolicy: "UpdateReplacePolicy"
+    };
+    var RequiresRecreation = {
+      Always: "Always",
+      Conditionally: "Conditionally",
+      Never: "Never"
+    };
+    var Replacement = {
+      Conditional: "Conditional",
+      False: "False",
+      True: "True"
+    };
+    var ChangeType = {
+      Resource: "Resource"
+    };
+    var HookFailureMode = {
+      FAIL: "FAIL",
+      WARN: "WARN"
+    };
+    var HookInvocationPoint = {
+      PRE_PROVISION: "PRE_PROVISION"
+    };
+    var HookTargetType = {
+      RESOURCE: "RESOURCE"
+    };
+    var ChangeSetHooksStatus = {
+      PLANNED: "PLANNED",
+      PLANNING: "PLANNING",
+      UNAVAILABLE: "UNAVAILABLE"
+    };
+    var _ChangeSetNotFoundException = class _ChangeSetNotFoundException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "ChangeSetNotFoundException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "ChangeSetNotFoundException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _ChangeSetNotFoundException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_ChangeSetNotFoundException, "ChangeSetNotFoundException");
+    var ChangeSetNotFoundException = _ChangeSetNotFoundException;
+    var ChangeSetStatus = {
+      CREATE_COMPLETE: "CREATE_COMPLETE",
+      CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS",
+      CREATE_PENDING: "CREATE_PENDING",
+      DELETE_COMPLETE: "DELETE_COMPLETE",
+      DELETE_FAILED: "DELETE_FAILED",
+      DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS",
+      DELETE_PENDING: "DELETE_PENDING",
+      FAILED: "FAILED"
+    };
+    var ExecutionStatus = {
+      AVAILABLE: "AVAILABLE",
+      EXECUTE_COMPLETE: "EXECUTE_COMPLETE",
+      EXECUTE_FAILED: "EXECUTE_FAILED",
+      EXECUTE_IN_PROGRESS: "EXECUTE_IN_PROGRESS",
+      OBSOLETE: "OBSOLETE",
+      UNAVAILABLE: "UNAVAILABLE"
+    };
+    var ChangeSetType = {
+      CREATE: "CREATE",
+      IMPORT: "IMPORT",
+      UPDATE: "UPDATE"
+    };
+    var OnStackFailure = {
+      DELETE: "DELETE",
+      DO_NOTHING: "DO_NOTHING",
+      ROLLBACK: "ROLLBACK"
+    };
+    var _InsufficientCapabilitiesException = class _InsufficientCapabilitiesException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "InsufficientCapabilitiesException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "InsufficientCapabilitiesException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _InsufficientCapabilitiesException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_InsufficientCapabilitiesException, "InsufficientCapabilitiesException");
+    var InsufficientCapabilitiesException = _InsufficientCapabilitiesException;
+    var _LimitExceededException = class _LimitExceededException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "LimitExceededException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "LimitExceededException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _LimitExceededException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_LimitExceededException, "LimitExceededException");
+    var LimitExceededException = _LimitExceededException;
+    var _ConcurrentResourcesLimitExceededException = class _ConcurrentResourcesLimitExceededException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "ConcurrentResourcesLimitExceededException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "ConcurrentResourcesLimitExceededException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _ConcurrentResourcesLimitExceededException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_ConcurrentResourcesLimitExceededException, "ConcurrentResourcesLimitExceededException");
+    var ConcurrentResourcesLimitExceededException = _ConcurrentResourcesLimitExceededException;
+    var GeneratedTemplateDeletionPolicy = {
+      DELETE: "DELETE",
+      RETAIN: "RETAIN"
+    };
+    var GeneratedTemplateUpdateReplacePolicy = {
+      DELETE: "DELETE",
+      RETAIN: "RETAIN"
+    };
+    var OnFailure = {
+      DELETE: "DELETE",
+      DO_NOTHING: "DO_NOTHING",
+      ROLLBACK: "ROLLBACK"
+    };
+    var ConcurrencyMode = {
+      SOFT_FAILURE_TOLERANCE: "SOFT_FAILURE_TOLERANCE",
+      STRICT_FAILURE_TOLERANCE: "STRICT_FAILURE_TOLERANCE"
+    };
+    var RegionConcurrencyType = {
+      PARALLEL: "PARALLEL",
+      SEQUENTIAL: "SEQUENTIAL"
+    };
+    var _OperationIdAlreadyExistsException = class _OperationIdAlreadyExistsException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "OperationIdAlreadyExistsException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "OperationIdAlreadyExistsException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _OperationIdAlreadyExistsException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_OperationIdAlreadyExistsException, "OperationIdAlreadyExistsException");
+    var OperationIdAlreadyExistsException = _OperationIdAlreadyExistsException;
+    var _OperationInProgressException = class _OperationInProgressException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "OperationInProgressException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "OperationInProgressException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _OperationInProgressException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_OperationInProgressException, "OperationInProgressException");
+    var OperationInProgressException = _OperationInProgressException;
+    var _StackSetNotFoundException = class _StackSetNotFoundException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "StackSetNotFoundException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "StackSetNotFoundException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _StackSetNotFoundException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_StackSetNotFoundException, "StackSetNotFoundException");
+    var StackSetNotFoundException = _StackSetNotFoundException;
+    var _StaleRequestException = class _StaleRequestException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "StaleRequestException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "StaleRequestException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _StaleRequestException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_StaleRequestException, "StaleRequestException");
+    var StaleRequestException = _StaleRequestException;
+    var _CreatedButModifiedException = class _CreatedButModifiedException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "CreatedButModifiedException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "CreatedButModifiedException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _CreatedButModifiedException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_CreatedButModifiedException, "CreatedButModifiedException");
+    var CreatedButModifiedException = _CreatedButModifiedException;
+    var PermissionModels = {
+      SELF_MANAGED: "SELF_MANAGED",
+      SERVICE_MANAGED: "SERVICE_MANAGED"
+    };
+    var _NameAlreadyExistsException = class _NameAlreadyExistsException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "NameAlreadyExistsException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "NameAlreadyExistsException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _NameAlreadyExistsException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_NameAlreadyExistsException, "NameAlreadyExistsException");
+    var NameAlreadyExistsException = _NameAlreadyExistsException;
+    var _InvalidChangeSetStatusException = class _InvalidChangeSetStatusException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "InvalidChangeSetStatusException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "InvalidChangeSetStatusException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _InvalidChangeSetStatusException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_InvalidChangeSetStatusException, "InvalidChangeSetStatusException");
+    var InvalidChangeSetStatusException = _InvalidChangeSetStatusException;
+    var _GeneratedTemplateNotFoundException = class _GeneratedTemplateNotFoundException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "GeneratedTemplateNotFoundException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "GeneratedTemplateNotFoundException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _GeneratedTemplateNotFoundException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_GeneratedTemplateNotFoundException, "GeneratedTemplateNotFoundException");
+    var GeneratedTemplateNotFoundException = _GeneratedTemplateNotFoundException;
+    var _StackSetNotEmptyException = class _StackSetNotEmptyException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "StackSetNotEmptyException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "StackSetNotEmptyException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _StackSetNotEmptyException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_StackSetNotEmptyException, "StackSetNotEmptyException");
+    var StackSetNotEmptyException = _StackSetNotEmptyException;
+    var RegistryType = {
+      HOOK: "HOOK",
+      MODULE: "MODULE",
+      RESOURCE: "RESOURCE"
+    };
+    var GeneratedTemplateResourceStatus = {
+      COMPLETE: "COMPLETE",
+      FAILED: "FAILED",
+      IN_PROGRESS: "IN_PROGRESS",
+      PENDING: "PENDING"
+    };
+    var WarningType = {
+      MUTUALLY_EXCLUSIVE_PROPERTIES: "MUTUALLY_EXCLUSIVE_PROPERTIES",
+      MUTUALLY_EXCLUSIVE_TYPES: "MUTUALLY_EXCLUSIVE_TYPES",
+      UNSUPPORTED_PROPERTIES: "UNSUPPORTED_PROPERTIES"
+    };
+    var GeneratedTemplateStatus = {
+      COMPLETE: "COMPLETE",
+      CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS",
+      CREATE_PENDING: "CREATE_PENDING",
+      DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS",
+      DELETE_PENDING: "DELETE_PENDING",
+      FAILED: "FAILED",
+      UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS",
+      UPDATE_PENDING: "UPDATE_PENDING"
+    };
+    var OrganizationStatus = {
+      DISABLED: "DISABLED",
+      DISABLED_PERMANENTLY: "DISABLED_PERMANENTLY",
+      ENABLED: "ENABLED"
+    };
+    var IdentityProvider = {
+      AWS_Marketplace: "AWS_Marketplace",
+      Bitbucket: "Bitbucket",
+      GitHub: "GitHub"
+    };
+    var PublisherStatus = {
+      UNVERIFIED: "UNVERIFIED",
+      VERIFIED: "VERIFIED"
+    };
+    var ResourceScanStatus = {
+      COMPLETE: "COMPLETE",
+      EXPIRED: "EXPIRED",
+      FAILED: "FAILED",
+      IN_PROGRESS: "IN_PROGRESS"
+    };
+    var _ResourceScanNotFoundException = class _ResourceScanNotFoundException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "ResourceScanNotFoundException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "ResourceScanNotFoundException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _ResourceScanNotFoundException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_ResourceScanNotFoundException, "ResourceScanNotFoundException");
+    var ResourceScanNotFoundException = _ResourceScanNotFoundException;
+    var StackDriftDetectionStatus = {
+      DETECTION_COMPLETE: "DETECTION_COMPLETE",
+      DETECTION_FAILED: "DETECTION_FAILED",
+      DETECTION_IN_PROGRESS: "DETECTION_IN_PROGRESS"
+    };
+    var StackDriftStatus = {
+      DRIFTED: "DRIFTED",
+      IN_SYNC: "IN_SYNC",
+      NOT_CHECKED: "NOT_CHECKED",
+      UNKNOWN: "UNKNOWN"
+    };
+    var DetailedStatus = {
+      CONFIGURATION_COMPLETE: "CONFIGURATION_COMPLETE",
+      VALIDATION_FAILED: "VALIDATION_FAILED"
+    };
+    var HookStatus = {
+      HOOK_COMPLETE_FAILED: "HOOK_COMPLETE_FAILED",
+      HOOK_COMPLETE_SUCCEEDED: "HOOK_COMPLETE_SUCCEEDED",
+      HOOK_FAILED: "HOOK_FAILED",
+      HOOK_IN_PROGRESS: "HOOK_IN_PROGRESS"
+    };
+    var ResourceStatus = {
+      CREATE_COMPLETE: "CREATE_COMPLETE",
+      CREATE_FAILED: "CREATE_FAILED",
+      CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS",
+      DELETE_COMPLETE: "DELETE_COMPLETE",
+      DELETE_FAILED: "DELETE_FAILED",
+      DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS",
+      DELETE_SKIPPED: "DELETE_SKIPPED",
+      IMPORT_COMPLETE: "IMPORT_COMPLETE",
+      IMPORT_FAILED: "IMPORT_FAILED",
+      IMPORT_IN_PROGRESS: "IMPORT_IN_PROGRESS",
+      IMPORT_ROLLBACK_COMPLETE: "IMPORT_ROLLBACK_COMPLETE",
+      IMPORT_ROLLBACK_FAILED: "IMPORT_ROLLBACK_FAILED",
+      IMPORT_ROLLBACK_IN_PROGRESS: "IMPORT_ROLLBACK_IN_PROGRESS",
+      ROLLBACK_COMPLETE: "ROLLBACK_COMPLETE",
+      ROLLBACK_FAILED: "ROLLBACK_FAILED",
+      ROLLBACK_IN_PROGRESS: "ROLLBACK_IN_PROGRESS",
+      UPDATE_COMPLETE: "UPDATE_COMPLETE",
+      UPDATE_FAILED: "UPDATE_FAILED",
+      UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS",
+      UPDATE_ROLLBACK_COMPLETE: "UPDATE_ROLLBACK_COMPLETE",
+      UPDATE_ROLLBACK_FAILED: "UPDATE_ROLLBACK_FAILED",
+      UPDATE_ROLLBACK_IN_PROGRESS: "UPDATE_ROLLBACK_IN_PROGRESS"
+    };
+    var StackInstanceDetailedStatus = {
+      CANCELLED: "CANCELLED",
+      FAILED: "FAILED",
+      FAILED_IMPORT: "FAILED_IMPORT",
+      INOPERABLE: "INOPERABLE",
+      PENDING: "PENDING",
+      RUNNING: "RUNNING",
+      SKIPPED_SUSPENDED_ACCOUNT: "SKIPPED_SUSPENDED_ACCOUNT",
+      SUCCEEDED: "SUCCEEDED"
+    };
+    var StackInstanceStatus = {
+      CURRENT: "CURRENT",
+      INOPERABLE: "INOPERABLE",
+      OUTDATED: "OUTDATED"
+    };
+    var _StackInstanceNotFoundException = class _StackInstanceNotFoundException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "StackInstanceNotFoundException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "StackInstanceNotFoundException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _StackInstanceNotFoundException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_StackInstanceNotFoundException, "StackInstanceNotFoundException");
+    var StackInstanceNotFoundException = _StackInstanceNotFoundException;
+    var StackResourceDriftStatus = {
+      DELETED: "DELETED",
+      IN_SYNC: "IN_SYNC",
+      MODIFIED: "MODIFIED",
+      NOT_CHECKED: "NOT_CHECKED"
+    };
+    var DifferenceType = {
+      ADD: "ADD",
+      NOT_EQUAL: "NOT_EQUAL",
+      REMOVE: "REMOVE"
+    };
+    var StackStatus = {
+      CREATE_COMPLETE: "CREATE_COMPLETE",
+      CREATE_FAILED: "CREATE_FAILED",
+      CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS",
+      DELETE_COMPLETE: "DELETE_COMPLETE",
+      DELETE_FAILED: "DELETE_FAILED",
+      DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS",
+      IMPORT_COMPLETE: "IMPORT_COMPLETE",
+      IMPORT_IN_PROGRESS: "IMPORT_IN_PROGRESS",
+      IMPORT_ROLLBACK_COMPLETE: "IMPORT_ROLLBACK_COMPLETE",
+      IMPORT_ROLLBACK_FAILED: "IMPORT_ROLLBACK_FAILED",
+      IMPORT_ROLLBACK_IN_PROGRESS: "IMPORT_ROLLBACK_IN_PROGRESS",
+      REVIEW_IN_PROGRESS: "REVIEW_IN_PROGRESS",
+      ROLLBACK_COMPLETE: "ROLLBACK_COMPLETE",
+      ROLLBACK_FAILED: "ROLLBACK_FAILED",
+      ROLLBACK_IN_PROGRESS: "ROLLBACK_IN_PROGRESS",
+      UPDATE_COMPLETE: "UPDATE_COMPLETE",
+      UPDATE_COMPLETE_CLEANUP_IN_PROGRESS: "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS",
+      UPDATE_FAILED: "UPDATE_FAILED",
+      UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS",
+      UPDATE_ROLLBACK_COMPLETE: "UPDATE_ROLLBACK_COMPLETE",
+      UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS: "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS",
+      UPDATE_ROLLBACK_FAILED: "UPDATE_ROLLBACK_FAILED",
+      UPDATE_ROLLBACK_IN_PROGRESS: "UPDATE_ROLLBACK_IN_PROGRESS"
+    };
+    var StackSetDriftDetectionStatus = {
+      COMPLETED: "COMPLETED",
+      FAILED: "FAILED",
+      IN_PROGRESS: "IN_PROGRESS",
+      PARTIAL_SUCCESS: "PARTIAL_SUCCESS",
+      STOPPED: "STOPPED"
+    };
+    var StackSetDriftStatus = {
+      DRIFTED: "DRIFTED",
+      IN_SYNC: "IN_SYNC",
+      NOT_CHECKED: "NOT_CHECKED"
+    };
+    var StackSetStatus = {
+      ACTIVE: "ACTIVE",
+      DELETED: "DELETED"
+    };
+    var StackSetOperationAction = {
+      CREATE: "CREATE",
+      DELETE: "DELETE",
+      DETECT_DRIFT: "DETECT_DRIFT",
+      UPDATE: "UPDATE"
+    };
+    var StackSetOperationStatus = {
+      FAILED: "FAILED",
+      QUEUED: "QUEUED",
+      RUNNING: "RUNNING",
+      STOPPED: "STOPPED",
+      STOPPING: "STOPPING",
+      SUCCEEDED: "SUCCEEDED"
+    };
+    var DeprecatedStatus = {
+      DEPRECATED: "DEPRECATED",
+      LIVE: "LIVE"
+    };
+    var ProvisioningType = {
+      FULLY_MUTABLE: "FULLY_MUTABLE",
+      IMMUTABLE: "IMMUTABLE",
+      NON_PROVISIONABLE: "NON_PROVISIONABLE"
+    };
+    var TypeTestsStatus = {
+      FAILED: "FAILED",
+      IN_PROGRESS: "IN_PROGRESS",
+      NOT_TESTED: "NOT_TESTED",
+      PASSED: "PASSED"
+    };
+    var Visibility = {
+      PRIVATE: "PRIVATE",
+      PUBLIC: "PUBLIC"
+    };
+    var RegistrationStatus = {
+      COMPLETE: "COMPLETE",
+      FAILED: "FAILED",
+      IN_PROGRESS: "IN_PROGRESS"
+    };
+    var TemplateFormat = {
+      JSON: "JSON",
+      YAML: "YAML"
+    };
+    var TemplateStage = {
+      Original: "Original",
+      Processed: "Processed"
+    };
+    var _StackNotFoundException = class _StackNotFoundException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "StackNotFoundException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "StackNotFoundException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _StackNotFoundException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_StackNotFoundException, "StackNotFoundException");
+    var StackNotFoundException = _StackNotFoundException;
+    var _ResourceScanInProgressException = class _ResourceScanInProgressException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "ResourceScanInProgressException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "ResourceScanInProgressException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _ResourceScanInProgressException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_ResourceScanInProgressException, "ResourceScanInProgressException");
+    var ResourceScanInProgressException = _ResourceScanInProgressException;
+    var StackInstanceFilterName = {
+      DETAILED_STATUS: "DETAILED_STATUS",
+      DRIFT_STATUS: "DRIFT_STATUS",
+      LAST_OPERATION_ID: "LAST_OPERATION_ID"
+    };
+    var OperationResultFilterName = {
+      OPERATION_RESULT_STATUS: "OPERATION_RESULT_STATUS"
+    };
+    var StackSetOperationResultStatus = {
+      CANCELLED: "CANCELLED",
+      FAILED: "FAILED",
+      PENDING: "PENDING",
+      RUNNING: "RUNNING",
+      SUCCEEDED: "SUCCEEDED"
+    };
+    var _InvalidStateTransitionException = class _InvalidStateTransitionException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "InvalidStateTransitionException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "InvalidStateTransitionException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _InvalidStateTransitionException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_InvalidStateTransitionException, "InvalidStateTransitionException");
+    var InvalidStateTransitionException = _InvalidStateTransitionException;
+    var _OperationStatusCheckFailedException = class _OperationStatusCheckFailedException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "OperationStatusCheckFailedException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "OperationStatusCheckFailedException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _OperationStatusCheckFailedException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_OperationStatusCheckFailedException, "OperationStatusCheckFailedException");
+    var OperationStatusCheckFailedException = _OperationStatusCheckFailedException;
+    var OperationStatus = {
+      FAILED: "FAILED",
+      IN_PROGRESS: "IN_PROGRESS",
+      PENDING: "PENDING",
+      SUCCESS: "SUCCESS"
+    };
+    var HandlerErrorCode = {
+      AccessDenied: "AccessDenied",
+      AlreadyExists: "AlreadyExists",
+      GeneralServiceException: "GeneralServiceException",
+      HandlerInternalFailure: "HandlerInternalFailure",
+      InternalFailure: "InternalFailure",
+      InvalidCredentials: "InvalidCredentials",
+      InvalidRequest: "InvalidRequest",
+      InvalidTypeConfiguration: "InvalidTypeConfiguration",
+      NetworkFailure: "NetworkFailure",
+      NonCompliant: "NonCompliant",
+      NotFound: "NotFound",
+      NotUpdatable: "NotUpdatable",
+      ResourceConflict: "ResourceConflict",
+      ServiceInternalError: "ServiceInternalError",
+      ServiceLimitExceeded: "ServiceLimitExceeded",
+      ServiceTimeout: "NotStabilized",
+      Throttling: "Throttling",
+      Unknown: "Unknown",
+      UnsupportedTarget: "UnsupportedTarget"
+    };
+    var ResourceSignalStatus = {
+      FAILURE: "FAILURE",
+      SUCCESS: "SUCCESS"
+    };
+    var _ResourceScanLimitExceededException = class _ResourceScanLimitExceededException2 extends CloudFormationServiceException {
+      /**
+       * @internal
+       */
+      constructor(opts) {
+        super({
+          name: "ResourceScanLimitExceededException",
+          $fault: "client",
+          ...opts
+        });
+        this.name = "ResourceScanLimitExceededException";
+        this.$fault = "client";
+        Object.setPrototypeOf(this, _ResourceScanLimitExceededException2.prototype);
+        this.Message = opts.Message;
+      }
+    };
+    __name(_ResourceScanLimitExceededException, "ResourceScanLimitExceededException");
+    var ResourceScanLimitExceededException = _ResourceScanLimitExceededException;
+    var se_ActivateOrganizationsAccessCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ActivateOrganizationsAccessInput(input, context),
+        [_A]: _AOA,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ActivateOrganizationsAccessCommand");
+    var se_ActivateTypeCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ActivateTypeInput(input, context),
+        [_A]: _AT,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ActivateTypeCommand");
+    var se_BatchDescribeTypeConfigurationsCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_BatchDescribeTypeConfigurationsInput(input, context),
+        [_A]: _BDTC,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_BatchDescribeTypeConfigurationsCommand");
+    var se_CancelUpdateStackCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_CancelUpdateStackInput(input, context),
+        [_A]: _CUS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_CancelUpdateStackCommand");
+    var se_ContinueUpdateRollbackCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ContinueUpdateRollbackInput(input, context),
+        [_A]: _CUR,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ContinueUpdateRollbackCommand");
+    var se_CreateChangeSetCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_CreateChangeSetInput(input, context),
+        [_A]: _CCS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_CreateChangeSetCommand");
+    var se_CreateGeneratedTemplateCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_CreateGeneratedTemplateInput(input, context),
+        [_A]: _CGT,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_CreateGeneratedTemplateCommand");
+    var se_CreateStackCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_CreateStackInput(input, context),
+        [_A]: _CS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_CreateStackCommand");
+    var se_CreateStackInstancesCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_CreateStackInstancesInput(input, context),
+        [_A]: _CSI,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_CreateStackInstancesCommand");
+    var se_CreateStackSetCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_CreateStackSetInput(input, context),
+        [_A]: _CSS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_CreateStackSetCommand");
+    var se_DeactivateOrganizationsAccessCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DeactivateOrganizationsAccessInput(input, context),
+        [_A]: _DOA,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DeactivateOrganizationsAccessCommand");
+    var se_DeactivateTypeCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DeactivateTypeInput(input, context),
+        [_A]: _DT,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DeactivateTypeCommand");
+    var se_DeleteChangeSetCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DeleteChangeSetInput(input, context),
+        [_A]: _DCS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DeleteChangeSetCommand");
+    var se_DeleteGeneratedTemplateCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DeleteGeneratedTemplateInput(input, context),
+        [_A]: _DGT,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DeleteGeneratedTemplateCommand");
+    var se_DeleteStackCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DeleteStackInput(input, context),
+        [_A]: _DS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DeleteStackCommand");
+    var se_DeleteStackInstancesCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DeleteStackInstancesInput(input, context),
+        [_A]: _DSI,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DeleteStackInstancesCommand");
+    var se_DeleteStackSetCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DeleteStackSetInput(input, context),
+        [_A]: _DSS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DeleteStackSetCommand");
+    var se_DeregisterTypeCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DeregisterTypeInput(input, context),
+        [_A]: _DTe,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DeregisterTypeCommand");
+    var se_DescribeAccountLimitsCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeAccountLimitsInput(input, context),
+        [_A]: _DAL,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeAccountLimitsCommand");
+    var se_DescribeChangeSetCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeChangeSetInput(input, context),
+        [_A]: _DCSe,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeChangeSetCommand");
+    var se_DescribeChangeSetHooksCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeChangeSetHooksInput(input, context),
+        [_A]: _DCSH,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeChangeSetHooksCommand");
+    var se_DescribeGeneratedTemplateCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeGeneratedTemplateInput(input, context),
+        [_A]: _DGTe,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeGeneratedTemplateCommand");
+    var se_DescribeOrganizationsAccessCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeOrganizationsAccessInput(input, context),
+        [_A]: _DOAe,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeOrganizationsAccessCommand");
+    var se_DescribePublisherCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribePublisherInput(input, context),
+        [_A]: _DP,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribePublisherCommand");
+    var se_DescribeResourceScanCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeResourceScanInput(input, context),
+        [_A]: _DRS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeResourceScanCommand");
+    var se_DescribeStackDriftDetectionStatusCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeStackDriftDetectionStatusInput(input, context),
+        [_A]: _DSDDS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeStackDriftDetectionStatusCommand");
+    var se_DescribeStackEventsCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeStackEventsInput(input, context),
+        [_A]: _DSE,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeStackEventsCommand");
+    var se_DescribeStackInstanceCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeStackInstanceInput(input, context),
+        [_A]: _DSIe,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeStackInstanceCommand");
+    var se_DescribeStackResourceCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeStackResourceInput(input, context),
+        [_A]: _DSR,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeStackResourceCommand");
+    var se_DescribeStackResourceDriftsCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeStackResourceDriftsInput(input, context),
+        [_A]: _DSRD,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeStackResourceDriftsCommand");
+    var se_DescribeStackResourcesCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeStackResourcesInput(input, context),
+        [_A]: _DSRe,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeStackResourcesCommand");
+    var se_DescribeStacksCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeStacksInput(input, context),
+        [_A]: _DSe,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeStacksCommand");
+    var se_DescribeStackSetCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeStackSetInput(input, context),
+        [_A]: _DSSe,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeStackSetCommand");
+    var se_DescribeStackSetOperationCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeStackSetOperationInput(input, context),
+        [_A]: _DSSO,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeStackSetOperationCommand");
+    var se_DescribeTypeCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeTypeInput(input, context),
+        [_A]: _DTes,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeTypeCommand");
+    var se_DescribeTypeRegistrationCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DescribeTypeRegistrationInput(input, context),
+        [_A]: _DTR,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DescribeTypeRegistrationCommand");
+    var se_DetectStackDriftCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DetectStackDriftInput(input, context),
+        [_A]: _DSD,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DetectStackDriftCommand");
+    var se_DetectStackResourceDriftCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DetectStackResourceDriftInput(input, context),
+        [_A]: _DSRDe,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DetectStackResourceDriftCommand");
+    var se_DetectStackSetDriftCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_DetectStackSetDriftInput(input, context),
+        [_A]: _DSSD,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_DetectStackSetDriftCommand");
+    var se_EstimateTemplateCostCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_EstimateTemplateCostInput(input, context),
+        [_A]: _ETC,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_EstimateTemplateCostCommand");
+    var se_ExecuteChangeSetCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ExecuteChangeSetInput(input, context),
+        [_A]: _ECS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ExecuteChangeSetCommand");
+    var se_GetGeneratedTemplateCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_GetGeneratedTemplateInput(input, context),
+        [_A]: _GGT,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_GetGeneratedTemplateCommand");
+    var se_GetStackPolicyCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_GetStackPolicyInput(input, context),
+        [_A]: _GSP,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_GetStackPolicyCommand");
+    var se_GetTemplateCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_GetTemplateInput(input, context),
+        [_A]: _GT,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_GetTemplateCommand");
+    var se_GetTemplateSummaryCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_GetTemplateSummaryInput(input, context),
+        [_A]: _GTS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_GetTemplateSummaryCommand");
+    var se_ImportStacksToStackSetCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ImportStacksToStackSetInput(input, context),
+        [_A]: _ISTSS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ImportStacksToStackSetCommand");
+    var se_ListChangeSetsCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListChangeSetsInput(input, context),
+        [_A]: _LCS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListChangeSetsCommand");
+    var se_ListExportsCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListExportsInput(input, context),
+        [_A]: _LE,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListExportsCommand");
+    var se_ListGeneratedTemplatesCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListGeneratedTemplatesInput(input, context),
+        [_A]: _LGT,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListGeneratedTemplatesCommand");
+    var se_ListImportsCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListImportsInput(input, context),
+        [_A]: _LI,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListImportsCommand");
+    var se_ListResourceScanRelatedResourcesCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListResourceScanRelatedResourcesInput(input, context),
+        [_A]: _LRSRR,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListResourceScanRelatedResourcesCommand");
+    var se_ListResourceScanResourcesCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListResourceScanResourcesInput(input, context),
+        [_A]: _LRSR,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListResourceScanResourcesCommand");
+    var se_ListResourceScansCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListResourceScansInput(input, context),
+        [_A]: _LRS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListResourceScansCommand");
+    var se_ListStackInstanceResourceDriftsCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListStackInstanceResourceDriftsInput(input, context),
+        [_A]: _LSIRD,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListStackInstanceResourceDriftsCommand");
+    var se_ListStackInstancesCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListStackInstancesInput(input, context),
+        [_A]: _LSI,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListStackInstancesCommand");
+    var se_ListStackResourcesCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListStackResourcesInput(input, context),
+        [_A]: _LSR,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListStackResourcesCommand");
+    var se_ListStacksCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListStacksInput(input, context),
+        [_A]: _LS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListStacksCommand");
+    var se_ListStackSetAutoDeploymentTargetsCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListStackSetAutoDeploymentTargetsInput(input, context),
+        [_A]: _LSSADT,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListStackSetAutoDeploymentTargetsCommand");
+    var se_ListStackSetOperationResultsCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListStackSetOperationResultsInput(input, context),
+        [_A]: _LSSOR,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListStackSetOperationResultsCommand");
+    var se_ListStackSetOperationsCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListStackSetOperationsInput(input, context),
+        [_A]: _LSSO,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListStackSetOperationsCommand");
+    var se_ListStackSetsCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListStackSetsInput(input, context),
+        [_A]: _LSS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListStackSetsCommand");
+    var se_ListTypeRegistrationsCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListTypeRegistrationsInput(input, context),
+        [_A]: _LTR,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListTypeRegistrationsCommand");
+    var se_ListTypesCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListTypesInput(input, context),
+        [_A]: _LT,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListTypesCommand");
+    var se_ListTypeVersionsCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ListTypeVersionsInput(input, context),
+        [_A]: _LTV,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ListTypeVersionsCommand");
+    var se_PublishTypeCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_PublishTypeInput(input, context),
+        [_A]: _PT,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_PublishTypeCommand");
+    var se_RecordHandlerProgressCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_RecordHandlerProgressInput(input, context),
+        [_A]: _RHP,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_RecordHandlerProgressCommand");
+    var se_RegisterPublisherCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_RegisterPublisherInput(input, context),
+        [_A]: _RP,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_RegisterPublisherCommand");
+    var se_RegisterTypeCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_RegisterTypeInput(input, context),
+        [_A]: _RT,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_RegisterTypeCommand");
+    var se_RollbackStackCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_RollbackStackInput(input, context),
+        [_A]: _RS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_RollbackStackCommand");
+    var se_SetStackPolicyCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_SetStackPolicyInput(input, context),
+        [_A]: _SSP,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_SetStackPolicyCommand");
+    var se_SetTypeConfigurationCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_SetTypeConfigurationInput(input, context),
+        [_A]: _STC,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_SetTypeConfigurationCommand");
+    var se_SetTypeDefaultVersionCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_SetTypeDefaultVersionInput(input, context),
+        [_A]: _STDV,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_SetTypeDefaultVersionCommand");
+    var se_SignalResourceCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_SignalResourceInput(input, context),
+        [_A]: _SR,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_SignalResourceCommand");
+    var se_StartResourceScanCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_StartResourceScanInput(input, context),
+        [_A]: _SRS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_StartResourceScanCommand");
+    var se_StopStackSetOperationCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_StopStackSetOperationInput(input, context),
+        [_A]: _SSSO,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_StopStackSetOperationCommand");
+    var se_TestTypeCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_TestTypeInput(input, context),
+        [_A]: _TT,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_TestTypeCommand");
+    var se_UpdateGeneratedTemplateCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_UpdateGeneratedTemplateInput(input, context),
+        [_A]: _UGT,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_UpdateGeneratedTemplateCommand");
+    var se_UpdateStackCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_UpdateStackInput(input, context),
+        [_A]: _US,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_UpdateStackCommand");
+    var se_UpdateStackInstancesCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_UpdateStackInstancesInput(input, context),
+        [_A]: _USI,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_UpdateStackInstancesCommand");
+    var se_UpdateStackSetCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_UpdateStackSetInput(input, context),
+        [_A]: _USS,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_UpdateStackSetCommand");
+    var se_UpdateTerminationProtectionCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_UpdateTerminationProtectionInput(input, context),
+        [_A]: _UTP,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_UpdateTerminationProtectionCommand");
+    var se_ValidateTemplateCommand = /* @__PURE__ */ __name(async (input, context) => {
+      const headers = SHARED_HEADERS;
+      let body;
+      body = buildFormUrlencodedString({
+        ...se_ValidateTemplateInput(input, context),
+        [_A]: _VT,
+        [_V]: _
+      });
+      return buildHttpRpcRequest(context, headers, "/", void 0, body);
+    }, "se_ValidateTemplateCommand");
+    var de_ActivateOrganizationsAccessCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ActivateOrganizationsAccessOutput(data.ActivateOrganizationsAccessResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ActivateOrganizationsAccessCommand");
+    var de_ActivateTypeCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ActivateTypeOutput(data.ActivateTypeResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ActivateTypeCommand");
+    var de_BatchDescribeTypeConfigurationsCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_BatchDescribeTypeConfigurationsOutput(data.BatchDescribeTypeConfigurationsResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_BatchDescribeTypeConfigurationsCommand");
+    var de_CancelUpdateStackCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      await (0, import_smithy_client.collectBody)(output.body, context);
+      const response = {
+        $metadata: deserializeMetadata(output)
+      };
+      return response;
+    }, "de_CancelUpdateStackCommand");
+    var de_ContinueUpdateRollbackCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ContinueUpdateRollbackOutput(data.ContinueUpdateRollbackResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ContinueUpdateRollbackCommand");
+    var de_CreateChangeSetCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_CreateChangeSetOutput(data.CreateChangeSetResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_CreateChangeSetCommand");
+    var de_CreateGeneratedTemplateCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_CreateGeneratedTemplateOutput(data.CreateGeneratedTemplateResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_CreateGeneratedTemplateCommand");
+    var de_CreateStackCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_CreateStackOutput(data.CreateStackResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_CreateStackCommand");
+    var de_CreateStackInstancesCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_CreateStackInstancesOutput(data.CreateStackInstancesResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_CreateStackInstancesCommand");
+    var de_CreateStackSetCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_CreateStackSetOutput(data.CreateStackSetResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_CreateStackSetCommand");
+    var de_DeactivateOrganizationsAccessCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DeactivateOrganizationsAccessOutput(data.DeactivateOrganizationsAccessResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DeactivateOrganizationsAccessCommand");
+    var de_DeactivateTypeCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DeactivateTypeOutput(data.DeactivateTypeResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DeactivateTypeCommand");
+    var de_DeleteChangeSetCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DeleteChangeSetOutput(data.DeleteChangeSetResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DeleteChangeSetCommand");
+    var de_DeleteGeneratedTemplateCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      await (0, import_smithy_client.collectBody)(output.body, context);
+      const response = {
+        $metadata: deserializeMetadata(output)
+      };
+      return response;
+    }, "de_DeleteGeneratedTemplateCommand");
+    var de_DeleteStackCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      await (0, import_smithy_client.collectBody)(output.body, context);
+      const response = {
+        $metadata: deserializeMetadata(output)
+      };
+      return response;
+    }, "de_DeleteStackCommand");
+    var de_DeleteStackInstancesCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DeleteStackInstancesOutput(data.DeleteStackInstancesResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DeleteStackInstancesCommand");
+    var de_DeleteStackSetCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DeleteStackSetOutput(data.DeleteStackSetResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DeleteStackSetCommand");
+    var de_DeregisterTypeCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DeregisterTypeOutput(data.DeregisterTypeResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DeregisterTypeCommand");
+    var de_DescribeAccountLimitsCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeAccountLimitsOutput(data.DescribeAccountLimitsResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeAccountLimitsCommand");
+    var de_DescribeChangeSetCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeChangeSetOutput(data.DescribeChangeSetResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeChangeSetCommand");
+    var de_DescribeChangeSetHooksCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeChangeSetHooksOutput(data.DescribeChangeSetHooksResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeChangeSetHooksCommand");
+    var de_DescribeGeneratedTemplateCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeGeneratedTemplateOutput(data.DescribeGeneratedTemplateResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeGeneratedTemplateCommand");
+    var de_DescribeOrganizationsAccessCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeOrganizationsAccessOutput(data.DescribeOrganizationsAccessResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeOrganizationsAccessCommand");
+    var de_DescribePublisherCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribePublisherOutput(data.DescribePublisherResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribePublisherCommand");
+    var de_DescribeResourceScanCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeResourceScanOutput(data.DescribeResourceScanResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeResourceScanCommand");
+    var de_DescribeStackDriftDetectionStatusCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeStackDriftDetectionStatusOutput(data.DescribeStackDriftDetectionStatusResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeStackDriftDetectionStatusCommand");
+    var de_DescribeStackEventsCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeStackEventsOutput(data.DescribeStackEventsResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeStackEventsCommand");
+    var de_DescribeStackInstanceCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeStackInstanceOutput(data.DescribeStackInstanceResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeStackInstanceCommand");
+    var de_DescribeStackResourceCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeStackResourceOutput(data.DescribeStackResourceResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeStackResourceCommand");
+    var de_DescribeStackResourceDriftsCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeStackResourceDriftsOutput(data.DescribeStackResourceDriftsResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeStackResourceDriftsCommand");
+    var de_DescribeStackResourcesCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeStackResourcesOutput(data.DescribeStackResourcesResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeStackResourcesCommand");
+    var de_DescribeStacksCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeStacksOutput(data.DescribeStacksResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeStacksCommand");
+    var de_DescribeStackSetCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeStackSetOutput(data.DescribeStackSetResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeStackSetCommand");
+    var de_DescribeStackSetOperationCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeStackSetOperationOutput(data.DescribeStackSetOperationResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeStackSetOperationCommand");
+    var de_DescribeTypeCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeTypeOutput(data.DescribeTypeResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeTypeCommand");
+    var de_DescribeTypeRegistrationCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DescribeTypeRegistrationOutput(data.DescribeTypeRegistrationResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DescribeTypeRegistrationCommand");
+    var de_DetectStackDriftCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DetectStackDriftOutput(data.DetectStackDriftResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DetectStackDriftCommand");
+    var de_DetectStackResourceDriftCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DetectStackResourceDriftOutput(data.DetectStackResourceDriftResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DetectStackResourceDriftCommand");
+    var de_DetectStackSetDriftCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_DetectStackSetDriftOutput(data.DetectStackSetDriftResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_DetectStackSetDriftCommand");
+    var de_EstimateTemplateCostCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_EstimateTemplateCostOutput(data.EstimateTemplateCostResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_EstimateTemplateCostCommand");
+    var de_ExecuteChangeSetCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ExecuteChangeSetOutput(data.ExecuteChangeSetResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ExecuteChangeSetCommand");
+    var de_GetGeneratedTemplateCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_GetGeneratedTemplateOutput(data.GetGeneratedTemplateResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_GetGeneratedTemplateCommand");
+    var de_GetStackPolicyCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_GetStackPolicyOutput(data.GetStackPolicyResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_GetStackPolicyCommand");
+    var de_GetTemplateCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_GetTemplateOutput(data.GetTemplateResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_GetTemplateCommand");
+    var de_GetTemplateSummaryCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_GetTemplateSummaryOutput(data.GetTemplateSummaryResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_GetTemplateSummaryCommand");
+    var de_ImportStacksToStackSetCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ImportStacksToStackSetOutput(data.ImportStacksToStackSetResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ImportStacksToStackSetCommand");
+    var de_ListChangeSetsCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListChangeSetsOutput(data.ListChangeSetsResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListChangeSetsCommand");
+    var de_ListExportsCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListExportsOutput(data.ListExportsResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListExportsCommand");
+    var de_ListGeneratedTemplatesCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListGeneratedTemplatesOutput(data.ListGeneratedTemplatesResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListGeneratedTemplatesCommand");
+    var de_ListImportsCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListImportsOutput(data.ListImportsResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListImportsCommand");
+    var de_ListResourceScanRelatedResourcesCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListResourceScanRelatedResourcesOutput(data.ListResourceScanRelatedResourcesResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListResourceScanRelatedResourcesCommand");
+    var de_ListResourceScanResourcesCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListResourceScanResourcesOutput(data.ListResourceScanResourcesResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListResourceScanResourcesCommand");
+    var de_ListResourceScansCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListResourceScansOutput(data.ListResourceScansResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListResourceScansCommand");
+    var de_ListStackInstanceResourceDriftsCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListStackInstanceResourceDriftsOutput(data.ListStackInstanceResourceDriftsResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListStackInstanceResourceDriftsCommand");
+    var de_ListStackInstancesCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListStackInstancesOutput(data.ListStackInstancesResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListStackInstancesCommand");
+    var de_ListStackResourcesCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListStackResourcesOutput(data.ListStackResourcesResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListStackResourcesCommand");
+    var de_ListStacksCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListStacksOutput(data.ListStacksResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListStacksCommand");
+    var de_ListStackSetAutoDeploymentTargetsCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListStackSetAutoDeploymentTargetsOutput(data.ListStackSetAutoDeploymentTargetsResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListStackSetAutoDeploymentTargetsCommand");
+    var de_ListStackSetOperationResultsCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListStackSetOperationResultsOutput(data.ListStackSetOperationResultsResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListStackSetOperationResultsCommand");
+    var de_ListStackSetOperationsCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListStackSetOperationsOutput(data.ListStackSetOperationsResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListStackSetOperationsCommand");
+    var de_ListStackSetsCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListStackSetsOutput(data.ListStackSetsResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListStackSetsCommand");
+    var de_ListTypeRegistrationsCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListTypeRegistrationsOutput(data.ListTypeRegistrationsResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListTypeRegistrationsCommand");
+    var de_ListTypesCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListTypesOutput(data.ListTypesResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListTypesCommand");
+    var de_ListTypeVersionsCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ListTypeVersionsOutput(data.ListTypeVersionsResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ListTypeVersionsCommand");
+    var de_PublishTypeCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_PublishTypeOutput(data.PublishTypeResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_PublishTypeCommand");
+    var de_RecordHandlerProgressCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_RecordHandlerProgressOutput(data.RecordHandlerProgressResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_RecordHandlerProgressCommand");
+    var de_RegisterPublisherCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_RegisterPublisherOutput(data.RegisterPublisherResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_RegisterPublisherCommand");
+    var de_RegisterTypeCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_RegisterTypeOutput(data.RegisterTypeResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_RegisterTypeCommand");
+    var de_RollbackStackCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_RollbackStackOutput(data.RollbackStackResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_RollbackStackCommand");
+    var de_SetStackPolicyCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      await (0, import_smithy_client.collectBody)(output.body, context);
+      const response = {
+        $metadata: deserializeMetadata(output)
+      };
+      return response;
+    }, "de_SetStackPolicyCommand");
+    var de_SetTypeConfigurationCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_SetTypeConfigurationOutput(data.SetTypeConfigurationResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_SetTypeConfigurationCommand");
+    var de_SetTypeDefaultVersionCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_SetTypeDefaultVersionOutput(data.SetTypeDefaultVersionResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_SetTypeDefaultVersionCommand");
+    var de_SignalResourceCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      await (0, import_smithy_client.collectBody)(output.body, context);
+      const response = {
+        $metadata: deserializeMetadata(output)
+      };
+      return response;
+    }, "de_SignalResourceCommand");
+    var de_StartResourceScanCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_StartResourceScanOutput(data.StartResourceScanResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_StartResourceScanCommand");
+    var de_StopStackSetOperationCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_StopStackSetOperationOutput(data.StopStackSetOperationResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_StopStackSetOperationCommand");
+    var de_TestTypeCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_TestTypeOutput(data.TestTypeResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_TestTypeCommand");
+    var de_UpdateGeneratedTemplateCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_UpdateGeneratedTemplateOutput(data.UpdateGeneratedTemplateResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_UpdateGeneratedTemplateCommand");
+    var de_UpdateStackCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_UpdateStackOutput(data.UpdateStackResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_UpdateStackCommand");
+    var de_UpdateStackInstancesCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_UpdateStackInstancesOutput(data.UpdateStackInstancesResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_UpdateStackInstancesCommand");
+    var de_UpdateStackSetCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_UpdateStackSetOutput(data.UpdateStackSetResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_UpdateStackSetCommand");
+    var de_UpdateTerminationProtectionCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_UpdateTerminationProtectionOutput(data.UpdateTerminationProtectionResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_UpdateTerminationProtectionCommand");
+    var de_ValidateTemplateCommand = /* @__PURE__ */ __name(async (output, context) => {
+      if (output.statusCode >= 300) {
+        return de_CommandError(output, context);
+      }
+      const data = await (0, import_core2.parseXmlBody)(output.body, context);
+      let contents = {};
+      contents = de_ValidateTemplateOutput(data.ValidateTemplateResult, context);
+      const response = {
+        $metadata: deserializeMetadata(output),
+        ...contents
+      };
+      return response;
+    }, "de_ValidateTemplateCommand");
+    var de_CommandError = /* @__PURE__ */ __name(async (output, context) => {
+      const parsedOutput = {
+        ...output,
+        body: await (0, import_core2.parseXmlErrorBody)(output.body, context)
+      };
+      const errorCode = loadQueryErrorCode(output, parsedOutput.body);
+      switch (errorCode) {
+        case "InvalidOperationException":
+        case "com.amazonaws.cloudformation#InvalidOperationException":
+          throw await de_InvalidOperationExceptionRes(parsedOutput, context);
+        case "OperationNotFoundException":
+        case "com.amazonaws.cloudformation#OperationNotFoundException":
+          throw await de_OperationNotFoundExceptionRes(parsedOutput, context);
+        case "CFNRegistryException":
+        case "com.amazonaws.cloudformation#CFNRegistryException":
+          throw await de_CFNRegistryExceptionRes(parsedOutput, context);
+        case "TypeNotFoundException":
+        case "com.amazonaws.cloudformation#TypeNotFoundException":
+          throw await de_TypeNotFoundExceptionRes(parsedOutput, context);
+        case "TypeConfigurationNotFoundException":
+        case "com.amazonaws.cloudformation#TypeConfigurationNotFoundException":
+          throw await de_TypeConfigurationNotFoundExceptionRes(parsedOutput, context);
+        case "TokenAlreadyExistsException":
+        case "com.amazonaws.cloudformation#TokenAlreadyExistsException":
+          throw await de_TokenAlreadyExistsExceptionRes(parsedOutput, context);
+        case "AlreadyExistsException":
+        case "com.amazonaws.cloudformation#AlreadyExistsException":
+          throw await de_AlreadyExistsExceptionRes(parsedOutput, context);
+        case "InsufficientCapabilitiesException":
+        case "com.amazonaws.cloudformation#InsufficientCapabilitiesException":
+          throw await de_InsufficientCapabilitiesExceptionRes(parsedOutput, context);
+        case "LimitExceededException":
+        case "com.amazonaws.cloudformation#LimitExceededException":
+          throw await de_LimitExceededExceptionRes(parsedOutput, context);
+        case "ConcurrentResourcesLimitExceeded":
+        case "com.amazonaws.cloudformation#ConcurrentResourcesLimitExceededException":
+          throw await de_ConcurrentResourcesLimitExceededExceptionRes(parsedOutput, context);
+        case "OperationIdAlreadyExistsException":
+        case "com.amazonaws.cloudformation#OperationIdAlreadyExistsException":
+          throw await de_OperationIdAlreadyExistsExceptionRes(parsedOutput, context);
+        case "OperationInProgressException":
+        case "com.amazonaws.cloudformation#OperationInProgressException":
+          throw await de_OperationInProgressExceptionRes(parsedOutput, context);
+        case "StackSetNotFoundException":
+        case "com.amazonaws.cloudformation#StackSetNotFoundException":
+          throw await de_StackSetNotFoundExceptionRes(parsedOutput, context);
+        case "StaleRequestException":
+        case "com.amazonaws.cloudformation#StaleRequestException":
+          throw await de_StaleRequestExceptionRes(parsedOutput, context);
+        case "CreatedButModifiedException":
+        case "com.amazonaws.cloudformation#CreatedButModifiedException":
+          throw await de_CreatedButModifiedExceptionRes(parsedOutput, context);
+        case "NameAlreadyExistsException":
+        case "com.amazonaws.cloudformation#NameAlreadyExistsException":
+          throw await de_NameAlreadyExistsExceptionRes(parsedOutput, context);
+        case "InvalidChangeSetStatus":
+        case "com.amazonaws.cloudformation#InvalidChangeSetStatusException":
+          throw await de_InvalidChangeSetStatusExceptionRes(parsedOutput, context);
+        case "GeneratedTemplateNotFound":
+        case "com.amazonaws.cloudformation#GeneratedTemplateNotFoundException":
+          throw await de_GeneratedTemplateNotFoundExceptionRes(parsedOutput, context);
+        case "StackSetNotEmptyException":
+        case "com.amazonaws.cloudformation#StackSetNotEmptyException":
+          throw await de_StackSetNotEmptyExceptionRes(parsedOutput, context);
+        case "ChangeSetNotFound":
+        case "com.amazonaws.cloudformation#ChangeSetNotFoundException":
+          throw await de_ChangeSetNotFoundExceptionRes(parsedOutput, context);
+        case "ResourceScanNotFound":
+        case "com.amazonaws.cloudformation#ResourceScanNotFoundException":
+          throw await de_ResourceScanNotFoundExceptionRes(parsedOutput, context);
+        case "StackInstanceNotFoundException":
+        case "com.amazonaws.cloudformation#StackInstanceNotFoundException":
+          throw await de_StackInstanceNotFoundExceptionRes(parsedOutput, context);
+        case "StackNotFoundException":
+        case "com.amazonaws.cloudformation#StackNotFoundException":
+          throw await de_StackNotFoundExceptionRes(parsedOutput, context);
+        case "ResourceScanInProgress":
+        case "com.amazonaws.cloudformation#ResourceScanInProgressException":
+          throw await de_ResourceScanInProgressExceptionRes(parsedOutput, context);
+        case "ConditionalCheckFailed":
+        case "com.amazonaws.cloudformation#OperationStatusCheckFailedException":
+          throw await de_OperationStatusCheckFailedExceptionRes(parsedOutput, context);
+        case "InvalidStateTransition":
+        case "com.amazonaws.cloudformation#InvalidStateTransitionException":
+          throw await de_InvalidStateTransitionExceptionRes(parsedOutput, context);
+        case "ResourceScanLimitExceeded":
+        case "com.amazonaws.cloudformation#ResourceScanLimitExceededException":
+          throw await de_ResourceScanLimitExceededExceptionRes(parsedOutput, context);
+        default:
+          const parsedBody = parsedOutput.body;
+          return throwDefaultError({
+            output,
+            parsedBody: parsedBody.Error,
+            errorCode
+          });
+      }
+    }, "de_CommandError");
+    var de_AlreadyExistsExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_AlreadyExistsException(body.Error, context);
+      const exception = new AlreadyExistsException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_AlreadyExistsExceptionRes");
+    var de_CFNRegistryExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_CFNRegistryException(body.Error, context);
+      const exception = new CFNRegistryException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_CFNRegistryExceptionRes");
+    var de_ChangeSetNotFoundExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_ChangeSetNotFoundException(body.Error, context);
+      const exception = new ChangeSetNotFoundException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_ChangeSetNotFoundExceptionRes");
+    var de_ConcurrentResourcesLimitExceededExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_ConcurrentResourcesLimitExceededException(body.Error, context);
+      const exception = new ConcurrentResourcesLimitExceededException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_ConcurrentResourcesLimitExceededExceptionRes");
+    var de_CreatedButModifiedExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_CreatedButModifiedException(body.Error, context);
+      const exception = new CreatedButModifiedException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_CreatedButModifiedExceptionRes");
+    var de_GeneratedTemplateNotFoundExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_GeneratedTemplateNotFoundException(body.Error, context);
+      const exception = new GeneratedTemplateNotFoundException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_GeneratedTemplateNotFoundExceptionRes");
+    var de_InsufficientCapabilitiesExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_InsufficientCapabilitiesException(body.Error, context);
+      const exception = new InsufficientCapabilitiesException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_InsufficientCapabilitiesExceptionRes");
+    var de_InvalidChangeSetStatusExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_InvalidChangeSetStatusException(body.Error, context);
+      const exception = new InvalidChangeSetStatusException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_InvalidChangeSetStatusExceptionRes");
+    var de_InvalidOperationExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_InvalidOperationException(body.Error, context);
+      const exception = new InvalidOperationException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_InvalidOperationExceptionRes");
+    var de_InvalidStateTransitionExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_InvalidStateTransitionException(body.Error, context);
+      const exception = new InvalidStateTransitionException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_InvalidStateTransitionExceptionRes");
+    var de_LimitExceededExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_LimitExceededException(body.Error, context);
+      const exception = new LimitExceededException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_LimitExceededExceptionRes");
+    var de_NameAlreadyExistsExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_NameAlreadyExistsException(body.Error, context);
+      const exception = new NameAlreadyExistsException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_NameAlreadyExistsExceptionRes");
+    var de_OperationIdAlreadyExistsExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_OperationIdAlreadyExistsException(body.Error, context);
+      const exception = new OperationIdAlreadyExistsException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_OperationIdAlreadyExistsExceptionRes");
+    var de_OperationInProgressExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_OperationInProgressException(body.Error, context);
+      const exception = new OperationInProgressException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_OperationInProgressExceptionRes");
+    var de_OperationNotFoundExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_OperationNotFoundException(body.Error, context);
+      const exception = new OperationNotFoundException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_OperationNotFoundExceptionRes");
+    var de_OperationStatusCheckFailedExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_OperationStatusCheckFailedException(body.Error, context);
+      const exception = new OperationStatusCheckFailedException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_OperationStatusCheckFailedExceptionRes");
+    var de_ResourceScanInProgressExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_ResourceScanInProgressException(body.Error, context);
+      const exception = new ResourceScanInProgressException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_ResourceScanInProgressExceptionRes");
+    var de_ResourceScanLimitExceededExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_ResourceScanLimitExceededException(body.Error, context);
+      const exception = new ResourceScanLimitExceededException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_ResourceScanLimitExceededExceptionRes");
+    var de_ResourceScanNotFoundExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_ResourceScanNotFoundException(body.Error, context);
+      const exception = new ResourceScanNotFoundException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_ResourceScanNotFoundExceptionRes");
+    var de_StackInstanceNotFoundExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_StackInstanceNotFoundException(body.Error, context);
+      const exception = new StackInstanceNotFoundException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_StackInstanceNotFoundExceptionRes");
+    var de_StackNotFoundExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_StackNotFoundException(body.Error, context);
+      const exception = new StackNotFoundException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_StackNotFoundExceptionRes");
+    var de_StackSetNotEmptyExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_StackSetNotEmptyException(body.Error, context);
+      const exception = new StackSetNotEmptyException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_StackSetNotEmptyExceptionRes");
+    var de_StackSetNotFoundExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_StackSetNotFoundException(body.Error, context);
+      const exception = new StackSetNotFoundException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_StackSetNotFoundExceptionRes");
+    var de_StaleRequestExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_StaleRequestException(body.Error, context);
+      const exception = new StaleRequestException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_StaleRequestExceptionRes");
+    var de_TokenAlreadyExistsExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_TokenAlreadyExistsException(body.Error, context);
+      const exception = new TokenAlreadyExistsException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_TokenAlreadyExistsExceptionRes");
+    var de_TypeConfigurationNotFoundExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_TypeConfigurationNotFoundException(body.Error, context);
+      const exception = new TypeConfigurationNotFoundException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_TypeConfigurationNotFoundExceptionRes");
+    var de_TypeNotFoundExceptionRes = /* @__PURE__ */ __name(async (parsedOutput, context) => {
+      const body = parsedOutput.body;
+      const deserialized = de_TypeNotFoundException(body.Error, context);
+      const exception = new TypeNotFoundException({
+        $metadata: deserializeMetadata(parsedOutput),
+        ...deserialized
+      });
+      return (0, import_smithy_client.decorateServiceException)(exception, body);
+    }, "de_TypeNotFoundExceptionRes");
+    var se_AccountList = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        entries[`member.${counter}`] = entry;
+        counter++;
+      }
+      return entries;
+    }, "se_AccountList");
+    var se_ActivateOrganizationsAccessInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      return entries;
+    }, "se_ActivateOrganizationsAccessInput");
+    var se_ActivateTypeInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_T] != null) {
+        entries[_T] = input[_T];
+      }
+      if (input[_PTA] != null) {
+        entries[_PTA] = input[_PTA];
+      }
+      if (input[_PI] != null) {
+        entries[_PI] = input[_PI];
+      }
+      if (input[_TN] != null) {
+        entries[_TN] = input[_TN];
+      }
+      if (input[_TNA] != null) {
+        entries[_TNA] = input[_TNA];
+      }
+      if (input[_AU] != null) {
+        entries[_AU] = input[_AU];
+      }
+      if (input[_LC] != null) {
+        const memberEntries = se_LoggingConfig(input[_LC], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `LoggingConfig.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_ERA] != null) {
+        entries[_ERA] = input[_ERA];
+      }
+      if (input[_VB] != null) {
+        entries[_VB] = input[_VB];
+      }
+      if (input[_MV] != null) {
+        entries[_MV] = input[_MV];
+      }
+      return entries;
+    }, "se_ActivateTypeInput");
+    var se_AutoDeployment = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_E] != null) {
+        entries[_E] = input[_E];
+      }
+      if (input[_RSOAR] != null) {
+        entries[_RSOAR] = input[_RSOAR];
+      }
+      return entries;
+    }, "se_AutoDeployment");
+    var se_BatchDescribeTypeConfigurationsInput = /* @__PURE__ */ __name((input, context) => {
+      var _a;
+      const entries = {};
+      if (input[_TCI] != null) {
+        const memberEntries = se_TypeConfigurationIdentifiers(input[_TCI], context);
+        if (((_a = input[_TCI]) == null ? void 0 : _a.length) === 0) {
+          entries.TypeConfigurationIdentifiers = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `TypeConfigurationIdentifiers.${key}`;
+          entries[loc] = value;
+        });
+      }
+      return entries;
+    }, "se_BatchDescribeTypeConfigurationsInput");
+    var se_CancelUpdateStackInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_CRT] != null) {
+        entries[_CRT] = input[_CRT];
+      }
+      return entries;
+    }, "se_CancelUpdateStackInput");
+    var se_Capabilities = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        entries[`member.${counter}`] = entry;
+        counter++;
+      }
+      return entries;
+    }, "se_Capabilities");
+    var se_ContinueUpdateRollbackInput = /* @__PURE__ */ __name((input, context) => {
+      var _a;
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_RARN] != null) {
+        entries[_RARN] = input[_RARN];
+      }
+      if (input[_RTS] != null) {
+        const memberEntries = se_ResourcesToSkip(input[_RTS], context);
+        if (((_a = input[_RTS]) == null ? void 0 : _a.length) === 0) {
+          entries.ResourcesToSkip = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `ResourcesToSkip.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_CRT] != null) {
+        entries[_CRT] = input[_CRT];
+      }
+      return entries;
+    }, "se_ContinueUpdateRollbackInput");
+    var se_CreateChangeSetInput = /* @__PURE__ */ __name((input, context) => {
+      var _a, _b, _c, _d, _e2, _f;
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_TB] != null) {
+        entries[_TB] = input[_TB];
+      }
+      if (input[_TURL] != null) {
+        entries[_TURL] = input[_TURL];
+      }
+      if (input[_UPT] != null) {
+        entries[_UPT] = input[_UPT];
+      }
+      if (input[_P] != null) {
+        const memberEntries = se_Parameters(input[_P], context);
+        if (((_a = input[_P]) == null ? void 0 : _a.length) === 0) {
+          entries.Parameters = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Parameters.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_C] != null) {
+        const memberEntries = se_Capabilities(input[_C], context);
+        if (((_b = input[_C]) == null ? void 0 : _b.length) === 0) {
+          entries.Capabilities = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Capabilities.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_RTe] != null) {
+        const memberEntries = se_ResourceTypes(input[_RTe], context);
+        if (((_c = input[_RTe]) == null ? void 0 : _c.length) === 0) {
+          entries.ResourceTypes = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `ResourceTypes.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_RARN] != null) {
+        entries[_RARN] = input[_RARN];
+      }
+      if (input[_RC] != null) {
+        const memberEntries = se_RollbackConfiguration(input[_RC], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `RollbackConfiguration.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_NARN] != null) {
+        const memberEntries = se_NotificationARNs(input[_NARN], context);
+        if (((_d = input[_NARN]) == null ? void 0 : _d.length) === 0) {
+          entries.NotificationARNs = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `NotificationARNs.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_Ta] != null) {
+        const memberEntries = se_Tags(input[_Ta], context);
+        if (((_e2 = input[_Ta]) == null ? void 0 : _e2.length) === 0) {
+          entries.Tags = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Tags.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_CSN] != null) {
+        entries[_CSN] = input[_CSN];
+      }
+      if (input[_CT] != null) {
+        entries[_CT] = input[_CT];
+      }
+      if (input[_D] != null) {
+        entries[_D] = input[_D];
+      }
+      if (input[_CST] != null) {
+        entries[_CST] = input[_CST];
+      }
+      if (input[_RTI] != null) {
+        const memberEntries = se_ResourcesToImport(input[_RTI], context);
+        if (((_f = input[_RTI]) == null ? void 0 : _f.length) === 0) {
+          entries.ResourcesToImport = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `ResourcesToImport.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_INS] != null) {
+        entries[_INS] = input[_INS];
+      }
+      if (input[_OSF] != null) {
+        entries[_OSF] = input[_OSF];
+      }
+      if (input[_IER] != null) {
+        entries[_IER] = input[_IER];
+      }
+      return entries;
+    }, "se_CreateChangeSetInput");
+    var se_CreateGeneratedTemplateInput = /* @__PURE__ */ __name((input, context) => {
+      var _a;
+      const entries = {};
+      if (input[_R] != null) {
+        const memberEntries = se_ResourceDefinitions(input[_R], context);
+        if (((_a = input[_R]) == null ? void 0 : _a.length) === 0) {
+          entries.Resources = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Resources.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_GTN] != null) {
+        entries[_GTN] = input[_GTN];
+      }
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_TC] != null) {
+        const memberEntries = se_TemplateConfiguration(input[_TC], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `TemplateConfiguration.${key}`;
+          entries[loc] = value;
+        });
+      }
+      return entries;
+    }, "se_CreateGeneratedTemplateInput");
+    var se_CreateStackInput = /* @__PURE__ */ __name((input, context) => {
+      var _a, _b, _c, _d, _e2;
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_TB] != null) {
+        entries[_TB] = input[_TB];
+      }
+      if (input[_TURL] != null) {
+        entries[_TURL] = input[_TURL];
+      }
+      if (input[_P] != null) {
+        const memberEntries = se_Parameters(input[_P], context);
+        if (((_a = input[_P]) == null ? void 0 : _a.length) === 0) {
+          entries.Parameters = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Parameters.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_DR] != null) {
+        entries[_DR] = input[_DR];
+      }
+      if (input[_RC] != null) {
+        const memberEntries = se_RollbackConfiguration(input[_RC], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `RollbackConfiguration.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_TIM] != null) {
+        entries[_TIM] = input[_TIM];
+      }
+      if (input[_NARN] != null) {
+        const memberEntries = se_NotificationARNs(input[_NARN], context);
+        if (((_b = input[_NARN]) == null ? void 0 : _b.length) === 0) {
+          entries.NotificationARNs = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `NotificationARNs.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_C] != null) {
+        const memberEntries = se_Capabilities(input[_C], context);
+        if (((_c = input[_C]) == null ? void 0 : _c.length) === 0) {
+          entries.Capabilities = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Capabilities.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_RTe] != null) {
+        const memberEntries = se_ResourceTypes(input[_RTe], context);
+        if (((_d = input[_RTe]) == null ? void 0 : _d.length) === 0) {
+          entries.ResourceTypes = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `ResourceTypes.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_RARN] != null) {
+        entries[_RARN] = input[_RARN];
+      }
+      if (input[_OF] != null) {
+        entries[_OF] = input[_OF];
+      }
+      if (input[_SPB] != null) {
+        entries[_SPB] = input[_SPB];
+      }
+      if (input[_SPURL] != null) {
+        entries[_SPURL] = input[_SPURL];
+      }
+      if (input[_Ta] != null) {
+        const memberEntries = se_Tags(input[_Ta], context);
+        if (((_e2 = input[_Ta]) == null ? void 0 : _e2.length) === 0) {
+          entries.Tags = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Tags.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_CRT] != null) {
+        entries[_CRT] = input[_CRT];
+      }
+      if (input[_ETP] != null) {
+        entries[_ETP] = input[_ETP];
+      }
+      if (input[_REOC] != null) {
+        entries[_REOC] = input[_REOC];
+      }
+      return entries;
+    }, "se_CreateStackInput");
+    var se_CreateStackInstancesInput = /* @__PURE__ */ __name((input, context) => {
+      var _a, _b, _c;
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_Ac] != null) {
+        const memberEntries = se_AccountList(input[_Ac], context);
+        if (((_a = input[_Ac]) == null ? void 0 : _a.length) === 0) {
+          entries.Accounts = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Accounts.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_DTep] != null) {
+        const memberEntries = se_DeploymentTargets(input[_DTep], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `DeploymentTargets.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_Re] != null) {
+        const memberEntries = se_RegionList(input[_Re], context);
+        if (((_b = input[_Re]) == null ? void 0 : _b.length) === 0) {
+          entries.Regions = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Regions.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_PO] != null) {
+        const memberEntries = se_Parameters(input[_PO], context);
+        if (((_c = input[_PO]) == null ? void 0 : _c.length) === 0) {
+          entries.ParameterOverrides = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `ParameterOverrides.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_OP] != null) {
+        const memberEntries = se_StackSetOperationPreferences(input[_OP], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `OperationPreferences.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_OI] === void 0) {
+        input[_OI] = (0, import_uuid.v4)();
+      }
+      if (input[_OI] != null) {
+        entries[_OI] = input[_OI];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_CreateStackInstancesInput");
+    var se_CreateStackSetInput = /* @__PURE__ */ __name((input, context) => {
+      var _a, _b, _c;
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_D] != null) {
+        entries[_D] = input[_D];
+      }
+      if (input[_TB] != null) {
+        entries[_TB] = input[_TB];
+      }
+      if (input[_TURL] != null) {
+        entries[_TURL] = input[_TURL];
+      }
+      if (input[_SI] != null) {
+        entries[_SI] = input[_SI];
+      }
+      if (input[_P] != null) {
+        const memberEntries = se_Parameters(input[_P], context);
+        if (((_a = input[_P]) == null ? void 0 : _a.length) === 0) {
+          entries.Parameters = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Parameters.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_C] != null) {
+        const memberEntries = se_Capabilities(input[_C], context);
+        if (((_b = input[_C]) == null ? void 0 : _b.length) === 0) {
+          entries.Capabilities = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Capabilities.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_Ta] != null) {
+        const memberEntries = se_Tags(input[_Ta], context);
+        if (((_c = input[_Ta]) == null ? void 0 : _c.length) === 0) {
+          entries.Tags = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Tags.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_ARARN] != null) {
+        entries[_ARARN] = input[_ARARN];
+      }
+      if (input[_ERN] != null) {
+        entries[_ERN] = input[_ERN];
+      }
+      if (input[_PM] != null) {
+        entries[_PM] = input[_PM];
+      }
+      if (input[_AD] != null) {
+        const memberEntries = se_AutoDeployment(input[_AD], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `AutoDeployment.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      if (input[_CRT] === void 0) {
+        input[_CRT] = (0, import_uuid.v4)();
+      }
+      if (input[_CRT] != null) {
+        entries[_CRT] = input[_CRT];
+      }
+      if (input[_ME] != null) {
+        const memberEntries = se_ManagedExecution(input[_ME], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `ManagedExecution.${key}`;
+          entries[loc] = value;
+        });
+      }
+      return entries;
+    }, "se_CreateStackSetInput");
+    var se_DeactivateOrganizationsAccessInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      return entries;
+    }, "se_DeactivateOrganizationsAccessInput");
+    var se_DeactivateTypeInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_TN] != null) {
+        entries[_TN] = input[_TN];
+      }
+      if (input[_T] != null) {
+        entries[_T] = input[_T];
+      }
+      if (input[_Ar] != null) {
+        entries[_Ar] = input[_Ar];
+      }
+      return entries;
+    }, "se_DeactivateTypeInput");
+    var se_DeleteChangeSetInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_CSN] != null) {
+        entries[_CSN] = input[_CSN];
+      }
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      return entries;
+    }, "se_DeleteChangeSetInput");
+    var se_DeleteGeneratedTemplateInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_GTN] != null) {
+        entries[_GTN] = input[_GTN];
+      }
+      return entries;
+    }, "se_DeleteGeneratedTemplateInput");
+    var se_DeleteStackInput = /* @__PURE__ */ __name((input, context) => {
+      var _a;
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_RR] != null) {
+        const memberEntries = se_RetainResources(input[_RR], context);
+        if (((_a = input[_RR]) == null ? void 0 : _a.length) === 0) {
+          entries.RetainResources = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `RetainResources.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_RARN] != null) {
+        entries[_RARN] = input[_RARN];
+      }
+      if (input[_CRT] != null) {
+        entries[_CRT] = input[_CRT];
+      }
+      return entries;
+    }, "se_DeleteStackInput");
+    var se_DeleteStackInstancesInput = /* @__PURE__ */ __name((input, context) => {
+      var _a, _b;
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_Ac] != null) {
+        const memberEntries = se_AccountList(input[_Ac], context);
+        if (((_a = input[_Ac]) == null ? void 0 : _a.length) === 0) {
+          entries.Accounts = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Accounts.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_DTep] != null) {
+        const memberEntries = se_DeploymentTargets(input[_DTep], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `DeploymentTargets.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_Re] != null) {
+        const memberEntries = se_RegionList(input[_Re], context);
+        if (((_b = input[_Re]) == null ? void 0 : _b.length) === 0) {
+          entries.Regions = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Regions.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_OP] != null) {
+        const memberEntries = se_StackSetOperationPreferences(input[_OP], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `OperationPreferences.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_RSe] != null) {
+        entries[_RSe] = input[_RSe];
+      }
+      if (input[_OI] === void 0) {
+        input[_OI] = (0, import_uuid.v4)();
+      }
+      if (input[_OI] != null) {
+        entries[_OI] = input[_OI];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_DeleteStackInstancesInput");
+    var se_DeleteStackSetInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_DeleteStackSetInput");
+    var se_DeploymentTargets = /* @__PURE__ */ __name((input, context) => {
+      var _a, _b;
+      const entries = {};
+      if (input[_Ac] != null) {
+        const memberEntries = se_AccountList(input[_Ac], context);
+        if (((_a = input[_Ac]) == null ? void 0 : _a.length) === 0) {
+          entries.Accounts = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Accounts.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_AUc] != null) {
+        entries[_AUc] = input[_AUc];
+      }
+      if (input[_OUI] != null) {
+        const memberEntries = se_OrganizationalUnitIdList(input[_OUI], context);
+        if (((_b = input[_OUI]) == null ? void 0 : _b.length) === 0) {
+          entries.OrganizationalUnitIds = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `OrganizationalUnitIds.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_AFT] != null) {
+        entries[_AFT] = input[_AFT];
+      }
+      return entries;
+    }, "se_DeploymentTargets");
+    var se_DeregisterTypeInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_Ar] != null) {
+        entries[_Ar] = input[_Ar];
+      }
+      if (input[_T] != null) {
+        entries[_T] = input[_T];
+      }
+      if (input[_TN] != null) {
+        entries[_TN] = input[_TN];
+      }
+      if (input[_VI] != null) {
+        entries[_VI] = input[_VI];
+      }
+      return entries;
+    }, "se_DeregisterTypeInput");
+    var se_DescribeAccountLimitsInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      return entries;
+    }, "se_DescribeAccountLimitsInput");
+    var se_DescribeChangeSetHooksInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_CSN] != null) {
+        entries[_CSN] = input[_CSN];
+      }
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      if (input[_LRI] != null) {
+        entries[_LRI] = input[_LRI];
+      }
+      return entries;
+    }, "se_DescribeChangeSetHooksInput");
+    var se_DescribeChangeSetInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_CSN] != null) {
+        entries[_CSN] = input[_CSN];
+      }
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      return entries;
+    }, "se_DescribeChangeSetInput");
+    var se_DescribeGeneratedTemplateInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_GTN] != null) {
+        entries[_GTN] = input[_GTN];
+      }
+      return entries;
+    }, "se_DescribeGeneratedTemplateInput");
+    var se_DescribeOrganizationsAccessInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_DescribeOrganizationsAccessInput");
+    var se_DescribePublisherInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_PI] != null) {
+        entries[_PI] = input[_PI];
+      }
+      return entries;
+    }, "se_DescribePublisherInput");
+    var se_DescribeResourceScanInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_RSI] != null) {
+        entries[_RSI] = input[_RSI];
+      }
+      return entries;
+    }, "se_DescribeResourceScanInput");
+    var se_DescribeStackDriftDetectionStatusInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SDDI] != null) {
+        entries[_SDDI] = input[_SDDI];
+      }
+      return entries;
+    }, "se_DescribeStackDriftDetectionStatusInput");
+    var se_DescribeStackEventsInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      return entries;
+    }, "se_DescribeStackEventsInput");
+    var se_DescribeStackInstanceInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_SIA] != null) {
+        entries[_SIA] = input[_SIA];
+      }
+      if (input[_SIR] != null) {
+        entries[_SIR] = input[_SIR];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_DescribeStackInstanceInput");
+    var se_DescribeStackResourceDriftsInput = /* @__PURE__ */ __name((input, context) => {
+      var _a;
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_SRDSF] != null) {
+        const memberEntries = se_StackResourceDriftStatusFilters(input[_SRDSF], context);
+        if (((_a = input[_SRDSF]) == null ? void 0 : _a.length) === 0) {
+          entries.StackResourceDriftStatusFilters = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `StackResourceDriftStatusFilters.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      if (input[_MR] != null) {
+        entries[_MR] = input[_MR];
+      }
+      return entries;
+    }, "se_DescribeStackResourceDriftsInput");
+    var se_DescribeStackResourceInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_LRI] != null) {
+        entries[_LRI] = input[_LRI];
+      }
+      return entries;
+    }, "se_DescribeStackResourceInput");
+    var se_DescribeStackResourcesInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_LRI] != null) {
+        entries[_LRI] = input[_LRI];
+      }
+      if (input[_PRI] != null) {
+        entries[_PRI] = input[_PRI];
+      }
+      return entries;
+    }, "se_DescribeStackResourcesInput");
+    var se_DescribeStackSetInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_DescribeStackSetInput");
+    var se_DescribeStackSetOperationInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_OI] != null) {
+        entries[_OI] = input[_OI];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_DescribeStackSetOperationInput");
+    var se_DescribeStacksInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      return entries;
+    }, "se_DescribeStacksInput");
+    var se_DescribeTypeInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_T] != null) {
+        entries[_T] = input[_T];
+      }
+      if (input[_TN] != null) {
+        entries[_TN] = input[_TN];
+      }
+      if (input[_Ar] != null) {
+        entries[_Ar] = input[_Ar];
+      }
+      if (input[_VI] != null) {
+        entries[_VI] = input[_VI];
+      }
+      if (input[_PI] != null) {
+        entries[_PI] = input[_PI];
+      }
+      if (input[_PVN] != null) {
+        entries[_PVN] = input[_PVN];
+      }
+      return entries;
+    }, "se_DescribeTypeInput");
+    var se_DescribeTypeRegistrationInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_RTeg] != null) {
+        entries[_RTeg] = input[_RTeg];
+      }
+      return entries;
+    }, "se_DescribeTypeRegistrationInput");
+    var se_DetectStackDriftInput = /* @__PURE__ */ __name((input, context) => {
+      var _a;
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_LRIo] != null) {
+        const memberEntries = se_LogicalResourceIds(input[_LRIo], context);
+        if (((_a = input[_LRIo]) == null ? void 0 : _a.length) === 0) {
+          entries.LogicalResourceIds = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `LogicalResourceIds.${key}`;
+          entries[loc] = value;
+        });
+      }
+      return entries;
+    }, "se_DetectStackDriftInput");
+    var se_DetectStackResourceDriftInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_LRI] != null) {
+        entries[_LRI] = input[_LRI];
+      }
+      return entries;
+    }, "se_DetectStackResourceDriftInput");
+    var se_DetectStackSetDriftInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_OP] != null) {
+        const memberEntries = se_StackSetOperationPreferences(input[_OP], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `OperationPreferences.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_OI] === void 0) {
+        input[_OI] = (0, import_uuid.v4)();
+      }
+      if (input[_OI] != null) {
+        entries[_OI] = input[_OI];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_DetectStackSetDriftInput");
+    var se_EstimateTemplateCostInput = /* @__PURE__ */ __name((input, context) => {
+      var _a;
+      const entries = {};
+      if (input[_TB] != null) {
+        entries[_TB] = input[_TB];
+      }
+      if (input[_TURL] != null) {
+        entries[_TURL] = input[_TURL];
+      }
+      if (input[_P] != null) {
+        const memberEntries = se_Parameters(input[_P], context);
+        if (((_a = input[_P]) == null ? void 0 : _a.length) === 0) {
+          entries.Parameters = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Parameters.${key}`;
+          entries[loc] = value;
+        });
+      }
+      return entries;
+    }, "se_EstimateTemplateCostInput");
+    var se_ExecuteChangeSetInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_CSN] != null) {
+        entries[_CSN] = input[_CSN];
+      }
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_CRT] != null) {
+        entries[_CRT] = input[_CRT];
+      }
+      if (input[_DR] != null) {
+        entries[_DR] = input[_DR];
+      }
+      if (input[_REOC] != null) {
+        entries[_REOC] = input[_REOC];
+      }
+      return entries;
+    }, "se_ExecuteChangeSetInput");
+    var se_GetGeneratedTemplateInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_F] != null) {
+        entries[_F] = input[_F];
+      }
+      if (input[_GTN] != null) {
+        entries[_GTN] = input[_GTN];
+      }
+      return entries;
+    }, "se_GetGeneratedTemplateInput");
+    var se_GetStackPolicyInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      return entries;
+    }, "se_GetStackPolicyInput");
+    var se_GetTemplateInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_CSN] != null) {
+        entries[_CSN] = input[_CSN];
+      }
+      if (input[_TS] != null) {
+        entries[_TS] = input[_TS];
+      }
+      return entries;
+    }, "se_GetTemplateInput");
+    var se_GetTemplateSummaryInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_TB] != null) {
+        entries[_TB] = input[_TB];
+      }
+      if (input[_TURL] != null) {
+        entries[_TURL] = input[_TURL];
+      }
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      if (input[_TSC] != null) {
+        const memberEntries = se_TemplateSummaryConfig(input[_TSC], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `TemplateSummaryConfig.${key}`;
+          entries[loc] = value;
+        });
+      }
+      return entries;
+    }, "se_GetTemplateSummaryInput");
+    var se_ImportStacksToStackSetInput = /* @__PURE__ */ __name((input, context) => {
+      var _a, _b;
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_SIt] != null) {
+        const memberEntries = se_StackIdList(input[_SIt], context);
+        if (((_a = input[_SIt]) == null ? void 0 : _a.length) === 0) {
+          entries.StackIds = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `StackIds.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_SIU] != null) {
+        entries[_SIU] = input[_SIU];
+      }
+      if (input[_OUI] != null) {
+        const memberEntries = se_OrganizationalUnitIdList(input[_OUI], context);
+        if (((_b = input[_OUI]) == null ? void 0 : _b.length) === 0) {
+          entries.OrganizationalUnitIds = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `OrganizationalUnitIds.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_OP] != null) {
+        const memberEntries = se_StackSetOperationPreferences(input[_OP], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `OperationPreferences.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_OI] === void 0) {
+        input[_OI] = (0, import_uuid.v4)();
+      }
+      if (input[_OI] != null) {
+        entries[_OI] = input[_OI];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_ImportStacksToStackSetInput");
+    var se_JazzLogicalResourceIds = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        entries[`member.${counter}`] = entry;
+        counter++;
+      }
+      return entries;
+    }, "se_JazzLogicalResourceIds");
+    var se_JazzResourceIdentifierProperties = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      Object.keys(input).filter((key) => input[key] != null).forEach((key) => {
+        entries[`entry.${counter}.key`] = key;
+        entries[`entry.${counter}.value`] = input[key];
+        counter++;
+      });
+      return entries;
+    }, "se_JazzResourceIdentifierProperties");
+    var se_ListChangeSetsInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      return entries;
+    }, "se_ListChangeSetsInput");
+    var se_ListExportsInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      return entries;
+    }, "se_ListExportsInput");
+    var se_ListGeneratedTemplatesInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      if (input[_MR] != null) {
+        entries[_MR] = input[_MR];
+      }
+      return entries;
+    }, "se_ListGeneratedTemplatesInput");
+    var se_ListImportsInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_EN] != null) {
+        entries[_EN] = input[_EN];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      return entries;
+    }, "se_ListImportsInput");
+    var se_ListResourceScanRelatedResourcesInput = /* @__PURE__ */ __name((input, context) => {
+      var _a;
+      const entries = {};
+      if (input[_RSI] != null) {
+        entries[_RSI] = input[_RSI];
+      }
+      if (input[_R] != null) {
+        const memberEntries = se_ScannedResourceIdentifiers(input[_R], context);
+        if (((_a = input[_R]) == null ? void 0 : _a.length) === 0) {
+          entries.Resources = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Resources.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      if (input[_MR] != null) {
+        entries[_MR] = input[_MR];
+      }
+      return entries;
+    }, "se_ListResourceScanRelatedResourcesInput");
+    var se_ListResourceScanResourcesInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_RSI] != null) {
+        entries[_RSI] = input[_RSI];
+      }
+      if (input[_RI] != null) {
+        entries[_RI] = input[_RI];
+      }
+      if (input[_RTP] != null) {
+        entries[_RTP] = input[_RTP];
+      }
+      if (input[_TK] != null) {
+        entries[_TK] = input[_TK];
+      }
+      if (input[_TV] != null) {
+        entries[_TV] = input[_TV];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      if (input[_MR] != null) {
+        entries[_MR] = input[_MR];
+      }
+      return entries;
+    }, "se_ListResourceScanResourcesInput");
+    var se_ListResourceScansInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      if (input[_MR] != null) {
+        entries[_MR] = input[_MR];
+      }
+      return entries;
+    }, "se_ListResourceScansInput");
+    var se_ListStackInstanceResourceDriftsInput = /* @__PURE__ */ __name((input, context) => {
+      var _a;
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      if (input[_MR] != null) {
+        entries[_MR] = input[_MR];
+      }
+      if (input[_SIRDS] != null) {
+        const memberEntries = se_StackResourceDriftStatusFilters(input[_SIRDS], context);
+        if (((_a = input[_SIRDS]) == null ? void 0 : _a.length) === 0) {
+          entries.StackInstanceResourceDriftStatuses = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `StackInstanceResourceDriftStatuses.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_SIA] != null) {
+        entries[_SIA] = input[_SIA];
+      }
+      if (input[_SIR] != null) {
+        entries[_SIR] = input[_SIR];
+      }
+      if (input[_OI] != null) {
+        entries[_OI] = input[_OI];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_ListStackInstanceResourceDriftsInput");
+    var se_ListStackInstancesInput = /* @__PURE__ */ __name((input, context) => {
+      var _a;
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      if (input[_MR] != null) {
+        entries[_MR] = input[_MR];
+      }
+      if (input[_Fi] != null) {
+        const memberEntries = se_StackInstanceFilters(input[_Fi], context);
+        if (((_a = input[_Fi]) == null ? void 0 : _a.length) === 0) {
+          entries.Filters = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Filters.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_SIA] != null) {
+        entries[_SIA] = input[_SIA];
+      }
+      if (input[_SIR] != null) {
+        entries[_SIR] = input[_SIR];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_ListStackInstancesInput");
+    var se_ListStackResourcesInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      return entries;
+    }, "se_ListStackResourcesInput");
+    var se_ListStackSetAutoDeploymentTargetsInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      if (input[_MR] != null) {
+        entries[_MR] = input[_MR];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_ListStackSetAutoDeploymentTargetsInput");
+    var se_ListStackSetOperationResultsInput = /* @__PURE__ */ __name((input, context) => {
+      var _a;
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_OI] != null) {
+        entries[_OI] = input[_OI];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      if (input[_MR] != null) {
+        entries[_MR] = input[_MR];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      if (input[_Fi] != null) {
+        const memberEntries = se_OperationResultFilters(input[_Fi], context);
+        if (((_a = input[_Fi]) == null ? void 0 : _a.length) === 0) {
+          entries.Filters = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Filters.${key}`;
+          entries[loc] = value;
+        });
+      }
+      return entries;
+    }, "se_ListStackSetOperationResultsInput");
+    var se_ListStackSetOperationsInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      if (input[_MR] != null) {
+        entries[_MR] = input[_MR];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_ListStackSetOperationsInput");
+    var se_ListStackSetsInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      if (input[_MR] != null) {
+        entries[_MR] = input[_MR];
+      }
+      if (input[_S] != null) {
+        entries[_S] = input[_S];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_ListStackSetsInput");
+    var se_ListStacksInput = /* @__PURE__ */ __name((input, context) => {
+      var _a;
+      const entries = {};
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      if (input[_SSF] != null) {
+        const memberEntries = se_StackStatusFilter(input[_SSF], context);
+        if (((_a = input[_SSF]) == null ? void 0 : _a.length) === 0) {
+          entries.StackStatusFilter = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `StackStatusFilter.${key}`;
+          entries[loc] = value;
+        });
+      }
+      return entries;
+    }, "se_ListStacksInput");
+    var se_ListTypeRegistrationsInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_T] != null) {
+        entries[_T] = input[_T];
+      }
+      if (input[_TN] != null) {
+        entries[_TN] = input[_TN];
+      }
+      if (input[_TA] != null) {
+        entries[_TA] = input[_TA];
+      }
+      if (input[_RSF] != null) {
+        entries[_RSF] = input[_RSF];
+      }
+      if (input[_MR] != null) {
+        entries[_MR] = input[_MR];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      return entries;
+    }, "se_ListTypeRegistrationsInput");
+    var se_ListTypesInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_Vi] != null) {
+        entries[_Vi] = input[_Vi];
+      }
+      if (input[_PTr] != null) {
+        entries[_PTr] = input[_PTr];
+      }
+      if (input[_DSep] != null) {
+        entries[_DSep] = input[_DSep];
+      }
+      if (input[_T] != null) {
+        entries[_T] = input[_T];
+      }
+      if (input[_Fi] != null) {
+        const memberEntries = se_TypeFilters(input[_Fi], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Filters.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_MR] != null) {
+        entries[_MR] = input[_MR];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      return entries;
+    }, "se_ListTypesInput");
+    var se_ListTypeVersionsInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_T] != null) {
+        entries[_T] = input[_T];
+      }
+      if (input[_TN] != null) {
+        entries[_TN] = input[_TN];
+      }
+      if (input[_Ar] != null) {
+        entries[_Ar] = input[_Ar];
+      }
+      if (input[_MR] != null) {
+        entries[_MR] = input[_MR];
+      }
+      if (input[_NT] != null) {
+        entries[_NT] = input[_NT];
+      }
+      if (input[_DSep] != null) {
+        entries[_DSep] = input[_DSep];
+      }
+      if (input[_PI] != null) {
+        entries[_PI] = input[_PI];
+      }
+      return entries;
+    }, "se_ListTypeVersionsInput");
+    var se_LoggingConfig = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_LRA] != null) {
+        entries[_LRA] = input[_LRA];
+      }
+      if (input[_LGN] != null) {
+        entries[_LGN] = input[_LGN];
+      }
+      return entries;
+    }, "se_LoggingConfig");
+    var se_LogicalResourceIds = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        entries[`member.${counter}`] = entry;
+        counter++;
+      }
+      return entries;
+    }, "se_LogicalResourceIds");
+    var se_ManagedExecution = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_Act] != null) {
+        entries[_Act] = input[_Act];
+      }
+      return entries;
+    }, "se_ManagedExecution");
+    var se_NotificationARNs = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        entries[`member.${counter}`] = entry;
+        counter++;
+      }
+      return entries;
+    }, "se_NotificationARNs");
+    var se_OperationResultFilter = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_N] != null) {
+        entries[_N] = input[_N];
+      }
+      if (input[_Va] != null) {
+        entries[_Va] = input[_Va];
+      }
+      return entries;
+    }, "se_OperationResultFilter");
+    var se_OperationResultFilters = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        const memberEntries = se_OperationResultFilter(entry, context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          entries[`member.${counter}.${key}`] = value;
+        });
+        counter++;
+      }
+      return entries;
+    }, "se_OperationResultFilters");
+    var se_OrganizationalUnitIdList = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        entries[`member.${counter}`] = entry;
+        counter++;
+      }
+      return entries;
+    }, "se_OrganizationalUnitIdList");
+    var se_Parameter = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_PK] != null) {
+        entries[_PK] = input[_PK];
+      }
+      if (input[_PV] != null) {
+        entries[_PV] = input[_PV];
+      }
+      if (input[_UPV] != null) {
+        entries[_UPV] = input[_UPV];
+      }
+      if (input[_RV] != null) {
+        entries[_RV] = input[_RV];
+      }
+      return entries;
+    }, "se_Parameter");
+    var se_Parameters = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        const memberEntries = se_Parameter(entry, context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          entries[`member.${counter}.${key}`] = value;
+        });
+        counter++;
+      }
+      return entries;
+    }, "se_Parameters");
+    var se_PublishTypeInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_T] != null) {
+        entries[_T] = input[_T];
+      }
+      if (input[_Ar] != null) {
+        entries[_Ar] = input[_Ar];
+      }
+      if (input[_TN] != null) {
+        entries[_TN] = input[_TN];
+      }
+      if (input[_PVN] != null) {
+        entries[_PVN] = input[_PVN];
+      }
+      return entries;
+    }, "se_PublishTypeInput");
+    var se_RecordHandlerProgressInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_BT] != null) {
+        entries[_BT] = input[_BT];
+      }
+      if (input[_OS] != null) {
+        entries[_OS] = input[_OS];
+      }
+      if (input[_COS] != null) {
+        entries[_COS] = input[_COS];
+      }
+      if (input[_SM] != null) {
+        entries[_SM] = input[_SM];
+      }
+      if (input[_EC] != null) {
+        entries[_EC] = input[_EC];
+      }
+      if (input[_RM] != null) {
+        entries[_RM] = input[_RM];
+      }
+      if (input[_CRT] != null) {
+        entries[_CRT] = input[_CRT];
+      }
+      return entries;
+    }, "se_RecordHandlerProgressInput");
+    var se_RegionList = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        entries[`member.${counter}`] = entry;
+        counter++;
+      }
+      return entries;
+    }, "se_RegionList");
+    var se_RegisterPublisherInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_ATAC] != null) {
+        entries[_ATAC] = input[_ATAC];
+      }
+      if (input[_CAo] != null) {
+        entries[_CAo] = input[_CAo];
+      }
+      return entries;
+    }, "se_RegisterPublisherInput");
+    var se_RegisterTypeInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_T] != null) {
+        entries[_T] = input[_T];
+      }
+      if (input[_TN] != null) {
+        entries[_TN] = input[_TN];
+      }
+      if (input[_SHP] != null) {
+        entries[_SHP] = input[_SHP];
+      }
+      if (input[_LC] != null) {
+        const memberEntries = se_LoggingConfig(input[_LC], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `LoggingConfig.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_ERA] != null) {
+        entries[_ERA] = input[_ERA];
+      }
+      if (input[_CRT] != null) {
+        entries[_CRT] = input[_CRT];
+      }
+      return entries;
+    }, "se_RegisterTypeInput");
+    var se_ResourceDefinition = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_RTes] != null) {
+        entries[_RTes] = input[_RTes];
+      }
+      if (input[_LRI] != null) {
+        entries[_LRI] = input[_LRI];
+      }
+      if (input[_RI] != null) {
+        const memberEntries = se_ResourceIdentifierProperties(input[_RI], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `ResourceIdentifier.${key}`;
+          entries[loc] = value;
+        });
+      }
+      return entries;
+    }, "se_ResourceDefinition");
+    var se_ResourceDefinitions = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        const memberEntries = se_ResourceDefinition(entry, context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          entries[`member.${counter}.${key}`] = value;
+        });
+        counter++;
+      }
+      return entries;
+    }, "se_ResourceDefinitions");
+    var se_ResourceIdentifierProperties = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      Object.keys(input).filter((key) => input[key] != null).forEach((key) => {
+        entries[`entry.${counter}.key`] = key;
+        entries[`entry.${counter}.value`] = input[key];
+        counter++;
+      });
+      return entries;
+    }, "se_ResourceIdentifierProperties");
+    var se_ResourcesToImport = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        const memberEntries = se_ResourceToImport(entry, context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          entries[`member.${counter}.${key}`] = value;
+        });
+        counter++;
+      }
+      return entries;
+    }, "se_ResourcesToImport");
+    var se_ResourcesToSkip = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        entries[`member.${counter}`] = entry;
+        counter++;
+      }
+      return entries;
+    }, "se_ResourcesToSkip");
+    var se_ResourceToImport = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_RTes] != null) {
+        entries[_RTes] = input[_RTes];
+      }
+      if (input[_LRI] != null) {
+        entries[_LRI] = input[_LRI];
+      }
+      if (input[_RI] != null) {
+        const memberEntries = se_ResourceIdentifierProperties(input[_RI], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `ResourceIdentifier.${key}`;
+          entries[loc] = value;
+        });
+      }
+      return entries;
+    }, "se_ResourceToImport");
+    var se_ResourceTypes = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        entries[`member.${counter}`] = entry;
+        counter++;
+      }
+      return entries;
+    }, "se_ResourceTypes");
+    var se_RetainResources = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        entries[`member.${counter}`] = entry;
+        counter++;
+      }
+      return entries;
+    }, "se_RetainResources");
+    var se_RollbackConfiguration = /* @__PURE__ */ __name((input, context) => {
+      var _a;
+      const entries = {};
+      if (input[_RTo] != null) {
+        const memberEntries = se_RollbackTriggers(input[_RTo], context);
+        if (((_a = input[_RTo]) == null ? void 0 : _a.length) === 0) {
+          entries.RollbackTriggers = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `RollbackTriggers.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_MTIM] != null) {
+        entries[_MTIM] = input[_MTIM];
+      }
+      return entries;
+    }, "se_RollbackConfiguration");
+    var se_RollbackStackInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_RARN] != null) {
+        entries[_RARN] = input[_RARN];
+      }
+      if (input[_CRT] != null) {
+        entries[_CRT] = input[_CRT];
+      }
+      if (input[_REOC] != null) {
+        entries[_REOC] = input[_REOC];
+      }
+      return entries;
+    }, "se_RollbackStackInput");
+    var se_RollbackTrigger = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_Ar] != null) {
+        entries[_Ar] = input[_Ar];
+      }
+      if (input[_T] != null) {
+        entries[_T] = input[_T];
+      }
+      return entries;
+    }, "se_RollbackTrigger");
+    var se_RollbackTriggers = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        const memberEntries = se_RollbackTrigger(entry, context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          entries[`member.${counter}.${key}`] = value;
+        });
+        counter++;
+      }
+      return entries;
+    }, "se_RollbackTriggers");
+    var se_ScannedResourceIdentifier = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_RTes] != null) {
+        entries[_RTes] = input[_RTes];
+      }
+      if (input[_RI] != null) {
+        const memberEntries = se_JazzResourceIdentifierProperties(input[_RI], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `ResourceIdentifier.${key}`;
+          entries[loc] = value;
+        });
+      }
+      return entries;
+    }, "se_ScannedResourceIdentifier");
+    var se_ScannedResourceIdentifiers = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        const memberEntries = se_ScannedResourceIdentifier(entry, context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          entries[`member.${counter}.${key}`] = value;
+        });
+        counter++;
+      }
+      return entries;
+    }, "se_ScannedResourceIdentifiers");
+    var se_SetStackPolicyInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_SPB] != null) {
+        entries[_SPB] = input[_SPB];
+      }
+      if (input[_SPURL] != null) {
+        entries[_SPURL] = input[_SPURL];
+      }
+      return entries;
+    }, "se_SetStackPolicyInput");
+    var se_SetTypeConfigurationInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_TA] != null) {
+        entries[_TA] = input[_TA];
+      }
+      if (input[_Co] != null) {
+        entries[_Co] = input[_Co];
+      }
+      if (input[_CAon] != null) {
+        entries[_CAon] = input[_CAon];
+      }
+      if (input[_TN] != null) {
+        entries[_TN] = input[_TN];
+      }
+      if (input[_T] != null) {
+        entries[_T] = input[_T];
+      }
+      return entries;
+    }, "se_SetTypeConfigurationInput");
+    var se_SetTypeDefaultVersionInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_Ar] != null) {
+        entries[_Ar] = input[_Ar];
+      }
+      if (input[_T] != null) {
+        entries[_T] = input[_T];
+      }
+      if (input[_TN] != null) {
+        entries[_TN] = input[_TN];
+      }
+      if (input[_VI] != null) {
+        entries[_VI] = input[_VI];
+      }
+      return entries;
+    }, "se_SetTypeDefaultVersionInput");
+    var se_SignalResourceInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_LRI] != null) {
+        entries[_LRI] = input[_LRI];
+      }
+      if (input[_UI] != null) {
+        entries[_UI] = input[_UI];
+      }
+      if (input[_S] != null) {
+        entries[_S] = input[_S];
+      }
+      return entries;
+    }, "se_SignalResourceInput");
+    var se_StackIdList = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        entries[`member.${counter}`] = entry;
+        counter++;
+      }
+      return entries;
+    }, "se_StackIdList");
+    var se_StackInstanceFilter = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_N] != null) {
+        entries[_N] = input[_N];
+      }
+      if (input[_Va] != null) {
+        entries[_Va] = input[_Va];
+      }
+      return entries;
+    }, "se_StackInstanceFilter");
+    var se_StackInstanceFilters = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        const memberEntries = se_StackInstanceFilter(entry, context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          entries[`member.${counter}.${key}`] = value;
+        });
+        counter++;
+      }
+      return entries;
+    }, "se_StackInstanceFilters");
+    var se_StackResourceDriftStatusFilters = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        entries[`member.${counter}`] = entry;
+        counter++;
+      }
+      return entries;
+    }, "se_StackResourceDriftStatusFilters");
+    var se_StackSetOperationPreferences = /* @__PURE__ */ __name((input, context) => {
+      var _a;
+      const entries = {};
+      if (input[_RCT] != null) {
+        entries[_RCT] = input[_RCT];
+      }
+      if (input[_RO] != null) {
+        const memberEntries = se_RegionList(input[_RO], context);
+        if (((_a = input[_RO]) == null ? void 0 : _a.length) === 0) {
+          entries.RegionOrder = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `RegionOrder.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_FTC] != null) {
+        entries[_FTC] = input[_FTC];
+      }
+      if (input[_FTP] != null) {
+        entries[_FTP] = input[_FTP];
+      }
+      if (input[_MCC] != null) {
+        entries[_MCC] = input[_MCC];
+      }
+      if (input[_MCP] != null) {
+        entries[_MCP] = input[_MCP];
+      }
+      if (input[_CM] != null) {
+        entries[_CM] = input[_CM];
+      }
+      return entries;
+    }, "se_StackSetOperationPreferences");
+    var se_StackStatusFilter = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        entries[`member.${counter}`] = entry;
+        counter++;
+      }
+      return entries;
+    }, "se_StackStatusFilter");
+    var se_StartResourceScanInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_CRT] != null) {
+        entries[_CRT] = input[_CRT];
+      }
+      return entries;
+    }, "se_StartResourceScanInput");
+    var se_StopStackSetOperationInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_OI] != null) {
+        entries[_OI] = input[_OI];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_StopStackSetOperationInput");
+    var se_Tag = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_K] != null) {
+        entries[_K] = input[_K];
+      }
+      if (input[_Val] != null) {
+        entries[_Val] = input[_Val];
+      }
+      return entries;
+    }, "se_Tag");
+    var se_Tags = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        const memberEntries = se_Tag(entry, context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          entries[`member.${counter}.${key}`] = value;
+        });
+        counter++;
+      }
+      return entries;
+    }, "se_Tags");
+    var se_TemplateConfiguration = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_DPe] != null) {
+        entries[_DPe] = input[_DPe];
+      }
+      if (input[_URP] != null) {
+        entries[_URP] = input[_URP];
+      }
+      return entries;
+    }, "se_TemplateConfiguration");
+    var se_TemplateSummaryConfig = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_TURTAW] != null) {
+        entries[_TURTAW] = input[_TURTAW];
+      }
+      return entries;
+    }, "se_TemplateSummaryConfig");
+    var se_TestTypeInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_Ar] != null) {
+        entries[_Ar] = input[_Ar];
+      }
+      if (input[_T] != null) {
+        entries[_T] = input[_T];
+      }
+      if (input[_TN] != null) {
+        entries[_TN] = input[_TN];
+      }
+      if (input[_VI] != null) {
+        entries[_VI] = input[_VI];
+      }
+      if (input[_LDB] != null) {
+        entries[_LDB] = input[_LDB];
+      }
+      return entries;
+    }, "se_TestTypeInput");
+    var se_TypeConfigurationIdentifier = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_TA] != null) {
+        entries[_TA] = input[_TA];
+      }
+      if (input[_TCA] != null) {
+        entries[_TCA] = input[_TCA];
+      }
+      if (input[_TCAy] != null) {
+        entries[_TCAy] = input[_TCAy];
+      }
+      if (input[_T] != null) {
+        entries[_T] = input[_T];
+      }
+      if (input[_TN] != null) {
+        entries[_TN] = input[_TN];
+      }
+      return entries;
+    }, "se_TypeConfigurationIdentifier");
+    var se_TypeConfigurationIdentifiers = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      let counter = 1;
+      for (const entry of input) {
+        if (entry === null) {
+          continue;
+        }
+        const memberEntries = se_TypeConfigurationIdentifier(entry, context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          entries[`member.${counter}.${key}`] = value;
+        });
+        counter++;
+      }
+      return entries;
+    }, "se_TypeConfigurationIdentifiers");
+    var se_TypeFilters = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_Ca] != null) {
+        entries[_Ca] = input[_Ca];
+      }
+      if (input[_PI] != null) {
+        entries[_PI] = input[_PI];
+      }
+      if (input[_TNP] != null) {
+        entries[_TNP] = input[_TNP];
+      }
+      return entries;
+    }, "se_TypeFilters");
+    var se_UpdateGeneratedTemplateInput = /* @__PURE__ */ __name((input, context) => {
+      var _a, _b;
+      const entries = {};
+      if (input[_GTN] != null) {
+        entries[_GTN] = input[_GTN];
+      }
+      if (input[_NGTN] != null) {
+        entries[_NGTN] = input[_NGTN];
+      }
+      if (input[_AR] != null) {
+        const memberEntries = se_ResourceDefinitions(input[_AR], context);
+        if (((_a = input[_AR]) == null ? void 0 : _a.length) === 0) {
+          entries.AddResources = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `AddResources.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_RRe] != null) {
+        const memberEntries = se_JazzLogicalResourceIds(input[_RRe], context);
+        if (((_b = input[_RRe]) == null ? void 0 : _b.length) === 0) {
+          entries.RemoveResources = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `RemoveResources.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_RAR] != null) {
+        entries[_RAR] = input[_RAR];
+      }
+      if (input[_TC] != null) {
+        const memberEntries = se_TemplateConfiguration(input[_TC], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `TemplateConfiguration.${key}`;
+          entries[loc] = value;
+        });
+      }
+      return entries;
+    }, "se_UpdateGeneratedTemplateInput");
+    var se_UpdateStackInput = /* @__PURE__ */ __name((input, context) => {
+      var _a, _b, _c, _d, _e2;
+      const entries = {};
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      if (input[_TB] != null) {
+        entries[_TB] = input[_TB];
+      }
+      if (input[_TURL] != null) {
+        entries[_TURL] = input[_TURL];
+      }
+      if (input[_UPT] != null) {
+        entries[_UPT] = input[_UPT];
+      }
+      if (input[_SPDUB] != null) {
+        entries[_SPDUB] = input[_SPDUB];
+      }
+      if (input[_SPDUURL] != null) {
+        entries[_SPDUURL] = input[_SPDUURL];
+      }
+      if (input[_P] != null) {
+        const memberEntries = se_Parameters(input[_P], context);
+        if (((_a = input[_P]) == null ? void 0 : _a.length) === 0) {
+          entries.Parameters = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Parameters.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_C] != null) {
+        const memberEntries = se_Capabilities(input[_C], context);
+        if (((_b = input[_C]) == null ? void 0 : _b.length) === 0) {
+          entries.Capabilities = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Capabilities.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_RTe] != null) {
+        const memberEntries = se_ResourceTypes(input[_RTe], context);
+        if (((_c = input[_RTe]) == null ? void 0 : _c.length) === 0) {
+          entries.ResourceTypes = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `ResourceTypes.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_RARN] != null) {
+        entries[_RARN] = input[_RARN];
+      }
+      if (input[_RC] != null) {
+        const memberEntries = se_RollbackConfiguration(input[_RC], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `RollbackConfiguration.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_SPB] != null) {
+        entries[_SPB] = input[_SPB];
+      }
+      if (input[_SPURL] != null) {
+        entries[_SPURL] = input[_SPURL];
+      }
+      if (input[_NARN] != null) {
+        const memberEntries = se_NotificationARNs(input[_NARN], context);
+        if (((_d = input[_NARN]) == null ? void 0 : _d.length) === 0) {
+          entries.NotificationARNs = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `NotificationARNs.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_Ta] != null) {
+        const memberEntries = se_Tags(input[_Ta], context);
+        if (((_e2 = input[_Ta]) == null ? void 0 : _e2.length) === 0) {
+          entries.Tags = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Tags.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_DR] != null) {
+        entries[_DR] = input[_DR];
+      }
+      if (input[_CRT] != null) {
+        entries[_CRT] = input[_CRT];
+      }
+      if (input[_REOC] != null) {
+        entries[_REOC] = input[_REOC];
+      }
+      return entries;
+    }, "se_UpdateStackInput");
+    var se_UpdateStackInstancesInput = /* @__PURE__ */ __name((input, context) => {
+      var _a, _b, _c;
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_Ac] != null) {
+        const memberEntries = se_AccountList(input[_Ac], context);
+        if (((_a = input[_Ac]) == null ? void 0 : _a.length) === 0) {
+          entries.Accounts = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Accounts.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_DTep] != null) {
+        const memberEntries = se_DeploymentTargets(input[_DTep], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `DeploymentTargets.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_Re] != null) {
+        const memberEntries = se_RegionList(input[_Re], context);
+        if (((_b = input[_Re]) == null ? void 0 : _b.length) === 0) {
+          entries.Regions = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Regions.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_PO] != null) {
+        const memberEntries = se_Parameters(input[_PO], context);
+        if (((_c = input[_PO]) == null ? void 0 : _c.length) === 0) {
+          entries.ParameterOverrides = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `ParameterOverrides.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_OP] != null) {
+        const memberEntries = se_StackSetOperationPreferences(input[_OP], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `OperationPreferences.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_OI] === void 0) {
+        input[_OI] = (0, import_uuid.v4)();
+      }
+      if (input[_OI] != null) {
+        entries[_OI] = input[_OI];
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      return entries;
+    }, "se_UpdateStackInstancesInput");
+    var se_UpdateStackSetInput = /* @__PURE__ */ __name((input, context) => {
+      var _a, _b, _c, _d, _e2;
+      const entries = {};
+      if (input[_SSN] != null) {
+        entries[_SSN] = input[_SSN];
+      }
+      if (input[_D] != null) {
+        entries[_D] = input[_D];
+      }
+      if (input[_TB] != null) {
+        entries[_TB] = input[_TB];
+      }
+      if (input[_TURL] != null) {
+        entries[_TURL] = input[_TURL];
+      }
+      if (input[_UPT] != null) {
+        entries[_UPT] = input[_UPT];
+      }
+      if (input[_P] != null) {
+        const memberEntries = se_Parameters(input[_P], context);
+        if (((_a = input[_P]) == null ? void 0 : _a.length) === 0) {
+          entries.Parameters = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Parameters.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_C] != null) {
+        const memberEntries = se_Capabilities(input[_C], context);
+        if (((_b = input[_C]) == null ? void 0 : _b.length) === 0) {
+          entries.Capabilities = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Capabilities.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_Ta] != null) {
+        const memberEntries = se_Tags(input[_Ta], context);
+        if (((_c = input[_Ta]) == null ? void 0 : _c.length) === 0) {
+          entries.Tags = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Tags.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_OP] != null) {
+        const memberEntries = se_StackSetOperationPreferences(input[_OP], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `OperationPreferences.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_ARARN] != null) {
+        entries[_ARARN] = input[_ARARN];
+      }
+      if (input[_ERN] != null) {
+        entries[_ERN] = input[_ERN];
+      }
+      if (input[_DTep] != null) {
+        const memberEntries = se_DeploymentTargets(input[_DTep], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `DeploymentTargets.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_PM] != null) {
+        entries[_PM] = input[_PM];
+      }
+      if (input[_AD] != null) {
+        const memberEntries = se_AutoDeployment(input[_AD], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `AutoDeployment.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_OI] === void 0) {
+        input[_OI] = (0, import_uuid.v4)();
+      }
+      if (input[_OI] != null) {
+        entries[_OI] = input[_OI];
+      }
+      if (input[_Ac] != null) {
+        const memberEntries = se_AccountList(input[_Ac], context);
+        if (((_d = input[_Ac]) == null ? void 0 : _d.length) === 0) {
+          entries.Accounts = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Accounts.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_Re] != null) {
+        const memberEntries = se_RegionList(input[_Re], context);
+        if (((_e2 = input[_Re]) == null ? void 0 : _e2.length) === 0) {
+          entries.Regions = [];
+        }
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `Regions.${key}`;
+          entries[loc] = value;
+        });
+      }
+      if (input[_CA] != null) {
+        entries[_CA] = input[_CA];
+      }
+      if (input[_ME] != null) {
+        const memberEntries = se_ManagedExecution(input[_ME], context);
+        Object.entries(memberEntries).forEach(([key, value]) => {
+          const loc = `ManagedExecution.${key}`;
+          entries[loc] = value;
+        });
+      }
+      return entries;
+    }, "se_UpdateStackSetInput");
+    var se_UpdateTerminationProtectionInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_ETP] != null) {
+        entries[_ETP] = input[_ETP];
+      }
+      if (input[_SN] != null) {
+        entries[_SN] = input[_SN];
+      }
+      return entries;
+    }, "se_UpdateTerminationProtectionInput");
+    var se_ValidateTemplateInput = /* @__PURE__ */ __name((input, context) => {
+      const entries = {};
+      if (input[_TB] != null) {
+        entries[_TB] = input[_TB];
+      }
+      if (input[_TURL] != null) {
+        entries[_TURL] = input[_TURL];
+      }
+      return entries;
+    }, "se_ValidateTemplateInput");
+    var de_AccountGateResult = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_SRt] != null) {
+        contents[_SRt] = (0, import_smithy_client.expectString)(output[_SRt]);
+      }
+      return contents;
+    }, "de_AccountGateResult");
+    var de_AccountLimit = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_N] != null) {
+        contents[_N] = (0, import_smithy_client.expectString)(output[_N]);
+      }
+      if (output[_Val] != null) {
+        contents[_Val] = (0, import_smithy_client.strictParseInt32)(output[_Val]);
+      }
+      return contents;
+    }, "de_AccountLimit");
+    var de_AccountLimitList = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_AccountLimit(entry, context);
+      });
+    }, "de_AccountLimitList");
+    var de_AccountList = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return (0, import_smithy_client.expectString)(entry);
+      });
+    }, "de_AccountList");
+    var de_ActivateOrganizationsAccessOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      return contents;
+    }, "de_ActivateOrganizationsAccessOutput");
+    var de_ActivateTypeOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_Ar] != null) {
+        contents[_Ar] = (0, import_smithy_client.expectString)(output[_Ar]);
+      }
+      return contents;
+    }, "de_ActivateTypeOutput");
+    var de_AllowedValues = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return (0, import_smithy_client.expectString)(entry);
+      });
+    }, "de_AllowedValues");
+    var de_AlreadyExistsException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_AlreadyExistsException");
+    var de_AutoDeployment = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_E] != null) {
+        contents[_E] = (0, import_smithy_client.parseBoolean)(output[_E]);
+      }
+      if (output[_RSOAR] != null) {
+        contents[_RSOAR] = (0, import_smithy_client.parseBoolean)(output[_RSOAR]);
+      }
+      return contents;
+    }, "de_AutoDeployment");
+    var de_BatchDescribeTypeConfigurationsError = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_EC] != null) {
+        contents[_EC] = (0, import_smithy_client.expectString)(output[_EC]);
+      }
+      if (output[_EM] != null) {
+        contents[_EM] = (0, import_smithy_client.expectString)(output[_EM]);
+      }
+      if (output[_TCIy] != null) {
+        contents[_TCIy] = de_TypeConfigurationIdentifier(output[_TCIy], context);
+      }
+      return contents;
+    }, "de_BatchDescribeTypeConfigurationsError");
+    var de_BatchDescribeTypeConfigurationsErrors = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_BatchDescribeTypeConfigurationsError(entry, context);
+      });
+    }, "de_BatchDescribeTypeConfigurationsErrors");
+    var de_BatchDescribeTypeConfigurationsOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Errors === "") {
+        contents[_Er] = [];
+      } else if (output[_Er] != null && output[_Er][_m] != null) {
+        contents[_Er] = de_BatchDescribeTypeConfigurationsErrors((0, import_smithy_client.getArrayIfSingleItem)(output[_Er][_m]), context);
+      }
+      if (output.UnprocessedTypeConfigurations === "") {
+        contents[_UTC] = [];
+      } else if (output[_UTC] != null && output[_UTC][_m] != null) {
+        contents[_UTC] = de_UnprocessedTypeConfigurations((0, import_smithy_client.getArrayIfSingleItem)(output[_UTC][_m]), context);
+      }
+      if (output.TypeConfigurations === "") {
+        contents[_TCy] = [];
+      } else if (output[_TCy] != null && output[_TCy][_m] != null) {
+        contents[_TCy] = de_TypeConfigurationDetailsList((0, import_smithy_client.getArrayIfSingleItem)(output[_TCy][_m]), context);
+      }
+      return contents;
+    }, "de_BatchDescribeTypeConfigurationsOutput");
+    var de_Capabilities = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return (0, import_smithy_client.expectString)(entry);
+      });
+    }, "de_Capabilities");
+    var de_CFNRegistryException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_CFNRegistryException");
+    var de_Change = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_T] != null) {
+        contents[_T] = (0, import_smithy_client.expectString)(output[_T]);
+      }
+      if (output[_HIC] != null) {
+        contents[_HIC] = (0, import_smithy_client.strictParseInt32)(output[_HIC]);
+      }
+      if (output[_RCe] != null) {
+        contents[_RCe] = de_ResourceChange(output[_RCe], context);
+      }
+      return contents;
+    }, "de_Change");
+    var de_Changes = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_Change(entry, context);
+      });
+    }, "de_Changes");
+    var de_ChangeSetHook = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_IP] != null) {
+        contents[_IP] = (0, import_smithy_client.expectString)(output[_IP]);
+      }
+      if (output[_FM] != null) {
+        contents[_FM] = (0, import_smithy_client.expectString)(output[_FM]);
+      }
+      if (output[_TN] != null) {
+        contents[_TN] = (0, import_smithy_client.expectString)(output[_TN]);
+      }
+      if (output[_TVI] != null) {
+        contents[_TVI] = (0, import_smithy_client.expectString)(output[_TVI]);
+      }
+      if (output[_TCVI] != null) {
+        contents[_TCVI] = (0, import_smithy_client.expectString)(output[_TCVI]);
+      }
+      if (output[_TD] != null) {
+        contents[_TD] = de_ChangeSetHookTargetDetails(output[_TD], context);
+      }
+      return contents;
+    }, "de_ChangeSetHook");
+    var de_ChangeSetHookResourceTargetDetails = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_LRI] != null) {
+        contents[_LRI] = (0, import_smithy_client.expectString)(output[_LRI]);
+      }
+      if (output[_RTes] != null) {
+        contents[_RTes] = (0, import_smithy_client.expectString)(output[_RTes]);
+      }
+      if (output[_RA] != null) {
+        contents[_RA] = (0, import_smithy_client.expectString)(output[_RA]);
+      }
+      return contents;
+    }, "de_ChangeSetHookResourceTargetDetails");
+    var de_ChangeSetHooks = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_ChangeSetHook(entry, context);
+      });
+    }, "de_ChangeSetHooks");
+    var de_ChangeSetHookTargetDetails = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_TTa] != null) {
+        contents[_TTa] = (0, import_smithy_client.expectString)(output[_TTa]);
+      }
+      if (output[_RTD] != null) {
+        contents[_RTD] = de_ChangeSetHookResourceTargetDetails(output[_RTD], context);
+      }
+      return contents;
+    }, "de_ChangeSetHookTargetDetails");
+    var de_ChangeSetNotFoundException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_ChangeSetNotFoundException");
+    var de_ChangeSetSummaries = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_ChangeSetSummary(entry, context);
+      });
+    }, "de_ChangeSetSummaries");
+    var de_ChangeSetSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      if (output[_SN] != null) {
+        contents[_SN] = (0, import_smithy_client.expectString)(output[_SN]);
+      }
+      if (output[_CSIh] != null) {
+        contents[_CSIh] = (0, import_smithy_client.expectString)(output[_CSIh]);
+      }
+      if (output[_CSN] != null) {
+        contents[_CSN] = (0, import_smithy_client.expectString)(output[_CSN]);
+      }
+      if (output[_ES] != null) {
+        contents[_ES] = (0, import_smithy_client.expectString)(output[_ES]);
+      }
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_SRt] != null) {
+        contents[_SRt] = (0, import_smithy_client.expectString)(output[_SRt]);
+      }
+      if (output[_CTr] != null) {
+        contents[_CTr] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_CTr]));
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      if (output[_INS] != null) {
+        contents[_INS] = (0, import_smithy_client.parseBoolean)(output[_INS]);
+      }
+      if (output[_PCSI] != null) {
+        contents[_PCSI] = (0, import_smithy_client.expectString)(output[_PCSI]);
+      }
+      if (output[_RCSI] != null) {
+        contents[_RCSI] = (0, import_smithy_client.expectString)(output[_RCSI]);
+      }
+      if (output[_IER] != null) {
+        contents[_IER] = (0, import_smithy_client.parseBoolean)(output[_IER]);
+      }
+      return contents;
+    }, "de_ChangeSetSummary");
+    var de_ConcurrentResourcesLimitExceededException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_ConcurrentResourcesLimitExceededException");
+    var de_ContinueUpdateRollbackOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      return contents;
+    }, "de_ContinueUpdateRollbackOutput");
+    var de_CreateChangeSetOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_I] != null) {
+        contents[_I] = (0, import_smithy_client.expectString)(output[_I]);
+      }
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      return contents;
+    }, "de_CreateChangeSetOutput");
+    var de_CreatedButModifiedException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_CreatedButModifiedException");
+    var de_CreateGeneratedTemplateOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_GTI] != null) {
+        contents[_GTI] = (0, import_smithy_client.expectString)(output[_GTI]);
+      }
+      return contents;
+    }, "de_CreateGeneratedTemplateOutput");
+    var de_CreateStackInstancesOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_OI] != null) {
+        contents[_OI] = (0, import_smithy_client.expectString)(output[_OI]);
+      }
+      return contents;
+    }, "de_CreateStackInstancesOutput");
+    var de_CreateStackOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      return contents;
+    }, "de_CreateStackOutput");
+    var de_CreateStackSetOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SSI] != null) {
+        contents[_SSI] = (0, import_smithy_client.expectString)(output[_SSI]);
+      }
+      return contents;
+    }, "de_CreateStackSetOutput");
+    var de_DeactivateOrganizationsAccessOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      return contents;
+    }, "de_DeactivateOrganizationsAccessOutput");
+    var de_DeactivateTypeOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      return contents;
+    }, "de_DeactivateTypeOutput");
+    var de_DeleteChangeSetOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      return contents;
+    }, "de_DeleteChangeSetOutput");
+    var de_DeleteStackInstancesOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_OI] != null) {
+        contents[_OI] = (0, import_smithy_client.expectString)(output[_OI]);
+      }
+      return contents;
+    }, "de_DeleteStackInstancesOutput");
+    var de_DeleteStackSetOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      return contents;
+    }, "de_DeleteStackSetOutput");
+    var de_DeploymentTargets = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Accounts === "") {
+        contents[_Ac] = [];
+      } else if (output[_Ac] != null && output[_Ac][_m] != null) {
+        contents[_Ac] = de_AccountList((0, import_smithy_client.getArrayIfSingleItem)(output[_Ac][_m]), context);
+      }
+      if (output[_AUc] != null) {
+        contents[_AUc] = (0, import_smithy_client.expectString)(output[_AUc]);
+      }
+      if (output.OrganizationalUnitIds === "") {
+        contents[_OUI] = [];
+      } else if (output[_OUI] != null && output[_OUI][_m] != null) {
+        contents[_OUI] = de_OrganizationalUnitIdList((0, import_smithy_client.getArrayIfSingleItem)(output[_OUI][_m]), context);
+      }
+      if (output[_AFT] != null) {
+        contents[_AFT] = (0, import_smithy_client.expectString)(output[_AFT]);
+      }
+      return contents;
+    }, "de_DeploymentTargets");
+    var de_DeregisterTypeOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      return contents;
+    }, "de_DeregisterTypeOutput");
+    var de_DescribeAccountLimitsOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.AccountLimits === "") {
+        contents[_AL] = [];
+      } else if (output[_AL] != null && output[_AL][_m] != null) {
+        contents[_AL] = de_AccountLimitList((0, import_smithy_client.getArrayIfSingleItem)(output[_AL][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_DescribeAccountLimitsOutput");
+    var de_DescribeChangeSetHooksOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_CSIh] != null) {
+        contents[_CSIh] = (0, import_smithy_client.expectString)(output[_CSIh]);
+      }
+      if (output[_CSN] != null) {
+        contents[_CSN] = (0, import_smithy_client.expectString)(output[_CSN]);
+      }
+      if (output.Hooks === "") {
+        contents[_H] = [];
+      } else if (output[_H] != null && output[_H][_m] != null) {
+        contents[_H] = de_ChangeSetHooks((0, import_smithy_client.getArrayIfSingleItem)(output[_H][_m]), context);
+      }
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      if (output[_SN] != null) {
+        contents[_SN] = (0, import_smithy_client.expectString)(output[_SN]);
+      }
+      return contents;
+    }, "de_DescribeChangeSetHooksOutput");
+    var de_DescribeChangeSetOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_CSN] != null) {
+        contents[_CSN] = (0, import_smithy_client.expectString)(output[_CSN]);
+      }
+      if (output[_CSIh] != null) {
+        contents[_CSIh] = (0, import_smithy_client.expectString)(output[_CSIh]);
+      }
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      if (output[_SN] != null) {
+        contents[_SN] = (0, import_smithy_client.expectString)(output[_SN]);
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      if (output.Parameters === "") {
+        contents[_P] = [];
+      } else if (output[_P] != null && output[_P][_m] != null) {
+        contents[_P] = de_Parameters((0, import_smithy_client.getArrayIfSingleItem)(output[_P][_m]), context);
+      }
+      if (output[_CTr] != null) {
+        contents[_CTr] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_CTr]));
+      }
+      if (output[_ES] != null) {
+        contents[_ES] = (0, import_smithy_client.expectString)(output[_ES]);
+      }
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_SRt] != null) {
+        contents[_SRt] = (0, import_smithy_client.expectString)(output[_SRt]);
+      }
+      if (output.NotificationARNs === "") {
+        contents[_NARN] = [];
+      } else if (output[_NARN] != null && output[_NARN][_m] != null) {
+        contents[_NARN] = de_NotificationARNs((0, import_smithy_client.getArrayIfSingleItem)(output[_NARN][_m]), context);
+      }
+      if (output[_RC] != null) {
+        contents[_RC] = de_RollbackConfiguration(output[_RC], context);
+      }
+      if (output.Capabilities === "") {
+        contents[_C] = [];
+      } else if (output[_C] != null && output[_C][_m] != null) {
+        contents[_C] = de_Capabilities((0, import_smithy_client.getArrayIfSingleItem)(output[_C][_m]), context);
+      }
+      if (output.Tags === "") {
+        contents[_Ta] = [];
+      } else if (output[_Ta] != null && output[_Ta][_m] != null) {
+        contents[_Ta] = de_Tags((0, import_smithy_client.getArrayIfSingleItem)(output[_Ta][_m]), context);
+      }
+      if (output.Changes === "") {
+        contents[_Ch] = [];
+      } else if (output[_Ch] != null && output[_Ch][_m] != null) {
+        contents[_Ch] = de_Changes((0, import_smithy_client.getArrayIfSingleItem)(output[_Ch][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      if (output[_INS] != null) {
+        contents[_INS] = (0, import_smithy_client.parseBoolean)(output[_INS]);
+      }
+      if (output[_PCSI] != null) {
+        contents[_PCSI] = (0, import_smithy_client.expectString)(output[_PCSI]);
+      }
+      if (output[_RCSI] != null) {
+        contents[_RCSI] = (0, import_smithy_client.expectString)(output[_RCSI]);
+      }
+      if (output[_OSF] != null) {
+        contents[_OSF] = (0, import_smithy_client.expectString)(output[_OSF]);
+      }
+      if (output[_IER] != null) {
+        contents[_IER] = (0, import_smithy_client.parseBoolean)(output[_IER]);
+      }
+      return contents;
+    }, "de_DescribeChangeSetOutput");
+    var de_DescribeGeneratedTemplateOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_GTI] != null) {
+        contents[_GTI] = (0, import_smithy_client.expectString)(output[_GTI]);
+      }
+      if (output[_GTN] != null) {
+        contents[_GTN] = (0, import_smithy_client.expectString)(output[_GTN]);
+      }
+      if (output.Resources === "") {
+        contents[_R] = [];
+      } else if (output[_R] != null && output[_R][_m] != null) {
+        contents[_R] = de_ResourceDetails((0, import_smithy_client.getArrayIfSingleItem)(output[_R][_m]), context);
+      }
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_SRt] != null) {
+        contents[_SRt] = (0, import_smithy_client.expectString)(output[_SRt]);
+      }
+      if (output[_CTr] != null) {
+        contents[_CTr] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_CTr]));
+      }
+      if (output[_LUT] != null) {
+        contents[_LUT] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LUT]));
+      }
+      if (output[_Pr] != null) {
+        contents[_Pr] = de_TemplateProgress(output[_Pr], context);
+      }
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      if (output[_TC] != null) {
+        contents[_TC] = de_TemplateConfiguration(output[_TC], context);
+      }
+      if (output[_TW] != null) {
+        contents[_TW] = (0, import_smithy_client.strictParseInt32)(output[_TW]);
+      }
+      return contents;
+    }, "de_DescribeGeneratedTemplateOutput");
+    var de_DescribeOrganizationsAccessOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      return contents;
+    }, "de_DescribeOrganizationsAccessOutput");
+    var de_DescribePublisherOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_PI] != null) {
+        contents[_PI] = (0, import_smithy_client.expectString)(output[_PI]);
+      }
+      if (output[_PS] != null) {
+        contents[_PS] = (0, import_smithy_client.expectString)(output[_PS]);
+      }
+      if (output[_IPd] != null) {
+        contents[_IPd] = (0, import_smithy_client.expectString)(output[_IPd]);
+      }
+      if (output[_PP] != null) {
+        contents[_PP] = (0, import_smithy_client.expectString)(output[_PP]);
+      }
+      return contents;
+    }, "de_DescribePublisherOutput");
+    var de_DescribeResourceScanOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_RSI] != null) {
+        contents[_RSI] = (0, import_smithy_client.expectString)(output[_RSI]);
+      }
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_SRt] != null) {
+        contents[_SRt] = (0, import_smithy_client.expectString)(output[_SRt]);
+      }
+      if (output[_ST] != null) {
+        contents[_ST] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_ST]));
+      }
+      if (output[_ET] != null) {
+        contents[_ET] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_ET]));
+      }
+      if (output[_PC] != null) {
+        contents[_PC] = (0, import_smithy_client.strictParseFloat)(output[_PC]);
+      }
+      if (output.ResourceTypes === "") {
+        contents[_RTe] = [];
+      } else if (output[_RTe] != null && output[_RTe][_m] != null) {
+        contents[_RTe] = de_ResourceTypes((0, import_smithy_client.getArrayIfSingleItem)(output[_RTe][_m]), context);
+      }
+      if (output[_RSes] != null) {
+        contents[_RSes] = (0, import_smithy_client.strictParseInt32)(output[_RSes]);
+      }
+      if (output[_RRes] != null) {
+        contents[_RRes] = (0, import_smithy_client.strictParseInt32)(output[_RRes]);
+      }
+      return contents;
+    }, "de_DescribeResourceScanOutput");
+    var de_DescribeStackDriftDetectionStatusOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      if (output[_SDDI] != null) {
+        contents[_SDDI] = (0, import_smithy_client.expectString)(output[_SDDI]);
+      }
+      if (output[_SDS] != null) {
+        contents[_SDS] = (0, import_smithy_client.expectString)(output[_SDS]);
+      }
+      if (output[_DSet] != null) {
+        contents[_DSet] = (0, import_smithy_client.expectString)(output[_DSet]);
+      }
+      if (output[_DSRet] != null) {
+        contents[_DSRet] = (0, import_smithy_client.expectString)(output[_DSRet]);
+      }
+      if (output[_DSRC] != null) {
+        contents[_DSRC] = (0, import_smithy_client.strictParseInt32)(output[_DSRC]);
+      }
+      if (output[_Ti] != null) {
+        contents[_Ti] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_Ti]));
+      }
+      return contents;
+    }, "de_DescribeStackDriftDetectionStatusOutput");
+    var de_DescribeStackEventsOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.StackEvents === "") {
+        contents[_SE] = [];
+      } else if (output[_SE] != null && output[_SE][_m] != null) {
+        contents[_SE] = de_StackEvents((0, import_smithy_client.getArrayIfSingleItem)(output[_SE][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_DescribeStackEventsOutput");
+    var de_DescribeStackInstanceOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SIta] != null) {
+        contents[_SIta] = de_StackInstance(output[_SIta], context);
+      }
+      return contents;
+    }, "de_DescribeStackInstanceOutput");
+    var de_DescribeStackResourceDriftsOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.StackResourceDrifts === "") {
+        contents[_SRD] = [];
+      } else if (output[_SRD] != null && output[_SRD][_m] != null) {
+        contents[_SRD] = de_StackResourceDrifts((0, import_smithy_client.getArrayIfSingleItem)(output[_SRD][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_DescribeStackResourceDriftsOutput");
+    var de_DescribeStackResourceOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SRDt] != null) {
+        contents[_SRDt] = de_StackResourceDetail(output[_SRDt], context);
+      }
+      return contents;
+    }, "de_DescribeStackResourceOutput");
+    var de_DescribeStackResourcesOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.StackResources === "") {
+        contents[_SRta] = [];
+      } else if (output[_SRta] != null && output[_SRta][_m] != null) {
+        contents[_SRta] = de_StackResources((0, import_smithy_client.getArrayIfSingleItem)(output[_SRta][_m]), context);
+      }
+      return contents;
+    }, "de_DescribeStackResourcesOutput");
+    var de_DescribeStackSetOperationOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SSO] != null) {
+        contents[_SSO] = de_StackSetOperation(output[_SSO], context);
+      }
+      return contents;
+    }, "de_DescribeStackSetOperationOutput");
+    var de_DescribeStackSetOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SS] != null) {
+        contents[_SS] = de_StackSet(output[_SS], context);
+      }
+      return contents;
+    }, "de_DescribeStackSetOutput");
+    var de_DescribeStacksOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Stacks === "") {
+        contents[_St] = [];
+      } else if (output[_St] != null && output[_St][_m] != null) {
+        contents[_St] = de_Stacks((0, import_smithy_client.getArrayIfSingleItem)(output[_St][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_DescribeStacksOutput");
+    var de_DescribeTypeOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_Ar] != null) {
+        contents[_Ar] = (0, import_smithy_client.expectString)(output[_Ar]);
+      }
+      if (output[_T] != null) {
+        contents[_T] = (0, import_smithy_client.expectString)(output[_T]);
+      }
+      if (output[_TN] != null) {
+        contents[_TN] = (0, import_smithy_client.expectString)(output[_TN]);
+      }
+      if (output[_DVI] != null) {
+        contents[_DVI] = (0, import_smithy_client.expectString)(output[_DVI]);
+      }
+      if (output[_IDV] != null) {
+        contents[_IDV] = (0, import_smithy_client.parseBoolean)(output[_IDV]);
+      }
+      if (output[_TTS] != null) {
+        contents[_TTS] = (0, import_smithy_client.expectString)(output[_TTS]);
+      }
+      if (output[_TTSD] != null) {
+        contents[_TTSD] = (0, import_smithy_client.expectString)(output[_TTSD]);
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      if (output[_Sc] != null) {
+        contents[_Sc] = (0, import_smithy_client.expectString)(output[_Sc]);
+      }
+      if (output[_PTr] != null) {
+        contents[_PTr] = (0, import_smithy_client.expectString)(output[_PTr]);
+      }
+      if (output[_DSep] != null) {
+        contents[_DSep] = (0, import_smithy_client.expectString)(output[_DSep]);
+      }
+      if (output[_LC] != null) {
+        contents[_LC] = de_LoggingConfig(output[_LC], context);
+      }
+      if (output.RequiredActivatedTypes === "") {
+        contents[_RAT] = [];
+      } else if (output[_RAT] != null && output[_RAT][_m] != null) {
+        contents[_RAT] = de_RequiredActivatedTypes((0, import_smithy_client.getArrayIfSingleItem)(output[_RAT][_m]), context);
+      }
+      if (output[_ERA] != null) {
+        contents[_ERA] = (0, import_smithy_client.expectString)(output[_ERA]);
+      }
+      if (output[_Vi] != null) {
+        contents[_Vi] = (0, import_smithy_client.expectString)(output[_Vi]);
+      }
+      if (output[_SU] != null) {
+        contents[_SU] = (0, import_smithy_client.expectString)(output[_SU]);
+      }
+      if (output[_DU] != null) {
+        contents[_DU] = (0, import_smithy_client.expectString)(output[_DU]);
+      }
+      if (output[_LU] != null) {
+        contents[_LU] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LU]));
+      }
+      if (output[_TCi] != null) {
+        contents[_TCi] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_TCi]));
+      }
+      if (output[_CSo] != null) {
+        contents[_CSo] = (0, import_smithy_client.expectString)(output[_CSo]);
+      }
+      if (output[_PI] != null) {
+        contents[_PI] = (0, import_smithy_client.expectString)(output[_PI]);
+      }
+      if (output[_OTN] != null) {
+        contents[_OTN] = (0, import_smithy_client.expectString)(output[_OTN]);
+      }
+      if (output[_OTA] != null) {
+        contents[_OTA] = (0, import_smithy_client.expectString)(output[_OTA]);
+      }
+      if (output[_PVN] != null) {
+        contents[_PVN] = (0, import_smithy_client.expectString)(output[_PVN]);
+      }
+      if (output[_LPV] != null) {
+        contents[_LPV] = (0, import_smithy_client.expectString)(output[_LPV]);
+      }
+      if (output[_IA] != null) {
+        contents[_IA] = (0, import_smithy_client.parseBoolean)(output[_IA]);
+      }
+      if (output[_AU] != null) {
+        contents[_AU] = (0, import_smithy_client.parseBoolean)(output[_AU]);
+      }
+      return contents;
+    }, "de_DescribeTypeOutput");
+    var de_DescribeTypeRegistrationOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_PSr] != null) {
+        contents[_PSr] = (0, import_smithy_client.expectString)(output[_PSr]);
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      if (output[_TA] != null) {
+        contents[_TA] = (0, import_smithy_client.expectString)(output[_TA]);
+      }
+      if (output[_TVA] != null) {
+        contents[_TVA] = (0, import_smithy_client.expectString)(output[_TVA]);
+      }
+      return contents;
+    }, "de_DescribeTypeRegistrationOutput");
+    var de_DetectStackDriftOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SDDI] != null) {
+        contents[_SDDI] = (0, import_smithy_client.expectString)(output[_SDDI]);
+      }
+      return contents;
+    }, "de_DetectStackDriftOutput");
+    var de_DetectStackResourceDriftOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SRDta] != null) {
+        contents[_SRDta] = de_StackResourceDrift(output[_SRDta], context);
+      }
+      return contents;
+    }, "de_DetectStackResourceDriftOutput");
+    var de_DetectStackSetDriftOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_OI] != null) {
+        contents[_OI] = (0, import_smithy_client.expectString)(output[_OI]);
+      }
+      return contents;
+    }, "de_DetectStackSetDriftOutput");
+    var de_EstimateTemplateCostOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_U] != null) {
+        contents[_U] = (0, import_smithy_client.expectString)(output[_U]);
+      }
+      return contents;
+    }, "de_EstimateTemplateCostOutput");
+    var de_ExecuteChangeSetOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      return contents;
+    }, "de_ExecuteChangeSetOutput");
+    var de_Export = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_ESI] != null) {
+        contents[_ESI] = (0, import_smithy_client.expectString)(output[_ESI]);
+      }
+      if (output[_N] != null) {
+        contents[_N] = (0, import_smithy_client.expectString)(output[_N]);
+      }
+      if (output[_Val] != null) {
+        contents[_Val] = (0, import_smithy_client.expectString)(output[_Val]);
+      }
+      return contents;
+    }, "de_Export");
+    var de_Exports = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_Export(entry, context);
+      });
+    }, "de_Exports");
+    var de_GeneratedTemplateNotFoundException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_GeneratedTemplateNotFoundException");
+    var de_GetGeneratedTemplateOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_TB] != null) {
+        contents[_TB] = (0, import_smithy_client.expectString)(output[_TB]);
+      }
+      return contents;
+    }, "de_GetGeneratedTemplateOutput");
+    var de_GetStackPolicyOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SPB] != null) {
+        contents[_SPB] = (0, import_smithy_client.expectString)(output[_SPB]);
+      }
+      return contents;
+    }, "de_GetStackPolicyOutput");
+    var de_GetTemplateOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_TB] != null) {
+        contents[_TB] = (0, import_smithy_client.expectString)(output[_TB]);
+      }
+      if (output.StagesAvailable === "") {
+        contents[_SA] = [];
+      } else if (output[_SA] != null && output[_SA][_m] != null) {
+        contents[_SA] = de_StageList((0, import_smithy_client.getArrayIfSingleItem)(output[_SA][_m]), context);
+      }
+      return contents;
+    }, "de_GetTemplateOutput");
+    var de_GetTemplateSummaryOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Parameters === "") {
+        contents[_P] = [];
+      } else if (output[_P] != null && output[_P][_m] != null) {
+        contents[_P] = de_ParameterDeclarations((0, import_smithy_client.getArrayIfSingleItem)(output[_P][_m]), context);
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      if (output.Capabilities === "") {
+        contents[_C] = [];
+      } else if (output[_C] != null && output[_C][_m] != null) {
+        contents[_C] = de_Capabilities((0, import_smithy_client.getArrayIfSingleItem)(output[_C][_m]), context);
+      }
+      if (output[_CR] != null) {
+        contents[_CR] = (0, import_smithy_client.expectString)(output[_CR]);
+      }
+      if (output.ResourceTypes === "") {
+        contents[_RTe] = [];
+      } else if (output[_RTe] != null && output[_RTe][_m] != null) {
+        contents[_RTe] = de_ResourceTypes((0, import_smithy_client.getArrayIfSingleItem)(output[_RTe][_m]), context);
+      }
+      if (output[_V] != null) {
+        contents[_V] = (0, import_smithy_client.expectString)(output[_V]);
+      }
+      if (output[_Me] != null) {
+        contents[_Me] = (0, import_smithy_client.expectString)(output[_Me]);
+      }
+      if (output.DeclaredTransforms === "") {
+        contents[_DTec] = [];
+      } else if (output[_DTec] != null && output[_DTec][_m] != null) {
+        contents[_DTec] = de_TransformsList((0, import_smithy_client.getArrayIfSingleItem)(output[_DTec][_m]), context);
+      }
+      if (output.ResourceIdentifierSummaries === "") {
+        contents[_RIS] = [];
+      } else if (output[_RIS] != null && output[_RIS][_m] != null) {
+        contents[_RIS] = de_ResourceIdentifierSummaries((0, import_smithy_client.getArrayIfSingleItem)(output[_RIS][_m]), context);
+      }
+      if (output[_W] != null) {
+        contents[_W] = de_Warnings(output[_W], context);
+      }
+      return contents;
+    }, "de_GetTemplateSummaryOutput");
+    var de_Imports = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return (0, import_smithy_client.expectString)(entry);
+      });
+    }, "de_Imports");
+    var de_ImportStacksToStackSetOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_OI] != null) {
+        contents[_OI] = (0, import_smithy_client.expectString)(output[_OI]);
+      }
+      return contents;
+    }, "de_ImportStacksToStackSetOutput");
+    var de_InsufficientCapabilitiesException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_InsufficientCapabilitiesException");
+    var de_InvalidChangeSetStatusException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_InvalidChangeSetStatusException");
+    var de_InvalidOperationException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_InvalidOperationException");
+    var de_InvalidStateTransitionException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_InvalidStateTransitionException");
+    var de_JazzResourceIdentifierProperties = /* @__PURE__ */ __name((output, context) => {
+      return output.reduce((acc, pair) => {
+        if (pair["value"] === null) {
+          return acc;
+        }
+        acc[pair["key"]] = (0, import_smithy_client.expectString)(pair["value"]);
+        return acc;
+      }, {});
+    }, "de_JazzResourceIdentifierProperties");
+    var de_LimitExceededException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_LimitExceededException");
+    var de_ListChangeSetsOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Summaries === "") {
+        contents[_Su] = [];
+      } else if (output[_Su] != null && output[_Su][_m] != null) {
+        contents[_Su] = de_ChangeSetSummaries((0, import_smithy_client.getArrayIfSingleItem)(output[_Su][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListChangeSetsOutput");
+    var de_ListExportsOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Exports === "") {
+        contents[_Ex] = [];
+      } else if (output[_Ex] != null && output[_Ex][_m] != null) {
+        contents[_Ex] = de_Exports((0, import_smithy_client.getArrayIfSingleItem)(output[_Ex][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListExportsOutput");
+    var de_ListGeneratedTemplatesOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Summaries === "") {
+        contents[_Su] = [];
+      } else if (output[_Su] != null && output[_Su][_m] != null) {
+        contents[_Su] = de_TemplateSummaries((0, import_smithy_client.getArrayIfSingleItem)(output[_Su][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListGeneratedTemplatesOutput");
+    var de_ListImportsOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Imports === "") {
+        contents[_Im] = [];
+      } else if (output[_Im] != null && output[_Im][_m] != null) {
+        contents[_Im] = de_Imports((0, import_smithy_client.getArrayIfSingleItem)(output[_Im][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListImportsOutput");
+    var de_ListResourceScanRelatedResourcesOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.RelatedResources === "") {
+        contents[_RRel] = [];
+      } else if (output[_RRel] != null && output[_RRel][_m] != null) {
+        contents[_RRel] = de_RelatedResources((0, import_smithy_client.getArrayIfSingleItem)(output[_RRel][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListResourceScanRelatedResourcesOutput");
+    var de_ListResourceScanResourcesOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Resources === "") {
+        contents[_R] = [];
+      } else if (output[_R] != null && output[_R][_m] != null) {
+        contents[_R] = de_ScannedResources((0, import_smithy_client.getArrayIfSingleItem)(output[_R][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListResourceScanResourcesOutput");
+    var de_ListResourceScansOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.ResourceScanSummaries === "") {
+        contents[_RSS] = [];
+      } else if (output[_RSS] != null && output[_RSS][_m] != null) {
+        contents[_RSS] = de_ResourceScanSummaries((0, import_smithy_client.getArrayIfSingleItem)(output[_RSS][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListResourceScansOutput");
+    var de_ListStackInstanceResourceDriftsOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Summaries === "") {
+        contents[_Su] = [];
+      } else if (output[_Su] != null && output[_Su][_m] != null) {
+        contents[_Su] = de_StackInstanceResourceDriftsSummaries((0, import_smithy_client.getArrayIfSingleItem)(output[_Su][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListStackInstanceResourceDriftsOutput");
+    var de_ListStackInstancesOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Summaries === "") {
+        contents[_Su] = [];
+      } else if (output[_Su] != null && output[_Su][_m] != null) {
+        contents[_Su] = de_StackInstanceSummaries((0, import_smithy_client.getArrayIfSingleItem)(output[_Su][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListStackInstancesOutput");
+    var de_ListStackResourcesOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.StackResourceSummaries === "") {
+        contents[_SRSt] = [];
+      } else if (output[_SRSt] != null && output[_SRSt][_m] != null) {
+        contents[_SRSt] = de_StackResourceSummaries((0, import_smithy_client.getArrayIfSingleItem)(output[_SRSt][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListStackResourcesOutput");
+    var de_ListStackSetAutoDeploymentTargetsOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Summaries === "") {
+        contents[_Su] = [];
+      } else if (output[_Su] != null && output[_Su][_m] != null) {
+        contents[_Su] = de_StackSetAutoDeploymentTargetSummaries((0, import_smithy_client.getArrayIfSingleItem)(output[_Su][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListStackSetAutoDeploymentTargetsOutput");
+    var de_ListStackSetOperationResultsOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Summaries === "") {
+        contents[_Su] = [];
+      } else if (output[_Su] != null && output[_Su][_m] != null) {
+        contents[_Su] = de_StackSetOperationResultSummaries((0, import_smithy_client.getArrayIfSingleItem)(output[_Su][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListStackSetOperationResultsOutput");
+    var de_ListStackSetOperationsOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Summaries === "") {
+        contents[_Su] = [];
+      } else if (output[_Su] != null && output[_Su][_m] != null) {
+        contents[_Su] = de_StackSetOperationSummaries((0, import_smithy_client.getArrayIfSingleItem)(output[_Su][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListStackSetOperationsOutput");
+    var de_ListStackSetsOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Summaries === "") {
+        contents[_Su] = [];
+      } else if (output[_Su] != null && output[_Su][_m] != null) {
+        contents[_Su] = de_StackSetSummaries((0, import_smithy_client.getArrayIfSingleItem)(output[_Su][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListStackSetsOutput");
+    var de_ListStacksOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.StackSummaries === "") {
+        contents[_SSt] = [];
+      } else if (output[_SSt] != null && output[_SSt][_m] != null) {
+        contents[_SSt] = de_StackSummaries((0, import_smithy_client.getArrayIfSingleItem)(output[_SSt][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListStacksOutput");
+    var de_ListTypeRegistrationsOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.RegistrationTokenList === "") {
+        contents[_RTL] = [];
+      } else if (output[_RTL] != null && output[_RTL][_m] != null) {
+        contents[_RTL] = de_RegistrationTokenList((0, import_smithy_client.getArrayIfSingleItem)(output[_RTL][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListTypeRegistrationsOutput");
+    var de_ListTypesOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.TypeSummaries === "") {
+        contents[_TSy] = [];
+      } else if (output[_TSy] != null && output[_TSy][_m] != null) {
+        contents[_TSy] = de_TypeSummaries((0, import_smithy_client.getArrayIfSingleItem)(output[_TSy][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListTypesOutput");
+    var de_ListTypeVersionsOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.TypeVersionSummaries === "") {
+        contents[_TVS] = [];
+      } else if (output[_TVS] != null && output[_TVS][_m] != null) {
+        contents[_TVS] = de_TypeVersionSummaries((0, import_smithy_client.getArrayIfSingleItem)(output[_TVS][_m]), context);
+      }
+      if (output[_NT] != null) {
+        contents[_NT] = (0, import_smithy_client.expectString)(output[_NT]);
+      }
+      return contents;
+    }, "de_ListTypeVersionsOutput");
+    var de_LoggingConfig = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_LRA] != null) {
+        contents[_LRA] = (0, import_smithy_client.expectString)(output[_LRA]);
+      }
+      if (output[_LGN] != null) {
+        contents[_LGN] = (0, import_smithy_client.expectString)(output[_LGN]);
+      }
+      return contents;
+    }, "de_LoggingConfig");
+    var de_LogicalResourceIds = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return (0, import_smithy_client.expectString)(entry);
+      });
+    }, "de_LogicalResourceIds");
+    var de_ManagedExecution = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_Act] != null) {
+        contents[_Act] = (0, import_smithy_client.parseBoolean)(output[_Act]);
+      }
+      return contents;
+    }, "de_ManagedExecution");
+    var de_ModuleInfo = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_TH] != null) {
+        contents[_TH] = (0, import_smithy_client.expectString)(output[_TH]);
+      }
+      if (output[_LIH] != null) {
+        contents[_LIH] = (0, import_smithy_client.expectString)(output[_LIH]);
+      }
+      return contents;
+    }, "de_ModuleInfo");
+    var de_NameAlreadyExistsException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_NameAlreadyExistsException");
+    var de_NotificationARNs = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return (0, import_smithy_client.expectString)(entry);
+      });
+    }, "de_NotificationARNs");
+    var de_OperationIdAlreadyExistsException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_OperationIdAlreadyExistsException");
+    var de_OperationInProgressException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_OperationInProgressException");
+    var de_OperationNotFoundException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_OperationNotFoundException");
+    var de_OperationStatusCheckFailedException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_OperationStatusCheckFailedException");
+    var de_OrganizationalUnitIdList = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return (0, import_smithy_client.expectString)(entry);
+      });
+    }, "de_OrganizationalUnitIdList");
+    var de_Output = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_OK] != null) {
+        contents[_OK] = (0, import_smithy_client.expectString)(output[_OK]);
+      }
+      if (output[_OV] != null) {
+        contents[_OV] = (0, import_smithy_client.expectString)(output[_OV]);
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      if (output[_EN] != null) {
+        contents[_EN] = (0, import_smithy_client.expectString)(output[_EN]);
+      }
+      return contents;
+    }, "de_Output");
+    var de_Outputs = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_Output(entry, context);
+      });
+    }, "de_Outputs");
+    var de_Parameter = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_PK] != null) {
+        contents[_PK] = (0, import_smithy_client.expectString)(output[_PK]);
+      }
+      if (output[_PV] != null) {
+        contents[_PV] = (0, import_smithy_client.expectString)(output[_PV]);
+      }
+      if (output[_UPV] != null) {
+        contents[_UPV] = (0, import_smithy_client.parseBoolean)(output[_UPV]);
+      }
+      if (output[_RV] != null) {
+        contents[_RV] = (0, import_smithy_client.expectString)(output[_RV]);
+      }
+      return contents;
+    }, "de_Parameter");
+    var de_ParameterConstraints = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.AllowedValues === "") {
+        contents[_AV] = [];
+      } else if (output[_AV] != null && output[_AV][_m] != null) {
+        contents[_AV] = de_AllowedValues((0, import_smithy_client.getArrayIfSingleItem)(output[_AV][_m]), context);
+      }
+      return contents;
+    }, "de_ParameterConstraints");
+    var de_ParameterDeclaration = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_PK] != null) {
+        contents[_PK] = (0, import_smithy_client.expectString)(output[_PK]);
+      }
+      if (output[_DV] != null) {
+        contents[_DV] = (0, import_smithy_client.expectString)(output[_DV]);
+      }
+      if (output[_PTa] != null) {
+        contents[_PTa] = (0, import_smithy_client.expectString)(output[_PTa]);
+      }
+      if (output[_NE] != null) {
+        contents[_NE] = (0, import_smithy_client.parseBoolean)(output[_NE]);
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      if (output[_PCa] != null) {
+        contents[_PCa] = de_ParameterConstraints(output[_PCa], context);
+      }
+      return contents;
+    }, "de_ParameterDeclaration");
+    var de_ParameterDeclarations = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_ParameterDeclaration(entry, context);
+      });
+    }, "de_ParameterDeclarations");
+    var de_Parameters = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_Parameter(entry, context);
+      });
+    }, "de_Parameters");
+    var de_PhysicalResourceIdContext = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_PhysicalResourceIdContextKeyValuePair(entry, context);
+      });
+    }, "de_PhysicalResourceIdContext");
+    var de_PhysicalResourceIdContextKeyValuePair = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_K] != null) {
+        contents[_K] = (0, import_smithy_client.expectString)(output[_K]);
+      }
+      if (output[_Val] != null) {
+        contents[_Val] = (0, import_smithy_client.expectString)(output[_Val]);
+      }
+      return contents;
+    }, "de_PhysicalResourceIdContextKeyValuePair");
+    var de_PropertyDifference = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_PPr] != null) {
+        contents[_PPr] = (0, import_smithy_client.expectString)(output[_PPr]);
+      }
+      if (output[_EV] != null) {
+        contents[_EV] = (0, import_smithy_client.expectString)(output[_EV]);
+      }
+      if (output[_AVc] != null) {
+        contents[_AVc] = (0, import_smithy_client.expectString)(output[_AVc]);
+      }
+      if (output[_DTi] != null) {
+        contents[_DTi] = (0, import_smithy_client.expectString)(output[_DTi]);
+      }
+      return contents;
+    }, "de_PropertyDifference");
+    var de_PropertyDifferences = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_PropertyDifference(entry, context);
+      });
+    }, "de_PropertyDifferences");
+    var de_PublishTypeOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_PTA] != null) {
+        contents[_PTA] = (0, import_smithy_client.expectString)(output[_PTA]);
+      }
+      return contents;
+    }, "de_PublishTypeOutput");
+    var de_RecordHandlerProgressOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      return contents;
+    }, "de_RecordHandlerProgressOutput");
+    var de_RegionList = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return (0, import_smithy_client.expectString)(entry);
+      });
+    }, "de_RegionList");
+    var de_RegisterPublisherOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_PI] != null) {
+        contents[_PI] = (0, import_smithy_client.expectString)(output[_PI]);
+      }
+      return contents;
+    }, "de_RegisterPublisherOutput");
+    var de_RegisterTypeOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_RTeg] != null) {
+        contents[_RTeg] = (0, import_smithy_client.expectString)(output[_RTeg]);
+      }
+      return contents;
+    }, "de_RegisterTypeOutput");
+    var de_RegistrationTokenList = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return (0, import_smithy_client.expectString)(entry);
+      });
+    }, "de_RegistrationTokenList");
+    var de_RelatedResources = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_ScannedResource(entry, context);
+      });
+    }, "de_RelatedResources");
+    var de_RequiredActivatedType = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_TNA] != null) {
+        contents[_TNA] = (0, import_smithy_client.expectString)(output[_TNA]);
+      }
+      if (output[_OTN] != null) {
+        contents[_OTN] = (0, import_smithy_client.expectString)(output[_OTN]);
+      }
+      if (output[_PI] != null) {
+        contents[_PI] = (0, import_smithy_client.expectString)(output[_PI]);
+      }
+      if (output.SupportedMajorVersions === "") {
+        contents[_SMV] = [];
+      } else if (output[_SMV] != null && output[_SMV][_m] != null) {
+        contents[_SMV] = de_SupportedMajorVersions((0, import_smithy_client.getArrayIfSingleItem)(output[_SMV][_m]), context);
+      }
+      return contents;
+    }, "de_RequiredActivatedType");
+    var de_RequiredActivatedTypes = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_RequiredActivatedType(entry, context);
+      });
+    }, "de_RequiredActivatedTypes");
+    var de_ResourceChange = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_A] != null) {
+        contents[_A] = (0, import_smithy_client.expectString)(output[_A]);
+      }
+      if (output[_LRI] != null) {
+        contents[_LRI] = (0, import_smithy_client.expectString)(output[_LRI]);
+      }
+      if (output[_PRI] != null) {
+        contents[_PRI] = (0, import_smithy_client.expectString)(output[_PRI]);
+      }
+      if (output[_RTes] != null) {
+        contents[_RTes] = (0, import_smithy_client.expectString)(output[_RTes]);
+      }
+      if (output[_Rep] != null) {
+        contents[_Rep] = (0, import_smithy_client.expectString)(output[_Rep]);
+      }
+      if (output.Scope === "") {
+        contents[_Sco] = [];
+      } else if (output[_Sco] != null && output[_Sco][_m] != null) {
+        contents[_Sco] = de_Scope((0, import_smithy_client.getArrayIfSingleItem)(output[_Sco][_m]), context);
+      }
+      if (output.Details === "") {
+        contents[_De] = [];
+      } else if (output[_De] != null && output[_De][_m] != null) {
+        contents[_De] = de_ResourceChangeDetails((0, import_smithy_client.getArrayIfSingleItem)(output[_De][_m]), context);
+      }
+      if (output[_CSIh] != null) {
+        contents[_CSIh] = (0, import_smithy_client.expectString)(output[_CSIh]);
+      }
+      if (output[_MI] != null) {
+        contents[_MI] = de_ModuleInfo(output[_MI], context);
+      }
+      return contents;
+    }, "de_ResourceChange");
+    var de_ResourceChangeDetail = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_Tar] != null) {
+        contents[_Tar] = de_ResourceTargetDefinition(output[_Tar], context);
+      }
+      if (output[_Ev] != null) {
+        contents[_Ev] = (0, import_smithy_client.expectString)(output[_Ev]);
+      }
+      if (output[_CSh] != null) {
+        contents[_CSh] = (0, import_smithy_client.expectString)(output[_CSh]);
+      }
+      if (output[_CE] != null) {
+        contents[_CE] = (0, import_smithy_client.expectString)(output[_CE]);
+      }
+      return contents;
+    }, "de_ResourceChangeDetail");
+    var de_ResourceChangeDetails = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_ResourceChangeDetail(entry, context);
+      });
+    }, "de_ResourceChangeDetails");
+    var de_ResourceDetail = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_RTes] != null) {
+        contents[_RTes] = (0, import_smithy_client.expectString)(output[_RTes]);
+      }
+      if (output[_LRI] != null) {
+        contents[_LRI] = (0, import_smithy_client.expectString)(output[_LRI]);
+      }
+      if (output.ResourceIdentifier === "") {
+        contents[_RI] = {};
+      } else if (output[_RI] != null && output[_RI][_e] != null) {
+        contents[_RI] = de_ResourceIdentifierProperties((0, import_smithy_client.getArrayIfSingleItem)(output[_RI][_e]), context);
+      }
+      if (output[_RSeso] != null) {
+        contents[_RSeso] = (0, import_smithy_client.expectString)(output[_RSeso]);
+      }
+      if (output[_RSR] != null) {
+        contents[_RSR] = (0, import_smithy_client.expectString)(output[_RSR]);
+      }
+      if (output.Warnings === "") {
+        contents[_W] = [];
+      } else if (output[_W] != null && output[_W][_m] != null) {
+        contents[_W] = de_WarningDetails((0, import_smithy_client.getArrayIfSingleItem)(output[_W][_m]), context);
+      }
+      return contents;
+    }, "de_ResourceDetail");
+    var de_ResourceDetails = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_ResourceDetail(entry, context);
+      });
+    }, "de_ResourceDetails");
+    var de_ResourceIdentifierProperties = /* @__PURE__ */ __name((output, context) => {
+      return output.reduce((acc, pair) => {
+        if (pair["value"] === null) {
+          return acc;
+        }
+        acc[pair["key"]] = (0, import_smithy_client.expectString)(pair["value"]);
+        return acc;
+      }, {});
+    }, "de_ResourceIdentifierProperties");
+    var de_ResourceIdentifiers = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return (0, import_smithy_client.expectString)(entry);
+      });
+    }, "de_ResourceIdentifiers");
+    var de_ResourceIdentifierSummaries = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_ResourceIdentifierSummary(entry, context);
+      });
+    }, "de_ResourceIdentifierSummaries");
+    var de_ResourceIdentifierSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_RTes] != null) {
+        contents[_RTes] = (0, import_smithy_client.expectString)(output[_RTes]);
+      }
+      if (output.LogicalResourceIds === "") {
+        contents[_LRIo] = [];
+      } else if (output[_LRIo] != null && output[_LRIo][_m] != null) {
+        contents[_LRIo] = de_LogicalResourceIds((0, import_smithy_client.getArrayIfSingleItem)(output[_LRIo][_m]), context);
+      }
+      if (output.ResourceIdentifiers === "") {
+        contents[_RIe] = [];
+      } else if (output[_RIe] != null && output[_RIe][_m] != null) {
+        contents[_RIe] = de_ResourceIdentifiers((0, import_smithy_client.getArrayIfSingleItem)(output[_RIe][_m]), context);
+      }
+      return contents;
+    }, "de_ResourceIdentifierSummary");
+    var de_ResourceScanInProgressException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_ResourceScanInProgressException");
+    var de_ResourceScanLimitExceededException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_ResourceScanLimitExceededException");
+    var de_ResourceScanNotFoundException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_ResourceScanNotFoundException");
+    var de_ResourceScanSummaries = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_ResourceScanSummary(entry, context);
+      });
+    }, "de_ResourceScanSummaries");
+    var de_ResourceScanSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_RSI] != null) {
+        contents[_RSI] = (0, import_smithy_client.expectString)(output[_RSI]);
+      }
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_SRt] != null) {
+        contents[_SRt] = (0, import_smithy_client.expectString)(output[_SRt]);
+      }
+      if (output[_ST] != null) {
+        contents[_ST] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_ST]));
+      }
+      if (output[_ET] != null) {
+        contents[_ET] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_ET]));
+      }
+      if (output[_PC] != null) {
+        contents[_PC] = (0, import_smithy_client.strictParseFloat)(output[_PC]);
+      }
+      return contents;
+    }, "de_ResourceScanSummary");
+    var de_ResourceTargetDefinition = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_At] != null) {
+        contents[_At] = (0, import_smithy_client.expectString)(output[_At]);
+      }
+      if (output[_N] != null) {
+        contents[_N] = (0, import_smithy_client.expectString)(output[_N]);
+      }
+      if (output[_RReq] != null) {
+        contents[_RReq] = (0, import_smithy_client.expectString)(output[_RReq]);
+      }
+      return contents;
+    }, "de_ResourceTargetDefinition");
+    var de_ResourceTypes = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return (0, import_smithy_client.expectString)(entry);
+      });
+    }, "de_ResourceTypes");
+    var de_RollbackConfiguration = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.RollbackTriggers === "") {
+        contents[_RTo] = [];
+      } else if (output[_RTo] != null && output[_RTo][_m] != null) {
+        contents[_RTo] = de_RollbackTriggers((0, import_smithy_client.getArrayIfSingleItem)(output[_RTo][_m]), context);
+      }
+      if (output[_MTIM] != null) {
+        contents[_MTIM] = (0, import_smithy_client.strictParseInt32)(output[_MTIM]);
+      }
+      return contents;
+    }, "de_RollbackConfiguration");
+    var de_RollbackStackOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      return contents;
+    }, "de_RollbackStackOutput");
+    var de_RollbackTrigger = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_Ar] != null) {
+        contents[_Ar] = (0, import_smithy_client.expectString)(output[_Ar]);
+      }
+      if (output[_T] != null) {
+        contents[_T] = (0, import_smithy_client.expectString)(output[_T]);
+      }
+      return contents;
+    }, "de_RollbackTrigger");
+    var de_RollbackTriggers = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_RollbackTrigger(entry, context);
+      });
+    }, "de_RollbackTriggers");
+    var de_ScannedResource = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_RTes] != null) {
+        contents[_RTes] = (0, import_smithy_client.expectString)(output[_RTes]);
+      }
+      if (output.ResourceIdentifier === "") {
+        contents[_RI] = {};
+      } else if (output[_RI] != null && output[_RI][_e] != null) {
+        contents[_RI] = de_JazzResourceIdentifierProperties((0, import_smithy_client.getArrayIfSingleItem)(output[_RI][_e]), context);
+      }
+      if (output[_MBS] != null) {
+        contents[_MBS] = (0, import_smithy_client.parseBoolean)(output[_MBS]);
+      }
+      return contents;
+    }, "de_ScannedResource");
+    var de_ScannedResources = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_ScannedResource(entry, context);
+      });
+    }, "de_ScannedResources");
+    var de_Scope = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return (0, import_smithy_client.expectString)(entry);
+      });
+    }, "de_Scope");
+    var de_SetTypeConfigurationOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_CAonf] != null) {
+        contents[_CAonf] = (0, import_smithy_client.expectString)(output[_CAonf]);
+      }
+      return contents;
+    }, "de_SetTypeConfigurationOutput");
+    var de_SetTypeDefaultVersionOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      return contents;
+    }, "de_SetTypeDefaultVersionOutput");
+    var de_Stack = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      if (output[_SN] != null) {
+        contents[_SN] = (0, import_smithy_client.expectString)(output[_SN]);
+      }
+      if (output[_CSIh] != null) {
+        contents[_CSIh] = (0, import_smithy_client.expectString)(output[_CSIh]);
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      if (output.Parameters === "") {
+        contents[_P] = [];
+      } else if (output[_P] != null && output[_P][_m] != null) {
+        contents[_P] = de_Parameters((0, import_smithy_client.getArrayIfSingleItem)(output[_P][_m]), context);
+      }
+      if (output[_CTr] != null) {
+        contents[_CTr] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_CTr]));
+      }
+      if (output[_DTel] != null) {
+        contents[_DTel] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_DTel]));
+      }
+      if (output[_LUT] != null) {
+        contents[_LUT] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LUT]));
+      }
+      if (output[_RC] != null) {
+        contents[_RC] = de_RollbackConfiguration(output[_RC], context);
+      }
+      if (output[_SSta] != null) {
+        contents[_SSta] = (0, import_smithy_client.expectString)(output[_SSta]);
+      }
+      if (output[_SSR] != null) {
+        contents[_SSR] = (0, import_smithy_client.expectString)(output[_SSR]);
+      }
+      if (output[_DR] != null) {
+        contents[_DR] = (0, import_smithy_client.parseBoolean)(output[_DR]);
+      }
+      if (output.NotificationARNs === "") {
+        contents[_NARN] = [];
+      } else if (output[_NARN] != null && output[_NARN][_m] != null) {
+        contents[_NARN] = de_NotificationARNs((0, import_smithy_client.getArrayIfSingleItem)(output[_NARN][_m]), context);
+      }
+      if (output[_TIM] != null) {
+        contents[_TIM] = (0, import_smithy_client.strictParseInt32)(output[_TIM]);
+      }
+      if (output.Capabilities === "") {
+        contents[_C] = [];
+      } else if (output[_C] != null && output[_C][_m] != null) {
+        contents[_C] = de_Capabilities((0, import_smithy_client.getArrayIfSingleItem)(output[_C][_m]), context);
+      }
+      if (output.Outputs === "") {
+        contents[_O] = [];
+      } else if (output[_O] != null && output[_O][_m] != null) {
+        contents[_O] = de_Outputs((0, import_smithy_client.getArrayIfSingleItem)(output[_O][_m]), context);
+      }
+      if (output[_RARN] != null) {
+        contents[_RARN] = (0, import_smithy_client.expectString)(output[_RARN]);
+      }
+      if (output.Tags === "") {
+        contents[_Ta] = [];
+      } else if (output[_Ta] != null && output[_Ta][_m] != null) {
+        contents[_Ta] = de_Tags((0, import_smithy_client.getArrayIfSingleItem)(output[_Ta][_m]), context);
+      }
+      if (output[_ETP] != null) {
+        contents[_ETP] = (0, import_smithy_client.parseBoolean)(output[_ETP]);
+      }
+      if (output[_PIa] != null) {
+        contents[_PIa] = (0, import_smithy_client.expectString)(output[_PIa]);
+      }
+      if (output[_RIo] != null) {
+        contents[_RIo] = (0, import_smithy_client.expectString)(output[_RIo]);
+      }
+      if (output[_DI] != null) {
+        contents[_DI] = de_StackDriftInformation(output[_DI], context);
+      }
+      if (output[_REOC] != null) {
+        contents[_REOC] = (0, import_smithy_client.parseBoolean)(output[_REOC]);
+      }
+      if (output[_DSeta] != null) {
+        contents[_DSeta] = (0, import_smithy_client.expectString)(output[_DSeta]);
+      }
+      return contents;
+    }, "de_Stack");
+    var de_StackDriftInformation = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SDS] != null) {
+        contents[_SDS] = (0, import_smithy_client.expectString)(output[_SDS]);
+      }
+      if (output[_LCT] != null) {
+        contents[_LCT] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LCT]));
+      }
+      return contents;
+    }, "de_StackDriftInformation");
+    var de_StackDriftInformationSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SDS] != null) {
+        contents[_SDS] = (0, import_smithy_client.expectString)(output[_SDS]);
+      }
+      if (output[_LCT] != null) {
+        contents[_LCT] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LCT]));
+      }
+      return contents;
+    }, "de_StackDriftInformationSummary");
+    var de_StackEvent = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      if (output[_EI] != null) {
+        contents[_EI] = (0, import_smithy_client.expectString)(output[_EI]);
+      }
+      if (output[_SN] != null) {
+        contents[_SN] = (0, import_smithy_client.expectString)(output[_SN]);
+      }
+      if (output[_LRI] != null) {
+        contents[_LRI] = (0, import_smithy_client.expectString)(output[_LRI]);
+      }
+      if (output[_PRI] != null) {
+        contents[_PRI] = (0, import_smithy_client.expectString)(output[_PRI]);
+      }
+      if (output[_RTes] != null) {
+        contents[_RTes] = (0, import_smithy_client.expectString)(output[_RTes]);
+      }
+      if (output[_Ti] != null) {
+        contents[_Ti] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_Ti]));
+      }
+      if (output[_RSeso] != null) {
+        contents[_RSeso] = (0, import_smithy_client.expectString)(output[_RSeso]);
+      }
+      if (output[_RSR] != null) {
+        contents[_RSR] = (0, import_smithy_client.expectString)(output[_RSR]);
+      }
+      if (output[_RPe] != null) {
+        contents[_RPe] = (0, import_smithy_client.expectString)(output[_RPe]);
+      }
+      if (output[_CRT] != null) {
+        contents[_CRT] = (0, import_smithy_client.expectString)(output[_CRT]);
+      }
+      if (output[_HT] != null) {
+        contents[_HT] = (0, import_smithy_client.expectString)(output[_HT]);
+      }
+      if (output[_HS] != null) {
+        contents[_HS] = (0, import_smithy_client.expectString)(output[_HS]);
+      }
+      if (output[_HSR] != null) {
+        contents[_HSR] = (0, import_smithy_client.expectString)(output[_HSR]);
+      }
+      if (output[_HIP] != null) {
+        contents[_HIP] = (0, import_smithy_client.expectString)(output[_HIP]);
+      }
+      if (output[_HFM] != null) {
+        contents[_HFM] = (0, import_smithy_client.expectString)(output[_HFM]);
+      }
+      if (output[_DSeta] != null) {
+        contents[_DSeta] = (0, import_smithy_client.expectString)(output[_DSeta]);
+      }
+      return contents;
+    }, "de_StackEvent");
+    var de_StackEvents = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_StackEvent(entry, context);
+      });
+    }, "de_StackEvents");
+    var de_StackInstance = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SSI] != null) {
+        contents[_SSI] = (0, import_smithy_client.expectString)(output[_SSI]);
+      }
+      if (output[_Reg] != null) {
+        contents[_Reg] = (0, import_smithy_client.expectString)(output[_Reg]);
+      }
+      if (output[_Acc] != null) {
+        contents[_Acc] = (0, import_smithy_client.expectString)(output[_Acc]);
+      }
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      if (output.ParameterOverrides === "") {
+        contents[_PO] = [];
+      } else if (output[_PO] != null && output[_PO][_m] != null) {
+        contents[_PO] = de_Parameters((0, import_smithy_client.getArrayIfSingleItem)(output[_PO][_m]), context);
+      }
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_SIS] != null) {
+        contents[_SIS] = de_StackInstanceComprehensiveStatus(output[_SIS], context);
+      }
+      if (output[_SRt] != null) {
+        contents[_SRt] = (0, import_smithy_client.expectString)(output[_SRt]);
+      }
+      if (output[_OUIr] != null) {
+        contents[_OUIr] = (0, import_smithy_client.expectString)(output[_OUIr]);
+      }
+      if (output[_DSr] != null) {
+        contents[_DSr] = (0, import_smithy_client.expectString)(output[_DSr]);
+      }
+      if (output[_LDCT] != null) {
+        contents[_LDCT] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LDCT]));
+      }
+      if (output[_LOI] != null) {
+        contents[_LOI] = (0, import_smithy_client.expectString)(output[_LOI]);
+      }
+      return contents;
+    }, "de_StackInstance");
+    var de_StackInstanceComprehensiveStatus = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_DSeta] != null) {
+        contents[_DSeta] = (0, import_smithy_client.expectString)(output[_DSeta]);
+      }
+      return contents;
+    }, "de_StackInstanceComprehensiveStatus");
+    var de_StackInstanceNotFoundException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_StackInstanceNotFoundException");
+    var de_StackInstanceResourceDriftsSummaries = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_StackInstanceResourceDriftsSummary(entry, context);
+      });
+    }, "de_StackInstanceResourceDriftsSummaries");
+    var de_StackInstanceResourceDriftsSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      if (output[_LRI] != null) {
+        contents[_LRI] = (0, import_smithy_client.expectString)(output[_LRI]);
+      }
+      if (output[_PRI] != null) {
+        contents[_PRI] = (0, import_smithy_client.expectString)(output[_PRI]);
+      }
+      if (output.PhysicalResourceIdContext === "") {
+        contents[_PRIC] = [];
+      } else if (output[_PRIC] != null && output[_PRIC][_m] != null) {
+        contents[_PRIC] = de_PhysicalResourceIdContext((0, import_smithy_client.getArrayIfSingleItem)(output[_PRIC][_m]), context);
+      }
+      if (output[_RTes] != null) {
+        contents[_RTes] = (0, import_smithy_client.expectString)(output[_RTes]);
+      }
+      if (output.PropertyDifferences === "") {
+        contents[_PD] = [];
+      } else if (output[_PD] != null && output[_PD][_m] != null) {
+        contents[_PD] = de_PropertyDifferences((0, import_smithy_client.getArrayIfSingleItem)(output[_PD][_m]), context);
+      }
+      if (output[_SRDS] != null) {
+        contents[_SRDS] = (0, import_smithy_client.expectString)(output[_SRDS]);
+      }
+      if (output[_Ti] != null) {
+        contents[_Ti] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_Ti]));
+      }
+      return contents;
+    }, "de_StackInstanceResourceDriftsSummary");
+    var de_StackInstanceSummaries = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_StackInstanceSummary(entry, context);
+      });
+    }, "de_StackInstanceSummaries");
+    var de_StackInstanceSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SSI] != null) {
+        contents[_SSI] = (0, import_smithy_client.expectString)(output[_SSI]);
+      }
+      if (output[_Reg] != null) {
+        contents[_Reg] = (0, import_smithy_client.expectString)(output[_Reg]);
+      }
+      if (output[_Acc] != null) {
+        contents[_Acc] = (0, import_smithy_client.expectString)(output[_Acc]);
+      }
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_SRt] != null) {
+        contents[_SRt] = (0, import_smithy_client.expectString)(output[_SRt]);
+      }
+      if (output[_SIS] != null) {
+        contents[_SIS] = de_StackInstanceComprehensiveStatus(output[_SIS], context);
+      }
+      if (output[_OUIr] != null) {
+        contents[_OUIr] = (0, import_smithy_client.expectString)(output[_OUIr]);
+      }
+      if (output[_DSr] != null) {
+        contents[_DSr] = (0, import_smithy_client.expectString)(output[_DSr]);
+      }
+      if (output[_LDCT] != null) {
+        contents[_LDCT] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LDCT]));
+      }
+      if (output[_LOI] != null) {
+        contents[_LOI] = (0, import_smithy_client.expectString)(output[_LOI]);
+      }
+      return contents;
+    }, "de_StackInstanceSummary");
+    var de_StackNotFoundException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_StackNotFoundException");
+    var de_StackResource = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SN] != null) {
+        contents[_SN] = (0, import_smithy_client.expectString)(output[_SN]);
+      }
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      if (output[_LRI] != null) {
+        contents[_LRI] = (0, import_smithy_client.expectString)(output[_LRI]);
+      }
+      if (output[_PRI] != null) {
+        contents[_PRI] = (0, import_smithy_client.expectString)(output[_PRI]);
+      }
+      if (output[_RTes] != null) {
+        contents[_RTes] = (0, import_smithy_client.expectString)(output[_RTes]);
+      }
+      if (output[_Ti] != null) {
+        contents[_Ti] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_Ti]));
+      }
+      if (output[_RSeso] != null) {
+        contents[_RSeso] = (0, import_smithy_client.expectString)(output[_RSeso]);
+      }
+      if (output[_RSR] != null) {
+        contents[_RSR] = (0, import_smithy_client.expectString)(output[_RSR]);
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      if (output[_DI] != null) {
+        contents[_DI] = de_StackResourceDriftInformation(output[_DI], context);
+      }
+      if (output[_MI] != null) {
+        contents[_MI] = de_ModuleInfo(output[_MI], context);
+      }
+      return contents;
+    }, "de_StackResource");
+    var de_StackResourceDetail = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SN] != null) {
+        contents[_SN] = (0, import_smithy_client.expectString)(output[_SN]);
+      }
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      if (output[_LRI] != null) {
+        contents[_LRI] = (0, import_smithy_client.expectString)(output[_LRI]);
+      }
+      if (output[_PRI] != null) {
+        contents[_PRI] = (0, import_smithy_client.expectString)(output[_PRI]);
+      }
+      if (output[_RTes] != null) {
+        contents[_RTes] = (0, import_smithy_client.expectString)(output[_RTes]);
+      }
+      if (output[_LUTa] != null) {
+        contents[_LUTa] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LUTa]));
+      }
+      if (output[_RSeso] != null) {
+        contents[_RSeso] = (0, import_smithy_client.expectString)(output[_RSeso]);
+      }
+      if (output[_RSR] != null) {
+        contents[_RSR] = (0, import_smithy_client.expectString)(output[_RSR]);
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      if (output[_Me] != null) {
+        contents[_Me] = (0, import_smithy_client.expectString)(output[_Me]);
+      }
+      if (output[_DI] != null) {
+        contents[_DI] = de_StackResourceDriftInformation(output[_DI], context);
+      }
+      if (output[_MI] != null) {
+        contents[_MI] = de_ModuleInfo(output[_MI], context);
+      }
+      return contents;
+    }, "de_StackResourceDetail");
+    var de_StackResourceDrift = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      if (output[_LRI] != null) {
+        contents[_LRI] = (0, import_smithy_client.expectString)(output[_LRI]);
+      }
+      if (output[_PRI] != null) {
+        contents[_PRI] = (0, import_smithy_client.expectString)(output[_PRI]);
+      }
+      if (output.PhysicalResourceIdContext === "") {
+        contents[_PRIC] = [];
+      } else if (output[_PRIC] != null && output[_PRIC][_m] != null) {
+        contents[_PRIC] = de_PhysicalResourceIdContext((0, import_smithy_client.getArrayIfSingleItem)(output[_PRIC][_m]), context);
+      }
+      if (output[_RTes] != null) {
+        contents[_RTes] = (0, import_smithy_client.expectString)(output[_RTes]);
+      }
+      if (output[_EP] != null) {
+        contents[_EP] = (0, import_smithy_client.expectString)(output[_EP]);
+      }
+      if (output[_AP] != null) {
+        contents[_AP] = (0, import_smithy_client.expectString)(output[_AP]);
+      }
+      if (output.PropertyDifferences === "") {
+        contents[_PD] = [];
+      } else if (output[_PD] != null && output[_PD][_m] != null) {
+        contents[_PD] = de_PropertyDifferences((0, import_smithy_client.getArrayIfSingleItem)(output[_PD][_m]), context);
+      }
+      if (output[_SRDS] != null) {
+        contents[_SRDS] = (0, import_smithy_client.expectString)(output[_SRDS]);
+      }
+      if (output[_Ti] != null) {
+        contents[_Ti] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_Ti]));
+      }
+      if (output[_MI] != null) {
+        contents[_MI] = de_ModuleInfo(output[_MI], context);
+      }
+      return contents;
+    }, "de_StackResourceDrift");
+    var de_StackResourceDriftInformation = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SRDS] != null) {
+        contents[_SRDS] = (0, import_smithy_client.expectString)(output[_SRDS]);
+      }
+      if (output[_LCT] != null) {
+        contents[_LCT] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LCT]));
+      }
+      return contents;
+    }, "de_StackResourceDriftInformation");
+    var de_StackResourceDriftInformationSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SRDS] != null) {
+        contents[_SRDS] = (0, import_smithy_client.expectString)(output[_SRDS]);
+      }
+      if (output[_LCT] != null) {
+        contents[_LCT] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LCT]));
+      }
+      return contents;
+    }, "de_StackResourceDriftInformationSummary");
+    var de_StackResourceDrifts = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_StackResourceDrift(entry, context);
+      });
+    }, "de_StackResourceDrifts");
+    var de_StackResources = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_StackResource(entry, context);
+      });
+    }, "de_StackResources");
+    var de_StackResourceSummaries = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_StackResourceSummary(entry, context);
+      });
+    }, "de_StackResourceSummaries");
+    var de_StackResourceSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_LRI] != null) {
+        contents[_LRI] = (0, import_smithy_client.expectString)(output[_LRI]);
+      }
+      if (output[_PRI] != null) {
+        contents[_PRI] = (0, import_smithy_client.expectString)(output[_PRI]);
+      }
+      if (output[_RTes] != null) {
+        contents[_RTes] = (0, import_smithy_client.expectString)(output[_RTes]);
+      }
+      if (output[_LUTa] != null) {
+        contents[_LUTa] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LUTa]));
+      }
+      if (output[_RSeso] != null) {
+        contents[_RSeso] = (0, import_smithy_client.expectString)(output[_RSeso]);
+      }
+      if (output[_RSR] != null) {
+        contents[_RSR] = (0, import_smithy_client.expectString)(output[_RSR]);
+      }
+      if (output[_DI] != null) {
+        contents[_DI] = de_StackResourceDriftInformationSummary(output[_DI], context);
+      }
+      if (output[_MI] != null) {
+        contents[_MI] = de_ModuleInfo(output[_MI], context);
+      }
+      return contents;
+    }, "de_StackResourceSummary");
+    var de_Stacks = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_Stack(entry, context);
+      });
+    }, "de_Stacks");
+    var de_StackSet = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SSN] != null) {
+        contents[_SSN] = (0, import_smithy_client.expectString)(output[_SSN]);
+      }
+      if (output[_SSI] != null) {
+        contents[_SSI] = (0, import_smithy_client.expectString)(output[_SSI]);
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_TB] != null) {
+        contents[_TB] = (0, import_smithy_client.expectString)(output[_TB]);
+      }
+      if (output.Parameters === "") {
+        contents[_P] = [];
+      } else if (output[_P] != null && output[_P][_m] != null) {
+        contents[_P] = de_Parameters((0, import_smithy_client.getArrayIfSingleItem)(output[_P][_m]), context);
+      }
+      if (output.Capabilities === "") {
+        contents[_C] = [];
+      } else if (output[_C] != null && output[_C][_m] != null) {
+        contents[_C] = de_Capabilities((0, import_smithy_client.getArrayIfSingleItem)(output[_C][_m]), context);
+      }
+      if (output.Tags === "") {
+        contents[_Ta] = [];
+      } else if (output[_Ta] != null && output[_Ta][_m] != null) {
+        contents[_Ta] = de_Tags((0, import_smithy_client.getArrayIfSingleItem)(output[_Ta][_m]), context);
+      }
+      if (output[_SSARN] != null) {
+        contents[_SSARN] = (0, import_smithy_client.expectString)(output[_SSARN]);
+      }
+      if (output[_ARARN] != null) {
+        contents[_ARARN] = (0, import_smithy_client.expectString)(output[_ARARN]);
+      }
+      if (output[_ERN] != null) {
+        contents[_ERN] = (0, import_smithy_client.expectString)(output[_ERN]);
+      }
+      if (output[_SSDDD] != null) {
+        contents[_SSDDD] = de_StackSetDriftDetectionDetails(output[_SSDDD], context);
+      }
+      if (output[_AD] != null) {
+        contents[_AD] = de_AutoDeployment(output[_AD], context);
+      }
+      if (output[_PM] != null) {
+        contents[_PM] = (0, import_smithy_client.expectString)(output[_PM]);
+      }
+      if (output.OrganizationalUnitIds === "") {
+        contents[_OUI] = [];
+      } else if (output[_OUI] != null && output[_OUI][_m] != null) {
+        contents[_OUI] = de_OrganizationalUnitIdList((0, import_smithy_client.getArrayIfSingleItem)(output[_OUI][_m]), context);
+      }
+      if (output[_ME] != null) {
+        contents[_ME] = de_ManagedExecution(output[_ME], context);
+      }
+      if (output.Regions === "") {
+        contents[_Re] = [];
+      } else if (output[_Re] != null && output[_Re][_m] != null) {
+        contents[_Re] = de_RegionList((0, import_smithy_client.getArrayIfSingleItem)(output[_Re][_m]), context);
+      }
+      return contents;
+    }, "de_StackSet");
+    var de_StackSetAutoDeploymentTargetSummaries = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_StackSetAutoDeploymentTargetSummary(entry, context);
+      });
+    }, "de_StackSetAutoDeploymentTargetSummaries");
+    var de_StackSetAutoDeploymentTargetSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_OUIr] != null) {
+        contents[_OUIr] = (0, import_smithy_client.expectString)(output[_OUIr]);
+      }
+      if (output.Regions === "") {
+        contents[_Re] = [];
+      } else if (output[_Re] != null && output[_Re][_m] != null) {
+        contents[_Re] = de_RegionList((0, import_smithy_client.getArrayIfSingleItem)(output[_Re][_m]), context);
+      }
+      return contents;
+    }, "de_StackSetAutoDeploymentTargetSummary");
+    var de_StackSetDriftDetectionDetails = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_DSr] != null) {
+        contents[_DSr] = (0, import_smithy_client.expectString)(output[_DSr]);
+      }
+      if (output[_DDS] != null) {
+        contents[_DDS] = (0, import_smithy_client.expectString)(output[_DDS]);
+      }
+      if (output[_LDCT] != null) {
+        contents[_LDCT] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LDCT]));
+      }
+      if (output[_TSIC] != null) {
+        contents[_TSIC] = (0, import_smithy_client.strictParseInt32)(output[_TSIC]);
+      }
+      if (output[_DSIC] != null) {
+        contents[_DSIC] = (0, import_smithy_client.strictParseInt32)(output[_DSIC]);
+      }
+      if (output[_ISSIC] != null) {
+        contents[_ISSIC] = (0, import_smithy_client.strictParseInt32)(output[_ISSIC]);
+      }
+      if (output[_IPSIC] != null) {
+        contents[_IPSIC] = (0, import_smithy_client.strictParseInt32)(output[_IPSIC]);
+      }
+      if (output[_FSIC] != null) {
+        contents[_FSIC] = (0, import_smithy_client.strictParseInt32)(output[_FSIC]);
+      }
+      return contents;
+    }, "de_StackSetDriftDetectionDetails");
+    var de_StackSetNotEmptyException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_StackSetNotEmptyException");
+    var de_StackSetNotFoundException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_StackSetNotFoundException");
+    var de_StackSetOperation = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_OI] != null) {
+        contents[_OI] = (0, import_smithy_client.expectString)(output[_OI]);
+      }
+      if (output[_SSI] != null) {
+        contents[_SSI] = (0, import_smithy_client.expectString)(output[_SSI]);
+      }
+      if (output[_A] != null) {
+        contents[_A] = (0, import_smithy_client.expectString)(output[_A]);
+      }
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_OP] != null) {
+        contents[_OP] = de_StackSetOperationPreferences(output[_OP], context);
+      }
+      if (output[_RSe] != null) {
+        contents[_RSe] = (0, import_smithy_client.parseBoolean)(output[_RSe]);
+      }
+      if (output[_ARARN] != null) {
+        contents[_ARARN] = (0, import_smithy_client.expectString)(output[_ARARN]);
+      }
+      if (output[_ERN] != null) {
+        contents[_ERN] = (0, import_smithy_client.expectString)(output[_ERN]);
+      }
+      if (output[_CTre] != null) {
+        contents[_CTre] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_CTre]));
+      }
+      if (output[_ETn] != null) {
+        contents[_ETn] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_ETn]));
+      }
+      if (output[_DTep] != null) {
+        contents[_DTep] = de_DeploymentTargets(output[_DTep], context);
+      }
+      if (output[_SSDDD] != null) {
+        contents[_SSDDD] = de_StackSetDriftDetectionDetails(output[_SSDDD], context);
+      }
+      if (output[_SRt] != null) {
+        contents[_SRt] = (0, import_smithy_client.expectString)(output[_SRt]);
+      }
+      if (output[_SD] != null) {
+        contents[_SD] = de_StackSetOperationStatusDetails(output[_SD], context);
+      }
+      return contents;
+    }, "de_StackSetOperation");
+    var de_StackSetOperationPreferences = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_RCT] != null) {
+        contents[_RCT] = (0, import_smithy_client.expectString)(output[_RCT]);
+      }
+      if (output.RegionOrder === "") {
+        contents[_RO] = [];
+      } else if (output[_RO] != null && output[_RO][_m] != null) {
+        contents[_RO] = de_RegionList((0, import_smithy_client.getArrayIfSingleItem)(output[_RO][_m]), context);
+      }
+      if (output[_FTC] != null) {
+        contents[_FTC] = (0, import_smithy_client.strictParseInt32)(output[_FTC]);
+      }
+      if (output[_FTP] != null) {
+        contents[_FTP] = (0, import_smithy_client.strictParseInt32)(output[_FTP]);
+      }
+      if (output[_MCC] != null) {
+        contents[_MCC] = (0, import_smithy_client.strictParseInt32)(output[_MCC]);
+      }
+      if (output[_MCP] != null) {
+        contents[_MCP] = (0, import_smithy_client.strictParseInt32)(output[_MCP]);
+      }
+      if (output[_CM] != null) {
+        contents[_CM] = (0, import_smithy_client.expectString)(output[_CM]);
+      }
+      return contents;
+    }, "de_StackSetOperationPreferences");
+    var de_StackSetOperationResultSummaries = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_StackSetOperationResultSummary(entry, context);
+      });
+    }, "de_StackSetOperationResultSummaries");
+    var de_StackSetOperationResultSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_Acc] != null) {
+        contents[_Acc] = (0, import_smithy_client.expectString)(output[_Acc]);
+      }
+      if (output[_Reg] != null) {
+        contents[_Reg] = (0, import_smithy_client.expectString)(output[_Reg]);
+      }
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_SRt] != null) {
+        contents[_SRt] = (0, import_smithy_client.expectString)(output[_SRt]);
+      }
+      if (output[_AGR] != null) {
+        contents[_AGR] = de_AccountGateResult(output[_AGR], context);
+      }
+      if (output[_OUIr] != null) {
+        contents[_OUIr] = (0, import_smithy_client.expectString)(output[_OUIr]);
+      }
+      return contents;
+    }, "de_StackSetOperationResultSummary");
+    var de_StackSetOperationStatusDetails = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_FSIC] != null) {
+        contents[_FSIC] = (0, import_smithy_client.strictParseInt32)(output[_FSIC]);
+      }
+      return contents;
+    }, "de_StackSetOperationStatusDetails");
+    var de_StackSetOperationSummaries = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_StackSetOperationSummary(entry, context);
+      });
+    }, "de_StackSetOperationSummaries");
+    var de_StackSetOperationSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_OI] != null) {
+        contents[_OI] = (0, import_smithy_client.expectString)(output[_OI]);
+      }
+      if (output[_A] != null) {
+        contents[_A] = (0, import_smithy_client.expectString)(output[_A]);
+      }
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_CTre] != null) {
+        contents[_CTre] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_CTre]));
+      }
+      if (output[_ETn] != null) {
+        contents[_ETn] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_ETn]));
+      }
+      if (output[_SRt] != null) {
+        contents[_SRt] = (0, import_smithy_client.expectString)(output[_SRt]);
+      }
+      if (output[_SD] != null) {
+        contents[_SD] = de_StackSetOperationStatusDetails(output[_SD], context);
+      }
+      if (output[_OP] != null) {
+        contents[_OP] = de_StackSetOperationPreferences(output[_OP], context);
+      }
+      return contents;
+    }, "de_StackSetOperationSummary");
+    var de_StackSetSummaries = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_StackSetSummary(entry, context);
+      });
+    }, "de_StackSetSummaries");
+    var de_StackSetSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SSN] != null) {
+        contents[_SSN] = (0, import_smithy_client.expectString)(output[_SSN]);
+      }
+      if (output[_SSI] != null) {
+        contents[_SSI] = (0, import_smithy_client.expectString)(output[_SSI]);
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_AD] != null) {
+        contents[_AD] = de_AutoDeployment(output[_AD], context);
+      }
+      if (output[_PM] != null) {
+        contents[_PM] = (0, import_smithy_client.expectString)(output[_PM]);
+      }
+      if (output[_DSr] != null) {
+        contents[_DSr] = (0, import_smithy_client.expectString)(output[_DSr]);
+      }
+      if (output[_LDCT] != null) {
+        contents[_LDCT] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LDCT]));
+      }
+      if (output[_ME] != null) {
+        contents[_ME] = de_ManagedExecution(output[_ME], context);
+      }
+      return contents;
+    }, "de_StackSetSummary");
+    var de_StackSummaries = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_StackSummary(entry, context);
+      });
+    }, "de_StackSummaries");
+    var de_StackSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      if (output[_SN] != null) {
+        contents[_SN] = (0, import_smithy_client.expectString)(output[_SN]);
+      }
+      if (output[_TDe] != null) {
+        contents[_TDe] = (0, import_smithy_client.expectString)(output[_TDe]);
+      }
+      if (output[_CTr] != null) {
+        contents[_CTr] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_CTr]));
+      }
+      if (output[_LUT] != null) {
+        contents[_LUT] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LUT]));
+      }
+      if (output[_DTel] != null) {
+        contents[_DTel] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_DTel]));
+      }
+      if (output[_SSta] != null) {
+        contents[_SSta] = (0, import_smithy_client.expectString)(output[_SSta]);
+      }
+      if (output[_SSR] != null) {
+        contents[_SSR] = (0, import_smithy_client.expectString)(output[_SSR]);
+      }
+      if (output[_PIa] != null) {
+        contents[_PIa] = (0, import_smithy_client.expectString)(output[_PIa]);
+      }
+      if (output[_RIo] != null) {
+        contents[_RIo] = (0, import_smithy_client.expectString)(output[_RIo]);
+      }
+      if (output[_DI] != null) {
+        contents[_DI] = de_StackDriftInformationSummary(output[_DI], context);
+      }
+      return contents;
+    }, "de_StackSummary");
+    var de_StageList = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return (0, import_smithy_client.expectString)(entry);
+      });
+    }, "de_StageList");
+    var de_StaleRequestException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_StaleRequestException");
+    var de_StartResourceScanOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_RSI] != null) {
+        contents[_RSI] = (0, import_smithy_client.expectString)(output[_RSI]);
+      }
+      return contents;
+    }, "de_StartResourceScanOutput");
+    var de_StopStackSetOperationOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      return contents;
+    }, "de_StopStackSetOperationOutput");
+    var de_SupportedMajorVersions = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return (0, import_smithy_client.strictParseInt32)(entry);
+      });
+    }, "de_SupportedMajorVersions");
+    var de_Tag = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_K] != null) {
+        contents[_K] = (0, import_smithy_client.expectString)(output[_K]);
+      }
+      if (output[_Val] != null) {
+        contents[_Val] = (0, import_smithy_client.expectString)(output[_Val]);
+      }
+      return contents;
+    }, "de_Tag");
+    var de_Tags = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_Tag(entry, context);
+      });
+    }, "de_Tags");
+    var de_TemplateConfiguration = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_DPe] != null) {
+        contents[_DPe] = (0, import_smithy_client.expectString)(output[_DPe]);
+      }
+      if (output[_URP] != null) {
+        contents[_URP] = (0, import_smithy_client.expectString)(output[_URP]);
+      }
+      return contents;
+    }, "de_TemplateConfiguration");
+    var de_TemplateParameter = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_PK] != null) {
+        contents[_PK] = (0, import_smithy_client.expectString)(output[_PK]);
+      }
+      if (output[_DV] != null) {
+        contents[_DV] = (0, import_smithy_client.expectString)(output[_DV]);
+      }
+      if (output[_NE] != null) {
+        contents[_NE] = (0, import_smithy_client.parseBoolean)(output[_NE]);
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      return contents;
+    }, "de_TemplateParameter");
+    var de_TemplateParameters = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_TemplateParameter(entry, context);
+      });
+    }, "de_TemplateParameters");
+    var de_TemplateProgress = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_RSesou] != null) {
+        contents[_RSesou] = (0, import_smithy_client.strictParseInt32)(output[_RSesou]);
+      }
+      if (output[_RF] != null) {
+        contents[_RF] = (0, import_smithy_client.strictParseInt32)(output[_RF]);
+      }
+      if (output[_RPes] != null) {
+        contents[_RPes] = (0, import_smithy_client.strictParseInt32)(output[_RPes]);
+      }
+      if (output[_RPeso] != null) {
+        contents[_RPeso] = (0, import_smithy_client.strictParseInt32)(output[_RPeso]);
+      }
+      return contents;
+    }, "de_TemplateProgress");
+    var de_TemplateSummaries = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_TemplateSummary(entry, context);
+      });
+    }, "de_TemplateSummaries");
+    var de_TemplateSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_GTI] != null) {
+        contents[_GTI] = (0, import_smithy_client.expectString)(output[_GTI]);
+      }
+      if (output[_GTN] != null) {
+        contents[_GTN] = (0, import_smithy_client.expectString)(output[_GTN]);
+      }
+      if (output[_S] != null) {
+        contents[_S] = (0, import_smithy_client.expectString)(output[_S]);
+      }
+      if (output[_SRt] != null) {
+        contents[_SRt] = (0, import_smithy_client.expectString)(output[_SRt]);
+      }
+      if (output[_CTr] != null) {
+        contents[_CTr] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_CTr]));
+      }
+      if (output[_LUT] != null) {
+        contents[_LUT] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LUT]));
+      }
+      if (output[_NOR] != null) {
+        contents[_NOR] = (0, import_smithy_client.strictParseInt32)(output[_NOR]);
+      }
+      return contents;
+    }, "de_TemplateSummary");
+    var de_TestTypeOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_TVA] != null) {
+        contents[_TVA] = (0, import_smithy_client.expectString)(output[_TVA]);
+      }
+      return contents;
+    }, "de_TestTypeOutput");
+    var de_TokenAlreadyExistsException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_TokenAlreadyExistsException");
+    var de_TransformsList = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return (0, import_smithy_client.expectString)(entry);
+      });
+    }, "de_TransformsList");
+    var de_TypeConfigurationDetails = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_Ar] != null) {
+        contents[_Ar] = (0, import_smithy_client.expectString)(output[_Ar]);
+      }
+      if (output[_Al] != null) {
+        contents[_Al] = (0, import_smithy_client.expectString)(output[_Al]);
+      }
+      if (output[_Co] != null) {
+        contents[_Co] = (0, import_smithy_client.expectString)(output[_Co]);
+      }
+      if (output[_LU] != null) {
+        contents[_LU] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LU]));
+      }
+      if (output[_TA] != null) {
+        contents[_TA] = (0, import_smithy_client.expectString)(output[_TA]);
+      }
+      if (output[_TN] != null) {
+        contents[_TN] = (0, import_smithy_client.expectString)(output[_TN]);
+      }
+      if (output[_IDC] != null) {
+        contents[_IDC] = (0, import_smithy_client.parseBoolean)(output[_IDC]);
+      }
+      return contents;
+    }, "de_TypeConfigurationDetails");
+    var de_TypeConfigurationDetailsList = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_TypeConfigurationDetails(entry, context);
+      });
+    }, "de_TypeConfigurationDetailsList");
+    var de_TypeConfigurationIdentifier = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_TA] != null) {
+        contents[_TA] = (0, import_smithy_client.expectString)(output[_TA]);
+      }
+      if (output[_TCA] != null) {
+        contents[_TCA] = (0, import_smithy_client.expectString)(output[_TCA]);
+      }
+      if (output[_TCAy] != null) {
+        contents[_TCAy] = (0, import_smithy_client.expectString)(output[_TCAy]);
+      }
+      if (output[_T] != null) {
+        contents[_T] = (0, import_smithy_client.expectString)(output[_T]);
+      }
+      if (output[_TN] != null) {
+        contents[_TN] = (0, import_smithy_client.expectString)(output[_TN]);
+      }
+      return contents;
+    }, "de_TypeConfigurationIdentifier");
+    var de_TypeConfigurationNotFoundException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_TypeConfigurationNotFoundException");
+    var de_TypeNotFoundException = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_M] != null) {
+        contents[_M] = (0, import_smithy_client.expectString)(output[_M]);
+      }
+      return contents;
+    }, "de_TypeNotFoundException");
+    var de_TypeSummaries = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_TypeSummary(entry, context);
+      });
+    }, "de_TypeSummaries");
+    var de_TypeSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_T] != null) {
+        contents[_T] = (0, import_smithy_client.expectString)(output[_T]);
+      }
+      if (output[_TN] != null) {
+        contents[_TN] = (0, import_smithy_client.expectString)(output[_TN]);
+      }
+      if (output[_DVI] != null) {
+        contents[_DVI] = (0, import_smithy_client.expectString)(output[_DVI]);
+      }
+      if (output[_TA] != null) {
+        contents[_TA] = (0, import_smithy_client.expectString)(output[_TA]);
+      }
+      if (output[_LU] != null) {
+        contents[_LU] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_LU]));
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      if (output[_PI] != null) {
+        contents[_PI] = (0, import_smithy_client.expectString)(output[_PI]);
+      }
+      if (output[_OTN] != null) {
+        contents[_OTN] = (0, import_smithy_client.expectString)(output[_OTN]);
+      }
+      if (output[_PVN] != null) {
+        contents[_PVN] = (0, import_smithy_client.expectString)(output[_PVN]);
+      }
+      if (output[_LPV] != null) {
+        contents[_LPV] = (0, import_smithy_client.expectString)(output[_LPV]);
+      }
+      if (output[_PIu] != null) {
+        contents[_PIu] = (0, import_smithy_client.expectString)(output[_PIu]);
+      }
+      if (output[_PN] != null) {
+        contents[_PN] = (0, import_smithy_client.expectString)(output[_PN]);
+      }
+      if (output[_IA] != null) {
+        contents[_IA] = (0, import_smithy_client.parseBoolean)(output[_IA]);
+      }
+      return contents;
+    }, "de_TypeSummary");
+    var de_TypeVersionSummaries = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_TypeVersionSummary(entry, context);
+      });
+    }, "de_TypeVersionSummaries");
+    var de_TypeVersionSummary = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_T] != null) {
+        contents[_T] = (0, import_smithy_client.expectString)(output[_T]);
+      }
+      if (output[_TN] != null) {
+        contents[_TN] = (0, import_smithy_client.expectString)(output[_TN]);
+      }
+      if (output[_VI] != null) {
+        contents[_VI] = (0, import_smithy_client.expectString)(output[_VI]);
+      }
+      if (output[_IDV] != null) {
+        contents[_IDV] = (0, import_smithy_client.parseBoolean)(output[_IDV]);
+      }
+      if (output[_Ar] != null) {
+        contents[_Ar] = (0, import_smithy_client.expectString)(output[_Ar]);
+      }
+      if (output[_TCi] != null) {
+        contents[_TCi] = (0, import_smithy_client.expectNonNull)((0, import_smithy_client.parseRfc3339DateTimeWithOffset)(output[_TCi]));
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      if (output[_PVN] != null) {
+        contents[_PVN] = (0, import_smithy_client.expectString)(output[_PVN]);
+      }
+      return contents;
+    }, "de_TypeVersionSummary");
+    var de_UnprocessedTypeConfigurations = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_TypeConfigurationIdentifier(entry, context);
+      });
+    }, "de_UnprocessedTypeConfigurations");
+    var de_UpdateGeneratedTemplateOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_GTI] != null) {
+        contents[_GTI] = (0, import_smithy_client.expectString)(output[_GTI]);
+      }
+      return contents;
+    }, "de_UpdateGeneratedTemplateOutput");
+    var de_UpdateStackInstancesOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_OI] != null) {
+        contents[_OI] = (0, import_smithy_client.expectString)(output[_OI]);
+      }
+      return contents;
+    }, "de_UpdateStackInstancesOutput");
+    var de_UpdateStackOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      return contents;
+    }, "de_UpdateStackOutput");
+    var de_UpdateStackSetOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_OI] != null) {
+        contents[_OI] = (0, import_smithy_client.expectString)(output[_OI]);
+      }
+      return contents;
+    }, "de_UpdateStackSetOutput");
+    var de_UpdateTerminationProtectionOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_SI] != null) {
+        contents[_SI] = (0, import_smithy_client.expectString)(output[_SI]);
+      }
+      return contents;
+    }, "de_UpdateTerminationProtectionOutput");
+    var de_ValidateTemplateOutput = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.Parameters === "") {
+        contents[_P] = [];
+      } else if (output[_P] != null && output[_P][_m] != null) {
+        contents[_P] = de_TemplateParameters((0, import_smithy_client.getArrayIfSingleItem)(output[_P][_m]), context);
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      if (output.Capabilities === "") {
+        contents[_C] = [];
+      } else if (output[_C] != null && output[_C][_m] != null) {
+        contents[_C] = de_Capabilities((0, import_smithy_client.getArrayIfSingleItem)(output[_C][_m]), context);
+      }
+      if (output[_CR] != null) {
+        contents[_CR] = (0, import_smithy_client.expectString)(output[_CR]);
+      }
+      if (output.DeclaredTransforms === "") {
+        contents[_DTec] = [];
+      } else if (output[_DTec] != null && output[_DTec][_m] != null) {
+        contents[_DTec] = de_TransformsList((0, import_smithy_client.getArrayIfSingleItem)(output[_DTec][_m]), context);
+      }
+      return contents;
+    }, "de_ValidateTemplateOutput");
+    var de_WarningDetail = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_T] != null) {
+        contents[_T] = (0, import_smithy_client.expectString)(output[_T]);
+      }
+      if (output.Properties === "") {
+        contents[_Pro] = [];
+      } else if (output[_Pro] != null && output[_Pro][_m] != null) {
+        contents[_Pro] = de_WarningProperties((0, import_smithy_client.getArrayIfSingleItem)(output[_Pro][_m]), context);
+      }
+      return contents;
+    }, "de_WarningDetail");
+    var de_WarningDetails = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_WarningDetail(entry, context);
+      });
+    }, "de_WarningDetails");
+    var de_WarningProperties = /* @__PURE__ */ __name((output, context) => {
+      return (output || []).filter((e) => e != null).map((entry) => {
+        return de_WarningProperty(entry, context);
+      });
+    }, "de_WarningProperties");
+    var de_WarningProperty = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output[_PPr] != null) {
+        contents[_PPr] = (0, import_smithy_client.expectString)(output[_PPr]);
+      }
+      if (output[_Req] != null) {
+        contents[_Req] = (0, import_smithy_client.parseBoolean)(output[_Req]);
+      }
+      if (output[_D] != null) {
+        contents[_D] = (0, import_smithy_client.expectString)(output[_D]);
+      }
+      return contents;
+    }, "de_WarningProperty");
+    var de_Warnings = /* @__PURE__ */ __name((output, context) => {
+      const contents = {};
+      if (output.UnrecognizedResourceTypes === "") {
+        contents[_URT] = [];
+      } else if (output[_URT] != null && output[_URT][_m] != null) {
+        contents[_URT] = de_ResourceTypes((0, import_smithy_client.getArrayIfSingleItem)(output[_URT][_m]), context);
+      }
+      return contents;
+    }, "de_Warnings");
+    var deserializeMetadata = /* @__PURE__ */ __name((output) => ({
+      httpStatusCode: output.statusCode,
+      requestId: output.headers["x-amzn-requestid"] ?? output.headers["x-amzn-request-id"] ?? output.headers["x-amz-request-id"],
+      extendedRequestId: output.headers["x-amz-id-2"],
+      cfId: output.headers["x-amz-cf-id"]
+    }), "deserializeMetadata");
+    var throwDefaultError = (0, import_smithy_client.withBaseException)(CloudFormationServiceException);
+    var buildHttpRpcRequest = /* @__PURE__ */ __name(async (context, headers, path, resolvedHostname, body) => {
+      const { hostname, protocol = "https", port, path: basePath } = await context.endpoint();
+      const contents = {
+        protocol,
+        hostname,
+        port,
+        method: "POST",
+        path: basePath.endsWith("/") ? basePath.slice(0, -1) + path : basePath + path,
+        headers
+      };
+      if (resolvedHostname !== void 0) {
+        contents.hostname = resolvedHostname;
+      }
+      if (body !== void 0) {
+        contents.body = body;
+      }
+      return new import_protocol_http.HttpRequest(contents);
+    }, "buildHttpRpcRequest");
+    var SHARED_HEADERS = {
+      "content-type": "application/x-www-form-urlencoded"
+    };
+    var _ = "2010-05-15";
+    var _A = "Action";
+    var _AD = "AutoDeployment";
+    var _AFT = "AccountFilterType";
+    var _AGR = "AccountGateResult";
+    var _AL = "AccountLimits";
+    var _AOA = "ActivateOrganizationsAccess";
+    var _AP = "ActualProperties";
+    var _AR = "AddResources";
+    var _ARARN = "AdministrationRoleARN";
+    var _AT = "ActivateType";
+    var _ATAC = "AcceptTermsAndConditions";
+    var _AU = "AutoUpdate";
+    var _AUc = "AccountsUrl";
+    var _AV = "AllowedValues";
+    var _AVc = "ActualValue";
+    var _Ac = "Accounts";
+    var _Acc = "Account";
+    var _Act = "Active";
+    var _Al = "Alias";
+    var _Ar = "Arn";
+    var _At = "Attribute";
+    var _BDTC = "BatchDescribeTypeConfigurations";
+    var _BT = "BearerToken";
+    var _C = "Capabilities";
+    var _CA = "CallAs";
+    var _CAo = "ConnectionArn";
+    var _CAon = "ConfigurationAlias";
+    var _CAonf = "ConfigurationArn";
+    var _CCS = "CreateChangeSet";
+    var _CE = "CausingEntity";
+    var _CGT = "CreateGeneratedTemplate";
+    var _CM = "ConcurrencyMode";
+    var _COS = "CurrentOperationStatus";
+    var _CR = "CapabilitiesReason";
+    var _CRT = "ClientRequestToken";
+    var _CS = "CreateStack";
+    var _CSI = "CreateStackInstances";
+    var _CSIh = "ChangeSetId";
+    var _CSN = "ChangeSetName";
+    var _CSS = "CreateStackSet";
+    var _CST = "ChangeSetType";
+    var _CSh = "ChangeSource";
+    var _CSo = "ConfigurationSchema";
+    var _CT = "ClientToken";
+    var _CTr = "CreationTime";
+    var _CTre = "CreationTimestamp";
+    var _CUR = "ContinueUpdateRollback";
+    var _CUS = "CancelUpdateStack";
+    var _Ca = "Category";
+    var _Ch = "Changes";
+    var _Co = "Configuration";
+    var _D = "Description";
+    var _DAL = "DescribeAccountLimits";
+    var _DCS = "DeleteChangeSet";
+    var _DCSH = "DescribeChangeSetHooks";
+    var _DCSe = "DescribeChangeSet";
+    var _DDS = "DriftDetectionStatus";
+    var _DGT = "DeleteGeneratedTemplate";
+    var _DGTe = "DescribeGeneratedTemplate";
+    var _DI = "DriftInformation";
+    var _DOA = "DeactivateOrganizationsAccess";
+    var _DOAe = "DescribeOrganizationsAccess";
+    var _DP = "DescribePublisher";
+    var _DPe = "DeletionPolicy";
+    var _DR = "DisableRollback";
+    var _DRS = "DescribeResourceScan";
+    var _DS = "DeleteStack";
+    var _DSD = "DetectStackDrift";
+    var _DSDDS = "DescribeStackDriftDetectionStatus";
+    var _DSE = "DescribeStackEvents";
+    var _DSI = "DeleteStackInstances";
+    var _DSIC = "DriftedStackInstancesCount";
+    var _DSIe = "DescribeStackInstance";
+    var _DSR = "DescribeStackResource";
+    var _DSRC = "DriftedStackResourceCount";
+    var _DSRD = "DescribeStackResourceDrifts";
+    var _DSRDe = "DetectStackResourceDrift";
+    var _DSRe = "DescribeStackResources";
+    var _DSRet = "DetectionStatusReason";
+    var _DSS = "DeleteStackSet";
+    var _DSSD = "DetectStackSetDrift";
+    var _DSSO = "DescribeStackSetOperation";
+    var _DSSe = "DescribeStackSet";
+    var _DSe = "DescribeStacks";
+    var _DSep = "DeprecatedStatus";
+    var _DSet = "DetectionStatus";
+    var _DSeta = "DetailedStatus";
+    var _DSr = "DriftStatus";
+    var _DT = "DeactivateType";
+    var _DTR = "DescribeTypeRegistration";
+    var _DTe = "DeregisterType";
+    var _DTec = "DeclaredTransforms";
+    var _DTel = "DeletionTime";
+    var _DTep = "DeploymentTargets";
+    var _DTes = "DescribeType";
+    var _DTi = "DifferenceType";
+    var _DU = "DocumentationUrl";
+    var _DV = "DefaultValue";
+    var _DVI = "DefaultVersionId";
+    var _De = "Details";
+    var _E = "Enabled";
+    var _EC = "ErrorCode";
+    var _ECS = "ExecuteChangeSet";
+    var _EI = "EventId";
+    var _EM = "ErrorMessage";
+    var _EN = "ExportName";
+    var _EP = "ExpectedProperties";
+    var _ERA = "ExecutionRoleArn";
+    var _ERN = "ExecutionRoleName";
+    var _ES = "ExecutionStatus";
+    var _ESI = "ExportingStackId";
+    var _ET = "EndTime";
+    var _ETC = "EstimateTemplateCost";
+    var _ETP = "EnableTerminationProtection";
+    var _ETn = "EndTimestamp";
+    var _EV = "ExpectedValue";
+    var _Er = "Errors";
+    var _Ev = "Evaluation";
+    var _Ex = "Exports";
+    var _F = "Format";
+    var _FM = "FailureMode";
+    var _FSIC = "FailedStackInstancesCount";
+    var _FTC = "FailureToleranceCount";
+    var _FTP = "FailureTolerancePercentage";
+    var _Fi = "Filters";
+    var _GGT = "GetGeneratedTemplate";
+    var _GSP = "GetStackPolicy";
+    var _GT = "GetTemplate";
+    var _GTI = "GeneratedTemplateId";
+    var _GTN = "GeneratedTemplateName";
+    var _GTS = "GetTemplateSummary";
+    var _H = "Hooks";
+    var _HFM = "HookFailureMode";
+    var _HIC = "HookInvocationCount";
+    var _HIP = "HookInvocationPoint";
+    var _HS = "HookStatus";
+    var _HSR = "HookStatusReason";
+    var _HT = "HookType";
+    var _I = "Id";
+    var _IA = "IsActivated";
+    var _IDC = "IsDefaultConfiguration";
+    var _IDV = "IsDefaultVersion";
+    var _IER = "ImportExistingResources";
+    var _INS = "IncludeNestedStacks";
+    var _IP = "InvocationPoint";
+    var _IPSIC = "InProgressStackInstancesCount";
+    var _IPd = "IdentityProvider";
+    var _ISSIC = "InSyncStackInstancesCount";
+    var _ISTSS = "ImportStacksToStackSet";
+    var _Im = "Imports";
+    var _K = "Key";
+    var _LC = "LoggingConfig";
+    var _LCS = "ListChangeSets";
+    var _LCT = "LastCheckTimestamp";
+    var _LDB = "LogDeliveryBucket";
+    var _LDCT = "LastDriftCheckTimestamp";
+    var _LE = "ListExports";
+    var _LGN = "LogGroupName";
+    var _LGT = "ListGeneratedTemplates";
+    var _LI = "ListImports";
+    var _LIH = "LogicalIdHierarchy";
+    var _LOI = "LastOperationId";
+    var _LPV = "LatestPublicVersion";
+    var _LRA = "LogRoleArn";
+    var _LRI = "LogicalResourceId";
+    var _LRIo = "LogicalResourceIds";
+    var _LRS = "ListResourceScans";
+    var _LRSR = "ListResourceScanResources";
+    var _LRSRR = "ListResourceScanRelatedResources";
+    var _LS = "ListStacks";
+    var _LSI = "ListStackInstances";
+    var _LSIRD = "ListStackInstanceResourceDrifts";
+    var _LSR = "ListStackResources";
+    var _LSS = "ListStackSets";
+    var _LSSADT = "ListStackSetAutoDeploymentTargets";
+    var _LSSO = "ListStackSetOperations";
+    var _LSSOR = "ListStackSetOperationResults";
+    var _LT = "ListTypes";
+    var _LTR = "ListTypeRegistrations";
+    var _LTV = "ListTypeVersions";
+    var _LU = "LastUpdated";
+    var _LUT = "LastUpdatedTime";
+    var _LUTa = "LastUpdatedTimestamp";
+    var _M = "Message";
+    var _MBS = "ManagedByStack";
+    var _MCC = "MaxConcurrentCount";
+    var _MCP = "MaxConcurrentPercentage";
+    var _ME = "ManagedExecution";
+    var _MI = "ModuleInfo";
+    var _MR = "MaxResults";
+    var _MTIM = "MonitoringTimeInMinutes";
+    var _MV = "MajorVersion";
+    var _Me = "Metadata";
+    var _N = "Name";
+    var _NARN = "NotificationARNs";
+    var _NE = "NoEcho";
+    var _NGTN = "NewGeneratedTemplateName";
+    var _NOR = "NumberOfResources";
+    var _NT = "NextToken";
+    var _O = "Outputs";
+    var _OF = "OnFailure";
+    var _OI = "OperationId";
+    var _OK = "OutputKey";
+    var _OP = "OperationPreferences";
+    var _OS = "OperationStatus";
+    var _OSF = "OnStackFailure";
+    var _OTA = "OriginalTypeArn";
+    var _OTN = "OriginalTypeName";
+    var _OUI = "OrganizationalUnitIds";
+    var _OUIr = "OrganizationalUnitId";
+    var _OV = "OutputValue";
+    var _P = "Parameters";
+    var _PC = "PercentageCompleted";
+    var _PCSI = "ParentChangeSetId";
+    var _PCa = "ParameterConstraints";
+    var _PD = "PropertyDifferences";
+    var _PI = "PublisherId";
+    var _PIa = "ParentId";
+    var _PIu = "PublisherIdentity";
+    var _PK = "ParameterKey";
+    var _PM = "PermissionModel";
+    var _PN = "PublisherName";
+    var _PO = "ParameterOverrides";
+    var _PP = "PublisherProfile";
+    var _PPr = "PropertyPath";
+    var _PRI = "PhysicalResourceId";
+    var _PRIC = "PhysicalResourceIdContext";
+    var _PS = "PublisherStatus";
+    var _PSr = "ProgressStatus";
+    var _PT = "PublishType";
+    var _PTA = "PublicTypeArn";
+    var _PTa = "ParameterType";
+    var _PTr = "ProvisioningType";
+    var _PV = "ParameterValue";
+    var _PVN = "PublicVersionNumber";
+    var _Pr = "Progress";
+    var _Pro = "Properties";
+    var _R = "Resources";
+    var _RA = "ResourceAction";
+    var _RAR = "RefreshAllResources";
+    var _RARN = "RoleARN";
+    var _RAT = "RequiredActivatedTypes";
+    var _RC = "RollbackConfiguration";
+    var _RCSI = "RootChangeSetId";
+    var _RCT = "RegionConcurrencyType";
+    var _RCe = "ResourceChange";
+    var _REOC = "RetainExceptOnCreate";
+    var _RF = "ResourcesFailed";
+    var _RHP = "RecordHandlerProgress";
+    var _RI = "ResourceIdentifier";
+    var _RIS = "ResourceIdentifierSummaries";
+    var _RIe = "ResourceIdentifiers";
+    var _RIo = "RootId";
+    var _RM = "ResourceModel";
+    var _RO = "RegionOrder";
+    var _RP = "RegisterPublisher";
+    var _RPe = "ResourceProperties";
+    var _RPes = "ResourcesProcessing";
+    var _RPeso = "ResourcesPending";
+    var _RR = "RetainResources";
+    var _RRe = "RemoveResources";
+    var _RRel = "RelatedResources";
+    var _RReq = "RequiresRecreation";
+    var _RRes = "ResourcesRead";
+    var _RS = "RollbackStack";
+    var _RSF = "RegistrationStatusFilter";
+    var _RSI = "ResourceScanId";
+    var _RSOAR = "RetainStacksOnAccountRemoval";
+    var _RSR = "ResourceStatusReason";
+    var _RSS = "ResourceScanSummaries";
+    var _RSe = "RetainStacks";
+    var _RSes = "ResourcesScanned";
+    var _RSeso = "ResourceStatus";
+    var _RSesou = "ResourcesSucceeded";
+    var _RT = "RegisterType";
+    var _RTD = "ResourceTargetDetails";
+    var _RTI = "ResourcesToImport";
+    var _RTL = "RegistrationTokenList";
+    var _RTP = "ResourceTypePrefix";
+    var _RTS = "ResourcesToSkip";
+    var _RTe = "ResourceTypes";
+    var _RTeg = "RegistrationToken";
+    var _RTes = "ResourceType";
+    var _RTo = "RollbackTriggers";
+    var _RV = "ResolvedValue";
+    var _Re = "Regions";
+    var _Reg = "Region";
+    var _Rep = "Replacement";
+    var _Req = "Required";
+    var _S = "Status";
+    var _SA = "StagesAvailable";
+    var _SD = "StatusDetails";
+    var _SDDI = "StackDriftDetectionId";
+    var _SDS = "StackDriftStatus";
+    var _SE = "StackEvents";
+    var _SHP = "SchemaHandlerPackage";
+    var _SI = "StackId";
+    var _SIA = "StackInstanceAccount";
+    var _SIR = "StackInstanceRegion";
+    var _SIRDS = "StackInstanceResourceDriftStatuses";
+    var _SIS = "StackInstanceStatus";
+    var _SIU = "StackIdsUrl";
+    var _SIt = "StackIds";
+    var _SIta = "StackInstance";
+    var _SM = "StatusMessage";
+    var _SMV = "SupportedMajorVersions";
+    var _SN = "StackName";
+    var _SPB = "StackPolicyBody";
+    var _SPDUB = "StackPolicyDuringUpdateBody";
+    var _SPDUURL = "StackPolicyDuringUpdateURL";
+    var _SPURL = "StackPolicyURL";
+    var _SR = "SignalResource";
+    var _SRD = "StackResourceDrifts";
+    var _SRDS = "StackResourceDriftStatus";
+    var _SRDSF = "StackResourceDriftStatusFilters";
+    var _SRDt = "StackResourceDetail";
+    var _SRDta = "StackResourceDrift";
+    var _SRS = "StartResourceScan";
+    var _SRSt = "StackResourceSummaries";
+    var _SRt = "StatusReason";
+    var _SRta = "StackResources";
+    var _SS = "StackSet";
+    var _SSARN = "StackSetARN";
+    var _SSDDD = "StackSetDriftDetectionDetails";
+    var _SSF = "StackStatusFilter";
+    var _SSI = "StackSetId";
+    var _SSN = "StackSetName";
+    var _SSO = "StackSetOperation";
+    var _SSP = "SetStackPolicy";
+    var _SSR = "StackStatusReason";
+    var _SSSO = "StopStackSetOperation";
+    var _SSt = "StackSummaries";
+    var _SSta = "StackStatus";
+    var _ST = "StartTime";
+    var _STC = "SetTypeConfiguration";
+    var _STDV = "SetTypeDefaultVersion";
+    var _SU = "SourceUrl";
+    var _Sc = "Schema";
+    var _Sco = "Scope";
+    var _St = "Stacks";
+    var _Su = "Summaries";
+    var _T = "Type";
+    var _TA = "TypeArn";
+    var _TB = "TemplateBody";
+    var _TC = "TemplateConfiguration";
+    var _TCA = "TypeConfigurationAlias";
+    var _TCAy = "TypeConfigurationArn";
+    var _TCI = "TypeConfigurationIdentifiers";
+    var _TCIy = "TypeConfigurationIdentifier";
+    var _TCVI = "TypeConfigurationVersionId";
+    var _TCi = "TimeCreated";
+    var _TCy = "TypeConfigurations";
+    var _TD = "TargetDetails";
+    var _TDe = "TemplateDescription";
+    var _TH = "TypeHierarchy";
+    var _TIM = "TimeoutInMinutes";
+    var _TK = "TagKey";
+    var _TN = "TypeName";
+    var _TNA = "TypeNameAlias";
+    var _TNP = "TypeNamePrefix";
+    var _TS = "TemplateStage";
+    var _TSC = "TemplateSummaryConfig";
+    var _TSIC = "TotalStackInstancesCount";
+    var _TSy = "TypeSummaries";
+    var _TT = "TestType";
+    var _TTS = "TypeTestsStatus";
+    var _TTSD = "TypeTestsStatusDescription";
+    var _TTa = "TargetType";
+    var _TURL = "TemplateURL";
+    var _TURTAW = "TreatUnrecognizedResourceTypesAsWarnings";
+    var _TV = "TagValue";
+    var _TVA = "TypeVersionArn";
+    var _TVI = "TypeVersionId";
+    var _TVS = "TypeVersionSummaries";
+    var _TW = "TotalWarnings";
+    var _Ta = "Tags";
+    var _Tar = "Target";
+    var _Ti = "Timestamp";
+    var _U = "Url";
+    var _UGT = "UpdateGeneratedTemplate";
+    var _UI = "UniqueId";
+    var _UPT = "UsePreviousTemplate";
+    var _UPV = "UsePreviousValue";
+    var _URP = "UpdateReplacePolicy";
+    var _URT = "UnrecognizedResourceTypes";
+    var _US = "UpdateStack";
+    var _USI = "UpdateStackInstances";
+    var _USS = "UpdateStackSet";
+    var _UTC = "UnprocessedTypeConfigurations";
+    var _UTP = "UpdateTerminationProtection";
+    var _V = "Version";
+    var _VB = "VersionBump";
+    var _VI = "VersionId";
+    var _VT = "ValidateTemplate";
+    var _Va = "Values";
+    var _Val = "Value";
+    var _Vi = "Visibility";
+    var _W = "Warnings";
+    var _e = "entry";
+    var _m = "member";
+    var buildFormUrlencodedString = /* @__PURE__ */ __name((formEntries) => Object.entries(formEntries).map(([key, value]) => (0, import_smithy_client.extendedEncodeURIComponent)(key) + "=" + (0, import_smithy_client.extendedEncodeURIComponent)(value)).join("&"), "buildFormUrlencodedString");
+    var loadQueryErrorCode = /* @__PURE__ */ __name((output, data) => {
+      var _a;
+      if (((_a = data.Error) == null ? void 0 : _a.Code) !== void 0) {
+        return data.Error.Code;
+      }
+      if (output.statusCode == 404) {
+        return "NotFound";
+      }
+    }, "loadQueryErrorCode");
+    var _ActivateOrganizationsAccessCommand = class _ActivateOrganizationsAccessCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ActivateOrganizationsAccess", {}).n("CloudFormationClient", "ActivateOrganizationsAccessCommand").f(void 0, void 0).ser(se_ActivateOrganizationsAccessCommand).de(de_ActivateOrganizationsAccessCommand).build() {
+    };
+    __name(_ActivateOrganizationsAccessCommand, "ActivateOrganizationsAccessCommand");
+    var ActivateOrganizationsAccessCommand = _ActivateOrganizationsAccessCommand;
+    var _ActivateTypeCommand = class _ActivateTypeCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ActivateType", {}).n("CloudFormationClient", "ActivateTypeCommand").f(void 0, void 0).ser(se_ActivateTypeCommand).de(de_ActivateTypeCommand).build() {
+    };
+    __name(_ActivateTypeCommand, "ActivateTypeCommand");
+    var ActivateTypeCommand = _ActivateTypeCommand;
+    var _BatchDescribeTypeConfigurationsCommand = class _BatchDescribeTypeConfigurationsCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "BatchDescribeTypeConfigurations", {}).n("CloudFormationClient", "BatchDescribeTypeConfigurationsCommand").f(void 0, void 0).ser(se_BatchDescribeTypeConfigurationsCommand).de(de_BatchDescribeTypeConfigurationsCommand).build() {
+    };
+    __name(_BatchDescribeTypeConfigurationsCommand, "BatchDescribeTypeConfigurationsCommand");
+    var BatchDescribeTypeConfigurationsCommand = _BatchDescribeTypeConfigurationsCommand;
+    var _CancelUpdateStackCommand = class _CancelUpdateStackCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "CancelUpdateStack", {}).n("CloudFormationClient", "CancelUpdateStackCommand").f(void 0, void 0).ser(se_CancelUpdateStackCommand).de(de_CancelUpdateStackCommand).build() {
+    };
+    __name(_CancelUpdateStackCommand, "CancelUpdateStackCommand");
+    var CancelUpdateStackCommand = _CancelUpdateStackCommand;
+    var _ContinueUpdateRollbackCommand = class _ContinueUpdateRollbackCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ContinueUpdateRollback", {}).n("CloudFormationClient", "ContinueUpdateRollbackCommand").f(void 0, void 0).ser(se_ContinueUpdateRollbackCommand).de(de_ContinueUpdateRollbackCommand).build() {
+    };
+    __name(_ContinueUpdateRollbackCommand, "ContinueUpdateRollbackCommand");
+    var ContinueUpdateRollbackCommand = _ContinueUpdateRollbackCommand;
+    var _CreateChangeSetCommand = class _CreateChangeSetCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "CreateChangeSet", {}).n("CloudFormationClient", "CreateChangeSetCommand").f(void 0, void 0).ser(se_CreateChangeSetCommand).de(de_CreateChangeSetCommand).build() {
+    };
+    __name(_CreateChangeSetCommand, "CreateChangeSetCommand");
+    var CreateChangeSetCommand = _CreateChangeSetCommand;
+    var _CreateGeneratedTemplateCommand = class _CreateGeneratedTemplateCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "CreateGeneratedTemplate", {}).n("CloudFormationClient", "CreateGeneratedTemplateCommand").f(void 0, void 0).ser(se_CreateGeneratedTemplateCommand).de(de_CreateGeneratedTemplateCommand).build() {
+    };
+    __name(_CreateGeneratedTemplateCommand, "CreateGeneratedTemplateCommand");
+    var CreateGeneratedTemplateCommand = _CreateGeneratedTemplateCommand;
+    var _CreateStackCommand = class _CreateStackCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "CreateStack", {}).n("CloudFormationClient", "CreateStackCommand").f(void 0, void 0).ser(se_CreateStackCommand).de(de_CreateStackCommand).build() {
+    };
+    __name(_CreateStackCommand, "CreateStackCommand");
+    var CreateStackCommand = _CreateStackCommand;
+    var _CreateStackInstancesCommand = class _CreateStackInstancesCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "CreateStackInstances", {}).n("CloudFormationClient", "CreateStackInstancesCommand").f(void 0, void 0).ser(se_CreateStackInstancesCommand).de(de_CreateStackInstancesCommand).build() {
+    };
+    __name(_CreateStackInstancesCommand, "CreateStackInstancesCommand");
+    var CreateStackInstancesCommand = _CreateStackInstancesCommand;
+    var _CreateStackSetCommand = class _CreateStackSetCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "CreateStackSet", {}).n("CloudFormationClient", "CreateStackSetCommand").f(void 0, void 0).ser(se_CreateStackSetCommand).de(de_CreateStackSetCommand).build() {
+    };
+    __name(_CreateStackSetCommand, "CreateStackSetCommand");
+    var CreateStackSetCommand = _CreateStackSetCommand;
+    var _DeactivateOrganizationsAccessCommand = class _DeactivateOrganizationsAccessCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DeactivateOrganizationsAccess", {}).n("CloudFormationClient", "DeactivateOrganizationsAccessCommand").f(void 0, void 0).ser(se_DeactivateOrganizationsAccessCommand).de(de_DeactivateOrganizationsAccessCommand).build() {
+    };
+    __name(_DeactivateOrganizationsAccessCommand, "DeactivateOrganizationsAccessCommand");
+    var DeactivateOrganizationsAccessCommand = _DeactivateOrganizationsAccessCommand;
+    var _DeactivateTypeCommand = class _DeactivateTypeCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DeactivateType", {}).n("CloudFormationClient", "DeactivateTypeCommand").f(void 0, void 0).ser(se_DeactivateTypeCommand).de(de_DeactivateTypeCommand).build() {
+    };
+    __name(_DeactivateTypeCommand, "DeactivateTypeCommand");
+    var DeactivateTypeCommand = _DeactivateTypeCommand;
+    var _DeleteChangeSetCommand = class _DeleteChangeSetCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DeleteChangeSet", {}).n("CloudFormationClient", "DeleteChangeSetCommand").f(void 0, void 0).ser(se_DeleteChangeSetCommand).de(de_DeleteChangeSetCommand).build() {
+    };
+    __name(_DeleteChangeSetCommand, "DeleteChangeSetCommand");
+    var DeleteChangeSetCommand = _DeleteChangeSetCommand;
+    var _DeleteGeneratedTemplateCommand = class _DeleteGeneratedTemplateCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DeleteGeneratedTemplate", {}).n("CloudFormationClient", "DeleteGeneratedTemplateCommand").f(void 0, void 0).ser(se_DeleteGeneratedTemplateCommand).de(de_DeleteGeneratedTemplateCommand).build() {
+    };
+    __name(_DeleteGeneratedTemplateCommand, "DeleteGeneratedTemplateCommand");
+    var DeleteGeneratedTemplateCommand = _DeleteGeneratedTemplateCommand;
+    var _DeleteStackCommand = class _DeleteStackCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DeleteStack", {}).n("CloudFormationClient", "DeleteStackCommand").f(void 0, void 0).ser(se_DeleteStackCommand).de(de_DeleteStackCommand).build() {
+    };
+    __name(_DeleteStackCommand, "DeleteStackCommand");
+    var DeleteStackCommand = _DeleteStackCommand;
+    var _DeleteStackInstancesCommand = class _DeleteStackInstancesCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DeleteStackInstances", {}).n("CloudFormationClient", "DeleteStackInstancesCommand").f(void 0, void 0).ser(se_DeleteStackInstancesCommand).de(de_DeleteStackInstancesCommand).build() {
+    };
+    __name(_DeleteStackInstancesCommand, "DeleteStackInstancesCommand");
+    var DeleteStackInstancesCommand = _DeleteStackInstancesCommand;
+    var _DeleteStackSetCommand = class _DeleteStackSetCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DeleteStackSet", {}).n("CloudFormationClient", "DeleteStackSetCommand").f(void 0, void 0).ser(se_DeleteStackSetCommand).de(de_DeleteStackSetCommand).build() {
+    };
+    __name(_DeleteStackSetCommand, "DeleteStackSetCommand");
+    var DeleteStackSetCommand = _DeleteStackSetCommand;
+    var _DeregisterTypeCommand = class _DeregisterTypeCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DeregisterType", {}).n("CloudFormationClient", "DeregisterTypeCommand").f(void 0, void 0).ser(se_DeregisterTypeCommand).de(de_DeregisterTypeCommand).build() {
+    };
+    __name(_DeregisterTypeCommand, "DeregisterTypeCommand");
+    var DeregisterTypeCommand = _DeregisterTypeCommand;
+    var _DescribeAccountLimitsCommand = class _DescribeAccountLimitsCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeAccountLimits", {}).n("CloudFormationClient", "DescribeAccountLimitsCommand").f(void 0, void 0).ser(se_DescribeAccountLimitsCommand).de(de_DescribeAccountLimitsCommand).build() {
+    };
+    __name(_DescribeAccountLimitsCommand, "DescribeAccountLimitsCommand");
+    var DescribeAccountLimitsCommand = _DescribeAccountLimitsCommand;
+    var _DescribeChangeSetCommand = class _DescribeChangeSetCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeChangeSet", {}).n("CloudFormationClient", "DescribeChangeSetCommand").f(void 0, void 0).ser(se_DescribeChangeSetCommand).de(de_DescribeChangeSetCommand).build() {
+    };
+    __name(_DescribeChangeSetCommand, "DescribeChangeSetCommand");
+    var DescribeChangeSetCommand = _DescribeChangeSetCommand;
+    var _DescribeChangeSetHooksCommand = class _DescribeChangeSetHooksCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeChangeSetHooks", {}).n("CloudFormationClient", "DescribeChangeSetHooksCommand").f(void 0, void 0).ser(se_DescribeChangeSetHooksCommand).de(de_DescribeChangeSetHooksCommand).build() {
+    };
+    __name(_DescribeChangeSetHooksCommand, "DescribeChangeSetHooksCommand");
+    var DescribeChangeSetHooksCommand = _DescribeChangeSetHooksCommand;
+    var _DescribeGeneratedTemplateCommand = class _DescribeGeneratedTemplateCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeGeneratedTemplate", {}).n("CloudFormationClient", "DescribeGeneratedTemplateCommand").f(void 0, void 0).ser(se_DescribeGeneratedTemplateCommand).de(de_DescribeGeneratedTemplateCommand).build() {
+    };
+    __name(_DescribeGeneratedTemplateCommand, "DescribeGeneratedTemplateCommand");
+    var DescribeGeneratedTemplateCommand = _DescribeGeneratedTemplateCommand;
+    var _DescribeOrganizationsAccessCommand = class _DescribeOrganizationsAccessCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeOrganizationsAccess", {}).n("CloudFormationClient", "DescribeOrganizationsAccessCommand").f(void 0, void 0).ser(se_DescribeOrganizationsAccessCommand).de(de_DescribeOrganizationsAccessCommand).build() {
+    };
+    __name(_DescribeOrganizationsAccessCommand, "DescribeOrganizationsAccessCommand");
+    var DescribeOrganizationsAccessCommand = _DescribeOrganizationsAccessCommand;
+    var _DescribePublisherCommand = class _DescribePublisherCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribePublisher", {}).n("CloudFormationClient", "DescribePublisherCommand").f(void 0, void 0).ser(se_DescribePublisherCommand).de(de_DescribePublisherCommand).build() {
+    };
+    __name(_DescribePublisherCommand, "DescribePublisherCommand");
+    var DescribePublisherCommand = _DescribePublisherCommand;
+    var _DescribeResourceScanCommand = class _DescribeResourceScanCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeResourceScan", {}).n("CloudFormationClient", "DescribeResourceScanCommand").f(void 0, void 0).ser(se_DescribeResourceScanCommand).de(de_DescribeResourceScanCommand).build() {
+    };
+    __name(_DescribeResourceScanCommand, "DescribeResourceScanCommand");
+    var DescribeResourceScanCommand = _DescribeResourceScanCommand;
+    var _DescribeStackDriftDetectionStatusCommand = class _DescribeStackDriftDetectionStatusCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeStackDriftDetectionStatus", {}).n("CloudFormationClient", "DescribeStackDriftDetectionStatusCommand").f(void 0, void 0).ser(se_DescribeStackDriftDetectionStatusCommand).de(de_DescribeStackDriftDetectionStatusCommand).build() {
+    };
+    __name(_DescribeStackDriftDetectionStatusCommand, "DescribeStackDriftDetectionStatusCommand");
+    var DescribeStackDriftDetectionStatusCommand = _DescribeStackDriftDetectionStatusCommand;
+    var _DescribeStackEventsCommand = class _DescribeStackEventsCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeStackEvents", {}).n("CloudFormationClient", "DescribeStackEventsCommand").f(void 0, void 0).ser(se_DescribeStackEventsCommand).de(de_DescribeStackEventsCommand).build() {
+    };
+    __name(_DescribeStackEventsCommand, "DescribeStackEventsCommand");
+    var DescribeStackEventsCommand = _DescribeStackEventsCommand;
+    var _DescribeStackInstanceCommand = class _DescribeStackInstanceCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeStackInstance", {}).n("CloudFormationClient", "DescribeStackInstanceCommand").f(void 0, void 0).ser(se_DescribeStackInstanceCommand).de(de_DescribeStackInstanceCommand).build() {
+    };
+    __name(_DescribeStackInstanceCommand, "DescribeStackInstanceCommand");
+    var DescribeStackInstanceCommand = _DescribeStackInstanceCommand;
+    var _DescribeStackResourceCommand = class _DescribeStackResourceCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeStackResource", {}).n("CloudFormationClient", "DescribeStackResourceCommand").f(void 0, void 0).ser(se_DescribeStackResourceCommand).de(de_DescribeStackResourceCommand).build() {
+    };
+    __name(_DescribeStackResourceCommand, "DescribeStackResourceCommand");
+    var DescribeStackResourceCommand = _DescribeStackResourceCommand;
+    var _DescribeStackResourceDriftsCommand = class _DescribeStackResourceDriftsCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeStackResourceDrifts", {}).n("CloudFormationClient", "DescribeStackResourceDriftsCommand").f(void 0, void 0).ser(se_DescribeStackResourceDriftsCommand).de(de_DescribeStackResourceDriftsCommand).build() {
+    };
+    __name(_DescribeStackResourceDriftsCommand, "DescribeStackResourceDriftsCommand");
+    var DescribeStackResourceDriftsCommand = _DescribeStackResourceDriftsCommand;
+    var _DescribeStackResourcesCommand = class _DescribeStackResourcesCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeStackResources", {}).n("CloudFormationClient", "DescribeStackResourcesCommand").f(void 0, void 0).ser(se_DescribeStackResourcesCommand).de(de_DescribeStackResourcesCommand).build() {
+    };
+    __name(_DescribeStackResourcesCommand, "DescribeStackResourcesCommand");
+    var DescribeStackResourcesCommand = _DescribeStackResourcesCommand;
+    var _DescribeStacksCommand = class _DescribeStacksCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeStacks", {}).n("CloudFormationClient", "DescribeStacksCommand").f(void 0, void 0).ser(se_DescribeStacksCommand).de(de_DescribeStacksCommand).build() {
+    };
+    __name(_DescribeStacksCommand, "DescribeStacksCommand");
+    var DescribeStacksCommand = _DescribeStacksCommand;
+    var _DescribeStackSetCommand = class _DescribeStackSetCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeStackSet", {}).n("CloudFormationClient", "DescribeStackSetCommand").f(void 0, void 0).ser(se_DescribeStackSetCommand).de(de_DescribeStackSetCommand).build() {
+    };
+    __name(_DescribeStackSetCommand, "DescribeStackSetCommand");
+    var DescribeStackSetCommand = _DescribeStackSetCommand;
+    var _DescribeStackSetOperationCommand = class _DescribeStackSetOperationCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeStackSetOperation", {}).n("CloudFormationClient", "DescribeStackSetOperationCommand").f(void 0, void 0).ser(se_DescribeStackSetOperationCommand).de(de_DescribeStackSetOperationCommand).build() {
+    };
+    __name(_DescribeStackSetOperationCommand, "DescribeStackSetOperationCommand");
+    var DescribeStackSetOperationCommand = _DescribeStackSetOperationCommand;
+    var _DescribeTypeCommand = class _DescribeTypeCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeType", {}).n("CloudFormationClient", "DescribeTypeCommand").f(void 0, void 0).ser(se_DescribeTypeCommand).de(de_DescribeTypeCommand).build() {
+    };
+    __name(_DescribeTypeCommand, "DescribeTypeCommand");
+    var DescribeTypeCommand = _DescribeTypeCommand;
+    var _DescribeTypeRegistrationCommand = class _DescribeTypeRegistrationCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DescribeTypeRegistration", {}).n("CloudFormationClient", "DescribeTypeRegistrationCommand").f(void 0, void 0).ser(se_DescribeTypeRegistrationCommand).de(de_DescribeTypeRegistrationCommand).build() {
+    };
+    __name(_DescribeTypeRegistrationCommand, "DescribeTypeRegistrationCommand");
+    var DescribeTypeRegistrationCommand = _DescribeTypeRegistrationCommand;
+    var _DetectStackDriftCommand = class _DetectStackDriftCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DetectStackDrift", {}).n("CloudFormationClient", "DetectStackDriftCommand").f(void 0, void 0).ser(se_DetectStackDriftCommand).de(de_DetectStackDriftCommand).build() {
+    };
+    __name(_DetectStackDriftCommand, "DetectStackDriftCommand");
+    var DetectStackDriftCommand = _DetectStackDriftCommand;
+    var _DetectStackResourceDriftCommand = class _DetectStackResourceDriftCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DetectStackResourceDrift", {}).n("CloudFormationClient", "DetectStackResourceDriftCommand").f(void 0, void 0).ser(se_DetectStackResourceDriftCommand).de(de_DetectStackResourceDriftCommand).build() {
+    };
+    __name(_DetectStackResourceDriftCommand, "DetectStackResourceDriftCommand");
+    var DetectStackResourceDriftCommand = _DetectStackResourceDriftCommand;
+    var _DetectStackSetDriftCommand = class _DetectStackSetDriftCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "DetectStackSetDrift", {}).n("CloudFormationClient", "DetectStackSetDriftCommand").f(void 0, void 0).ser(se_DetectStackSetDriftCommand).de(de_DetectStackSetDriftCommand).build() {
+    };
+    __name(_DetectStackSetDriftCommand, "DetectStackSetDriftCommand");
+    var DetectStackSetDriftCommand = _DetectStackSetDriftCommand;
+    var _EstimateTemplateCostCommand = class _EstimateTemplateCostCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "EstimateTemplateCost", {}).n("CloudFormationClient", "EstimateTemplateCostCommand").f(void 0, void 0).ser(se_EstimateTemplateCostCommand).de(de_EstimateTemplateCostCommand).build() {
+    };
+    __name(_EstimateTemplateCostCommand, "EstimateTemplateCostCommand");
+    var EstimateTemplateCostCommand = _EstimateTemplateCostCommand;
+    var _ExecuteChangeSetCommand = class _ExecuteChangeSetCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ExecuteChangeSet", {}).n("CloudFormationClient", "ExecuteChangeSetCommand").f(void 0, void 0).ser(se_ExecuteChangeSetCommand).de(de_ExecuteChangeSetCommand).build() {
+    };
+    __name(_ExecuteChangeSetCommand, "ExecuteChangeSetCommand");
+    var ExecuteChangeSetCommand = _ExecuteChangeSetCommand;
+    var _GetGeneratedTemplateCommand = class _GetGeneratedTemplateCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "GetGeneratedTemplate", {}).n("CloudFormationClient", "GetGeneratedTemplateCommand").f(void 0, void 0).ser(se_GetGeneratedTemplateCommand).de(de_GetGeneratedTemplateCommand).build() {
+    };
+    __name(_GetGeneratedTemplateCommand, "GetGeneratedTemplateCommand");
+    var GetGeneratedTemplateCommand = _GetGeneratedTemplateCommand;
+    var _GetStackPolicyCommand = class _GetStackPolicyCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "GetStackPolicy", {}).n("CloudFormationClient", "GetStackPolicyCommand").f(void 0, void 0).ser(se_GetStackPolicyCommand).de(de_GetStackPolicyCommand).build() {
+    };
+    __name(_GetStackPolicyCommand, "GetStackPolicyCommand");
+    var GetStackPolicyCommand = _GetStackPolicyCommand;
+    var _GetTemplateCommand = class _GetTemplateCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "GetTemplate", {}).n("CloudFormationClient", "GetTemplateCommand").f(void 0, void 0).ser(se_GetTemplateCommand).de(de_GetTemplateCommand).build() {
+    };
+    __name(_GetTemplateCommand, "GetTemplateCommand");
+    var GetTemplateCommand = _GetTemplateCommand;
+    var _GetTemplateSummaryCommand = class _GetTemplateSummaryCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "GetTemplateSummary", {}).n("CloudFormationClient", "GetTemplateSummaryCommand").f(void 0, void 0).ser(se_GetTemplateSummaryCommand).de(de_GetTemplateSummaryCommand).build() {
+    };
+    __name(_GetTemplateSummaryCommand, "GetTemplateSummaryCommand");
+    var GetTemplateSummaryCommand = _GetTemplateSummaryCommand;
+    var _ImportStacksToStackSetCommand = class _ImportStacksToStackSetCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ImportStacksToStackSet", {}).n("CloudFormationClient", "ImportStacksToStackSetCommand").f(void 0, void 0).ser(se_ImportStacksToStackSetCommand).de(de_ImportStacksToStackSetCommand).build() {
+    };
+    __name(_ImportStacksToStackSetCommand, "ImportStacksToStackSetCommand");
+    var ImportStacksToStackSetCommand = _ImportStacksToStackSetCommand;
+    var _ListChangeSetsCommand = class _ListChangeSetsCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListChangeSets", {}).n("CloudFormationClient", "ListChangeSetsCommand").f(void 0, void 0).ser(se_ListChangeSetsCommand).de(de_ListChangeSetsCommand).build() {
+    };
+    __name(_ListChangeSetsCommand, "ListChangeSetsCommand");
+    var ListChangeSetsCommand = _ListChangeSetsCommand;
+    var _ListExportsCommand = class _ListExportsCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListExports", {}).n("CloudFormationClient", "ListExportsCommand").f(void 0, void 0).ser(se_ListExportsCommand).de(de_ListExportsCommand).build() {
+    };
+    __name(_ListExportsCommand, "ListExportsCommand");
+    var ListExportsCommand = _ListExportsCommand;
+    var _ListGeneratedTemplatesCommand = class _ListGeneratedTemplatesCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListGeneratedTemplates", {}).n("CloudFormationClient", "ListGeneratedTemplatesCommand").f(void 0, void 0).ser(se_ListGeneratedTemplatesCommand).de(de_ListGeneratedTemplatesCommand).build() {
+    };
+    __name(_ListGeneratedTemplatesCommand, "ListGeneratedTemplatesCommand");
+    var ListGeneratedTemplatesCommand = _ListGeneratedTemplatesCommand;
+    var _ListImportsCommand = class _ListImportsCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListImports", {}).n("CloudFormationClient", "ListImportsCommand").f(void 0, void 0).ser(se_ListImportsCommand).de(de_ListImportsCommand).build() {
+    };
+    __name(_ListImportsCommand, "ListImportsCommand");
+    var ListImportsCommand = _ListImportsCommand;
+    var _ListResourceScanRelatedResourcesCommand = class _ListResourceScanRelatedResourcesCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListResourceScanRelatedResources", {}).n("CloudFormationClient", "ListResourceScanRelatedResourcesCommand").f(void 0, void 0).ser(se_ListResourceScanRelatedResourcesCommand).de(de_ListResourceScanRelatedResourcesCommand).build() {
+    };
+    __name(_ListResourceScanRelatedResourcesCommand, "ListResourceScanRelatedResourcesCommand");
+    var ListResourceScanRelatedResourcesCommand = _ListResourceScanRelatedResourcesCommand;
+    var _ListResourceScanResourcesCommand = class _ListResourceScanResourcesCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListResourceScanResources", {}).n("CloudFormationClient", "ListResourceScanResourcesCommand").f(void 0, void 0).ser(se_ListResourceScanResourcesCommand).de(de_ListResourceScanResourcesCommand).build() {
+    };
+    __name(_ListResourceScanResourcesCommand, "ListResourceScanResourcesCommand");
+    var ListResourceScanResourcesCommand = _ListResourceScanResourcesCommand;
+    var _ListResourceScansCommand = class _ListResourceScansCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListResourceScans", {}).n("CloudFormationClient", "ListResourceScansCommand").f(void 0, void 0).ser(se_ListResourceScansCommand).de(de_ListResourceScansCommand).build() {
+    };
+    __name(_ListResourceScansCommand, "ListResourceScansCommand");
+    var ListResourceScansCommand = _ListResourceScansCommand;
+    var _ListStackInstanceResourceDriftsCommand = class _ListStackInstanceResourceDriftsCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListStackInstanceResourceDrifts", {}).n("CloudFormationClient", "ListStackInstanceResourceDriftsCommand").f(void 0, void 0).ser(se_ListStackInstanceResourceDriftsCommand).de(de_ListStackInstanceResourceDriftsCommand).build() {
+    };
+    __name(_ListStackInstanceResourceDriftsCommand, "ListStackInstanceResourceDriftsCommand");
+    var ListStackInstanceResourceDriftsCommand = _ListStackInstanceResourceDriftsCommand;
+    var _ListStackInstancesCommand = class _ListStackInstancesCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListStackInstances", {}).n("CloudFormationClient", "ListStackInstancesCommand").f(void 0, void 0).ser(se_ListStackInstancesCommand).de(de_ListStackInstancesCommand).build() {
+    };
+    __name(_ListStackInstancesCommand, "ListStackInstancesCommand");
+    var ListStackInstancesCommand = _ListStackInstancesCommand;
+    var _ListStackResourcesCommand = class _ListStackResourcesCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListStackResources", {}).n("CloudFormationClient", "ListStackResourcesCommand").f(void 0, void 0).ser(se_ListStackResourcesCommand).de(de_ListStackResourcesCommand).build() {
+    };
+    __name(_ListStackResourcesCommand, "ListStackResourcesCommand");
+    var ListStackResourcesCommand = _ListStackResourcesCommand;
+    var _ListStacksCommand = class _ListStacksCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListStacks", {}).n("CloudFormationClient", "ListStacksCommand").f(void 0, void 0).ser(se_ListStacksCommand).de(de_ListStacksCommand).build() {
+    };
+    __name(_ListStacksCommand, "ListStacksCommand");
+    var ListStacksCommand = _ListStacksCommand;
+    var _ListStackSetAutoDeploymentTargetsCommand = class _ListStackSetAutoDeploymentTargetsCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListStackSetAutoDeploymentTargets", {}).n("CloudFormationClient", "ListStackSetAutoDeploymentTargetsCommand").f(void 0, void 0).ser(se_ListStackSetAutoDeploymentTargetsCommand).de(de_ListStackSetAutoDeploymentTargetsCommand).build() {
+    };
+    __name(_ListStackSetAutoDeploymentTargetsCommand, "ListStackSetAutoDeploymentTargetsCommand");
+    var ListStackSetAutoDeploymentTargetsCommand = _ListStackSetAutoDeploymentTargetsCommand;
+    var _ListStackSetOperationResultsCommand = class _ListStackSetOperationResultsCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListStackSetOperationResults", {}).n("CloudFormationClient", "ListStackSetOperationResultsCommand").f(void 0, void 0).ser(se_ListStackSetOperationResultsCommand).de(de_ListStackSetOperationResultsCommand).build() {
+    };
+    __name(_ListStackSetOperationResultsCommand, "ListStackSetOperationResultsCommand");
+    var ListStackSetOperationResultsCommand = _ListStackSetOperationResultsCommand;
+    var _ListStackSetOperationsCommand = class _ListStackSetOperationsCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListStackSetOperations", {}).n("CloudFormationClient", "ListStackSetOperationsCommand").f(void 0, void 0).ser(se_ListStackSetOperationsCommand).de(de_ListStackSetOperationsCommand).build() {
+    };
+    __name(_ListStackSetOperationsCommand, "ListStackSetOperationsCommand");
+    var ListStackSetOperationsCommand = _ListStackSetOperationsCommand;
+    var _ListStackSetsCommand = class _ListStackSetsCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListStackSets", {}).n("CloudFormationClient", "ListStackSetsCommand").f(void 0, void 0).ser(se_ListStackSetsCommand).de(de_ListStackSetsCommand).build() {
+    };
+    __name(_ListStackSetsCommand, "ListStackSetsCommand");
+    var ListStackSetsCommand = _ListStackSetsCommand;
+    var _ListTypeRegistrationsCommand = class _ListTypeRegistrationsCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListTypeRegistrations", {}).n("CloudFormationClient", "ListTypeRegistrationsCommand").f(void 0, void 0).ser(se_ListTypeRegistrationsCommand).de(de_ListTypeRegistrationsCommand).build() {
+    };
+    __name(_ListTypeRegistrationsCommand, "ListTypeRegistrationsCommand");
+    var ListTypeRegistrationsCommand = _ListTypeRegistrationsCommand;
+    var _ListTypesCommand = class _ListTypesCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListTypes", {}).n("CloudFormationClient", "ListTypesCommand").f(void 0, void 0).ser(se_ListTypesCommand).de(de_ListTypesCommand).build() {
+    };
+    __name(_ListTypesCommand, "ListTypesCommand");
+    var ListTypesCommand = _ListTypesCommand;
+    var _ListTypeVersionsCommand = class _ListTypeVersionsCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ListTypeVersions", {}).n("CloudFormationClient", "ListTypeVersionsCommand").f(void 0, void 0).ser(se_ListTypeVersionsCommand).de(de_ListTypeVersionsCommand).build() {
+    };
+    __name(_ListTypeVersionsCommand, "ListTypeVersionsCommand");
+    var ListTypeVersionsCommand = _ListTypeVersionsCommand;
+    var _PublishTypeCommand = class _PublishTypeCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "PublishType", {}).n("CloudFormationClient", "PublishTypeCommand").f(void 0, void 0).ser(se_PublishTypeCommand).de(de_PublishTypeCommand).build() {
+    };
+    __name(_PublishTypeCommand, "PublishTypeCommand");
+    var PublishTypeCommand = _PublishTypeCommand;
+    var _RecordHandlerProgressCommand = class _RecordHandlerProgressCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "RecordHandlerProgress", {}).n("CloudFormationClient", "RecordHandlerProgressCommand").f(void 0, void 0).ser(se_RecordHandlerProgressCommand).de(de_RecordHandlerProgressCommand).build() {
+    };
+    __name(_RecordHandlerProgressCommand, "RecordHandlerProgressCommand");
+    var RecordHandlerProgressCommand = _RecordHandlerProgressCommand;
+    var _RegisterPublisherCommand = class _RegisterPublisherCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "RegisterPublisher", {}).n("CloudFormationClient", "RegisterPublisherCommand").f(void 0, void 0).ser(se_RegisterPublisherCommand).de(de_RegisterPublisherCommand).build() {
+    };
+    __name(_RegisterPublisherCommand, "RegisterPublisherCommand");
+    var RegisterPublisherCommand = _RegisterPublisherCommand;
+    var _RegisterTypeCommand = class _RegisterTypeCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "RegisterType", {}).n("CloudFormationClient", "RegisterTypeCommand").f(void 0, void 0).ser(se_RegisterTypeCommand).de(de_RegisterTypeCommand).build() {
+    };
+    __name(_RegisterTypeCommand, "RegisterTypeCommand");
+    var RegisterTypeCommand = _RegisterTypeCommand;
+    var _RollbackStackCommand = class _RollbackStackCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "RollbackStack", {}).n("CloudFormationClient", "RollbackStackCommand").f(void 0, void 0).ser(se_RollbackStackCommand).de(de_RollbackStackCommand).build() {
+    };
+    __name(_RollbackStackCommand, "RollbackStackCommand");
+    var RollbackStackCommand = _RollbackStackCommand;
+    var _SetStackPolicyCommand = class _SetStackPolicyCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "SetStackPolicy", {}).n("CloudFormationClient", "SetStackPolicyCommand").f(void 0, void 0).ser(se_SetStackPolicyCommand).de(de_SetStackPolicyCommand).build() {
+    };
+    __name(_SetStackPolicyCommand, "SetStackPolicyCommand");
+    var SetStackPolicyCommand = _SetStackPolicyCommand;
+    var _SetTypeConfigurationCommand = class _SetTypeConfigurationCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "SetTypeConfiguration", {}).n("CloudFormationClient", "SetTypeConfigurationCommand").f(void 0, void 0).ser(se_SetTypeConfigurationCommand).de(de_SetTypeConfigurationCommand).build() {
+    };
+    __name(_SetTypeConfigurationCommand, "SetTypeConfigurationCommand");
+    var SetTypeConfigurationCommand = _SetTypeConfigurationCommand;
+    var _SetTypeDefaultVersionCommand = class _SetTypeDefaultVersionCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "SetTypeDefaultVersion", {}).n("CloudFormationClient", "SetTypeDefaultVersionCommand").f(void 0, void 0).ser(se_SetTypeDefaultVersionCommand).de(de_SetTypeDefaultVersionCommand).build() {
+    };
+    __name(_SetTypeDefaultVersionCommand, "SetTypeDefaultVersionCommand");
+    var SetTypeDefaultVersionCommand = _SetTypeDefaultVersionCommand;
+    var _SignalResourceCommand = class _SignalResourceCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "SignalResource", {}).n("CloudFormationClient", "SignalResourceCommand").f(void 0, void 0).ser(se_SignalResourceCommand).de(de_SignalResourceCommand).build() {
+    };
+    __name(_SignalResourceCommand, "SignalResourceCommand");
+    var SignalResourceCommand = _SignalResourceCommand;
+    var _StartResourceScanCommand = class _StartResourceScanCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "StartResourceScan", {}).n("CloudFormationClient", "StartResourceScanCommand").f(void 0, void 0).ser(se_StartResourceScanCommand).de(de_StartResourceScanCommand).build() {
+    };
+    __name(_StartResourceScanCommand, "StartResourceScanCommand");
+    var StartResourceScanCommand = _StartResourceScanCommand;
+    var _StopStackSetOperationCommand = class _StopStackSetOperationCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "StopStackSetOperation", {}).n("CloudFormationClient", "StopStackSetOperationCommand").f(void 0, void 0).ser(se_StopStackSetOperationCommand).de(de_StopStackSetOperationCommand).build() {
+    };
+    __name(_StopStackSetOperationCommand, "StopStackSetOperationCommand");
+    var StopStackSetOperationCommand = _StopStackSetOperationCommand;
+    var _TestTypeCommand = class _TestTypeCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "TestType", {}).n("CloudFormationClient", "TestTypeCommand").f(void 0, void 0).ser(se_TestTypeCommand).de(de_TestTypeCommand).build() {
+    };
+    __name(_TestTypeCommand, "TestTypeCommand");
+    var TestTypeCommand = _TestTypeCommand;
+    var _UpdateGeneratedTemplateCommand = class _UpdateGeneratedTemplateCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "UpdateGeneratedTemplate", {}).n("CloudFormationClient", "UpdateGeneratedTemplateCommand").f(void 0, void 0).ser(se_UpdateGeneratedTemplateCommand).de(de_UpdateGeneratedTemplateCommand).build() {
+    };
+    __name(_UpdateGeneratedTemplateCommand, "UpdateGeneratedTemplateCommand");
+    var UpdateGeneratedTemplateCommand = _UpdateGeneratedTemplateCommand;
+    var _UpdateStackCommand = class _UpdateStackCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "UpdateStack", {}).n("CloudFormationClient", "UpdateStackCommand").f(void 0, void 0).ser(se_UpdateStackCommand).de(de_UpdateStackCommand).build() {
+    };
+    __name(_UpdateStackCommand, "UpdateStackCommand");
+    var UpdateStackCommand = _UpdateStackCommand;
+    var _UpdateStackInstancesCommand = class _UpdateStackInstancesCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "UpdateStackInstances", {}).n("CloudFormationClient", "UpdateStackInstancesCommand").f(void 0, void 0).ser(se_UpdateStackInstancesCommand).de(de_UpdateStackInstancesCommand).build() {
+    };
+    __name(_UpdateStackInstancesCommand, "UpdateStackInstancesCommand");
+    var UpdateStackInstancesCommand = _UpdateStackInstancesCommand;
+    var _UpdateStackSetCommand = class _UpdateStackSetCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "UpdateStackSet", {}).n("CloudFormationClient", "UpdateStackSetCommand").f(void 0, void 0).ser(se_UpdateStackSetCommand).de(de_UpdateStackSetCommand).build() {
+    };
+    __name(_UpdateStackSetCommand, "UpdateStackSetCommand");
+    var UpdateStackSetCommand = _UpdateStackSetCommand;
+    var _UpdateTerminationProtectionCommand = class _UpdateTerminationProtectionCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "UpdateTerminationProtection", {}).n("CloudFormationClient", "UpdateTerminationProtectionCommand").f(void 0, void 0).ser(se_UpdateTerminationProtectionCommand).de(de_UpdateTerminationProtectionCommand).build() {
+    };
+    __name(_UpdateTerminationProtectionCommand, "UpdateTerminationProtectionCommand");
+    var UpdateTerminationProtectionCommand = _UpdateTerminationProtectionCommand;
+    var _ValidateTemplateCommand = class _ValidateTemplateCommand extends import_smithy_client.Command.classBuilder().ep({
+      ...commonParams
+    }).m(function(Command, cs, config, o) {
+      return [
+        (0, import_middleware_serde.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, import_middleware_endpoint.getEndpointPlugin)(config, Command.getEndpointParameterInstructions())
+      ];
+    }).s("CloudFormation", "ValidateTemplate", {}).n("CloudFormationClient", "ValidateTemplateCommand").f(void 0, void 0).ser(se_ValidateTemplateCommand).de(de_ValidateTemplateCommand).build() {
+    };
+    __name(_ValidateTemplateCommand, "ValidateTemplateCommand");
+    var ValidateTemplateCommand = _ValidateTemplateCommand;
+    var commands = {
+      ActivateOrganizationsAccessCommand,
+      ActivateTypeCommand,
+      BatchDescribeTypeConfigurationsCommand,
+      CancelUpdateStackCommand,
+      ContinueUpdateRollbackCommand,
+      CreateChangeSetCommand,
+      CreateGeneratedTemplateCommand,
+      CreateStackCommand,
+      CreateStackInstancesCommand,
+      CreateStackSetCommand,
+      DeactivateOrganizationsAccessCommand,
+      DeactivateTypeCommand,
+      DeleteChangeSetCommand,
+      DeleteGeneratedTemplateCommand,
+      DeleteStackCommand,
+      DeleteStackInstancesCommand,
+      DeleteStackSetCommand,
+      DeregisterTypeCommand,
+      DescribeAccountLimitsCommand,
+      DescribeChangeSetCommand,
+      DescribeChangeSetHooksCommand,
+      DescribeGeneratedTemplateCommand,
+      DescribeOrganizationsAccessCommand,
+      DescribePublisherCommand,
+      DescribeResourceScanCommand,
+      DescribeStackDriftDetectionStatusCommand,
+      DescribeStackEventsCommand,
+      DescribeStackInstanceCommand,
+      DescribeStackResourceCommand,
+      DescribeStackResourceDriftsCommand,
+      DescribeStackResourcesCommand,
+      DescribeStacksCommand,
+      DescribeStackSetCommand,
+      DescribeStackSetOperationCommand,
+      DescribeTypeCommand,
+      DescribeTypeRegistrationCommand,
+      DetectStackDriftCommand,
+      DetectStackResourceDriftCommand,
+      DetectStackSetDriftCommand,
+      EstimateTemplateCostCommand,
+      ExecuteChangeSetCommand,
+      GetGeneratedTemplateCommand,
+      GetStackPolicyCommand,
+      GetTemplateCommand,
+      GetTemplateSummaryCommand,
+      ImportStacksToStackSetCommand,
+      ListChangeSetsCommand,
+      ListExportsCommand,
+      ListGeneratedTemplatesCommand,
+      ListImportsCommand,
+      ListResourceScanRelatedResourcesCommand,
+      ListResourceScanResourcesCommand,
+      ListResourceScansCommand,
+      ListStackInstanceResourceDriftsCommand,
+      ListStackInstancesCommand,
+      ListStackResourcesCommand,
+      ListStacksCommand,
+      ListStackSetAutoDeploymentTargetsCommand,
+      ListStackSetOperationResultsCommand,
+      ListStackSetOperationsCommand,
+      ListStackSetsCommand,
+      ListTypeRegistrationsCommand,
+      ListTypesCommand,
+      ListTypeVersionsCommand,
+      PublishTypeCommand,
+      RecordHandlerProgressCommand,
+      RegisterPublisherCommand,
+      RegisterTypeCommand,
+      RollbackStackCommand,
+      SetStackPolicyCommand,
+      SetTypeConfigurationCommand,
+      SetTypeDefaultVersionCommand,
+      SignalResourceCommand,
+      StartResourceScanCommand,
+      StopStackSetOperationCommand,
+      TestTypeCommand,
+      UpdateGeneratedTemplateCommand,
+      UpdateStackCommand,
+      UpdateStackInstancesCommand,
+      UpdateStackSetCommand,
+      UpdateTerminationProtectionCommand,
+      ValidateTemplateCommand
+    };
+    var _CloudFormation = class _CloudFormation extends CloudFormationClient {
+    };
+    __name(_CloudFormation, "CloudFormation");
+    var CloudFormation = _CloudFormation;
+    (0, import_smithy_client.createAggregatedClient)(commands, CloudFormation);
+    var paginateDescribeAccountLimits = (0, import_core.createPaginator)(CloudFormationClient, DescribeAccountLimitsCommand, "NextToken", "NextToken", "");
+    var paginateDescribeStackEvents = (0, import_core.createPaginator)(CloudFormationClient, DescribeStackEventsCommand, "NextToken", "NextToken", "");
+    var paginateDescribeStackResourceDrifts = (0, import_core.createPaginator)(CloudFormationClient, DescribeStackResourceDriftsCommand, "NextToken", "NextToken", "MaxResults");
+    var paginateDescribeStacks = (0, import_core.createPaginator)(CloudFormationClient, DescribeStacksCommand, "NextToken", "NextToken", "");
+    var paginateListChangeSets = (0, import_core.createPaginator)(CloudFormationClient, ListChangeSetsCommand, "NextToken", "NextToken", "");
+    var paginateListExports = (0, import_core.createPaginator)(CloudFormationClient, ListExportsCommand, "NextToken", "NextToken", "");
+    var paginateListGeneratedTemplates = (0, import_core.createPaginator)(CloudFormationClient, ListGeneratedTemplatesCommand, "NextToken", "NextToken", "MaxResults");
+    var paginateListImports = (0, import_core.createPaginator)(CloudFormationClient, ListImportsCommand, "NextToken", "NextToken", "");
+    var paginateListResourceScanRelatedResources = (0, import_core.createPaginator)(CloudFormationClient, ListResourceScanRelatedResourcesCommand, "NextToken", "NextToken", "MaxResults");
+    var paginateListResourceScanResources = (0, import_core.createPaginator)(CloudFormationClient, ListResourceScanResourcesCommand, "NextToken", "NextToken", "MaxResults");
+    var paginateListResourceScans = (0, import_core.createPaginator)(CloudFormationClient, ListResourceScansCommand, "NextToken", "NextToken", "MaxResults");
+    var paginateListStackInstances = (0, import_core.createPaginator)(CloudFormationClient, ListStackInstancesCommand, "NextToken", "NextToken", "MaxResults");
+    var paginateListStackResources = (0, import_core.createPaginator)(CloudFormationClient, ListStackResourcesCommand, "NextToken", "NextToken", "");
+    var paginateListStackSetOperationResults = (0, import_core.createPaginator)(CloudFormationClient, ListStackSetOperationResultsCommand, "NextToken", "NextToken", "MaxResults");
+    var paginateListStackSetOperations = (0, import_core.createPaginator)(CloudFormationClient, ListStackSetOperationsCommand, "NextToken", "NextToken", "MaxResults");
+    var paginateListStackSets = (0, import_core.createPaginator)(CloudFormationClient, ListStackSetsCommand, "NextToken", "NextToken", "MaxResults");
+    var paginateListStacks = (0, import_core.createPaginator)(CloudFormationClient, ListStacksCommand, "NextToken", "NextToken", "");
+    var paginateListTypeRegistrations = (0, import_core.createPaginator)(CloudFormationClient, ListTypeRegistrationsCommand, "NextToken", "NextToken", "MaxResults");
+    var paginateListTypeVersions = (0, import_core.createPaginator)(CloudFormationClient, ListTypeVersionsCommand, "NextToken", "NextToken", "MaxResults");
+    var paginateListTypes = (0, import_core.createPaginator)(CloudFormationClient, ListTypesCommand, "NextToken", "NextToken", "MaxResults");
+    var import_util_waiter = require_dist_cjs45();
+    var checkState = /* @__PURE__ */ __name(async (client, input) => {
+      let reason;
+      try {
+        const result = await client.send(new DescribeChangeSetCommand(input));
+        reason = result;
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            return result.Status;
+          }, "returnComparator");
+          if (returnComparator() === "CREATE_COMPLETE") {
+            return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            return result.Status;
+          }, "returnComparator");
+          if (returnComparator() === "FAILED") {
+            return { state: import_util_waiter.WaiterState.FAILURE, reason };
+          }
+        } catch (e) {
+        }
+      } catch (exception) {
+        reason = exception;
+        if (exception.name && exception.name == "ValidationError") {
+          return { state: import_util_waiter.WaiterState.FAILURE, reason };
+        }
+      }
+      return { state: import_util_waiter.WaiterState.RETRY, reason };
+    }, "checkState");
+    var waitForChangeSetCreateComplete = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 30, maxDelay: 120 };
+      return (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState);
+    }, "waitForChangeSetCreateComplete");
+    var waitUntilChangeSetCreateComplete = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 30, maxDelay: 120 };
+      const result = await (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState);
+      return (0, import_util_waiter.checkExceptions)(result);
+    }, "waitUntilChangeSetCreateComplete");
+    var checkState2 = /* @__PURE__ */ __name(async (client, input) => {
+      let reason;
+      try {
+        const result = await client.send(new DescribeStacksCommand(input));
+        reason = result;
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          let allStringEq_5 = returnComparator().length > 0;
+          for (const element_4 of returnComparator()) {
+            allStringEq_5 = allStringEq_5 && element_4 == "CREATE_COMPLETE";
+          }
+          if (allStringEq_5) {
+            return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          let allStringEq_5 = returnComparator().length > 0;
+          for (const element_4 of returnComparator()) {
+            allStringEq_5 = allStringEq_5 && element_4 == "UPDATE_COMPLETE";
+          }
+          if (allStringEq_5) {
+            return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          let allStringEq_5 = returnComparator().length > 0;
+          for (const element_4 of returnComparator()) {
+            allStringEq_5 = allStringEq_5 && element_4 == "UPDATE_IN_PROGRESS";
+          }
+          if (allStringEq_5) {
+            return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          let allStringEq_5 = returnComparator().length > 0;
+          for (const element_4 of returnComparator()) {
+            allStringEq_5 = allStringEq_5 && element_4 == "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS";
+          }
+          if (allStringEq_5) {
+            return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          let allStringEq_5 = returnComparator().length > 0;
+          for (const element_4 of returnComparator()) {
+            allStringEq_5 = allStringEq_5 && element_4 == "UPDATE_FAILED";
+          }
+          if (allStringEq_5) {
+            return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          let allStringEq_5 = returnComparator().length > 0;
+          for (const element_4 of returnComparator()) {
+            allStringEq_5 = allStringEq_5 && element_4 == "UPDATE_ROLLBACK_IN_PROGRESS";
+          }
+          if (allStringEq_5) {
+            return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          let allStringEq_5 = returnComparator().length > 0;
+          for (const element_4 of returnComparator()) {
+            allStringEq_5 = allStringEq_5 && element_4 == "UPDATE_ROLLBACK_FAILED";
+          }
+          if (allStringEq_5) {
+            return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          let allStringEq_5 = returnComparator().length > 0;
+          for (const element_4 of returnComparator()) {
+            allStringEq_5 = allStringEq_5 && element_4 == "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS";
+          }
+          if (allStringEq_5) {
+            return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          let allStringEq_5 = returnComparator().length > 0;
+          for (const element_4 of returnComparator()) {
+            allStringEq_5 = allStringEq_5 && element_4 == "UPDATE_ROLLBACK_COMPLETE";
+          }
+          if (allStringEq_5) {
+            return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "CREATE_FAILED") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "DELETE_COMPLETE") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "DELETE_FAILED") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "ROLLBACK_FAILED") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "ROLLBACK_COMPLETE") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+      } catch (exception) {
+        reason = exception;
+        if (exception.name && exception.name == "ValidationError") {
+          return { state: import_util_waiter.WaiterState.FAILURE, reason };
+        }
+      }
+      return { state: import_util_waiter.WaiterState.RETRY, reason };
+    }, "checkState");
+    var waitForStackCreateComplete = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 30, maxDelay: 120 };
+      return (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState2);
+    }, "waitForStackCreateComplete");
+    var waitUntilStackCreateComplete = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 30, maxDelay: 120 };
+      const result = await (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState2);
+      return (0, import_util_waiter.checkExceptions)(result);
+    }, "waitUntilStackCreateComplete");
+    var checkState3 = /* @__PURE__ */ __name(async (client, input) => {
+      let reason;
+      try {
+        const result = await client.send(new DescribeStacksCommand(input));
+        reason = result;
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          let allStringEq_5 = returnComparator().length > 0;
+          for (const element_4 of returnComparator()) {
+            allStringEq_5 = allStringEq_5 && element_4 == "DELETE_COMPLETE";
+          }
+          if (allStringEq_5) {
+            return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "DELETE_FAILED") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "CREATE_FAILED") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "ROLLBACK_FAILED") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "UPDATE_ROLLBACK_IN_PROGRESS") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "UPDATE_ROLLBACK_FAILED") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "UPDATE_ROLLBACK_COMPLETE") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "UPDATE_COMPLETE") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+      } catch (exception) {
+        reason = exception;
+        if (exception.name && exception.name == "ValidationError") {
+          return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+        }
+      }
+      return { state: import_util_waiter.WaiterState.RETRY, reason };
+    }, "checkState");
+    var waitForStackDeleteComplete = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 30, maxDelay: 120 };
+      return (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState3);
+    }, "waitForStackDeleteComplete");
+    var waitUntilStackDeleteComplete = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 30, maxDelay: 120 };
+      const result = await (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState3);
+      return (0, import_util_waiter.checkExceptions)(result);
+    }, "waitUntilStackDeleteComplete");
+    var checkState4 = /* @__PURE__ */ __name(async (client, input) => {
+      let reason;
+      try {
+        const result = await client.send(new DescribeStacksCommand(input));
+        reason = result;
+        return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+      } catch (exception) {
+        reason = exception;
+        if (exception.name && exception.name == "ValidationError") {
+          return { state: import_util_waiter.WaiterState.RETRY, reason };
+        }
+      }
+      return { state: import_util_waiter.WaiterState.RETRY, reason };
+    }, "checkState");
+    var waitForStackExists = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 5, maxDelay: 120 };
+      return (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState4);
+    }, "waitForStackExists");
+    var waitUntilStackExists = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 5, maxDelay: 120 };
+      const result = await (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState4);
+      return (0, import_util_waiter.checkExceptions)(result);
+    }, "waitUntilStackExists");
+    var checkState5 = /* @__PURE__ */ __name(async (client, input) => {
+      let reason;
+      try {
+        const result = await client.send(new DescribeStacksCommand(input));
+        reason = result;
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          let allStringEq_5 = returnComparator().length > 0;
+          for (const element_4 of returnComparator()) {
+            allStringEq_5 = allStringEq_5 && element_4 == "IMPORT_COMPLETE";
+          }
+          if (allStringEq_5) {
+            return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "ROLLBACK_COMPLETE") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "ROLLBACK_FAILED") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "IMPORT_ROLLBACK_IN_PROGRESS") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "IMPORT_ROLLBACK_FAILED") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "IMPORT_ROLLBACK_COMPLETE") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+      } catch (exception) {
+        reason = exception;
+        if (exception.name && exception.name == "ValidationError") {
+          return { state: import_util_waiter.WaiterState.FAILURE, reason };
+        }
+      }
+      return { state: import_util_waiter.WaiterState.RETRY, reason };
+    }, "checkState");
+    var waitForStackImportComplete = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 30, maxDelay: 120 };
+      return (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState5);
+    }, "waitForStackImportComplete");
+    var waitUntilStackImportComplete = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 30, maxDelay: 120 };
+      const result = await (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState5);
+      return (0, import_util_waiter.checkExceptions)(result);
+    }, "waitUntilStackImportComplete");
+    var checkState6 = /* @__PURE__ */ __name(async (client, input) => {
+      let reason;
+      try {
+        const result = await client.send(new DescribeStacksCommand(input));
+        reason = result;
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          let allStringEq_5 = returnComparator().length > 0;
+          for (const element_4 of returnComparator()) {
+            allStringEq_5 = allStringEq_5 && element_4 == "UPDATE_ROLLBACK_COMPLETE";
+          }
+          if (allStringEq_5) {
+            return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "UPDATE_FAILED") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "UPDATE_ROLLBACK_FAILED") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "DELETE_FAILED") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+      } catch (exception) {
+        reason = exception;
+        if (exception.name && exception.name == "ValidationError") {
+          return { state: import_util_waiter.WaiterState.FAILURE, reason };
+        }
+      }
+      return { state: import_util_waiter.WaiterState.RETRY, reason };
+    }, "checkState");
+    var waitForStackRollbackComplete = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 30, maxDelay: 120 };
+      return (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState6);
+    }, "waitForStackRollbackComplete");
+    var waitUntilStackRollbackComplete = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 30, maxDelay: 120 };
+      const result = await (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState6);
+      return (0, import_util_waiter.checkExceptions)(result);
+    }, "waitUntilStackRollbackComplete");
+    var checkState7 = /* @__PURE__ */ __name(async (client, input) => {
+      let reason;
+      try {
+        const result = await client.send(new DescribeStacksCommand(input));
+        reason = result;
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          let allStringEq_5 = returnComparator().length > 0;
+          for (const element_4 of returnComparator()) {
+            allStringEq_5 = allStringEq_5 && element_4 == "UPDATE_COMPLETE";
+          }
+          if (allStringEq_5) {
+            return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "UPDATE_FAILED") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "UPDATE_ROLLBACK_FAILED") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            const flat_1 = [].concat(...result.Stacks);
+            const projection_3 = flat_1.map((element_2) => {
+              return element_2.StackStatus;
+            });
+            return projection_3;
+          }, "returnComparator");
+          for (const anyStringEq_4 of returnComparator()) {
+            if (anyStringEq_4 == "UPDATE_ROLLBACK_COMPLETE") {
+              return { state: import_util_waiter.WaiterState.FAILURE, reason };
+            }
+          }
+        } catch (e) {
+        }
+      } catch (exception) {
+        reason = exception;
+        if (exception.name && exception.name == "ValidationError") {
+          return { state: import_util_waiter.WaiterState.FAILURE, reason };
+        }
+      }
+      return { state: import_util_waiter.WaiterState.RETRY, reason };
+    }, "checkState");
+    var waitForStackUpdateComplete = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 30, maxDelay: 120 };
+      return (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState7);
+    }, "waitForStackUpdateComplete");
+    var waitUntilStackUpdateComplete = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 30, maxDelay: 120 };
+      const result = await (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState7);
+      return (0, import_util_waiter.checkExceptions)(result);
+    }, "waitUntilStackUpdateComplete");
+    var checkState8 = /* @__PURE__ */ __name(async (client, input) => {
+      let reason;
+      try {
+        const result = await client.send(new DescribeTypeRegistrationCommand(input));
+        reason = result;
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            return result.ProgressStatus;
+          }, "returnComparator");
+          if (returnComparator() === "COMPLETE") {
+            return { state: import_util_waiter.WaiterState.SUCCESS, reason };
+          }
+        } catch (e) {
+        }
+        try {
+          const returnComparator = /* @__PURE__ */ __name(() => {
+            return result.ProgressStatus;
+          }, "returnComparator");
+          if (returnComparator() === "FAILED") {
+            return { state: import_util_waiter.WaiterState.FAILURE, reason };
+          }
+        } catch (e) {
+        }
+      } catch (exception) {
+        reason = exception;
+      }
+      return { state: import_util_waiter.WaiterState.RETRY, reason };
+    }, "checkState");
+    var waitForTypeRegistrationComplete = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 30, maxDelay: 120 };
+      return (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState8);
+    }, "waitForTypeRegistrationComplete");
+    var waitUntilTypeRegistrationComplete = /* @__PURE__ */ __name(async (params, input) => {
+      const serviceDefaults = { minDelay: 30, maxDelay: 120 };
+      const result = await (0, import_util_waiter.createWaiter)({ ...serviceDefaults, ...params }, input, checkState8);
+      return (0, import_util_waiter.checkExceptions)(result);
+    }, "waitUntilTypeRegistrationComplete");
+    var import_util_endpoints = require_dist_cjs10();
+  }
+});
+
+// ../../../../packages/lib/dist/cjs/utils.js
+var require_utils = __commonJS({
+  "../../../../packages/lib/dist/cjs/utils.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.findAppSyncApiId = exports2.fetchResourcesByLogicalId = exports2.signAwsRequest = exports2.getAwsCredsProvider = exports2.replacePlaceholdersInText = void 0;
+    var sha256_js_1 = require_main2();
+    var client_cloudformation_1 = require_dist_cjs46();
+    var credential_provider_node_1 = require("@aws-sdk/credential-provider-node");
+    var credential_providers_1 = require("@aws-sdk/credential-providers");
+    var signature_v4_1 = require_dist_cjs37();
+    var client_appsync_1 = require("@aws-sdk/client-appsync");
+    function replacePlaceholdersInText(text, replacementPairs, templateTag = ["${", "}"]) {
+      let replacedText = text;
+      replacementPairs.forEach(([target, replacement]) => {
+        const regex = new RegExp(`${templateTag[0]}${target}${templateTag[1]}`, "g");
+        replacedText = replacedText.replace(regex, replacement);
+      });
+      return replacedText;
+    }
+    exports2.replacePlaceholdersInText = replacePlaceholdersInText;
+    function getAwsCredsProvider(profile) {
+      if (process.env.CI === "true") {
+        try {
+          return (0, credential_providers_1.fromEnv)();
+        } catch (error) {
+          console.error("Failed to load AWS credentials from token file:", error);
+          return void 0;
+        }
+      } else if (process.env.AWS_LAMBDA_FUNCTION_NAME) {
+        console.log("Running in AWS Lambda. Using execution role for credentials.");
+        return void 0;
+      } else {
+        return (0, credential_providers_1.fromIni)({ profile });
+      }
+    }
+    exports2.getAwsCredsProvider = getAwsCredsProvider;
+    async function signAwsRequest(service, request, region) {
+      request.headers["Host"] = new URL(`https://${request.hostname}`).hostname;
+      function headersToHeaderBag(headers) {
+        const headerBag = {};
+        headers.forEach((value, key) => {
+          headerBag[key] = value;
+        });
+        return headerBag;
+      }
+      request.headers = headersToHeaderBag(new Headers(Object.entries(request.headers)));
+      console.log(444, request.headers);
+      const signer = new signature_v4_1.SignatureV4({
+        credentials: (0, credential_provider_node_1.defaultProvider)(),
+        region,
+        service,
+        sha256: sha256_js_1.Sha256
+      });
+      const signedRequest = await signer.sign(request);
+      return signedRequest;
+    }
+    exports2.signAwsRequest = signAwsRequest;
+    async function fetchResourcesByLogicalId(resources, stackName, client) {
+      const command = new client_cloudformation_1.DescribeStackResourcesCommand({ StackName: stackName });
+      const response = await client.send(command);
+      const result = {};
+      if (!response.StackResources) {
+        return void 0;
+      }
+      response.StackResources.forEach((resource) => {
+        const logicalResourceId = resource.LogicalResourceId;
+        if (!logicalResourceId)
+          return;
+        if (resources[logicalResourceId] && resource.ResourceType === resources[logicalResourceId]) {
+          result[logicalResourceId] = resource.PhysicalResourceId;
+        }
+      });
+      return result;
+    }
+    exports2.fetchResourcesByLogicalId = fetchResourcesByLogicalId;
+    async function findAppSyncApiId({ endpoint, name, client }) {
+      var _a;
+      if (!endpoint && !name) {
+        throw new Error("Either 'endpoint' or 'name' must be provided.");
+      }
+      let nextToken = void 0;
+      do {
+        const response = await client.send(new client_appsync_1.ListGraphqlApisCommand({ nextToken }));
+        for (const api of response.graphqlApis || []) {
+          if (endpoint && ((_a = api.uris) === null || _a === void 0 ? void 0 : _a.GRAPHQL) === endpoint) {
+            return api.apiId || null;
+          } else if (name && api.name === name) {
+            return api.apiId || null;
+          }
+        }
+        nextToken = response.nextToken;
+      } while (nextToken);
+      return null;
+    }
+    exports2.findAppSyncApiId = findAppSyncApiId;
+  }
+});
+
+// ../../../../packages/lib/dist/cjs/appsync.js
+var require_appsync = __commonJS({
+  "../../../../packages/lib/dist/cjs/appsync.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.callGqlEndpoint = void 0;
+    var protocol_http_1 = require_dist_cjs2();
+    var utils_1 = require_utils();
+    async function callGqlEndpoint(params) {
+      const region = process.env.AWS_REGION || process.env.REGION;
+      if (!region)
+        throw new Error("Region not found in environment variables");
+      const { graphqlEndpoint, query, variables } = params;
+      const request = new protocol_http_1.HttpRequest({
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        hostname: new URL(graphqlEndpoint).hostname,
+        path: params.path,
+        body: JSON.stringify({ query, variables })
+      });
+      const signedRequest = await (0, utils_1.signAwsRequest)("appsync", request, region);
+      const response = await fetch(graphqlEndpoint, {
+        method: "POST",
+        headers: signedRequest.headers,
+        body: signedRequest.body
+      });
+      if (!response.ok) {
+        const errorBody = await response.text();
+        console.error(`Error calling GraphQL endpoint: ${errorBody}`);
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+      return response.json();
+    }
+    exports2.callGqlEndpoint = callGqlEndpoint;
+  }
+});
+
+// ../../../../packages/lib/dist/cjs/lambda-response.js
+var require_lambda_response = __commonJS({
+  "../../../../packages/lib/dist/cjs/lambda-response.js"(exports2) {
+    "use strict";
+    var _a;
+    var _b;
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.runApiOps = exports2.handleError = exports2.createResponse = exports2.addCORSHeaders = void 0;
+    var preflightCacheTtl = process.env.PREFLIGHT_CACHE_TTL || "3600";
+    var allowedOrigins = JSON.parse(process.env.ALLOWED_ORIGINS || "[]");
+    var isConsole = ((_a = process.env.LOGGING_LEVEL) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === "debug" || ((_b = process.env.LOGGING_LEVEL) === null || _b === void 0 ? void 0 : _b.toLowerCase()) === "verbose";
+    var addCORSHeaders = (response, allowedOrigin) => {
+      response.headers = {
+        ...response.headers,
+        "Access-Control-Allow-Origin": allowedOrigin,
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS, PATCH",
+        "Access-Control-Allow-Headers": "Content-Type, X-Amz-Date, Authorization, X-Api-Key, X-Amz-Security-Token",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Max-Age": preflightCacheTtl
+      };
+      return response;
+    };
+    exports2.addCORSHeaders = addCORSHeaders;
+    var createResponse = (eventHeaders, statusCode, body) => {
+      let origin;
+      if (eventHeaders)
+        origin = eventHeaders["Origin"] || eventHeaders["origin"];
+      const basicResponse = {
+        statusCode,
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      if (origin && allowedOrigins.includes(origin)) {
+        return (0, exports2.addCORSHeaders)(basicResponse, origin);
+      } else {
+        return basicResponse;
+      }
+    };
+    exports2.createResponse = createResponse;
+    var handleError = (error) => {
+      console.error(error);
+      const response = {
+        statusCode: 500,
+        body: JSON.stringify({ message: "Internal Server Error" })
+      };
+      const errorMappings = {
+        ValidationError: { statusCode: 400, message: "Validation failed" },
+        UnauthorizedError: { statusCode: 401, message: "Unauthorized access" },
+        ForbiddenError: { statusCode: 403, message: "Access forbidden" },
+        NotFoundError: { statusCode: 404, message: "Resource not found" },
+        MethodNotAllowedError: { statusCode: 405, message: "Method not allowed" },
+        ConflictError: { statusCode: 409, message: "Resource conflict" },
+        InternalServerError: {
+          statusCode: 500,
+          message: "Internal server error"
+        },
+        ServiceUnavailableError: {
+          statusCode: 503,
+          message: "Service unavailable"
+        }
+      };
+      if (errorMappings[error.name]) {
+        const mappedError = errorMappings[error.name];
+        response.statusCode = mappedError === null || mappedError === void 0 ? void 0 : mappedError.statusCode;
+        response.body = JSON.stringify({
+          message: error.message || (mappedError === null || mappedError === void 0 ? void 0 : mappedError.message)
+        });
+      } else if (error.statusCode) {
+        response.statusCode = error.statusCode;
+        response.body = JSON.stringify({ message: error.message });
+      }
+      return response;
+    };
+    exports2.handleError = handleError;
+    async function runApiOps({ operation, event, apiUrl, apiKey }) {
+      try {
+        if (isConsole)
+          console.log({ event });
+        const result = await operation({ event, apiUrl, apiKey });
+        const response = (0, exports2.createResponse)(event.headers, 200, result);
+        if (isConsole)
+          console.log({ response });
+        return response;
+      } catch (error) {
+        console.error("Error:", error);
+        return (0, exports2.handleError)(error);
+      }
+    }
+    exports2.runApiOps = runApiOps;
+  }
+});
+
+// ../../../../packages/lib/dist/cjs/parameter.js
+var require_parameter = __commonJS({
+  "../../../../packages/lib/dist/cjs/parameter.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.getParameter = void 0;
+    var client_ssm_1 = require("@aws-sdk/client-ssm");
+    var utils_1 = require_utils();
+    var getParameter = async (parameterName, region, profile) => {
+      var _a;
+      const ssmClient = new client_ssm_1.SSMClient({
+        region,
+        credentials: (0, utils_1.getAwsCredsProvider)(profile)
+      });
+      try {
+        const command = new client_ssm_1.GetParameterCommand({
+          Name: parameterName,
+          WithDecryption: true
+        });
+        const response = await ssmClient.send(command);
+        return ((_a = response.Parameter) === null || _a === void 0 ? void 0 : _a.Value) || "";
+      } catch (error) {
+        console.warn(`Error fetching parameter: ${error}`);
+        throw error;
+      }
+    };
+    exports2.getParameter = getParameter;
+  }
+});
+
+// ../../../../packages/lib/dist/cjs/secret.js
+var require_secret = __commonJS({
+  "../../../../packages/lib/dist/cjs/secret.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.getSecret = exports2.getSecretFromSecretsManager = void 0;
+    var client_secrets_manager_1 = require("@aws-sdk/client-secrets-manager");
+    var parameter_1 = require_parameter();
+    var utils_1 = require_utils();
+    var getSecretFromSecretsManager = async ({ secretId, region, profile }) => {
+      const secretsManagerClient = new client_secrets_manager_1.SecretsManagerClient({
+        region,
+        credentials: (0, utils_1.getAwsCredsProvider)(profile)
+      });
+      try {
+        const command = new client_secrets_manager_1.GetSecretValueCommand({ SecretId: secretId });
+        const response = await secretsManagerClient.send(command);
+        return response.SecretString || "";
+      } catch (error) {
+        console.error(`Error fetching secret: ${error}`);
+        throw error;
+      }
+    };
+    exports2.getSecretFromSecretsManager = getSecretFromSecretsManager;
+    var getSecret = async ({ key, env, region, profile }) => {
+      try {
+        if (env === "prod") {
+          return await (0, exports2.getSecretFromSecretsManager)({
+            secretId: key,
+            region,
+            profile
+          });
+        } else {
+          const secret = await (0, parameter_1.getParameter)(key, region, profile);
+          return secret || process.env[key];
+        }
+      } catch (error) {
+        console.warn(`Error fetching secret: ${error}`);
+        return void 0;
+      }
+    };
+    exports2.getSecret = getSecret;
+  }
+});
+
+// ../../../../node_modules/change-case-all/dist/index.umd.cjs
+var require_index_umd = __commonJS({
+  "../../../../node_modules/change-case-all/dist/index.umd.cjs"(exports2, module2) {
+    (function(global, factory) {
+      typeof exports2 === "object" && typeof module2 !== "undefined" ? factory(exports2) : typeof define === "function" && define.amd ? define(["exports"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.ChangeCaseAll = {}));
+    })(exports2, function(exports22) {
+      "use strict";
+      const SPLIT_LOWER_UPPER_RE = new RegExp("([\\p{Ll}\\d])(\\p{Lu})", "gu");
+      const SPLIT_UPPER_UPPER_RE = new RegExp("(\\p{Lu})([\\p{Lu}][\\p{Ll}])", "gu");
+      const SPLIT_NUMBER_LOWER_RE = new RegExp("(\\d)(\\p{Ll})", "gu");
+      const SPLIT_LETTER_NUMBER_RE = new RegExp("(\\p{L})(\\d)", "gu");
+      const DEFAULT_STRIP_REGEXP = /[^\p{L}\d]+/giu;
+      const SPLIT_REPLACE_VALUE = "$1\0$2";
+      const DEFAULT_PREFIX_CHARACTERS = "";
+      function split(input, options) {
+        let result = input.trim();
+        result = result.replace(SPLIT_LOWER_UPPER_RE, SPLIT_REPLACE_VALUE).replace(SPLIT_UPPER_UPPER_RE, SPLIT_REPLACE_VALUE);
+        if (options == null ? void 0 : options.separateNumbers) {
+          result = result.replace(SPLIT_NUMBER_LOWER_RE, SPLIT_REPLACE_VALUE).replace(SPLIT_LETTER_NUMBER_RE, SPLIT_REPLACE_VALUE);
+        }
+        result = result.replace(DEFAULT_STRIP_REGEXP, "\0");
+        let start = 0;
+        let end = result.length;
+        while (result.charAt(start) === "\0")
+          start++;
+        if (start === end)
+          return [];
+        while (result.charAt(end - 1) === "\0")
+          end--;
+        return result.slice(start, end).split(/\0/g);
+      }
+      function noCase$1(input, options) {
+        const prefix = getPrefix(input, options == null ? void 0 : options.prefixCharacters);
+        return prefix + split(input, options).map(lowerFactory(options == null ? void 0 : options.locale)).join((options == null ? void 0 : options.delimiter) ?? " ");
+      }
+      function camelCase$1(input, options) {
+        const prefix = getPrefix(input, options == null ? void 0 : options.prefixCharacters);
+        const lower = lowerFactory(options == null ? void 0 : options.locale);
+        const upper = upperFactory(options == null ? void 0 : options.locale);
+        const transform = (options == null ? void 0 : options.mergeAmbiguousCharacters) ? capitalCaseTransformFactory(lower, upper) : pascalCaseTransformFactory(lower, upper);
+        return prefix + split(input, options).map((word, index) => {
+          if (index === 0)
+            return lower(word);
+          return transform(word, index);
+        }).join((options == null ? void 0 : options.delimiter) ?? "");
+      }
+      function pascalCase$1(input, options) {
+        const prefix = getPrefix(input, options == null ? void 0 : options.prefixCharacters);
+        const lower = lowerFactory(options == null ? void 0 : options.locale);
+        const upper = upperFactory(options == null ? void 0 : options.locale);
+        const transform = (options == null ? void 0 : options.mergeAmbiguousCharacters) ? capitalCaseTransformFactory(lower, upper) : pascalCaseTransformFactory(lower, upper);
+        return prefix + split(input, options).map(transform).join((options == null ? void 0 : options.delimiter) ?? "");
+      }
+      function capitalCase$1(input, options) {
+        const prefix = getPrefix(input, options == null ? void 0 : options.prefixCharacters);
+        const lower = lowerFactory(options == null ? void 0 : options.locale);
+        const upper = upperFactory(options == null ? void 0 : options.locale);
+        return prefix + split(input, options).map(capitalCaseTransformFactory(lower, upper)).join((options == null ? void 0 : options.delimiter) ?? " ");
+      }
+      function constantCase$1(input, options) {
+        const prefix = getPrefix(input, options == null ? void 0 : options.prefixCharacters);
+        return prefix + split(input, options).map(upperFactory(options == null ? void 0 : options.locale)).join((options == null ? void 0 : options.delimiter) ?? "_");
+      }
+      function dotCase$1(input, options) {
+        return noCase$1(input, { delimiter: ".", ...options });
+      }
+      function kebabCase$1(input, options) {
+        return noCase$1(input, { delimiter: "-", ...options });
+      }
+      function pathCase$1(input, options) {
+        return noCase$1(input, { delimiter: "/", ...options });
+      }
+      function sentenceCase$1(input, options) {
+        const prefix = getPrefix(input, options == null ? void 0 : options.prefixCharacters);
+        const lower = lowerFactory(options == null ? void 0 : options.locale);
+        const upper = upperFactory(options == null ? void 0 : options.locale);
+        const transform = capitalCaseTransformFactory(lower, upper);
+        return prefix + split(input, options).map((word, index) => {
+          if (index === 0)
+            return transform(word);
+          return lower(word);
+        }).join((options == null ? void 0 : options.delimiter) ?? " ");
+      }
+      function snakeCase$1(input, options) {
+        return noCase$1(input, { delimiter: "_", ...options });
+      }
+      function trainCase$1(input, options) {
+        return capitalCase$1(input, { delimiter: "-", ...options });
+      }
+      function lowerFactory(locale) {
+        return locale === false ? (input) => input.toLowerCase() : (input) => input.toLocaleLowerCase(locale);
+      }
+      function upperFactory(locale) {
+        return locale === false ? (input) => input.toUpperCase() : (input) => input.toLocaleUpperCase(locale);
+      }
+      function capitalCaseTransformFactory(lower, upper) {
+        return (word) => `${upper(word[0])}${lower(word.slice(1))}`;
+      }
+      function pascalCaseTransformFactory(lower, upper) {
+        return (word, index) => {
+          const char0 = word[0];
+          const initial = index > 0 && char0 >= "0" && char0 <= "9" ? "_" + char0 : upper(char0);
+          return initial + lower(word.slice(1));
+        };
+      }
+      function getPrefix(input, prefixCharacters = DEFAULT_PREFIX_CHARACTERS) {
+        let prefix = "";
+        for (let i = 0; i < input.length; i++) {
+          const char = input.charAt(i);
+          if (prefixCharacters.includes(char)) {
+            prefix += char;
+          } else {
+            break;
+          }
+        }
+        return prefix;
+      }
+      function spongeCase$1(input, locale) {
+        let result = "";
+        for (const char of input) {
+          result += Math.random() > 0.5 ? char.toLocaleUpperCase(locale) : char.toLocaleLowerCase(locale);
+        }
+        return result;
+      }
+      function swapCase$1(input, locale) {
+        let result = "";
+        for (const char of input) {
+          const lower = char.toLocaleLowerCase(locale);
+          result += char === lower ? char.toLocaleUpperCase(locale) : lower;
+        }
+        return result;
+      }
+      var SMALL_WORDS = /\b(?:an?d?|a[st]|because|but|by|en|for|i[fn]|neither|nor|o[fnr]|only|over|per|so|some|tha[tn]|the|to|up|upon|vs?\.?|versus|via|when|with|without|yet)\b/i;
+      var TOKENS = /[^\s:–—-]+|./g;
+      var WHITESPACE = /\s/;
+      var IS_MANUAL_CASE = /.(?=[A-Z]|\..)/;
+      var ALPHANUMERIC_PATTERN = /[A-Za-z0-9\u00C0-\u00FF]/;
+      function titleCase$1(input) {
+        var result = "";
+        var m;
+        while ((m = TOKENS.exec(input)) !== null) {
+          var token = m[0], index = m.index;
+          if (
+            // Ignore already capitalized words.
+            !IS_MANUAL_CASE.test(token) && // Ignore small words except at beginning or end.
+            (!SMALL_WORDS.test(token) || index === 0 || index + token.length === input.length) && // Ignore URLs.
+            (input.charAt(index + token.length) !== ":" || WHITESPACE.test(input.charAt(index + token.length + 1)))
+          ) {
+            result += token.replace(ALPHANUMERIC_PATTERN, function(m2) {
+              return m2.toUpperCase();
+            });
+            continue;
+          }
+          result += token;
+        }
+        return result;
+      }
+      const camelCase = camelCase$1;
+      const capitalCase = capitalCase$1;
+      const constantCase = constantCase$1;
+      const dotCase = dotCase$1;
+      const noCase = noCase$1;
+      const pascalCase = pascalCase$1;
+      const pathCase = pathCase$1;
+      const sentenceCase = sentenceCase$1;
+      const snakeCase = snakeCase$1;
+      const headerCase = trainCase$1;
+      const trainCase = trainCase$1;
+      const paramCase = kebabCase$1;
+      const kebabCase = kebabCase$1;
+      const spongeCase = spongeCase$1;
+      const swapCase = swapCase$1;
+      const titleCase = titleCase$1;
+      const upperCase = (str) => str.toUpperCase();
+      const localeUpperCase = (str, locales) => str.toLocaleUpperCase(locales);
+      const lowerCase = (str) => str.toLowerCase();
+      const localeLowerCase = (str, locales) => str.toLocaleLowerCase(locales);
+      const lowerCaseFirst = (str) => str.charAt(0).toLowerCase() + str.slice(1);
+      const upperCaseFirst = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+      const isUpperCase = (str) => str === str.toUpperCase();
+      const isLowerCase = (str) => str === str.toLowerCase();
+      const _Case = class _Case {
+      };
+      _Case.camel = camelCase;
+      _Case.capital = capitalCase;
+      _Case.constant = constantCase;
+      _Case.dot = dotCase;
+      _Case.kebab = kebabCase;
+      _Case.lower = lowerCase;
+      _Case.lowerFirst = lowerCaseFirst;
+      _Case.localeLower = localeLowerCase;
+      _Case.localeUpper = localeUpperCase;
+      _Case.no = noCase;
+      _Case.pascal = pascalCase;
+      _Case.path = pathCase;
+      _Case.sentence = sentenceCase;
+      _Case.snake = snakeCase;
+      _Case.sponge = spongeCase;
+      _Case.swap = swapCase;
+      _Case.title = titleCase;
+      _Case.train = trainCase;
+      _Case.upper = upperCase;
+      _Case.upperFirst = upperCaseFirst;
+      _Case.isUpper = isUpperCase;
+      _Case.isLower = isLowerCase;
+      let Case = _Case;
+      exports22.Case = Case;
+      exports22.camelCase = camelCase;
+      exports22.capitalCase = capitalCase;
+      exports22.constantCase = constantCase;
+      exports22.dotCase = dotCase;
+      exports22.headerCase = headerCase;
+      exports22.isLowerCase = isLowerCase;
+      exports22.isUpperCase = isUpperCase;
+      exports22.kebabCase = kebabCase;
+      exports22.localeLowerCase = localeLowerCase;
+      exports22.localeUpperCase = localeUpperCase;
+      exports22.lowerCase = lowerCase;
+      exports22.lowerCaseFirst = lowerCaseFirst;
+      exports22.noCase = noCase;
+      exports22.paramCase = paramCase;
+      exports22.pascalCase = pascalCase;
+      exports22.pathCase = pathCase;
+      exports22.sentenceCase = sentenceCase;
+      exports22.snakeCase = snakeCase;
+      exports22.spongeCase = spongeCase;
+      exports22.swapCase = swapCase;
+      exports22.titleCase = titleCase;
+      exports22.trainCase = trainCase;
+      exports22.upperCase = upperCase;
+      exports22.upperCaseFirst = upperCaseFirst;
+      Object.defineProperty(exports22, Symbol.toStringTag, { value: "Module" });
+    });
+  }
+});
+
+// ../../../../node_modules/@aws-sdk/util-format-url/dist-cjs/index.js
+var require_dist_cjs47 = __commonJS({
+  "../../../../node_modules/@aws-sdk/util-format-url/dist-cjs/index.js"(exports2, module2) {
+    var __defProp2 = Object.defineProperty;
+    var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
+    var __getOwnPropNames2 = Object.getOwnPropertyNames;
+    var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+    var __name = (target, value) => __defProp2(target, "name", { value, configurable: true });
+    var __export2 = (target, all) => {
+      for (var name in all)
+        __defProp2(target, name, { get: all[name], enumerable: true });
+    };
+    var __copyProps2 = (to, from, except, desc) => {
+      if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames2(from))
+          if (!__hasOwnProp2.call(to, key) && key !== except)
+            __defProp2(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc2(from, key)) || desc.enumerable });
+      }
+      return to;
+    };
+    var __toCommonJS2 = (mod) => __copyProps2(__defProp2({}, "__esModule", { value: true }), mod);
+    var src_exports2 = {};
+    __export2(src_exports2, {
+      formatUrl: () => formatUrl
+    });
+    module2.exports = __toCommonJS2(src_exports2);
+    var import_querystring_builder = require_dist_cjs27();
+    function formatUrl(request) {
+      const { port, query } = request;
+      let { protocol, path, hostname } = request;
+      if (protocol && protocol.slice(-1) !== ":") {
+        protocol += ":";
+      }
+      if (port) {
+        hostname += `:${port}`;
+      }
+      if (path && path.charAt(0) !== "/") {
+        path = `/${path}`;
+      }
+      let queryString = query ? (0, import_querystring_builder.buildQueryString)(query) : "";
+      if (queryString && queryString[0] !== "?") {
+        queryString = `?${queryString}`;
+      }
+      let auth = "";
+      if (request.username != null || request.password != null) {
+        const username = request.username ?? "";
+        const password = request.password ?? "";
+        auth = `${username}:${password}@`;
+      }
+      let fragment = "";
+      if (request.fragment) {
+        fragment = `#${request.fragment}`;
+      }
+      return `${protocol}//${auth}${hostname}${path}${queryString}${fragment}`;
+    }
+    __name(formatUrl, "formatUrl");
   }
 });
 
 // ../../../../node_modules/@aws-sdk/util-arn-parser/dist-cjs/index.js
-var require_dist_cjs27 = __commonJS({
+var require_dist_cjs48 = __commonJS({
   "../../../../node_modules/@aws-sdk/util-arn-parser/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -7306,12 +24972,12 @@ var require_dist_cjs27 = __commonJS({
     var src_exports2 = {};
     __export2(src_exports2, {
       build: () => build,
-      parse: () => parse,
-      validate: () => validate
+      parse: () => parse3,
+      validate: () => validate3
     });
     module2.exports = __toCommonJS2(src_exports2);
-    var validate = /* @__PURE__ */ __name((str) => typeof str === "string" && str.indexOf("arn:") === 0 && str.split(":").length >= 6, "validate");
-    var parse = /* @__PURE__ */ __name((arn) => {
+    var validate3 = /* @__PURE__ */ __name((str) => typeof str === "string" && str.indexOf("arn:") === 0 && str.split(":").length >= 6, "validate");
+    var parse3 = /* @__PURE__ */ __name((arn) => {
       const segments = arn.split(":");
       if (segments.length < 6 || segments[0] !== "arn")
         throw new Error("Malformed ARN");
@@ -7343,7 +25009,7 @@ var require_dist_cjs27 = __commonJS({
 });
 
 // ../../../../node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js
-var require_dist_cjs28 = __commonJS({
+var require_dist_cjs49 = __commonJS({
   "../../../../node_modules/@aws-sdk/middleware-sdk-s3/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -7394,7 +25060,7 @@ var require_dist_cjs28 = __commonJS({
     });
     module2.exports = __toCommonJS2(src_exports2);
     var import_protocol_http = require_dist_cjs2();
-    var import_smithy_client = require_dist_cjs25();
+    var import_smithy_client = require_dist_cjs30();
     var CONTENT_LENGTH_HEADER = "content-length";
     function checkContentLengthHeader() {
       return (next, context) => async (args) => {
@@ -7627,8 +25293,8 @@ var require_dist_cjs28 = __commonJS({
     __name(_S3ExpressIdentityProviderImpl, "S3ExpressIdentityProviderImpl");
     _S3ExpressIdentityProviderImpl.REFRESH_WINDOW_MS = 6e4;
     var S3ExpressIdentityProviderImpl = _S3ExpressIdentityProviderImpl;
-    var import_signature_v4 = require_dist_cjs11();
-    var import_util_config_provider = require_dist_cjs26();
+    var import_signature_v4 = require_dist_cjs37();
+    var import_util_config_provider = require_dist_cjs12();
     var S3_EXPRESS_BUCKET_TYPE = "Directory";
     var S3_EXPRESS_BACKEND = "S3Express";
     var S3_EXPRESS_AUTH_SCHEME = "sigv4-s3express";
@@ -7795,7 +25461,7 @@ var require_dist_cjs28 = __commonJS({
         clientStack.addRelativeTo(throw200ExceptionsMiddleware(config), throw200ExceptionsMiddlewareOptions);
       }
     }), "getThrow200ExceptionsPlugin");
-    var import_util_arn_parser = require_dist_cjs27();
+    var import_util_arn_parser = require_dist_cjs48();
     function bucketEndpointMiddleware(options) {
       return (next, context) => async (args) => {
         var _a, _b, _c, _d;
@@ -7859,7 +25525,7 @@ var require_dist_cjs28 = __commonJS({
 });
 
 // ../../../../node_modules/@aws-sdk/signature-v4-multi-region/dist-cjs/index.js
-var require_dist_cjs29 = __commonJS({
+var require_dist_cjs50 = __commonJS({
   "../../../../node_modules/@aws-sdk/signature-v4-multi-region/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -7885,7 +25551,7 @@ var require_dist_cjs29 = __commonJS({
       signatureV4CrtContainer: () => signatureV4CrtContainer
     });
     module2.exports = __toCommonJS2(src_exports2);
-    var import_middleware_sdk_s3 = require_dist_cjs28();
+    var import_middleware_sdk_s3 = require_dist_cjs49();
     var signatureV4CrtContainer = {
       CrtSignerV4: null
     };
@@ -7955,7 +25621,7 @@ For more information please go to https://github.com/aws/aws-sdk-js-v3#functiona
 });
 
 // ../../../../node_modules/@aws-sdk/s3-request-presigner/dist-cjs/index.js
-var require_dist_cjs30 = __commonJS({
+var require_dist_cjs51 = __commonJS({
   "../../../../node_modules/@aws-sdk/s3-request-presigner/dist-cjs/index.js"(exports2, module2) {
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -7981,10 +25647,10 @@ var require_dist_cjs30 = __commonJS({
       getSignedUrl: () => getSignedUrl
     });
     module2.exports = __toCommonJS2(src_exports2);
-    var import_util_format_url = require_dist_cjs13();
-    var import_middleware_endpoint = require_dist_cjs20();
+    var import_util_format_url = require_dist_cjs47();
+    var import_middleware_endpoint = require_dist_cjs21();
     var import_protocol_http = require_dist_cjs2();
-    var import_signature_v4_multi_region = require_dist_cjs29();
+    var import_signature_v4_multi_region = require_dist_cjs50();
     var UNSIGNED_PAYLOAD = "UNSIGNED-PAYLOAD";
     var SHA256_HEADER = "X-Amz-Content-Sha256";
     var _S3RequestPresigner = class _S3RequestPresigner {
@@ -8116,7 +25782,7 @@ var require_document_utils = __commonJS({
     var lib_dynamodb_1 = require("@aws-sdk/lib-dynamodb");
     var change_case_all_1 = require_index_umd();
     var client_dynamodb_1 = require("@aws-sdk/client-dynamodb");
-    var s3_request_presigner_1 = require_dist_cjs30();
+    var s3_request_presigner_1 = require_dist_cjs51();
     var client_s3_1 = require("@aws-sdk/client-s3");
     var isValidUploadDocumentMetadata = (metadata) => {
       if (typeof metadata !== "object" || metadata === null)
@@ -8369,7 +26035,7 @@ var handler = async (event) => {
         dirname,
         filename,
         username,
-        version,
+        version: version3,
         expiry = 3600
       } = event.arguments.params;
       const validatedKey = await (0, import_cjs.getValidatedS3ObjectKey)(
@@ -8387,7 +26053,7 @@ var handler = async (event) => {
         bucket: DOCUMENT_STORE_BUCKET_NAME,
         key: validatedKey,
         expiry,
-        versionId: version
+        versionId: version3
       };
       console.debug({ getPresignedUrlParams });
       return {

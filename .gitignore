@@ -33,9 +33,12 @@ packages/utils/src/browser/paycode-proxy-api/client/*
 **/.scratch/
 **/notes.txt
 npm-debug.log*
+
+# caches
 **/.cache/
 **/cache/
 **/.DS_Store
+**/hash.tracker
 
 # local env files, environment dependent, sensitive
 **/*.pem
