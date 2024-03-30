@@ -6,7 +6,7 @@
 	REGION
 Amplify Params - DO NOT EDIT */
 
-import { AmplifyGraphQlResolverEvent} from 'aws-lambda';
+import { AmplifyGraphQlResolverEvent } from 'aws-lambda';
 import { PAYCODE_DOCUMENT_STORE_BUCKET_NAME } from './.env.json';
 
 import {
@@ -27,9 +27,11 @@ import {
 if (!process.env.API_PAYCODEGQL_DOCUMENTINDEXTABLE_NAME) {
   throw new Error('API_PAYCODEGQL_DOCUMENTINDEXTABLE_NAME is not defined.');
 }
-const DOCUMENT_INDEX_TABLE = process.env.API_PAYCODEGQL_DOCUMENTINDEXTABLE_NAME;
 
-const DOCUMENT_STORE_BUCKET_NAME = `${PAYCODE_DOCUMENT_STORE_BUCKET_NAME}-${process.env.ENV}`;
+if (!PAYCODE_DOCUMENT_STORE_BUCKET_NAME)
+  throw new Error('PAYCODE_DOCUMENT_STORE_BUCKET_NAME is not defined.');
+
+const DOCUMENT_INDEX_TABLE = process.env.API_PAYCODEGQL_DOCUMENTINDEXTABLE_NAME;
 
 export const handler = async (
   event: AmplifyGraphQlResolverEvent<{
@@ -69,7 +71,7 @@ export const handler = async (
 
       const presignedParams = {
         method: 'putObject',
-        bucket: DOCUMENT_STORE_BUCKET_NAME,
+        bucket: PAYCODE_DOCUMENT_STORE_BUCKET_NAME,
         contentType: mimetype,
         expiry,
         key: createS3ObjectKey(args),
@@ -111,7 +113,7 @@ export const handler = async (
 
       const getPresignedUrlParams = {
         method: 'getObject',
-        bucket: DOCUMENT_STORE_BUCKET_NAME,
+        bucket: PAYCODE_DOCUMENT_STORE_BUCKET_NAME,
         key: validatedKey,
         expiry,
         versionId: version,

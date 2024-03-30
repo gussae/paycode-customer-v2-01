@@ -25980,15 +25980,16 @@ __export(src_exports, {
 module.exports = __toCommonJS(src_exports);
 
 // src/.env.json
-var PAYCODE_DOCUMENT_STORE_BUCKET_NAME = "paycode-customer-v2-document-store153324";
+var PAYCODE_DOCUMENT_STORE_BUCKET_NAME = "paycode-customer-v2-document-store223007-prod";
 
 // src/index.ts
 var import_cjs = __toESM(require_cjs());
 if (!process.env.API_PAYCODEGQL_DOCUMENTINDEXTABLE_NAME) {
   throw new Error("API_PAYCODEGQL_DOCUMENTINDEXTABLE_NAME is not defined.");
 }
+if (!PAYCODE_DOCUMENT_STORE_BUCKET_NAME)
+  throw new Error("PAYCODE_DOCUMENT_STORE_BUCKET_NAME is not defined.");
 var DOCUMENT_INDEX_TABLE = process.env.API_PAYCODEGQL_DOCUMENTINDEXTABLE_NAME;
-var DOCUMENT_STORE_BUCKET_NAME = `${PAYCODE_DOCUMENT_STORE_BUCKET_NAME}-${process.env.ENV}`;
 var handler = async (event) => {
   if (event.fieldName !== "getUploadDocumentAccess" && event.fieldName !== "getDownloadDocumentAccess") {
     throw new Error("Invalid handler invocation");
@@ -26016,7 +26017,7 @@ var handler = async (event) => {
       };
       const presignedParams = {
         method: "putObject",
-        bucket: DOCUMENT_STORE_BUCKET_NAME,
+        bucket: PAYCODE_DOCUMENT_STORE_BUCKET_NAME,
         contentType: mimetype,
         expiry,
         key: (0, import_cjs.createS3ObjectKey)(args),
@@ -26050,7 +26051,7 @@ var handler = async (event) => {
         throw new Error("Document not found or access denied.");
       const getPresignedUrlParams = {
         method: "getObject",
-        bucket: DOCUMENT_STORE_BUCKET_NAME,
+        bucket: PAYCODE_DOCUMENT_STORE_BUCKET_NAME,
         key: validatedKey,
         expiry,
         versionId: version3
