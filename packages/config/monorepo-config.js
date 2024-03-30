@@ -27,7 +27,7 @@ async function getMonorepoConfig(appName) {
   const appGlobalConfig = appConfigJson.global || {};
   const environmentConfigs = appConfigJson.envConfig || [];
   const appEnvConfig =
-    environmentConfigs.find(ec => ec.runtimeEnv === deploymentConfig.branch) ||
+    environmentConfigs.find(ec => ec.branch === deploymentConfig.branch) ||
     {};
 
   let imports = [],

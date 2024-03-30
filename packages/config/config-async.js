@@ -82,8 +82,8 @@ async function getConfigAsync(currentPath) {
   let _appEnvConfig = appEnvConfig.find(
     envConfig => envConfig.branch === branch,
   );
-
   let { appEnvConfig: monorepoAppEnvConfig, appGlobalConfig } = monorepoConfig;
+  console.log(1111,{ monorepoAppEnvConfig, monorepoConfig })
   config.envVars = {
     ...appGlobalConfig,
     ...monorepoAppEnvConfig,

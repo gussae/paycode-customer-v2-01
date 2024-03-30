@@ -290,11 +290,11 @@ jobs:
         run: npm run build
         working-directory: apps/paycode-proxy
 
-      - name: Build and Deploy Web UI from the Root of ui-web WS
+      - name: Build and Deploy Web UI from the Root of web-ui WS
         run: npm run build
         working-directory: apps/web-ui
 
-      - name: Build and Deploy UI Web  from the Root of web-ui WS
+      - name: Build and Deploy UI Web  from the Root of ui-web WS
         run: npm run build
         working-directory: apps/ui-web
 
@@ -352,7 +352,7 @@ jobs:
         working-directory: apps/paycode-proxy
 
   deploy-ui-web:
-    name: Deploy Web UI
+    name: Deploy UI Web
     runs-on: ubuntu-latest
     needs: setup-environment
     if: needs.setup-environment.outputs.uiWebUpdate == 'true' && needs.setup-environment.outputs.orchestrateDeployment == 'false'
@@ -396,7 +396,7 @@ jobs:
       - name: Add node_modules/.bin to PATH
         run: echo "${{ github.workspace }}/node_modules/.bin" >> $GITHUB_PATH
 
-      - name: Build and Deploy Web UI from the Root of ui-web WS
+      - name: Build and Deploy UI Web from the Root of ui-web WS
         run: |
           rm -rf node_modules/.vite
           npm cache clean --force
