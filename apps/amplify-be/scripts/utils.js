@@ -1,7 +1,6 @@
 import { spawn } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import awsExports from '../src/aws-exports.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -23,4 +22,3 @@ export function runNpmScript(scriptName) {
     }
   });
 }
-
