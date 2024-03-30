@@ -85,6 +85,7 @@ async function getConfigAsync(currentPath) {
   let { appEnvConfig: monorepoAppEnvConfig, appGlobalConfig } = monorepoConfig;
   console.log(1111,{ monorepoAppEnvConfig, monorepoConfig })
   config.envVars = {
+    deploymentEnv, //even though this is infraLayer, it's used by some apps
     ...appGlobalConfig,
     ...monorepoAppEnvConfig,
     ...envVars,
