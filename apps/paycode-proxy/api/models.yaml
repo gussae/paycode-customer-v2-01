@@ -72,22 +72,19 @@ PostPaymentResponse:
       type: string
       description: Status of the payment operation.
 
-GetQRCodeRequest:
+PostQrcodeRequest:
   type: object
   properties:
     username:
       type: string
       description: The username to generate a QR code for.
 
-GetQRCodeResponse:
+PostQrcodeResponse:
   type: object
   properties:
-    qrCode:
-      type: object
-      properties:
-        url:
-          type: string
-          description: URL to the generated QR code.
+    qrcodeUrl:
+      type: string
+      description: URL of the generated QR code.
 
 Empty:
   type: object

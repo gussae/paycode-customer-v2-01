@@ -21,6 +21,7 @@ import {
   updateProfile,
   uploadDocument,
   deleteDocument,
+  generateQrcode,
 } from '@paycode-customer-v2/utils/dist/browser'; // Import the utility functions
 import { getCurrentUser } from 'aws-amplify/auth';
 import { useEffect, useState } from 'react';
@@ -87,6 +88,7 @@ const App = () => {
             }
             listDocuments={listDocuments}
             deleteDocument={deleteDocument}
+            generateQrcode={generateQrcode}
           />
           <button
             onClick={signOut}

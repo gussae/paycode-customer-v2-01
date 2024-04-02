@@ -203,6 +203,47 @@ paths:
           Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PaymentFunction.Arn}/invocations
         passthroughBehavior: when_no_match
     options: *a1
+  /qrcode:
+    post:
+      summary: Generate QR Code
+      operationId: postQrcode
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: The username to generate a QR code for.
+      responses:
+        "202":
+          description: Successful payment
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  qrcodeUrl:
+                    type: string
+                    description: URL of the generated QR code.
+      security:
+        - CognitoAuthorizer: []
+        - api_key: []
+        - sigv4: []
+      x-amazon-apigateway-request-validators: validateBody
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        credentials:
+          Fn::GetAtt:
+            - ApiInvokeLambdaRole
+            - Arn
+        httpMethod: POST
+        uri:
+          Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${QrcodeFunction.Arn}/invocations
+        passthroughBehavior: when_no_match
+    options: *a1
 x-amazon-apigateway-request-validators:
   validateBody:
     validateRequestParameters: false

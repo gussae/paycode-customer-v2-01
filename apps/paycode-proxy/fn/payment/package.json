@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "types":"dist/index.d.ts",
   "scripts": {
-    "build": "tsc && tsc-alias && esbuild src/index.ts --bundle --platform=node --target=node18 --outdir=dist --external:@aws-sdk/client-secrets-manager",
+    "build": "tsc && tsc-alias && esbuild src/index.ts --bundle --platform=node --target=node18 --outdir=dist \"--external:@aws-sdk/*\"",
     "check": "ts-node execute-check.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "_prebuild": "npm run build -w @paycode-customer-v2/graphql",
-    "build": "tsc && tsc-alias && esbuild src/index.ts --bundle --platform=node --target=node18 --outfile=dist/index.js --external:@aws-sdk/client-appsync --external:@aws-sdk/client-dynamodb --external:@aws-sdk/client-s3 --external:@aws-sdk/client-secrets-manager --external:@aws-sdk/client-ssm --external:@aws-sdk/credential-provider-node --external:@aws-sdk/credential-providers --external:@aws-sdk/lib-dynamodb",
+    "build": "tsc && tsc-alias && esbuild src/index.ts --bundle --platform=node --target=node18 --outdir=dist \"--external:@aws-sdk/*\"",
     "postbuild": "copyfiles -u 1 dist/index.js ../../amplify/backend/function/removeDocument/src",
     "check": "ts-node execute-check.ts",
     "test": "echo \"Error: no test specified\" && exit 1"

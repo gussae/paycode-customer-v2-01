@@ -38,10 +38,16 @@ export async function buildCognitoAuthApiAdapter(
     await fs.ensureDir(tempDirPath);
     await fs.ensureDir(tempBuildDir);
     await generateApigwClient({
-      workspaceRoot,
       bundledOpenapiPath,
       outdir: tempDirPath,
+      workspaceRoot,
     });
+
+    console.log({
+      outdir: tempDirPath,
+      bundledOpenapiPath,
+      workspaceRoot,
+    })
 
     //*copy api-adapter and cognito-get-current-user-token to the temp directory (they are browser compatible and only depends on external modules: but not this module, which is node based - the very need for the building)
     await fs.copy(

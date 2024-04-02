@@ -8,6 +8,7 @@
     "url": "https://github.com/kkortje/paycode-customer-v2.git"
   },
   "scripts": {
+    "doc": "npm run build --workspace=@paycode-customer-v2/utils && npm run doc --workspace=@paycode-customer-v2/utils",
     "build-packages": "node ./scripts/build-packages.js",
     "fix-cors": "concurrently \"npm run fix-cors --workspace=@paycode-customer-v2/paycode-proxy\"  \"npm run fix-cors --workspace=@paycode-customer-v2/amplify-be\""
   },
@@ -58,6 +59,7 @@
     "fs-extra": "^11.2.0",
     "mime-types": "^2.1.35",
     "nanoid": "^5.0.6",
+    "p-limit": "^5.0.0",
     "source-map-support": "^0.5.21",
     "ts-node": "^10.8.2",
     "uuid": "^9.0.1",

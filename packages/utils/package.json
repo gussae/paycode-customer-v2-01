@@ -6,6 +6,7 @@
   "files": ["./dist/browser", "./dist/node"],
   "scripts": {
     "test": "jest",
+    "doc": "ts-node src/node/generate-docs/index.ts -p tsconfig.node.json",
     "build": "concurrently \"npm run build-node\" \"npm run build-browser\" ",
     "build-node": "tsc -p tsconfig.node.json",
     "build-browser": "tsc -p tsconfig.browser.json && node fix-browser-client.js",
@@ -43,6 +44,7 @@
     "@paycode-customer-v2/graphql": "*",
     "amazon-cognito-identity-js": "^6.x",
     "axios": "^1.x",
-    "fs-extra": "^11.x"
+    "fs-extra": "^11.x",
+    "glob": "^10.x"
   }
 }

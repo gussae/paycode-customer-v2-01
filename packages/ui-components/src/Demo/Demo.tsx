@@ -1,25 +1,26 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-unused-vars */
+import { Balance, BalanceComponent, GetBalanceParams } from './Balance';
 import styles from './Demo.module.css';
 import { GenericNotification, NotificationsComponent } from './Notification';
 import { Profile, ProfileComponent } from './Profile';
-import { Balance, BalanceComponent, GetBalanceParams } from './Balance';
 // import { Balance2Component } from './Balance2';
-import {
-  PaymentComponent,
-  MakePaymentParams,
-  MakePaymentReceipt,
-} from './Payment';
-import {
-  GetTransactionsParams,
-  TransactionResponse,
-  TransactionComponent,
-} from './Transaction';
 import DocumentComponent, {
   DeleteDocumentParams,
   DownloadDocumentParams,
   UploadDocumentParams,
 } from './Document';
+import {
+  MakePaymentParams,
+  MakePaymentReceipt,
+  PaymentComponent,
+} from './Payment';
+import { QrcodeComponent, GenerateQrcodeResponse } from './Qrcode';
+import {
+  GetTransactionsParams,
+  TransactionComponent,
+  TransactionResponse,
+} from './Transaction';
 // import QRCode  from './QRCode';
 // Types for the functions to be passed to Demo
 
@@ -60,6 +61,9 @@ export interface DemoFunctions {
   uploadDocument: (params: UploadDocumentParams) => Promise<boolean>;
   downloadDocument: (params: DownloadDocumentParams) => Promise<string | null>;
   deleteDocument: (params: DeleteDocumentParams) => Promise<boolean>;
+  generateQrcode: (params: {
+    username: string;
+  }) => Promise<GenerateQrcodeResponse>;
 }
 
 export const Demo: React.FC<DemoProps> = ({
@@ -76,6 +80,7 @@ export const Demo: React.FC<DemoProps> = ({
   uploadDocument,
   downloadDocument,
   deleteDocument,
+  generateQrcode,
 }) => {
   // No need to fetch username inside Demo, it's passed as a prop
   if (!username) {
@@ -112,7 +117,7 @@ export const Demo: React.FC<DemoProps> = ({
         username={username}
         fetchTransactions={fetchTransactions}
       />
-      ,
+      <QrcodeComponent username={username} generateQrcode={generateQrcode} />
     </div>
   );
 };

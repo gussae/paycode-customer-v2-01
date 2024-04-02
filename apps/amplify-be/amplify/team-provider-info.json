@@ -18,15 +18,15 @@
       "function": {
         "documentAccess": {
           "deploymentBucketName": "amplify-paycodeamplifybe-dev-153324-deployment",
-          "s3Key": "amplify-builds/documentAccess-516e585036346d6c3237-build.zip"
+          "s3Key": "amplify-builds/documentAccess-645a7536336759416762-build.zip"
         },
         "documentIndex": {
           "deploymentBucketName": "amplify-paycodeamplifybe-dev-153324-deployment",
-          "s3Key": "amplify-builds/documentIndex-667038493547594b6d2f-build.zip"
+          "s3Key": "amplify-builds/documentIndex-546d75777a546f506a7a-build.zip"
         },
         "removeDocument": {
           "deploymentBucketName": "amplify-paycodeamplifybe-dev-153324-deployment",
-          "s3Key": "amplify-builds/removeDocument-456f576b456663573651-build.zip"
+          "s3Key": "amplify-builds/removeDocument-6d734a4266725635466c-build.zip"
         },
         "documentStore": {},
         "paycodegql": {},

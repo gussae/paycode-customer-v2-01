@@ -24,3 +24,12 @@ Payment:
   uri:
     Fn::Sub: 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PaymentFunction.Arn}/invocations'
   passthroughBehavior: 'when_no_match'
+
+Qrcode:
+  type: aws_proxy
+  credentials:
+    Fn::GetAtt: ["ApiInvokeLambdaRole", "Arn"]
+  httpMethod: POST
+  uri:
+    Fn::Sub: 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${QrcodeFunction.Arn}/invocations'
+  passthroughBehavior: 'when_no_match'

@@ -195,6 +195,17 @@ Resources:
         SecurityGroupIds:
           - !Ref SecurityGroup
 
+  QrcodeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: fn/qrcode/dist/
+      VpcConfig:
+        SubnetIds:
+          - !Ref SubnetA
+          - !Ref SubnetB
+        SecurityGroupIds:
+          - !Ref SecurityGroup
+
 
  ############ IAM Roles  ############
   ApiInvokeLambdaRole:
@@ -218,6 +229,7 @@ Resources:
                   - !GetAtt BalanceFunction.Arn
                   - !GetAtt TransactionFunction.Arn
                   - !GetAtt PaymentFunction.Arn
+                  - !GetAtt QrcodeFunction.Arn
         - PolicyName: ApiGatewayCloudWatchLogsPolicy
           PolicyDocument:
             Version: '2012-10-17'

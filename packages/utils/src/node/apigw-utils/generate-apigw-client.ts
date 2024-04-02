@@ -65,8 +65,8 @@ export async function generateApigwClient({
   const tempPaths = generateTempPaths(workspaceRoot);
   // console.log(111111111, { tempPaths });
   try {
-    await fs.emptyDir(tempPaths.TEMP_DIR_PATH);
-    await fs.emptyDir(tempPaths.TEMP_API_TS_CLIENT_DIR);
+    await fs.ensureDir(tempPaths.TEMP_DIR_PATH);
+    await fs.ensureDir(tempPaths.TEMP_API_TS_CLIENT_DIR);
 
     const opts = { cwd: workspaceRoot };
 
@@ -117,6 +117,10 @@ export async function generateApigwClient({
     await fs.move(tempPaths.TEMP_API_TS_CLIENT_DIR, outdir, {
       overwrite: true,
     });
+    //sleep just in case the file is busy
+    await new Promise(resolve => setTimeout(resolve, 10000));
+
+    await fs.remove(tempPaths.TEMP_DIR_PATH);
   } catch (error) {
     console.error('Error generating API client', error);
     throw error;

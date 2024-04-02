@@ -111,3 +111,30 @@ Paths:
         $ref: './integrations.yaml#/Payment'
     options:
       $ref: './cors.yaml#/Options'
+
+  /qrcode:
+    post:
+      summary: Generate QR Code
+      operationId: postQrcode
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './models.yaml#/PostQrcodeRequest'
+      responses:
+        '202':
+          description: Successful payment
+          content:
+            application/json:
+              schema:
+                $ref: './models.yaml#/PostQrcodeResponse'
+      security:
+        - CognitoAuthorizer: []
+        - api_key: []
+        - sigv4: []
+      x-amazon-apigateway-request-validators: "validateBody"
+      x-amazon-apigateway-integration:
+        $ref: './integrations.yaml#/Qrcode'
+    options:
+      $ref: './cors.yaml#/Options'

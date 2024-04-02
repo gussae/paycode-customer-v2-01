@@ -10,6 +10,7 @@ import { AwsCredentialIdentityProvider } from '@smithy/types';
 import { SpawnOptions, exec, execSync, spawn } from 'child_process';
 import { existsSync, promises as fsPromise } from 'fs';
 import fs from 'fs-extra';
+import { glob } from 'glob';
 import { dirname, join } from 'path';
 import { CompilerOptions } from 'typescript';
 import { stringify } from 'yaml';
@@ -42,6 +43,7 @@ export function getAwsCredsProvider(
     return fromIni({ profile });
   }
 }
+
 /**
  * Executes a synchronous command and returns the output as a string.
  * @param command The command to execute.
@@ -307,7 +309,7 @@ export async function runBuildInProjectRoot(
 export async function getExportValue(
   exportName: string,
   region: string,
-  profile: string | undefined
+  profile: string | undefined,
 ): Promise<string | undefined> {
   const client = new CloudFormationClient({
     region: region,
@@ -329,5 +331,4 @@ export async function getExportValue(
 
   return undefined;
 }
-
 

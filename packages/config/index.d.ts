@@ -5,7 +5,7 @@
 //TODO  lazy migration to TS from JS => add proper type support or migrate to TS
 export function getConfigAsync(): Promise<Config>;
 export function getMonorepoConfig(
-  appName: string | undefined,
+  appName?: string | undefined,
 ): Promise<MonorepoConfig>;
 export function getWorkspaceConfig(
   workspaceRoot: string,
