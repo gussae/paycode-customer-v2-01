@@ -38,8 +38,8 @@ This project is a comprehensive solution that demonstrates the integration of we
 
 ## Documentation
 
-- **High-Level User Guide**: Detailed guide on adding features and project enhancements. (High-Level User Guide)('./high-level-guide.md)
-- **Project Overview**: In-depth look at the project structure, backend architecture, and key packages. (Project Overview)('./project-overview.md')
+- **High-Level User Guide**: Detailed guide on adding features and project enhancements. [High-Level User Guide](High%20Level%20Guide.md)
+- **Project Overview**: In-depth look at the project structure, backend architecture, and key packages. [Project Overview](Project%20Overview.md)
 
 ## Getting Started
 

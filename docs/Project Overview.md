@@ -41,9 +41,11 @@ The project utilizes a blend of custom and standard configuration files to manag
 
 ### Monorepo and Workspace Configuration
 
-- **monorepo.config.json**: Centralizes site-wide configurations that apply across the entire monorepo. It outlines paths, global settings, domain configurations, deployment settings, and external infrastructure configurations necessary for the project's operation. This file is critical for establishing a coherent structure for app global configurations, domain management, and deployment strategies.
+- **`monorepo.config.json`**: Serves as the central hub for global configurations within the monorepo, defining paths, global settings, domain management, deployment strategies, and external infrastructure settings crucial for project functionality. This configuration file is indispensable for maintaining a unified approach to application-wide settings, domain configurations, and deployment methodologies.
 
-- **workspace.config.json**: Tailors workspace-specific settings, accommodating unique requirements for each package, app, or service within the monorepo. It details application environment configurations, custom settings, deployment options, and environmental variables pertinent to the workspace's functionality. This configuration ensures that each workspace can operate with its specific needs without impacting others.
+- **`workspace.config.json`**: Provides customization for the settings of each workspace, addressing the distinct requirements of packages, apps, or services. It specifies application environments, custom settings, deployment methodologies, and environment variables relevant to each workspace's operations. This ensures that workspaces function according to their individual needs while maintaining harmony within the monorepo.
+
+- The `@paycode-customer-v2/config` package utilizes these configurations to prepare the environment for each workspace, translating to `.env` files in web applications and environment variables in backend Lambdas. It generates a configuration map for key-value substitutions, streamlines the sharing of workspace outputs via a parameter store specific to the deployment environment, and employs namespaces for organizing output partitions and stack names, among other functionalities. This integration is pivotal in harmonizing the diverse workspaces into a unified system. The configurator, written in JavaScript, operates without the need for build tools, playing a critical role in the build and deployment phases across all workspaces. However, it's important to note that this tool is intended for use during the build environment setup rather than as a runtime resource.
 
 ### Standard Configuration Tools
 
