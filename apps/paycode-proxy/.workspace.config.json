@@ -10,7 +10,7 @@
     }
   ],
   "customSettings": {
-    "__git_actions_trigger": 75,
+    "__git_actions_trigger": 76,
     "paycodeProxyCidrBlock": "10.0.1.0/16"
   },
   "defaultImports": [
